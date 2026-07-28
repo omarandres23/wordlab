@@ -1,0 +1,1180 @@
+{
+  "questions": {
+    "basic": [
+      {
+        "id": "basic_1",
+        "type": "definition",
+        "stars": 1,
+        "question": "Small, furry, carnivorous mammal and one of the world's most popular pets.",
+        "options": [
+          "Cat",
+          "Fish",
+          "Dog",
+          "Bird"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "basic_2",
+        "type": "definition",
+        "stars": 1,
+        "question": "A frozen form of water that falls from the sky in soft white flakes.",
+        "options": [
+          "Snow",
+          "Rain",
+          "Ice",
+          "Fog"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "basic_3",
+        "type": "definition",
+        "stars": 1,
+        "question": "The meal you eat in the morning, often including eggs or cereal.",
+        "options": [
+          "Breakfast",
+          "Lunch",
+          "Dinner",
+          "Snack"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "basic_4",
+        "type": "definition",
+        "stars": 1,
+        "question": "A large area of salt water that covers most of the Earth's surface.",
+        "options": [
+          "Ocean",
+          "River",
+          "Lake",
+          "Pond"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "basic_5",
+        "type": "definition",
+        "stars": 1,
+        "question": "A person who teaches students in a school.",
+        "options": [
+          "Teacher",
+          "Doctor",
+          "Driver",
+          "Farmer"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "basic_6",
+        "type": "definition",
+        "stars": 1,
+        "question": "The star at the center of our solar system that gives us light and heat.",
+        "options": [
+          "Sun",
+          "Moon",
+          "Star",
+          "Planet"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "basic_7",
+        "type": "definition",
+        "stars": 1,
+        "question": "A piece of furniture with a back and legs, used for sitting.",
+        "options": [
+          "Chair",
+          "Table",
+          "Sofa",
+          "Bed"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "basic_8",
+        "type": "definition",
+        "stars": 1,
+        "question": "A yellow curved fruit that monkeys love to eat.",
+        "options": [
+          "Banana",
+          "Apple",
+          "Orange",
+          "Grape"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "basic_9",
+        "type": "definition",
+        "stars": 1,
+        "question": "A building where people go to borrow and read books.",
+        "options": [
+          "Library",
+          "Museum",
+          "School",
+          "Bank"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "basic_10",
+        "type": "definition",
+        "stars": 1,
+        "question": "The season that comes after winter, when flowers start to bloom.",
+        "options": [
+          "Spring",
+          "Summer",
+          "Autumn",
+          "Winter"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "basic_11",
+        "type": "definition",
+        "stars": 1,
+        "question": "A vehicle with two wheels that you pedal to move forward.",
+        "options": [
+          "Bicycle",
+          "Car",
+          "Bus",
+          "Train"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "basic_12",
+        "type": "definition",
+        "stars": 1,
+        "question": "The part of the day between morning and evening, when the sun is highest.",
+        "options": [
+          "Afternoon",
+          "Morning",
+          "Evening",
+          "Night"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "basic_13",
+        "type": "definition",
+        "stars": 1,
+        "question": "A large gray animal with a long trunk and big ears.",
+        "options": [
+          "Elephant",
+          "Lion",
+          "Tiger",
+          "Bear"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "basic_14",
+        "type": "definition",
+        "stars": 1,
+        "question": "A place where you can buy food, clothes, and other things.",
+        "options": [
+          "Store",
+          "School",
+          "Hospital",
+          "Park"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "basic_15",
+        "type": "definition",
+        "stars": 1,
+        "question": "The liquid that falls from clouds during a storm.",
+        "options": [
+          "Rain",
+          "Snow",
+          "Wind",
+          "Fog"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "basic_16",
+        "type": "definition",
+        "stars": 1,
+        "question": "A round object used in sports like soccer and basketball.",
+        "options": [
+          "Ball",
+          "Bat",
+          "Net",
+          "Goal"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "basic_17",
+        "type": "definition",
+        "stars": 1,
+        "question": "A person who flies an airplane.",
+        "options": [
+          "Pilot",
+          "Driver",
+          "Sailor",
+          "Captain"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "basic_18",
+        "type": "definition",
+        "stars": 1,
+        "question": "The place in a house where you cook food.",
+        "options": [
+          "Kitchen",
+          "Bedroom",
+          "Bathroom",
+          "Garage"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "basic_19",
+        "type": "definition",
+        "stars": 1,
+        "question": "A sweet, red or green fruit that grows on trees.",
+        "options": [
+          "Apple",
+          "Banana",
+          "Grape",
+          "Lemon"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "basic_20",
+        "type": "definition",
+        "stars": 1,
+        "question": "An animal known for barking and being called 'man's best friend'.",
+        "options": [
+          "Dog",
+          "Cat",
+          "Horse",
+          "Rabbit"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "basic_21",
+        "type": "definition",
+        "stars": 1,
+        "question": "The document you need to travel to another country.",
+        "options": [
+          "Passport",
+          "Ticket",
+          "Map",
+          "Visa"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "basic_22",
+        "type": "definition",
+        "stars": 1,
+        "question": "A cold dessert made from milk, often served in a cone.",
+        "options": [
+          "Ice cream",
+          "Cake",
+          "Cookie",
+          "Pie"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "basic_23",
+        "type": "definition",
+        "stars": 1,
+        "question": "The day of the week that comes right after Sunday.",
+        "options": [
+          "Monday",
+          "Tuesday",
+          "Saturday",
+          "Friday"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "basic_24",
+        "type": "definition",
+        "stars": 1,
+        "question": "A tall plant with a wooden trunk, branches, and leaves.",
+        "options": [
+          "Tree",
+          "Flower",
+          "Bush",
+          "Grass"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "basic_25",
+        "type": "definition",
+        "stars": 1,
+        "question": "The organ in your chest that pumps blood through your body.",
+        "options": [
+          "Heart",
+          "Lung",
+          "Brain",
+          "Liver"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "basic_26",
+        "type": "definition",
+        "stars": 1,
+        "question": "A place where sick or injured people go to get medical care.",
+        "options": [
+          "Hospital",
+          "School",
+          "Bank",
+          "Library"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "basic_27",
+        "type": "definition",
+        "stars": 1,
+        "question": "The tool you use to cut paper, made of two sharp blades.",
+        "options": [
+          "Scissors",
+          "Knife",
+          "Hammer",
+          "Pencil"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "basic_28",
+        "type": "definition",
+        "stars": 1,
+        "question": "A young dog.",
+        "options": [
+          "Puppy",
+          "Kitten",
+          "Cub",
+          "Calf"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "basic_29",
+        "type": "definition",
+        "stars": 1,
+        "question": "The opposite of 'hot'.",
+        "options": [
+          "Cold",
+          "Warm",
+          "Cool",
+          "Mild"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "basic_30",
+        "type": "definition",
+        "stars": 1,
+        "question": "A place where airplanes take off and land.",
+        "options": [
+          "Airport",
+          "Station",
+          "Harbor",
+          "Terminal"
+        ],
+        "correct_index": 0
+      }
+    ],
+    "intermediate": [
+      {
+        "id": "intermediate_1",
+        "type": "definition",
+        "stars": 3,
+        "question": "A formal meeting where business people discuss plans and decisions.",
+        "options": [
+          "Meeting",
+          "Party",
+          "Concert",
+          "Festival"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "intermediate_2",
+        "type": "definition",
+        "stars": 3,
+        "question": "Money that a company earns after paying all its expenses.",
+        "options": [
+          "Profit",
+          "Debt",
+          "Loan",
+          "Tax"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "intermediate_3",
+        "type": "definition",
+        "stars": 3,
+        "question": "A document that lists the products or services you bought and how much you owe.",
+        "options": [
+          "Invoice",
+          "Receipt",
+          "Contract",
+          "Menu"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "intermediate_4",
+        "type": "fill_blank",
+        "stars": 3,
+        "question": "I ___ to the gym every morning before work.",
+        "options": [
+          "go",
+          "goes",
+          "going",
+          "went"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "intermediate_5",
+        "type": "definition",
+        "stars": 3,
+        "question": "The place where airplanes are stored, repaired, and boarded by passengers.",
+        "options": [
+          "Terminal",
+          "Runway",
+          "Cabin",
+          "Cockpit"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "intermediate_6",
+        "type": "definition",
+        "stars": 3,
+        "question": "A person who travels to explore new and unfamiliar places.",
+        "options": [
+          "Explorer",
+          "Tourist",
+          "Pilot",
+          "Guide"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "intermediate_7",
+        "type": "grammar",
+        "stars": 3,
+        "question": "Choose the correct comparative form: 'This book is ___ than the other one.'",
+        "options": [
+          "more interesting",
+          "interestinger",
+          "most interesting",
+          "interesting"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "intermediate_8",
+        "type": "definition",
+        "stars": 3,
+        "question": "A strong feeling of wanting to achieve something great.",
+        "options": [
+          "Ambition",
+          "Patience",
+          "Curiosity",
+          "Kindness"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "intermediate_9",
+        "type": "definition",
+        "stars": 3,
+        "question": "The act of putting off or delaying something you should do.",
+        "options": [
+          "Procrastination",
+          "Determination",
+          "Motivation",
+          "Concentration"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "intermediate_10",
+        "type": "definition",
+        "stars": 3,
+        "question": "A person hired temporarily to do a specific job or project.",
+        "options": [
+          "Freelancer",
+          "Manager",
+          "Intern",
+          "Supervisor"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "intermediate_11",
+        "type": "fill_blank",
+        "stars": 3,
+        "question": "She has been working here ___ five years.",
+        "options": [
+          "for",
+          "since",
+          "during",
+          "at"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "intermediate_12",
+        "type": "definition",
+        "stars": 3,
+        "question": "A written agreement between two or more parties that is legally binding.",
+        "options": [
+          "Contract",
+          "Invoice",
+          "Memo",
+          "Report"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "intermediate_13",
+        "type": "definition",
+        "stars": 3,
+        "question": "The feeling of being nervous or worried about something that might happen.",
+        "options": [
+          "Anxiety",
+          "Confidence",
+          "Excitement",
+          "Relief"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "intermediate_14",
+        "type": "definition",
+        "stars": 3,
+        "question": "A specific counter at an airport where you convert your money into local currency.",
+        "options": [
+          "Currency exchange",
+          "Duty free",
+          "Baggage claim",
+          "Check-in"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "intermediate_15",
+        "type": "definition",
+        "stars": 3,
+        "question": "A person who supervises and manages a team of employees.",
+        "options": [
+          "Manager",
+          "Intern",
+          "Client",
+          "Customer"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "intermediate_16",
+        "type": "definition",
+        "stars": 3,
+        "question": "The ability to adapt easily to different situations or changes.",
+        "options": [
+          "Flexibility",
+          "Stability",
+          "Rigidity",
+          "Consistency"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "intermediate_17",
+        "type": "grammar",
+        "stars": 3,
+        "question": "Which sentence uses the present perfect correctly?",
+        "options": [
+          "I have visited Paris three times.",
+          "I visited Paris three times ago.",
+          "I have visit Paris three times.",
+          "I visiting Paris three times."
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "intermediate_18",
+        "type": "definition",
+        "stars": 3,
+        "question": "A place where farmers sell fresh fruits and vegetables directly to customers.",
+        "options": [
+          "Market",
+          "Mall",
+          "Store",
+          "Warehouse"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "intermediate_19",
+        "type": "definition",
+        "stars": 3,
+        "question": "The money you save regularly instead of spending it.",
+        "options": [
+          "Savings",
+          "Expenses",
+          "Debt",
+          "Income"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "intermediate_20",
+        "type": "definition",
+        "stars": 3,
+        "question": "A meeting or conversation to negotiate the terms of a job before being hired.",
+        "options": [
+          "Interview",
+          "Meeting",
+          "Contract",
+          "Application"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "intermediate_21",
+        "type": "fill_blank",
+        "stars": 3,
+        "question": "If it rains tomorrow, we ___ the picnic.",
+        "options": [
+          "will cancel",
+          "cancel",
+          "canceled",
+          "would cancel"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "intermediate_22",
+        "type": "definition",
+        "stars": 3,
+        "question": "A period of time when someone stops working to rest and travel.",
+        "options": [
+          "Vacation",
+          "Overtime",
+          "Deadline",
+          "Shift"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "intermediate_23",
+        "type": "definition",
+        "stars": 3,
+        "question": "The place in an airport where you wait before boarding your flight.",
+        "options": [
+          "Gate",
+          "Terminal",
+          "Runway",
+          "Aisle"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "intermediate_24",
+        "type": "definition",
+        "stars": 3,
+        "question": "A word that describes an action, like 'run', 'eat', or 'think'.",
+        "options": [
+          "Verb",
+          "Noun",
+          "Adjective",
+          "Adverb"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "intermediate_25",
+        "type": "definition",
+        "stars": 3,
+        "question": "A word used to describe or give more information about a noun.",
+        "options": [
+          "Adjective",
+          "Verb",
+          "Pronoun",
+          "Preposition"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "intermediate_26",
+        "type": "definition",
+        "stars": 3,
+        "question": "The habit of arriving or doing things on time.",
+        "options": [
+          "Punctuality",
+          "Laziness",
+          "Curiosity",
+          "Generosity"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "intermediate_27",
+        "type": "definition",
+        "stars": 3,
+        "question": "A place where you can rent a room to sleep during a trip.",
+        "options": [
+          "Hotel",
+          "Airport",
+          "Station",
+          "Museum"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "intermediate_28",
+        "type": "grammar",
+        "stars": 3,
+        "question": "Choose the correct question: '___ you like coffee or tea?'",
+        "options": [
+          "Would",
+          "Do",
+          "Are",
+          "Have"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "intermediate_29",
+        "type": "definition",
+        "stars": 3,
+        "question": "The document that shows your job history and skills when applying for a job.",
+        "options": [
+          "Resume",
+          "Contract",
+          "Invoice",
+          "Passport"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "intermediate_30",
+        "type": "definition",
+        "stars": 3,
+        "question": "A strong desire to travel and see the world.",
+        "options": [
+          "Wanderlust",
+          "Homesickness",
+          "Nostalgia",
+          "Curiosity"
+        ],
+        "correct_index": 0
+      }
+    ],
+    "advanced": [
+      {
+        "id": "advanced_1",
+        "type": "definition",
+        "stars": 5,
+        "question": "The quality of being honest and having strong moral principles.",
+        "options": [
+          "Integrity",
+          "Arrogance",
+          "Ignorance",
+          "Jealousy"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "advanced_2",
+        "type": "definition",
+        "stars": 5,
+        "question": "A sudden and important discovery or realization.",
+        "options": [
+          "Epiphany",
+          "Routine",
+          "Habit",
+          "Custom"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "advanced_3",
+        "type": "definition",
+        "stars": 5,
+        "question": "The ability to keep trying despite difficulties or failure.",
+        "options": [
+          "Perseverance",
+          "Laziness",
+          "Indifference",
+          "Hesitation"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "advanced_4",
+        "type": "fill_blank",
+        "stars": 5,
+        "question": "By the time we arrived, the movie ___ already started.",
+        "options": [
+          "had",
+          "has",
+          "have",
+          "was"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "advanced_5",
+        "type": "definition",
+        "stars": 5,
+        "question": "A situation in which you must choose between two difficult options.",
+        "options": [
+          "Dilemma",
+          "Solution",
+          "Opportunity",
+          "Advantage"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "advanced_6",
+        "type": "definition",
+        "stars": 5,
+        "question": "Money a company owes to lenders, banks, or other creditors.",
+        "options": [
+          "Liability",
+          "Asset",
+          "Profit",
+          "Revenue"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "advanced_7",
+        "type": "grammar",
+        "stars": 5,
+        "question": "Choose the correct passive voice: 'The report ___ by the team yesterday.'",
+        "options": [
+          "was finished",
+          "finished",
+          "has finished",
+          "is finishing"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "advanced_8",
+        "type": "definition",
+        "stars": 5,
+        "question": "The state of being extremely tired, both physically and mentally.",
+        "options": [
+          "Exhaustion",
+          "Excitement",
+          "Enthusiasm",
+          "Confidence"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "advanced_9",
+        "type": "definition",
+        "stars": 5,
+        "question": "A formal, official agreement between two countries.",
+        "options": [
+          "Treaty",
+          "Contract",
+          "Invoice",
+          "Memo"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "advanced_10",
+        "type": "definition",
+        "stars": 5,
+        "question": "The practice of managing money, investments, and spending wisely.",
+        "options": [
+          "Budgeting",
+          "Spending",
+          "Borrowing",
+          "Gambling"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "advanced_11",
+        "type": "definition",
+        "stars": 5,
+        "question": "A word or phrase that means the opposite of another word.",
+        "options": [
+          "Antonym",
+          "Synonym",
+          "Homonym",
+          "Acronym"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "advanced_12",
+        "type": "fill_blank",
+        "stars": 5,
+        "question": "She suggested ___ the meeting to next week.",
+        "options": [
+          "postponing",
+          "to postpone",
+          "postpone",
+          "postponed"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "advanced_13",
+        "type": "definition",
+        "stars": 5,
+        "question": "The feeling of wanting something that someone else has.",
+        "options": [
+          "Envy",
+          "Gratitude",
+          "Sympathy",
+          "Admiration"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "advanced_14",
+        "type": "definition",
+        "stars": 5,
+        "question": "A person's ability to understand and share the feelings of others.",
+        "options": [
+          "Empathy",
+          "Apathy",
+          "Arrogance",
+          "Indifference"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "advanced_15",
+        "type": "definition",
+        "stars": 5,
+        "question": "To formally cancel a contract or agreement before it ends.",
+        "options": [
+          "Terminate",
+          "Negotiate",
+          "Renew",
+          "Approve"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "advanced_16",
+        "type": "grammar",
+        "stars": 5,
+        "question": "Which sentence correctly uses a relative clause?",
+        "options": [
+          "The man who called you is my brother.",
+          "The man which called you is my brother.",
+          "The man call you is my brother.",
+          "The man whom called you is my brother."
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "advanced_17",
+        "type": "definition",
+        "stars": 5,
+        "question": "A situation where supply is limited compared to high demand.",
+        "options": [
+          "Scarcity",
+          "Abundance",
+          "Surplus",
+          "Excess"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "advanced_18",
+        "type": "definition",
+        "stars": 5,
+        "question": "The act of speaking on behalf of someone or supporting a cause publicly.",
+        "options": [
+          "Advocacy",
+          "Silence",
+          "Opposition",
+          "Neglect"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "advanced_19",
+        "type": "definition",
+        "stars": 5,
+        "question": "An unplanned event that could disrupt your plans, which travel insurance often protects against.",
+        "options": [
+          "Contingency",
+          "Itinerary",
+          "Reservation",
+          "Destination"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "advanced_20",
+        "type": "definition",
+        "stars": 5,
+        "question": "The quality of not being easily upset or annoyed; staying calm under pressure.",
+        "options": [
+          "Composure",
+          "Anxiety",
+          "Frustration",
+          "Panic"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "advanced_21",
+        "type": "fill_blank",
+        "stars": 5,
+        "question": "I wish I ___ more time to finish this project.",
+        "options": [
+          "had",
+          "have",
+          "has",
+          "will have"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "advanced_22",
+        "type": "definition",
+        "stars": 5,
+        "question": "The process of making something more efficient by removing unnecessary steps.",
+        "options": [
+          "Streamline",
+          "Complicate",
+          "Delay",
+          "Interrupt"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "advanced_23",
+        "type": "definition",
+        "stars": 5,
+        "question": "Extremely confident or daring behavior, often seen as risky or bold.",
+        "options": [
+          "Audacity",
+          "Timidity",
+          "Caution",
+          "Hesitation"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "advanced_24",
+        "type": "definition",
+        "stars": 5,
+        "question": "An official document that proves you completed a course or program.",
+        "options": [
+          "Certificate",
+          "Resume",
+          "Invoice",
+          "Agenda"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "advanced_25",
+        "type": "grammar",
+        "stars": 5,
+        "question": "Choose the correct modal for advice: 'You ___ see a doctor about that cough.'",
+        "options": [
+          "should",
+          "must",
+          "can",
+          "will"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "advanced_26",
+        "type": "definition",
+        "stars": 5,
+        "question": "The tendency to doubt or distrust someone's motives or intentions.",
+        "options": [
+          "Suspicion",
+          "Trust",
+          "Loyalty",
+          "Confidence"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "advanced_27",
+        "type": "definition",
+        "stars": 5,
+        "question": "A carefully designed plan of action to achieve a long-term goal.",
+        "options": [
+          "Strategy",
+          "Accident",
+          "Mistake",
+          "Coincidence"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "advanced_28",
+        "type": "definition",
+        "stars": 5,
+        "question": "The act of confirming that something is true or accurate.",
+        "options": [
+          "Verification",
+          "Assumption",
+          "Speculation",
+          "Prediction"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "advanced_29",
+        "type": "fill_blank",
+        "stars": 5,
+        "question": "The company's profits ___ significantly over the past year.",
+        "options": [
+          "have increased",
+          "has increased",
+          "increasing",
+          "increase"
+        ],
+        "correct_index": 0
+      },
+      {
+        "id": "advanced_30",
+        "type": "definition",
+        "stars": 5,
+        "question": "A firm decision to do or not do something, often made after careful thought.",
+        "options": [
+          "Resolution",
+          "Suggestion",
+          "Rumor",
+          "Excuse"
+        ],
+        "correct_index": 0
+      }
+    ]
+  }
+}

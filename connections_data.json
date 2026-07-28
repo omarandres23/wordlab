@@ -1,0 +1,2546 @@
+{
+  "game": "CONNECTIONS",
+  "version": 1,
+  "scoring": {
+    "points_per_group": 1,
+    "max_per_game": 4
+  },
+  "rules": {
+    "puzzles_per_game": 1,
+    "groups_per_puzzle": 4,
+    "words_per_group": 4,
+    "words_per_puzzle": 16,
+    "max_selectable": 4,
+    "unlimited_mistakes": true,
+    "partial_match_feedback": true,
+    "forfeit_resets_score_to_zero": true
+  },
+  "puzzles": {
+    "basic": [
+      {
+        "id": "basic_1",
+        "level": "basic",
+        "categories": [
+          {
+            "category": "Rooms in a house",
+            "words": [
+              "KITCHEN",
+              "BEDROOM",
+              "BATHROOM",
+              "GARAGE"
+            ]
+          },
+          {
+            "category": "Colors",
+            "words": [
+              "RED",
+              "BLUE",
+              "GREEN",
+              "YELLOW"
+            ]
+          },
+          {
+            "category": "Animals",
+            "words": [
+              "DOG",
+              "CAT",
+              "HORSE",
+              "RABBIT"
+            ]
+          },
+          {
+            "category": "Fruits",
+            "words": [
+              "APPLE",
+              "BANANA",
+              "ORANGE",
+              "GRAPE"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "basic_2",
+        "level": "basic",
+        "categories": [
+          {
+            "category": "Family members",
+            "words": [
+              "MOTHER",
+              "FATHER",
+              "SISTER",
+              "BROTHER"
+            ]
+          },
+          {
+            "category": "Days of the week",
+            "words": [
+              "MONDAY",
+              "TUESDAY",
+              "FRIDAY",
+              "SUNDAY"
+            ]
+          },
+          {
+            "category": "Body parts",
+            "words": [
+              "HAND",
+              "FOOT",
+              "ARM",
+              "LEG"
+            ]
+          },
+          {
+            "category": "Weather words",
+            "words": [
+              "SUNNY",
+              "RAINY",
+              "WINDY",
+              "CLOUDY"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "basic_3",
+        "level": "basic",
+        "categories": [
+          {
+            "category": "Kitchen items",
+            "words": [
+              "FORK",
+              "SPOON",
+              "KNIFE",
+              "PLATE"
+            ]
+          },
+          {
+            "category": "Clothes",
+            "words": [
+              "SHIRT",
+              "PANTS",
+              "JACKET",
+              "SOCKS"
+            ]
+          },
+          {
+            "category": "Vehicles",
+            "words": [
+              "CAR",
+              "BUS",
+              "TRAIN",
+              "BIKE"
+            ]
+          },
+          {
+            "category": "Sports",
+            "words": [
+              "SOCCER",
+              "TENNIS",
+              "SWIMMING",
+              "BASKETBALL"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "basic_4",
+        "level": "basic",
+        "categories": [
+          {
+            "category": "Furniture",
+            "words": [
+              "TABLE",
+              "CHAIR",
+              "SOFA",
+              "BED"
+            ]
+          },
+          {
+            "category": "Seasons",
+            "words": [
+              "SUMMER",
+              "WINTER",
+              "SPRING",
+              "AUTUMN"
+            ]
+          },
+          {
+            "category": "Drinks",
+            "words": [
+              "WATER",
+              "COFFEE",
+              "TEA",
+              "JUICE"
+            ]
+          },
+          {
+            "category": "Jobs",
+            "words": [
+              "TEACHER",
+              "DOCTOR",
+              "DRIVER",
+              "CHEF"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "basic_5",
+        "level": "basic",
+        "categories": [
+          {
+            "category": "School items",
+            "words": [
+              "PENCIL",
+              "BOOK",
+              "ERASER",
+              "RULER"
+            ]
+          },
+          {
+            "category": "Feelings",
+            "words": [
+              "HAPPY",
+              "SAD",
+              "ANGRY",
+              "SCARED"
+            ]
+          },
+          {
+            "category": "Farm animals",
+            "words": [
+              "COW",
+              "PIG",
+              "CHICKEN",
+              "SHEEP"
+            ]
+          },
+          {
+            "category": "Places in town",
+            "words": [
+              "SCHOOL",
+              "HOSPITAL",
+              "PARK",
+              "LIBRARY"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "basic_6",
+        "level": "basic",
+        "categories": [
+          {
+            "category": "Numbers",
+            "words": [
+              "ONE",
+              "TWO",
+              "THREE",
+              "FOUR"
+            ]
+          },
+          {
+            "category": "Times of day",
+            "words": [
+              "MORNING",
+              "AFTERNOON",
+              "EVENING",
+              "NIGHT"
+            ]
+          },
+          {
+            "category": "Insects",
+            "words": [
+              "BEE",
+              "ANT",
+              "FLY",
+              "SPIDER"
+            ]
+          },
+          {
+            "category": "Breakfast foods",
+            "words": [
+              "EGG",
+              "BREAD",
+              "CEREAL",
+              "MILK"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "basic_7",
+        "level": "basic",
+        "categories": [
+          {
+            "category": "Shapes",
+            "words": [
+              "CIRCLE",
+              "SQUARE",
+              "TRIANGLE",
+              "RECTANGLE"
+            ]
+          },
+          {
+            "category": "Musical instruments",
+            "words": [
+              "GUITAR",
+              "PIANO",
+              "DRUM",
+              "VIOLIN"
+            ]
+          },
+          {
+            "category": "Ocean animals",
+            "words": [
+              "FISH",
+              "SHARK",
+              "WHALE",
+              "CRAB"
+            ]
+          },
+          {
+            "category": "Tools",
+            "words": [
+              "HAMMER",
+              "SAW",
+              "DRILL",
+              "WRENCH"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "basic_8",
+        "level": "basic",
+        "categories": [
+          {
+            "category": "Bathroom items",
+            "words": [
+              "SOAP",
+              "TOWEL",
+              "SHAMPOO",
+              "TOOTHBRUSH"
+            ]
+          },
+          {
+            "category": "Cold weather clothes",
+            "words": [
+              "COAT",
+              "SCARF",
+              "GLOVES",
+              "BOOTS"
+            ]
+          },
+          {
+            "category": "Birds",
+            "words": [
+              "EAGLE",
+              "OWL",
+              "DUCK",
+              "SPARROW"
+            ]
+          },
+          {
+            "category": "Desserts",
+            "words": [
+              "CAKE",
+              "COOKIE",
+              "PIE",
+              "ICECREAM"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "basic_9",
+        "level": "basic",
+        "categories": [
+          {
+            "category": "Transportation",
+            "words": [
+              "PLANE",
+              "SHIP",
+              "TAXI",
+              "SUBWAY"
+            ]
+          },
+          {
+            "category": "Vegetables",
+            "words": [
+              "CARROT",
+              "POTATO",
+              "ONION",
+              "TOMATO"
+            ]
+          },
+          {
+            "category": "Sports equipment",
+            "words": [
+              "BALL",
+              "BAT",
+              "RACKET",
+              "HELMET"
+            ]
+          },
+          {
+            "category": "House exterior",
+            "words": [
+              "ROOF",
+              "DOOR",
+              "WINDOW",
+              "FENCE"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "basic_10",
+        "level": "basic",
+        "categories": [
+          {
+            "category": "Wild animals",
+            "words": [
+              "LION",
+              "TIGER",
+              "ELEPHANT",
+              "BEAR"
+            ]
+          },
+          {
+            "category": "Office items",
+            "words": [
+              "DESK",
+              "COMPUTER",
+              "PRINTER",
+              "STAPLER"
+            ]
+          },
+          {
+            "category": "Weather conditions",
+            "words": [
+              "STORM",
+              "FOG",
+              "SNOW",
+              "ICE"
+            ]
+          },
+          {
+            "category": "Meals of the day",
+            "words": [
+              "BREAKFAST",
+              "LUNCH",
+              "DINNER",
+              "SNACK"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "basic_11",
+        "level": "basic",
+        "categories": [
+          {
+            "category": "More colors",
+            "words": [
+              "PURPLE",
+              "ORANGE",
+              "PINK",
+              "BROWN"
+            ]
+          },
+          {
+            "category": "Parts of a car",
+            "words": [
+              "WHEEL",
+              "ENGINE",
+              "BUMPER",
+              "MIRROR"
+            ]
+          },
+          {
+            "category": "More fruits",
+            "words": [
+              "MANGO",
+              "PEACH",
+              "LEMON",
+              "CHERRY"
+            ]
+          },
+          {
+            "category": "Rooms in a school",
+            "words": [
+              "CLASSROOM",
+              "GYM",
+              "CAFETERIA",
+              "AUDITORIUM"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "basic_12",
+        "level": "basic",
+        "categories": [
+          {
+            "category": "Months",
+            "words": [
+              "JANUARY",
+              "MARCH",
+              "JULY",
+              "DECEMBER"
+            ]
+          },
+          {
+            "category": "Household appliances",
+            "words": [
+              "FRIDGE",
+              "OVEN",
+              "WASHER",
+              "DRYER"
+            ]
+          },
+          {
+            "category": "Zoo animals",
+            "words": [
+              "MONKEY",
+              "ZEBRA",
+              "GIRAFFE",
+              "PANDA"
+            ]
+          },
+          {
+            "category": "Stationery",
+            "words": [
+              "PEN",
+              "NOTEBOOK",
+              "MARKER",
+              "CRAYON"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "basic_13",
+        "level": "basic",
+        "categories": [
+          {
+            "category": "Parts of the face",
+            "words": [
+              "EYE",
+              "NOSE",
+              "MOUTH",
+              "EAR"
+            ]
+          },
+          {
+            "category": "Sweet foods",
+            "words": [
+              "CANDY",
+              "CHOCOLATE",
+              "HONEY",
+              "SUGAR"
+            ]
+          },
+          {
+            "category": "Outdoor activities",
+            "words": [
+              "HIKING",
+              "CAMPING",
+              "FISHING",
+              "CYCLING"
+            ]
+          },
+          {
+            "category": "Bakery items",
+            "words": [
+              "BREAD",
+              "CROISSANT",
+              "MUFFIN",
+              "BAGEL"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "basic_14",
+        "level": "basic",
+        "categories": [
+          {
+            "category": "Water-related places",
+            "words": [
+              "LAKE",
+              "RIVER",
+              "OCEAN",
+              "POND"
+            ]
+          },
+          {
+            "category": "Pets",
+            "words": [
+              "HAMSTER",
+              "PARROT",
+              "GOLDFISH",
+              "TURTLE"
+            ]
+          },
+          {
+            "category": "School subjects",
+            "words": [
+              "MATH",
+              "SCIENCE",
+              "HISTORY",
+              "ART"
+            ]
+          },
+          {
+            "category": "Things that are cold",
+            "words": [
+              "ICE",
+              "SNOW",
+              "FROST",
+              "WINTER"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "basic_15",
+        "level": "basic",
+        "categories": [
+          {
+            "category": "Parts of a tree",
+            "words": [
+              "ROOT",
+              "BRANCH",
+              "LEAF",
+              "TRUNK"
+            ]
+          },
+          {
+            "category": "Sizes",
+            "words": [
+              "BIG",
+              "SMALL",
+              "TALL",
+              "SHORT"
+            ]
+          },
+          {
+            "category": "Things you wear on your feet",
+            "words": [
+              "SHOES",
+              "SANDALS",
+              "SLIPPERS",
+              "SNEAKERS"
+            ]
+          },
+          {
+            "category": "Ways to communicate",
+            "words": [
+              "PHONE",
+              "EMAIL",
+              "LETTER",
+              "TEXT"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "basic_16",
+        "level": "basic",
+        "categories": [
+          {
+            "category": "Places to eat",
+            "words": [
+              "RESTAURANT",
+              "CAFE",
+              "DINER",
+              "BUFFET"
+            ]
+          },
+          {
+            "category": "Things in the sky",
+            "words": [
+              "SUN",
+              "MOON",
+              "STAR",
+              "CLOUD"
+            ]
+          },
+          {
+            "category": "Garden items",
+            "words": [
+              "FLOWER",
+              "GRASS",
+              "TREE",
+              "SOIL"
+            ]
+          },
+          {
+            "category": "Days off",
+            "words": [
+              "VACATION",
+              "HOLIDAY",
+              "WEEKEND",
+              "BREAK"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "basic_17",
+        "level": "basic",
+        "categories": [
+          {
+            "category": "Things in a classroom",
+            "words": [
+              "DESK",
+              "BOARD",
+              "CHAIR",
+              "BOOKSHELF"
+            ]
+          },
+          {
+            "category": "More feelings",
+            "words": [
+              "EXCITED",
+              "BORED",
+              "NERVOUS",
+              "PROUD"
+            ]
+          },
+          {
+            "category": "Things that fly",
+            "words": [
+              "BIRD",
+              "PLANE",
+              "KITE",
+              "BALLOON"
+            ]
+          },
+          {
+            "category": "Party items",
+            "words": [
+              "CAKE",
+              "GIFT",
+              "CANDLE",
+              "DECORATION"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "basic_18",
+        "level": "basic",
+        "categories": [
+          {
+            "category": "Severe weather",
+            "words": [
+              "STORM",
+              "HURRICANE",
+              "TORNADO",
+              "BLIZZARD"
+            ]
+          },
+          {
+            "category": "Shops",
+            "words": [
+              "BAKERY",
+              "BUTCHER",
+              "PHARMACY",
+              "BOOKSTORE"
+            ]
+          },
+          {
+            "category": "Things made of wood",
+            "words": [
+              "TABLE",
+              "SHELF",
+              "LADDER",
+              "FENCE"
+            ]
+          },
+          {
+            "category": "Feelings of tiredness",
+            "words": [
+              "TIRED",
+              "SLEEPY",
+              "EXHAUSTED",
+              "DROWSY"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "basic_19",
+        "level": "basic",
+        "categories": [
+          {
+            "category": "Countries",
+            "words": [
+              "FRANCE",
+              "JAPAN",
+              "BRAZIL",
+              "EGYPT"
+            ]
+          },
+          {
+            "category": "Things at the beach",
+            "words": [
+              "SAND",
+              "WAVE",
+              "SHELL",
+              "TOWEL"
+            ]
+          },
+          {
+            "category": "Office supplies",
+            "words": [
+              "PAPER",
+              "STAPLER",
+              "FOLDER",
+              "CLIP"
+            ]
+          },
+          {
+            "category": "Types of music",
+            "words": [
+              "POP",
+              "ROCK",
+              "JAZZ",
+              "CLASSICAL"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "basic_20",
+        "level": "basic",
+        "categories": [
+          {
+            "category": "Things in a bedroom",
+            "words": [
+              "BED",
+              "PILLOW",
+              "LAMP",
+              "CLOSET"
+            ]
+          },
+          {
+            "category": "Airport words",
+            "words": [
+              "TICKET",
+              "PASSPORT",
+              "LUGGAGE",
+              "GATE"
+            ]
+          },
+          {
+            "category": "Things that are round",
+            "words": [
+              "BALL",
+              "WHEEL",
+              "COIN",
+              "PLATE"
+            ]
+          },
+          {
+            "category": "Common greetings",
+            "words": [
+              "HELLO",
+              "GOODBYE",
+              "THANKS",
+              "SORRY"
+            ]
+          }
+        ]
+      }
+    ],
+    "intermediate": [
+      {
+        "id": "intermediate_1",
+        "level": "intermediate",
+        "categories": [
+          {
+            "category": "Ways to say happy",
+            "words": [
+              "DELIGHTED",
+              "THRILLED",
+              "CONTENT",
+              "PLEASED"
+            ]
+          },
+          {
+            "category": "Business documents",
+            "words": [
+              "CONTRACT",
+              "INVOICE",
+              "PROPOSAL",
+              "RECEIPT"
+            ]
+          },
+          {
+            "category": "Kitchen appliances",
+            "words": [
+              "BLENDER",
+              "TOASTER",
+              "MICROWAVE",
+              "KETTLE"
+            ]
+          },
+          {
+            "category": "Travel documents",
+            "words": [
+              "PASSPORT",
+              "VISA",
+              "TICKET",
+              "ITINERARY"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intermediate_2",
+        "level": "intermediate",
+        "categories": [
+          {
+            "category": "Ways to say tired",
+            "words": [
+              "EXHAUSTED",
+              "DROWSY",
+              "WEARY",
+              "FATIGUED"
+            ]
+          },
+          {
+            "category": "Positive personality traits",
+            "words": [
+              "HONEST",
+              "GENEROUS",
+              "RELIABLE",
+              "PATIENT"
+            ]
+          },
+          {
+            "category": "Weather phenomena",
+            "words": [
+              "THUNDER",
+              "LIGHTNING",
+              "HAIL",
+              "FROST"
+            ]
+          },
+          {
+            "category": "Financial terms",
+            "words": [
+              "BUDGET",
+              "SAVINGS",
+              "INCOME",
+              "EXPENSE"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intermediate_3",
+        "level": "intermediate",
+        "categories": [
+          {
+            "category": "Types of housing",
+            "words": [
+              "APARTMENT",
+              "COTTAGE",
+              "MANSION",
+              "BUNGALOW"
+            ]
+          },
+          {
+            "category": "Ways to say angry",
+            "words": [
+              "FURIOUS",
+              "IRRITATED",
+              "ANNOYED",
+              "OUTRAGED"
+            ]
+          },
+          {
+            "category": "Office roles",
+            "words": [
+              "MANAGER",
+              "ASSISTANT",
+              "INTERN",
+              "SUPERVISOR"
+            ]
+          },
+          {
+            "category": "Ways to pay",
+            "words": [
+              "CASH",
+              "CREDIT",
+              "TRANSFER",
+              "CHECK"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intermediate_4",
+        "level": "intermediate",
+        "categories": [
+          {
+            "category": "Ways to travel long distance",
+            "words": [
+              "FLIGHT",
+              "CRUISE",
+              "ROADTRIP",
+              "EXPEDITION"
+            ]
+          },
+          {
+            "category": "Emotions related to fear",
+            "words": [
+              "NERVOUS",
+              "ANXIOUS",
+              "TERRIFIED",
+              "UNEASY"
+            ]
+          },
+          {
+            "category": "Parts of a job application",
+            "words": [
+              "RESUME",
+              "INTERVIEW",
+              "REFERENCE",
+              "APPLICATION"
+            ]
+          },
+          {
+            "category": "Home maintenance",
+            "words": [
+              "PLUMBING",
+              "WIRING",
+              "INSULATION",
+              "VENTILATION"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intermediate_5",
+        "level": "intermediate",
+        "categories": [
+          {
+            "category": "Ways to say difficult",
+            "words": [
+              "CHALLENGING",
+              "DEMANDING",
+              "COMPLEX",
+              "TOUGH"
+            ]
+          },
+          {
+            "category": "Negotiation words",
+            "words": [
+              "OFFER",
+              "COUNTEROFFER",
+              "COMPROMISE",
+              "AGREEMENT"
+            ]
+          },
+          {
+            "category": "Types of vacation",
+            "words": [
+              "CRUISE",
+              "SAFARI",
+              "ROADTRIP",
+              "RETREAT"
+            ]
+          },
+          {
+            "category": "Banking terms",
+            "words": [
+              "DEPOSIT",
+              "WITHDRAWAL",
+              "LOAN",
+              "INTEREST"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intermediate_6",
+        "level": "intermediate",
+        "categories": [
+          {
+            "category": "Ways to say important",
+            "words": [
+              "CRUCIAL",
+              "ESSENTIAL",
+              "VITAL",
+              "SIGNIFICANT"
+            ]
+          },
+          {
+            "category": "Health symptoms",
+            "words": [
+              "FEVER",
+              "HEADACHE",
+              "NAUSEA",
+              "FATIGUE"
+            ]
+          },
+          {
+            "category": "Formal communication",
+            "words": [
+              "MEMO",
+              "REPORT",
+              "BULLETIN",
+              "CIRCULAR"
+            ]
+          },
+          {
+            "category": "Marketing terms",
+            "words": [
+              "BRAND",
+              "CAMPAIGN",
+              "AUDIENCE",
+              "SLOGAN"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intermediate_7",
+        "level": "intermediate",
+        "categories": [
+          {
+            "category": "Ways to say surprised",
+            "words": [
+              "ASTONISHED",
+              "AMAZED",
+              "STUNNED",
+              "SHOCKED"
+            ]
+          },
+          {
+            "category": "Types of meetings",
+            "words": [
+              "BRIEFING",
+              "CONFERENCE",
+              "WORKSHOP",
+              "SEMINAR"
+            ]
+          },
+          {
+            "category": "Real estate terms",
+            "words": [
+              "MORTGAGE",
+              "LEASE",
+              "TENANT",
+              "LANDLORD"
+            ]
+          },
+          {
+            "category": "Parts of an airport",
+            "words": [
+              "TERMINAL",
+              "RUNWAY",
+              "LOUNGE",
+              "CHECKPOINT"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intermediate_8",
+        "level": "intermediate",
+        "categories": [
+          {
+            "category": "Ways to say beautiful",
+            "words": [
+              "STUNNING",
+              "GORGEOUS",
+              "ELEGANT",
+              "STRIKING"
+            ]
+          },
+          {
+            "category": "Restaurant terms",
+            "words": [
+              "RESERVATION",
+              "MENU",
+              "WAITER",
+              "BILL"
+            ]
+          },
+          {
+            "category": "Workplace conflict words",
+            "words": [
+              "DISPUTE",
+              "COMPLAINT",
+              "GRIEVANCE",
+              "TENSION"
+            ]
+          },
+          {
+            "category": "Natural disasters",
+            "words": [
+              "EARTHQUAKE",
+              "FLOOD",
+              "DROUGHT",
+              "WILDFIRE"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intermediate_9",
+        "level": "intermediate",
+        "categories": [
+          {
+            "category": "Ways to say lazy",
+            "words": [
+              "IDLE",
+              "SLUGGISH",
+              "INACTIVE",
+              "LETHARGIC"
+            ]
+          },
+          {
+            "category": "Job benefits",
+            "words": [
+              "INSURANCE",
+              "PENSION",
+              "BONUS",
+              "VACATION"
+            ]
+          },
+          {
+            "category": "Types of stores",
+            "words": [
+              "BOUTIQUE",
+              "OUTLET",
+              "WAREHOUSE",
+              "MARKETPLACE"
+            ]
+          },
+          {
+            "category": "Parts of a resume",
+            "words": [
+              "EXPERIENCE",
+              "EDUCATION",
+              "SKILLS",
+              "REFERENCES"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intermediate_10",
+        "level": "intermediate",
+        "categories": [
+          {
+            "category": "Ways to say smart",
+            "words": [
+              "INTELLIGENT",
+              "BRILLIANT",
+              "CLEVER",
+              "SHARP"
+            ]
+          },
+          {
+            "category": "Types of insurance",
+            "words": [
+              "HEALTH",
+              "TRAVEL",
+              "LIFE",
+              "AUTO"
+            ]
+          },
+          {
+            "category": "Stages of a project",
+            "words": [
+              "PLANNING",
+              "EXECUTION",
+              "MONITORING",
+              "CLOSURE"
+            ]
+          },
+          {
+            "category": "Cooking methods",
+            "words": [
+              "SIMMER",
+              "ROAST",
+              "GRILL",
+              "STEAM"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intermediate_11",
+        "level": "intermediate",
+        "categories": [
+          {
+            "category": "Ways to say boring",
+            "words": [
+              "DULL",
+              "MONOTONOUS",
+              "TEDIOUS",
+              "UNINTERESTING"
+            ]
+          },
+          {
+            "category": "Customer service terms",
+            "words": [
+              "COMPLAINT",
+              "REFUND",
+              "WARRANTY",
+              "FEEDBACK"
+            ]
+          },
+          {
+            "category": "Types of contracts",
+            "words": [
+              "LEASE",
+              "PACT",
+              "AGREEMENT",
+              "TREATY"
+            ]
+          },
+          {
+            "category": "Airport security words",
+            "words": [
+              "SCANNER",
+              "CHECKPOINT",
+              "CUSTOMS",
+              "IDENTIFICATION"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intermediate_12",
+        "level": "intermediate",
+        "categories": [
+          {
+            "category": "Ways to say expensive",
+            "words": [
+              "COSTLY",
+              "PRICEY",
+              "LAVISH",
+              "EXORBITANT"
+            ]
+          },
+          {
+            "category": "HR terms",
+            "words": [
+              "RECRUITMENT",
+              "ONBOARDING",
+              "TRAINING",
+              "APPRAISAL"
+            ]
+          },
+          {
+            "category": "Weather-related effects",
+            "words": [
+              "HUMIDITY",
+              "DROUGHT",
+              "FROST",
+              "MONSOON"
+            ]
+          },
+          {
+            "category": "Parts of a hotel",
+            "words": [
+              "LOBBY",
+              "RECEPTION",
+              "SUITE",
+              "CONCIERGE"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intermediate_13",
+        "level": "intermediate",
+        "categories": [
+          {
+            "category": "Ways to say quiet",
+            "words": [
+              "SILENT",
+              "HUSHED",
+              "PEACEFUL",
+              "STILL"
+            ]
+          },
+          {
+            "category": "Basic legal terms",
+            "words": [
+              "WITNESS",
+              "EVIDENCE",
+              "VERDICT",
+              "LAWSUIT"
+            ]
+          },
+          {
+            "category": "Tech devices",
+            "words": [
+              "LAPTOP",
+              "TABLET",
+              "ROUTER",
+              "PRINTER"
+            ]
+          },
+          {
+            "category": "Travel problems",
+            "words": [
+              "DELAY",
+              "CANCELLATION",
+              "LAYOVER",
+              "OVERBOOKING"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intermediate_14",
+        "level": "intermediate",
+        "categories": [
+          {
+            "category": "Ways to say strong",
+            "words": [
+              "POWERFUL",
+              "ROBUST",
+              "STURDY",
+              "TOUGH"
+            ]
+          },
+          {
+            "category": "Environmental terms",
+            "words": [
+              "POLLUTION",
+              "RECYCLING",
+              "EMISSIONS",
+              "CONSERVATION"
+            ]
+          },
+          {
+            "category": "Retail terms",
+            "words": [
+              "DISCOUNT",
+              "CLEARANCE",
+              "INVENTORY",
+              "CHECKOUT"
+            ]
+          },
+          {
+            "category": "Medical professions",
+            "words": [
+              "SURGEON",
+              "NURSE",
+              "THERAPIST",
+              "PHARMACIST"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intermediate_15",
+        "level": "intermediate",
+        "categories": [
+          {
+            "category": "Ways to say polite",
+            "words": [
+              "COURTEOUS",
+              "RESPECTFUL",
+              "GRACIOUS",
+              "CONSIDERATE"
+            ]
+          },
+          {
+            "category": "Online shopping terms",
+            "words": [
+              "CART",
+              "CHECKOUT",
+              "SHIPPING",
+              "TRACKING"
+            ]
+          },
+          {
+            "category": "Types of interviews",
+            "words": [
+              "PANEL",
+              "PHONE",
+              "VIRTUAL",
+              "INFORMAL"
+            ]
+          },
+          {
+            "category": "Weather forecast words",
+            "words": [
+              "FORECAST",
+              "TEMPERATURE",
+              "HUMIDITY",
+              "PRECIPITATION"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intermediate_16",
+        "level": "intermediate",
+        "categories": [
+          {
+            "category": "Ways to say fast",
+            "words": [
+              "RAPID",
+              "SWIFT",
+              "SPEEDY",
+              "PROMPT"
+            ]
+          },
+          {
+            "category": "Project management terms",
+            "words": [
+              "DEADLINE",
+              "MILESTONE",
+              "BUDGET",
+              "SCOPE"
+            ]
+          },
+          {
+            "category": "Hotel amenities",
+            "words": [
+              "POOL",
+              "GYM",
+              "SPA",
+              "PARKING"
+            ]
+          },
+          {
+            "category": "Immigration terms",
+            "words": [
+              "VISA",
+              "CUSTOMS",
+              "BORDER",
+              "RESIDENCY"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intermediate_17",
+        "level": "intermediate",
+        "categories": [
+          {
+            "category": "Ways to say generous",
+            "words": [
+              "CHARITABLE",
+              "GIVING",
+              "SELFLESS",
+              "ALTRUISTIC"
+            ]
+          },
+          {
+            "category": "Stock market terms",
+            "words": [
+              "SHARE",
+              "DIVIDEND",
+              "PORTFOLIO",
+              "INVESTOR"
+            ]
+          },
+          {
+            "category": "Conference events",
+            "words": [
+              "KEYNOTE",
+              "PANEL",
+              "WORKSHOP",
+              "NETWORKING"
+            ]
+          },
+          {
+            "category": "Home utilities",
+            "words": [
+              "ELECTRICITY",
+              "WATER",
+              "GAS",
+              "INTERNET"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intermediate_18",
+        "level": "intermediate",
+        "categories": [
+          {
+            "category": "Ways to say nervous",
+            "words": [
+              "ANXIOUS",
+              "JITTERY",
+              "UNEASY",
+              "RESTLESS"
+            ]
+          },
+          {
+            "category": "Restaurant roles",
+            "words": [
+              "CHEF",
+              "WAITER",
+              "HOST",
+              "BARTENDER"
+            ]
+          },
+          {
+            "category": "Tax terms",
+            "words": [
+              "DEDUCTION",
+              "REFUND",
+              "RETURN",
+              "EXEMPTION"
+            ]
+          },
+          {
+            "category": "Types of leave from work",
+            "words": [
+              "SABBATICAL",
+              "VACATION",
+              "MATERNITY",
+              "ABSENCE"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intermediate_19",
+        "level": "intermediate",
+        "categories": [
+          {
+            "category": "Ways to say relaxed",
+            "words": [
+              "CALM",
+              "LAIDBACK",
+              "EASYGOING",
+              "MELLOW"
+            ]
+          },
+          {
+            "category": "Shipping terms",
+            "words": [
+              "CARGO",
+              "FREIGHT",
+              "CUSTOMS",
+              "LOGISTICS"
+            ]
+          },
+          {
+            "category": "Restaurant menu sections",
+            "words": [
+              "APPETIZER",
+              "ENTREE",
+              "DESSERT",
+              "BEVERAGE"
+            ]
+          },
+          {
+            "category": "Workplace communication",
+            "words": [
+              "MEMO",
+              "EMAIL",
+              "MEETING",
+              "PRESENTATION"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intermediate_20",
+        "level": "intermediate",
+        "categories": [
+          {
+            "category": "Ways to say confident",
+            "words": [
+              "ASSURED",
+              "ASSERTIVE",
+              "POISED",
+              "BOLD"
+            ]
+          },
+          {
+            "category": "Aviation terms",
+            "words": [
+              "COCKPIT",
+              "RUNWAY",
+              "TURBULENCE",
+              "ALTITUDE"
+            ]
+          },
+          {
+            "category": "Retirement terms",
+            "words": [
+              "PENSION",
+              "SAVINGS",
+              "ANNUITY",
+              "PORTFOLIO"
+            ]
+          },
+          {
+            "category": "Online meeting words",
+            "words": [
+              "WEBCAM",
+              "MICROPHONE",
+              "HEADSET",
+              "BANDWIDTH"
+            ]
+          }
+        ]
+      }
+    ],
+    "advanced": [
+      {
+        "id": "advanced_1",
+        "level": "advanced",
+        "categories": [
+          {
+            "category": "Ways to say determined",
+            "words": [
+              "TENACIOUS",
+              "RESOLUTE",
+              "PERSISTENT",
+              "UNWAVERING"
+            ]
+          },
+          {
+            "category": "Corporate strategy terms",
+            "words": [
+              "MERGER",
+              "ACQUISITION",
+              "DIVESTMENT",
+              "EXPANSION"
+            ]
+          },
+          {
+            "category": "Legal procedure terms",
+            "words": [
+              "LITIGATION",
+              "ARBITRATION",
+              "MEDIATION",
+              "SETTLEMENT"
+            ]
+          },
+          {
+            "category": "Psychological traits",
+            "words": [
+              "RESILIENCE",
+              "EMPATHY",
+              "INTROSPECTION",
+              "TENACITY"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "advanced_2",
+        "level": "advanced",
+        "categories": [
+          {
+            "category": "Ways to say cautious",
+            "words": [
+              "PRUDENT",
+              "WARY",
+              "VIGILANT",
+              "CIRCUMSPECT"
+            ]
+          },
+          {
+            "category": "Economic indicators",
+            "words": [
+              "UNEMPLOYMENT",
+              "INFLATION",
+              "RECESSION",
+              "SURPLUS"
+            ]
+          },
+          {
+            "category": "Diplomatic terms",
+            "words": [
+              "TREATY",
+              "ALLIANCE",
+              "SANCTION",
+              "EMBASSY"
+            ]
+          },
+          {
+            "category": "Environmental science terms",
+            "words": [
+              "BIODIVERSITY",
+              "ECOSYSTEM",
+              "SUSTAINABILITY",
+              "CONSERVATION"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "advanced_3",
+        "level": "advanced",
+        "categories": [
+          {
+            "category": "Ways to say genuine",
+            "words": [
+              "AUTHENTIC",
+              "SINCERE",
+              "CANDID",
+              "FORTHRIGHT"
+            ]
+          },
+          {
+            "category": "Investment terms",
+            "words": [
+              "EQUITY",
+              "DIVIDEND",
+              "LIQUIDITY",
+              "VOLATILITY"
+            ]
+          },
+          {
+            "category": "Architecture terms",
+            "words": [
+              "FACADE",
+              "BLUEPRINT",
+              "STRUCTURE",
+              "FOUNDATION"
+            ]
+          },
+          {
+            "category": "Human rights terms",
+            "words": [
+              "JUSTICE",
+              "EQUALITY",
+              "FREEDOM",
+              "DIGNITY"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "advanced_4",
+        "level": "advanced",
+        "categories": [
+          {
+            "category": "Ways to say stubborn",
+            "words": [
+              "OBSTINATE",
+              "HEADSTRONG",
+              "INFLEXIBLE",
+              "ADAMANT"
+            ]
+          },
+          {
+            "category": "Supply chain terms",
+            "words": [
+              "LOGISTICS",
+              "PROCUREMENT",
+              "INVENTORY",
+              "DISTRIBUTION"
+            ]
+          },
+          {
+            "category": "Climate terms",
+            "words": [
+              "DROUGHT",
+              "EROSION",
+              "DEFORESTATION",
+              "EMISSION"
+            ]
+          },
+          {
+            "category": "Philosophical concepts",
+            "words": [
+              "ETHICS",
+              "MORALITY",
+              "EXISTENCE",
+              "CONSCIOUSNESS"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "advanced_5",
+        "level": "advanced",
+        "categories": [
+          {
+            "category": "Ways to say humble",
+            "words": [
+              "MODEST",
+              "UNASSUMING",
+              "UNPRETENTIOUS",
+              "UNDERSTATED"
+            ]
+          },
+          {
+            "category": "Negotiation tactics",
+            "words": [
+              "LEVERAGE",
+              "CONCESSION",
+              "ULTIMATUM",
+              "STALEMATE"
+            ]
+          },
+          {
+            "category": "Medical terminology",
+            "words": [
+              "DIAGNOSIS",
+              "PROGNOSIS",
+              "SYMPTOM",
+              "TREATMENT"
+            ]
+          },
+          {
+            "category": "Education terms",
+            "words": [
+              "CURRICULUM",
+              "PEDAGOGY",
+              "ASSESSMENT",
+              "LITERACY"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "advanced_6",
+        "level": "advanced",
+        "categories": [
+          {
+            "category": "Ways to say deceptive",
+            "words": [
+              "MISLEADING",
+              "DUPLICITOUS",
+              "DECEITFUL",
+              "FRAUDULENT"
+            ]
+          },
+          {
+            "category": "Corporate governance terms",
+            "words": [
+              "COMPLIANCE",
+              "TRANSPARENCY",
+              "ACCOUNTABILITY",
+              "OVERSIGHT"
+            ]
+          },
+          {
+            "category": "Geopolitical terms",
+            "words": [
+              "SOVEREIGNTY",
+              "TERRITORY",
+              "ALLIANCE",
+              "CONFLICT"
+            ]
+          },
+          {
+            "category": "Psychology terms",
+            "words": [
+              "COGNITION",
+              "PERCEPTION",
+              "MOTIVATION",
+              "BEHAVIOR"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "advanced_7",
+        "level": "advanced",
+        "categories": [
+          {
+            "category": "Ways to say reluctant",
+            "words": [
+              "HESITANT",
+              "UNWILLING",
+              "DISINCLINED",
+              "AVERSE"
+            ]
+          },
+          {
+            "category": "Financial risk terms",
+            "words": [
+              "EXPOSURE",
+              "HEDGE",
+              "DEFAULT",
+              "COLLATERAL"
+            ]
+          },
+          {
+            "category": "Urban planning terms",
+            "words": [
+              "ZONING",
+              "INFRASTRUCTURE",
+              "GENTRIFICATION",
+              "SPRAWL"
+            ]
+          },
+          {
+            "category": "Communication styles",
+            "words": [
+              "ASSERTIVE",
+              "PASSIVE",
+              "DIPLOMATIC",
+              "BLUNT"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "advanced_8",
+        "level": "advanced",
+        "categories": [
+          {
+            "category": "Ways to say inevitable",
+            "words": [
+              "UNAVOIDABLE",
+              "CERTAIN",
+              "INESCAPABLE",
+              "IMMINENT"
+            ]
+          },
+          {
+            "category": "Trade terms",
+            "words": [
+              "TARIFF",
+              "EMBARGO",
+              "EXPORT",
+              "IMPORT"
+            ]
+          },
+          {
+            "category": "Healthcare system terms",
+            "words": [
+              "INSURANCE",
+              "COPAY",
+              "DEDUCTIBLE",
+              "PREMIUM"
+            ]
+          },
+          {
+            "category": "Sociological terms",
+            "words": [
+              "DEMOGRAPHIC",
+              "CULTURE",
+              "IDENTITY",
+              "COMMUNITY"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "advanced_9",
+        "level": "advanced",
+        "categories": [
+          {
+            "category": "Ways to say thorough",
+            "words": [
+              "METICULOUS",
+              "RIGOROUS",
+              "EXHAUSTIVE",
+              "COMPREHENSIVE"
+            ]
+          },
+          {
+            "category": "Startup terms",
+            "words": [
+              "FUNDING",
+              "PITCH",
+              "VALUATION",
+              "INVESTOR"
+            ]
+          },
+          {
+            "category": "Criminal justice terms",
+            "words": [
+              "PROSECUTION",
+              "DEFENSE",
+              "TESTIMONY",
+              "SENTENCE"
+            ]
+          },
+          {
+            "category": "Energy terms",
+            "words": [
+              "RENEWABLE",
+              "FOSSIL",
+              "EFFICIENCY",
+              "CONSUMPTION"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "advanced_10",
+        "level": "advanced",
+        "categories": [
+          {
+            "category": "Ways to say unpredictable",
+            "words": [
+              "ERRATIC",
+              "VOLATILE",
+              "INCONSISTENT",
+              "CAPRICIOUS"
+            ]
+          },
+          {
+            "category": "Workplace policy terms",
+            "words": [
+              "GRIEVANCE",
+              "DISCIPLINE",
+              "POLICY",
+              "PROCEDURE"
+            ]
+          },
+          {
+            "category": "Scientific method terms",
+            "words": [
+              "HYPOTHESIS",
+              "VARIABLE",
+              "EXPERIMENT",
+              "ANALYSIS"
+            ]
+          },
+          {
+            "category": "Real estate investment terms",
+            "words": [
+              "APPRECIATION",
+              "LEVERAGE",
+              "YIELD",
+              "EQUITY"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "advanced_11",
+        "level": "advanced",
+        "categories": [
+          {
+            "category": "Ways to say persuasive",
+            "words": [
+              "COMPELLING",
+              "CONVINCING",
+              "INFLUENTIAL",
+              "COGENT"
+            ]
+          },
+          {
+            "category": "Journalism terms",
+            "words": [
+              "HEADLINE",
+              "EDITORIAL",
+              "BYLINE",
+              "CIRCULATION"
+            ]
+          },
+          {
+            "category": "Ethics terms",
+            "words": [
+              "DILEMMA",
+              "INTEGRITY",
+              "PRINCIPLE",
+              "CONSCIENCE"
+            ]
+          },
+          {
+            "category": "Supply and demand terms",
+            "words": [
+              "SCARCITY",
+              "SURPLUS",
+              "EQUILIBRIUM",
+              "ELASTICITY"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "advanced_12",
+        "level": "advanced",
+        "categories": [
+          {
+            "category": "Ways to say impulsive",
+            "words": [
+              "RASH",
+              "RECKLESS",
+              "SPONTANEOUS",
+              "HASTY"
+            ]
+          },
+          {
+            "category": "Bankruptcy terms",
+            "words": [
+              "INSOLVENCY",
+              "LIQUIDATION",
+              "CREDITOR",
+              "DEBTOR"
+            ]
+          },
+          {
+            "category": "Immigration policy terms",
+            "words": [
+              "ASYLUM",
+              "DEPORTATION",
+              "NATURALIZATION",
+              "RESIDENCY"
+            ]
+          },
+          {
+            "category": "Linguistic terms",
+            "words": [
+              "SYNTAX",
+              "SEMANTICS",
+              "PHONETICS",
+              "GRAMMAR"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "advanced_13",
+        "level": "advanced",
+        "categories": [
+          {
+            "category": "Ways to say resilient",
+            "words": [
+              "HARDY",
+              "ADAPTABLE",
+              "ROBUST",
+              "UNBREAKABLE"
+            ]
+          },
+          {
+            "category": "Intellectual property terms",
+            "words": [
+              "PATENT",
+              "TRADEMARK",
+              "COPYRIGHT",
+              "LICENSE"
+            ]
+          },
+          {
+            "category": "Macroeconomic terms",
+            "words": [
+              "INFLATION",
+              "DEFLATION",
+              "STAGFLATION",
+              "RECESSION"
+            ]
+          },
+          {
+            "category": "Negotiation outcomes",
+            "words": [
+              "COMPROMISE",
+              "DEADLOCK",
+              "CONCESSION",
+              "CONSENSUS"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "advanced_14",
+        "level": "advanced",
+        "categories": [
+          {
+            "category": "Ways to say arrogant",
+            "words": [
+              "CONCEITED",
+              "HAUGHTY",
+              "PRESUMPTUOUS",
+              "SUPERCILIOUS"
+            ]
+          },
+          {
+            "category": "Audit and compliance terms",
+            "words": [
+              "AUDIT",
+              "REGULATION",
+              "VIOLATION",
+              "PENALTY"
+            ]
+          },
+          {
+            "category": "Sustainability terms",
+            "words": [
+              "RENEWABLE",
+              "CARBON",
+              "FOOTPRINT",
+              "EMISSIONS"
+            ]
+          },
+          {
+            "category": "Rhetorical terms",
+            "words": [
+              "METAPHOR",
+              "ANALOGY",
+              "HYPERBOLE",
+              "IRONY"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "advanced_15",
+        "level": "advanced",
+        "categories": [
+          {
+            "category": "Ways to say efficient",
+            "words": [
+              "STREAMLINED",
+              "OPTIMIZED",
+              "PRODUCTIVE",
+              "EFFECTIVE"
+            ]
+          },
+          {
+            "category": "Venture capital terms",
+            "words": [
+              "FUNDING",
+              "STARTUP",
+              "VALUATION",
+              "EQUITY"
+            ]
+          },
+          {
+            "category": "Election terms",
+            "words": [
+              "CAMPAIGN",
+              "BALLOT",
+              "CONSTITUENCY",
+              "MANDATE"
+            ]
+          },
+          {
+            "category": "Consumer behavior terms",
+            "words": [
+              "DEMAND",
+              "PREFERENCE",
+              "LOYALTY",
+              "PERCEPTION"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "advanced_16",
+        "level": "advanced",
+        "categories": [
+          {
+            "category": "Ways to say volatile",
+            "words": [
+              "UNSTABLE",
+              "ERRATIC",
+              "TURBULENT",
+              "TEMPERAMENTAL"
+            ]
+          },
+          {
+            "category": "Cybersecurity terms",
+            "words": [
+              "ENCRYPTION",
+              "FIREWALL",
+              "BREACH",
+              "VULNERABILITY"
+            ]
+          },
+          {
+            "category": "Agricultural terms",
+            "words": [
+              "IRRIGATION",
+              "HARVEST",
+              "LIVESTOCK",
+              "CULTIVATION"
+            ]
+          },
+          {
+            "category": "Constitutional law terms",
+            "words": [
+              "AMENDMENT",
+              "JURISDICTION",
+              "PRECEDENT",
+              "STATUTE"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "advanced_17",
+        "level": "advanced",
+        "categories": [
+          {
+            "category": "Ways to say indecisive",
+            "words": [
+              "HESITANT",
+              "WAVERING",
+              "AMBIVALENT",
+              "VACILLATING"
+            ]
+          },
+          {
+            "category": "Taxation terms",
+            "words": [
+              "LEVY",
+              "EXEMPTION",
+              "BRACKET",
+              "WITHHOLDING"
+            ]
+          },
+          {
+            "category": "Media ethics terms",
+            "words": [
+              "OBJECTIVITY",
+              "BIAS",
+              "CREDIBILITY",
+              "INTEGRITY"
+            ]
+          },
+          {
+            "category": "Organizational structure terms",
+            "words": [
+              "HIERARCHY",
+              "DELEGATION",
+              "AUTONOMY",
+              "ACCOUNTABILITY"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "advanced_18",
+        "level": "advanced",
+        "categories": [
+          {
+            "category": "Ways to say empathetic",
+            "words": [
+              "COMPASSIONATE",
+              "UNDERSTANDING",
+              "SENSITIVE",
+              "CARING"
+            ]
+          },
+          {
+            "category": "International relations terms",
+            "words": [
+              "DIPLOMACY",
+              "SANCTION",
+              "TREATY",
+              "SOVEREIGNTY"
+            ]
+          },
+          {
+            "category": "Data analysis terms",
+            "words": [
+              "CORRELATION",
+              "VARIABLE",
+              "SAMPLE",
+              "REGRESSION"
+            ]
+          },
+          {
+            "category": "Consumer rights terms",
+            "words": [
+              "WARRANTY",
+              "REFUND",
+              "LIABILITY",
+              "GUARANTEE"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "advanced_19",
+        "level": "advanced",
+        "categories": [
+          {
+            "category": "Ways to say ambitious",
+            "words": [
+              "DRIVEN",
+              "ASPIRING",
+              "ENTERPRISING",
+              "MOTIVATED"
+            ]
+          },
+          {
+            "category": "Labor relations terms",
+            "words": [
+              "UNION",
+              "STRIKE",
+              "ARBITRATION",
+              "NEGOTIATION"
+            ]
+          },
+          {
+            "category": "Global economy terms",
+            "words": [
+              "GLOBALIZATION",
+              "OUTSOURCING",
+              "TARIFF",
+              "COMPETITIVENESS"
+            ]
+          },
+          {
+            "category": "Public health terms",
+            "words": [
+              "EPIDEMIC",
+              "PANDEMIC",
+              "IMMUNITY",
+              "QUARANTINE"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "advanced_20",
+        "level": "advanced",
+        "categories": [
+          {
+            "category": "Ways to say pragmatic",
+            "words": [
+              "PRACTICAL",
+              "REALISTIC",
+              "SENSIBLE",
+              "RATIONAL"
+            ]
+          },
+          {
+            "category": "Risk management terms",
+            "words": [
+              "MITIGATION",
+              "EXPOSURE",
+              "ASSESSMENT",
+              "CONTINGENCY"
+            ]
+          },
+          {
+            "category": "Academic research terms",
+            "words": [
+              "METHODOLOGY",
+              "HYPOTHESIS",
+              "CITATION",
+              "ABSTRACT"
+            ]
+          },
+          {
+            "category": "Market competition terms",
+            "words": [
+              "MONOPOLY",
+              "OLIGOPOLY",
+              "COMPETITOR",
+              "RIVAL"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

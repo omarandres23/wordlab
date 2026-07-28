@@ -1,0 +1,2646 @@
+{
+  "connections": [
+    {
+      "id": "basic_1",
+      "category_index": 0,
+      "text": "Rooms in a house"
+    },
+    {
+      "id": "basic_1",
+      "category_index": 1,
+      "text": "Colors"
+    },
+    {
+      "id": "basic_1",
+      "category_index": 2,
+      "text": "Animals"
+    },
+    {
+      "id": "basic_1",
+      "category_index": 3,
+      "text": "Fruits"
+    },
+    {
+      "id": "basic_2",
+      "category_index": 0,
+      "text": "Family members"
+    },
+    {
+      "id": "basic_2",
+      "category_index": 1,
+      "text": "Days of the week"
+    },
+    {
+      "id": "basic_2",
+      "category_index": 2,
+      "text": "Body parts"
+    },
+    {
+      "id": "basic_2",
+      "category_index": 3,
+      "text": "Weather words"
+    },
+    {
+      "id": "basic_3",
+      "category_index": 0,
+      "text": "Kitchen items"
+    },
+    {
+      "id": "basic_3",
+      "category_index": 1,
+      "text": "Clothes"
+    },
+    {
+      "id": "basic_3",
+      "category_index": 2,
+      "text": "Vehicles"
+    },
+    {
+      "id": "basic_3",
+      "category_index": 3,
+      "text": "Sports"
+    },
+    {
+      "id": "basic_4",
+      "category_index": 0,
+      "text": "Furniture"
+    },
+    {
+      "id": "basic_4",
+      "category_index": 1,
+      "text": "Seasons"
+    },
+    {
+      "id": "basic_4",
+      "category_index": 2,
+      "text": "Drinks"
+    },
+    {
+      "id": "basic_4",
+      "category_index": 3,
+      "text": "Jobs"
+    },
+    {
+      "id": "basic_5",
+      "category_index": 0,
+      "text": "School items"
+    },
+    {
+      "id": "basic_5",
+      "category_index": 1,
+      "text": "Feelings"
+    },
+    {
+      "id": "basic_5",
+      "category_index": 2,
+      "text": "Farm animals"
+    },
+    {
+      "id": "basic_5",
+      "category_index": 3,
+      "text": "Places in town"
+    },
+    {
+      "id": "basic_6",
+      "category_index": 0,
+      "text": "Numbers"
+    },
+    {
+      "id": "basic_6",
+      "category_index": 1,
+      "text": "Times of day"
+    },
+    {
+      "id": "basic_6",
+      "category_index": 2,
+      "text": "Insects"
+    },
+    {
+      "id": "basic_6",
+      "category_index": 3,
+      "text": "Breakfast foods"
+    },
+    {
+      "id": "basic_7",
+      "category_index": 0,
+      "text": "Shapes"
+    },
+    {
+      "id": "basic_7",
+      "category_index": 1,
+      "text": "Musical instruments"
+    },
+    {
+      "id": "basic_7",
+      "category_index": 2,
+      "text": "Ocean animals"
+    },
+    {
+      "id": "basic_7",
+      "category_index": 3,
+      "text": "Tools"
+    },
+    {
+      "id": "basic_8",
+      "category_index": 0,
+      "text": "Bathroom items"
+    },
+    {
+      "id": "basic_8",
+      "category_index": 1,
+      "text": "Cold weather clothes"
+    },
+    {
+      "id": "basic_8",
+      "category_index": 2,
+      "text": "Birds"
+    },
+    {
+      "id": "basic_8",
+      "category_index": 3,
+      "text": "Desserts"
+    },
+    {
+      "id": "basic_9",
+      "category_index": 0,
+      "text": "Transportation"
+    },
+    {
+      "id": "basic_9",
+      "category_index": 1,
+      "text": "Vegetables"
+    },
+    {
+      "id": "basic_9",
+      "category_index": 2,
+      "text": "Sports equipment"
+    },
+    {
+      "id": "basic_9",
+      "category_index": 3,
+      "text": "House exterior"
+    },
+    {
+      "id": "basic_10",
+      "category_index": 0,
+      "text": "Wild animals"
+    },
+    {
+      "id": "basic_10",
+      "category_index": 1,
+      "text": "Office items"
+    },
+    {
+      "id": "basic_10",
+      "category_index": 2,
+      "text": "Weather conditions"
+    },
+    {
+      "id": "basic_10",
+      "category_index": 3,
+      "text": "Meals of the day"
+    },
+    {
+      "id": "basic_11",
+      "category_index": 0,
+      "text": "More colors"
+    },
+    {
+      "id": "basic_11",
+      "category_index": 1,
+      "text": "Parts of a car"
+    },
+    {
+      "id": "basic_11",
+      "category_index": 2,
+      "text": "More fruits"
+    },
+    {
+      "id": "basic_11",
+      "category_index": 3,
+      "text": "Rooms in a school"
+    },
+    {
+      "id": "basic_12",
+      "category_index": 0,
+      "text": "Months"
+    },
+    {
+      "id": "basic_12",
+      "category_index": 1,
+      "text": "Household appliances"
+    },
+    {
+      "id": "basic_12",
+      "category_index": 2,
+      "text": "Zoo animals"
+    },
+    {
+      "id": "basic_12",
+      "category_index": 3,
+      "text": "Stationery"
+    },
+    {
+      "id": "basic_13",
+      "category_index": 0,
+      "text": "Parts of the face"
+    },
+    {
+      "id": "basic_13",
+      "category_index": 1,
+      "text": "Sweet foods"
+    },
+    {
+      "id": "basic_13",
+      "category_index": 2,
+      "text": "Outdoor activities"
+    },
+    {
+      "id": "basic_13",
+      "category_index": 3,
+      "text": "Bakery items"
+    },
+    {
+      "id": "basic_14",
+      "category_index": 0,
+      "text": "Water-related places"
+    },
+    {
+      "id": "basic_14",
+      "category_index": 1,
+      "text": "Pets"
+    },
+    {
+      "id": "basic_14",
+      "category_index": 2,
+      "text": "School subjects"
+    },
+    {
+      "id": "basic_14",
+      "category_index": 3,
+      "text": "Things that are cold"
+    },
+    {
+      "id": "basic_15",
+      "category_index": 0,
+      "text": "Parts of a tree"
+    },
+    {
+      "id": "basic_15",
+      "category_index": 1,
+      "text": "Sizes"
+    },
+    {
+      "id": "basic_15",
+      "category_index": 2,
+      "text": "Things you wear on your feet"
+    },
+    {
+      "id": "basic_15",
+      "category_index": 3,
+      "text": "Ways to communicate"
+    },
+    {
+      "id": "basic_16",
+      "category_index": 0,
+      "text": "Places to eat"
+    },
+    {
+      "id": "basic_16",
+      "category_index": 1,
+      "text": "Things in the sky"
+    },
+    {
+      "id": "basic_16",
+      "category_index": 2,
+      "text": "Garden items"
+    },
+    {
+      "id": "basic_16",
+      "category_index": 3,
+      "text": "Days off"
+    },
+    {
+      "id": "basic_17",
+      "category_index": 0,
+      "text": "Things in a classroom"
+    },
+    {
+      "id": "basic_17",
+      "category_index": 1,
+      "text": "More feelings"
+    },
+    {
+      "id": "basic_17",
+      "category_index": 2,
+      "text": "Things that fly"
+    },
+    {
+      "id": "basic_17",
+      "category_index": 3,
+      "text": "Party items"
+    },
+    {
+      "id": "basic_18",
+      "category_index": 0,
+      "text": "Severe weather"
+    },
+    {
+      "id": "basic_18",
+      "category_index": 1,
+      "text": "Shops"
+    },
+    {
+      "id": "basic_18",
+      "category_index": 2,
+      "text": "Things made of wood"
+    },
+    {
+      "id": "basic_18",
+      "category_index": 3,
+      "text": "Feelings of tiredness"
+    },
+    {
+      "id": "basic_19",
+      "category_index": 0,
+      "text": "Countries"
+    },
+    {
+      "id": "basic_19",
+      "category_index": 1,
+      "text": "Things at the beach"
+    },
+    {
+      "id": "basic_19",
+      "category_index": 2,
+      "text": "Office supplies"
+    },
+    {
+      "id": "basic_19",
+      "category_index": 3,
+      "text": "Types of music"
+    },
+    {
+      "id": "basic_20",
+      "category_index": 0,
+      "text": "Things in a bedroom"
+    },
+    {
+      "id": "basic_20",
+      "category_index": 1,
+      "text": "Airport words"
+    },
+    {
+      "id": "basic_20",
+      "category_index": 2,
+      "text": "Things that are round"
+    },
+    {
+      "id": "basic_20",
+      "category_index": 3,
+      "text": "Common greetings"
+    },
+    {
+      "id": "intermediate_1",
+      "category_index": 0,
+      "text": "Ways to say happy"
+    },
+    {
+      "id": "intermediate_1",
+      "category_index": 1,
+      "text": "Business documents"
+    },
+    {
+      "id": "intermediate_1",
+      "category_index": 2,
+      "text": "Kitchen appliances"
+    },
+    {
+      "id": "intermediate_1",
+      "category_index": 3,
+      "text": "Travel documents"
+    },
+    {
+      "id": "intermediate_2",
+      "category_index": 0,
+      "text": "Ways to say tired"
+    },
+    {
+      "id": "intermediate_2",
+      "category_index": 1,
+      "text": "Positive personality traits"
+    },
+    {
+      "id": "intermediate_2",
+      "category_index": 2,
+      "text": "Weather phenomena"
+    },
+    {
+      "id": "intermediate_2",
+      "category_index": 3,
+      "text": "Financial terms"
+    },
+    {
+      "id": "intermediate_3",
+      "category_index": 0,
+      "text": "Types of housing"
+    },
+    {
+      "id": "intermediate_3",
+      "category_index": 1,
+      "text": "Ways to say angry"
+    },
+    {
+      "id": "intermediate_3",
+      "category_index": 2,
+      "text": "Office roles"
+    },
+    {
+      "id": "intermediate_3",
+      "category_index": 3,
+      "text": "Ways to pay"
+    },
+    {
+      "id": "intermediate_4",
+      "category_index": 0,
+      "text": "Ways to travel long distance"
+    },
+    {
+      "id": "intermediate_4",
+      "category_index": 1,
+      "text": "Emotions related to fear"
+    },
+    {
+      "id": "intermediate_4",
+      "category_index": 2,
+      "text": "Parts of a job application"
+    },
+    {
+      "id": "intermediate_4",
+      "category_index": 3,
+      "text": "Home maintenance"
+    },
+    {
+      "id": "intermediate_5",
+      "category_index": 0,
+      "text": "Ways to say difficult"
+    },
+    {
+      "id": "intermediate_5",
+      "category_index": 1,
+      "text": "Negotiation words"
+    },
+    {
+      "id": "intermediate_5",
+      "category_index": 2,
+      "text": "Types of vacation"
+    },
+    {
+      "id": "intermediate_5",
+      "category_index": 3,
+      "text": "Banking terms"
+    },
+    {
+      "id": "intermediate_6",
+      "category_index": 0,
+      "text": "Ways to say important"
+    },
+    {
+      "id": "intermediate_6",
+      "category_index": 1,
+      "text": "Health symptoms"
+    },
+    {
+      "id": "intermediate_6",
+      "category_index": 2,
+      "text": "Formal communication"
+    },
+    {
+      "id": "intermediate_6",
+      "category_index": 3,
+      "text": "Marketing terms"
+    },
+    {
+      "id": "intermediate_7",
+      "category_index": 0,
+      "text": "Ways to say surprised"
+    },
+    {
+      "id": "intermediate_7",
+      "category_index": 1,
+      "text": "Types of meetings"
+    },
+    {
+      "id": "intermediate_7",
+      "category_index": 2,
+      "text": "Real estate terms"
+    },
+    {
+      "id": "intermediate_7",
+      "category_index": 3,
+      "text": "Parts of an airport"
+    },
+    {
+      "id": "intermediate_8",
+      "category_index": 0,
+      "text": "Ways to say beautiful"
+    },
+    {
+      "id": "intermediate_8",
+      "category_index": 1,
+      "text": "Restaurant terms"
+    },
+    {
+      "id": "intermediate_8",
+      "category_index": 2,
+      "text": "Workplace conflict words"
+    },
+    {
+      "id": "intermediate_8",
+      "category_index": 3,
+      "text": "Natural disasters"
+    },
+    {
+      "id": "intermediate_9",
+      "category_index": 0,
+      "text": "Ways to say lazy"
+    },
+    {
+      "id": "intermediate_9",
+      "category_index": 1,
+      "text": "Job benefits"
+    },
+    {
+      "id": "intermediate_9",
+      "category_index": 2,
+      "text": "Types of stores"
+    },
+    {
+      "id": "intermediate_9",
+      "category_index": 3,
+      "text": "Parts of a resume"
+    },
+    {
+      "id": "intermediate_10",
+      "category_index": 0,
+      "text": "Ways to say smart"
+    },
+    {
+      "id": "intermediate_10",
+      "category_index": 1,
+      "text": "Types of insurance"
+    },
+    {
+      "id": "intermediate_10",
+      "category_index": 2,
+      "text": "Stages of a project"
+    },
+    {
+      "id": "intermediate_10",
+      "category_index": 3,
+      "text": "Cooking methods"
+    },
+    {
+      "id": "intermediate_11",
+      "category_index": 0,
+      "text": "Ways to say boring"
+    },
+    {
+      "id": "intermediate_11",
+      "category_index": 1,
+      "text": "Customer service terms"
+    },
+    {
+      "id": "intermediate_11",
+      "category_index": 2,
+      "text": "Types of contracts"
+    },
+    {
+      "id": "intermediate_11",
+      "category_index": 3,
+      "text": "Airport security words"
+    },
+    {
+      "id": "intermediate_12",
+      "category_index": 0,
+      "text": "Ways to say expensive"
+    },
+    {
+      "id": "intermediate_12",
+      "category_index": 1,
+      "text": "HR terms"
+    },
+    {
+      "id": "intermediate_12",
+      "category_index": 2,
+      "text": "Weather-related effects"
+    },
+    {
+      "id": "intermediate_12",
+      "category_index": 3,
+      "text": "Parts of a hotel"
+    },
+    {
+      "id": "intermediate_13",
+      "category_index": 0,
+      "text": "Ways to say quiet"
+    },
+    {
+      "id": "intermediate_13",
+      "category_index": 1,
+      "text": "Basic legal terms"
+    },
+    {
+      "id": "intermediate_13",
+      "category_index": 2,
+      "text": "Tech devices"
+    },
+    {
+      "id": "intermediate_13",
+      "category_index": 3,
+      "text": "Travel problems"
+    },
+    {
+      "id": "intermediate_14",
+      "category_index": 0,
+      "text": "Ways to say strong"
+    },
+    {
+      "id": "intermediate_14",
+      "category_index": 1,
+      "text": "Environmental terms"
+    },
+    {
+      "id": "intermediate_14",
+      "category_index": 2,
+      "text": "Retail terms"
+    },
+    {
+      "id": "intermediate_14",
+      "category_index": 3,
+      "text": "Medical professions"
+    },
+    {
+      "id": "intermediate_15",
+      "category_index": 0,
+      "text": "Ways to say polite"
+    },
+    {
+      "id": "intermediate_15",
+      "category_index": 1,
+      "text": "Online shopping terms"
+    },
+    {
+      "id": "intermediate_15",
+      "category_index": 2,
+      "text": "Types of interviews"
+    },
+    {
+      "id": "intermediate_15",
+      "category_index": 3,
+      "text": "Weather forecast words"
+    },
+    {
+      "id": "intermediate_16",
+      "category_index": 0,
+      "text": "Ways to say fast"
+    },
+    {
+      "id": "intermediate_16",
+      "category_index": 1,
+      "text": "Project management terms"
+    },
+    {
+      "id": "intermediate_16",
+      "category_index": 2,
+      "text": "Hotel amenities"
+    },
+    {
+      "id": "intermediate_16",
+      "category_index": 3,
+      "text": "Immigration terms"
+    },
+    {
+      "id": "intermediate_17",
+      "category_index": 0,
+      "text": "Ways to say generous"
+    },
+    {
+      "id": "intermediate_17",
+      "category_index": 1,
+      "text": "Stock market terms"
+    },
+    {
+      "id": "intermediate_17",
+      "category_index": 2,
+      "text": "Conference events"
+    },
+    {
+      "id": "intermediate_17",
+      "category_index": 3,
+      "text": "Home utilities"
+    },
+    {
+      "id": "intermediate_18",
+      "category_index": 0,
+      "text": "Ways to say nervous"
+    },
+    {
+      "id": "intermediate_18",
+      "category_index": 1,
+      "text": "Restaurant roles"
+    },
+    {
+      "id": "intermediate_18",
+      "category_index": 2,
+      "text": "Tax terms"
+    },
+    {
+      "id": "intermediate_18",
+      "category_index": 3,
+      "text": "Types of leave from work"
+    },
+    {
+      "id": "intermediate_19",
+      "category_index": 0,
+      "text": "Ways to say relaxed"
+    },
+    {
+      "id": "intermediate_19",
+      "category_index": 1,
+      "text": "Shipping terms"
+    },
+    {
+      "id": "intermediate_19",
+      "category_index": 2,
+      "text": "Restaurant menu sections"
+    },
+    {
+      "id": "intermediate_19",
+      "category_index": 3,
+      "text": "Workplace communication"
+    },
+    {
+      "id": "intermediate_20",
+      "category_index": 0,
+      "text": "Ways to say confident"
+    },
+    {
+      "id": "intermediate_20",
+      "category_index": 1,
+      "text": "Aviation terms"
+    },
+    {
+      "id": "intermediate_20",
+      "category_index": 2,
+      "text": "Retirement terms"
+    },
+    {
+      "id": "intermediate_20",
+      "category_index": 3,
+      "text": "Online meeting words"
+    },
+    {
+      "id": "advanced_1",
+      "category_index": 0,
+      "text": "Ways to say determined"
+    },
+    {
+      "id": "advanced_1",
+      "category_index": 1,
+      "text": "Corporate strategy terms"
+    },
+    {
+      "id": "advanced_1",
+      "category_index": 2,
+      "text": "Legal procedure terms"
+    },
+    {
+      "id": "advanced_1",
+      "category_index": 3,
+      "text": "Psychological traits"
+    },
+    {
+      "id": "advanced_2",
+      "category_index": 0,
+      "text": "Ways to say cautious"
+    },
+    {
+      "id": "advanced_2",
+      "category_index": 1,
+      "text": "Economic indicators"
+    },
+    {
+      "id": "advanced_2",
+      "category_index": 2,
+      "text": "Diplomatic terms"
+    },
+    {
+      "id": "advanced_2",
+      "category_index": 3,
+      "text": "Environmental science terms"
+    },
+    {
+      "id": "advanced_3",
+      "category_index": 0,
+      "text": "Ways to say genuine"
+    },
+    {
+      "id": "advanced_3",
+      "category_index": 1,
+      "text": "Investment terms"
+    },
+    {
+      "id": "advanced_3",
+      "category_index": 2,
+      "text": "Architecture terms"
+    },
+    {
+      "id": "advanced_3",
+      "category_index": 3,
+      "text": "Human rights terms"
+    },
+    {
+      "id": "advanced_4",
+      "category_index": 0,
+      "text": "Ways to say stubborn"
+    },
+    {
+      "id": "advanced_4",
+      "category_index": 1,
+      "text": "Supply chain terms"
+    },
+    {
+      "id": "advanced_4",
+      "category_index": 2,
+      "text": "Climate terms"
+    },
+    {
+      "id": "advanced_4",
+      "category_index": 3,
+      "text": "Philosophical concepts"
+    },
+    {
+      "id": "advanced_5",
+      "category_index": 0,
+      "text": "Ways to say humble"
+    },
+    {
+      "id": "advanced_5",
+      "category_index": 1,
+      "text": "Negotiation tactics"
+    },
+    {
+      "id": "advanced_5",
+      "category_index": 2,
+      "text": "Medical terminology"
+    },
+    {
+      "id": "advanced_5",
+      "category_index": 3,
+      "text": "Education terms"
+    },
+    {
+      "id": "advanced_6",
+      "category_index": 0,
+      "text": "Ways to say deceptive"
+    },
+    {
+      "id": "advanced_6",
+      "category_index": 1,
+      "text": "Corporate governance terms"
+    },
+    {
+      "id": "advanced_6",
+      "category_index": 2,
+      "text": "Geopolitical terms"
+    },
+    {
+      "id": "advanced_6",
+      "category_index": 3,
+      "text": "Psychology terms"
+    },
+    {
+      "id": "advanced_7",
+      "category_index": 0,
+      "text": "Ways to say reluctant"
+    },
+    {
+      "id": "advanced_7",
+      "category_index": 1,
+      "text": "Financial risk terms"
+    },
+    {
+      "id": "advanced_7",
+      "category_index": 2,
+      "text": "Urban planning terms"
+    },
+    {
+      "id": "advanced_7",
+      "category_index": 3,
+      "text": "Communication styles"
+    },
+    {
+      "id": "advanced_8",
+      "category_index": 0,
+      "text": "Ways to say inevitable"
+    },
+    {
+      "id": "advanced_8",
+      "category_index": 1,
+      "text": "Trade terms"
+    },
+    {
+      "id": "advanced_8",
+      "category_index": 2,
+      "text": "Healthcare system terms"
+    },
+    {
+      "id": "advanced_8",
+      "category_index": 3,
+      "text": "Sociological terms"
+    },
+    {
+      "id": "advanced_9",
+      "category_index": 0,
+      "text": "Ways to say thorough"
+    },
+    {
+      "id": "advanced_9",
+      "category_index": 1,
+      "text": "Startup terms"
+    },
+    {
+      "id": "advanced_9",
+      "category_index": 2,
+      "text": "Criminal justice terms"
+    },
+    {
+      "id": "advanced_9",
+      "category_index": 3,
+      "text": "Energy terms"
+    },
+    {
+      "id": "advanced_10",
+      "category_index": 0,
+      "text": "Ways to say unpredictable"
+    },
+    {
+      "id": "advanced_10",
+      "category_index": 1,
+      "text": "Workplace policy terms"
+    },
+    {
+      "id": "advanced_10",
+      "category_index": 2,
+      "text": "Scientific method terms"
+    },
+    {
+      "id": "advanced_10",
+      "category_index": 3,
+      "text": "Real estate investment terms"
+    },
+    {
+      "id": "advanced_11",
+      "category_index": 0,
+      "text": "Ways to say persuasive"
+    },
+    {
+      "id": "advanced_11",
+      "category_index": 1,
+      "text": "Journalism terms"
+    },
+    {
+      "id": "advanced_11",
+      "category_index": 2,
+      "text": "Ethics terms"
+    },
+    {
+      "id": "advanced_11",
+      "category_index": 3,
+      "text": "Supply and demand terms"
+    },
+    {
+      "id": "advanced_12",
+      "category_index": 0,
+      "text": "Ways to say impulsive"
+    },
+    {
+      "id": "advanced_12",
+      "category_index": 1,
+      "text": "Bankruptcy terms"
+    },
+    {
+      "id": "advanced_12",
+      "category_index": 2,
+      "text": "Immigration policy terms"
+    },
+    {
+      "id": "advanced_12",
+      "category_index": 3,
+      "text": "Linguistic terms"
+    },
+    {
+      "id": "advanced_13",
+      "category_index": 0,
+      "text": "Ways to say resilient"
+    },
+    {
+      "id": "advanced_13",
+      "category_index": 1,
+      "text": "Intellectual property terms"
+    },
+    {
+      "id": "advanced_13",
+      "category_index": 2,
+      "text": "Macroeconomic terms"
+    },
+    {
+      "id": "advanced_13",
+      "category_index": 3,
+      "text": "Negotiation outcomes"
+    },
+    {
+      "id": "advanced_14",
+      "category_index": 0,
+      "text": "Ways to say arrogant"
+    },
+    {
+      "id": "advanced_14",
+      "category_index": 1,
+      "text": "Audit and compliance terms"
+    },
+    {
+      "id": "advanced_14",
+      "category_index": 2,
+      "text": "Sustainability terms"
+    },
+    {
+      "id": "advanced_14",
+      "category_index": 3,
+      "text": "Rhetorical terms"
+    },
+    {
+      "id": "advanced_15",
+      "category_index": 0,
+      "text": "Ways to say efficient"
+    },
+    {
+      "id": "advanced_15",
+      "category_index": 1,
+      "text": "Venture capital terms"
+    },
+    {
+      "id": "advanced_15",
+      "category_index": 2,
+      "text": "Election terms"
+    },
+    {
+      "id": "advanced_15",
+      "category_index": 3,
+      "text": "Consumer behavior terms"
+    },
+    {
+      "id": "advanced_16",
+      "category_index": 0,
+      "text": "Ways to say volatile"
+    },
+    {
+      "id": "advanced_16",
+      "category_index": 1,
+      "text": "Cybersecurity terms"
+    },
+    {
+      "id": "advanced_16",
+      "category_index": 2,
+      "text": "Agricultural terms"
+    },
+    {
+      "id": "advanced_16",
+      "category_index": 3,
+      "text": "Constitutional law terms"
+    },
+    {
+      "id": "advanced_17",
+      "category_index": 0,
+      "text": "Ways to say indecisive"
+    },
+    {
+      "id": "advanced_17",
+      "category_index": 1,
+      "text": "Taxation terms"
+    },
+    {
+      "id": "advanced_17",
+      "category_index": 2,
+      "text": "Media ethics terms"
+    },
+    {
+      "id": "advanced_17",
+      "category_index": 3,
+      "text": "Organizational structure terms"
+    },
+    {
+      "id": "advanced_18",
+      "category_index": 0,
+      "text": "Ways to say empathetic"
+    },
+    {
+      "id": "advanced_18",
+      "category_index": 1,
+      "text": "International relations terms"
+    },
+    {
+      "id": "advanced_18",
+      "category_index": 2,
+      "text": "Data analysis terms"
+    },
+    {
+      "id": "advanced_18",
+      "category_index": 3,
+      "text": "Consumer rights terms"
+    },
+    {
+      "id": "advanced_19",
+      "category_index": 0,
+      "text": "Ways to say ambitious"
+    },
+    {
+      "id": "advanced_19",
+      "category_index": 1,
+      "text": "Labor relations terms"
+    },
+    {
+      "id": "advanced_19",
+      "category_index": 2,
+      "text": "Global economy terms"
+    },
+    {
+      "id": "advanced_19",
+      "category_index": 3,
+      "text": "Public health terms"
+    },
+    {
+      "id": "advanced_20",
+      "category_index": 0,
+      "text": "Ways to say pragmatic"
+    },
+    {
+      "id": "advanced_20",
+      "category_index": 1,
+      "text": "Risk management terms"
+    },
+    {
+      "id": "advanced_20",
+      "category_index": 2,
+      "text": "Academic research terms"
+    },
+    {
+      "id": "advanced_20",
+      "category_index": 3,
+      "text": "Market competition terms"
+    }
+  ],
+  "impostor": [
+    {
+      "set": "business",
+      "level": "basic",
+      "round_id": "business_basic_0",
+      "text": "BUY, SELL, PAY and HIRE are verbs; PRICE is a noun."
+    },
+    {
+      "set": "business",
+      "level": "basic",
+      "round_id": "business_basic_1",
+      "text": "These are verbs; TEAM is a noun."
+    },
+    {
+      "set": "business",
+      "level": "basic",
+      "round_id": "business_basic_2",
+      "text": "All are office items; BEACH has nothing to do with an office."
+    },
+    {
+      "set": "business",
+      "level": "basic",
+      "round_id": "business_basic_3",
+      "text": "These relate to money; MEETING does not."
+    },
+    {
+      "set": "business",
+      "level": "basic",
+      "round_id": "business_basic_4",
+      "text": "JOB, WORK, POSITION and ROLE all mean employment; HOLIDAY means time off."
+    },
+    {
+      "set": "business",
+      "level": "basic",
+      "round_id": "business_basic_5",
+      "text": "These are people in a workplace; INVOICE is a document."
+    },
+    {
+      "set": "business",
+      "level": "basic",
+      "round_id": "business_basic_6",
+      "text": "These are nouns; CHEAP is an adjective."
+    },
+    {
+      "set": "business",
+      "level": "basic",
+      "round_id": "business_basic_7",
+      "text": "These mean to get something by paying; RETURN means to give something back."
+    },
+    {
+      "set": "business",
+      "level": "basic",
+      "round_id": "business_basic_8",
+      "text": "These are business documents; CUSTOMER is a person."
+    },
+    {
+      "set": "business",
+      "level": "basic",
+      "round_id": "business_basic_9",
+      "text": "These are adjectives; SELL is a verb."
+    },
+    {
+      "set": "business",
+      "level": "basic",
+      "round_id": "business_basic_10",
+      "text": "These are places to buy things; SALARY is money you earn."
+    },
+    {
+      "set": "business",
+      "level": "basic",
+      "round_id": "business_basic_11",
+      "text": "These mean to receive money; SPEND means to use money."
+    },
+    {
+      "set": "business",
+      "level": "basic",
+      "round_id": "business_basic_12",
+      "text": "These are nouns; PUNCTUAL is an adjective."
+    },
+    {
+      "set": "business",
+      "level": "basic",
+      "round_id": "business_basic_13",
+      "text": "These are ways people communicate at work; WAREHOUSE is a building."
+    },
+    {
+      "set": "business",
+      "level": "basic",
+      "round_id": "business_basic_14",
+      "text": "These all mean someone who buys; SUPPLIER is someone who sells or provides."
+    },
+    {
+      "set": "business",
+      "level": "basic",
+      "round_id": "business_basic_15",
+      "text": "These are verbs; BUDGET is a noun."
+    },
+    {
+      "set": "business",
+      "level": "basic",
+      "round_id": "business_basic_16",
+      "text": "These mean money coming in; EXPENSE is money going out."
+    },
+    {
+      "set": "business",
+      "level": "basic",
+      "round_id": "business_basic_17",
+      "text": "These describe someone in charge; INTERN is an entry-level worker."
+    },
+    {
+      "set": "business",
+      "level": "basic",
+      "round_id": "business_basic_18",
+      "text": "These are nouns; PRODUCTIVE is an adjective."
+    },
+    {
+      "set": "business",
+      "level": "basic",
+      "round_id": "business_basic_19",
+      "text": "These are ways to pay; DISCOUNT is a price reduction, not a payment method."
+    },
+    {
+      "set": "business",
+      "level": "intermediate",
+      "round_id": "business_intermediate_0",
+      "text": "These are verbs; STRATEGY is a noun."
+    },
+    {
+      "set": "business",
+      "level": "intermediate",
+      "round_id": "business_intermediate_1",
+      "text": "These relate to company finances; DEADLINE relates to time."
+    },
+    {
+      "set": "business",
+      "level": "intermediate",
+      "round_id": "business_intermediate_2",
+      "text": "These mean a formal understanding between parties; DISPUTE means a disagreement."
+    },
+    {
+      "set": "business",
+      "level": "intermediate",
+      "round_id": "business_intermediate_3",
+      "text": "These are nouns; EFFICIENT is an adjective."
+    },
+    {
+      "set": "business",
+      "level": "intermediate",
+      "round_id": "business_intermediate_4",
+      "text": "These describe leadership roles; INVOICE is a document."
+    },
+    {
+      "set": "business",
+      "level": "intermediate",
+      "round_id": "business_intermediate_5",
+      "text": "These mean to get bigger; DECLINE means to get smaller."
+    },
+    {
+      "set": "business",
+      "level": "intermediate",
+      "round_id": "business_intermediate_6",
+      "text": "These are nouns; PROFITABLE is an adjective."
+    },
+    {
+      "set": "business",
+      "level": "intermediate",
+      "round_id": "business_intermediate_7",
+      "text": "These relate to business meetings; WAREHOUSE is a storage building."
+    },
+    {
+      "set": "business",
+      "level": "intermediate",
+      "round_id": "business_intermediate_8",
+      "text": "These mean someone who buys from you; VENDOR is someone who sells to you."
+    },
+    {
+      "set": "business",
+      "level": "intermediate",
+      "round_id": "business_intermediate_9",
+      "text": "These are verbs; BUDGET is a noun."
+    },
+    {
+      "set": "business",
+      "level": "intermediate",
+      "round_id": "business_intermediate_10",
+      "text": "These are documents; COLLEAGUE is a person."
+    },
+    {
+      "set": "business",
+      "level": "intermediate",
+      "round_id": "business_intermediate_11",
+      "text": "These mean to go down; SURGE means to increase suddenly."
+    },
+    {
+      "set": "business",
+      "level": "intermediate",
+      "round_id": "business_intermediate_12",
+      "text": "These are nouns; PROFITABLE is an adjective."
+    },
+    {
+      "set": "business",
+      "level": "intermediate",
+      "round_id": "business_intermediate_13",
+      "text": "These relate to managing money; DEADLINE relates to time."
+    },
+    {
+      "set": "business",
+      "level": "intermediate",
+      "round_id": "business_intermediate_14",
+      "text": "These mean to begin something; DISSOLVE means to end it."
+    },
+    {
+      "set": "business",
+      "level": "intermediate",
+      "round_id": "business_intermediate_15",
+      "text": "These are nouns; PUNCTUAL is an adjective."
+    },
+    {
+      "set": "business",
+      "level": "intermediate",
+      "round_id": "business_intermediate_16",
+      "text": "These are people who work for a company; SHAREHOLDER owns part of it but doesn't necessarily work there."
+    },
+    {
+      "set": "business",
+      "level": "intermediate",
+      "round_id": "business_intermediate_17",
+      "text": "These describe doing something well; STAGNANT means not moving or growing."
+    },
+    {
+      "set": "business",
+      "level": "intermediate",
+      "round_id": "business_intermediate_18",
+      "text": "These are verbs; REVENUE is a noun."
+    },
+    {
+      "set": "business",
+      "level": "intermediate",
+      "round_id": "business_intermediate_19",
+      "text": "These are parts of a company's structure; DEADLINE is a point in time."
+    },
+    {
+      "set": "business",
+      "level": "advanced",
+      "round_id": "business_advanced_0",
+      "text": "These are verbs; LIABILITY is a noun."
+    },
+    {
+      "set": "business",
+      "level": "advanced",
+      "round_id": "business_advanced_1",
+      "text": "These relate to legal or regulatory risk; SYNERGY refers to combined effectiveness, not risk."
+    },
+    {
+      "set": "business",
+      "level": "advanced",
+      "round_id": "business_advanced_2",
+      "text": "These mean to bring together; DIVEST means to sell off or separate."
+    },
+    {
+      "set": "business",
+      "level": "advanced",
+      "round_id": "business_advanced_3",
+      "text": "These are nouns; SCALABLE is an adjective."
+    },
+    {
+      "set": "business",
+      "level": "advanced",
+      "round_id": "business_advanced_4",
+      "text": "These are tools to measure or predict performance; SUBSIDIARY is a company owned by another."
+    },
+    {
+      "set": "business",
+      "level": "advanced",
+      "round_id": "business_advanced_5",
+      "text": "These mean to make bigger; CONTRACT here means to become smaller."
+    },
+    {
+      "set": "business",
+      "level": "advanced",
+      "round_id": "business_advanced_6",
+      "text": "These are nouns; VOLATILE is an adjective."
+    },
+    {
+      "set": "business",
+      "level": "advanced",
+      "round_id": "business_advanced_7",
+      "text": "These describe instability; ROBUST means strong and stable, the opposite."
+    },
+    {
+      "set": "business",
+      "level": "advanced",
+      "round_id": "business_advanced_8",
+      "text": "These mean money gained from an investment; OVERHEAD means ongoing business expenses."
+    },
+    {
+      "set": "business",
+      "level": "advanced",
+      "round_id": "business_advanced_9",
+      "text": "These are verbs; SUBSIDIARY is a noun."
+    },
+    {
+      "set": "business",
+      "level": "advanced",
+      "round_id": "business_advanced_10",
+      "text": "These mean to protect against risk; DISCLOSE means to reveal information."
+    },
+    {
+      "set": "business",
+      "level": "advanced",
+      "round_id": "business_advanced_11",
+      "text": "These mean to lose value; APPRECIATE means to gain value."
+    },
+    {
+      "set": "business",
+      "level": "advanced",
+      "round_id": "business_advanced_12",
+      "text": "These are nouns; SCALABLE is an adjective."
+    },
+    {
+      "set": "business",
+      "level": "advanced",
+      "round_id": "business_advanced_13",
+      "text": "These describe ownership or corporate structure; FORECAST is a prediction."
+    },
+    {
+      "set": "business",
+      "level": "advanced",
+      "round_id": "business_advanced_14",
+      "text": "These describe careful decision-making; RECKLESS means careless."
+    },
+    {
+      "set": "business",
+      "level": "advanced",
+      "round_id": "business_advanced_15",
+      "text": "These are nouns; SCALABLE is an adjective."
+    },
+    {
+      "set": "business",
+      "level": "advanced",
+      "round_id": "business_advanced_16",
+      "text": "These relate to resolving disputes; EQUITY relates to ownership value."
+    },
+    {
+      "set": "business",
+      "level": "advanced",
+      "round_id": "business_advanced_17",
+      "text": "These mean things of value a company owns; LIABILITY is a debt it owes."
+    },
+    {
+      "set": "business",
+      "level": "advanced",
+      "round_id": "business_advanced_18",
+      "text": "These are verbs; EQUITY is a noun."
+    },
+    {
+      "set": "business",
+      "level": "advanced",
+      "round_id": "business_advanced_19",
+      "text": "These describe a strong market position; OBSOLETE means outdated and no longer useful."
+    },
+    {
+      "set": "travel",
+      "level": "basic",
+      "round_id": "travel_basic_0",
+      "text": "These are verbs of travel; TICKET is a noun."
+    },
+    {
+      "set": "travel",
+      "level": "basic",
+      "round_id": "travel_basic_1",
+      "text": "These are things you need at an airport; BEACH is a destination, not an airport item."
+    },
+    {
+      "set": "travel",
+      "level": "basic",
+      "round_id": "travel_basic_2",
+      "text": "These mean a period of travel; ARRIVAL means reaching the destination."
+    },
+    {
+      "set": "travel",
+      "level": "basic",
+      "round_id": "travel_basic_3",
+      "text": "These are nouns; DEPART is a verb."
+    },
+    {
+      "set": "travel",
+      "level": "basic",
+      "round_id": "travel_basic_4",
+      "text": "These are ways to travel; HOTEL is a place to stay."
+    },
+    {
+      "set": "travel",
+      "level": "basic",
+      "round_id": "travel_basic_5",
+      "text": "These mean things you carry when traveling; SOUVENIR is something you buy to remember a trip."
+    },
+    {
+      "set": "travel",
+      "level": "basic",
+      "round_id": "travel_basic_6",
+      "text": "These are verbs; PASSPORT is a noun."
+    },
+    {
+      "set": "travel",
+      "level": "basic",
+      "round_id": "travel_basic_7",
+      "text": "These relate to where you stay; TICKET is for transportation."
+    },
+    {
+      "set": "travel",
+      "level": "basic",
+      "round_id": "travel_basic_8",
+      "text": "These describe someone who leads you; MAP is an object, not a person."
+    },
+    {
+      "set": "travel",
+      "level": "basic",
+      "round_id": "travel_basic_9",
+      "text": "These are nouns (places); TRAVEL is a verb."
+    },
+    {
+      "set": "travel",
+      "level": "basic",
+      "round_id": "travel_basic_10",
+      "text": "These are documents you need to travel; SUNSCREEN is something you use, not a document."
+    },
+    {
+      "set": "travel",
+      "level": "basic",
+      "round_id": "travel_basic_11",
+      "text": "These mean to arrive somewhere; DEPART means to leave."
+    },
+    {
+      "set": "travel",
+      "level": "basic",
+      "round_id": "travel_basic_12",
+      "text": "These are nouns (objects); EXPLORE is a verb."
+    },
+    {
+      "set": "travel",
+      "level": "basic",
+      "round_id": "travel_basic_13",
+      "text": "These are items for a beach trip; PASSPORT is a travel document."
+    },
+    {
+      "set": "travel",
+      "level": "basic",
+      "round_id": "travel_basic_14",
+      "text": "These mean to go and see new places; AVOID means to stay away from something."
+    },
+    {
+      "set": "travel",
+      "level": "basic",
+      "round_id": "travel_basic_15",
+      "text": "These are nouns; DRIVE is a verb."
+    },
+    {
+      "set": "travel",
+      "level": "basic",
+      "round_id": "travel_basic_16",
+      "text": "These are places tourists visit; LUGGAGE is something you carry."
+    },
+    {
+      "set": "travel",
+      "level": "basic",
+      "round_id": "travel_basic_17",
+      "text": "These mean a place you're going to; ROUTE means the path you take to get there."
+    },
+    {
+      "set": "travel",
+      "level": "basic",
+      "round_id": "travel_basic_18",
+      "text": "These are nouns; PACK is a verb."
+    },
+    {
+      "set": "travel",
+      "level": "basic",
+      "round_id": "travel_basic_19",
+      "text": "These describe weather conditions; EXPENSIVE describes a price."
+    },
+    {
+      "set": "travel",
+      "level": "intermediate",
+      "round_id": "travel_intermediate_0",
+      "text": "These are verbs; ITINERARY is a noun."
+    },
+    {
+      "set": "travel",
+      "level": "intermediate",
+      "round_id": "travel_intermediate_1",
+      "text": "These are airport procedures or areas; SOUVENIR is a keepsake you buy."
+    },
+    {
+      "set": "travel",
+      "level": "intermediate",
+      "round_id": "travel_intermediate_2",
+      "text": "These mean a planned list of activities or times; EXCURSION means a short trip."
+    },
+    {
+      "set": "travel",
+      "level": "intermediate",
+      "round_id": "travel_intermediate_3",
+      "text": "These are nouns; DEPART is a verb."
+    },
+    {
+      "set": "travel",
+      "level": "intermediate",
+      "round_id": "travel_intermediate_4",
+      "text": "These relate to money while traveling; ITINERARY is a travel plan."
+    },
+    {
+      "set": "travel",
+      "level": "intermediate",
+      "round_id": "travel_intermediate_5",
+      "text": "These mean a stop between flights; DESTINATION is the final place you're going."
+    },
+    {
+      "set": "travel",
+      "level": "intermediate",
+      "round_id": "travel_intermediate_6",
+      "text": "These are nouns; DEPART is a verb."
+    },
+    {
+      "set": "travel",
+      "level": "intermediate",
+      "round_id": "travel_intermediate_7",
+      "text": "These are places to stay; EMBASSY is a government office."
+    },
+    {
+      "set": "travel",
+      "level": "intermediate",
+      "round_id": "travel_intermediate_8",
+      "text": "These mean an item to remember a trip; LUGGAGE is what you carry your things in."
+    },
+    {
+      "set": "travel",
+      "level": "intermediate",
+      "round_id": "travel_intermediate_9",
+      "text": "These are nouns; DEPART is a verb."
+    },
+    {
+      "set": "travel",
+      "level": "intermediate",
+      "round_id": "travel_intermediate_10",
+      "text": "These are official permissions to travel; ITINERARY is your travel schedule."
+    },
+    {
+      "set": "travel",
+      "level": "intermediate",
+      "round_id": "travel_intermediate_11",
+      "text": "These mean someone visiting a place; RESIDENT means someone who lives there."
+    },
+    {
+      "set": "travel",
+      "level": "intermediate",
+      "round_id": "travel_intermediate_12",
+      "text": "These are nouns; BOARD is a verb."
+    },
+    {
+      "set": "travel",
+      "level": "intermediate",
+      "round_id": "travel_intermediate_13",
+      "text": "These relate to places tourists visit; CUSTOMS is an airport process."
+    },
+    {
+      "set": "travel",
+      "level": "intermediate",
+      "round_id": "travel_intermediate_14",
+      "text": "These mean to move something later; EXPEDITE means to make something happen faster."
+    },
+    {
+      "set": "travel",
+      "level": "intermediate",
+      "round_id": "travel_intermediate_15",
+      "text": "These are nouns; EMBARK is a verb."
+    },
+    {
+      "set": "travel",
+      "level": "intermediate",
+      "round_id": "travel_intermediate_16",
+      "text": "These describe tiredness from travel; CURRENCY is money."
+    },
+    {
+      "set": "travel",
+      "level": "intermediate",
+      "round_id": "travel_intermediate_17",
+      "text": "These mean a diplomatic office abroad; CHECKPOINT is a security control point."
+    },
+    {
+      "set": "travel",
+      "level": "intermediate",
+      "round_id": "travel_intermediate_18",
+      "text": "These are nouns; EMBARK is a verb."
+    },
+    {
+      "set": "travel",
+      "level": "intermediate",
+      "round_id": "travel_intermediate_19",
+      "text": "These relate to crossing into a country; ITINERARY is your travel plan."
+    },
+    {
+      "set": "travel",
+      "level": "advanced",
+      "round_id": "travel_advanced_0",
+      "text": "These are verbs; EXPEDITION is a noun."
+    },
+    {
+      "set": "travel",
+      "level": "advanced",
+      "round_id": "travel_advanced_1",
+      "text": "These describe types of long or meaningful journeys; CURRENCY is money."
+    },
+    {
+      "set": "travel",
+      "level": "advanced",
+      "round_id": "travel_advanced_2",
+      "text": "These describe moving from place to place; SEDENTARY means staying in one place."
+    },
+    {
+      "set": "travel",
+      "level": "advanced",
+      "round_id": "travel_advanced_3",
+      "text": "These are adjectives; HOSPITALITY is a noun."
+    },
+    {
+      "set": "travel",
+      "level": "advanced",
+      "round_id": "travel_advanced_4",
+      "text": "These relate to legal control of movement across borders; WANDERLUST is a strong desire to travel."
+    },
+    {
+      "set": "travel",
+      "level": "advanced",
+      "round_id": "travel_advanced_5",
+      "text": "These mean a strong desire; RELUCTANCE means unwillingness."
+    },
+    {
+      "set": "travel",
+      "level": "advanced",
+      "round_id": "travel_advanced_6",
+      "text": "These are nouns (landforms); NOMADIC is an adjective."
+    },
+    {
+      "set": "travel",
+      "level": "advanced",
+      "round_id": "travel_advanced_7",
+      "text": "These are geographical landforms; ITINERANT describes a traveling person."
+    },
+    {
+      "set": "travel",
+      "level": "advanced",
+      "round_id": "travel_advanced_8",
+      "text": "These mean a period of staying somewhere; DEPARTURE means leaving."
+    },
+    {
+      "set": "travel",
+      "level": "advanced",
+      "round_id": "travel_advanced_9",
+      "text": "These are verbs; BIOSPHERE is a noun."
+    },
+    {
+      "set": "travel",
+      "level": "advanced",
+      "round_id": "travel_advanced_10",
+      "text": "These relate to environmentally responsible travel; ITINERARY is simply a travel schedule."
+    },
+    {
+      "set": "travel",
+      "level": "advanced",
+      "round_id": "travel_advanced_11",
+      "text": "These describe someone familiar with many cultures; PROVINCIAL means narrow or unsophisticated."
+    },
+    {
+      "set": "travel",
+      "level": "advanced",
+      "round_id": "travel_advanced_12",
+      "text": "These are nouns; ITINERANT is an adjective."
+    },
+    {
+      "set": "travel",
+      "level": "advanced",
+      "round_id": "travel_advanced_13",
+      "text": "These relate to legal authority over people crossing borders; SOJOURN is simply a temporary stay."
+    },
+    {
+      "set": "travel",
+      "level": "advanced",
+      "round_id": "travel_advanced_14",
+      "text": "These describe planned travel; SPONTANEOUS means unplanned."
+    },
+    {
+      "set": "travel",
+      "level": "advanced",
+      "round_id": "travel_advanced_15",
+      "text": "These are adjectives; REPATRIATE is a verb."
+    },
+    {
+      "set": "travel",
+      "level": "advanced",
+      "round_id": "travel_advanced_16",
+      "text": "These are landforms related to islands; EXPEDITION is a type of journey."
+    },
+    {
+      "set": "travel",
+      "level": "advanced",
+      "round_id": "travel_advanced_17",
+      "text": "These describe a deep, real travel experience; SUPERFICIAL means shallow or not deep."
+    },
+    {
+      "set": "travel",
+      "level": "advanced",
+      "round_id": "travel_advanced_18",
+      "text": "These are nouns; SUSTAINABLE is an adjective."
+    },
+    {
+      "set": "travel",
+      "level": "advanced",
+      "round_id": "travel_advanced_19",
+      "text": "These describe long, significant journeys; LAYOVER is a short stop between flights."
+    },
+    {
+      "set": "daily",
+      "level": "basic",
+      "round_id": "daily_basic_0",
+      "text": "These are verbs; KITCHEN is a noun."
+    },
+    {
+      "set": "daily",
+      "level": "basic",
+      "round_id": "daily_basic_1",
+      "text": "These are things you do in the morning; DINNER is an evening meal."
+    },
+    {
+      "set": "daily",
+      "level": "basic",
+      "round_id": "daily_basic_2",
+      "text": "These mean to make something clean; MESSY means dirty or disorganized."
+    },
+    {
+      "set": "daily",
+      "level": "basic",
+      "round_id": "daily_basic_3",
+      "text": "These are nouns (rooms); COOK is a verb."
+    },
+    {
+      "set": "daily",
+      "level": "basic",
+      "round_id": "daily_basic_4",
+      "text": "These are kitchen items; PILLOW belongs in a bedroom."
+    },
+    {
+      "set": "daily",
+      "level": "basic",
+      "round_id": "daily_basic_5",
+      "text": "These mean to communicate by speaking; LISTEN means to hear and pay attention."
+    },
+    {
+      "set": "daily",
+      "level": "basic",
+      "round_id": "daily_basic_6",
+      "text": "These are verbs; STREET is a noun."
+    },
+    {
+      "set": "daily",
+      "level": "basic",
+      "round_id": "daily_basic_7",
+      "text": "These relate to sleeping; STOVE is a kitchen appliance."
+    },
+    {
+      "set": "daily",
+      "level": "basic",
+      "round_id": "daily_basic_8",
+      "text": "These mean to feel calm; WORRY means to feel anxious."
+    },
+    {
+      "set": "daily",
+      "level": "basic",
+      "round_id": "daily_basic_9",
+      "text": "These are nouns (tools); CLEAN is a verb."
+    },
+    {
+      "set": "daily",
+      "level": "basic",
+      "round_id": "daily_basic_10",
+      "text": "These are things you buy at a grocery store; TOWEL is a bathroom item."
+    },
+    {
+      "set": "daily",
+      "level": "basic",
+      "round_id": "daily_basic_11",
+      "text": "These mean to remove dirt; FOLD means to arrange clothes neatly, not clean them."
+    },
+    {
+      "set": "daily",
+      "level": "basic",
+      "round_id": "daily_basic_12",
+      "text": "These are nouns; SIT is a verb."
+    },
+    {
+      "set": "daily",
+      "level": "basic",
+      "round_id": "daily_basic_13",
+      "text": "These are bathroom items; BLANKET belongs in a bedroom."
+    },
+    {
+      "set": "daily",
+      "level": "basic",
+      "round_id": "daily_basic_14",
+      "text": "These mean to take it easy; HURRY means to move quickly."
+    },
+    {
+      "set": "daily",
+      "level": "basic",
+      "round_id": "daily_basic_15",
+      "text": "These are nouns (appliances); COOK is a verb."
+    },
+    {
+      "set": "daily",
+      "level": "basic",
+      "round_id": "daily_basic_16",
+      "text": "These are common weekend activities; COMMUTE is traveling to work, usually on weekdays."
+    },
+    {
+      "set": "daily",
+      "level": "basic",
+      "round_id": "daily_basic_17",
+      "text": "These mean to obtain something with money; SELL means to give something for money."
+    },
+    {
+      "set": "daily",
+      "level": "basic",
+      "round_id": "daily_basic_18",
+      "text": "These are nouns (people); VISIT is a verb."
+    },
+    {
+      "set": "daily",
+      "level": "basic",
+      "round_id": "daily_basic_19",
+      "text": "These are cleaning chores; COOK is preparing food, not cleaning."
+    },
+    {
+      "set": "daily",
+      "level": "intermediate",
+      "round_id": "daily_intermediate_0",
+      "text": "These are verbs; ROUTINE is a noun."
+    },
+    {
+      "set": "daily",
+      "level": "intermediate",
+      "round_id": "daily_intermediate_1",
+      "text": "These are regular payments; ERRAND is a small task you run."
+    },
+    {
+      "set": "daily",
+      "level": "intermediate",
+      "round_id": "daily_intermediate_2",
+      "text": "These mean something you must do; HOBBY is something you do for fun."
+    },
+    {
+      "set": "daily",
+      "level": "intermediate",
+      "round_id": "daily_intermediate_3",
+      "text": "These are nouns; ORGANIZE is a verb."
+    },
+    {
+      "set": "daily",
+      "level": "intermediate",
+      "round_id": "daily_intermediate_4",
+      "text": "These relate to fixing or improving a home; GROCERY relates to food shopping."
+    },
+    {
+      "set": "daily",
+      "level": "intermediate",
+      "round_id": "daily_intermediate_5",
+      "text": "These mean something done regularly; EXCEPTION means something that doesn't follow the rule."
+    },
+    {
+      "set": "daily",
+      "level": "intermediate",
+      "round_id": "daily_intermediate_6",
+      "text": "These are nouns (people); COMMUTE is a verb."
+    },
+    {
+      "set": "daily",
+      "level": "intermediate",
+      "round_id": "daily_intermediate_7",
+      "text": "These are part of a morning routine; APPOINTMENT is a scheduled meeting."
+    },
+    {
+      "set": "daily",
+      "level": "intermediate",
+      "round_id": "daily_intermediate_8",
+      "text": "These mean to make something work again; BREAK means to damage something."
+    },
+    {
+      "set": "daily",
+      "level": "intermediate",
+      "round_id": "daily_intermediate_9",
+      "text": "These are nouns; MAINTAIN is a verb."
+    },
+    {
+      "set": "daily",
+      "level": "intermediate",
+      "round_id": "daily_intermediate_10",
+      "text": "These help you stay organized in time; THERMOSTAT controls temperature."
+    },
+    {
+      "set": "daily",
+      "level": "intermediate",
+      "round_id": "daily_intermediate_11",
+      "text": "These mean to delay doing something; COMPLETE means to finish it."
+    },
+    {
+      "set": "daily",
+      "level": "intermediate",
+      "round_id": "daily_intermediate_12",
+      "text": "These are nouns; ORGANIZE is a verb."
+    },
+    {
+      "set": "daily",
+      "level": "intermediate",
+      "round_id": "daily_intermediate_13",
+      "text": "These relate to renting a home; ERRAND is a small task you run."
+    },
+    {
+      "set": "daily",
+      "level": "intermediate",
+      "round_id": "daily_intermediate_14",
+      "text": "These mean to take care of something; NEGLECT means to fail to take care of it."
+    },
+    {
+      "set": "daily",
+      "level": "intermediate",
+      "round_id": "daily_intermediate_15",
+      "text": "These are nouns; RENOVATE is a verb."
+    },
+    {
+      "set": "daily",
+      "level": "intermediate",
+      "round_id": "daily_intermediate_16",
+      "text": "These relate to home technology services; PLUMBING is a physical home system for water."
+    },
+    {
+      "set": "daily",
+      "level": "intermediate",
+      "round_id": "daily_intermediate_17",
+      "text": "These describe having a lot to do; IDLE means having nothing to do."
+    },
+    {
+      "set": "daily",
+      "level": "intermediate",
+      "round_id": "daily_intermediate_18",
+      "text": "These are nouns; MAINTAIN is a verb."
+    },
+    {
+      "set": "daily",
+      "level": "intermediate",
+      "round_id": "daily_intermediate_19",
+      "text": "These are financial obligations of a household; CHORE is a task, not a payment."
+    },
+    {
+      "set": "daily",
+      "level": "advanced",
+      "round_id": "daily_advanced_0",
+      "text": "These are verbs; MUNDANE is an adjective."
+    },
+    {
+      "set": "daily",
+      "level": "advanced",
+      "round_id": "daily_advanced_1",
+      "text": "These describe something boring and repetitive; SPONTANEOUS means unplanned and exciting."
+    },
+    {
+      "set": "daily",
+      "level": "advanced",
+      "round_id": "daily_advanced_2",
+      "text": "These describe being very organized and careful; CARELESS means not paying attention to detail."
+    },
+    {
+      "set": "daily",
+      "level": "advanced",
+      "round_id": "daily_advanced_3",
+      "text": "These are nouns; SEDENTARY is an adjective."
+    },
+    {
+      "set": "daily",
+      "level": "advanced",
+      "round_id": "daily_advanced_4",
+      "text": "These describe a lack of energy; VIGOROUS means full of energy."
+    },
+    {
+      "set": "daily",
+      "level": "advanced",
+      "round_id": "daily_advanced_5",
+      "text": "These describe not needing help from others; DEPENDENT means relying on others."
+    },
+    {
+      "set": "daily",
+      "level": "advanced",
+      "round_id": "daily_advanced_6",
+      "text": "These are verbs; INDISPENSABLE is an adjective."
+    },
+    {
+      "set": "daily",
+      "level": "advanced",
+      "round_id": "daily_advanced_7",
+      "text": "These mean very important; TRIVIAL means unimportant."
+    },
+    {
+      "set": "daily",
+      "level": "advanced",
+      "round_id": "daily_advanced_8",
+      "text": "These mean to restore energy; EXHAUST means to use up all your energy."
+    },
+    {
+      "set": "daily",
+      "level": "advanced",
+      "round_id": "daily_advanced_9",
+      "text": "These are nouns; RITUALISTIC is an adjective."
+    },
+    {
+      "set": "daily",
+      "level": "advanced",
+      "round_id": "daily_advanced_10",
+      "text": "These describe consistent, predictable behavior; ERRATIC means unpredictable."
+    },
+    {
+      "set": "daily",
+      "level": "advanced",
+      "round_id": "daily_advanced_11",
+      "text": "These mean to make things simpler; COMPLICATE means to make things harder."
+    },
+    {
+      "set": "daily",
+      "level": "advanced",
+      "round_id": "daily_advanced_12",
+      "text": "These are nouns; SPONTANEOUS is an adjective."
+    },
+    {
+      "set": "daily",
+      "level": "advanced",
+      "round_id": "daily_advanced_13",
+      "text": "These describe acting without planning; DELIBERATE means done on purpose, with thought."
+    },
+    {
+      "set": "daily",
+      "level": "advanced",
+      "round_id": "daily_advanced_14",
+      "text": "These mean to delay an action; EXPEDITE means to speed it up."
+    },
+    {
+      "set": "daily",
+      "level": "advanced",
+      "round_id": "daily_advanced_15",
+      "text": "These are verbs; DISCIPLINED is an adjective."
+    },
+    {
+      "set": "daily",
+      "level": "advanced",
+      "round_id": "daily_advanced_16",
+      "text": "These describe an organized approach; HAPHAZARD means disorganized and random."
+    },
+    {
+      "set": "daily",
+      "level": "advanced",
+      "round_id": "daily_advanced_17",
+      "text": "These mean happening all the time; OCCASIONAL means happening rarely."
+    },
+    {
+      "set": "daily",
+      "level": "advanced",
+      "round_id": "daily_advanced_18",
+      "text": "These are nouns; INDISPENSABLE is an adjective."
+    },
+    {
+      "set": "daily",
+      "level": "advanced",
+      "round_id": "daily_advanced_19",
+      "text": "These describe being stuck without progress; MOMENTUM means the force that drives you forward."
+    },
+    {
+      "set": "general",
+      "level": "basic",
+      "round_id": "general_basic_0",
+      "text": "These are adjectives (feelings); SMILE is a verb or noun, not a feeling word."
+    },
+    {
+      "set": "general",
+      "level": "basic",
+      "round_id": "general_basic_1",
+      "text": "These describe weather; HAPPY describes emotion."
+    },
+    {
+      "set": "general",
+      "level": "basic",
+      "round_id": "general_basic_2",
+      "text": "These mean big in size; TINY means very small."
+    },
+    {
+      "set": "general",
+      "level": "basic",
+      "round_id": "general_basic_3",
+      "text": "These are adjectives; RUN is a verb."
+    },
+    {
+      "set": "general",
+      "level": "basic",
+      "round_id": "general_basic_4",
+      "text": "These are colors; SOFT describes texture."
+    },
+    {
+      "set": "general",
+      "level": "basic",
+      "round_id": "general_basic_5",
+      "text": "These mean positive quality; TERRIBLE means very bad."
+    },
+    {
+      "set": "general",
+      "level": "basic",
+      "round_id": "general_basic_6",
+      "text": "These are adjectives; CHANGE is a verb."
+    },
+    {
+      "set": "general",
+      "level": "basic",
+      "round_id": "general_basic_7",
+      "text": "These are animals; HAPPY is a feeling."
+    },
+    {
+      "set": "general",
+      "level": "basic",
+      "round_id": "general_basic_8",
+      "text": "These mean small in size; ENORMOUS means very big."
+    },
+    {
+      "set": "general",
+      "level": "basic",
+      "round_id": "general_basic_9",
+      "text": "These are adjectives (temperature); FREEZE is a verb."
+    },
+    {
+      "set": "general",
+      "level": "basic",
+      "round_id": "general_basic_10",
+      "text": "These are family relations; FRIEND is not a family member."
+    },
+    {
+      "set": "general",
+      "level": "basic",
+      "round_id": "general_basic_11",
+      "text": "These mean not hard to do; DIFFICULT means hard."
+    },
+    {
+      "set": "general",
+      "level": "basic",
+      "round_id": "general_basic_12",
+      "text": "These are adjectives/adverbs; DISTANCE is a noun."
+    },
+    {
+      "set": "general",
+      "level": "basic",
+      "round_id": "general_basic_13",
+      "text": "These are ordinal numbers; MANY is a quantity word, not an ordinal."
+    },
+    {
+      "set": "general",
+      "level": "basic",
+      "round_id": "general_basic_14",
+      "text": "These mean moving quickly; SLUGGISH means moving slowly."
+    },
+    {
+      "set": "general",
+      "level": "basic",
+      "round_id": "general_basic_15",
+      "text": "These are nouns; READ is a verb."
+    },
+    {
+      "set": "general",
+      "level": "basic",
+      "round_id": "general_basic_16",
+      "text": "These are parts of a day; YESTERDAY refers to a day in the past."
+    },
+    {
+      "set": "general",
+      "level": "basic",
+      "round_id": "general_basic_17",
+      "text": "These mean attractive; UGLY means unattractive."
+    },
+    {
+      "set": "general",
+      "level": "basic",
+      "round_id": "general_basic_18",
+      "text": "These are adjectives; SHINE is a verb."
+    },
+    {
+      "set": "general",
+      "level": "basic",
+      "round_id": "general_basic_19",
+      "text": "These are seasons; WEEKEND refers to days of the week."
+    },
+    {
+      "set": "general",
+      "level": "intermediate",
+      "round_id": "general_intermediate_0",
+      "text": "These are adjectives; CONFIDENCE is a noun."
+    },
+    {
+      "set": "general",
+      "level": "intermediate",
+      "round_id": "general_intermediate_1",
+      "text": "These describe good character traits; ARROGANT describes a negative trait."
+    },
+    {
+      "set": "general",
+      "level": "intermediate",
+      "round_id": "general_intermediate_2",
+      "text": "These mean sure of yourself; TIMID means shy or fearful."
+    },
+    {
+      "set": "general",
+      "level": "intermediate",
+      "round_id": "general_intermediate_3",
+      "text": "These are nouns; STUBBORN is an adjective."
+    },
+    {
+      "set": "general",
+      "level": "intermediate",
+      "round_id": "general_intermediate_4",
+      "text": "These describe difficult traits; GENEROUS describes a positive trait."
+    },
+    {
+      "set": "general",
+      "level": "intermediate",
+      "round_id": "general_intermediate_5",
+      "text": "These mean able to change easily; RIGID means unable to change."
+    },
+    {
+      "set": "general",
+      "level": "intermediate",
+      "round_id": "general_intermediate_6",
+      "text": "These are adjectives; REASON is a noun."
+    },
+    {
+      "set": "general",
+      "level": "intermediate",
+      "round_id": "general_intermediate_7",
+      "text": "These describe thinking with logic; EMOTIONAL describes thinking with feelings."
+    },
+    {
+      "set": "general",
+      "level": "intermediate",
+      "round_id": "general_intermediate_8",
+      "text": "These mean not afraid; COWARDLY means easily scared."
+    },
+    {
+      "set": "general",
+      "level": "intermediate",
+      "round_id": "general_intermediate_9",
+      "text": "These are adjectives; HESITATE is a verb."
+    },
+    {
+      "set": "general",
+      "level": "intermediate",
+      "round_id": "general_intermediate_10",
+      "text": "These describe feeling worried; RELAXED describes feeling calm."
+    },
+    {
+      "set": "general",
+      "level": "intermediate",
+      "round_id": "general_intermediate_11",
+      "text": "These mean too proud of yourself; MODEST means humble."
+    },
+    {
+      "set": "general",
+      "level": "intermediate",
+      "round_id": "general_intermediate_12",
+      "text": "These are nouns; RELUCTANT is an adjective."
+    },
+    {
+      "set": "general",
+      "level": "intermediate",
+      "round_id": "general_intermediate_13",
+      "text": "These describe being open to new ideas; STUBBORN means refusing to change your mind."
+    },
+    {
+      "set": "general",
+      "level": "intermediate",
+      "round_id": "general_intermediate_14",
+      "text": "These mean not wanting to do something; EAGER means very willing."
+    },
+    {
+      "set": "general",
+      "level": "intermediate",
+      "round_id": "general_intermediate_15",
+      "text": "These are adjectives; HOPE is a noun or verb."
+    },
+    {
+      "set": "general",
+      "level": "intermediate",
+      "round_id": "general_intermediate_16",
+      "text": "These describe staying calm; FRANTIC means panicked and stressed."
+    },
+    {
+      "set": "general",
+      "level": "intermediate",
+      "round_id": "general_intermediate_17",
+      "text": "These mean full of new ideas; UNORIGINAL means copying others, lacking new ideas."
+    },
+    {
+      "set": "general",
+      "level": "intermediate",
+      "round_id": "general_intermediate_18",
+      "text": "These are nouns; CONFIDENT is an adjective."
+    },
+    {
+      "set": "general",
+      "level": "intermediate",
+      "round_id": "general_intermediate_19",
+      "text": "These describe being careful; RECKLESS means careless and risky."
+    },
+    {
+      "set": "general",
+      "level": "advanced",
+      "round_id": "general_advanced_0",
+      "text": "These are adjectives; RESILIENCE is a noun."
+    },
+    {
+      "set": "general",
+      "level": "advanced",
+      "round_id": "general_advanced_1",
+      "text": "These describe someone who doesn't give up; FICKLE means changing your mind often."
+    },
+    {
+      "set": "general",
+      "level": "advanced",
+      "round_id": "general_advanced_2",
+      "text": "These mean focused on what is practical; IDEALISTIC means focused on perfect ideas rather than reality."
+    },
+    {
+      "set": "general",
+      "level": "advanced",
+      "round_id": "general_advanced_3",
+      "text": "These are nouns; AUDACIOUS is an adjective."
+    },
+    {
+      "set": "general",
+      "level": "advanced",
+      "round_id": "general_advanced_4",
+      "text": "These describe understanding others well; OBLIVIOUS means unaware."
+    },
+    {
+      "set": "general",
+      "level": "advanced",
+      "round_id": "general_advanced_5",
+      "text": "These mean fearlessly bold; TIMID means shy and fearful."
+    },
+    {
+      "set": "general",
+      "level": "advanced",
+      "round_id": "general_advanced_6",
+      "text": "These are nouns; UNWAVERING is an adjective."
+    },
+    {
+      "set": "general",
+      "level": "advanced",
+      "round_id": "general_advanced_7",
+      "text": "These describe speaking clearly and honestly; EVASIVE means avoiding giving a direct answer."
+    },
+    {
+      "set": "general",
+      "level": "advanced",
+      "round_id": "general_advanced_8",
+      "text": "These mean firmly committed; WAVERING means uncertain or changing."
+    },
+    {
+      "set": "general",
+      "level": "advanced",
+      "round_id": "general_advanced_9",
+      "text": "These are nouns; INDOMITABLE is an adjective."
+    },
+    {
+      "set": "general",
+      "level": "advanced",
+      "round_id": "general_advanced_10",
+      "text": "These describe careful, wise decisions; IMPULSIVE means acting without thinking."
+    },
+    {
+      "set": "general",
+      "level": "advanced",
+      "round_id": "general_advanced_11",
+      "text": "These mean caring for others before yourself; SELFISH means caring only about yourself."
+    },
+    {
+      "set": "general",
+      "level": "advanced",
+      "round_id": "general_advanced_12",
+      "text": "These are nouns; RESILIENT is an adjective."
+    },
+    {
+      "set": "general",
+      "level": "advanced",
+      "round_id": "general_advanced_13",
+      "text": "These describe being able to adapt; RIGID means unable to change."
+    },
+    {
+      "set": "general",
+      "level": "advanced",
+      "round_id": "general_advanced_14",
+      "text": "These mean impossible to defeat; FRAGILE means easily broken or defeated."
+    },
+    {
+      "set": "general",
+      "level": "advanced",
+      "round_id": "general_advanced_15",
+      "text": "These are adjectives; EMPATHY is a noun."
+    },
+    {
+      "set": "general",
+      "level": "advanced",
+      "round_id": "general_advanced_16",
+      "text": "These describe a simple, plain lifestyle; LAVISH means extravagant and luxurious."
+    },
+    {
+      "set": "general",
+      "level": "advanced",
+      "round_id": "general_advanced_17",
+      "text": "These mean able to speak clearly; INCOHERENT means unclear and hard to follow."
+    },
+    {
+      "set": "general",
+      "level": "advanced",
+      "round_id": "general_advanced_18",
+      "text": "These are adjectives; TENACITY is a noun."
+    },
+    {
+      "set": "general",
+      "level": "advanced",
+      "round_id": "general_advanced_19",
+      "text": "These describe noticing small details; OBLIVIOUS means not noticing anything."
+    }
+  ]
+}

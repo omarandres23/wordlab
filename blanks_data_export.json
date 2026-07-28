@@ -1,0 +1,350 @@
+{
+  "travel": {
+    "basico": [
+      {
+        "sentence": "I have to check in my ___ before the flight.",
+        "word": "bag",
+        "options": [
+          "bag",
+          "map",
+          "tag"
+        ]
+      },
+      {
+        "sentence": "Our flight will ___ at 9 AM.",
+        "word": "arrive",
+        "options": [
+          "arrive",
+          "depart",
+          "return"
+        ]
+      },
+      {
+        "sentence": "We crossed the ___ to get to the old town.",
+        "word": "bridge",
+        "options": [
+          "bridge",
+          "tunnel",
+          "harbor"
+        ]
+      },
+      {
+        "sentence": "The ___ takes us across the river every morning.",
+        "word": "boat",
+        "options": [
+          "boat",
+          "taxi",
+          "tram"
+        ]
+      }
+    ],
+    "intermedio": [
+      {
+        "sentence": "She works as a travel ___ who plans international trips.",
+        "word": "agent",
+        "options": [
+          "agent",
+          "guide",
+          "pilot"
+        ]
+      },
+      {
+        "sentence": "Please fasten your seatbelt, said the flight ___.",
+        "word": "attendant",
+        "options": [
+          "attendant",
+          "passenger",
+          "navigator"
+        ]
+      },
+      {
+        "sentence": "I prefer an ___ seat so I can stretch my legs.",
+        "word": "aisle",
+        "options": [
+          "aisle",
+          "cabin",
+          "front"
+        ]
+      },
+      {
+        "sentence": "Backpacking through Europe was a real ___ for us.",
+        "word": "adventure",
+        "options": [
+          "adventure",
+          "excursion",
+          "itinerary"
+        ]
+      }
+    ],
+    "avanzado": [
+      {
+        "sentence": "It took days to ___ to the high altitude.",
+        "word": "acclimatize",
+        "options": [
+          "acclimatize",
+          "assimilate",
+          "authenticate"
+        ]
+      },
+      {
+        "sentence": "The solo ___ crossed three countries on foot.",
+        "word": "backpacker",
+        "options": [
+          "backpacker",
+          "adventurer",
+          "freelancer"
+        ]
+      },
+      {
+        "sentence": "Jet lag disrupts your natural ___ rhythm.",
+        "word": "circadian",
+        "options": [
+          "circadian",
+          "equatorial",
+          "territorial"
+        ]
+      },
+      {
+        "sentence": "The plane crossed the ___ on its way south.",
+        "word": "equator",
+        "options": [
+          "equator",
+          "horizon",
+          "glacier"
+        ]
+      }
+    ]
+  },
+  "business": {
+    "basico": [
+      {
+        "sentence": "I need to pay this ___ before Friday.",
+        "word": "bill",
+        "options": [
+          "bill",
+          "cost",
+          "debt"
+        ]
+      },
+      {
+        "sentence": "My ___ approved the new marketing plan.",
+        "word": "boss",
+        "options": [
+          "boss",
+          "team",
+          "head"
+        ]
+      },
+      {
+        "sentence": "The company built a strong ___ over the years.",
+        "word": "brand",
+        "options": [
+          "brand",
+          "image",
+          "model"
+        ]
+      },
+      {
+        "sentence": "I deposited money at the ___ today.",
+        "word": "bank",
+        "options": [
+          "bank",
+          "shop",
+          "mall"
+        ]
+      }
+    ],
+    "intermedio": [
+      {
+        "sentence": "Both companies signed the ___ yesterday.",
+        "word": "agreement",
+        "options": [
+          "agreement",
+          "insurance",
+          "franchise"
+        ]
+      },
+      {
+        "sentence": "The manager conducted an ___ of employee performance.",
+        "word": "appraisal",
+        "options": [
+          "appraisal",
+          "inventory",
+          "agreement"
+        ]
+      },
+      {
+        "sentence": "The two firms finalized the ___ of the smaller startup.",
+        "word": "acquisition",
+        "options": [
+          "acquisition",
+          "negotiation",
+          "partnership"
+        ]
+      },
+      {
+        "sentence": "The company increased its ___ budget this quarter.",
+        "word": "advertising",
+        "options": [
+          "advertising",
+          "acquisition",
+          "partnership"
+        ]
+      }
+    ],
+    "avanzado": [
+      {
+        "sentence": "He invested in an ___ for retirement income.",
+        "word": "annuity",
+        "options": [
+          "annuity",
+          "pension",
+          "savings"
+        ]
+      },
+      {
+        "sentence": "She is the ___ named in the insurance policy.",
+        "word": "beneficiary",
+        "options": [
+          "beneficiary",
+          "shareholder",
+          "stakeholder"
+        ]
+      },
+      {
+        "sentence": "The startup managed to ___ on the new trend quickly.",
+        "word": "capitalize",
+        "options": [
+          "capitalize",
+          "strategize",
+          "prioritize"
+        ]
+      },
+      {
+        "sentence": "Several companies formed a ___ to control prices.",
+        "word": "cartel",
+        "options": [
+          "cartel",
+          "market",
+          "sector"
+        ]
+      }
+    ]
+  },
+  "daily": {
+    "basico": [
+      {
+        "sentence": "Can you ___ me later tonight?",
+        "word": "call",
+        "options": [
+          "call",
+          "text",
+          "mail"
+        ]
+      },
+      {
+        "sentence": "I need to ___ some groceries.",
+        "word": "buy",
+        "options": [
+          "buy",
+          "get",
+          "eat"
+        ]
+      },
+      {
+        "sentence": "Please ___ the question carefully.",
+        "word": "answer",
+        "options": [
+          "answer",
+          "listen",
+          "repeat"
+        ]
+      },
+      {
+        "sentence": "Let's ___ the meeting now.",
+        "word": "begin",
+        "options": [
+          "begin",
+          "close",
+          "delay"
+        ]
+      }
+    ],
+    "intermedio": [
+      {
+        "sentence": "It's hard to ___ all your goals in one year.",
+        "word": "accomplish",
+        "options": [
+          "accomplish",
+          "prioritize",
+          "strategize"
+        ]
+      },
+      {
+        "sentence": "She managed to ___ her dream of running a marathon.",
+        "word": "achieve",
+        "options": [
+          "achieve",
+          "succeed",
+          "improve"
+        ]
+      },
+      {
+        "sentence": "You should ___ to new environments quickly.",
+        "word": "adapt",
+        "options": [
+          "adapt",
+          "adopt",
+          "react"
+        ]
+      },
+      {
+        "sentence": "Please ___ your complaint to customer service.",
+        "word": "address",
+        "options": [
+          "address",
+          "explain",
+          "mention"
+        ]
+      }
+    ],
+    "avanzado": [
+      {
+        "sentence": "The hotel could not ___ our late request.",
+        "word": "accommodate",
+        "options": [
+          "accommodate",
+          "articulate",
+          "authenticate"
+        ]
+      },
+      {
+        "sentence": "They decided to ___ the contract terms.",
+        "word": "amend",
+        "options": [
+          "amend",
+          "extend",
+          "append"
+        ]
+      },
+      {
+        "sentence": "It took years to fully ___ into the new culture.",
+        "word": "assimilate",
+        "options": [
+          "assimilate",
+          "acclimatize",
+          "articulate"
+        ]
+      },
+      {
+        "sentence": "The bank needs to ___ your identity first.",
+        "word": "authenticate",
+        "options": [
+          "authenticate",
+          "accommodate",
+          "acclimatize"
+        ]
+      }
+    ]
+  }
+}

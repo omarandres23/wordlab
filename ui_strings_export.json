@@ -1,0 +1,375 @@
+{
+  "_note": "Extraction only — no code was modified. Every entry has a `text` (verbatim English, including any dynamic ${...} placeholders left as-is) and a `source` pointing to file:line in the project as of this export. Shared/global UI (intro modal chrome, END screen chrome shared by multiple games) is listed once under \"_shared\" instead of repeated per game. Star Party is excluded per instructions.",
+
+  "_shared": {
+    "intro_modal": {
+      "start_button":        { "text": "START", "source": "index.html:295" },
+      "mode_label":          { "text": "Mode:", "source": "index.html:260" },
+      "eb_mode_label":       { "text": "Mode:", "source": "index.html:266" },
+      "st_mode_label":       { "text": "Mode:", "source": "index.html:272" },
+      "difficulty_label":    { "text": "Difficulty:", "source": "index.html:278" },
+      "category_label":      { "text": "Category:", "source": "index.html:285" },
+      "difficulty_options": {
+        "basic":        { "text": "BASIC", "source": "index.html:280" },
+        "intermediate": { "text": "INTERMEDIATE", "source": "index.html:281" },
+        "advanced":     { "text": "ADVANCED", "source": "index.html:282" }
+      },
+      "category_options": {
+        "business": { "text": "BUSINESS", "source": "index.html:287" },
+        "travel":   { "text": "TRAVEL", "source": "index.html:288" },
+        "daily":    { "text": "DAILY", "source": "index.html:289" },
+        "general":  { "text": "GENERAL", "source": "index.html:290" }
+      },
+      "waffle_mode_options": {
+        "normal": { "text": "NORMAL", "source": "index.html:262" },
+        "deluxe": { "text": "DELUXE", "source": "index.html:263" }
+      },
+      "emojibomb_mode_options": {
+        "basico":   { "text": "BASICO", "source": "index.html:268" },
+        "hardcore": { "text": "HARDCORE", "source": "index.html:269" }
+      },
+      "strands_mode_options": {
+        "normal":   { "text": "NORMAL", "source": "index.html:274" },
+        "hardcore": { "text": "HARDCORE", "source": "index.html:275" }
+      }
+    },
+    "level_labels": {
+      "basico":     { "text": "Basic", "source": "app.js:41" },
+      "intermedio": { "text": "Intermediate", "source": "app.js:41" },
+      "avanzado":   { "text": "Advanced", "source": "app.js:41" }
+    },
+    "category_labels": {
+      "business": { "text": "Business", "source": "app.js:42" },
+      "travel":   { "text": "Travel", "source": "app.js:42" },
+      "daily":    { "text": "Daily", "source": "app.js:42" },
+      "general":  { "text": "General", "source": "app.js:42" }
+    },
+    "buttons": {
+      "back":          { "text": "← Back", "source": "index.html:302 (repeated per screen, same markup)" },
+      "play_again":    { "text": "PLAY AGAIN", "source": "index.html (per game, see each game's buttons.play_again)" },
+      "back_to_menu":  { "text": "BACK TO MENU", "source": "index.html (per game, see each game's buttons.back_to_menu)" }
+    }
+  },
+
+  "wordle": {
+    "intro": { "text": "Guess the hidden English word in 6 tries. Green = right letter, right spot. Yellow = right letter, wrong spot. Gray = not in the word.", "source": "app.js:47" },
+    "intro_title": { "text": "WORDLE", "source": "app.js:46" },
+    "buttons": {
+      "hint":         { "text": "💡 HINT", "source": "index.html:317" },
+      "forfeit":      { "text": "🏳️ FORFEIT", "source": "index.html:318" },
+      "play_again":   { "text": "PLAY AGAIN", "source": "index.html:330" },
+      "back_to_menu": { "text": "BACK TO MENU", "source": "index.html:331" }
+    },
+    "messages": {
+      "hint1_pos":            { "text": "💡 Hint: this word is a ${info.pos} (${myAnswer.length} letters)", "source": "app.js:430" },
+      "hint1_no_pos":         { "text": "💡 Hint: the word has ${myAnswer.length} letters", "source": "app.js:432" },
+      "not_enough_letters":   { "text": "Not enough letters (${answer.length} needed)", "source": "app.js:512" },
+      "result_won":           { "text": "🎉 You got it!", "source": "app.js:573" },
+      "result_forfeited":     { "text": "🏳️ You gave up!", "source": "app.js:575" },
+      "result_lost":          { "text": "😔 Out of tries!", "source": "app.js:576" },
+      "answer_prefix_html":   { "text": "The word was: <strong id=\"wordle-answer\"></strong>", "source": "index.html:327" },
+      "meaning":              { "text": "📖 Meaning${pos}: ${wordInfo.definition}", "source": "app.js:582, app.js:590" }
+    },
+    "labels": {
+      "meta": { "text": "${LEVEL_LABELS[level]}", "source": "app.js:413", "note": "difficulty only, category removed" }
+    }
+  },
+
+  "blanks": {
+    "intro": { "text": "Complete 4 sentences with the missing word. Some starting letters are shown — type the rest before time runs out. Your first miss reveals a few extra letters (only once). Unlimited tries, 1 point per sentence.", "source": "app.js:51" },
+    "intro_title_html": { "text": "FILL IN / [4-cell icon] / BLANKS (composed logo, no plain-text title)", "source": "app.js:99-109" },
+    "buttons": {
+      "check":        { "text": "CHECK", "source": "index.html:351" },
+      "next":         { "text": "NEXT", "source": "index.html:361" },
+      "play_again":   { "text": "PLAY AGAIN", "source": "index.html:369" },
+      "back_to_menu": { "text": "BACK TO MENU", "source": "index.html:370" }
+    },
+    "messages": {
+      "progress":            { "text": "SENTENCE ${blanksIndex + 1} / ${blanksRound.length}", "source": "app.js:703" },
+      "time_up":             { "text": "⏰ Time's up — it was \"${item.word}\"", "source": "app.js:738" },
+      "incomplete":          { "text": "Complete all the letters first", "source": "app.js:750" },
+      "correct":             { "text": "✅ Correct! +1 point", "source": "app.js:759" },
+      "first_miss_reveal":   { "text": "❌ Not quite — a few more letters revealed (only once!)", "source": "app.js:771" },
+      "keep_trying":         { "text": "❌ Keep trying…", "source": "app.js:776" },
+      "meaning":             { "text": "📖 Meaning: ${def}", "source": "app.js:794" },
+      "meaning_unavailable": { "text": "(no definition available)", "source": "app.js:796" },
+      "round_complete_title":{ "text": "Round complete!", "source": "index.html:366" },
+      "score_label":         { "text": "Your score: ", "source": "index.html:367" }
+    },
+    "labels": {
+      "meta": { "text": "${LEVEL_LABELS[level]}", "source": "app.js:642", "note": "difficulty only, category removed" }
+    }
+  },
+
+  "spot": {
+    "intro": { "text": "3 rounds. In each round, one of 4 sentences has an error: first find the wrong sentence, then click the exact word with the mistake. Start each round with 2 points — wrong sentence -0.25, wrong word -0.5.", "source": "app.js:55" },
+    "intro_title": { "text": "SPOT THE ERROR", "source": "app.js:54" },
+    "buttons": {
+      "next":         { "text": "NEXT", "source": "index.html:722" },
+      "play_again":   { "text": "PLAY AGAIN", "source": "index.html:730" },
+      "back_to_menu": { "text": "BACK TO MENU", "source": "index.html:731" }
+    },
+    "messages": {
+      "progress":            { "text": "ROUND ${spotIndex + 1} / ${spotRounds.length}", "source": "app.js:875" },
+      "instruction_phase1":  { "text": "One of these sentences has an error. Click it!", "source": "app.js:876" },
+      "phase1_correct":      { "text": "✅ That's the one! Now find the wrong word.", "source": "app.js:898" },
+      "phase1_wrong":        { "text": "❌ That sentence is correct (-0.25) — try another one", "source": "app.js:903" },
+      "instruction_phase2":  { "text": "Click the exact word where the error is:", "source": "app.js:910" },
+      "phase2_wrong_first":  { "text": "❌ Not that word (-0.5) — keep trying", "source": "app.js:935" },
+      "phase2_wrong_again":  { "text": "❌ Not that word — keep trying", "source": "app.js:937" },
+      "round_solved":        { "text": "✔ Round solved: +${spotRoundScore} points", "source": "app.js:957" },
+      "corrected_sentence":  { "text": "Correct sentence: \"${correctedSentence(round)}\"", "source": "app.js:958" },
+      "explanation_spelling":{ "text": "📝 Spelling: ${round.explanation}", "source": "app.js:959" },
+      "explanation_grammar": { "text": "📚 Grammar: ${round.explanation}", "source": "app.js:959" },
+      "game_complete_title": { "text": "Game complete!", "source": "index.html:727" },
+      "score_label":         { "text": "Your score: ", "source": "index.html:728" },
+      "score_value":         { "text": "${spotTotal} / ${spotRounds.length * 2}", "source": "app.js:968" }
+    },
+    "labels": {
+      "meta": { "text": "${LEVEL_LABELS[level]}", "source": "app.js:860" }
+    }
+  },
+
+  "strands": {
+    "intro": { "text": "Find 8 hidden words connected by a theme, including the spangram (it touches two opposite sides). Drag across adjacent letters to trace a word. Extra real words you find along the way earn hints: every 3 gives you 1.", "source": "app.js:59" },
+    "intro_title": { "text": "STRANDS", "source": "app.js:58" },
+    "static_labels": {
+      "todays_theme": { "text": "TODAY'S THEME", "source": "index.html:429" }
+    },
+    "buttons": {
+      "hint":         { "text": "💡 HINT (0)", "source": "index.html:449", "note": "the (0) is the live available-hint count, updated dynamically — see messages.hint_count" },
+      "clear":        { "text": "CLEAR", "source": "index.html:450" },
+      "give_up":      { "text": "🏳️ GIVE UP", "source": "index.html:451" },
+      "play_again":   { "text": "PLAY AGAIN", "source": "index.html:462" },
+      "change_mode":  { "text": "CHANGE MODE", "source": "index.html:463" },
+      "back_to_menu": { "text": "BACK TO MENU", "source": "index.html:464" }
+    },
+    "messages": {
+      "progress":         { "text": "${stFound.size} / ${stPuzzle.words.length} THEME WORDS", "source": "app.js:2727" },
+      "hint_progress":    { "text": "EXTRA WORDS: ${stNonTheme.size % need} / ${need} TO NEXT HINT", "source": "app.js:2729" },
+      "hint_count":       { "text": "💡 HINT (${avail})", "source": "app.js:2731" },
+      "spangram_flash":   { "text": "SPANGRAM!", "source": "app.js:2858" },
+      "word_found":       { "text": "✅ ${match.word}", "source": "app.js:2862" },
+      "already_found":    { "text": "⚠️ \"${word}\" already found", "source": "app.js:2874" },
+      "nice_find":        { "text": "✨ \"${word}\" — nice find!", "source": "app.js:2877" },
+      "out_of_lives":     { "text": "💔 Out of lives", "source": "app.js:2902" },
+      "not_a_word":       { "text": "💔 Not a word — ${stLives} ${stLives === 1 ? \"life\" : \"lives\"} left", "source": "app.js:2907" },
+      "hint_reveal":      { "text": "💡 The first ${count} letters are lighting up in order", "source": "app.js:2926" },
+      "end_title_won":    { "text": "🎉 You found them all!", "source": "app.js:2984" },
+      "end_title_lives":  { "text": "💔 Out of lives", "source": "app.js:2986" },
+      "end_title_gaveup": { "text": "🏳️ You gave up", "source": "app.js:2988" },
+      "end_detail_won":   { "text": "All ${stPuzzle.words.length} theme words + the spangram. Hints used: ${stHintsUsed} · extra words found: ${stNonTheme.size}.", "source": "app.js:2989" },
+      "end_detail_lives": { "text": "You ran out of lives after finding ${foundBefore} of ${stPuzzle.words.length} theme words. The full board is revealed behind — take a look before you go.", "source": "app.js:2991" },
+      "end_detail_gaveup":{ "text": "You had found ${foundBefore} of ${stPuzzle.words.length} theme words. The full board is revealed behind — take a look before you go.", "source": "app.js:2992" }
+    },
+    "labels": {
+      "meta": { "text": "${stMode.toUpperCase()}", "source": "app.js:2671" },
+      "theme": { "text": "${stPuzzle.theme}", "source": "app.js:2672", "note": "puzzle content, not chrome — comes from strands_data.json" }
+    }
+  },
+
+  "emojibomb": {
+    "intro": { "text": "One letter, three emojis, one word. Type the exact word they describe before the bomb goes off. 4 levels. Choose Basico (3 lives per level) or Hardcore (1 try, no room for mistakes).", "source": "app.js:63" },
+    "intro_title": { "text": "EMOJI BOMB", "source": "app.js:62" },
+    "static_labels": {
+      "prompt": { "text": "The word starts with:", "source": "index.html:483" }
+    },
+    "buttons": {
+      "submit":        { "text": "SUBMIT", "source": "index.html:491" },
+      "play_again":    { "text": "PLAY AGAIN", "source": "index.html:505" },
+      "change_mode":   { "text": "CHANGE MODE", "source": "index.html:506" },
+      "back_to_menu":  { "text": "BACK TO MENU", "source": "index.html:507" }
+    },
+    "messages": {
+      "level_splash":       { "text": "LEVEL ${levelNumber}", "source": "app.js:2396" },
+      "one_try_tag":        { "text": "1 TRY", "source": "app.js:2382" },
+      "wrong_guess":        { "text": "❌ \"${guess.toLowerCase()}\" is wrong — ${ebLives} ${ebLives === 1 ? \"life\" : \"lives\"} left", "source": "app.js:2513" },
+      "empty_answer":       { "text": "❌ Empty answer — ${ebLives} ${ebLives === 1 ? \"life\" : \"lives\"} left", "source": "app.js:2514" },
+      "correct_flash":      { "text": "✓ ${item.word}", "source": "app.js:2526" },
+      "gameover_timeout":   { "text": "💥 Time's up!", "source": "app.js:2486" },
+      "gameover_wrong":     { "text": "❌ \"${guess.toLowerCase()}\" is wrong", "source": "app.js:2501" },
+      "gameover_empty":     { "text": "❌ Empty answer", "source": "app.js:2501" },
+      "gameover_lives":     { "text": "💜 Out of lives", "source": "app.js:2508" },
+      "end_title":          { "text": "💥 You reached Level ${ebLevelNum()}", "source": "app.js:2566" },
+      "end_detail":         { "text": "${reason} — the word was:", "source": "app.js:2567" }
+    },
+    "labels": {
+      "level_progress": { "text": "LEVEL ${ebLevelNum()} / ${ebRules().levels_per_game}", "source": "app.js:2451" },
+      "word_progress":  { "text": "WORD ${(ebIndex % 3) + 1} / ${ebRules().words_per_level_in_game}", "source": "app.js:2452" }
+    }
+  },
+
+  "waffle": {
+    "intro": { "text": "Swap letters to solve 6 (or 8) connected words. Green = right spot, yellow = in this word but wrong spot, gray = not in its words. Click one cell, then another, to swap their letters before your swaps run out.", "source": "app.js:67" },
+    "intro_title": { "text": "WAFFLE", "source": "app.js:66" },
+    "buttons": {
+      "play_again":       { "text": "PLAY AGAIN", "source": "index.html:538" },
+      "change_settings":  { "text": "CHANGE SETTINGS", "source": "index.html:539" },
+      "back_to_menu":     { "text": "BACK TO MENU", "source": "index.html:540" }
+    },
+    "messages": {
+      "unlimited_swaps":    { "text": "UNLIMITED SWAPS", "source": "app.js:2248" },
+      "swaps_remaining":    { "text": "${wfSwapsLeft} SWAP${wfSwapsLeft === 1 ? \"\" : \"S\"} REMAINING", "source": "app.js:2251" },
+      "end_title_won":      { "text": "🎉 Waffle solved!", "source": "app.js:2289" },
+      "end_title_lost":     { "text": "💥 Out of swaps!", "source": "app.js:2289" },
+      "end_detail_won":     { "text": "All ${wfCells.length} letters in place${wfSwapsLeft !== null ? ` with ${wfSwapsLeft} swap${wfSwapsLeft === 1 ? \"\" : \"s\"} to spare` : \"\"}.", "source": "app.js:2291" },
+      "end_detail_lost":    { "text": "You placed ${solvedCount} of ${wfCells.length} letters. These were the words:", "source": "app.js:2292" },
+      "solution_row_label": { "text": "Across ${i + 1}", "source": "app.js:2322" },
+      "solution_row_label_down": { "text": "Down ${i + 1}", "source": "app.js:2323" },
+      "meaning_unavailable":{ "text": "(no definition available)", "source": "app.js:2311" }
+    },
+    "labels": {
+      "meta": { "text": "${mode.toUpperCase()} · ${LEVEL_LABELS[level]}", "source": "app.js:2171" }
+    }
+  },
+
+  "bombword": {
+    "intro": { "text": "You'll see letters. Type any real English word that starts with them before time runs out. 4 levels, getting harder each time. One mistake and you're out.", "source": "app.js:71" },
+    "intro_title": { "text": "BOMB WORD", "source": "app.js:70" },
+    "static_labels": {
+      "prompt": { "text": "Type a real English word starting with:", "source": "index.html:558" }
+    },
+    "buttons": {
+      "submit":        { "text": "SUBMIT", "source": "index.html:565" },
+      "play_again":    { "text": "PLAY AGAIN", "source": "index.html:584" },
+      "back_to_menu":  { "text": "BACK TO MENU", "source": "index.html:585" }
+    },
+    "messages": {
+      "level_splash":     { "text": "LEVEL ${levelNumber}", "source": "app.js:1894" },
+      "gameover_timeout": { "text": "💥 Time's up!", "source": "app.js:1976" },
+      "gameover_lives":   { "text": "💜 Out of lives", "source": "app.js:1999" },
+      "wrong_guess":      { "text": "❌ \"${guess.toLowerCase()}\" is not valid — ${bwLives} ${bwLives === 1 ? \"life\" : \"lives\"} left", "source": "app.js:2004" },
+      "empty_answer":     { "text": "❌ Empty answer — ${bwLives} ${bwLives === 1 ? \"life\" : \"lives\"} left", "source": "app.js:2005" },
+      "correct_flash":    { "text": "✓ ${guess}", "source": "app.js:2017" },
+      "end_title_won":    { "text": "🎉 You completed all 4 levels!", "source": "app.js:2039" },
+      "end_detail_won":   { "text": "12 prefixes solved. The bomb never went off.", "source": "app.js:2040" },
+      "end_title_lost":   { "text": "💥 You reached Level ${bwLevelIndex() + 1}", "source": "app.js:2049" },
+      "end_detail_lost":  { "text": "${reason} — the prefix was \"${bwPrefixes[bwIndex]}\"", "source": "app.js:2050" }
+    },
+    "labels": {
+      "meta":            { "text": "4 LEVELS · 3 LIVES PER LEVEL", "source": "app.js:1929" },
+      "level_progress":  { "text": "LEVEL ${bwLevelIndex() + 1} / ${BOMBWORD_DATA.rules.levels_per_game}", "source": "app.js:1947" },
+      "word_progress":   { "text": "WORD ${(bwIndex % 3) + 1} / ${BOMBWORD_DATA.rules.prefixes_per_level_in_game}", "source": "app.js:1948" }
+    }
+  },
+
+  "realword": {
+    "intro": { "text": "You'll see 8 words. Decide if each one is REAL or FAKE. You have 6 seconds per word — no answer counts as incorrect. 1 point per correct answer.", "source": "app.js:75" },
+    "intro_title": { "text": "IS IT A REAL WORD?", "source": "app.js:74" },
+    "static_labels": {
+      "question": { "text": "Is this a real English word?", "source": "index.html:599" }
+    },
+    "buttons": {
+      "yes":          { "text": "✓ Yes", "source": "index.html:605" },
+      "no":           { "text": "✗ No", "source": "index.html:606" },
+      "play_again":   { "text": "PLAY AGAIN", "source": "index.html:621" },
+      "back_to_menu": { "text": "BACK TO MENU", "source": "index.html:622" }
+    },
+    "messages": {
+      "progress":         { "text": "WORD ${rwIndex + 1} / ${rwWords.length}", "source": "app.js:1723" },
+      "correct":          { "text": "✓", "source": "app.js:1768" },
+      "wrong":            { "text": "✗", "source": "app.js:1768" },
+      "timeout":          { "text": "✗ Time's up!", "source": "app.js:1768" },
+      "game_complete_title": { "text": "Game complete!", "source": "index.html:617" },
+      "score_label":      { "text": "Your score: ", "source": "index.html:618" },
+      "row_correct_prefix": { "text": "✓ ${r.word.toLowerCase()}", "source": "app.js:1800" },
+      "row_wrong_prefix":   { "text": "✗ ${r.word.toLowerCase()}", "source": "app.js:1800" },
+      "tag_real":         { "text": "real word", "source": "app.js:1804" },
+      "tag_fake":         { "text": "fake word", "source": "app.js:1804" },
+      "meaning_not_real": { "text": "Not a real word", "source": "app.js:1812" },
+      "meaning_unavailable": { "text": "(no definition available)", "source": "app.js:1812" }
+    },
+    "labels": {
+      "meta": { "text": "${rwRules().words_per_game} words · ${rwRules().seconds_per_word}s each", "source": "app.js:1711" }
+    }
+  },
+
+  "connections": {
+    "intro": { "text": "Group 16 words into 4 hidden categories by meaning. Select 4 words and press Submit — unlimited tries, but Give Up resets your score to 0. Each solved group is 1 point.", "source": "app.js:79" },
+    "intro_title": { "text": "CONNECTIONS", "source": "app.js:78" },
+    "static_labels": {
+      "instruction": { "text": "Group the 16 words into 4 hidden categories. Select 4 and press Submit.", "source": "index.html:635" }
+    },
+    "buttons": {
+      "submit":       { "text": "SUBMIT", "source": "index.html:644" },
+      "clear":        { "text": "CLEAR", "source": "index.html:645" },
+      "give_up":      { "text": "🏳️ GIVE UP", "source": "index.html:646" },
+      "play_again":   { "text": "PLAY AGAIN", "source": "index.html:655" },
+      "back_to_menu": { "text": "BACK TO MENU", "source": "index.html:656" }
+    },
+    "messages": {
+      "three_of_four":    { "text": "💡 You have found 3 correct words of a group", "source": "app.js:1622" },
+      "not_quite":        { "text": "❌ Not quite, try again", "source": "app.js:1624" },
+      "gave_up_title":    { "text": "🏳️ You gave up!", "source": "app.js:1644" },
+      "puzzle_complete_title": { "text": "🎉 Puzzle complete!", "source": "app.js:1644" },
+      "score_label":      { "text": "Your score: ", "source": "index.html:652" },
+      "meaning_unavailable": { "text": "(no definition available)", "source": "app.js:1575" }
+    },
+    "labels": {
+      "meta": { "text": "${LEVEL_LABELS[level]}", "source": "app.js:1488" },
+      "group_words_join": { "text": "cat.words.join(\" · \")", "source": "app.js:1561", "note": "puzzle content, not chrome" }
+    }
+  },
+
+  "impostor": {
+    "intro": { "text": "Find the word that doesn't belong. One wrong click and you're out. 3 rounds: click the 4 words that share something, leave the impostor for last. No hint = 3 pts, with hint = 2 pts.", "source": "app.js:83" },
+    "intro_title_html": { "text": "IMPOSTOR (spy-icon header, same word as plain title below icon)", "source": "app.js:110-124" },
+    "static_labels": {
+      "instruction": { "text": "Click the words that DON'T belong with the impostor. Leave the impostor for last.", "source": "index.html:670" }
+    },
+    "buttons": {
+      "hint":         { "text": "💡 HINT", "source": "index.html:679" },
+      "play_again":   { "text": "PLAY AGAIN", "source": "index.html:694" },
+      "change_settings": { "text": "CHANGE SETTINGS", "source": "index.html:695" },
+      "back_to_menu": { "text": "BACK TO MENU", "source": "index.html:696" }
+    },
+    "messages": {
+      "progress":         { "text": "ROUND ${impIndex + 1} / ${impSets.length}", "source": "app.js:1330" },
+      "round_won":        { "text": "✅ Round won! The impostor was \"${set.impostor}\" — +${points} pts", "source": "app.js:1385" },
+      "round_lost":       { "text": "❌ You clicked the impostor! 0 pts this round", "source": "app.js:1386" },
+      "next_or_results":  { "text": "SEE RESULTS / NEXT ROUND", "source": "app.js:1391", "note": "\"SEE RESULTS\" on the last round, \"NEXT ROUND\" otherwise" },
+      "hint_text":        { "text": "💡 Hint: ${impHintText(impSets[impIndex])}.", "source": "app.js:1400" },
+      "game_complete_title": { "text": "Game complete!", "source": "index.html:690" },
+      "score_label":      { "text": "Your score: ", "source": "index.html:691" },
+      "breakdown_row":    { "text": "R${i + 1}: ${impHintText(s)} — impostor: ${s.impostor}", "source": "app.js:1423" }
+    },
+    "labels": {
+      "meta": { "text": "${LEVEL_LABELS[level]}", "source": "app.js:1316", "note": "difficulty only, category removed" }
+    }
+  },
+
+  "wordlinks": {
+    "intro": { "text": "Guess the secret word from 4 clue words. 3 rounds, 3 attempts each: guess on attempt 1 for 3 points, attempt 2 for 2, attempt 3 for 1. The HINT button reveals a 5th clue but costs 1 attempt.", "source": "app.js:87" },
+    "intro_title": { "text": "WORD LINKS", "source": "app.js:86" },
+    "static_labels": {
+      "instruction": { "text": "These 4 words all point to one secret word:", "source": "index.html:389" }
+    },
+    "buttons": {
+      "guess":        { "text": "GUESS", "source": "index.html:398" },
+      "hint":         { "text": "💡 HINT (-1 attempt)", "source": "index.html:404" },
+      "next_round":   { "text": "NEXT ROUND", "source": "index.html:405", "note": "same element toggles to \"SEE RESULTS\" — see messages.next_or_results" },
+      "play_again":   { "text": "PLAY AGAIN", "source": "index.html:414" },
+      "change_level": { "text": "CHANGE LEVEL", "source": "index.html:415" },
+      "back_to_menu": { "text": "BACK TO MENU", "source": "index.html:416" }
+    },
+    "messages": {
+      "data_error":       { "text": "Word Links data for this level could not be loaded. Please try another level.", "source": "app.js:1025" },
+      "progress":         { "text": "ROUND ${wlIndex + 1} / ${wlWords.length}", "source": "app.js:1046" },
+      "type_verb":        { "text": "(Verb)", "source": "app.js:1047" },
+      "type_noun":        { "text": "(Noun)", "source": "app.js:1047" },
+      "attempts_left":    { "text": "Attempts left: ${wlAttemptsLeft}", "source": "app.js:1070" },
+      "correct":          { "text": "✅ Correct! It was \"${item.word}\" — +${points} point${points === 1 ? \"\" : \"s\"}", "source": "app.js:1083" },
+      "out_of_attempts":  { "text": "❌ Out of attempts! The word was <span class=\"wl-reveal-word\">${item.word}</span>", "source": "app.js:1085" },
+      "next_or_results":  { "text": "SEE RESULTS / NEXT ROUND", "source": "app.js:1088", "note": "\"SEE RESULTS\" on the last round, \"NEXT ROUND\" otherwise" },
+      "type_a_word":      { "text": "Type a word", "source": "app.js:1107" },
+      "not_enough_for_hint": { "text": "Not enough attempts left for a hint", "source": "app.js:1135" },
+      "game_complete_title": { "text": "Game complete!", "source": "index.html:410" },
+      "score_label":      { "text": "Your score: ", "source": "index.html:411" },
+      "breakdown_row_name": { "text": "Round ${i + 1}: ${w.word}", "source": "app.js:1171" },
+      "breakdown_row_pts":  { "text": "${wlScores[i]} pts", "source": "app.js:1173" }
+    },
+    "labels": {
+      "meta": { "text": "${wlLevel.toUpperCase()}", "source": "app.js:1032" }
+    }
+  }
+}

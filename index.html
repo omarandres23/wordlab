@@ -1,0 +1,850 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>English 11 — Daily English Games</title>
+<link rel="stylesheet" href="styles.css?v=sp11g">
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="topbar">
+  <div class="topbar-side"></div>
+  <h1 class="logo"><img src="img/wordlab-logo.png" alt="Word Lab" class="logo-img"></h1>
+  <div class="topbar-side"></div>
+</header>
+
+<!-- ================= HOME ================= -->
+<main id="screen-home" class="screen active">
+  <p class="tagline">Choose what you want to play today</p>
+
+  <div class="card-grid">
+    <button class="game-card" data-game="bombword">
+      <span class="badge">NEW</span>
+      <div class="card-art">
+        <div class="mini-bombword">
+          <div class="bomb-title">
+            <span class="bomb-line">B<span class="bomb-o"><span class="bomb-o-skull">💀</span><span class="bomb-o-spark"></span></span>MB</span>
+            <span class="bomb-line">WORD</span>
+          </div>
+          <div class="bomb-prefix">AR<span class="bomb-cursor">_</span></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="card-play">PLAY</span>
+        <span class="card-name">Bomb word</span>
+      </div>
+    </button>
+
+    <button class="game-card" data-game="starparty">
+      <span class="badge">NEW</span>
+      <div class="card-art">
+        <div class="mini-starparty">
+          <div class="mini-sp-stars">
+            <svg class="sp-star-ico mini-sp-star s1" viewBox="0 0 100 100" width="30" height="30"><defs><radialGradient id="mini-sp-grad-1" cx="42%" cy="36%" r="72%"><stop offset="0%" stop-color="#ffffff"/><stop offset="55%" stop-color="#f3e8ff"/><stop offset="100%" stop-color="#d9bdf0"/></radialGradient></defs><path d="M 43.36 15.45 Q 50.00 2.00 56.64 15.45 L 60.57 23.41 Q 64.11 30.58 72.02 31.73 L 80.81 33.01 Q 95.65 35.17 84.91 45.64 L 78.55 51.83 Q 72.83 57.42 74.18 65.30 L 75.68 74.05 Q 78.21 88.83 64.94 81.85 L 57.08 77.72 Q 50.00 74.00 42.92 77.72 L 35.06 81.85 Q 21.79 88.83 24.32 74.05 L 25.82 65.30 Q 27.17 57.42 21.45 51.83 L 15.09 45.64 Q 4.35 35.17 19.19 33.01 L 27.98 31.73 Q 35.89 30.58 39.43 23.41 Z" fill="url(#mini-sp-grad-1)"/></svg>
+            <svg class="sp-star-ico mini-sp-star s2" viewBox="0 0 100 100" width="26" height="26"><defs><radialGradient id="mini-sp-grad-2" cx="42%" cy="36%" r="72%"><stop offset="0%" stop-color="#ffffff"/><stop offset="55%" stop-color="#f3e8ff"/><stop offset="100%" stop-color="#d9bdf0"/></radialGradient></defs><path d="M 43.36 15.45 Q 50.00 2.00 56.64 15.45 L 60.57 23.41 Q 64.11 30.58 72.02 31.73 L 80.81 33.01 Q 95.65 35.17 84.91 45.64 L 78.55 51.83 Q 72.83 57.42 74.18 65.30 L 75.68 74.05 Q 78.21 88.83 64.94 81.85 L 57.08 77.72 Q 50.00 74.00 42.92 77.72 L 35.06 81.85 Q 21.79 88.83 24.32 74.05 L 25.82 65.30 Q 27.17 57.42 21.45 51.83 L 15.09 45.64 Q 4.35 35.17 19.19 33.01 L 27.98 31.73 Q 35.89 30.58 39.43 23.41 Z" fill="url(#mini-sp-grad-2)"/></svg>
+            <svg class="sp-star-ico mini-sp-star s3" viewBox="0 0 100 100" width="20" height="20"><defs><radialGradient id="mini-sp-grad-3" cx="42%" cy="36%" r="72%"><stop offset="0%" stop-color="#ffffff"/><stop offset="55%" stop-color="#f3e8ff"/><stop offset="100%" stop-color="#d9bdf0"/></radialGradient></defs><path d="M 43.36 15.45 Q 50.00 2.00 56.64 15.45 L 60.57 23.41 Q 64.11 30.58 72.02 31.73 L 80.81 33.01 Q 95.65 35.17 84.91 45.64 L 78.55 51.83 Q 72.83 57.42 74.18 65.30 L 75.68 74.05 Q 78.21 88.83 64.94 81.85 L 57.08 77.72 Q 50.00 74.00 42.92 77.72 L 35.06 81.85 Q 21.79 88.83 24.32 74.05 L 25.82 65.30 Q 27.17 57.42 21.45 51.83 L 15.09 45.64 Q 4.35 35.17 19.19 33.01 L 27.98 31.73 Q 35.89 30.58 39.43 23.41 Z" fill="url(#mini-sp-grad-3)"/></svg>
+            <svg class="sp-star-ico mini-sp-star s4" viewBox="0 0 100 100" width="20" height="20"><defs><radialGradient id="mini-sp-grad-4" cx="42%" cy="36%" r="72%"><stop offset="0%" stop-color="#ffffff"/><stop offset="55%" stop-color="#f3e8ff"/><stop offset="100%" stop-color="#d9bdf0"/></radialGradient></defs><path d="M 43.36 15.45 Q 50.00 2.00 56.64 15.45 L 60.57 23.41 Q 64.11 30.58 72.02 31.73 L 80.81 33.01 Q 95.65 35.17 84.91 45.64 L 78.55 51.83 Q 72.83 57.42 74.18 65.30 L 75.68 74.05 Q 78.21 88.83 64.94 81.85 L 57.08 77.72 Q 50.00 74.00 42.92 77.72 L 35.06 81.85 Q 21.79 88.83 24.32 74.05 L 25.82 65.30 Q 27.17 57.42 21.45 51.83 L 15.09 45.64 Q 4.35 35.17 19.19 33.01 L 27.98 31.73 Q 35.89 30.58 39.43 23.41 Z" fill="url(#mini-sp-grad-4)"/></svg>
+            <svg class="sp-star-ico mini-sp-star s5" viewBox="0 0 100 100" width="16" height="16"><defs><radialGradient id="mini-sp-grad-5" cx="42%" cy="36%" r="72%"><stop offset="0%" stop-color="#ffffff"/><stop offset="55%" stop-color="#f3e8ff"/><stop offset="100%" stop-color="#d9bdf0"/></radialGradient></defs><path d="M 43.36 15.45 Q 50.00 2.00 56.64 15.45 L 60.57 23.41 Q 64.11 30.58 72.02 31.73 L 80.81 33.01 Q 95.65 35.17 84.91 45.64 L 78.55 51.83 Q 72.83 57.42 74.18 65.30 L 75.68 74.05 Q 78.21 88.83 64.94 81.85 L 57.08 77.72 Q 50.00 74.00 42.92 77.72 L 35.06 81.85 Q 21.79 88.83 24.32 74.05 L 25.82 65.30 Q 27.17 57.42 21.45 51.83 L 15.09 45.64 Q 4.35 35.17 19.19 33.01 L 27.98 31.73 Q 35.89 30.58 39.43 23.41 Z" fill="url(#mini-sp-grad-5)"/></svg>
+            <svg class="sp-star-ico mini-sp-star s6" viewBox="0 0 100 100" width="14" height="14"><defs><radialGradient id="mini-sp-grad-6" cx="42%" cy="36%" r="72%"><stop offset="0%" stop-color="#ffffff"/><stop offset="55%" stop-color="#f3e8ff"/><stop offset="100%" stop-color="#d9bdf0"/></radialGradient></defs><path d="M 43.36 15.45 Q 50.00 2.00 56.64 15.45 L 60.57 23.41 Q 64.11 30.58 72.02 31.73 L 80.81 33.01 Q 95.65 35.17 84.91 45.64 L 78.55 51.83 Q 72.83 57.42 74.18 65.30 L 75.68 74.05 Q 78.21 88.83 64.94 81.85 L 57.08 77.72 Q 50.00 74.00 42.92 77.72 L 35.06 81.85 Q 21.79 88.83 24.32 74.05 L 25.82 65.30 Q 27.17 57.42 21.45 51.83 L 15.09 45.64 Q 4.35 35.17 19.19 33.01 L 27.98 31.73 Q 35.89 30.58 39.43 23.41 Z" fill="url(#mini-sp-grad-6)"/></svg>
+          </div>
+          <div class="mini-sp-goldwheel">
+            <div class="mini-sp-goldwheel-rim"></div>
+            <div class="mini-sp-goldwheel-sectors"></div>
+            <div class="mini-sp-goldwheel-hub"></div>
+          </div>
+          <div class="mini-sp-title">
+            <span style="color:#ff2fb0">S</span><span style="color:#ff5f7d">T</span><span style="color:#ff9d3d">A</span><span style="color:#ffd23d">R</span>&nbsp;<span style="color:#7ee787">P</span><span style="color:#34d1c5">A</span><span style="color:#38bdf8">R</span><span style="color:#7c6cf0">T</span><span style="color:#c04cff">Y</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="card-play">PLAY</span>
+        <span class="card-name">Star Party</span>
+      </div>
+    </button>
+
+    <button class="game-card" data-game="emojibomb">
+      <span class="badge">NEW</span>
+      <div class="card-art">
+        <div class="mini-emojibomb">
+          <div class="bomb-title">
+            <span class="bomb-line">EMOJI</span>
+            <span class="bomb-line">B<span class="bomb-o"><span class="bomb-o-skull">💀</span><span class="bomb-o-spark"></span></span>MB</span>
+          </div>
+          <div class="eb-row">
+            <span class="eb-emoji">☢️</span>
+            <span class="eb-ex">EX<span class="bomb-cursor">_</span></span>
+            <span class="eb-emoji">💥</span>
+          </div>
+          <div class="eb-bomb">💣</div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="card-play">PLAY</span>
+        <span class="card-name">Emoji Bomb</span>
+      </div>
+    </button>
+
+    <button class="game-card" data-game="blanks">
+      <div class="card-art">
+        <span class="fib-logo">
+          <span class="fib-logo-word">FILL IN</span>
+          <span class="fib-logo-cells">
+            <span class="fib-cell done">A</span>
+            <span class="fib-cell up"></span>
+            <span class="fib-cell"></span>
+            <span class="fib-cell"></span>
+          </span>
+          <span class="fib-logo-word">BLANKS</span>
+        </span>
+      </div>
+      <div class="card-footer">
+        <span class="card-play">PLAY</span>
+        <span class="card-name">Fill in the Blanks</span>
+      </div>
+    </button>
+
+    <button class="game-card" data-game="wordlinks">
+      <div class="card-art">
+        <div class="mini-wl">
+          <div class="mini-wl-grid">
+            <span class="mini-chip">hot</span>
+            <span class="mini-chip">sky</span>
+            <span class="mini-wl-hub">
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="#3b1a5e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                <path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+              </svg>
+            </span>
+            <span class="mini-chip">yellow</span>
+            <span class="mini-chip">bright</span>
+          </div>
+          <span class="mini-wl-logo">WORD LINKS</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="card-play">PLAY</span>
+        <span class="card-name">Word Links</span>
+      </div>
+    </button>
+
+    <button class="game-card" data-game="spot">
+      <div class="card-art">
+        <div class="mini-spot">
+          <span class="mini-spot-title">SPOT THE</span>
+          <div class="mini-spot-row">
+            <span class="mini-spot-box">✗</span>
+            <span class="mini-spot-phrase">She&nbsp;ha<span class="mini-spot-lens">ve<svg class="mini-spot-glass" viewBox="0 0 60 60" aria-hidden="true"><circle cx="24" cy="24" r="17" fill="rgba(255,255,255,0.12)" stroke="#fff" stroke-width="4"/><line x1="36" y1="36" x2="54" y2="54" stroke="#e5e5ee" stroke-width="6" stroke-linecap="round"/></svg></span></span>
+          </div>
+          <span class="mini-spot-title">ERROR</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="card-play">PLAY</span>
+        <span class="card-name">Spot the Error</span>
+      </div>
+    </button>
+
+    <button class="game-card" data-game="impostor">
+      <div class="card-art">
+        <div class="mini-impo">
+          <svg class="mini-impo-spy" viewBox="0 0 120 120" width="76" height="76" aria-hidden="true">
+            <!-- fedora: brim + pinched crown + band -->
+            <ellipse cx="60" cy="50" rx="50" ry="12" fill="#fff"/>
+            <path d="M30 50 Q30 20 46 17 Q60 15 74 17 Q90 20 90 50 Q75 44 60 44 Q45 44 30 50 Z" fill="#f1eef7"/>
+            <path d="M31 47 Q45 41 60 41 Q75 41 89 47 L88 51 Q74 45 60 45 Q46 45 32 51 Z" fill="#c9bfe0"/>
+            <!-- round sunglasses -->
+            <circle cx="44" cy="80" r="15" fill="#e9e5f3" stroke="#fff" stroke-width="3"/>
+            <circle cx="76" cy="80" r="15" fill="#e9e5f3" stroke="#fff" stroke-width="3"/>
+            <path d="M57 76 Q60 72 63 76" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+            <path d="M29 74 L20 70 M91 74 L100 70" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <span class="mini-impo-word">IMPOSTOR</span>
+          <div class="mini-impo-pills">
+            <span class="mini-chip">BUY</span><span class="mini-chip">SELL</span>
+            <span class="mini-chip">PAY</span>
+            <span class="mini-chip">PRI<span class="mini-spot-lens">CE<svg class="mini-spot-glass mini-spot-glass-impo" viewBox="0 0 60 60" aria-hidden="true"><circle cx="24" cy="24" r="17" fill="rgba(255,255,255,0.12)" stroke="#fff" stroke-width="4"/><line x1="36" y1="36" x2="54" y2="54" stroke="#e5e5ee" stroke-width="6" stroke-linecap="round"/></svg></span></span>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="card-play">PLAY</span>
+        <span class="card-name">Impostor</span>
+      </div>
+    </button>
+
+    <button class="game-card" data-game="realword">
+      <div class="card-art">
+        <div class="mini-realword">
+          <p class="mini-rw-title">Is this a real English word?</p>
+          <p class="mini-rw-word">REAL</p>
+          <div class="mini-rw-btns">
+            <span class="mini-rw-yes">✓ Yes</span>
+            <span class="mini-rw-no">✗ No</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="card-play">PLAY</span>
+        <span class="card-name">Is It a Real Word?</span>
+      </div>
+    </button>
+
+    <button class="game-card" data-game="connections">
+      <div class="card-art">
+        <div class="mini-connections">
+          <span class="mini-conn c0">FORK</span><span class="mini-conn c0">SPOON</span>
+          <span class="mini-conn c1">CAR</span><span class="mini-conn c2">SHIRT</span>
+          <span class="mini-conn c2">PANTS</span><span class="mini-conn c1">BUS</span>
+          <span class="mini-conn c3">TENNIS</span><span class="mini-conn c0">KNIFE</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="card-play">PLAY</span>
+        <span class="card-name">Connections</span>
+      </div>
+    </button>
+
+    <button class="game-card" data-game="wordle">
+      <div class="card-art">
+        <div class="mini-board">
+          <span class="mini-tile green">W</span><span class="mini-tile gray">O</span><span class="mini-tile yellow">R</span><span class="mini-tile gray">D</span><span class="mini-tile green">S</span>
+          <span class="mini-tile yellow">L</span><span class="mini-tile green">E</span><span class="mini-tile gray">A</span><span class="mini-tile green">R</span><span class="mini-tile yellow">N</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="card-play">PLAY</span>
+        <span class="card-name">Word Game</span>
+      </div>
+    </button>
+
+    <button class="game-card" data-game="strands">
+      <div class="card-art">
+        <div class="mini-strands">
+          <span class="mini-st">W</span><span class="mini-st st-y">S</span><span class="mini-st">D</span>
+          <span class="mini-st st-b">O</span><span class="mini-st st-y">P</span><span class="mini-st st-b">E</span>
+          <span class="mini-st st-y">A</span><span class="mini-st">N</span><span class="mini-st st-y">G</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="card-play">PLAY</span>
+        <span class="card-name">Strands</span>
+      </div>
+    </button>
+
+    <button class="game-card" data-game="waffle">
+      <div class="card-art">
+        <div class="mini-waffle">
+          <span class="mini-wcell wg">S</span><span class="mini-wcell wy">G</span><span class="mini-wcell wg">U</span>
+          <span class="mini-wcell wy">R</span><span class="mini-wcell hole"></span><span class="mini-wcell wy">A</span>
+          <span class="mini-wcell wg">O</span><span class="mini-wcell wg">C</span><span class="mini-wcell wy">E</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="card-play">PLAY</span>
+        <span class="card-name">Waffle</span>
+      </div>
+    </button>
+  </div>
+</main>
+
+<!-- ================= GAME INTRO MODAL ================= -->
+<div id="intro-overlay" class="overlay hidden">
+  <div class="intro-card">
+    <div class="lang-toggle" id="lang-toggle" data-active="en" role="group" aria-label="Language">
+      <span class="lang-thumb" aria-hidden="true"></span>
+      <button type="button" class="lang-btn active" id="lang-btn-en" data-lang="en" aria-pressed="true" aria-label="English">
+        <svg viewBox="0 0 40 40" aria-hidden="true">
+          <clipPath id="flag-clip-en"><circle cx="20" cy="20" r="20"/></clipPath>
+          <g clip-path="url(#flag-clip-en)">
+            <rect x="0" y="0" width="40" height="40" fill="#fff"/>
+            <rect x="0" y="0" width="40" height="4.44" fill="#B22234"/>
+            <rect x="0" y="8.89" width="40" height="4.44" fill="#B22234"/>
+            <rect x="0" y="17.78" width="40" height="4.44" fill="#B22234"/>
+            <rect x="0" y="26.67" width="40" height="4.44" fill="#B22234"/>
+            <rect x="0" y="35.56" width="40" height="4.44" fill="#B22234"/>
+            <rect x="0" y="0" width="18" height="22.2" fill="#3C3B6E"/>
+            <circle cx="4" cy="4" r="1.1" fill="#fff"/>
+            <circle cx="10" cy="4" r="1.1" fill="#fff"/>
+            <circle cx="16" cy="4" r="1.1" fill="#fff"/>
+            <circle cx="7" cy="8.4" r="1.1" fill="#fff"/>
+            <circle cx="13" cy="8.4" r="1.1" fill="#fff"/>
+            <circle cx="4" cy="12.8" r="1.1" fill="#fff"/>
+            <circle cx="10" cy="12.8" r="1.1" fill="#fff"/>
+            <circle cx="16" cy="12.8" r="1.1" fill="#fff"/>
+            <circle cx="7" cy="17.2" r="1.1" fill="#fff"/>
+            <circle cx="13" cy="17.2" r="1.1" fill="#fff"/>
+          </g>
+        </svg>
+      </button>
+      <button type="button" class="lang-btn" id="lang-btn-es" data-lang="es" aria-pressed="false" aria-label="Español">
+        <svg viewBox="0 0 40 40" aria-hidden="true">
+          <clipPath id="flag-clip-es"><circle cx="20" cy="20" r="20"/></clipPath>
+          <g clip-path="url(#flag-clip-es)">
+            <rect x="0" y="0" width="40" height="40" fill="#AA151B"/>
+            <rect x="0" y="10" width="40" height="20" fill="#F1BF00"/>
+          </g>
+        </svg>
+      </button>
+    </div>
+    <button class="close-btn" id="intro-close">&times;</button>
+    <h2 id="intro-title">WORDLE</h2>
+    <p id="intro-desc" class="intro-desc"></p>
+
+    <p class="select-label" id="mode-label" style="display:none">Mode:</p>
+    <div class="option-row" id="mode-row" style="display:none">
+      <label class="opt"><span>NORMAL</span><input type="radio" name="wmode" value="normal" checked><span class="box"></span></label>
+      <label class="opt"><span>DELUXE</span><input type="radio" name="wmode" value="deluxe"><span class="box"></span></label>
+    </div>
+
+    <p class="select-label" id="eb-mode-label" style="display:none">Mode:</p>
+    <div class="option-row" id="eb-mode-row" style="display:none">
+      <label class="opt"><span>BASICO</span><input type="radio" name="ebmode" value="basico" checked><span class="box"></span></label>
+      <label class="opt"><span>HARDCORE</span><input type="radio" name="ebmode" value="hardcore"><span class="box"></span></label>
+    </div>
+
+    <p class="select-label" id="st-mode-label" style="display:none">Mode:</p>
+    <div class="option-row" id="st-mode-row" style="display:none">
+      <label class="opt"><span>NORMAL</span><input type="radio" name="stmode" value="normal" checked><span class="box"></span></label>
+      <label class="opt"><span>HARDCORE</span><input type="radio" name="stmode" value="hardcore"><span class="box"></span></label>
+    </div>
+
+    <p class="select-label" id="difficulty-label">Difficulty:</p>
+    <div class="option-row" id="difficulty-row">
+      <label class="opt"><span>BASIC</span><input type="radio" name="difficulty" value="basico" checked><span class="box"></span></label>
+      <label class="opt"><span>INTERMEDIATE</span><input type="radio" name="difficulty" value="intermedio"><span class="box"></span></label>
+      <label class="opt" id="opt-avanzado"><span>ADVANCED</span><input type="radio" name="difficulty" value="avanzado"><span class="box"></span></label>
+    </div>
+
+    <p class="select-label" id="category-label">Category:</p>
+    <div class="option-row" id="category-row">
+      <label class="opt"><span>BUSINESS</span><input type="radio" name="category" value="business" checked><span class="box"></span></label>
+      <label class="opt"><span>TRAVEL</span><input type="radio" name="category" value="travel"><span class="box"></span></label>
+      <label class="opt"><span>DAILY</span><input type="radio" name="category" value="daily"><span class="box"></span></label>
+      <label class="opt" id="opt-general"><span>GENERAL</span><input type="radio" name="category" value="general"><span class="box"></span></label>
+    </div>
+
+    <p id="intro-extra" class="intro-extra"></p>
+
+    <button id="intro-start" class="primary-btn">START</button>
+  </div>
+</div>
+
+<!-- ================= WORDLE ================= -->
+<main id="screen-wordle" class="screen">
+  <div class="game-topline">
+    <button class="back-btn" data-back>&larr; Back</button>
+    <span class="game-meta" id="wordle-meta"></span>
+  </div>
+
+  <div class="hint-box">
+    <p id="wordle-hint1" class="hint-line"></p>
+    <p id="wordle-hint2" class="hint-line hidden"></p>
+    <div id="hint-reveals" class="hint-reveals hidden"></div>
+  </div>
+
+  <div id="wordle-board" class="board"></div>
+
+  <p id="wordle-message" class="game-message"></p>
+
+  <div class="board-actions">
+    <button id="wordle-hint-btn" class="action-btn hint-btn">💡 HINT</button>
+    <button id="wordle-forfeit-btn" class="action-btn forfeit-btn">🏳️ FORFEIT</button>
+  </div>
+
+  <div id="keyboard" class="keyboard"></div>
+
+  <!-- victory/defeat modal: overlays the board, dark backdrop behind -->
+  <div id="wordle-end" class="overlay result-overlay hidden">
+    <div class="end-panel">
+      <p id="wordle-result" class="end-title"></p>
+      <p class="end-word">The word was: <strong id="wordle-answer"></strong></p>
+      <p id="wordle-meaning" class="end-meaning"></p>
+      <div class="end-actions">
+        <button class="primary-btn" data-replay="wordle">PLAY AGAIN</button>
+        <button class="back-btn" data-back>BACK TO MENU</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- ================= FILL IN THE BLANKS ================= -->
+<main id="screen-blanks" class="screen">
+  <div class="game-topline">
+    <button class="back-btn" data-back>&larr; Back</button>
+    <span class="game-meta" id="blanks-meta"></span>
+  </div>
+
+  <div id="blanks-play" class="blanks-wrap">
+    <p class="blanks-progress" id="blanks-progress"></p>
+    <div class="sp-mg-timer blanks-timer"><div class="sp-mg-timer-fill" id="blanks-timer-fill"></div><span class="sp-mg-seconds" id="blanks-seconds"></span></div>
+    <p class="blanks-sentence" id="blanks-sentence"></p>
+
+    <form id="blanks-form" class="blanks-form">
+      <div id="blanks-letters" class="letter-boxes"></div>
+      <button type="submit" class="primary-btn small">CHECK</button>
+    </form>
+
+    <p id="blanks-feedback" class="game-message"></p>
+
+    <div id="blanks-options" class="blanks-options hidden"></div>
+
+    <div id="blanks-meaning-panel" class="blanks-meaning-panel hidden">
+      <p id="blanks-meaning-text" class="blanks-meaning-text"></p>
+      <div id="blanks-meaning-extra" class="meaning-extra"></div>
+      <div class="sp-mg-timer blanks-timer"><div class="sp-mg-timer-fill" id="blanks-meaning-timer-fill"></div><span class="sp-mg-seconds" id="blanks-meaning-seconds"></span></div>
+      <button id="blanks-next-btn" class="primary-btn small">NEXT</button>
+    </div>
+  </div>
+
+  <div id="blanks-end" class="end-panel hidden">
+    <p class="end-title">Round complete!</p>
+    <p class="end-word">Your score: <strong id="blanks-score"></strong></p>
+    <div class="end-actions">
+      <button class="primary-btn" data-replay="blanks">PLAY AGAIN</button>
+      <button class="back-btn" data-back>BACK TO MENU</button>
+    </div>
+  </div>
+</main>
+
+<!-- ================= WORD LINKS ================= -->
+<main id="screen-wordlinks" class="screen">
+  <div class="game-topline">
+    <button class="back-btn" data-back>&larr; Back</button>
+    <span class="game-meta" id="wl-meta"></span>
+  </div>
+
+  <div id="wl-play" class="wl-wrap">
+    <div class="wl-status">
+      <span class="blanks-progress" id="wl-round"></span>
+      <span class="wl-type" id="wl-type"></span>
+      <span class="wl-attempts" id="wl-attempts"></span>
+    </div>
+
+    <p class="wl-instruction">These 4 words all point to one secret word:</p>
+
+    <div id="wl-clues" class="wl-clues"></div>
+
+    <p id="wl-feedback" class="game-message"></p>
+
+    <form id="wl-form" class="contexto-form">
+      <div class="contexto-input-row autocomplete-anchor">
+        <input type="text" id="wl-input" autocomplete="off" spellcheck="false" placeholder="Type the secret word...">
+        <button type="submit" id="wl-guess-btn" class="primary-btn small">GUESS</button>
+        <div id="wl-suggest" class="suggest-box hidden"></div>
+      </div>
+    </form>
+
+    <div class="contexto-actions">
+      <button id="wl-hint-btn" class="action-btn hint-btn">💡 HINT (-1 attempt)</button>
+      <button id="wl-next-btn" class="primary-btn small hidden">NEXT ROUND</button>
+    </div>
+  </div>
+
+  <div id="wl-end" class="end-panel hidden">
+    <p class="end-title">Game complete!</p>
+    <p class="end-word">Your score: <strong id="wl-score"></strong></p>
+    <ul id="wl-breakdown" class="contexto-reveal"></ul>
+    <div class="wl-end-actions">
+      <button id="wl-again-btn" class="primary-btn">PLAY AGAIN</button>
+      <button class="back-btn" data-replay="wordlinks">CHANGE LEVEL</button>
+      <button class="back-btn" data-back>BACK TO MENU</button>
+    </div>
+  </div>
+</main>
+
+<!-- ================= STRANDS ================= -->
+<main id="screen-strands" class="screen">
+  <div class="game-topline">
+    <button class="back-btn" data-back>&larr; Back</button>
+    <span class="game-meta" id="st-meta"></span>
+  </div>
+
+  <div id="st-play" class="st-wrap">
+    <p class="st-theme-label">TODAY'S THEME</p>
+    <p id="st-theme" class="st-theme"></p>
+
+    <p id="st-current" class="st-current"></p>
+
+    <div id="st-board" class="st-board">
+      <svg id="st-svg" class="st-svg"></svg>
+      <div id="st-grid" class="st-grid"></div>
+      <p id="st-flash" class="st-flash hidden"></p>
+    </div>
+
+    <p id="st-message" class="game-message"></p>
+
+    <div class="st-status">
+      <span id="st-progress" class="blanks-progress"></span>
+      <span id="st-hint-progress" class="blanks-progress"></span>
+      <span id="st-lives" class="bw-lives hidden"></span>
+    </div>
+
+    <div class="contexto-actions">
+      <button id="st-hint-btn" class="action-btn hint-btn" disabled>💡 HINT (0)</button>
+      <button id="st-clear-btn" class="back-btn">CLEAR</button>
+      <button id="st-giveup-btn" class="action-btn forfeit-btn">🏳️ GIVE UP</button>
+    </div>
+  </div>
+
+  <!-- final screen: overlay on top of the board (board stays visible, dimmed behind) -->
+  <div id="st-end" class="overlay result-overlay hidden">
+    <div class="end-panel">
+      <p id="st-end-title" class="end-title"></p>
+      <p id="st-end-detail" class="end-word"></p>
+      <ul id="st-wordlist" class="st-wordlist"></ul>
+      <div class="end-actions">
+        <button id="st-again-btn" class="primary-btn">PLAY AGAIN</button>
+        <button class="back-btn" data-replay="strands">CHANGE MODE</button>
+        <button class="back-btn" data-back>BACK TO MENU</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- ================= EMOJI BOMB ================= -->
+<main id="screen-emojibomb" class="screen">
+  <div class="game-topline">
+    <button class="back-btn" data-back>&larr; Back</button>
+    <span class="game-meta" id="eb-meta"></span>
+  </div>
+
+  <div id="eb-play" class="rw-wrap bw-wrap">
+    <div class="bw-status">
+      <span class="blanks-progress" id="eb-level"></span>
+      <span id="eb-lives" class="bw-lives"></span>
+      <span class="blanks-progress" id="eb-progress"></span>
+    </div>
+
+    <div class="rw-timer">
+      <div id="eb-timer-fill" class="rw-timer-fill"></div>
+    </div>
+    <p id="eb-seconds" class="rw-seconds"></p>
+
+    <p class="rw-question">The word starts with:</p>
+    <p id="eb-letter" class="bw-prefix"></p>
+    <p id="eb-emojis" class="eb-emojis"></p>
+
+    <p id="eb-feedback" class="rw-feedback"></p>
+
+    <form id="eb-form" class="contexto-input-row bw-form">
+      <input type="text" id="eb-input" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Type the word...">
+      <button type="submit" class="primary-btn small">SUBMIT</button>
+    </form>
+  </div>
+
+  <!-- "LEVEL X" splash (same style as Bomb Word's) -->
+  <div id="eb-transition" class="bw-transition hidden">
+    <p id="eb-transition-text" class="bw-transition-text"></p>
+  </div>
+
+  <div id="eb-end" class="end-panel hidden">
+    <p id="eb-end-title" class="end-title"></p>
+    <p id="eb-end-detail" class="end-word"></p>
+    <p id="eb-end-prompt" class="eb-end-prompt"></p>
+    <div class="end-actions">
+      <button id="eb-again-btn" class="primary-btn">PLAY AGAIN</button>
+      <button class="back-btn" data-replay="emojibomb">CHANGE MODE</button>
+      <button class="back-btn" data-back>BACK TO MENU</button>
+    </div>
+  </div>
+</main>
+
+<!-- ================= WAFFLE ================= -->
+<main id="screen-waffle" class="screen">
+  <div class="game-topline">
+    <button class="back-btn" data-back>&larr; Back</button>
+    <span class="game-meta" id="wf-meta"></span>
+  </div>
+
+  <div id="wf-play" class="wf-wrap">
+    <p id="wf-swaps" class="wf-swaps"></p>
+
+    <div id="wf-grid" class="wf-grid"></div>
+
+    <p id="wf-message" class="game-message"></p>
+  </div>
+
+  <div id="wf-end" class="end-panel hidden">
+    <p id="wf-end-title" class="end-title"></p>
+    <p id="wf-end-detail" class="end-word"></p>
+    <ul id="wf-solution" class="contexto-reveal"></ul>
+    <div class="end-actions">
+      <button id="wf-again-btn" class="primary-btn">PLAY AGAIN</button>
+      <button class="back-btn" data-replay="waffle">CHANGE SETTINGS</button>
+      <button class="back-btn" data-back>BACK TO MENU</button>
+    </div>
+  </div>
+</main>
+
+<!-- ================= BOMB WORD ================= -->
+<main id="screen-bombword" class="screen">
+  <div class="game-topline">
+    <button class="back-btn" data-back>&larr; Back</button>
+    <span class="game-meta" id="bw-meta"></span>
+  </div>
+
+  <div id="bw-play" class="rw-wrap bw-wrap">
+    <div class="bw-status">
+      <span class="blanks-progress" id="bw-level"></span>
+      <span id="bw-lives" class="bw-lives"></span>
+      <span class="blanks-progress" id="bw-progress"></span>
+    </div>
+
+    <div class="rw-timer">
+      <div id="bw-timer-fill" class="rw-timer-fill"></div>
+    </div>
+    <p id="bw-seconds" class="rw-seconds"></p>
+
+    <p class="rw-question">Type a real English word starting with:</p>
+    <p id="bw-prefix" class="bw-prefix"><span id="bw-bomb" class="bw-bomb">💣</span> <span id="bw-prefix-text"></span></p>
+
+    <p id="bw-feedback" class="rw-feedback"></p>
+
+    <form id="bw-form" class="contexto-input-row bw-form">
+      <input type="text" id="bw-input" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Type your word...">
+      <button type="submit" class="primary-btn small">SUBMIT</button>
+    </form>
+  </div>
+
+  <!-- brief "LEVEL X" splash between levels -->
+  <div id="bw-transition" class="bw-transition hidden">
+    <p id="bw-transition-text" class="bw-transition-text"></p>
+  </div>
+
+  <div id="bw-end" class="end-panel hidden">
+    <p id="bw-end-title" class="end-title"></p>
+    <p id="bw-end-detail" class="end-word"></p>
+    <div class="end-actions">
+      <button id="bw-again-btn" class="primary-btn">PLAY AGAIN</button>
+      <button class="back-btn" data-back>BACK TO MENU</button>
+    </div>
+  </div>
+</main>
+
+<!-- ================= IS IT A REAL WORD? ================= -->
+<main id="screen-realword" class="screen">
+  <div class="game-topline">
+    <button class="back-btn" data-back>&larr; Back</button>
+    <span class="game-meta" id="rw-meta"></span>
+  </div>
+
+  <div id="rw-play" class="rw-wrap">
+    <p class="blanks-progress" id="rw-progress"></p>
+
+    <div class="rw-timer">
+      <div id="rw-timer-fill" class="rw-timer-fill"></div>
+    </div>
+    <p id="rw-seconds" class="rw-seconds"></p>
+
+    <p class="rw-question">Is this a real English word?</p>
+    <p id="rw-word" class="rw-word"></p>
+
+    <div id="rw-feedback" class="rw-feedback"></div>
+
+    <div class="rw-buttons">
+      <button id="rw-yes" class="rw-btn rw-yes">✓ Yes</button>
+      <button id="rw-no" class="rw-btn rw-no">✗ No</button>
+    </div>
+  </div>
+
+  <div id="rw-end" class="end-panel hidden">
+    <p class="end-title">Game complete!</p>
+    <p class="end-word">Your score: <strong id="rw-score"></strong></p>
+    <ul id="rw-summary" class="contexto-reveal rw-summary"></ul>
+    <div class="end-actions">
+      <button id="rw-again-btn" class="primary-btn">PLAY AGAIN</button>
+      <button class="back-btn" data-back>BACK TO MENU</button>
+    </div>
+  </div>
+</main>
+
+<!-- ================= CONNECTIONS ================= -->
+<main id="screen-connections" class="screen">
+  <div class="game-topline">
+    <button class="back-btn" data-back>&larr; Back</button>
+    <span class="game-meta" id="conn-meta"></span>
+  </div>
+
+  <div id="conn-play" class="conn-wrap">
+    <p class="spot-instruction">Group the 16 words into 4 hidden categories. Select 4 and press Submit.</p>
+
+    <div id="conn-solved" class="conn-solved"></div>
+
+    <div id="conn-grid" class="conn-grid"></div>
+
+    <p id="conn-message" class="game-message"></p>
+
+    <div class="conn-actions">
+      <button id="conn-submit" class="primary-btn small" disabled>SUBMIT</button>
+      <button id="conn-clear" class="back-btn">CLEAR</button>
+      <button id="conn-giveup" class="action-btn forfeit-btn">🏳️ GIVE UP</button>
+    </div>
+  </div>
+
+  <div id="conn-end" class="end-panel conn-end hidden">
+    <p class="end-title" id="conn-end-title"></p>
+    <p class="end-word">Your score: <strong id="conn-score"></strong></p>
+    <div id="conn-end-groups" class="conn-solved"></div>
+    <div class="end-actions">
+      <button id="conn-again-btn" class="primary-btn">PLAY AGAIN</button>
+      <button class="back-btn" data-back>BACK TO MENU</button>
+    </div>
+  </div>
+</main>
+
+<!-- ================= IMPOSTOR ================= -->
+<main id="screen-impostor" class="screen">
+  <div class="game-topline">
+    <button class="back-btn" data-back>&larr; Back</button>
+    <span class="game-meta" id="imp-meta"></span>
+  </div>
+
+  <div id="imp-play" class="spot-wrap">
+    <p class="blanks-progress" id="imp-round"></p>
+    <p class="spot-instruction">Click the words that DON'T belong with the impostor. Leave the impostor for last.</p>
+
+    <p id="imp-hint-text" class="imp-hint hidden"></p>
+
+    <div id="imp-words" class="imp-grid"></div>
+
+    <p id="imp-feedback" class="game-message"></p>
+
+    <div class="contexto-actions">
+      <button id="imp-hint-btn" class="action-btn hint-btn">💡 HINT</button>
+      <button id="imp-next-btn" class="primary-btn small hidden">NEXT ROUND</button>
+    </div>
+
+    <div id="imp-explain" class="spot-explain hidden">
+      <p class="spot-explain-title" id="imp-result"></p>
+      <p class="spot-explanation" id="imp-explanation"></p>
+    </div>
+  </div>
+
+  <div id="imp-end" class="end-panel hidden">
+    <p class="end-title">Game complete!</p>
+    <p class="end-word">Your score: <strong id="imp-score"></strong></p>
+    <ul id="imp-breakdown" class="contexto-reveal"></ul>
+    <div class="end-actions">
+      <button id="imp-again-btn" class="primary-btn">PLAY AGAIN</button>
+      <button class="back-btn" data-replay="impostor">CHANGE SETTINGS</button>
+      <button class="back-btn" data-back>BACK TO MENU</button>
+    </div>
+  </div>
+</main>
+
+<!-- ================= SPOT THE ERROR ================= -->
+<main id="screen-spot" class="screen">
+  <div class="game-topline">
+    <button class="back-btn" data-back>&larr; Back</button>
+    <span class="game-meta" id="spot-meta"></span>
+  </div>
+
+  <div id="spot-play" class="spot-wrap">
+    <p class="blanks-progress" id="spot-progress"></p>
+    <p class="spot-instruction" id="spot-instruction"></p>
+
+    <div id="spot-sentences" class="spot-sentences"></div>
+
+    <div id="spot-words" class="spot-words hidden"></div>
+
+    <p id="spot-feedback" class="game-message"></p>
+
+    <div id="spot-explain" class="spot-explain hidden">
+      <p class="spot-explain-title" id="spot-round-result"></p>
+      <p class="spot-corrected" id="spot-corrected"></p>
+      <p class="spot-explanation" id="spot-explanation"></p>
+      <button id="spot-next" class="primary-btn small">NEXT</button>
+    </div>
+  </div>
+
+  <div id="spot-end" class="end-panel hidden">
+    <p class="end-title">Game complete!</p>
+    <p class="end-word">Your score: <strong id="spot-score"></strong></p>
+    <div class="end-actions">
+      <button class="primary-btn" data-replay="spot">PLAY AGAIN</button>
+      <button class="back-btn" data-back>BACK TO MENU</button>
+    </div>
+  </div>
+</main>
+
+<!-- ================= STAR PARTY ================= -->
+<main id="screen-starparty" class="screen">
+  <div class="game-topline">
+    <button class="back-btn" data-back>&larr; Back</button>
+    <span class="game-meta" id="sp-meta">STAR PARTY</span>
+  </div>
+
+  <!-- SETUP: player count + names + human/cpu -->
+  <div id="sp-setup" class="sp-setup">
+    <h2 class="sp-title">STAR <span class="sp-title-star">★</span> PARTY</h2>
+    <p class="sp-sub">2–6 players on one device. Answer questions, spin the wildcard wheel, and hold the most stars after 8 rounds.</p>
+
+    <p class="sp-label">How many players?</p>
+    <div class="sp-count-btns" id="sp-count-btns"></div>
+
+    <p class="sp-label">How many rounds?</p>
+    <div class="sp-count-btns" id="sp-rounds-btns"></div>
+
+    <div id="sp-player-rows" class="sp-player-rows"></div>
+
+    <button id="sp-start-btn" class="primary-btn">START GAME</button>
+  </div>
+
+  <!-- TABLE: the game itself -->
+  <div id="sp-table" class="sp-table hidden">
+    <div class="sp-table-layout">
+      <aside id="sp-standings-panel" class="sp-standings-panel"></aside>
+      <div class="sp-table-main">
+        <div class="sp-hud">
+          <span id="sp-round" class="sp-round">ROUND 1 / 8</span>
+        </div>
+        <div class="sp-felt" id="sp-felt">
+          <div id="sp-seats" class="sp-seats"></div>
+          <div id="sp-center" class="sp-center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- END: final standings -->
+  <div id="sp-end" class="overlay result-overlay hidden">
+    <div class="end-panel">
+      <p id="sp-end-title" class="end-title"></p>
+      <p id="sp-end-detail" class="end-word"></p>
+      <ul id="sp-standings" class="sp-standings"></ul>
+      <div class="end-actions">
+        <button id="sp-again-btn" class="primary-btn">PLAY AGAIN</button>
+        <button class="back-btn" data-back>BACK TO MENU</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="data.js"></script>
+<script src="spot_data.js"></script>
+<script src="contexto_data.js"></script>
+<script src="contexto_autocomplete.js"></script>
+<script src="wordlinks_data.js"></script>
+<script src="impostor_data.js"></script>
+<script src="connections_data.js"></script>
+<script src="realword_data.js"></script>
+<script src="bombword_data.js"></script>
+<script src="waffle_data.js"></script>
+<script src="emojibomb_data.js"></script>
+<script src="strands_data.js"></script>
+<script src="definitions.js?v=sp11g"></script>
+<script src="connections_categories_es.js?v=sp11g"></script>
+<script src="impostor_explanations_es.js?v=sp11g"></script>
+<script src="ui_strings_en.js?v=sp11g"></script>
+<script src="ui_strings_es.js?v=sp11g"></script>
+<script src="starparty_questions.js"></script>
+<script src="starparty_wildcards.js"></script>
+<script src="starparty_realword_pools.js"></script>
+<script src="app.js?v=sp11g"></script>
+<script src="starparty_minigames.js?v=sp11"></script>
+<script src="starparty.js?v=sp11"></script>
+</body>
+</html>

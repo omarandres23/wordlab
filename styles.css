@@ -1,0 +1,2847 @@
+/* =====================================================
+   ENGLISH 11 — theme
+   Edit these variables to change the whole look quickly.
+   ===================================================== */
+:root {
+  --bg-1: #16041f;            /* page background (deep purple/black) */
+  --bg-2: #2a0a3d;            /* background gradient highlight */
+  --panel: #21072e;           /* cards / panels */
+  --panel-border: #8b2fd6;    /* purple outline */
+  --accent: #9b30ff;          /* main purple accent (buttons) */
+  --accent-bright: #b95cff;
+  --text: #f5f2fa;
+  --text-dim: #c9b8d9;
+
+  /* Wordle tile colors (classic) */
+  --tile-green: #538d4e;
+  --tile-yellow: #b59f3b;
+  --tile-gray: #3a3a3c;
+  --tile-border: #565758;
+  --key-bg: #818384;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: var(--text);
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 50% -10%, var(--bg-2) 0%, var(--bg-1) 60%),
+    var(--bg-1);
+  background-attachment: fixed;
+}
+
+/* ================= HEADER ================= */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  background: rgba(0, 0, 0, 0.45);
+  border-bottom: 1px solid rgba(155, 48, 255, 0.35);
+}
+.topbar-side { width: 80px; }
+.logo { display: flex; align-items: center; }
+.logo-img {
+  width: clamp(220px, 32vw, 340px);
+  height: auto; /* preserves the source aspect ratio — never stretched */
+  display: block;
+}
+
+/* ================= SCREENS ================= */
+.screen { display: none; }
+.screen.active { display: block; }
+
+.tagline {
+  text-align: center;
+  margin: 40px 16px 28px;
+  font-size: 1.15rem;
+  color: var(--text-dim);
+}
+
+/* ================= HOME CARDS ================= */
+/* fixed 3-per-row grid on desktop; narrows to 2 then 1 column on smaller
+   screens (media queries below) instead of flex-wrap's variable column count */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 230px);
+  gap: 28px;
+  justify-content: center;
+  padding: 0 16px 60px;
+}
+@media (max-width: 860px) {
+  .card-grid { grid-template-columns: repeat(2, 230px); }
+}
+@media (max-width: 540px) {
+  .card-grid { grid-template-columns: 230px; }
+}
+
+.game-card {
+  position: relative;
+  width: 230px;
+  border: 1px solid rgba(155, 48, 255, 0.5);
+  border-radius: 14px;
+  background: var(--panel);
+  cursor: pointer;
+  overflow: visible;
+  padding: 0;
+  color: var(--text);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.game-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 22px rgba(155, 48, 255, 0.55);
+}
+
+.badge {
+  position: absolute;
+  top: -12px;
+  left: -10px;
+  background: #23d160;
+  color: #06240f;
+  font-weight: 800;
+  font-size: 0.8rem;
+  padding: 4px 12px;
+  border-radius: 8px;
+  z-index: 2;
+}
+
+.card-art {
+  height: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px 14px 0 0;
+  background: linear-gradient(160deg, #3a1153 0%, #1d0530 100%);
+}
+
+.mini-board { display: grid; grid-template-columns: repeat(5, 30px); gap: 4px; }
+.mini-tile {
+  width: 30px; height: 30px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 0.9rem; color: #fff;
+  border-radius: 3px;
+}
+.mini-tile.green  { background: var(--tile-green); }
+.mini-tile.yellow { background: var(--tile-yellow); }
+.mini-tile.gray   { background: var(--tile-gray); }
+
+.mini-sentence { text-align: center; font-size: 0.85rem; color: var(--text-dim); line-height: 1.7; padding: 0 14px; }
+.mini-blank { color: var(--accent-bright); font-weight: 800; letter-spacing: 2px; }
+.mini-error { color: #ff7b7b; }
+.mini-error u { text-decoration-color: #ff4d4d; text-decoration-thickness: 2px; }
+
+.mini-contexto { text-align: center; width: 80%; }
+.mini-secret { font-weight: 900; font-size: 1.3rem; letter-spacing: 4px; color: var(--accent-bright); margin-bottom: 12px; }
+.mini-bar { height: 10px; border-radius: 5px; background: rgba(255, 255, 255, 0.12); overflow: hidden; margin-bottom: 12px; }
+.mini-bar-fill { width: 60%; height: 100%; border-radius: 5px; background: linear-gradient(90deg, var(--accent), var(--accent-bright)); }
+.mini-trait { font-size: 0.78rem; color: var(--text-dim); }
+
+.card-footer {
+  padding: 12px 10px 14px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 0 0 14px 14px;
+}
+.card-play {
+  display: block;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: 1px;
+  border-radius: 8px;
+  padding: 8px 0;
+  margin-bottom: 8px;
+}
+.game-card:hover .card-play { background: var(--accent-bright); }
+.card-name { font-weight: 700; font-size: 0.95rem; }
+
+/* ================= INTRO MODAL ================= */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 0, 14, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 10;
+}
+.overlay.hidden { display: none; }
+
+.intro-card {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  background: var(--panel);
+  border: 2px solid var(--panel-border);
+  border-radius: 22px;
+  padding: 36px 30px 30px;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(155, 48, 255, 0.35);
+}
+.intro-card h2 { font-size: 2.2rem; letter-spacing: 2px; margin-bottom: 14px; }
+.intro-desc { color: var(--text-dim); margin-bottom: 26px; line-height: 1.5; }
+
+.close-btn {
+  position: absolute;
+  top: 10px; right: 16px;
+  background: none; border: none;
+  color: var(--text-dim);
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+.close-btn:hover { color: #fff; }
+
+/* language toggle: pill with two flag circles + a sliding highlight thumb.
+   Lives once in the shared intro modal, so it's automatically present for
+   every game that opens through openIntro() and absent for Star Party
+   (which uses its own #screen-starparty setup, never this modal). */
+.lang-toggle {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.4), rgba(236, 72, 220, 0.35));
+  border: 1px solid rgba(216, 70, 239, 0.65);
+  box-shadow: 0 0 18px rgba(216, 70, 239, 0.45), inset 0 0 10px rgba(168, 85, 247, 0.2);
+}
+.lang-thumb {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #b95cff, #ec4ce0);
+  box-shadow: 0 0 14px rgba(236, 72, 220, 0.95), 0 0 26px rgba(168, 85, 247, 0.6);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+.lang-toggle[data-active="es"] .lang-thumb { transform: translateX(42px); }
+.lang-btn {
+  position: relative;
+  z-index: 1;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: none;
+  background: none;
+  padding: 0;
+  overflow: hidden;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0.55;
+  transition: opacity 0.3s ease, transform 0.15s ease;
+}
+.lang-btn svg { display: block; width: 100%; height: 100%; }
+.lang-btn.active { opacity: 1; }
+.lang-btn:hover { transform: scale(1.08); }
+
+.select-label { color: var(--text-dim); font-size: 0.9rem; margin-bottom: 8px; text-align: left; }
+.option-row {
+  display: flex;
+  justify-content: space-around;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.opt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.opt input { display: none; }
+.opt .box {
+  width: 26px; height: 26px;
+  border-radius: 6px;
+  background: #2e2e33;
+  display: inline-block;
+  position: relative;
+  transition: background 0.15s;
+}
+.opt input:checked + .box { background: #e9e9ee; }
+.opt input:checked + .box::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  background: #555;
+}
+
+.primary-btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 12px 46px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.primary-btn:hover { background: var(--accent-bright); }
+.primary-btn.small { padding: 10px 22px; font-size: 0.95rem; }
+
+/* ================= GAME SHARED ================= */
+.game-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+.back-btn {
+  background: none;
+  border: 1px solid rgba(155, 48, 255, 0.6);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.back-btn:hover { background: rgba(155, 48, 255, 0.25); }
+.game-meta { color: var(--text-dim); font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; }
+
+.game-message { text-align: center; min-height: 24px; margin: 10px 0; font-weight: 700; color: var(--accent-bright); }
+
+.end-panel {
+  max-width: 420px;
+  margin: 24px auto;
+  padding: 26px;
+  text-align: center;
+  background: var(--panel);
+  border: 2px solid var(--panel-border);
+  border-radius: 18px;
+}
+.end-panel.hidden { display: none; }
+.end-title { font-size: 1.5rem; font-weight: 800; margin-bottom: 10px; }
+.end-word { color: var(--text-dim); margin-bottom: 20px; }
+.end-word strong { color: #fff; text-transform: uppercase; letter-spacing: 1px; }
+.end-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+/* result modal over the wordle board: darker backdrop for focus */
+.result-overlay { background: rgba(0, 0, 0, 0.65); }
+.result-overlay .end-panel { margin: 0; width: 100%; max-width: 420px; box-shadow: 0 0 40px rgba(155, 48, 255, 0.35); }
+
+/* ================= WORDLE HINTS ================= */
+.hint-box {
+  max-width: 560px;
+  margin: 6px auto 0;
+  padding: 0 16px;
+  text-align: center;
+}
+.hint-line {
+  display: inline-block;
+  margin: 4px 6px;
+  padding: 7px 16px;
+  border-radius: 20px;
+  background: rgba(155, 48, 255, 0.15);
+  border: 1px solid rgba(155, 48, 255, 0.45);
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+.hint-line:empty { display: none; }
+.hint-line.hidden { display: none; }
+.hint-reveals.hidden { display: none; }
+
+.end-meaning {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: -8px 0 20px;
+}
+
+/* ================= WORDLE BOARD ================= */
+.board {
+  display: grid;
+  gap: 6px;
+  justify-content: center;
+  margin: 18px auto 8px;
+}
+.board-row { display: grid; gap: 6px; }
+.tile {
+  width: 58px; height: 58px;
+  border: 2px solid var(--tile-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #fff;
+  background: transparent;
+  transition: background 0.25s, border-color 0.25s;
+}
+.tile.filled { border-color: #aaa; }
+.tile.green  { background: var(--tile-green);  border-color: var(--tile-green); }
+.tile.yellow { background: var(--tile-yellow); border-color: var(--tile-yellow); }
+.tile.gray   { background: var(--tile-gray);   border-color: var(--tile-gray); }
+
+/* Shrink tiles for long words / small screens */
+.board.compact .tile { width: 42px; height: 42px; font-size: 1.3rem; }
+.board.tiny .tile    { width: 32px; height: 32px; font-size: 1rem; }
+
+/* ================= WORDLE ACTION BUTTONS ================= */
+.board-actions {
+  display: flex;
+  justify-content: space-between;
+  max-width: 560px;
+  margin: 4px auto 10px;
+  padding: 0 12px;
+}
+.action-btn {
+  border: none;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  padding: 10px 18px;
+  cursor: pointer;
+  color: #1a1a1a;
+  transition: filter 0.15s, transform 0.1s;
+}
+.action-btn:hover { filter: brightness(1.15); }
+.action-btn:active { transform: scale(0.96); }
+.action-btn:disabled { opacity: 0.45; cursor: default; }
+.hint-btn { background: #f5c518; }       /* yellow */
+.forfeit-btn { background: #e0442e; color: #fff; } /* red */
+
+/* letters revealed by the hint button */
+.hint-reveals {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  margin: 8px auto 0;
+}
+.hint-tile {
+  width: 34px; height: 34px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #fff;
+  border-radius: 4px;
+  background: transparent;
+  border: 1.5px dashed rgba(255, 255, 255, 0.25);
+}
+.hint-tile.revealed { background: var(--tile-green); border: none; }
+
+/* ================= KEYBOARD ================= */
+.keyboard {
+  max-width: 560px;
+  margin: 10px auto 40px;
+  padding: 0 8px;
+  user-select: none;
+}
+.kb-row { display: flex; justify-content: center; gap: 6px; margin-bottom: 8px; }
+.key {
+  flex: 1;
+  max-width: 48px;
+  height: 56px;
+  background: var(--key-bg);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: 800;
+  font-size: 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.key.wide { max-width: 80px; flex: 1.6; font-size: 0.75rem; }
+.key.green  { background: var(--tile-green); }
+.key.yellow { background: var(--tile-yellow); }
+.key.gray   { background: var(--tile-gray); }
+.key:active { filter: brightness(1.2); }
+
+/* ================= FILL IN THE BLANKS ================= */
+.blanks-wrap {
+  max-width: 560px;
+  margin: 20px auto;
+  padding: 30px 24px;
+  background: var(--panel);
+  border: 2px solid var(--panel-border);
+  border-radius: 18px;
+  text-align: center;
+}
+
+/* FILL IN THE BLANKS composed logo header (replaces plain title on the game's
+   intro screen): FILL IN → 4-cell icon (1st solved blue, 2nd raised) → BLANKS */
+.fib-logo { display: inline-flex; flex-direction: column; align-items: center; gap: 8px; line-height: 1; }
+.fib-logo-word {
+  font-weight: 900; letter-spacing: 4px; font-size: 1.5rem; color: #fff;
+  text-shadow: 0 0 12px rgba(168, 85, 247, 0.7);
+}
+.fib-logo-cells { display: flex; align-items: flex-end; gap: 7px; height: 46px; }
+.fib-cell {
+  width: 36px; height: 40px; border-radius: 7px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 900; font-size: 1.3rem; color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.06);
+}
+.fib-cell.done {
+  background: #3b82f6; border-color: #60a5fa; color: #eaf2ff;
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.6);
+}
+/* the active/"being typed" cell sits slightly raised, with an accent glow */
+.fib-cell.up {
+  transform: translateY(-8px);
+  border-color: var(--sp-accent, #a855f7);
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.65);
+}
+
+/* generic intro-screen icon-above-title lockup — reused by IMPOSTOR (spy icon)
+   and BOMB WORD (bomb icon), same composed-logo pattern as FILL IN THE BLANKS */
+.intro-icon-logo { display: inline-flex; flex-direction: column; align-items: center; gap: 8px; line-height: 1; }
+.intro-icon-logo .mini-impo-spy { filter: drop-shadow(0 0 10px rgba(214, 200, 255, 0.65)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5)); }
+.intro-icon-logo-emoji { font-size: 2.6rem; filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.5)); }
+.intro-icon-logo-word {
+  font-weight: 900; letter-spacing: 3px; font-size: 1.5rem; color: #fff;
+  text-shadow: 0 0 12px rgba(168, 85, 247, 0.7);
+}
+.blanks-wrap.hidden { display: none; }
+.blanks-progress { color: var(--text-dim); font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 18px; }
+.blanks-sentence { font-size: 1.3rem; line-height: 1.6; margin-bottom: 12px; }
+.blanks-sentence .gap { color: var(--accent-bright); font-weight: 800; }
+.blanks-dashes { font-size: 1.3rem; letter-spacing: 4px; color: var(--accent-bright); font-weight: 800; margin-bottom: 22px; }
+
+.blanks-form { display: flex; flex-direction: column; gap: 16px; align-items: center; margin-bottom: 12px; }
+.blanks-form.hidden { display: none; }
+
+/* one box per letter — revealed letters are fixed, the rest are typed in place */
+.letter-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center;
+}
+.letter-cell {
+  width: 40px; height: 46px;
+  border-radius: 8px;
+  border: 1.5px solid rgba(155, 48, 255, 0.6);
+  background: #150322;
+  color: var(--text);
+  font-size: 1.3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: center;
+  display: flex; align-items: center; justify-content: center;
+}
+input.letter-cell { outline: none; padding: 0; caret-color: var(--accent-bright); }
+input.letter-cell:focus { border-color: var(--accent-bright); box-shadow: 0 0 8px rgba(185, 92, 255, 0.5); }
+.letter-cell.fixed {
+  background: rgba(155, 48, 255, 0.3);
+  color: var(--accent-bright);
+  border-color: var(--accent-bright);
+}
+@media (max-width: 480px) {
+  .letter-cell { width: 30px; height: 38px; font-size: 1rem; border-radius: 6px; }
+}
+
+.blanks-options { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
+.blanks-options.hidden { display: none; }
+
+/* meaning panel shown after a sentence is resolved (correct/incorrect/timeout) */
+.blanks-meaning-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+  padding: 14px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.16), rgba(216, 70, 239, 0.1));
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+.blanks-meaning-panel.hidden { display: none; }
+.blanks-meaning-text { color: var(--text); font-size: 0.95rem; line-height: 1.4; text-align: center; margin: 0; }
+.option-btn {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(155, 48, 255, 0.6);
+  background: #2b0d3f;
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.option-btn:hover { background: #3a1153; }
+.option-btn.correct { background: var(--tile-green); border-color: var(--tile-green); }
+.option-btn.wrong   { background: #8d3030; border-color: #8d3030; }
+
+/* ================= SPOT THE ERROR ================= */
+.spot-wrap {
+  max-width: 640px;
+  margin: 20px auto;
+  padding: 30px 24px;
+  background: var(--panel);
+  border: 2px solid var(--panel-border);
+  border-radius: 18px;
+  text-align: center;
+}
+.spot-wrap.hidden { display: none; }
+.spot-instruction { color: var(--text-dim); margin-bottom: 20px; font-size: 1rem; }
+
+/* phase 1 — clickable sentences */
+.spot-sentences { display: flex; flex-direction: column; gap: 12px; }
+.spot-sentences.hidden { display: none; }
+.spot-sentence {
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(155, 48, 255, 0.6);
+  background: #2b0d3f;
+  color: var(--text);
+  font-size: 1.05rem;
+  line-height: 1.5;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s, transform 0.1s, opacity 0.3s;
+}
+.spot-sentence:hover { background: #3a1153; transform: translateX(4px); }
+.spot-sentence.wrong { background: #8d3030; border-color: #8d3030; opacity: 0; pointer-events: none; }
+.spot-sentence.found { background: var(--tile-green); border-color: var(--tile-green); }
+
+/* phase 2 — clickable words */
+.spot-words { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 6px; }
+.spot-words.hidden { display: none; }
+.spot-word {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px dashed rgba(155, 48, 255, 0.7);
+  background: #150322;
+  color: var(--text);
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.spot-word:hover { background: #3a1153; border-style: solid; }
+.spot-word.wrong { background: #8d3030; border-color: #8d3030; border-style: solid; }
+.spot-word.found { background: var(--tile-green); border-color: var(--tile-green); border-style: solid; }
+
+/* explanation panel */
+.spot-explain {
+  margin-top: 20px;
+  padding: 18px;
+  border-radius: 12px;
+  background: rgba(155, 48, 255, 0.12);
+  border: 1px solid rgba(155, 48, 255, 0.45);
+}
+.spot-explain.hidden { display: none; }
+.spot-explain-title { font-weight: 800; font-size: 1.1rem; margin-bottom: 10px; }
+.spot-corrected { color: #7ee2a0; font-weight: 700; margin-bottom: 10px; }
+.spot-explanation { color: var(--text-dim); line-height: 1.6; margin-bottom: 16px; }
+
+/* ================= CONTEXTO ================= */
+.contexto-wrap {
+  max-width: 620px;
+  margin: 20px auto;
+  padding: 28px 24px;
+  background: var(--panel);
+  border: 2px solid var(--panel-border);
+  border-radius: 18px;
+}
+.contexto-wrap.hidden { display: none; }
+.contexto-title { text-align: center; font-size: 1.15rem; font-weight: 700; margin-bottom: 18px; }
+
+/* progress bar */
+.contexto-bar-row { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.contexto-bar {
+  flex: 1;
+  height: 16px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(155, 48, 255, 0.4);
+  overflow: hidden;
+}
+.contexto-bar-fill {
+  width: 0%;
+  height: 100%;
+  border-radius: 8px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-bright));
+  transition: width 0.4s ease;
+}
+.contexto-points { font-weight: 800; font-size: 0.9rem; color: var(--accent-bright); white-space: nowrap; }
+
+/* the two inputs */
+.contexto-form { margin-bottom: 14px; }
+.contexto-form.word-form {
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(245, 197, 24, 0.07);
+  border: 1px dashed rgba(245, 197, 24, 0.4);
+}
+.contexto-label { display: block; font-size: 0.85rem; color: var(--text-dim); margin-bottom: 6px; font-weight: 700; }
+.contexto-counter { color: var(--accent-bright); }
+.contexto-input-row { display: flex; gap: 8px; }
+.contexto-input-row input {
+  flex: 1;
+  min-width: 0;
+  padding: 11px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(155, 48, 255, 0.6);
+  background: #150322;
+  color: var(--text);
+  font-size: 1rem;
+  outline: none;
+}
+.contexto-input-row input:focus { border-color: var(--accent-bright); }
+.contexto-input-row input:disabled { opacity: 0.4; }
+.primary-btn.gold { background: #f5c518; color: #1a1a1a; }
+.primary-btn.gold:hover { background: #ffd83d; }
+
+/* autocomplete dropdown */
+.autocomplete-anchor { position: relative; }
+.suggest-box {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 5;
+  background: #1d0530;
+  border: 1px solid var(--accent-bright);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+.suggest-box.hidden { display: none; }
+.suggest-item {
+  display: block;
+  width: 100%;
+  padding: 9px 14px;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 0.95rem;
+  text-align: left;
+  cursor: pointer;
+}
+.suggest-item:hover, .suggest-item.active { background: rgba(155, 48, 255, 0.3); }
+.suggest-item b { color: var(--accent-bright); }
+
+/* hint / forfeit buttons */
+.contexto-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+/* history of guesses — 4 result levels */
+.contexto-history { list-style: none; margin-top: 6px; max-height: 300px; overflow-y: auto; }
+.contexto-history li {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 9px 14px;
+  border-radius: 9px;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-dim);
+}
+.contexto-history li.hit {           /* strong: trait found (+8) */
+  background: rgba(83, 141, 78, 0.45);
+  border: 1px solid var(--tile-green);
+  color: #c8f0c3;
+  font-weight: 700;
+}
+.contexto-history li.hit-soft {      /* weak: relatedGreen (+3) */
+  background: rgba(83, 141, 78, 0.18);
+  border: 1px solid rgba(83, 141, 78, 0.7);
+  color: #9fcf9a;
+}
+.contexto-history li.close {         /* relatedYellow: "you're close" */
+  background: rgba(230, 138, 46, 0.15);
+  border: 1px solid rgba(230, 138, 46, 0.65);
+  color: #f0b071;
+}
+.contexto-history li.dup { background: rgba(245, 197, 24, 0.12); border: 1px solid rgba(245, 197, 24, 0.4); color: #f0d47a; }
+.contexto-history li.miss { border: 1px solid rgba(141, 48, 48, 0.6); color: #d99a9a; }
+.contexto-history .pts { font-weight: 800; white-space: nowrap; }
+
+/* end-of-game trait reveal */
+.contexto-reveal { list-style: none; text-align: left; margin: 0 auto 20px; max-width: 340px; }
+.contexto-reveal li {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 7px 12px;
+  border-radius: 8px;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  background: rgba(155, 48, 255, 0.12);
+  color: var(--text-dim);
+}
+.contexto-reveal li span:last-child { color: #fff; font-weight: 700; }
+.contexto-reveal li.was-found { background: rgba(83, 141, 78, 0.3); }
+
+/* ===== shared click-to-expand meaning (Real Word, Waffle, Connections) ===== */
+/* smooth open/close via max-height + opacity, ~0.3s to match other games */
+.rw-expandable,
+.wf-word-item {
+  display: block;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+}
+.rw-row-head,
+.wf-word-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 8px 12px;
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.rw-row-head .rw-tag { color: var(--text-dim); font-weight: 600; }
+.wf-word-head span:first-child { color: var(--text-dim); }
+.wf-word-value { color: #fff; font-weight: 700; letter-spacing: 0.5px; }
+.rw-row-head::after,
+.wf-word-head::after {
+  content: "▾";
+  margin-left: 6px;
+  opacity: 0.55;
+  transition: transform 0.3s ease;
+}
+.rw-expandable.open .rw-row-head::after,
+.wf-word-item.open .wf-word-head::after { transform: rotate(180deg); }
+
+.rw-meaning,
+.wf-word-meaning {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0 12px;
+  font-size: 0.85rem;
+  line-height: 1.35;
+  color: var(--text);
+  background: rgba(0, 0, 0, 0.22);
+  transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+}
+.rw-expandable.open .rw-meaning,
+.wf-word-item.open .wf-word-meaning {
+  max-height: 200px;
+  opacity: 1;
+  padding: 9px 12px;
+}
+.rw-meaning-fake { font-style: italic; opacity: 0.85; }
+
+/* Is It A Real Word? — purple/pink theme for the collapsed row and the
+   expanded meaning panel (was flat gray/black). Correctness is now shown via
+   a colored left border instead of a full green/red fill, so the row stays
+   on-brand. Scoped to #rw-summary only — doesn't affect Waffle/Connections. */
+#rw-summary.contexto-reveal li.rw-expandable {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.22), rgba(216, 70, 239, 0.14));
+  border-left: 3px solid transparent;
+  border-radius: 8px;
+}
+#rw-summary li.rw-expandable.was-found { border-left-color: #7ee2a0; }
+#rw-summary li.rw-expandable.was-missed { border-left-color: #ff9a9a; }
+#rw-summary .rw-row-head .rw-row-name { color: var(--text); font-weight: 700; }
+#rw-summary .rw-meaning {
+  background: rgba(30, 8, 48, 0.78);
+  border-top: 1px solid rgba(168, 85, 247, 0.35);
+  color: var(--text);
+}
+
+/* Connections: expandable colored group card */
+.conn-group-expandable { padding: 0; overflow: hidden; }
+.conn-group-head {
+  display: block;
+  width: 100%;
+  padding: 12px 14px;
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+}
+.conn-group-head::after {
+  content: "▾";
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  opacity: 0.7;
+  transition: transform 0.3s ease;
+}
+.conn-group-expandable.open .conn-group-head::after { transform: rotate(180deg); }
+.conn-group-meanings {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  text-align: left;
+  background: rgba(0, 0, 0, 0.25);
+  transition: max-height 0.35s ease, opacity 0.3s ease, padding 0.3s ease;
+  padding: 0 14px;
+}
+.conn-group-expandable.open .conn-group-meanings {
+  max-height: 320px;
+  opacity: 1;
+  padding: 10px 14px;
+}
+.conn-meaning-row {
+  display: flex;
+  gap: 8px;
+  padding: 4px 0;
+  font-size: 0.85rem;
+  line-height: 1.3;
+}
+.conn-meaning-word {
+  font-weight: 800;
+  min-width: 92px;
+  flex-shrink: 0;
+  letter-spacing: 0.3px;
+}
+.conn-meaning-def { opacity: 0.95; }
+.conn-meaning-defwrap { flex: 1; min-width: 0; }
+
+/* shared per-word "🌐 ES" translate button (Real Word, Waffle, Connections,
+   Fill in the Blanks) — reveals the Spanish meaning ADDITIONALLY, never
+   replacing the English text already shown. */
+.translate-btn {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  background: rgba(168, 85, 247, 0.12);
+  color: var(--text-dim);
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.translate-btn:hover { background: rgba(168, 85, 247, 0.25); color: var(--text); }
+.translate-btn.active { background: rgba(168, 85, 247, 0.4); color: #fff; border-color: var(--accent-bright); }
+.translate-es {
+  margin: 5px 0 0;
+  font-size: 0.85em;
+  font-style: italic;
+  color: var(--text-dim);
+}
+.translate-es.hidden { display: none; }
+.meaning-extra:empty { display: none; }
+
+/* ================= WORD LINKS ================= */
+.mini-links { text-align: center; width: 85%; }
+.mini-chips { display: flex; flex-wrap: wrap; gap: 5px; justify-content: center; margin-bottom: 10px; }
+.mini-chip {
+  font-size: 0.62rem;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 12px;
+  border: 1px solid rgba(155, 48, 255, 0.6);
+  color: var(--text-dim);
+  background: rgba(155, 48, 255, 0.12);
+}
+
+.wl-wrap {
+  max-width: 620px;
+  margin: 20px auto;
+  padding: 28px 24px;
+  background: var(--panel);
+  border: 2px solid var(--panel-border);
+  border-radius: 18px;
+}
+.wl-wrap.hidden { display: none; }
+
+.wl-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.wl-type {
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: var(--accent-bright);
+  padding: 4px 14px;
+  border-radius: 14px;
+  background: rgba(155, 48, 255, 0.15);
+  border: 1px solid rgba(155, 48, 255, 0.45);
+}
+.wl-attempts { font-weight: 800; font-size: 0.9rem; color: var(--text); }
+
+.wl-instruction { text-align: center; color: var(--text-dim); margin-bottom: 16px; }
+
+/* clue chips */
+.wl-clues {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+.wl-chip {
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: 1px;
+  padding: 12px 20px;
+  border-radius: 14px;
+  color: var(--text);
+  background: rgba(155, 48, 255, 0.14);
+  border: 1px solid rgba(155, 48, 255, 0.55);
+  box-shadow: 0 0 12px rgba(155, 48, 255, 0.25);
+}
+.wl-chip.hint-chip {
+  background: rgba(245, 197, 24, 0.12);
+  border-color: rgba(245, 197, 24, 0.7);
+  box-shadow: 0 0 12px rgba(245, 197, 24, 0.3);
+  color: #f0d47a;
+  animation: chipIn 0.35s ease;
+}
+@keyframes chipIn {
+  from { opacity: 0; transform: translateY(10px) scale(0.85); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.wl-end-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.wl-reveal-word { color: #ff8a8a; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+#wl-next-btn.hidden { display: none; }
+
+@media (max-width: 480px) {
+  .wl-chip { font-size: 0.9rem; padding: 10px 14px; }
+}
+
+/* ================= IMPOSTOR ================= */
+.mini-impostor { border-color: #ff6b6b; color: #ff9a9a; background: rgba(255, 77, 77, 0.12); }
+
+/* home-card preview: incognito spy over 2 rows of word pills + two magnifiers */
+.mini-impo {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  width: 100%;
+}
+.mini-impo-spy { filter: drop-shadow(0 0 10px rgba(214, 200, 255, 0.65)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5)); }
+/* IMPOSTOR wordmark between the spy and the pills — same style as the game's
+   intro screen (.intro-icon-logo-word), sized to fit the smaller card */
+.mini-impo-word {
+  font-weight: 900; letter-spacing: 3px; font-size: 1.3rem; color: #fff;
+  text-shadow: 0 0 12px rgba(168, 85, 247, 0.7);
+}
+.mini-impo-pills {
+  position: relative;
+  display: grid; grid-template-columns: auto auto; gap: 8px 10px;
+  justify-content: center;
+}
+.mini-impo-pills .mini-chip {
+  font-size: 0.72rem; padding: 6px 14px; border-radius: 14px;
+  border-color: var(--sp-accent, #a855f7); color: #fff;
+  background: rgba(168, 85, 247, 0.14);
+}
+/* the PRICE pill's inner glass is slightly bigger than a normal spot glass */
+.mini-spot-glass-impo { --g: 46px; }
+
+/* =====================================================
+   SHARED "magnifier reveals the error in red" effect —
+   the wrapped letters go red, and a magnifier lens sits
+   centered over them (used by Spot the Error + Impostor).
+   ===================================================== */
+.mini-spot-lens { position: relative; color: #ff6b6b; }
+.mini-spot-glass {
+  --g: 44px;
+  position: absolute; z-index: 5; pointer-events: none;
+  width: var(--g); height: var(--g);
+  left: 50%; top: 50%;
+  /* the lens circle sits at 40% of the SVG box → offset so it lands on the letters */
+  margin-left: calc(var(--g) * -0.4);
+  margin-top: calc(var(--g) * -0.4);
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.5)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+/* ================= SPOT THE ERROR (home preview) ================= */
+.mini-spot { display: flex; flex-direction: column; align-items: center; gap: 12px; width: 100%; }
+.mini-spot-title {
+  font-weight: 900; font-size: 1.85rem; letter-spacing: 2px; color: #fff;
+  /* softer glow (was 0.55 white / 0.75 violet — too saturated) */
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.3), 0 0 13px rgba(168, 85, 247, 0.42);
+}
+
+/* =====================================================
+   SHARED bomb-with-skull icon — the "O" of BOMB in BOTH
+   the Bomb Word and Emoji Bomb card titles (one asset).
+   ===================================================== */
+.bomb-o {
+  display: inline-block; position: relative;
+  width: 0.94em; height: 0.94em; vertical-align: -0.16em; margin: 0 0.02em;
+  border-radius: 50%;
+  background: radial-gradient(circle at 34% 28%, #4c4c4c, #141414 60%, #000);
+  box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.7), inset 2px 2px 5px rgba(255, 255, 255, 0.18);
+}
+.bomb-o-skull {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  font-size: 0.56em; line-height: 1;
+}
+/* little lit-fuse spark at the top-right (orange glow + crossed rays) */
+.bomb-o-spark {
+  position: absolute; top: -0.06em; right: -0.04em;
+  width: 0.24em; height: 0.24em; border-radius: 50%;
+  background: radial-gradient(circle, #ffd257, #ff9a1f 70%);
+  box-shadow: 0 0 5px 1px rgba(255, 160, 30, 0.9);
+}
+.bomb-o-spark::before, .bomb-o-spark::after {
+  content: ""; position: absolute; left: 50%; top: 50%;
+  width: 0.42em; height: 0.09em; background: #ffb020; border-radius: 2px;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+.bomb-o-spark::after { transform: translate(-50%, -50%) rotate(90deg); }
+
+/* shared BOMB-style title (used by Bomb Word + Emoji Bomb) — SUBTLE glow */
+.bomb-title { display: flex; flex-direction: column; align-items: center; line-height: 1.05; }
+.bomb-line {
+  font-weight: 900; font-size: 2rem; letter-spacing: 2px; color: #fff;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.28), 0 2px 3px rgba(0, 0, 0, 0.5);
+}
+/* the typed prefix + violet cursor, shared by both cards */
+.bomb-prefix, .eb-ex {
+  font-weight: 900; font-size: 2.1rem; letter-spacing: 2px; color: #fff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.25);
+}
+.bomb-cursor { color: var(--sp-accent, #a855f7); }
+
+/* ================= BOMB WORD (home preview) ================= */
+.mini-bombword { display: flex; flex-direction: column; align-items: center; gap: 16px; width: 100%; }
+
+/* ================= EMOJI BOMB (home preview) ================= */
+.mini-emojibomb { display: flex; flex-direction: column; align-items: center; gap: 12px; width: 100%; }
+.mini-emojibomb .bomb-line { font-size: 1.75rem; }
+.eb-row { display: flex; align-items: center; justify-content: center; gap: 14px; }
+.eb-row .eb-ex { font-size: 1.7rem; }
+.eb-emoji { font-size: 1.7rem; line-height: 1; filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.5)); }
+.eb-bomb { font-size: 1.8rem; line-height: 1; filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5)); }
+.mini-spot-row { position: relative; display: flex; align-items: center; gap: 8px; }
+.mini-spot-box {
+  width: 26px; height: 26px; border-radius: 7px; flex: 0 0 auto;
+  display: flex; align-items: center; justify-content: center;
+  color: #ff5f5f; font-weight: 900; font-size: 0.85rem;
+  border: 2px solid var(--sp-accent, #a855f7); background: rgba(168, 85, 247, 0.12);
+}
+.mini-spot-phrase { position: relative; font-size: 1.5rem; font-weight: 700; color: #fff; white-space: nowrap; }
+
+/* ================= WORD LINKS (home preview) ================= */
+.mini-wl { display: flex; flex-direction: column; align-items: center; gap: 12px; width: 100%; }
+.mini-wl-grid {
+  position: relative;
+  display: grid; grid-template-columns: auto auto; gap: 12px 56px;
+  justify-content: center; align-items: center;
+}
+.mini-wl-grid .mini-chip {
+  font-size: 0.8rem; font-weight: 700; padding: 7px 16px; border-radius: 15px;
+  border-color: var(--sp-accent, #a855f7); color: #fff; background: rgba(168, 85, 247, 0.14);
+}
+/* glowing blue hub with a dark link/chain icon, centered between the 4 pills */
+.mini-wl-hub {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: 42px; height: 42px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: radial-gradient(circle at 38% 32%, #7fd8ff, #29b6f6 60%, #1e9fe0);
+  box-shadow: 0 0 16px rgba(41, 182, 246, 0.9), 0 0 30px rgba(41, 182, 246, 0.55);
+}
+/* "WORD LINKS" wordmark under the pills — same treatment as FILL IN THE BLANKS
+   (fib-logo-word), but a bold (800) weight instead of black (900) per request */
+.mini-wl-logo {
+  font-weight: 800; letter-spacing: 3px; font-size: 1.35rem; color: #fff;
+  text-shadow: 0 0 12px rgba(168, 85, 247, 0.7);
+}
+
+.imp-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin: 18px 0;
+}
+.imp-word {
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: 1px;
+  padding: 14px 22px;
+  border-radius: 14px;
+  cursor: pointer;
+  color: var(--text);
+  background: rgba(155, 48, 255, 0.14);
+  border: 1px solid rgba(155, 48, 255, 0.55);
+  box-shadow: 0 0 12px rgba(155, 48, 255, 0.25);
+  transition: opacity 0.35s, transform 0.15s, background 0.2s, border-color 0.2s;
+}
+.imp-word:hover { transform: translateY(-2px); background: rgba(155, 48, 255, 0.28); }
+.imp-word.removed {
+  opacity: 0.25;
+  text-decoration: line-through;
+  background: rgba(83, 141, 78, 0.25);
+  border-color: var(--tile-green);
+  pointer-events: none;
+  transform: none;
+}
+.imp-word.impostor-reveal {
+  background: rgba(141, 48, 48, 0.5);
+  border-color: #e0442e;
+  box-shadow: 0 0 14px rgba(224, 68, 46, 0.5);
+  pointer-events: none;
+}
+.imp-word.shake { animation: impShake 0.4s; }
+@keyframes impShake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
+
+/* amber hint text */
+.imp-hint {
+  text-align: center;
+  font-weight: 700;
+  color: #f0d47a;
+  background: rgba(245, 197, 24, 0.1);
+  border: 1px dashed rgba(245, 197, 24, 0.55);
+  border-radius: 10px;
+  padding: 9px 14px;
+  margin-bottom: 6px;
+  animation: chipIn 0.35s ease;
+}
+.imp-hint.hidden { display: none; }
+
+@media (max-width: 480px) {
+  .imp-word { font-size: 0.9rem; padding: 11px 15px; }
+}
+
+/* ================= CONNECTIONS ================= */
+/* fixed colors by category ORDER in the JSON (index 0-3), same in every puzzle */
+:root {
+  --conn-0: #7c3aed; /* violet */
+  --conn-1: #2f5fa8; /* blue */
+  --conn-2: #b0448a; /* pink */
+  --conn-3: #b8862e; /* warm amber */
+}
+
+.mini-connections {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+  width: 85%;
+}
+.mini-conn {
+  font-size: 0.6rem;
+  font-weight: 800;
+  padding: 5px 4px;
+  border-radius: 6px;
+  text-align: center;
+  color: #fff;
+}
+.mini-conn.c0 { background: var(--conn-0); }
+.mini-conn.c1 { background: var(--conn-1); }
+.mini-conn.c2 { background: var(--conn-2); }
+.mini-conn.c3 { background: var(--conn-3); }
+
+.conn-wrap {
+  max-width: 640px;
+  margin: 20px auto;
+  padding: 26px 20px;
+  background: var(--panel);
+  border: 2px solid var(--panel-border);
+  border-radius: 18px;
+}
+.conn-wrap.hidden { display: none; }
+
+/* solved group cards: full-width, category name on top, 4 words below */
+.conn-solved { display: flex; flex-direction: column; gap: 10px; margin-bottom: 10px; }
+.conn-group {
+  border-radius: 12px;
+  padding: 12px 14px;
+  text-align: center;
+  color: #fff;
+  animation: chipIn 0.35s ease;
+}
+.conn-group.g0 { background: var(--conn-0); }
+.conn-group.g1 { background: var(--conn-1); }
+.conn-group.g2 { background: var(--conn-2); }
+.conn-group.g3 { background: var(--conn-3); }
+.conn-group-title { font-weight: 900; letter-spacing: 1px; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 4px; }
+.conn-group-words { font-weight: 600; font-size: 0.95rem; opacity: 0.95; }
+
+/* 4x4 word grid */
+.conn-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 10px 0 14px;
+}
+.conn-word {
+  min-height: 56px;
+  padding: 8px 4px;
+  border-radius: 12px;
+  border: 1px solid rgba(155, 48, 255, 0.5);
+  background: rgba(155, 48, 255, 0.12);
+  color: var(--text);
+  font-weight: 800;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s, box-shadow 0.15s;
+  overflow-wrap: anywhere;
+}
+.conn-word:hover { background: rgba(155, 48, 255, 0.25); }
+.conn-word.selected {
+  background: rgba(155, 48, 255, 0.4);
+  border: 2px solid var(--accent-bright);
+  box-shadow: 0 0 12px rgba(185, 92, 255, 0.6);
+  transform: scale(1.04);
+}
+
+#conn-message:not(:empty) { animation: chipIn 0.3s ease; }
+
+.conn-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#conn-submit:disabled { opacity: 0.4; cursor: default; }
+
+.conn-end { max-width: 560px; }
+.conn-end .conn-solved { margin: 0 0 20px; text-align: center; }
+
+@media (max-width: 480px) {
+  .conn-grid { grid-template-columns: repeat(3, 1fr); gap: 7px; }
+  .conn-word { font-size: 0.75rem; min-height: 48px; }
+}
+
+/* ================= IS IT A REAL WORD? ================= */
+.mini-realword { text-align: center; width: 92%; }
+.mini-rw-title { font-size: 0.82rem; color: var(--text-dim); margin-bottom: 10px; }
+.mini-rw-word { font-size: 1.9rem; font-weight: 800; color: #fff; margin-bottom: 14px; font-style: italic; }
+.mini-rw-btns { display: flex; gap: 10px; justify-content: center; font-size: 0.85rem; font-weight: 800; }
+.mini-rw-yes { color: #7ee2a0; border: 1px solid #538d4e; border-radius: 10px; padding: 4px 13px; }
+.mini-rw-no { color: #ff9a9a; border: 1px solid #e0442e; border-radius: 10px; padding: 4px 13px; }
+
+.rw-wrap {
+  max-width: 520px;
+  margin: 24px auto;
+  padding: 34px 24px 40px;
+  background: var(--panel);
+  border: 2px solid var(--panel-border);
+  border-radius: 18px;
+  text-align: center;
+}
+.rw-wrap.hidden { display: none; }
+
+/* 6-second timer bar */
+.rw-timer {
+  height: 10px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  margin: 14px 0 4px;
+}
+.rw-timer-fill {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-bright));
+}
+.rw-timer-fill.urgent {
+  background: #e0442e;
+  animation: rwPulse 0.5s infinite alternate;
+}
+@keyframes rwPulse {
+  from { opacity: 1; }
+  to { opacity: 0.55; }
+}
+.rw-seconds { font-weight: 800; color: var(--text-dim); font-size: 0.9rem; min-height: 20px; }
+.rw-seconds.urgent { color: #ff8a8a; }
+
+.rw-question { color: var(--text-dim); font-size: 1.05rem; margin: 26px 0 10px; }
+.rw-word {
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #fff;
+  margin-bottom: 8px;
+  min-height: 60px;
+}
+
+/* brief ✓ / ✗ feedback between words */
+.rw-feedback { font-size: 2rem; font-weight: 900; min-height: 44px; }
+.rw-feedback.ok { color: #7ee2a0; animation: chipIn 0.2s ease; }
+.rw-feedback.bad { color: #ff6b6b; animation: chipIn 0.2s ease; }
+
+.rw-buttons { display: flex; gap: 16px; justify-content: center; margin-top: 10px; }
+.rw-btn {
+  flex: 1;
+  max-width: 190px;
+  padding: 18px 10px;
+  border-radius: 14px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: filter 0.1s, transform 0.1s;
+}
+.rw-btn:hover { filter: brightness(1.2); }
+.rw-btn:active { transform: scale(0.96); }
+.rw-btn:disabled { opacity: 0.45; cursor: default; }
+.rw-yes { background: rgba(83, 141, 78, 0.35); border: 2px solid var(--tile-green); color: #b8e6b3; }
+.rw-no { background: rgba(141, 48, 48, 0.35); border: 2px solid #e0442e; color: #ffb3b3; }
+
+/* end-of-game word summary */
+.rw-summary li.was-missed { background: rgba(141, 48, 48, 0.25); }
+.rw-summary .rw-tag { font-size: 0.8rem; opacity: 0.8; margin-left: 6px; }
+
+@media (max-width: 480px) {
+  .rw-word { font-size: 2rem; }
+  .rw-btn { padding: 16px 8px; font-size: 1.05rem; }
+}
+
+/* ================= BOMB WORD ================= */
+.mini-bomb { text-align: center; }
+.mini-bomb-icon { font-size: 2rem; margin-bottom: 6px; }
+.mini-bomb-prefix { font-size: 1.8rem; font-weight: 900; letter-spacing: 3px; color: #fff; margin-bottom: 8px; }
+.mini-bomb-cursor { color: var(--accent-bright); animation: rwPulse 0.7s infinite alternate; }
+
+.bw-wrap { max-width: 560px; }
+.bw-status { display: flex; justify-content: space-between; margin-bottom: 4px; }
+
+.bw-prefix {
+  font-size: 3.2rem;
+  font-weight: 900;
+  letter-spacing: 6px;
+  color: #fff;
+  margin: 6px 0 10px;
+  min-height: 76px;
+}
+.bw-bomb {
+  display: inline-block;
+  font-size: 2.4rem;
+  letter-spacing: 0;
+  margin-right: 6px;
+}
+.bw-bomb.urgent { animation: bwShake 0.25s infinite; }
+@keyframes bwShake {
+  0%, 100% { transform: rotate(0) scale(1); }
+  25% { transform: rotate(-8deg) scale(1.08); }
+  75% { transform: rotate(8deg) scale(1.08); }
+}
+
+.bw-form { max-width: 400px; margin: 6px auto 0; }
+.bw-form input { text-transform: uppercase; letter-spacing: 2px; font-weight: 700; }
+
+/* lives: purple hearts that dim as you lose them */
+.bw-lives { font-size: 1.1rem; letter-spacing: 3px; }
+.bw-lives.hidden { display: none; }
+.bw-heart { transition: opacity 0.3s, filter 0.3s; }
+.bw-heart.lost { opacity: 0.18; filter: grayscale(1); }
+
+/* "LEVEL X" splash between levels: holds, then fades out via CSS */
+.bw-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 2, 18, 0.92);
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+.bw-transition.fade { opacity: 0; }
+.bw-transition.hidden { display: none; }
+.bw-transition-text {
+  font-size: clamp(2.5rem, 10vw, 4.5rem);
+  font-weight: 900;
+  letter-spacing: 8px;
+  color: var(--accent-bright);
+  text-shadow: 0 0 30px rgba(155, 48, 255, 0.8);
+  animation: chipIn 0.3s ease;
+}
+
+@media (max-width: 480px) {
+  .bw-prefix { font-size: 2.3rem; letter-spacing: 4px; }
+}
+
+/* ================= WAFFLE ================= */
+.mini-waffle {
+  display: grid;
+  grid-template-columns: repeat(3, 34px);
+  gap: 4px;
+}
+.mini-wcell {
+  width: 34px; height: 34px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 900; font-size: 1rem; color: #14210f;
+  border-radius: 6px;
+}
+.mini-wcell.wg { background: var(--tile-green); color: #fff; }
+.mini-wcell.wy { background: var(--tile-yellow); color: #fff; }
+.mini-wcell.hole { background: transparent; }
+
+.wf-wrap {
+  max-width: 560px;
+  margin: 20px auto;
+  padding: 26px 20px;
+  background: var(--panel);
+  border: 2px solid var(--panel-border);
+  border-radius: 18px;
+  text-align: center;
+}
+.wf-wrap.hidden { display: none; }
+
+.wf-swaps {
+  font-weight: 900;
+  letter-spacing: 2px;
+  font-size: 1.05rem;
+  color: var(--accent-bright);
+  margin-bottom: 16px;
+}
+.wf-swaps.low { color: #ff8a8a; animation: rwPulse 0.6s infinite alternate; }
+
+/* the waffle grid: N columns set inline from JS */
+.wf-grid {
+  display: grid;
+  gap: 6px;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+.wf-cell {
+  width: var(--wf-cell, 56px);
+  height: var(--wf-cell, 56px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: calc(var(--wf-cell, 56px) * 0.45);
+  color: #fff;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.12s, box-shadow 0.12s, background 0.25s;
+  padding: 0;
+}
+.wf-cell.green { background: var(--tile-green); cursor: default; }
+.wf-cell.yellow { background: var(--tile-yellow); }
+.wf-cell.gray { background: var(--tile-gray); }
+.wf-cell.yellow:hover, .wf-cell.gray:hover { transform: scale(1.06); }
+.wf-cell.hole { background: transparent; pointer-events: none; }
+.wf-cell.selected {
+  outline: 3px solid var(--accent-bright);
+  box-shadow: 0 0 16px rgba(185, 92, 255, 0.8);
+  transform: scale(1.08);
+  z-index: 2;
+}
+
+.intro-extra {
+  color: var(--accent-bright);
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 18px;
+  min-height: 20px;
+}
+.intro-extra:empty { display: none; }
+
+@media (max-width: 480px) {
+  .wf-wrap { padding: 20px 8px; }
+}
+
+/* ================= EMOJI BOMB ================= */
+.mini-eb-emojis { font-size: 1.4rem; letter-spacing: 4px; margin-bottom: 8px; }
+
+/* the three emoji clues: big, centered, never split (each in its own span) */
+.eb-emojis {
+  font-size: 3rem;
+  display: flex;
+  gap: 22px;
+  justify-content: center;
+  margin: 4px 0 10px;
+  min-height: 64px;
+}
+
+/* Hardcore mode: subtle red/orange danger accent over the same dark palette */
+.rw-wrap.eb-hardcore {
+  border-color: #b33a2a;
+  box-shadow: 0 0 24px rgba(224, 68, 46, 0.25);
+}
+.eb-hardcore .rw-timer-fill { background: linear-gradient(90deg, #e0442e, #f5851f); }
+.eb-hardcore .bw-prefix { text-shadow: 0 0 20px rgba(224, 68, 46, 0.6); }
+.eb-lives-hardcore {
+  font-weight: 900;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  color: #ff8a6b;
+  border: 1px solid rgba(224, 68, 46, 0.6);
+  border-radius: 10px;
+  padding: 3px 10px;
+}
+
+.eb-end-prompt {
+  font-size: 1.5rem;
+  margin: -6px 0 20px;
+  color: var(--text-dim);
+}
+.eb-end-prompt strong { color: #fff; letter-spacing: 1px; }
+
+@media (max-width: 480px) {
+  .eb-emojis { font-size: 2.3rem; gap: 14px; }
+}
+
+/* ================= STRANDS ================= */
+/* state colors: normal, active selection, solved theme, spangram, hint */
+:root {
+  --st-theme-color: #58b8d8;   /* light cyan-blue for solved theme words */
+  --st-span-color: #e8c34a;    /* gold for the spangram */
+  --st-hint-color: #ff7ad9;    /* pink ring for hint letters */
+}
+
+.mini-strands { display: grid; grid-template-columns: repeat(3, 32px); gap: 5px; }
+.mini-st {
+  width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 0.9rem; color: var(--text);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.07);
+}
+.mini-st.st-b { background: var(--st-theme-color); color: #0b2530; }
+.mini-st.st-y { background: var(--st-span-color); color: #2e2405; }
+
+.st-wrap {
+  max-width: 480px;
+  margin: 18px auto;
+  padding: 22px 16px 26px;
+  background: var(--panel);
+  border: 2px solid var(--panel-border);
+  border-radius: 18px;
+  text-align: center;
+}
+.st-wrap.hidden { display: none; }
+
+.st-theme-label { font-size: 0.7rem; letter-spacing: 3px; color: var(--text-dim); margin-bottom: 2px; }
+.st-theme {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--accent-bright);
+  margin-bottom: 8px;
+}
+
+/* the word being traced right now */
+.st-current {
+  min-height: 28px;
+  font-weight: 900;
+  font-size: 1.15rem;
+  letter-spacing: 3px;
+  color: #fff;
+}
+
+.st-board {
+  position: relative;
+  display: inline-block;
+  touch-action: none; /* the drag gesture owns the touch — no page scroll */
+  user-select: none;
+  -webkit-user-select: none;
+  margin-bottom: 6px;
+}
+.st-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+.st-line { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.st-line.active { stroke: rgba(168, 85, 247, 0.55); stroke-width: 14; }
+.st-line.theme { stroke: rgba(88, 184, 216, 0.4); stroke-width: 14; }
+.st-line.span { stroke: rgba(232, 195, 74, 0.4); stroke-width: 14; }
+
+.st-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(6, var(--st-cell, 52px));
+  gap: 6px;
+}
+.st-cell {
+  width: var(--st-cell, 52px);
+  height: var(--st-cell, 52px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: calc(var(--st-cell, 52px) * 0.42);
+  color: var(--text);
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease, transform 0.12s ease, box-shadow 0.18s ease;
+}
+.st-cell.sel {
+  background: var(--accent);
+  color: #fff;
+  transform: scale(1.08);
+}
+/* solved cells keep their color but stay traceable (letters can be reused) */
+.st-cell.solved-theme { background: var(--st-theme-color); color: #0b2530; }
+.st-cell.solved-span { background: var(--st-span-color); color: #2e2405; }
+/* an active trace must visually win over the solved color */
+.st-grid .st-cell.sel { background: var(--accent); color: #fff; transform: scale(1.08); }
+.st-cell.hinted { box-shadow: 0 0 0 3px var(--st-hint-color), 0 0 14px rgba(255, 122, 217, 0.6); }
+/* sequential hint reveal: each letter grows briefly, then settles — the wave
+   itself communicates the order (first letter pops first, and so on) */
+.st-cell.hint-pop {
+  transform: scale(1.32);
+  transition: transform 0.22s ease-out;
+  z-index: 3;
+}
+.st-cell.pulse { animation: stPulse 0.45s ease; }
+@keyframes stPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.22); background: rgba(83, 141, 78, 0.6); }
+  100% { transform: scale(1); }
+}
+.st-cell.bad { animation: stBad 0.4s ease; }
+@keyframes stBad {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); background: rgba(224, 68, 46, 0.5); }
+  75% { transform: translateX(5px); background: rgba(224, 68, 46, 0.5); }
+}
+
+/* SPANGRAM! flash over the board */
+.st-flash {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: 4px;
+  color: var(--st-span-color);
+  text-shadow: 0 0 24px rgba(232, 195, 74, 0.9);
+  pointer-events: none;
+  animation: chipIn 0.3s ease;
+}
+.st-flash.hidden { display: none; }
+
+.st-status { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 4px 12px; margin: 8px 4px 12px; }
+
+/* final-screen word list: found vs missed, spangram highlighted */
+.st-wordlist {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  margin: 0 0 20px;
+}
+.st-wordlist li {
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-dim);
+}
+.st-wordlist li.found { background: rgba(88, 184, 216, 0.28); color: #cdeef7; }
+.st-wordlist li.missed { color: #d99a9a; text-decoration: line-through; opacity: 0.75; }
+.st-wordlist li.span { background: rgba(232, 195, 74, 0.28); color: #f4e3a0; }
+.st-wordlist li.span.missed { color: #f4e3a0; opacity: 0.6; }
+.st-wordlist .span-tag { font-size: 0.62rem; letter-spacing: 1px; opacity: 0.85; margin-left: 4px; }
+
+@media (max-width: 480px) {
+  .st-grid { grid-template-columns: repeat(6, var(--st-cell, 13vw)); }
+  .st-cell { width: var(--st-cell, 13vw); height: var(--st-cell, 13vw); }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 480px) {
+  .game-card { width: 160px; }
+  .card-art { height: 140px; }
+  .mini-board { grid-template-columns: repeat(5, 22px); }
+  .mini-tile { width: 22px; height: 22px; font-size: 0.7rem; }
+  .tile { width: 44px; height: 44px; font-size: 1.4rem; }
+  .key { height: 48px; font-size: 0.85rem; }
+}
+
+/* =====================================================
+   STAR PARTY
+   ===================================================== */
+:root { --sp-accent: #a855f7; --sp-good: #22c55e; --sp-bad: #ef4444; --sp-neutral: #eab308; }
+
+/* home mini card art */
+.mini-starparty {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+/* CAMBIO 1: 6 decorative stars floating around the wheel, reusing the SAME
+   star shape/gradient/glow as spStarIcon() (starparty.js) and the shared
+   .sp-star-ico glow class — varied sizes/positions so they feel dynamic. */
+.mini-sp-stars { position: absolute; inset: 0; pointer-events: none; }
+.mini-sp-star { position: absolute; }
+.mini-sp-star.s1 { top: 2%; left: 12%; }
+.mini-sp-star.s2 { top: 4%; right: 10%; }
+.mini-sp-star.s3 { top: 46%; left: 2%; transform: translateY(-50%); }
+.mini-sp-star.s4 { top: 44%; right: 0%; transform: translateY(-50%); }
+.mini-sp-star.s5 { bottom: 14%; left: 14%; }
+.mini-sp-star.s6 { bottom: 10%; right: 18%; }
+/* CAMBIO 2: "STAR PARTY" wordmark below the wheel, each letter its own color
+   (magenta -> orange/yellow -> green/turquoise -> cyan -> violet). */
+.mini-sp-title {
+  font-weight: 900;
+  font-size: 0.92rem;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.6);
+}
+/* ARREGLO 5: home card art now previews the ACTUAL golden game wheel (gold rim +
+   blue/red/gold sectors, same palette as the real in-game wheel) instead of a
+   generic icon, so the game is recognizable before entering. */
+.mini-sp-goldwheel { position: relative; width: 78px; height: 78px; }
+.mini-sp-goldwheel-rim {
+  position: absolute; inset: 0; border-radius: 50%;
+  background: conic-gradient(#8a5a0a, #f9e08a 12%, #b97e12 25%, #f3cf5e 40%, #8a5a0a 55%, #f9e08a 70%, #b97e12 85%, #8a5a0a);
+  box-shadow: 0 0 0 2px #5b3a06, 0 4px 12px rgba(0, 0, 0, 0.5), 0 0 16px rgba(246, 200, 90, 0.5);
+}
+.mini-sp-goldwheel-sectors {
+  position: absolute; inset: 7px; border-radius: 50%;
+  background: conic-gradient(
+    #3b82f6 0deg 30deg, #ef4444 30deg 60deg, #eab308 60deg 90deg,
+    #3b82f6 90deg 120deg, #ef4444 120deg 150deg, #eab308 150deg 180deg,
+    #3b82f6 180deg 210deg, #ef4444 210deg 240deg, #eab308 240deg 270deg,
+    #3b82f6 270deg 300deg, #ef4444 300deg 330deg, #eab308 330deg 360deg
+  );
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.55);
+}
+.mini-sp-goldwheel-hub {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 20px; height: 20px; border-radius: 50%;
+  background: radial-gradient(circle at 38% 30%, #fff8dd, #f6c94f 42%, #b97e12 78%, #6b4708);
+  border: 2px solid #f3d878;
+  box-shadow: 0 0 10px rgba(246, 200, 90, 0.9);
+}
+
+/* ---- setup screen ---- */
+.sp-setup {
+  max-width: 520px;
+  margin: 10px auto 40px;
+  padding: 26px 22px 30px;
+  text-align: center;
+  background: var(--panel);
+  border: 2px solid var(--panel-border);
+  border-radius: 22px;
+  box-shadow: 0 0 40px rgba(168, 85, 247, 0.28);
+}
+.sp-setup.hidden { display: none; }
+.sp-title { font-size: 2.1rem; letter-spacing: 2px; font-weight: 900; }
+.sp-title-star { color: var(--sp-neutral); filter: drop-shadow(0 0 8px var(--sp-neutral)); }
+.sp-sub { color: var(--text-dim); margin: 10px 0 22px; line-height: 1.5; font-size: 0.95rem; }
+.sp-label { color: var(--text-dim); font-size: 0.9rem; margin-bottom: 10px; letter-spacing: 1px; text-transform: uppercase; }
+.sp-count-btns { display: flex; justify-content: center; gap: 10px; margin-bottom: 22px; }
+.sp-count-btn {
+  width: 46px; height: 46px; border-radius: 12px;
+  border: 1px solid rgba(168, 85, 247, 0.5);
+  background: #2a1140; color: var(--text);
+  font-weight: 800; font-size: 1.05rem; cursor: pointer;
+  transition: transform 0.1s, background 0.15s, box-shadow 0.15s;
+}
+.sp-count-btn:hover { background: #3a1a55; }
+.sp-count-btn.active {
+  background: var(--sp-accent); color: #fff;
+  box-shadow: 0 0 16px rgba(168, 85, 247, 0.7);
+  transform: translateY(-2px);
+}
+.sp-player-rows { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+.sp-player-row { display: flex; align-items: center; gap: 10px; }
+.sp-seat-dot { width: 16px; height: 16px; border-radius: 50%; flex: 0 0 auto; box-shadow: 0 0 8px currentColor; }
+.sp-name-input {
+  flex: 1; min-width: 0;
+  background: #1c0a2b; color: var(--text);
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  border-radius: 8px; padding: 9px 12px; font-size: 0.95rem;
+}
+.sp-name-input:focus { outline: none; border-color: var(--sp-accent); }
+.sp-type-toggle {
+  flex: 0 0 auto; width: 108px;
+  border: none; border-radius: 8px; padding: 9px 8px;
+  font-weight: 700; font-size: 0.85rem; cursor: pointer;
+  transition: filter 0.1s;
+}
+.sp-type-toggle:hover { filter: brightness(1.12); }
+.sp-type-toggle.is-human { background: rgba(56, 189, 248, 0.25); color: #bfe9ff; border: 1px solid rgba(56,189,248,0.5); }
+.sp-type-toggle.is-cpu { background: rgba(168, 85, 247, 0.25); color: #e6ccff; border: 1px solid rgba(168,85,247,0.5); }
+
+/* ---- table / felt ---- */
+.sp-table.hidden { display: none; }
+.sp-hud { text-align: center; margin: 4px 0 6px; }
+.sp-round {
+  display: inline-block;
+  background: rgba(0,0,0,0.4);
+  border: 1px solid rgba(168, 85, 247, 0.5);
+  color: var(--text); font-weight: 800; letter-spacing: 2px;
+  padding: 6px 18px; border-radius: 999px; font-size: 0.9rem;
+}
+.sp-felt {
+  position: relative;
+  width: min(96vw, 740px);
+  height: min(96vw, 740px);
+  margin: 6px auto 30px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(168, 85, 247, 0.28) 0%, rgba(42, 10, 61, 0.55) 45%, rgba(12, 2, 20, 0.7) 72%),
+    #180627;
+  border: 3px solid rgba(168, 85, 247, 0.45);
+  box-shadow: 0 0 60px rgba(168, 85, 247, 0.35), inset 0 0 80px rgba(0,0,0,0.6);
+}
+
+/* seats around the ellipse */
+.sp-seats { position: absolute; inset: 0; }
+.sp-seat {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 158px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+.sp-seat-inner {
+  background: rgba(15, 4, 26, 0.85);
+  border: 2px solid rgba(255,255,255,0.12);
+  border-radius: 16px;
+  padding: 12px 12px 13px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.5);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.sp-seat.current { z-index: 3; }
+.sp-seat.current .sp-seat-inner {
+  border-color: var(--seat-color);
+  box-shadow: 0 0 22px var(--seat-color), 0 0 40px var(--seat-color);
+  animation: sp-seat-pulse 1.4s ease-in-out infinite;
+}
+@keyframes sp-seat-pulse {
+  0%, 100% { box-shadow: 0 0 16px var(--seat-color), 0 0 30px rgba(255,255,255,0.08); }
+  50% { box-shadow: 0 0 26px var(--seat-color), 0 0 48px var(--seat-color); }
+}
+.sp-seat-name {
+  display: flex; align-items: center; justify-content: center; gap: 5px;
+  font-weight: 800; font-size: 1.02rem; margin-bottom: 7px;
+  color: #fff; white-space: nowrap; overflow: hidden;
+}
+.sp-seat-label { overflow: hidden; text-overflow: ellipsis; }
+.sp-seat-badge { flex: 0 0 auto; font-size: 1rem; }
+.sp-defer { display: none; flex: 0 0 auto; font-size: 1rem; filter: drop-shadow(0 0 4px #fff); }
+.sp-defer.show { display: inline; }
+.sp-star-bar {
+  margin-top: 7px; height: 8px; border-radius: 999px;
+  background: rgba(255,255,255,0.1); overflow: hidden;
+}
+.sp-star-fill {
+  height: 100%; border-radius: 999px;
+  background: linear-gradient(90deg, var(--seat-color), #fff);
+  transition: width 0.5s ease;
+}
+.sp-star-fill.neg { background: linear-gradient(90deg, #7a1515, var(--sp-bad)); }
+
+/* center stage: a floating panel where the action happens */
+.sp-center {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(58%, 340px);
+  z-index: 4;
+  text-align: center;
+}
+/* the wheel is the protagonist — give it a much wider stage */
+.sp-center.sp-mode-wheel { width: min(86%, 480px); }
+.sp-center > * {
+  background: rgba(18, 5, 30, 0.94);
+  border: 2px solid rgba(168, 85, 247, 0.55);
+  border-radius: 18px;
+  padding: 16px 16px 18px;
+  box-shadow: 0 0 34px rgba(168, 85, 247, 0.4);
+}
+.sp-center-title { font-weight: 800; font-size: 1rem; margin-bottom: 8px; }
+.sp-center-hint { color: var(--text-dim); font-size: 0.8rem; margin-bottom: 12px; }
+
+/* turn splash */
+.sp-transition .sp-trans-sub { color: var(--text-dim); font-size: 0.8rem; letter-spacing: 1px; }
+.sp-transition .sp-trans-name { font-size: 1.7rem; font-weight: 900; margin: 4px 0; text-shadow: 0 0 16px currentColor; }
+.sp-transition .sp-trans-tag { color: var(--text-dim); font-size: 0.82rem; text-transform: uppercase; letter-spacing: 2px; }
+.sp-transition { animation: sp-pop 0.3s ease; }
+@keyframes sp-pop { from { transform: scale(0.85); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+/* risk buttons — reference redesign: dark box + colored stroke + star icons,
+   with the difficulty label sitting BELOW the box, outside its border */
+.sp-risk-btns { display: flex; justify-content: center; gap: 16px; }
+.sp-risk-btn {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  background: none; border: none; padding: 0; cursor: pointer;
+  transition: transform 0.1s;
+}
+.sp-risk-btn:hover { transform: translateY(-3px); }
+.sp-risk-btn.picked .sp-risk-box { box-shadow: 0 0 22px #fff, 0 0 10px currentColor inset; transform: scale(1.06); }
+.sp-risk-btn.dim { opacity: 0.35; }
+.sp-risk-box {
+  position: relative;
+  width: 92px; height: 92px;
+  background: rgba(8, 2, 14, 0.85);
+  border: 3px solid; border-radius: 16px;
+  transition: box-shadow 0.15s, transform 0.15s;
+}
+.sp-risk-btn:hover .sp-risk-box { box-shadow: 0 0 18px currentColor; }
+/* NOTE: risk-1 (Basic) uses --sp-correct (green), NOT --sp-good — --sp-good is the
+   wildcard GOOD category color and was recolored blue elsewhere in the game. */
+.sp-risk-btn.risk-1 .sp-risk-box { border-color: var(--sp-correct); color: var(--sp-correct); }
+.sp-risk-btn.risk-3 .sp-risk-box { border-color: var(--sp-neutral); color: var(--sp-neutral); }
+.sp-risk-btn.risk-5 .sp-risk-box { border-color: var(--sp-bad); color: var(--sp-bad); }
+.sp-bet-stars { position: absolute; inset: 0; }
+.sp-bet-star { position: absolute; line-height: 0; }
+/* THE single shared star icon glow (on the <svg class="sp-star-ico"> itself) —
+   every star anywhere in the game (bet boxes, floating over seats, standings,
+   flash messages, flying tokens, wheel hub, end screen…) gets this SAME glow,
+   kept EXACTLY as it was on the reference bet-box design (don't touch the values). */
+.sp-star-ico {
+  display: inline-block; vertical-align: -0.15em;
+  filter: drop-shadow(0 0 6px rgba(255, 182, 224, 0.95)) drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5));
+}
+.sp-risk-label { font-weight: 800; font-size: 0.95rem; color: #fff; }
+/* "pos/neg" here mean gain/loss (sign of a number), NOT the wildcard GOOD category
+   — must use --sp-correct (green), not --sp-good (blue), same fix as .sp-float.pos */
+.sp-q-tier .pos { color: var(--sp-correct, #22c55e); }
+.sp-q-tier .neg { color: var(--sp-bad); }
+.sp-q-tier .zero { color: var(--text-dim); }
+
+/* question */
+.sp-q-tier {
+  display: inline-block; font-weight: 800; font-size: 0.72rem; letter-spacing: 1px;
+  text-transform: uppercase; padding: 3px 10px; border-radius: 999px; margin-bottom: 8px;
+  border: 1px solid;
+}
+.sp-q-tier.risk-1 { color: var(--sp-correct, #22c55e); border-color: var(--sp-correct, #22c55e); }
+.sp-q-tier.risk-3 { color: var(--sp-neutral); border-color: var(--sp-neutral); }
+.sp-q-tier.risk-5 { color: var(--sp-bad); border-color: var(--sp-bad); }
+.sp-q-text { font-size: 1.35rem; font-weight: 700; line-height: 1.35; margin-bottom: 16px; }
+.sp-q-opts { display: grid; gap: 10px; }
+.sp-q-opt {
+  background: #241036; color: var(--text);
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  border-radius: 11px; padding: 14px 14px; font-size: 1.12rem; font-weight: 700;
+  cursor: pointer; transition: background 0.12s, transform 0.1s;
+}
+.sp-q-opt:hover:not(:disabled) { background: #33184d; transform: translateY(-1px); }
+.sp-q-opt:disabled { cursor: default; }
+.sp-q-opt.correct { background: rgba(34, 197, 94, 0.32); border-color: var(--sp-correct, #22c55e); color: #d6ffe4; }
+.sp-q-opt.wrong { background: rgba(239, 68, 68, 0.32); border-color: var(--sp-bad); color: #ffd8d8; }
+.sp-q-feedback { margin-top: 12px; font-weight: 800; font-size: 1rem; }
+.sp-q-feedback small { display: block; font-size: 0.7rem; font-weight: 600; opacity: 0.8; margin-top: 2px; }
+.sp-q-feedback.gain { color: var(--sp-correct, #22c55e); }
+.sp-q-feedback.loss { color: var(--sp-bad); }
+
+/* wheel */
+.sp-wheel-stage { display: flex; flex-direction: column; align-items: center; }
+.sp-wheel-wrap { position: relative; width: min(72vw, 400px); height: min(72vw, 400px); margin: 10px 0 16px; }
+.sp-wheel {
+  position: absolute; inset: 0; border-radius: 50%;
+  border: 6px solid #12041e;
+  box-shadow:
+    0 0 0 4px rgba(168, 85, 247, 0.8),
+    0 0 28px 6px rgba(168, 85, 247, 0.75),
+    inset 0 0 26px rgba(0,0,0,0.6);
+  will-change: transform;
+}
+.sp-wheel-hub {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 52px; height: 52px; border-radius: 50%; z-index: 2;
+  display: flex; align-items: center; justify-content: center;
+  background: radial-gradient(circle at 40% 35%, #fff, var(--sp-accent) 70%);
+  color: #fff; font-size: 1.2rem;
+  box-shadow: 0 0 20px 4px rgba(255,255,255,0.9), 0 0 34px var(--sp-accent);
+}
+.sp-wheel-pointer {
+  position: absolute; top: -18px; left: 50%; transform: translateX(-50%);
+  width: 0; height: 0; z-index: 3;
+  border-left: 16px solid transparent; border-right: 16px solid transparent;
+  border-top: 28px solid #fff;
+  filter: drop-shadow(0 0 8px rgba(255,255,255,0.95));
+}
+.sp-spin-btn { margin-top: 4px; }
+/* ARREGLO 5 — wheel pop-out: JS applies a back-ease cubic-bezier over this 0→1 grow */
+@keyframes sp-pop-out { from { transform: scale(0.05); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+/* wildcard reveal card (after the wheel stops).
+   Solid background is set HERE (not inherited from `.sp-center > *`) because this
+   card is nested inside .sp-wheel-stage — a grandchild of .sp-center, not a direct
+   child — so it was rendering fully transparent over the wheel underneath it. */
+.sp-wc-card {
+  background: rgba(14, 4, 24, 0.98);
+  border-radius: 18px;
+  padding: 16px 16px 18px;
+  margin-top: 12px; border: 2px solid var(--wc-color) !important;
+  box-shadow: 0 0 26px var(--wc-color) !important;
+  animation: sp-pop 0.32s ease;
+}
+.sp-wc-cat { font-size: 0.66rem; letter-spacing: 2px; font-weight: 800; color: var(--wc-color); }
+.sp-wc-name { font-size: 1.15rem; font-weight: 900; margin: 3px 0 5px; text-shadow: 0 0 12px var(--wc-color); }
+.sp-wc-desc { font-size: 0.8rem; color: var(--text-dim); line-height: 1.4; }
+
+/* steal picker */
+.sp-steal-list { display: grid; gap: 8px; margin-top: 6px; }
+.sp-steal-opt {
+  display: flex; align-items: center; justify-content: space-between;
+  background: #241036; color: var(--text);
+  border: 2px solid var(--seat-color); border-radius: 10px;
+  padding: 9px 12px; font-weight: 700; font-size: 0.9rem; cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.15s;
+}
+.sp-steal-opt:hover { transform: translateY(-2px); box-shadow: 0 0 16px var(--seat-color); }
+.sp-steal-stars { color: var(--sp-neutral); font-weight: 800; }
+
+/* flash toast over the felt */
+.sp-flash {
+  position: absolute; top: 8px; left: 50%; transform: translateX(-50%) translateY(-8px);
+  z-index: 6; max-width: 84%;
+  background: rgba(10, 2, 18, 0.92);
+  border: 1px solid rgba(168, 85, 247, 0.7);
+  border-radius: 999px; padding: 7px 16px;
+  font-weight: 700; font-size: 0.82rem; text-align: center;
+  opacity: 0; pointer-events: none; transition: opacity 0.25s, transform 0.25s;
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+}
+.sp-flash.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* final standings */
+.sp-standings { list-style: none; margin: 8px 0 20px; padding: 0; display: flex; flex-direction: column; gap: 7px; text-align: left; }
+.sp-standing {
+  display: flex; align-items: center; gap: 10px;
+  background: #1c0a2b; border-left: 4px solid var(--seat-color);
+  border-radius: 8px; padding: 9px 12px;
+}
+.sp-standing.winner { box-shadow: 0 0 16px var(--seat-color); background: #26113a; }
+.sp-rank { font-weight: 900; color: var(--text-dim); width: 18px; }
+.sp-standing-name { flex: 1; font-weight: 700; }
+.sp-standing-stars { font-weight: 900; color: var(--sp-neutral); }
+.sp-standing-stars.neg { color: var(--sp-bad); }
+
+/* CPU "thinking" dots */
+.sp-thinking { display: inline-flex; gap: 4px; margin-left: 4px; vertical-align: middle; }
+.sp-thinking span {
+  width: 7px; height: 7px; border-radius: 50%; background: var(--sp-accent);
+  animation: sp-think 1s infinite ease-in-out;
+}
+.sp-thinking span:nth-child(2) { animation-delay: 0.16s; }
+.sp-thinking span:nth-child(3) { animation-delay: 0.32s; }
+@keyframes sp-think { 0%, 80%, 100% { opacity: 0.25; transform: scale(0.7); } 40% { opacity: 1; transform: scale(1); } }
+.sp-q-thinking { margin-top: 10px; font-size: 0.82rem; color: var(--text-dim); font-weight: 700; }
+
+/* AMBUSH alert at the start of a victim's turn */
+.sp-ambush-alert { font-size: 1.15rem; font-weight: 800; animation: sp-pop 0.3s ease; }
+.sp-ambush-alert .sp-ambush-amt { display: block; margin-top: 6px; font-size: 1.6rem; font-weight: 900; color: var(--sp-bad); text-shadow: 0 0 14px var(--sp-bad); }
+
+/* EASY PICK banner + Cursed/High-Stakes tag on the question badge */
+.sp-q-easy { font-size: 0.78rem; font-weight: 800; color: var(--sp-good); margin-bottom: 8px; }
+.sp-q-mod { color: var(--sp-bad); font-weight: 800; }
+.sp-q-tier b { margin: 0 2px; }
+
+@media (max-width: 480px) {
+  .sp-seat { width: 112px; }
+  .sp-seat-inner { padding: 8px 7px 9px; }
+  .sp-seat-name { font-size: 0.82rem; }
+  .sp-seat-stars-num { font-size: 1.8rem; }
+  .sp-center { width: min(64%, 300px); }
+  .sp-center.sp-mode-wheel { width: min(92%, 360px); }
+  .sp-q-text { font-size: 1.12rem; }
+  .sp-q-opt { font-size: 1rem; padding: 11px; }
+}
+
+/* =====================================================
+   STAR PARTY v4 — coin, dice, curse wheel
+   ===================================================== */
+/* reusable COIN */
+.sp-coin-stage { display: flex; flex-direction: column; align-items: center; }
+.sp-coin-wrap { perspective: 800px; margin: 12px 0; }
+.sp-coin {
+  position: relative; width: 130px; height: 130px; margin: 0 auto;
+  transform-style: preserve-3d; transform: rotateY(0deg);
+}
+.sp-coin-face {
+  position: absolute; inset: 0; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; font-size: 3.2rem;
+  backface-visibility: hidden;
+  border: 5px solid #ffe9a8;
+  box-shadow: 0 0 26px var(--sp-accent), inset 0 0 20px rgba(0,0,0,0.35);
+}
+.sp-coin-heads { background: radial-gradient(circle at 38% 32%, #fff, var(--sp-accent) 78%); }
+.sp-coin-tails { background: radial-gradient(circle at 38% 32%, #fff, #eab308 78%); transform: rotateY(180deg); }
+.sp-coin-choice { display: flex; gap: 14px; justify-content: center; margin-top: 4px; }
+.sp-coin-btn {
+  padding: 12px 20px; border-radius: 12px; border: 2px solid var(--sp-accent);
+  background: rgba(0,0,0,0.3); color: #fff; font-weight: 800; font-size: 1rem; cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.15s;
+}
+.sp-coin-btn.heads { border-color: #eab308; }
+.sp-coin-btn:hover { transform: translateY(-2px); box-shadow: 0 0 16px currentColor; }
+.sp-coin-btn.picked { box-shadow: 0 0 22px #fff; transform: scale(1.06); }
+.sp-coin-btn.dim { opacity: 0.35; }
+.sp-coin-caption { margin-top: 10px; font-weight: 700; font-size: 0.95rem; }
+.sp-coin-caption b { color: var(--sp-neutral); }
+
+/* reusable DICE */
+.sp-dice-stage { display: flex; flex-direction: column; align-items: center; }
+.sp-dice-wrap { margin: 14px 0; display: flex; justify-content: center; }
+.sp-dice {
+  width: 88px; height: 88px; border-radius: 16px;
+  background: linear-gradient(150deg, #ffffff, #d8c6ff);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.55), inset 0 0 12px rgba(168,85,247,0.45);
+  display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 1fr);
+  padding: 12px; gap: 2px;
+}
+.sp-pip { border-radius: 50%; }
+.sp-pip.on { background: #3b0764; box-shadow: 0 0 4px rgba(0,0,0,0.4); }
+.sp-dice-caption { font-weight: 700; font-size: 0.95rem; }
+.sp-dice-caption b { color: var(--sp-neutral); font-size: 1.15rem; }
+
+/* CURSE WHEEL number labels */
+.sp-wheel-labels { position: absolute; inset: 0; pointer-events: none; z-index: 2; }
+.sp-wheel-label {
+  position: absolute; transform: translate(-50%, -50%);
+  font-weight: 900; font-size: 1.05rem; color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.95), 0 0 6px rgba(0,0,0,0.7);
+}
+
+/* =====================================================
+   STAR PARTY — UI/UX round (seat order, animations, pot, OK)
+   ===================================================== */
+/* big reveal card + OK button (ARREGLO 3 + 8) */
+.sp-wc-big {
+  animation: sp-pop-out 0.42s cubic-bezier(0.34, 1.56, 0.64, 1) both !important;
+  min-width: 250px;
+}
+.sp-wc-big .sp-wc-cat { font-size: 0.8rem; }
+.sp-wc-big .sp-wc-name { font-size: 1.7rem; }
+.sp-wc-big .sp-wc-desc { font-size: 0.95rem; }
+.sp-ok-btn { margin-top: 14px; }
+.sp-pop-in { animation: sp-pop-out 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+/* wheel stage shrink/fade when dismissed to reveal the table (ARREGLO 4) */
+.sp-dismiss { animation: sp-shrink 0.42s ease forwards; pointer-events: none; }
+@keyframes sp-shrink { to { transform: scale(0.1); opacity: 0; } }
+
+/* flying star token (transfers / pot) */
+.sp-fly {
+  position: absolute; z-index: 8; transform: translate(0, 0);
+  display: flex; align-items: center; gap: 3px;
+  font-weight: 900; pointer-events: none; will-change: transform;
+  margin-left: -14px; margin-top: -14px;
+}
+.sp-fly-star { font-size: 1.5rem; color: var(--sp-neutral); filter: drop-shadow(0 0 6px var(--sp-neutral)); }
+.sp-fly-num { font-size: 0.9rem; color: #fff; text-shadow: 0 1px 3px #000; }
+
+/* floating +/- over a seat */
+.sp-float {
+  position: absolute; z-index: 9; transform: translate(-50%, -50%);
+  font-weight: 900; font-size: 1.3rem; pointer-events: none;
+  opacity: 0; transition: transform 1.3s ease-out, opacity 1.3s ease-out;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+}
+/* NOTE: green here uses --sp-correct, NOT --sp-good — --sp-good is the wildcard
+   GOOD category color (blue) and must not leak into "positive amount" contexts. */
+.sp-float.pos { color: var(--sp-correct, #22c55e); }
+.sp-float.neg { color: var(--sp-bad); }
+.sp-float.go { opacity: 1; transform: translate(-50%, -230%); }
+
+/* central pot bubble */
+.sp-pot {
+  position: absolute; z-index: 7; transform: translate(-50%, -50%) scale(0.2);
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  padding: 14px 20px; border-radius: 18px;
+  background: rgba(18, 5, 30, 0.95); border: 2px solid var(--sp-neutral);
+  box-shadow: 0 0 30px var(--sp-neutral); opacity: 0;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.35s;
+}
+.sp-pot.go { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+.sp-pot-ico { font-size: 1.8rem; }
+.sp-pot-num { font-weight: 900; font-size: 1.4rem; color: var(--sp-neutral); }
+
+/* coin choice cards with real faces (ARREGLO 6) */
+.sp-coin-btn {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  padding: 16px 24px;
+}
+.sp-coin-mini {
+  width: 64px; height: 64px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; font-size: 2rem;
+  border: 4px solid #ffe9a8; box-shadow: 0 0 16px var(--sp-accent), inset 0 0 12px rgba(0,0,0,0.35);
+}
+.sp-coin-mini-heads { background: radial-gradient(circle at 38% 32%, #fff, var(--sp-accent) 78%); }
+.sp-coin-mini-tails { background: radial-gradient(circle at 38% 32%, #fff, #eab308 78%); }
+.sp-coin-btn-label { font-size: 0.95rem; letter-spacing: 1px; }
+
+/* COIN DUEL: the two sides + their assigned faces (step 3) */
+.sp-duel-faces { display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 8px; }
+.sp-duel-side { display: flex; flex-direction: column; align-items: center; gap: 4px; font-weight: 800; }
+.sp-duel-name { font-size: 0.9rem; }
+.sp-duel-vs { font-weight: 900; color: var(--text-dim); }
+
+/* dice: give it perspective so the multi-axis tumble reads as 3D (B2) */
+.sp-dice-wrap { perspective: 600px; }
+.sp-dice { transform-style: preserve-3d; will-change: transform; }
+
+/* =====================================================
+   STAR PARTY — visual redesign round (standings, cards, risk)
+   ===================================================== */
+/* ---- C1: live standings panel (Mario-Party style) ----
+   The panel is positioned ABSOLUTE so it never takes layout space from the
+   table — .sp-table-main (hud + felt) centers on the full viewport exactly
+   like it did before the panel existed (D2 fix: felt must stay centered). */
+.sp-table-layout { position: relative; }
+.sp-table-main { width: 100%; }
+.sp-standings-panel {
+  position: absolute;
+  top: 4px; left: 14px;
+  width: 200px;
+  display: flex; flex-direction: column; gap: 6px;
+  z-index: 2;
+}
+.sp-rank-row {
+  position: relative;
+  display: flex; align-items: center; gap: 8px;
+  padding: 9px 10px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--seat-color) 0%, color-mix(in srgb, var(--seat-color) 55%, #150522) 100%);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.4);
+  color: #fff;
+}
+.sp-rank-row.sp-rank-first {
+  box-shadow: 0 0 0 2px #ffd75e, 0 0 16px rgba(255, 215, 94, 0.65), 0 3px 8px rgba(0,0,0,0.4);
+}
+.sp-rank-name {
+  flex: 1 1 auto; min-width: 0; font-weight: 800; font-size: 0.85rem;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+}
+.sp-rank-stars {
+  flex: 0 0 auto; display: flex; align-items: center; gap: 2px;
+  font-weight: 900; font-size: 0.95rem; text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+}
+.sp-rank-ico { display: inline-flex; }
+.sp-rank-row.sp-rank-negative .sp-rank-num { color: #ffd2d2; }
+.sp-rank-pos {
+  flex: 0 0 auto; font-family: Georgia, "Times New Roman", serif;
+  font-weight: 900; font-size: 1.15rem; font-style: italic;
+  color: #fff; text-shadow: 0 2px 3px rgba(0,0,0,0.55);
+  min-width: 34px; text-align: right;
+}
+
+/* ---- C2: wildcard reveal card (TACTIC-card style) ---- */
+.sp-wc-card { text-align: center; }
+.sp-wc-catlabel {
+  font-size: 0.72rem; font-weight: 900; letter-spacing: 3px;
+  color: var(--wc-color); margin-bottom: 10px;
+}
+.sp-wc-iconbox {
+  width: 78px; height: 78px; margin: 0 auto 12px;
+  border-radius: 20px; background: var(--wc-color);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 0 22px var(--wc-color), inset 0 -6px 10px rgba(0,0,0,0.2);
+}
+.sp-wc-icon { font-size: 2.6rem; line-height: 1; filter: drop-shadow(0 2px 3px rgba(0,0,0,0.4)); }
+.sp-wc-big .sp-wc-iconbox { width: 92px; height: 92px; border-radius: 24px; }
+.sp-wc-big .sp-wc-icon { font-size: 3rem; }
+/* remove the old inline cat text position (now catlabel handles it) */
+.sp-wc-cat { display: none; }
+
+
+@media (max-width: 860px) {
+  /* not enough room beside the felt: stack the panel above it instead of overlapping */
+  .sp-table-layout { display: flex; flex-direction: column; }
+  .sp-standings-panel {
+    position: static; width: 100%;
+    flex-direction: row; flex-wrap: wrap; gap: 6px;
+    margin-bottom: 8px;
+  }
+  .sp-rank-row { flex: 1 1 150px; }
+}
+
+/* =====================================================
+   STAR PARTY — golden wheel + blue GOOD + fit-on-screen
+   (redesign round: CAMBIOS 1–8)
+   ===================================================== */
+/* GOOD category is now BLUE everywhere (CAMBIO 1) */
+:root { --sp-good: #3b82f6; --sp-correct: #22c55e; }
+/* ARREGLO 4: "correct answer" is its own dedicated green — it must NOT reuse
+   --sp-good (that variable now means the wildcard GOOD category, which is blue). */
+.sp-q-opt.correct { background: rgba(34, 197, 94, 0.32) !important; border-color: var(--sp-correct) !important; color: #d6ffe4 !important; }
+
+/* ---- CAMBIO 2: everything fits without scrolling ---- */
+.sp-hud { margin: 0 0 2px; }
+.sp-round { padding: 4px 14px; font-size: 0.8rem; }
+.sp-felt {
+  width: min(92vw, calc(100vh - 175px), 620px);
+  height: min(92vw, calc(100vh - 175px), 620px);
+  margin: 2px auto 8px;
+}
+.sp-center.sp-mode-wheel { width: min(88%, 460px); }
+.sp-wheel-wrap {
+  width: min(56vw, calc(100vh - 350px), 320px);
+  height: min(56vw, calc(100vh - 350px), 320px);
+  margin: 22px 0 14px;
+}
+.sp-seat { width: 148px; }
+.sp-standings-panel { width: 185px; top: 2px; left: 10px; }
+
+/* ---- CAMBIO 1: golden wheel look ---- */
+.sp-wheel {
+  border: none;
+  box-shadow: inset 0 0 34px rgba(0, 0, 0, 0.5);
+}
+.sp-wheel-rim {
+  position: absolute; inset: -16px; border-radius: 50%; z-index: 0;
+  background:
+    conic-gradient(#8a5a0a, #f9e08a 12%, #b97e12 25%, #f3cf5e 40%, #8a5a0a 55%, #f9e08a 70%, #b97e12 85%, #8a5a0a);
+  box-shadow:
+    0 0 0 3px #5b3a06,
+    0 8px 26px rgba(0, 0, 0, 0.6),
+    0 0 34px rgba(246, 200, 90, 0.4),
+    inset 0 0 14px rgba(0, 0, 0, 0.55);
+}
+.sp-wheel-lines { position: absolute; inset: 0; border-radius: 50%; z-index: 1; pointer-events: none; }
+.sp-wheel-shine {
+  position: absolute; inset: 0; border-radius: 50%; z-index: 1; pointer-events: none;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.3) 0 12%, rgba(255, 255, 255, 0) 45%),
+    radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0) 62%, rgba(0, 0, 0, 0.3) 100%);
+}
+.sp-wheel .sp-wheel-label { z-index: 2; }
+.sp-wheel-bulbs { position: absolute; inset: -16px; border-radius: 50%; z-index: 4; pointer-events: none; }
+.sp-wheel-bulb {
+  position: absolute; width: 9px; height: 9px; margin: -4.5px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fffbe8, #ffd75e 55%, #b97e12);
+  box-shadow: 0 0 8px 2px rgba(255, 215, 94, 0.85);
+  animation: sp-bulb-twinkle 1.1s ease-in-out infinite;
+}
+@keyframes sp-bulb-twinkle {
+  0%, 100% { box-shadow: 0 0 8px 2px rgba(255, 215, 94, 0.85); }
+  50% { box-shadow: 0 0 3px 1px rgba(255, 215, 94, 0.35); }
+}
+.sp-wheel-hub {
+  width: 56px; height: 56px;
+  background: radial-gradient(circle at 38% 30%, #fff8dd, #f6c94f 42%, #b97e12 78%, #6b4708);
+  border: 3px solid #f3d878;
+  color: #7c5806; font-size: 1.25rem;
+  box-shadow: 0 0 18px rgba(246, 200, 90, 0.9), 0 4px 10px rgba(0, 0, 0, 0.5), inset 0 -6px 10px rgba(0, 0, 0, 0.25);
+}
+.sp-wheel-pointer {
+  top: -36px; left: 50%; margin-left: -16px;
+  width: 32px; height: 32px;
+  transform: rotate(45deg);
+  border: 2px solid #7c5806;
+  border-radius: 50% 50% 0 50%;
+  background: radial-gradient(circle at 35% 30%, #fff7d6, #f2c94c 50%, #a8770e);
+  box-shadow: 0 0 12px rgba(246, 200, 90, 0.85), inset 0 0 8px rgba(0, 0, 0, 0.25);
+  filter: none;
+  z-index: 6;
+}
+.sp-wheel-pointer::after {
+  content: ""; position: absolute; inset: 7px;
+  border-radius: 50% 50% 0 50%;
+  background: radial-gradient(circle at 40% 35%, #ffe9a8, #b97e12);
+}
+
+/* ---- CAMBIO 3: wildcard card pops out CENTERED OVER the wheel ---- */
+.sp-wheel-stage { position: relative; }
+.sp-wc-big {
+  position: absolute; top: 50%; left: 50%; margin: 0;
+  width: min(92%, 320px); z-index: 9;
+  animation: sp-card-pop 0.42s cubic-bezier(0.34, 1.56, 0.64, 1) both !important;
+}
+@keyframes sp-card-pop {
+  from { transform: translate(-50%, -50%) scale(0.05); opacity: 0; }
+  to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+
+/* ---- CAMBIO 5: Mario-Party-style standings bars ---- */
+.sp-rank-row {
+  padding: 6px 8px 6px 12px;
+  border-radius: 9px;
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  background: linear-gradient(180deg,
+    color-mix(in srgb, var(--seat-color) 55%, #fff) 0%,
+    var(--seat-color) 48%,
+    color-mix(in srgb, var(--seat-color) 68%, #000) 100%);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+.sp-rank-name { font-size: 0.82rem; }
+.sp-rank-stars { gap: 3px; font-size: 0.9rem; }
+.sp-rank-x { font-size: 0.7rem; font-weight: 900; opacity: 0.9; }
+.sp-rank-pos {
+  font-family: Georgia, "Times New Roman", serif; font-style: italic;
+  display: flex; align-items: baseline; gap: 1px; justify-content: flex-end;
+  min-width: 38px;
+}
+.sp-rank-pos b { font-size: 1.5rem; font-weight: 900; line-height: 1; text-shadow: 0 2px 3px rgba(0, 0, 0, 0.6); }
+.sp-rank-pos small { font-size: 0.68rem; font-weight: 900; }
+
+/* ---- CAMBIO 6: rotating turn arrow ---- */
+.sp-turn-orbit {
+  position: absolute; inset: 0; z-index: 3; pointer-events: none;
+  transition: transform 0.9s cubic-bezier(0.55, 0.05, 0.25, 1.2);
+}
+.sp-turn-arrow {
+  /* ARREGLO 3: smaller orbit radius (was top:15%, too close to the seats/stars
+     near the rim) — now orbits nearer the felt's center, clear of the stars */
+  position: absolute; left: 50%; top: 28%;
+  width: 26px; height: 26px; margin-left: -13px;
+  transform: rotate(-135deg); /* sharp corner points UP, toward the seat */
+  border-radius: 50% 50% 0 50%;
+  background: radial-gradient(circle at 40% 60%, #fff7d6, #ffd75e 55%, #c8880a);
+  border: 2px solid #7c5806;
+  box-shadow: 0 0 14px rgba(255, 215, 94, 0.9);
+  animation: sp-arrow-nudge 1.2s ease-in-out infinite;
+}
+@keyframes sp-arrow-nudge {
+  0%, 100% { top: 28%; }
+  50% { top: 30%; }
+}
+
+/* ---- CAMBIO 7 (rediseño): exact star count + decorative cluster, OUTSIDE and
+   ABOVE the seat box (not inside it) — big number on the left, small overlapping
+   scattered stars to its right, white/pink glow like the reference image. ---- */
+.sp-seat-stars {
+  position: absolute; bottom: calc(100% - 2px); left: 50%; transform: translateX(-50%);
+  display: flex; align-items: center; gap: 2px; pointer-events: none;
+  white-space: nowrap;
+}
+/* ARREGLO 1: seats near the top edge of the circular felt would push these stars
+   OFF the felt if placed above the box — flip them BELOW the box instead, toward
+   the center, for any seat JS marks as "top" (topPct < 32). */
+.sp-seat.sp-seat-top .sp-seat-stars { bottom: auto; top: calc(100% - 2px); }
+.sp-seat-stars-num {
+  font-weight: 900; font-size: 2.3rem; color: #fff; /* ARREGLO 4: bumped from 1.85rem */
+  text-shadow: 0 0 10px rgba(255, 200, 230, 0.9), 0 2px 3px rgba(0, 0, 0, 0.7);
+}
+.sp-seat.negative .sp-seat-stars-num { color: #ff9a9a; text-shadow: 0 0 10px rgba(255, 100, 100, 0.85), 0 2px 3px rgba(0, 0, 0, 0.7); }
+.sp-seat-stars-cluster { position: relative; display: inline-flex; height: 1.3em; }
+.sp-hover-star {
+  display: inline-block; line-height: 0;
+  animation: sp-star-hover 2.2s ease-in-out infinite;
+}
+/* scattered/clumped placement instead of a straight row — each star tilted and
+   offset a little differently, with slight overlap (actual sizes set via the
+   icon's own width/height in JS — see hoverSizes in spUpdateSeats) */
+.sp-hover-star-0 { margin-left: 2px; transform: rotate(-10deg) translateY(1px); }
+.sp-hover-star-1 { margin-left: -6px; transform: rotate(9deg) translateY(-3px); }
+.sp-hover-star-2 { margin-left: -5px; transform: rotate(-6deg) translateY(3px); }
+@keyframes sp-star-hover {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-7px) scale(1.08); }
+}
+
+/* ---- CAMBIO 8: arc flight, trail, impact, seat bounce ---- */
+.sp-fly { margin-left: -12px; margin-top: -12px; z-index: 8; }
+.sp-fly-star { font-size: 1.6rem; color: #ffd75e; filter: drop-shadow(0 0 8px rgba(255, 215, 94, 0.95)); }
+.sp-fly-num { font-size: 0.85rem; color: #fff; text-shadow: 0 1px 3px #000; }
+.sp-fly-trail {
+  position: absolute; width: 9px; height: 9px; margin: -4.5px;
+  border-radius: 50%; pointer-events: none; z-index: 7;
+  background: radial-gradient(circle, #fff8dd, #ffd75e 60%, rgba(255, 215, 94, 0));
+  box-shadow: 0 0 10px rgba(255, 215, 94, 0.8);
+  animation: sp-trail-fade 0.5s ease-out forwards;
+}
+@keyframes sp-trail-fade {
+  from { opacity: 0.95; transform: scale(1); }
+  to { opacity: 0; transform: scale(0.15); }
+}
+.sp-fly-impact {
+  position: absolute; margin: -14px; pointer-events: none; z-index: 9;
+  font-size: 1.7rem; color: #fff;
+  text-shadow: 0 0 12px #ffd75e, 0 0 22px #ffd75e;
+  animation: sp-impact-pop 0.45s ease-out forwards;
+}
+@keyframes sp-impact-pop {
+  0% { opacity: 1; transform: scale(0.4); }
+  45% { opacity: 1; transform: scale(1.5); }
+  100% { opacity: 0; transform: scale(0.6); }
+}
+.sp-seat-inner.sp-hit { animation: sp-hit-squash 0.38s ease; }
+@keyframes sp-hit-squash {
+  0% { transform: scale(1, 1); }
+  35% { transform: scale(1.14, 0.85); }
+  70% { transform: scale(0.94, 1.07); }
+  100% { transform: scale(1, 1); }
+}
+
+/* =====================================================
+   STAR PARTY 2.0 — SLOT MACHINE + EMBEDDED MINIGAMES
+   ===================================================== */
+
+/* ---- the slot machine (start of every round) ---- */
+.sp-slot-stage { text-align: center; }
+.sp-slot {
+  position: relative;
+  width: 240px;
+  margin: 10px auto 0;
+  animation: sp-pop-out 450ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+.sp-slot-top {
+  position: relative;
+  background: linear-gradient(180deg, #d92b2b, #a11212);
+  border: 3px solid #f3cf5e;
+  border-bottom: none;
+  border-radius: 100px 100px 0 0;
+  padding: 26px 10px 8px;
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.4) inset;
+}
+.sp-slot-sign {
+  font-weight: 900; font-size: 0.85rem; letter-spacing: 2px; color: #ffe9a8;
+  text-shadow: 0 0 8px rgba(255, 200, 60, 0.8), 0 2px 2px rgba(0, 0, 0, 0.6);
+}
+.sp-slot-bulbs { position: absolute; top: 4px; left: 0; right: 0; height: 40px; pointer-events: none; z-index: 2; }
+.sp-slot-bulbs .sp-wheel-bulb { position: absolute; }
+.sp-slot-body {
+  position: relative;
+  background: linear-gradient(180deg, #c11f1f, #7e0d0d);
+  border: 3px solid #f3cf5e;
+  border-top: 2px solid #f3cf5e;
+  border-radius: 0 0 18px 18px;
+  padding: 18px 16px 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55), inset 0 2px 10px rgba(255, 255, 255, 0.12);
+}
+.sp-slot-window {
+  position: relative;
+  width: 128px; height: 128px; margin: 0 auto;
+  background: radial-gradient(circle at 50% 34%, #fffdf4, #efe6cd 75%);
+  border: 4px solid #b97e12;
+  border-radius: 14px;
+  box-shadow: inset 0 4px 14px rgba(0, 0, 0, 0.35), 0 0 0 3px #f3cf5e;
+  overflow: hidden;
+}
+/* the reel is a tall vertical strip; each cell fills the window and it
+   translateY-scrolls upward (transform animated in JS with ease-out) */
+.sp-slot-reel { display: flex; flex-direction: column; will-change: transform; }
+.sp-slot-cell {
+  width: 128px; height: 128px; flex: 0 0 128px;
+  display: flex; align-items: center; justify-content: center;
+}
+.sp-slot-cell.landed .sp-slot-ico { animation: sp-slot-land 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); }
+@keyframes sp-slot-land {
+  0% { transform: scale(0.72); }
+  60% { transform: scale(1.14); }
+  100% { transform: scale(1); }
+}
+/* subtle center guide line through the window (casino payline) */
+.sp-slot-payline {
+  position: absolute; left: 0; right: 0; top: 50%; height: 2px;
+  transform: translateY(-50%);
+  background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.55), transparent);
+  pointer-events: none;
+}
+.sp-slot-lever { position: absolute; right: -26px; top: 20px; width: 24px; height: 110px; }
+.sp-slot-lever-arm {
+  position: absolute; left: 9px; top: 16px; width: 7px; height: 74px;
+  background: linear-gradient(90deg, #d8d8e0, #8b8b96);
+  border-radius: 4px;
+  transform-origin: bottom center;
+  transition: transform 0.4s cubic-bezier(0.55, 0, 0.65, 1);
+}
+.sp-slot-lever-knob {
+  position: absolute; left: -2px; top: 0; width: 28px; height: 28px; border-radius: 50%;
+  background: radial-gradient(circle at 36% 30%, #ff8a8a, #d21c1c 60%, #7e0d0d);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 0.25s ease;
+}
+.sp-slot-lever.pulled .sp-slot-lever-arm { transform: scaleY(0.35); }
+.sp-slot-lever.pulled .sp-slot-lever-knob { transform: translateY(48px); }
+.sp-slot-name {
+  margin-top: 12px; min-height: 1.4em;
+  font-weight: 900; font-size: 1.15rem; letter-spacing: 1px; color: #ffe9a8;
+  text-shadow: 0 0 10px rgba(255, 200, 60, 0.75), 0 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* ---- minigame icons (slot window + risk header) ---- */
+.sp-slot-ico {
+  --s: 84px;
+  width: var(--s); height: var(--s);
+  display: inline-flex; align-items: center; justify-content: center;
+  position: relative; line-height: 1;
+}
+/* trivia: mini golden wheel + side stars */
+.sp-slot-trivia-wheel {
+  width: 72%; height: 72%; border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, #f6c94f 0 18%, rgba(0,0,0,0) 19%),
+    conic-gradient(#3b82f6 0deg 30deg, #ef4444 30deg 60deg, #eab308 60deg 90deg,
+      #3b82f6 90deg 120deg, #ef4444 120deg 150deg, #eab308 150deg 180deg,
+      #3b82f6 180deg 210deg, #ef4444 210deg 240deg, #eab308 240deg 270deg,
+      #3b82f6 270deg 300deg, #ef4444 300deg 330deg, #eab308 330deg 360deg);
+  box-shadow: 0 0 0 calc(var(--s) * 0.05) #b97e12, 0 0 0 calc(var(--s) * 0.075) #f3cf5e, 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+.sp-slot-trivia-star { position: absolute; top: 8%; }
+.sp-slot-trivia-star.l { left: -4%; }
+.sp-slot-trivia-star.r { right: -4%; }
+/* bomb word */
+.sp-slot-bomb-body { font-size: calc(var(--s) * 0.72); filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.5)); }
+/* fill in the blanks: 4 cells, 1st solved blue, 2nd raised/active */
+.sp-slot-fib { gap: calc(var(--s) * 0.05); }
+.sp-slot-fib-cell {
+  width: calc(var(--s) * 0.20); height: calc(var(--s) * 0.24);
+  border: 2px solid #cbd5e1; border-radius: 4px; background: rgba(255, 255, 255, 0.12);
+  display: inline-flex; align-items: center; justify-content: center;
+  font-weight: 900; font-size: calc(var(--s) * 0.15); color: #fff;
+}
+.sp-slot-fib-cell.done { background: #3b82f6; border-color: #60a5fa; }
+.sp-slot-fib-cell.up { transform: translateY(calc(var(--s) * -0.09)); background: rgba(255, 255, 255, 0.28); border-color: #fff; }
+/* is it a real word */
+.sp-slot-real { flex-direction: column; gap: calc(var(--s) * 0.07); }
+.sp-slot-real i { font-style: italic; font-weight: 800; font-size: calc(var(--s) * 0.24); color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,0.6); }
+.sp-slot-real-btns { display: flex; gap: calc(var(--s) * 0.07); }
+.sp-slot-real-btns b {
+  width: calc(var(--s) * 0.3); height: calc(var(--s) * 0.22); border-radius: 6px;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: calc(var(--s) * 0.14); color: #fff;
+}
+.sp-slot-real-btns b.y { background: #16a34a; }
+.sp-slot-real-btns b.n { background: #dc2626; }
+/* emoji bomb: tree + letter */
+.sp-slot-emoji { flex-direction: column; }
+.sp-slot-emoji-tree { font-size: calc(var(--s) * 0.5); filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5)); }
+.sp-slot-emoji-letter { font-weight: 900; font-size: calc(var(--s) * 0.26); color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,0.6); }
+/* word links */
+.sp-slot-links { flex-direction: column; gap: 1px; }
+.sp-slot-links small { font-weight: 900; font-size: calc(var(--s) * 0.13); letter-spacing: 1px; color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,0.6); }
+.sp-slot-links-circle {
+  width: calc(var(--s) * 0.42); height: calc(var(--s) * 0.42); border-radius: 50%;
+  background: radial-gradient(circle at 36% 30%, #60a5fa, #1d4ed8 70%);
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: calc(var(--s) * 0.22);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+/* icons rendered dark-on-light inside the slot window need their text flipped */
+.sp-slot-window .sp-slot-real i,
+.sp-slot-window .sp-slot-emoji-letter,
+.sp-slot-window .sp-slot-links small { color: #1e1130; text-shadow: none; }
+.sp-slot-window .sp-slot-fib-cell { border-color: #64748b; color: #1e1130; background: rgba(0, 0, 0, 0.06); }
+.sp-slot-window .sp-slot-fib-cell.done { background: #3b82f6; color: #fff; }
+
+/* ---- round-minigame reveal card (tactic-card component, informational) ----
+   Reuses .sp-wc-card.sp-wc-big exactly; only the icon box gets a dark fill so the
+   detailed multi-colour minigame icons stay legible (emoji wildcard icons sat on a
+   flat colour box, these don't) while keeping the accent border + glow. */
+.sp-slot-reveal .sp-wc-iconbox {
+  background: radial-gradient(circle at 40% 30%, #2a1442, #150a24);
+  box-shadow: 0 0 22px var(--wc-color), inset 0 -6px 10px rgba(0, 0, 0, 0.35);
+}
+.sp-slot-reveal .sp-wc-icon { font-size: 1rem; } /* icon sizes itself via --s; don't inflate it */
+
+/* ---- round-game label on the risk screen ---- */
+.sp-round-game {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  margin: 4px 0 10px;
+  font-weight: 900; font-size: 1.05rem; letter-spacing: 1px; color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* ---- embedded minigame shell ---- */
+.sp-mg-stage { width: 100%; }
+.sp-mg-host { width: 100%; }
+.sp-mg { width: 100%; text-align: center; }
+.sp-mg-head {
+  display: flex; align-items: center; justify-content: center; gap: 14px;
+  margin-bottom: 8px; flex-wrap: wrap;
+}
+.sp-mg-title { font-weight: 900; font-size: 1rem; letter-spacing: 1px; color: #fff; }
+.sp-mg-lives .bw-heart { font-size: 0.95rem; }
+.sp-mg-1try {
+  font-weight: 900; font-size: 0.72rem; letter-spacing: 1px; color: #fecaca;
+  border: 1px solid #ef4444; border-radius: 999px; padding: 2px 10px;
+}
+.sp-mg-prog { font-weight: 800; font-size: 0.85rem; color: var(--text-dim); }
+.sp-mg-timer {
+  position: relative; height: 12px; border-radius: 6px; overflow: hidden;
+  background: rgba(255, 255, 255, 0.12); margin: 0 auto 12px; max-width: 420px;
+}
+.sp-mg-timer-fill {
+  height: 100%; width: 100%; border-radius: 6px;
+  background: linear-gradient(90deg, var(--sp-accent), #d8b4fe);
+  transition: width 0.1s linear;
+}
+.sp-mg-timer-fill.urgent { background: linear-gradient(90deg, #ef4444, #f87171); }
+.sp-mg-seconds {
+  position: absolute; right: 6px; top: 50%; transform: translateY(-50%);
+  font-weight: 900; font-size: 0.62rem; color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+}
+.sp-mg-body { min-height: 120px; }
+.sp-mg-prompt { margin: 6px 0 12px; }
+.sp-mg-prefix {
+  font-weight: 900; font-size: 2.6rem; letter-spacing: 6px; color: #fff;
+  text-shadow: 0 0 14px rgba(168, 85, 247, 0.8), 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+.sp-mg-realword i { font-style: italic; font-weight: 800; font-size: 2.2rem; color: #fff; }
+.sp-mg-emoji { display: flex; align-items: center; justify-content: center; gap: 16px; }
+.sp-mg-emoji-letter {
+  font-weight: 900; font-size: 2.2rem; color: #fff;
+  border: 2px solid var(--sp-accent); border-radius: 10px; padding: 2px 14px;
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.8);
+}
+.sp-mg-emoji-icons span { font-size: 2rem; margin: 0 4px; }
+.sp-mg-sentence { font-size: 1.15rem; color: var(--text); margin-bottom: 10px; line-height: 1.5; }
+.sp-mg-sentence .gap { color: var(--accent-bright); font-weight: 800; letter-spacing: 2px; }
+.sp-mg-cells { display: flex; justify-content: center; gap: 5px; flex-wrap: wrap; margin-bottom: 12px; }
+.sp-mg-cells .letter-cell { width: 34px; height: 40px; font-size: 1.1rem; }
+.sp-mg-cells .sp-mg-hidden { background: rgba(255, 255, 255, 0.10); border: 2px dashed rgba(255, 255, 255, 0.35); border-radius: 6px; }
+.sp-mg-wl-clues { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+.sp-mg-wl-meta { font-weight: 700; font-size: 0.85rem; color: var(--text-dim); margin-bottom: 10px; }
+.sp-mg-form { display: flex; justify-content: center; gap: 8px; margin-top: 4px; }
+.sp-mg-input {
+  width: min(260px, 60%); padding: 10px 14px; border-radius: 10px;
+  border: 2px solid rgba(168, 85, 247, 0.55); background: rgba(0, 0, 0, 0.35);
+  color: #fff; font-weight: 800; font-size: 1.05rem; letter-spacing: 1px; text-transform: uppercase;
+  outline: none;
+}
+.sp-mg-input:focus { border-color: var(--sp-accent); box-shadow: 0 0 12px rgba(168, 85, 247, 0.45); }
+.sp-mg-fb { min-height: 1.5em; margin-top: 10px; font-weight: 800; font-size: 1rem; }
+.sp-mg-fb.ok { color: var(--sp-correct, #22c55e); }
+.sp-mg-fb.bad { color: var(--sp-bad); }
+.sp-mg-rw-btns { display: flex; justify-content: center; gap: 14px; }
+.sp-mg-rw-btn {
+  min-width: 110px; padding: 12px 18px; border-radius: 12px; border: none; cursor: pointer;
+  font-weight: 900; font-size: 1.05rem; color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.12s ease;
+}
+.sp-mg-rw-btn:hover:not(:disabled) { transform: translateY(-2px); }
+.sp-mg-rw-btn.yes { background: linear-gradient(180deg, #22c55e, #15803d); }
+.sp-mg-rw-btn.no { background: linear-gradient(180deg, #ef4444, #b91c1c); }
+.sp-mg-rw-btn.picked { outline: 3px solid #fff; }
+.sp-mg-rw-btn:disabled { opacity: 0.75; cursor: default; }
+.sp-mg-result {
+  margin-top: 14px; font-weight: 900; font-size: 1.5rem; letter-spacing: 1px;
+  animation: sp-pop-out 400ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+.sp-mg-result small { display: block; font-size: 0.85rem; font-weight: 700; color: var(--text-dim); margin-top: 4px; letter-spacing: 0; }
+.sp-mg-result.won { color: var(--sp-correct, #22c55e); text-shadow: 0 0 14px rgba(34, 197, 94, 0.5); }
+.sp-mg-result.lost { color: var(--sp-bad); text-shadow: 0 0 14px rgba(239, 68, 68, 0.5); }
