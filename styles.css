@@ -22,6 +22,11 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* keeps the vertical scrollbar's reserved space symmetric on both edges, so
+   centered content (grids, cards, headers) doesn't visually drift ~7px left
+   whenever a screen is tall enough to scroll — no effect on layout width. */
+html { scrollbar-gutter: stable both-edges; overflow-x: hidden; }
+
 body {
   font-family: "Segoe UI", Arial, sans-serif;
   color: var(--text);
@@ -108,24 +113,72 @@ body {
 }
 
 .card-art {
+  position: relative; /* positioning context for absolutely-placed decorative art */
   height: 190px;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden; /* nothing decorative may ever spill past the card edge */
   border-radius: 14px 14px 0 0;
   background: linear-gradient(160deg, #3a1153 0%, #1d0530 100%);
 }
 
-.mini-board { display: grid; grid-template-columns: repeat(5, 30px); gap: 4px; }
-.mini-tile {
-  width: 30px; height: 30px;
-  display: flex; align-items: center; justify-content: center;
-  font-weight: 800; font-size: 0.9rem; color: #fff;
-  border-radius: 3px;
+/* reusable pattern for After Effects-exported card art (1200x1200 WebP,
+   transparent, includes the game's title/glow already baked in). Opt-in via
+   this modifier class so it doesn't affect the hand-built CSS/SVG previews
+   still used by the other cards — swap only the <img> src/srcset per game.
+   No height/aspect-ratio override here on purpose: it inherits the exact
+   same box height as every other card (190px desktop, auto/min-height:150px
+   mobile) so all 12 cards stay the same shape — only the padding changes,
+   since object-fit:contain on the <img> already handles internal spacing. */
+.card-art.card-art-asset {
+  padding: 0;
 }
-.mini-tile.green  { background: var(--tile-green); }
-.mini-tile.yellow { background: var(--tile-yellow); }
-.mini-tile.gray   { background: var(--tile-gray); }
+.card-art-img {
+  display: block;
+  position: absolute; /* sized off .card-art's actual box (it's position:relative), not the
+                          flex height:100% percentage, which resolves inconsistently across
+                          browsers when the card is height:auto (mobile) — that mismatch was
+                          making some image cards render a few px taller than others. */
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* never stretched/deformed, whatever the source's real proportions */
+  object-position: center;
+  /* per-card nudge/scale knobs — see the --art-shift-y / --art-scale block below
+     for what each one does and how to tune it. Both default to a no-op so any
+     card without its own modifier class renders exactly as object-fit intended. */
+  transform: translateY(var(--art-shift-y, 0%)) scale(var(--art-scale, 1));
+  transform-origin: center center;
+}
+
+/* ---- per-card art position/size overrides ----
+   --art-shift-y : vertical nudge of the artwork WITHIN its (unchanged) card
+                   box. Positive % = moves it down, negative % = moves it up.
+                   The % is relative to the image's own rendered height (CSS
+                   translateY semantics), so ~5-10% is a small, safe nudge.
+   --art-scale   : uniform zoom of the artwork in place (scale(), centered).
+                   1 = source size as object-fit:contain renders it. Below 1
+                   shrinks it (use when the source PNG's art reads too large/
+                   crowded); above 1 enlarges it — but avoid going much above
+                   1 since .card-art has overflow:hidden and a scaled-up image
+                   can start clipping into the card's edges.
+   Set only what a card needs; anything unset falls back to the no-op
+   defaults on .card-art-img above. */
+.card-art-starparty { --art-shift-y: 7%; --art-scale: 0.85; }
+.card-art-emojibomb { --art-shift-y: 7%; --art-scale: 0.82; }
+.card-art-strands { --art-scale: 0.82; }
+.card-art-waffle { --art-scale: 0.82; }
+/* Word Game is the one WIDE illustration (content is ~2.26:1 — two rows of
+   tiles — vs ~1:1 for every other card). object-fit:contain fits it by WIDTH
+   inside the near-square preview, so at scale 1 it would read as a thin strip
+   with dead space above and below. Scaled up to match the others' optical
+   weight; the extra height this adds is transparent canvas, not artwork, so
+   nothing gets clipped by .card-art's overflow:hidden.
+   The shift-y is NOT a taste tweak here: this PNG's artwork sits above its own
+   canvas centre (content spans y 324-769 of 1200), so contain-fitting it leaves
+   ~20px more empty space below than above. The nudge re-centres it optically. */
+.card-art-wordgame { --art-scale: 1.2; --art-shift-y: 5.5%; }
 
 .mini-sentence { text-align: center; font-size: 0.85rem; color: var(--text-dim); line-height: 1.7; padding: 0 14px; }
 .mini-blank { color: var(--accent-bright); font-weight: 800; letter-spacing: 2px; }
@@ -482,9 +535,10 @@ body {
 /* FILL IN THE BLANKS composed logo header (replaces plain title on the game's
    intro screen): FILL IN → 4-cell icon (1st solved blue, 2nd raised) → BLANKS */
 .fib-logo { display: inline-flex; flex-direction: column; align-items: center; gap: 8px; line-height: 1; }
+/* no text-shadow: the wordmark reads flat/crisp. The cells below keep their
+   box-shadow glow — only the lettering was de-glowed. */
 .fib-logo-word {
   font-weight: 900; letter-spacing: 4px; font-size: 1.5rem; color: #fff;
-  text-shadow: 0 0 12px rgba(168, 85, 247, 0.7);
 }
 .fib-logo-cells { display: flex; align-items: flex-end; gap: 7px; height: 46px; }
 .fib-cell {
@@ -918,31 +972,10 @@ input.letter-cell:focus { border-color: var(--accent-bright); box-shadow: 0 0 8p
 .conn-meaning-def { opacity: 0.95; }
 .conn-meaning-defwrap { flex: 1; min-width: 0; }
 
-/* shared per-word "🌐 ES" translate button (Real Word, Waffle, Connections,
-   Fill in the Blanks) — reveals the Spanish meaning ADDITIONALLY, never
-   replacing the English text already shown. */
-.translate-btn {
-  display: inline-block;
-  margin-top: 4px;
-  padding: 2px 9px;
-  border-radius: 999px;
-  border: 1px solid rgba(168, 85, 247, 0.4);
-  background: rgba(168, 85, 247, 0.12);
-  color: var(--text-dim);
-  font-size: 0.72rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: background 0.15s, color 0.15s, border-color 0.15s;
-}
-.translate-btn:hover { background: rgba(168, 85, 247, 0.25); color: var(--text); }
-.translate-btn.active { background: rgba(168, 85, 247, 0.4); color: #fff; border-color: var(--accent-bright); }
-.translate-es {
-  margin: 5px 0 0;
-  font-size: 0.85em;
-  font-style: italic;
-  color: var(--text-dim);
-}
-.translate-es.hidden { display: none; }
+/* the per-word "🌐 ES" translate button used to live here. It is gone: word
+   meanings now render directly in the language picked on each game's loading
+   screen (see lookupDefinition in app.js), so there is nothing left to
+   translate on demand. */
 .meaning-extra:empty { display: none; }
 
 /* ================= WORD LINKS ================= */
@@ -1075,64 +1108,12 @@ input.letter-cell:focus { border-color: var(--accent-bright); box-shadow: 0 0 8p
 
 /* ================= SPOT THE ERROR (home preview) ================= */
 .mini-spot { display: flex; flex-direction: column; align-items: center; gap: 12px; width: 100%; }
+/* no text-shadow: flat lettering. The box/lens/border glows around it are
+   untouched — only the text glow was removed. */
 .mini-spot-title {
   font-weight: 900; font-size: 1.85rem; letter-spacing: 2px; color: #fff;
-  /* softer glow (was 0.55 white / 0.75 violet — too saturated) */
-  text-shadow: 0 0 6px rgba(255, 255, 255, 0.3), 0 0 13px rgba(168, 85, 247, 0.42);
 }
 
-/* =====================================================
-   SHARED bomb-with-skull icon — the "O" of BOMB in BOTH
-   the Bomb Word and Emoji Bomb card titles (one asset).
-   ===================================================== */
-.bomb-o {
-  display: inline-block; position: relative;
-  width: 0.94em; height: 0.94em; vertical-align: -0.16em; margin: 0 0.02em;
-  border-radius: 50%;
-  background: radial-gradient(circle at 34% 28%, #4c4c4c, #141414 60%, #000);
-  box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.7), inset 2px 2px 5px rgba(255, 255, 255, 0.18);
-}
-.bomb-o-skull {
-  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
-  font-size: 0.56em; line-height: 1;
-}
-/* little lit-fuse spark at the top-right (orange glow + crossed rays) */
-.bomb-o-spark {
-  position: absolute; top: -0.06em; right: -0.04em;
-  width: 0.24em; height: 0.24em; border-radius: 50%;
-  background: radial-gradient(circle, #ffd257, #ff9a1f 70%);
-  box-shadow: 0 0 5px 1px rgba(255, 160, 30, 0.9);
-}
-.bomb-o-spark::before, .bomb-o-spark::after {
-  content: ""; position: absolute; left: 50%; top: 50%;
-  width: 0.42em; height: 0.09em; background: #ffb020; border-radius: 2px;
-  transform: translate(-50%, -50%) rotate(0deg);
-}
-.bomb-o-spark::after { transform: translate(-50%, -50%) rotate(90deg); }
-
-/* shared BOMB-style title (used by Bomb Word + Emoji Bomb) — SUBTLE glow */
-.bomb-title { display: flex; flex-direction: column; align-items: center; line-height: 1.05; }
-.bomb-line {
-  font-weight: 900; font-size: 2rem; letter-spacing: 2px; color: #fff;
-  text-shadow: 0 0 6px rgba(255, 255, 255, 0.28), 0 2px 3px rgba(0, 0, 0, 0.5);
-}
-/* the typed prefix + violet cursor, shared by both cards */
-.bomb-prefix, .eb-ex {
-  font-weight: 900; font-size: 2.1rem; letter-spacing: 2px; color: #fff;
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.25);
-}
-.bomb-cursor { color: var(--sp-accent, #a855f7); }
-
-/* ================= BOMB WORD (home preview) ================= */
-.mini-bombword { display: flex; flex-direction: column; align-items: center; gap: 16px; width: 100%; }
-
-/* ================= EMOJI BOMB (home preview) ================= */
-.mini-emojibomb { display: flex; flex-direction: column; align-items: center; gap: 12px; width: 100%; }
-.mini-emojibomb .bomb-line { font-size: 1.75rem; }
-.eb-row { display: flex; align-items: center; justify-content: center; gap: 14px; }
-.eb-row .eb-ex { font-size: 1.7rem; }
-.eb-emoji { font-size: 1.7rem; line-height: 1; filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.5)); }
-.eb-bomb { font-size: 1.8rem; line-height: 1; filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5)); }
 .mini-spot-row { position: relative; display: flex; align-items: center; gap: 8px; }
 .mini-spot-box {
   width: 26px; height: 26px; border-radius: 7px; flex: 0 0 auto;
@@ -1162,10 +1143,10 @@ input.letter-cell:focus { border-color: var(--accent-bright); box-shadow: 0 0 8p
   box-shadow: 0 0 16px rgba(41, 182, 246, 0.9), 0 0 30px rgba(41, 182, 246, 0.55);
 }
 /* "WORD LINKS" wordmark under the pills — same treatment as FILL IN THE BLANKS
-   (fib-logo-word), but a bold (800) weight instead of black (900) per request */
+   (fib-logo-word), but a bold (800) weight instead of black (900) per request.
+   No text-shadow: flat lettering. The blue hub's box-shadow glow is untouched. */
 .mini-wl-logo {
   font-weight: 800; letter-spacing: 3px; font-size: 1.35rem; color: #fff;
-  text-shadow: 0 0 12px rgba(168, 85, 247, 0.7);
 }
 
 .imp-grid {
@@ -1484,21 +1465,6 @@ input.letter-cell:focus { border-color: var(--accent-bright); box-shadow: 0 0 8p
 }
 
 /* ================= WAFFLE ================= */
-.mini-waffle {
-  display: grid;
-  grid-template-columns: repeat(3, 34px);
-  gap: 4px;
-}
-.mini-wcell {
-  width: 34px; height: 34px;
-  display: flex; align-items: center; justify-content: center;
-  font-weight: 900; font-size: 1rem; color: #14210f;
-  border-radius: 6px;
-}
-.mini-wcell.wg { background: var(--tile-green); color: #fff; }
-.mini-wcell.wy { background: var(--tile-yellow); color: #fff; }
-.mini-wcell.hole { background: transparent; }
-
 .wf-wrap {
   max-width: 560px;
   margin: 20px auto;
@@ -1614,17 +1580,6 @@ input.letter-cell:focus { border-color: var(--accent-bright); box-shadow: 0 0 8p
   --st-span-color: #e8c34a;    /* gold for the spangram */
   --st-hint-color: #ff7ad9;    /* pink ring for hint letters */
 }
-
-.mini-strands { display: grid; grid-template-columns: repeat(3, 32px); gap: 5px; }
-.mini-st {
-  width: 32px; height: 32px;
-  display: flex; align-items: center; justify-content: center;
-  font-weight: 800; font-size: 0.9rem; color: var(--text);
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.07);
-}
-.mini-st.st-b { background: var(--st-theme-color); color: #0b2530; }
-.mini-st.st-y { background: var(--st-span-color); color: #2e2405; }
 
 .st-wrap {
   max-width: 480px;
@@ -1758,95 +1713,147 @@ input.letter-cell:focus { border-color: var(--accent-bright); box-shadow: 0 0 8p
   justify-content: center;
   margin: 0 0 20px;
 }
-.st-wordlist li {
+/* the <li> is now just a wrapper — the chip styling lives on .st-word-chip,
+   which is a <button> for words the player found and a <span> for missed ones */
+.st-wordlist li { display: flex; }
+.st-word-chip {
   font-size: 0.82rem;
   font-weight: 700;
+  font-family: inherit;
   padding: 5px 10px;
+  border: none;
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.06);
   color: var(--text-dim);
 }
-.st-wordlist li.found { background: rgba(88, 184, 216, 0.28); color: #cdeef7; }
-.st-wordlist li.missed { color: #d99a9a; text-decoration: line-through; opacity: 0.75; }
-.st-wordlist li.span { background: rgba(232, 195, 74, 0.28); color: #f4e3a0; }
-.st-wordlist li.span.missed { color: #f4e3a0; opacity: 0.6; }
+.st-wordlist li.found .st-word-chip { background: rgba(88, 184, 216, 0.28); color: #cdeef7; }
+.st-wordlist li.missed .st-word-chip { color: #d99a9a; text-decoration: line-through; opacity: 0.75; }
+.st-wordlist li.span .st-word-chip { background: rgba(232, 195, 74, 0.28); color: #f4e3a0; }
+.st-wordlist li.span.missed .st-word-chip { color: #f4e3a0; opacity: 0.6; }
 .st-wordlist .span-tag { font-size: 0.62rem; letter-spacing: 1px; opacity: 0.85; margin-left: 4px; }
+
+/* found words are tappable: subtle dotted underline hints it without adding
+   visual noise, and the chip lifts + brightens on hover/focus. The selected
+   chip stays highlighted so it's clear which meaning is on screen. */
+.st-word-btn {
+  cursor: pointer;
+  text-decoration: underline dotted rgba(205, 238, 247, 0.5);
+  text-underline-offset: 3px;
+  transition: background 0.15s, transform 0.15s, box-shadow 0.15s;
+}
+.st-word-btn:hover,
+.st-word-btn:focus-visible {
+  background: rgba(88, 184, 216, 0.45);
+  color: #eafaff;
+  transform: translateY(-1px);
+}
+.st-word-btn:focus-visible { outline: 2px solid var(--accent-bright, #d846ef); outline-offset: 2px; }
+.st-wordlist li.span .st-word-btn { text-decoration-color: rgba(244, 227, 160, 0.55); }
+.st-wordlist li.span .st-word-btn:hover,
+.st-wordlist li.span .st-word-btn:focus-visible { background: rgba(232, 195, 74, 0.45); color: #fff6d4; }
+.st-word-btn.active {
+  background: rgba(88, 184, 216, 0.5);
+  color: #fff;
+  box-shadow: 0 0 0 1px rgba(205, 238, 247, 0.6);
+  text-decoration: none;
+}
+.st-wordlist li.span .st-word-btn.active {
+  background: rgba(232, 195, 74, 0.5);
+  box-shadow: 0 0 0 1px rgba(244, 227, 160, 0.6);
+}
+
+.st-wordlist-hint {
+  margin: -12px 0 12px;
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  opacity: 0.75;
+  text-align: center;
+}
+
+/* shared meaning panel below the chips — collapsed until a word is tapped */
+.st-word-meaning {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  margin: 0 0 16px;
+  padding: 0 12px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.28);
+  text-align: left;
+  transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+}
+.st-word-meaning.visible { max-height: 220px; opacity: 1; padding: 10px 12px; }
+.st-meaning-word {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #cdeef7;
+  margin-bottom: 3px;
+}
+.st-meaning-def { margin: 0; font-size: 0.85rem; line-height: 1.4; color: var(--text); }
 
 @media (max-width: 480px) {
   .st-grid { grid-template-columns: repeat(6, var(--st-cell, 13vw)); }
   .st-cell { width: var(--st-cell, 13vw); height: var(--st-cell, 13vw); }
+  /* roomier tap area for the clickable found-words on touch screens (kept well
+     under 44px on purpose — these chips wrap in a row and full-size targets
+     would push the word list off the end panel) */
+  .st-word-chip { padding: 9px 12px; }
 }
 
 /* ================= MOBILE ================= */
 @media (max-width: 480px) {
+  /* card grid: single column, track width must match .game-card's own width
+     below or the card floats off-center inside a wider empty track */
+  .card-grid { grid-template-columns: 160px; }
   .game-card { width: 160px; }
-  .card-art { height: 140px; }
-  .mini-board { grid-template-columns: repeat(5, 22px); }
-  .mini-tile { width: 22px; height: 22px; font-size: 0.7rem; }
+  /* height:auto + min-height (not a fixed height) so taller previews
+     (Impostor's icon + wordmark + 2 rows of pills) push the box taller
+     instead of overflowing into the PLAY button below */
+  .card-art { height: auto; min-height: 150px; padding: 16px 10px; }
+
+  /* Word Game only: the mobile preview box (158x150) is far closer to square
+     than the desktop one (228x190), so object-fit:contain fits this WIDE art by
+     height and the desktop --art-scale:1.2 would push it to 95% of the card
+     width — 2px from each edge. Scaled back so it keeps roughly the same 84%
+     width as on desktop, matching the other cards' mobile proportions. */
+  .card-art-wordgame { --art-scale: 1.05; }
+
   .tile { width: 44px; height: 44px; font-size: 1.4rem; }
   .key { height: 48px; font-size: 0.85rem; }
+
+  /* PLAY button: guaranteed 44px tap target, same width on every card
+     since .card-play is already block-level 100% of its .card-footer */
+  .card-play { min-height: 44px; display: flex; align-items: center; justify-content: center; padding: 8px 0; }
+
+  /* ---- IMPOSTOR home preview ---- */
+  .mini-impo { gap: 8px; }
+  .mini-impo-spy { width: clamp(40px, 14vw, 56px); height: clamp(40px, 14vw, 56px); }
+  .mini-impo-word { font-size: clamp(0.75rem, 4vw, 0.95rem); letter-spacing: 2px; }
+  .mini-impo-pills { gap: 5px 6px; }
+  .mini-impo-pills .mini-chip { font-size: 0.6rem; padding: 4px 8px; }
+  .mini-spot-glass-impo { --g: 32px; }
+
+  /* ---- WORD LINKS home preview ---- */
+  .mini-wl-grid { gap: 8px 22px; }
+  .mini-wl-grid .mini-chip { font-size: 0.62rem; padding: 5px 9px; }
+  .mini-wl-hub { width: 30px; height: 30px; }
+  .mini-wl-hub svg { width: 14px; height: 14px; }
+  .mini-wl-logo { font-size: clamp(0.8rem, 4.5vw, 1.05rem); }
+
+  /* ---- SPOT THE ERROR home preview ---- */
+  .mini-spot-title { font-size: clamp(1.05rem, 6vw, 1.4rem); }
+  .mini-spot-phrase { font-size: clamp(0.85rem, 5vw, 1.1rem); }
+  .mini-spot-box { width: 20px; height: 20px; font-size: 0.68rem; border-radius: 6px; }
+  .mini-spot-glass { --g: 30px; }
+
 }
 
 /* =====================================================
    STAR PARTY
    ===================================================== */
 :root { --sp-accent: #a855f7; --sp-good: #22c55e; --sp-bad: #ef4444; --sp-neutral: #eab308; }
-
-/* home mini card art */
-.mini-starparty {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
-/* CAMBIO 1: 6 decorative stars floating around the wheel, reusing the SAME
-   star shape/gradient/glow as spStarIcon() (starparty.js) and the shared
-   .sp-star-ico glow class — varied sizes/positions so they feel dynamic. */
-.mini-sp-stars { position: absolute; inset: 0; pointer-events: none; }
-.mini-sp-star { position: absolute; }
-.mini-sp-star.s1 { top: 2%; left: 12%; }
-.mini-sp-star.s2 { top: 4%; right: 10%; }
-.mini-sp-star.s3 { top: 46%; left: 2%; transform: translateY(-50%); }
-.mini-sp-star.s4 { top: 44%; right: 0%; transform: translateY(-50%); }
-.mini-sp-star.s5 { bottom: 14%; left: 14%; }
-.mini-sp-star.s6 { bottom: 10%; right: 18%; }
-/* CAMBIO 2: "STAR PARTY" wordmark below the wheel, each letter its own color
-   (magenta -> orange/yellow -> green/turquoise -> cyan -> violet). */
-.mini-sp-title {
-  font-weight: 900;
-  font-size: 0.92rem;
-  letter-spacing: 0.5px;
-  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.6);
-}
-/* ARREGLO 5: home card art now previews the ACTUAL golden game wheel (gold rim +
-   blue/red/gold sectors, same palette as the real in-game wheel) instead of a
-   generic icon, so the game is recognizable before entering. */
-.mini-sp-goldwheel { position: relative; width: 78px; height: 78px; }
-.mini-sp-goldwheel-rim {
-  position: absolute; inset: 0; border-radius: 50%;
-  background: conic-gradient(#8a5a0a, #f9e08a 12%, #b97e12 25%, #f3cf5e 40%, #8a5a0a 55%, #f9e08a 70%, #b97e12 85%, #8a5a0a);
-  box-shadow: 0 0 0 2px #5b3a06, 0 4px 12px rgba(0, 0, 0, 0.5), 0 0 16px rgba(246, 200, 90, 0.5);
-}
-.mini-sp-goldwheel-sectors {
-  position: absolute; inset: 7px; border-radius: 50%;
-  background: conic-gradient(
-    #3b82f6 0deg 30deg, #ef4444 30deg 60deg, #eab308 60deg 90deg,
-    #3b82f6 90deg 120deg, #ef4444 120deg 150deg, #eab308 150deg 180deg,
-    #3b82f6 180deg 210deg, #ef4444 210deg 240deg, #eab308 240deg 270deg,
-    #3b82f6 270deg 300deg, #ef4444 300deg 330deg, #eab308 330deg 360deg
-  );
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.55);
-}
-.mini-sp-goldwheel-hub {
-  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-  width: 20px; height: 20px; border-radius: 50%;
-  background: radial-gradient(circle at 38% 30%, #fff8dd, #f6c94f 42%, #b97e12 78%, #6b4708);
-  border: 2px solid #f3d878;
-  box-shadow: 0 0 10px rgba(246, 200, 90, 0.9);
-}
 
 /* ---- setup screen ---- */
 .sp-setup {

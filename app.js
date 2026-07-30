@@ -31,41 +31,21 @@ function escapeRegex(s) {
 }
 
 // shared word meanings (definitions.js → DEFINITIONS). Keys are UPPERCASE,
-// each value is { en, es }. lang defaults to "en" — the meaning panels always
-// show English by default; the per-word translate button asks for "es" on
-// top of that, independent of the general UI language toggle.
+// each value is { en, es }.
+//
+// `lang` is optional and normally left out: it falls back to selectedLanguage,
+// the language the player picked on the game's loading screen. That makes the
+// language choice the single source of truth for meanings too, so a player on
+// Spanish reads meanings in Spanish immediately — no extra "translate" button
+// to press. Pass `lang` explicitly only to force one specific language.
 function lookupDefinition(word, lang) {
   if (typeof DEFINITIONS !== "object" || !DEFINITIONS) return null;
   const entry = DEFINITIONS[String(word).toUpperCase()];
   if (!entry) return null;
-  return entry[lang === "es" ? "es" : "en"] || null;
-}
-
-// small "🌐 ES" button appended after a word's English meaning. Reveals the
-// Spanish translation IN ADDITION to the English text already shown (never
-// replaces it) — independent of the general UI language toggle, since a
-// player using the English interface may still want one definition in
-// Spanish. No-ops silently if there's no Spanish entry for that word.
-function attachTranslateButton(container, word) {
-  const es = lookupDefinition(word, "es");
-  if (!es) return;
-
-  const btn = document.createElement("button");
-  btn.type = "button";
-  btn.className = "translate-btn";
-  btn.textContent = "🌐 ES";
-
-  const esLine = document.createElement("p");
-  esLine.className = "translate-es hidden";
-  esLine.textContent = `🇪🇸 ${es}`;
-
-  btn.addEventListener("click", () => {
-    const nowHidden = esLine.classList.toggle("hidden");
-    btn.classList.toggle("active", !nowHidden);
-  });
-
-  container.appendChild(btn);
-  container.appendChild(esLine);
+  const l = lang || selectedLanguage;
+  // fall back to the other language rather than showing nothing, in the rare
+  // case an entry only has one side filled in.
+  return (l === "es" ? entry.es || entry.en : entry.en || entry.es) || null;
 }
 
 const LEVEL_LABELS = { basico: "Basic", intermedio: "Intermediate", avanzado: "Advanced" };
@@ -220,15 +200,16 @@ function openIntro(game) {
     generalOpt.style.display = "";
   }
 
-  // Spot the Error, Word Links and Connections have no categories — difficulty only.
-  // Is It a Real Word and Bomb Word have NO selectors; Emoji Bomb and Strands only have their own mode row.
+  // Spot the Error, Word Links, Connections and Is It a Real Word have no
+  // categories — difficulty only.
+  // Bomb Word has NO selectors; Emoji Bomb and Strands only have their own mode row.
   // Fill in the Blanks, Impostor and Wordle no longer show category either — those
   // games now mix every category together and only ask for difficulty.
-  const noSelectors = game === "realword" || game === "bombword" || game === "emojibomb" || game === "strands";
+  const noSelectors = game === "bombword" || game === "emojibomb" || game === "strands";
   const showCategory =
     !noSelectors &&
     game !== "spot" && game !== "wordlinks" && game !== "connections" && game !== "waffle" &&
-    game !== "blanks" && game !== "impostor" && game !== "wordle";
+    game !== "blanks" && game !== "impostor" && game !== "wordle" && game !== "realword";
   $("#category-label").style.display = showCategory ? "" : "none";
   $("#category-row").style.display = showCategory ? "" : "none";
 
@@ -390,7 +371,7 @@ $("#intro-start").addEventListener("click", () => {
   if (pendingGame === "wordlinks") startWordLinks(level);
   if (pendingGame === "impostor") startImpostor(category, level);
   if (pendingGame === "connections") startConnections(level);
-  if (pendingGame === "realword") startRealword();
+  if (pendingGame === "realword") startRealword(level);
   if (pendingGame === "bombword") startBombword();
   if (pendingGame === "waffle")
     startWaffle(document.querySelector('input[name="wmode"]:checked').value, level);
@@ -785,11 +766,19 @@ function fbStopMeaningTimer() {
   }
 }
 
+// sentences per round. The pool holds 12 per difficulty (travel + business +
+// daily, 4 each), so a round is a random 4 of those 12 — short games, and a
+// different mix every time. Everything downstream (progress text, score,
+// end-of-game check) derives from blanksRound.length, so this is the only
+// place the round length is defined.
+const BLANKS_PER_ROUND = 4;
+
 function startBlanks(category, level) {
   // category selector removed — mix travel + business + daily sentences together
-  // and shuffle across all of them for this difficulty (12 sentences combined).
+  // and shuffle across all of them for this difficulty, then take the first
+  // BLANKS_PER_ROUND of the shuffled pool.
   const pool = Object.values(GAME_DATA.blanks).flatMap((byLevel) => byLevel[level] || []);
-  blanksRound = shuffle(pool);
+  blanksRound = shuffle(pool).slice(0, BLANKS_PER_ROUND);
   blanksIndex = 0;
   blanksScore = 0;
   blanksSeconds = BLANKS_SECONDS[level] || 20;
@@ -955,13 +944,12 @@ function revealAndNext(item) {
 // advances immediately; otherwise auto-advances after 8s (independent of the
 // per-sentence letter-input timer, which is already stopped by this point).
 function showMeaning(item) {
-  const def = lookupDefinition(item.word, "en");
+  const def = lookupDefinition(item.word);
   $("#blanks-meaning-text").textContent = def
     ? interp(t("blanks", "messages.meaning"), { def })
     : t("blanks", "messages.meaning_unavailable");
   const extra = $("#blanks-meaning-extra");
-  extra.innerHTML = ""; // reused across sentences — clear the previous word's translate button
-  if (def) attachTranslateButton(extra, item.word);
+  extra.innerHTML = ""; // reused across sentences — clear the previous word's content
   $("#blanks-meaning-panel").classList.remove("hidden");
 
   fbStopMeaningTimer();
@@ -1818,12 +1806,11 @@ function connGroupCard(catIndex) {
 
     const defWrap = document.createElement("div");
     defWrap.className = "conn-meaning-defwrap";
-    const def = lookupDefinition(w, "en");
+    const def = lookupDefinition(w);
     const dEl = document.createElement("p");
     dEl.className = "conn-meaning-def meaning-en";
     dEl.textContent = def || t("connections", "messages.meaning_unavailable");
     defWrap.appendChild(dEl);
-    if (def) attachTranslateButton(defWrap, w);
 
     row.appendChild(wEl);
     row.appendChild(defWrap);
@@ -1927,6 +1914,18 @@ let rwDeadline = 0; // Date.now()-based so the timer never pauses
 
 const rwRules = () => REALWORD_DATA.rules;
 
+// difficulty (added in data v2, which splits the bank into basic/intermediate/
+// advanced). The radio values are Spanish (basico/…) while the bank keys are
+// English, so we reuse WL_LEVEL_KEYS — the same mapping Word Links and Waffle
+// already use. rwLevelRaw keeps the radio value so PLAY AGAIN can replay the
+// same difficulty; rwLevel is the bank key.
+let rwLevelRaw = null; // "basico" | "intermedio" | "avanzado"
+let rwLevel = null; // "basic" | "intermediate" | "advanced"
+
+// the real/fake pools for the level in play. Rules (8 words, 6s, 3-5 real) are
+// identical across levels — only the word pools differ.
+const rwBank = () => REALWORD_DATA.words[rwLevel] || REALWORD_DATA.words.basic;
+
 function rwStopTimer() {
   if (rwTimerId) {
     clearInterval(rwTimerId);
@@ -1940,7 +1939,10 @@ function rwPick(pool, count, exclude) {
   return shuffle(candidates).slice(0, count);
 }
 
-function startRealword() {
+function startRealword(level) {
+  rwLevelRaw = level || "basico";
+  rwLevel = WL_LEVEL_KEYS[rwLevelRaw] || rwLevelRaw;
+
   // random split per game: 3 to 5 real words, the rest fake
   const min = rwRules().min_real_per_game;
   const max = rwRules().max_real_per_game;
@@ -1952,8 +1954,8 @@ function startRealword() {
     lastWords = JSON.parse(localStorage.getItem(RW_STORAGE_KEY)) || [];
   } catch (err) { /* corrupted storage — ignore */ }
 
-  const reals = rwPick(REALWORD_DATA.real_words, realCount, lastWords).map((w) => ({ word: w, real: true }));
-  const fakes = rwPick(REALWORD_DATA.fake_words, fakeCount, lastWords).map((w) => ({ word: w, real: false }));
+  const reals = rwPick(rwBank().real, realCount, lastWords).map((w) => ({ word: w, real: true }));
+  const fakes = rwPick(rwBank().fake, fakeCount, lastWords).map((w) => ({ word: w, real: false }));
   rwWords = shuffle([...reals, ...fakes]); // fully random order
 
   rwIndex = 0;
@@ -1961,6 +1963,7 @@ function startRealword() {
 
   // don't reveal the real/fake split — that's the whole challenge
   $("#rw-meta").textContent = interp(t("realword", "labels.meta"), {
+    "LEVEL_LABELS[level]": ts("level_labels." + rwLevelRaw),
     "rwRules().words_per_game": rwRules().words_per_game,
     "rwRules().seconds_per_word": rwRules().seconds_per_word,
   });
@@ -2080,7 +2083,7 @@ function rwShowResults() {
 
     const panel = document.createElement("div");
     panel.className = "rw-meaning";
-    const def = r.real ? lookupDefinition(r.word, "en") : null;
+    const def = r.real ? lookupDefinition(r.word) : null;
     const meaningLine = document.createElement("p");
     meaningLine.className = "meaning-en";
     meaningLine.textContent = r.real
@@ -2088,7 +2091,6 @@ function rwShowResults() {
       : t("realword", "messages.meaning_not_real");
     panel.appendChild(meaningLine);
     if (!r.real) panel.classList.add("rw-meaning-fake");
-    if (r.real && def) attachTranslateButton(panel, r.word);
 
     head.addEventListener("click", () => {
       const open = li.classList.toggle("open");
@@ -2109,7 +2111,9 @@ function rwShowResults() {
   $("#rw-end").classList.remove("hidden");
 }
 
-$("#rw-again-btn").addEventListener("click", startRealword);
+// pass the remembered difficulty, or PLAY AGAIN would hand startRealword the
+// click Event as its `level` argument
+$("#rw-again-btn").addEventListener("click", () => startRealword(rwLevelRaw));
 
 /* =====================================================
    GAME 9 — BOMB WORD (BombParty-style)
@@ -2616,12 +2620,11 @@ function wfFinish(won) {
 
     const panel = document.createElement("div");
     panel.className = "wf-word-meaning";
-    const def = lookupDefinition(word, "en");
+    const def = lookupDefinition(word);
     const meaningLine = document.createElement("p");
     meaningLine.className = "meaning-en";
     meaningLine.textContent = def || t("waffle", "messages.meaning_unavailable");
     panel.appendChild(meaningLine);
-    if (def) attachTranslateButton(panel, word);
 
     head.addEventListener("click", () => {
       const open = li.classList.toggle("open");
@@ -3333,23 +3336,67 @@ function stFinish(won, foundBefore, outOfLives) {
     ? interp(t("strands", "messages.end_detail_lives"), { foundBefore, "stPuzzle.words.length": stPuzzle.words.length })
     : interp(t("strands", "messages.end_detail_gaveup"), { foundBefore, "stPuzzle.words.length": stPuzzle.words.length });
 
-  // list all 8 words: found vs missed, spangram highlighted (order: spangram first)
+  // list all 8 words: found vs missed, spangram highlighted (order: spangram first).
+  // Words the player actually FOUND are buttons: tapping one shows its meaning in
+  // the shared panel below the list (the chips wrap in a row, so a per-chip
+  // accordion would break the layout — one shared panel keeps it compact).
+  // Meanings come from lookupDefinition, so they render in the language chosen
+  // on the loading screen. Missed words stay plain text — nothing to reward.
   const list = $("#st-wordlist");
+  const meaningPanel = $("#st-word-meaning");
   list.innerHTML = "";
+  meaningPanel.classList.remove("visible");
+  meaningPanel.innerHTML = "";
+
   const ordered = [...stPuzzle.words].sort((a, b) => (b.is_spangram ? 1 : 0) - (a.is_spangram ? 1 : 0));
+  let anyFound = false;
+
+  const showWordMeaning = (word, chip) => {
+    list.querySelectorAll(".st-word-btn.active").forEach((b) => b.classList.remove("active"));
+    chip.classList.add("active");
+    meaningPanel.innerHTML = "";
+    const wEl = document.createElement("span");
+    wEl.className = "st-meaning-word";
+    wEl.textContent = word;
+    const dEl = document.createElement("p");
+    dEl.className = "st-meaning-def";
+    dEl.textContent = lookupDefinition(word) || t("strands", "messages.meaning_unavailable");
+    meaningPanel.appendChild(wEl);
+    meaningPanel.appendChild(dEl);
+    meaningPanel.classList.add("visible");
+  };
+
   ordered.forEach((w) => {
     const li = document.createElement("li");
     const foundIt = stEverFound.has(w.word); // found by the player, not by the give-up reveal
     li.className = (w.is_spangram ? "span " : "") + (foundIt ? "found" : "missed");
-    li.textContent = `${foundIt ? "✓ " : ""}${w.word}`;
+
+    // the chip itself: a real <button> when found (keyboard + screen-reader
+    // reachable), a plain <span> when missed.
+    const chip = document.createElement(foundIt ? "button" : "span");
+    chip.className = "st-word-chip" + (foundIt ? " st-word-btn" : "");
+    chip.textContent = `${foundIt ? "✓ " : ""}${w.word}`;
     if (w.is_spangram) {
       const tag = document.createElement("span");
       tag.className = "span-tag";
       tag.textContent = "SPANGRAM";
-      li.appendChild(tag);
+      chip.appendChild(tag);
     }
+    if (foundIt) {
+      anyFound = true;
+      chip.type = "button";
+      chip.title = t("strands", "messages.tap_for_meaning");
+      chip.addEventListener("click", () => showWordMeaning(w.word, chip));
+    }
+
+    li.appendChild(chip);
     list.appendChild(li);
   });
+
+  // affordance hint — only worth showing if there is something to tap
+  const hint = $("#st-wordlist-hint");
+  hint.textContent = anyFound ? t("strands", "messages.tap_for_meaning") : "";
+  hint.classList.toggle("hidden", !anyFound);
 
   $("#st-end").classList.remove("hidden"); // overlay on top of the (revealed) board
 }

@@ -1,361 +1,363 @@
 {
-  "_shared": {
-    "intro_modal": {
-      "start_button": "START",
-      "mode_label": "Mode:",
-      "eb_mode_label": "Mode:",
-      "st_mode_label": "Mode:",
-      "difficulty_label": "Difficulty:",
-      "category_label": "Category:",
-      "difficulty_options": {
-        "basic": "BASIC",
-        "intermediate": "INTERMEDIATE",
-        "advanced": "ADVANCED"
-      },
-      "category_options": {
-        "business": "BUSINESS",
-        "travel": "TRAVEL",
-        "daily": "DAILY",
-        "general": "GENERAL"
-      },
-      "waffle_mode_options": {
-        "normal": "NORMAL",
-        "deluxe": "DELUXE"
-      },
-      "emojibomb_mode_options": {
-        "basico": "BASICO",
-        "hardcore": "HARDCORE"
-      },
-      "strands_mode_options": {
-        "normal": "NORMAL",
-        "hardcore": "HARDCORE"
-      }
-    },
-    "level_labels": {
-      "basico": "Basic",
-      "intermedio": "Intermediate",
-      "avanzado": "Advanced"
-    },
-    "category_labels": {
-      "business": "Business",
-      "travel": "Travel",
-      "daily": "Daily",
-      "general": "General"
-    },
-    "buttons": {
-      "back": "← Back",
-      "play_again": "PLAY AGAIN",
-      "back_to_menu": "BACK TO MENU"
-    }
+ "_shared": {
+  "intro_modal": {
+   "start_button": "START",
+   "mode_label": "Mode:",
+   "eb_mode_label": "Mode:",
+   "st_mode_label": "Mode:",
+   "difficulty_label": "Difficulty:",
+   "category_label": "Category:",
+   "difficulty_options": {
+    "basic": "BASIC",
+    "intermediate": "INTERMEDIATE",
+    "advanced": "ADVANCED"
+   },
+   "category_options": {
+    "business": "BUSINESS",
+    "travel": "TRAVEL",
+    "daily": "DAILY",
+    "general": "GENERAL"
+   },
+   "waffle_mode_options": {
+    "normal": "NORMAL",
+    "deluxe": "DELUXE"
+   },
+   "emojibomb_mode_options": {
+    "basico": "BASICO",
+    "hardcore": "HARDCORE"
+   },
+   "strands_mode_options": {
+    "normal": "NORMAL",
+    "hardcore": "HARDCORE"
+   }
   },
-  "wordle": {
-    "intro": "Guess the hidden English word in 6 tries. Green = right letter, right spot. Yellow = right letter, wrong spot. Gray = not in the word.",
-    "intro_title": "WORDLE",
-    "buttons": {
-      "hint": "💡 HINT",
-      "forfeit": "🏳️ FORFEIT",
-      "play_again": "PLAY AGAIN",
-      "back_to_menu": "BACK TO MENU"
-    },
-    "messages": {
-      "hint1_pos": "💡 Hint: this word is a ${info.pos} (${myAnswer.length} letters)",
-      "hint1_no_pos": "💡 Hint: the word has ${myAnswer.length} letters",
-      "not_enough_letters": "Not enough letters (${answer.length} needed)",
-      "result_won": "🎉 You got it!",
-      "result_forfeited": "🏳️ You gave up!",
-      "result_lost": "😔 Out of tries!",
-      "answer_prefix_html": "The word was: <strong id=\"wordle-answer\"></strong>",
-      "meaning": "📖 Meaning${pos}: ${wordInfo.definition}"
-    },
-    "labels": {
-      "meta": "${LEVEL_LABELS[level]}"
-    }
+  "level_labels": {
+   "basico": "Basic",
+   "intermedio": "Intermediate",
+   "avanzado": "Advanced"
   },
-  "blanks": {
-    "intro": "Complete 4 sentences with the missing word. Some starting letters are shown — type the rest before time runs out. Your first miss reveals a few extra letters (only once). Unlimited tries, 1 point per sentence.",
-    "intro_title_html": "FILL IN / [4-cell icon] / BLANKS",
-    "buttons": {
-      "check": "CHECK",
-      "next": "NEXT",
-      "play_again": "PLAY AGAIN",
-      "back_to_menu": "BACK TO MENU"
-    },
-    "messages": {
-      "progress": "SENTENCE ${blanksIndex + 1} / ${blanksRound.length}",
-      "time_up": "⏰ Time's up — it was \"${item.word}\"",
-      "incomplete": "Complete all the letters first",
-      "correct": "✅ Correct! +1 point",
-      "first_miss_reveal": "❌ Not quite — a few more letters revealed (only once!)",
-      "keep_trying": "❌ Keep trying…",
-      "meaning": "📖 Meaning: ${def}",
-      "meaning_unavailable": "(no definition available)",
-      "round_complete_title": "Round complete!",
-      "score_label": "Your score: "
-    },
-    "labels": {
-      "meta": "${LEVEL_LABELS[level]}"
-    }
+  "category_labels": {
+   "business": "Business",
+   "travel": "Travel",
+   "daily": "Daily",
+   "general": "General"
   },
-  "spot": {
-    "intro": "3 rounds. In each round, one of 4 sentences has an error: first find the wrong sentence, then click the exact word with the mistake. Start each round with 2 points — wrong sentence -0.25, wrong word -0.5.",
-    "intro_title": "SPOT THE ERROR",
-    "buttons": {
-      "next": "NEXT",
-      "play_again": "PLAY AGAIN",
-      "back_to_menu": "BACK TO MENU"
-    },
-    "messages": {
-      "progress": "ROUND ${spotIndex + 1} / ${spotRounds.length}",
-      "instruction_phase1": "One of these sentences has an error. Click it!",
-      "phase1_correct": "✅ That's the one! Now find the wrong word.",
-      "phase1_wrong": "❌ That sentence is correct (-0.25) — try another one",
-      "instruction_phase2": "Click the exact word where the error is:",
-      "phase2_wrong_first": "❌ Not that word (-0.5) — keep trying",
-      "phase2_wrong_again": "❌ Not that word — keep trying",
-      "round_solved": "✔ Round solved: +${spotRoundScore} points",
-      "corrected_sentence": "Correct sentence: \"${correctedSentence(round)}\"",
-      "explanation_spelling": "📝 Spelling: ${round.explanation}",
-      "explanation_grammar": "📚 Grammar: ${round.explanation}",
-      "game_complete_title": "Game complete!",
-      "score_label": "Your score: ",
-      "score_value": "${spotTotal} / ${spotRounds.length * 2}"
-    },
-    "labels": {
-      "meta": "${LEVEL_LABELS[level]}"
-    }
-  },
-  "strands": {
-    "intro": "Find 8 hidden words connected by a theme, including the spangram (it touches two opposite sides). Drag across adjacent letters to trace a word. Extra real words you find along the way earn hints: every 3 gives you 1.",
-    "intro_title": "STRANDS",
-    "static_labels": {
-      "todays_theme": "TODAY'S THEME"
-    },
-    "buttons": {
-      "hint": "💡 HINT (0)",
-      "clear": "CLEAR",
-      "give_up": "🏳️ GIVE UP",
-      "play_again": "PLAY AGAIN",
-      "change_mode": "CHANGE MODE",
-      "back_to_menu": "BACK TO MENU"
-    },
-    "messages": {
-      "progress": "${stFound.size} / ${stPuzzle.words.length} THEME WORDS",
-      "hint_progress": "EXTRA WORDS: ${stNonTheme.size % need} / ${need} TO NEXT HINT",
-      "hint_count": "💡 HINT (${avail})",
-      "spangram_flash": "SPANGRAM!",
-      "word_found": "✅ ${match.word}",
-      "already_found": "⚠️ \"${word}\" already found",
-      "nice_find": "✨ \"${word}\" — nice find!",
-      "out_of_lives": "💔 Out of lives",
-      "not_a_word": "💔 Not a word — ${stLives} ${stLives === 1 ? \"life\" : \"lives\"} left",
-      "hint_reveal": "💡 The first ${count} letters are lighting up in order",
-      "end_title_won": "🎉 You found them all!",
-      "end_title_lives": "💔 Out of lives",
-      "end_title_gaveup": "🏳️ You gave up",
-      "end_detail_won": "All ${stPuzzle.words.length} theme words + the spangram. Hints used: ${stHintsUsed} · extra words found: ${stNonTheme.size}.",
-      "end_detail_lives": "You ran out of lives after finding ${foundBefore} of ${stPuzzle.words.length} theme words. The full board is revealed behind — take a look before you go.",
-      "end_detail_gaveup": "You had found ${foundBefore} of ${stPuzzle.words.length} theme words. The full board is revealed behind — take a look before you go."
-    },
-    "labels": {
-      "meta": "${stMode.toUpperCase()}"
-    }
-  },
-  "emojibomb": {
-    "intro": "One letter, three emojis, one word. Type the exact word they describe before the bomb goes off. 4 levels. Choose Basico (3 lives per level) or Hardcore (1 try, no room for mistakes).",
-    "intro_title": "EMOJI BOMB",
-    "static_labels": {
-      "prompt": "The word starts with:"
-    },
-    "buttons": {
-      "submit": "SUBMIT",
-      "play_again": "PLAY AGAIN",
-      "change_mode": "CHANGE MODE",
-      "back_to_menu": "BACK TO MENU"
-    },
-    "messages": {
-      "level_splash": "LEVEL ${levelNumber}",
-      "one_try_tag": "1 TRY",
-      "wrong_guess": "❌ \"${guess.toLowerCase()}\" is wrong — ${ebLives} ${ebLives === 1 ? \"life\" : \"lives\"} left",
-      "empty_answer": "❌ Empty answer — ${ebLives} ${ebLives === 1 ? \"life\" : \"lives\"} left",
-      "correct_flash": "✓ ${item.word}",
-      "gameover_timeout": "💥 Time's up!",
-      "gameover_wrong": "❌ \"${guess.toLowerCase()}\" is wrong",
-      "gameover_empty": "❌ Empty answer",
-      "gameover_lives": "💜 Out of lives",
-      "end_title": "💥 You reached Level ${ebLevelNum()}",
-      "end_detail": "${reason} — the word was:"
-    },
-    "labels": {
-      "level_progress": "LEVEL ${ebLevelNum()} / ${ebRules().levels_per_game}",
-      "word_progress": "WORD ${(ebIndex % 3) + 1} / ${ebRules().words_per_level_in_game}"
-    }
-  },
-  "waffle": {
-    "intro": "Swap letters to solve 6 (or 8) connected words. Green = right spot, yellow = in this word but wrong spot, gray = not in its words. Click one cell, then another, to swap their letters before your swaps run out.",
-    "intro_title": "WAFFLE",
-    "buttons": {
-      "play_again": "PLAY AGAIN",
-      "change_settings": "CHANGE SETTINGS",
-      "back_to_menu": "BACK TO MENU"
-    },
-    "messages": {
-      "unlimited_swaps": "UNLIMITED SWAPS",
-      "swaps_remaining": "${wfSwapsLeft} SWAP${wfSwapsLeft === 1 ? \"\" : \"S\"} REMAINING",
-      "end_title_won": "🎉 Waffle solved!",
-      "end_title_lost": "💥 Out of swaps!",
-      "end_detail_won": "All ${wfCells.length} letters in place${wfSwapsLeft !== null ? ` with ${wfSwapsLeft} swap${wfSwapsLeft === 1 ? \"\" : \"s\"} to spare` : \"\"}.",
-      "end_detail_lost": "You placed ${solvedCount} of ${wfCells.length} letters. These were the words:",
-      "solution_row_label": "Across ${i + 1}",
-      "solution_row_label_down": "Down ${i + 1}",
-      "meaning_unavailable": "(no definition available)"
-    },
-    "labels": {
-      "meta": "${mode.toUpperCase()} · ${LEVEL_LABELS[level]}"
-    }
-  },
-  "bombword": {
-    "intro": "You'll see letters. Type any real English word that starts with them before time runs out. 4 levels, getting harder each time. One mistake and you're out.",
-    "intro_title": "BOMB WORD",
-    "static_labels": {
-      "prompt": "Type a real English word starting with:"
-    },
-    "buttons": {
-      "submit": "SUBMIT",
-      "play_again": "PLAY AGAIN",
-      "back_to_menu": "BACK TO MENU"
-    },
-    "messages": {
-      "level_splash": "LEVEL ${levelNumber}",
-      "gameover_timeout": "💥 Time's up!",
-      "gameover_lives": "💜 Out of lives",
-      "wrong_guess": "❌ \"${guess.toLowerCase()}\" is not valid — ${bwLives} ${bwLives === 1 ? \"life\" : \"lives\"} left",
-      "empty_answer": "❌ Empty answer — ${bwLives} ${bwLives === 1 ? \"life\" : \"lives\"} left",
-      "correct_flash": "✓ ${guess}",
-      "end_title_won": "🎉 You completed all 4 levels!",
-      "end_detail_won": "12 prefixes solved. The bomb never went off.",
-      "end_title_lost": "💥 You reached Level ${bwLevelIndex() + 1}",
-      "end_detail_lost": "${reason} — the prefix was \"${bwPrefixes[bwIndex]}\""
-    },
-    "labels": {
-      "meta": "4 LEVELS · 3 LIVES PER LEVEL",
-      "level_progress": "LEVEL ${bwLevelIndex() + 1} / ${BOMBWORD_DATA.rules.levels_per_game}",
-      "word_progress": "WORD ${(bwIndex % 3) + 1} / ${BOMBWORD_DATA.rules.prefixes_per_level_in_game}"
-    }
-  },
-  "realword": {
-    "intro": "You'll see 8 words. Decide if each one is REAL or FAKE. You have 6 seconds per word — no answer counts as incorrect. 1 point per correct answer.",
-    "intro_title": "IS IT A REAL WORD?",
-    "static_labels": {
-      "question": "Is this a real English word?"
-    },
-    "buttons": {
-      "yes": "✓ Yes",
-      "no": "✗ No",
-      "play_again": "PLAY AGAIN",
-      "back_to_menu": "BACK TO MENU"
-    },
-    "messages": {
-      "progress": "WORD ${rwIndex + 1} / ${rwWords.length}",
-      "correct": "✓",
-      "wrong": "✗",
-      "timeout": "✗ Time's up!",
-      "game_complete_title": "Game complete!",
-      "score_label": "Your score: ",
-      "row_correct_prefix": "✓ ${r.word.toLowerCase()}",
-      "row_wrong_prefix": "✗ ${r.word.toLowerCase()}",
-      "tag_real": "real word",
-      "tag_fake": "fake word",
-      "meaning_not_real": "Not a real word",
-      "meaning_unavailable": "(no definition available)"
-    },
-    "labels": {
-      "meta": "${rwRules().words_per_game} words · ${rwRules().seconds_per_word}s each"
-    }
-  },
-  "connections": {
-    "intro": "Group 16 words into 4 hidden categories by meaning. Select 4 words and press Submit — unlimited tries, but Give Up resets your score to 0. Each solved group is 1 point.",
-    "intro_title": "CONNECTIONS",
-    "static_labels": {
-      "instruction": "Group the 16 words into 4 hidden categories. Select 4 and press Submit."
-    },
-    "buttons": {
-      "submit": "SUBMIT",
-      "clear": "CLEAR",
-      "give_up": "🏳️ GIVE UP",
-      "play_again": "PLAY AGAIN",
-      "back_to_menu": "BACK TO MENU"
-    },
-    "messages": {
-      "three_of_four": "💡 You have found 3 correct words of a group",
-      "not_quite": "❌ Not quite, try again",
-      "gave_up_title": "🏳️ You gave up!",
-      "puzzle_complete_title": "🎉 Puzzle complete!",
-      "score_label": "Your score: ",
-      "meaning_unavailable": "(no definition available)"
-    },
-    "labels": {
-      "meta": "${LEVEL_LABELS[level]}"
-    }
-  },
-  "impostor": {
-    "intro": "Find the word that doesn't belong. One wrong click and you're out. 3 rounds: click the 4 words that share something, leave the impostor for last. No hint = 3 pts, with hint = 2 pts.",
-    "intro_title_html": "IMPOSTOR",
-    "static_labels": {
-      "instruction": "Click the words that DON'T belong with the impostor. Leave the impostor for last."
-    },
-    "buttons": {
-      "hint": "💡 HINT",
-      "play_again": "PLAY AGAIN",
-      "change_settings": "CHANGE SETTINGS",
-      "back_to_menu": "BACK TO MENU",
-      "next_round": "NEXT ROUND",
-      "see_results": "SEE RESULTS"
-    },
-    "messages": {
-      "progress": "ROUND ${impIndex + 1} / ${impSets.length}",
-      "round_won": "✅ Round won! The impostor was \"${set.impostor}\" — +${points} pts",
-      "round_lost": "❌ You clicked the impostor! 0 pts this round",
-      "hint_text": "💡 Hint: ${impHintText(impSets[impIndex])}.",
-      "game_complete_title": "Game complete!",
-      "score_label": "Your score: ",
-      "breakdown_row": "R${i + 1}: ${impHintText(s)} — impostor: ${s.impostor}"
-    },
-    "labels": {
-      "meta": "${LEVEL_LABELS[level]}"
-    }
-  },
-  "wordlinks": {
-    "intro": "Guess the secret word from 4 clue words. 3 rounds, 3 attempts each: guess on attempt 1 for 3 points, attempt 2 for 2, attempt 3 for 1. The HINT button reveals a 5th clue but costs 1 attempt.",
-    "intro_title": "WORD LINKS",
-    "static_labels": {
-      "instruction": "These 4 words all point to one secret word:"
-    },
-    "buttons": {
-      "guess": "GUESS",
-      "hint": "💡 HINT (-1 attempt)",
-      "next_round": "NEXT ROUND",
-      "see_results": "SEE RESULTS",
-      "play_again": "PLAY AGAIN",
-      "change_level": "CHANGE LEVEL",
-      "back_to_menu": "BACK TO MENU"
-    },
-    "messages": {
-      "data_error": "Word Links data for this level could not be loaded. Please try another level.",
-      "progress": "ROUND ${wlIndex + 1} / ${wlWords.length}",
-      "type_verb": "(Verb)",
-      "type_noun": "(Noun)",
-      "attempts_left": "Attempts left: ${wlAttemptsLeft}",
-      "correct": "✅ Correct! It was \"${item.word}\" — +${points} point${points === 1 ? \"\" : \"s\"}",
-      "out_of_attempts": "❌ Out of attempts! The word was <span class=\"wl-reveal-word\">${item.word}</span>",
-      "type_a_word": "Type a word",
-      "not_enough_for_hint": "Not enough attempts left for a hint",
-      "game_complete_title": "Game complete!",
-      "score_label": "Your score: ",
-      "breakdown_row_name": "Round ${i + 1}: ${w.word}",
-      "breakdown_row_pts": "${wlScores[i]} pts"
-    },
-    "labels": {
-      "meta": "${wlLevel.toUpperCase()}"
-    }
+  "buttons": {
+   "back": "← Back",
+   "play_again": "PLAY AGAIN",
+   "back_to_menu": "BACK TO MENU"
   }
+ },
+ "wordle": {
+  "intro": "Guess the hidden English word in 6 tries. Green = right letter, right spot. Yellow = right letter, wrong spot. Gray = not in the word.",
+  "intro_title": "WORDLE",
+  "buttons": {
+   "hint": "💡 HINT",
+   "forfeit": "🏳️ FORFEIT",
+   "play_again": "PLAY AGAIN",
+   "back_to_menu": "BACK TO MENU"
+  },
+  "messages": {
+   "hint1_pos": "💡 Hint: this word is a ${info.pos} (${myAnswer.length} letters)",
+   "hint1_no_pos": "💡 Hint: the word has ${myAnswer.length} letters",
+   "not_enough_letters": "Not enough letters (${answer.length} needed)",
+   "result_won": "🎉 You got it!",
+   "result_forfeited": "🏳️ You gave up!",
+   "result_lost": "😔 Out of tries!",
+   "answer_prefix_html": "The word was: <strong id=\"wordle-answer\"></strong>",
+   "meaning": "📖 Meaning${pos}: ${wordInfo.definition}"
+  },
+  "labels": {
+   "meta": "${LEVEL_LABELS[level]}"
+  }
+ },
+ "blanks": {
+  "intro": "Complete 4 sentences with the missing word. Some starting letters are shown — type the rest before time runs out. Your first miss reveals a few extra letters (only once). Unlimited tries, 1 point per sentence.",
+  "intro_title_html": "FILL IN / [4-cell icon] / BLANKS",
+  "buttons": {
+   "check": "CHECK",
+   "next": "NEXT",
+   "play_again": "PLAY AGAIN",
+   "back_to_menu": "BACK TO MENU"
+  },
+  "messages": {
+   "progress": "SENTENCE ${blanksIndex + 1} / ${blanksRound.length}",
+   "time_up": "⏰ Time's up — it was \"${item.word}\"",
+   "incomplete": "Complete all the letters first",
+   "correct": "✅ Correct! +1 point",
+   "first_miss_reveal": "❌ Not quite — a few more letters revealed (only once!)",
+   "keep_trying": "❌ Keep trying…",
+   "meaning": "📖 Meaning: ${def}",
+   "meaning_unavailable": "(no definition available)",
+   "round_complete_title": "Round complete!",
+   "score_label": "Your score: "
+  },
+  "labels": {
+   "meta": "${LEVEL_LABELS[level]}"
+  }
+ },
+ "spot": {
+  "intro": "3 rounds. In each round, one of 4 sentences has an error: first find the wrong sentence, then click the exact word with the mistake. Start each round with 2 points — wrong sentence -0.25, wrong word -0.5.",
+  "intro_title": "SPOT THE ERROR",
+  "buttons": {
+   "next": "NEXT",
+   "play_again": "PLAY AGAIN",
+   "back_to_menu": "BACK TO MENU"
+  },
+  "messages": {
+   "progress": "ROUND ${spotIndex + 1} / ${spotRounds.length}",
+   "instruction_phase1": "One of these sentences has an error. Click it!",
+   "phase1_correct": "✅ That's the one! Now find the wrong word.",
+   "phase1_wrong": "❌ That sentence is correct (-0.25) — try another one",
+   "instruction_phase2": "Click the exact word where the error is:",
+   "phase2_wrong_first": "❌ Not that word (-0.5) — keep trying",
+   "phase2_wrong_again": "❌ Not that word — keep trying",
+   "round_solved": "✔ Round solved: +${spotRoundScore} points",
+   "corrected_sentence": "Correct sentence: \"${correctedSentence(round)}\"",
+   "explanation_spelling": "📝 Spelling: ${round.explanation}",
+   "explanation_grammar": "📚 Grammar: ${round.explanation}",
+   "game_complete_title": "Game complete!",
+   "score_label": "Your score: ",
+   "score_value": "${spotTotal} / ${spotRounds.length * 2}"
+  },
+  "labels": {
+   "meta": "${LEVEL_LABELS[level]}"
+  }
+ },
+ "strands": {
+  "intro": "Find 8 hidden words connected by a theme, including the spangram (it touches two opposite sides). Drag across adjacent letters to trace a word. Extra real words you find along the way earn hints: every 3 gives you 1.",
+  "intro_title": "STRANDS",
+  "static_labels": {
+   "todays_theme": "TODAY'S THEME"
+  },
+  "buttons": {
+   "hint": "💡 HINT (0)",
+   "clear": "CLEAR",
+   "give_up": "🏳️ GIVE UP",
+   "play_again": "PLAY AGAIN",
+   "change_mode": "CHANGE MODE",
+   "back_to_menu": "BACK TO MENU"
+  },
+  "messages": {
+   "progress": "${stFound.size} / ${stPuzzle.words.length} THEME WORDS",
+   "hint_progress": "EXTRA WORDS: ${stNonTheme.size % need} / ${need} TO NEXT HINT",
+   "hint_count": "💡 HINT (${avail})",
+   "spangram_flash": "SPANGRAM!",
+   "word_found": "✅ ${match.word}",
+   "already_found": "⚠️ \"${word}\" already found",
+   "nice_find": "✨ \"${word}\" — nice find!",
+   "out_of_lives": "💔 Out of lives",
+   "not_a_word": "💔 Not a word — ${stLives} ${stLives === 1 ? \"life\" : \"lives\"} left",
+   "hint_reveal": "💡 The first ${count} letters are lighting up in order",
+   "end_title_won": "🎉 You found them all!",
+   "end_title_lives": "💔 Out of lives",
+   "end_title_gaveup": "🏳️ You gave up",
+   "end_detail_won": "All ${stPuzzle.words.length} theme words + the spangram. Hints used: ${stHintsUsed} · extra words found: ${stNonTheme.size}.",
+   "end_detail_lives": "You ran out of lives after finding ${foundBefore} of ${stPuzzle.words.length} theme words. The full board is revealed behind — take a look before you go.",
+   "end_detail_gaveup": "You had found ${foundBefore} of ${stPuzzle.words.length} theme words. The full board is revealed behind — take a look before you go.",
+   "meaning_unavailable": "(no definition available)",
+   "tap_for_meaning": "Tap a word you found to see its meaning"
+  },
+  "labels": {
+   "meta": "${stMode.toUpperCase()}"
+  }
+ },
+ "emojibomb": {
+  "intro": "One letter, three emojis, one word. Type the exact word they describe before the bomb goes off. 4 levels. Choose Basico (3 lives per level) or Hardcore (1 try, no room for mistakes).",
+  "intro_title": "EMOJI BOMB",
+  "static_labels": {
+   "prompt": "The word starts with:"
+  },
+  "buttons": {
+   "submit": "SUBMIT",
+   "play_again": "PLAY AGAIN",
+   "change_mode": "CHANGE MODE",
+   "back_to_menu": "BACK TO MENU"
+  },
+  "messages": {
+   "level_splash": "LEVEL ${levelNumber}",
+   "one_try_tag": "1 TRY",
+   "wrong_guess": "❌ \"${guess.toLowerCase()}\" is wrong — ${ebLives} ${ebLives === 1 ? \"life\" : \"lives\"} left",
+   "empty_answer": "❌ Empty answer — ${ebLives} ${ebLives === 1 ? \"life\" : \"lives\"} left",
+   "correct_flash": "✓ ${item.word}",
+   "gameover_timeout": "💥 Time's up!",
+   "gameover_wrong": "❌ \"${guess.toLowerCase()}\" is wrong",
+   "gameover_empty": "❌ Empty answer",
+   "gameover_lives": "💜 Out of lives",
+   "end_title": "💥 You reached Level ${ebLevelNum()}",
+   "end_detail": "${reason} — the word was:"
+  },
+  "labels": {
+   "level_progress": "LEVEL ${ebLevelNum()} / ${ebRules().levels_per_game}",
+   "word_progress": "WORD ${(ebIndex % 3) + 1} / ${ebRules().words_per_level_in_game}"
+  }
+ },
+ "waffle": {
+  "intro": "Swap letters to solve 6 (or 8) connected words. Green = right spot, yellow = in this word but wrong spot, gray = not in its words. Click one cell, then another, to swap their letters before your swaps run out.",
+  "intro_title": "WAFFLE",
+  "buttons": {
+   "play_again": "PLAY AGAIN",
+   "change_settings": "CHANGE SETTINGS",
+   "back_to_menu": "BACK TO MENU"
+  },
+  "messages": {
+   "unlimited_swaps": "UNLIMITED SWAPS",
+   "swaps_remaining": "${wfSwapsLeft} SWAP${wfSwapsLeft === 1 ? \"\" : \"S\"} REMAINING",
+   "end_title_won": "🎉 Waffle solved!",
+   "end_title_lost": "💥 Out of swaps!",
+   "end_detail_won": "All ${wfCells.length} letters in place${wfSwapsLeft !== null ? ` with ${wfSwapsLeft} swap${wfSwapsLeft === 1 ? \"\" : \"s\"} to spare` : \"\"}.",
+   "end_detail_lost": "You placed ${solvedCount} of ${wfCells.length} letters. These were the words:",
+   "solution_row_label": "Across ${i + 1}",
+   "solution_row_label_down": "Down ${i + 1}",
+   "meaning_unavailable": "(no definition available)"
+  },
+  "labels": {
+   "meta": "${mode.toUpperCase()} · ${LEVEL_LABELS[level]}"
+  }
+ },
+ "bombword": {
+  "intro": "You'll see letters. Type any real English word that starts with them before time runs out. 4 levels, getting harder each time. One mistake and you're out.",
+  "intro_title": "BOMB WORD",
+  "static_labels": {
+   "prompt": "Type a real English word starting with:"
+  },
+  "buttons": {
+   "submit": "SUBMIT",
+   "play_again": "PLAY AGAIN",
+   "back_to_menu": "BACK TO MENU"
+  },
+  "messages": {
+   "level_splash": "LEVEL ${levelNumber}",
+   "gameover_timeout": "💥 Time's up!",
+   "gameover_lives": "💜 Out of lives",
+   "wrong_guess": "❌ \"${guess.toLowerCase()}\" is not valid — ${bwLives} ${bwLives === 1 ? \"life\" : \"lives\"} left",
+   "empty_answer": "❌ Empty answer — ${bwLives} ${bwLives === 1 ? \"life\" : \"lives\"} left",
+   "correct_flash": "✓ ${guess}",
+   "end_title_won": "🎉 You completed all 4 levels!",
+   "end_detail_won": "12 prefixes solved. The bomb never went off.",
+   "end_title_lost": "💥 You reached Level ${bwLevelIndex() + 1}",
+   "end_detail_lost": "${reason} — the prefix was \"${bwPrefixes[bwIndex]}\""
+  },
+  "labels": {
+   "meta": "4 LEVELS · 3 LIVES PER LEVEL",
+   "level_progress": "LEVEL ${bwLevelIndex() + 1} / ${BOMBWORD_DATA.rules.levels_per_game}",
+   "word_progress": "WORD ${(bwIndex % 3) + 1} / ${BOMBWORD_DATA.rules.prefixes_per_level_in_game}"
+  }
+ },
+ "realword": {
+  "intro": "You'll see 8 words. Decide if each one is REAL or FAKE. You have 6 seconds per word — no answer counts as incorrect. 1 point per correct answer.",
+  "intro_title": "IS IT A REAL WORD?",
+  "static_labels": {
+   "question": "Is this a real English word?"
+  },
+  "buttons": {
+   "yes": "✓ Yes",
+   "no": "✗ No",
+   "play_again": "PLAY AGAIN",
+   "back_to_menu": "BACK TO MENU"
+  },
+  "messages": {
+   "progress": "WORD ${rwIndex + 1} / ${rwWords.length}",
+   "correct": "✓",
+   "wrong": "✗",
+   "timeout": "✗ Time's up!",
+   "game_complete_title": "Game complete!",
+   "score_label": "Your score: ",
+   "row_correct_prefix": "✓ ${r.word.toLowerCase()}",
+   "row_wrong_prefix": "✗ ${r.word.toLowerCase()}",
+   "tag_real": "real word",
+   "tag_fake": "fake word",
+   "meaning_not_real": "Not a real word",
+   "meaning_unavailable": "(no definition available)"
+  },
+  "labels": {
+   "meta": "${LEVEL_LABELS[level]} · ${rwRules().words_per_game} words · ${rwRules().seconds_per_word}s each"
+  }
+ },
+ "connections": {
+  "intro": "Group 16 words into 4 hidden categories by meaning. Select 4 words and press Submit — unlimited tries, but Give Up resets your score to 0. Each solved group is 1 point.",
+  "intro_title": "CONNECTIONS",
+  "static_labels": {
+   "instruction": "Group the 16 words into 4 hidden categories. Select 4 and press Submit."
+  },
+  "buttons": {
+   "submit": "SUBMIT",
+   "clear": "CLEAR",
+   "give_up": "🏳️ GIVE UP",
+   "play_again": "PLAY AGAIN",
+   "back_to_menu": "BACK TO MENU"
+  },
+  "messages": {
+   "three_of_four": "💡 You have found 3 correct words of a group",
+   "not_quite": "❌ Not quite, try again",
+   "gave_up_title": "🏳️ You gave up!",
+   "puzzle_complete_title": "🎉 Puzzle complete!",
+   "score_label": "Your score: ",
+   "meaning_unavailable": "(no definition available)"
+  },
+  "labels": {
+   "meta": "${LEVEL_LABELS[level]}"
+  }
+ },
+ "impostor": {
+  "intro": "Find the word that doesn't belong. One wrong click and you're out. 3 rounds: click the 4 words that share something, leave the impostor for last. No hint = 3 pts, with hint = 2 pts.",
+  "intro_title_html": "IMPOSTOR",
+  "static_labels": {
+   "instruction": "Click the words that DON'T belong with the impostor. Leave the impostor for last."
+  },
+  "buttons": {
+   "hint": "💡 HINT",
+   "play_again": "PLAY AGAIN",
+   "change_settings": "CHANGE SETTINGS",
+   "back_to_menu": "BACK TO MENU",
+   "next_round": "NEXT ROUND",
+   "see_results": "SEE RESULTS"
+  },
+  "messages": {
+   "progress": "ROUND ${impIndex + 1} / ${impSets.length}",
+   "round_won": "✅ Round won! The impostor was \"${set.impostor}\" — +${points} pts",
+   "round_lost": "❌ You clicked the impostor! 0 pts this round",
+   "hint_text": "💡 Hint: ${impHintText(impSets[impIndex])}.",
+   "game_complete_title": "Game complete!",
+   "score_label": "Your score: ",
+   "breakdown_row": "R${i + 1}: ${impHintText(s)} — impostor: ${s.impostor}"
+  },
+  "labels": {
+   "meta": "${LEVEL_LABELS[level]}"
+  }
+ },
+ "wordlinks": {
+  "intro": "Guess the secret word from 4 clue words. 3 rounds, 3 attempts each: guess on attempt 1 for 3 points, attempt 2 for 2, attempt 3 for 1. The HINT button reveals a 5th clue but costs 1 attempt.",
+  "intro_title": "WORD LINKS",
+  "static_labels": {
+   "instruction": "These 4 words all point to one secret word:"
+  },
+  "buttons": {
+   "guess": "GUESS",
+   "hint": "💡 HINT (-1 attempt)",
+   "next_round": "NEXT ROUND",
+   "see_results": "SEE RESULTS",
+   "play_again": "PLAY AGAIN",
+   "change_level": "CHANGE LEVEL",
+   "back_to_menu": "BACK TO MENU"
+  },
+  "messages": {
+   "data_error": "Word Links data for this level could not be loaded. Please try another level.",
+   "progress": "ROUND ${wlIndex + 1} / ${wlWords.length}",
+   "type_verb": "(Verb)",
+   "type_noun": "(Noun)",
+   "attempts_left": "Attempts left: ${wlAttemptsLeft}",
+   "correct": "✅ Correct! It was \"${item.word}\" — +${points} point${points === 1 ? \"\" : \"s\"}",
+   "out_of_attempts": "❌ Out of attempts! The word was <span class=\"wl-reveal-word\">${item.word}</span>",
+   "type_a_word": "Type a word",
+   "not_enough_for_hint": "Not enough attempts left for a hint",
+   "game_complete_title": "Game complete!",
+   "score_label": "Your score: ",
+   "breakdown_row_name": "Round ${i + 1}: ${w.word}",
+   "breakdown_row_pts": "${wlScores[i]} pts"
+  },
+  "labels": {
+   "meta": "${wlLevel.toUpperCase()}"
+  }
+ }
 }
