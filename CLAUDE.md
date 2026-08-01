@@ -126,11 +126,11 @@ const VOLUMES = {
 | Sonido | Dónde suena |
 |---|---|
 | `level` | Pantalla de "NIVEL X" (Bomb Word, Emoji Bomb) |
-| `tick` (loop) | Cronómetro corriendo (Bomb Word, Emoji Bomb, Real Word, Hear It advanced) |
+| `tick` (loop) | Cronómetro corriendo (Bomb Word, Emoji Bomb, Real Word). **Hear It NO usa tick** en ningún nivel: su cronómetro de advanced es solo la barra visual `#hi-timer` |
 | `tick_soft` (loop) | Cronómetro de Fill in the Blanks |
-| `correct` | Acierto genérico (Word Links, Real Word, Emoji Match, Spot fase 1 y 2, Impostor al ganar ronda, Strands palabra extra no-temática, Fill in the Blanks) |
-| `wrong` | Fallo genérico, incluye timeouts que cuentan como fallo (mismos juegos que `correct`, + Impostor al clickear la impostora) |
-| `success` | Categoría acertada en Connections, victoria en Waffle |
+| `correct` | Acierto genérico (Word Links, Real Word, Emoji Match, Hear It, Spot fase 1 y 2, Impostor al ganar ronda, Strands palabra extra no-temática, Fill in the Blanks) |
+| `wrong` | Fallo genérico, incluye timeouts que cuentan como fallo (mismos juegos que `correct`; en Hear It el timeout de advanced entra por acá porque fuerza `correct=false`, + Impostor al clickear la impostora) |
+| `success` | **Fin de partida** (ver sección siguiente); categoría acertada en Connections; victoria en Waffle |
 | `fail` | Categoría fallada en Connections (incluye el caso "3 de 4"), derrota en Waffle |
 | `explosion` | Fin de partida por derrota en Bomb Word / Emoji Bomb (nunca en victoria ni al salir voluntariamente) |
 | `letter_move` | Letra ingresada en Word Game (teclado físico o en pantalla, no en backspace/enter), palabra seleccionada en Connections (solo al agregar, no al deseleccionar), swap sin acierto en Waffle |
@@ -145,6 +145,44 @@ disparar DOS sonidos en el mismo click (ej. la última palabra de Impostor
 gana la ronda Y sería "correcta" — solo debe sonar uno). Siempre parar
 loops (`tick`/`tick_soft`) ANTES de reproducir el sonido de cierre, nunca
 después.
+
+### `success` al mostrar la pantalla final
+
+Suena al revelarse el panel de fin de partida, gane o pierda el jugador,
+en: **Word Game, Fill in the Blanks, Spot the Error, Word Links, Impostor,
+Real Word, Emoji Match, Hear It**, y en la **victoria** de Bomb Word y
+Emoji Bomb (`bwWin()` / `ebWin()` — la derrota va por `bwGameOver()` /
+`ebGameOver()` y se queda con `explosion` sola).
+
+Cuatro excepciones, todas por la regla de "un solo sonido por momento":
+
+| Juego | Por qué no se agregó |
+|---|---|
+| **Waffle** | `wfFinish()` ya reproducía `success`/`fail`. Agregar otro sonaría doble |
+| **Connections** | Ya suena `success` al resolver el 4º grupo, y `connFinish()` corre en el mismo tick |
+| **Strands** | Si el **spangram** cierra el puzzle, `victory` (~2-3s) sigue sonando cuando `stFinish` llega 900ms después. La bandera `stEndedWithSpangram` suprime `success` solo en ese caso; en los demás finales (rendirse, sin vidas, última palabra normal) sí suena |
+| **Star Party** | Fuera del sistema, no se toca |
+
+## Animación de fin de partida — `endPop`
+
+Los 13 paneles finales comparten la estructura
+`.end-panel > p.end-title, p.end-word, [contenido], div.end-actions`
+(máximo 6 hijos), así que la animación es **100% CSS y global** — ningún
+juego necesita una línea de JS para adherirse:
+
+```css
+@keyframes endPop { from { opacity:0; transform: translateY(10px) scale(0.85); } to { … } }
+.end-panel > * { animation: endPop 0.35s ease both; }   /* + delays de 60ms por nth-child */
+#sp-end .end-panel > * { animation: none; }             /* Star Party excluido */
+@media (prefers-reduced-motion: reduce) { .end-panel > * { animation: none; } }
+```
+
+Generalizada desde `chipIn` de Connections (que se aplicaba solo a
+`.conn-group`, sin escalonar). Se re-dispara sola en cada partida porque
+los paneles pasan de `display:none` a visible.
+
+**Ojo:** Star Party **también usa `.end-panel`** con el mismo markup
+(`#sp-end`). Sin esa regla de exclusión explícita heredaría la cascada.
 
 ## Tarjetas de portada — preview por imagen
 
@@ -171,6 +209,21 @@ imagen y CSS-dibujadas se vean iguales.
   le agrega `.card-art-img-failed` (`display:none`) — la tarjeta muestra
   solo el degradado morado, sin romper el layout. No hace falta nada
   especial al declarar una tarjeta nueva sin imagen todavía.
+
+**`--art-scale` solo alcanza a las tarjetas con imagen.** Varias portadas
+siguen dibujadas con CSS (Fill in the Blanks `.fib-logo`, Word Links
+`.mini-wl`, Impostor `.mini-impo`, Real Word, Connections…): ahí no hay
+`.card-art-img`, así que la variable no aplica y hay que escalar el
+lockup directo. Precedente en la media query de 480px:
+
+```css
+.fib-logo { transform: scale(0.85); }   /* 165px de logo en una caja de 158px */
+```
+Al diagnosticar un recorte, **medir primero si es horizontal o vertical**:
+el de Fill in the Blanks era horizontal (las puntas de FILL IN / BLANKS
+por el `letter-spacing: 4px`), aunque a simple vista parecía que no cabía
+de alto. En ≤480px la caja baja a 158px de ancho; de 481px para arriba se
+mantiene en 228px y casi nada se recorta.
 
 ## Convenciones
 
