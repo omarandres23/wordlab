@@ -1,0 +1,2189 @@
+{
+  "file": "strands_missing_definitions.json",
+  "purpose": "Palabras de Strands que NO existen en definitions.json. Llena \"en\" y \"es\" en cada entrada. Los spangrams van primero (son los mas visibles al terminar la partida).",
+  "style": "Misma guia que definitions.json: una sola linea, minusculas, sin punto final, explicacion simple sin usar la propia palabra.",
+  "count": 241,
+  "spangram_count": 43,
+  "words": [
+    {
+      "word": "AGRICULTURE",
+      "is_spangram": true,
+      "puzzles": [
+        "Farming"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "ANATOMY",
+      "is_spangram": true,
+      "puzzles": [
+        "The body"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "ANXIETY",
+      "is_spangram": true,
+      "puzzles": [
+        "Emotions of fear"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "ATHLETICS",
+      "is_spangram": true,
+      "puzzles": [
+        "Sports"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "BEDTIME",
+      "is_spangram": true,
+      "puzzles": [
+        "Sleep"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "BOARDING",
+      "is_spangram": true,
+      "puzzles": [
+        "At the airport"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "BOOKWORM",
+      "is_spangram": true,
+      "puzzles": [
+        "Reading"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "COMPUTERS",
+      "is_spangram": true,
+      "puzzles": [
+        "Technology"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "CONSTRUCT",
+      "is_spangram": true,
+      "puzzles": [
+        "Building"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "COOKING",
+      "is_spangram": true,
+      "puzzles": [
+        "In the kitchen"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "CREATIVE",
+      "is_spangram": true,
+      "puzzles": [
+        "Art"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "CREATURES",
+      "is_spangram": true,
+      "puzzles": [
+        "Animals"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "DINEOUT",
+      "is_spangram": true,
+      "puzzles": [
+        "Restaurant"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "EMOTIONS",
+      "is_spangram": true,
+      "puzzles": [
+        "Feelings"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "FEATHERS",
+      "is_spangram": true,
+      "puzzles": [
+        "Birds"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "FINANCES",
+      "is_spangram": true,
+      "puzzles": [
+        "Money matters"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "FREETIME",
+      "is_spangram": true,
+      "puzzles": [
+        "Weekend plans"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "FRUSTRATION",
+      "is_spangram": true,
+      "puzzles": [
+        "Emotions of anger"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "GREENERY",
+      "is_spangram": true,
+      "puzzles": [
+        "The garden"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "HAPPINESS",
+      "is_spangram": true,
+      "puzzles": [
+        "Emotions of joy"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "HOUSEWORK",
+      "is_spangram": true,
+      "puzzles": [
+        "House chores"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "MARINE",
+      "is_spangram": true,
+      "puzzles": [
+        "Ocean life"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "MELODIES",
+      "is_spangram": true,
+      "puzzles": [
+        "Music"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "MOVIENIGHT",
+      "is_spangram": true,
+      "puzzles": [
+        "Cinema"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "NAVIGATE",
+      "is_spangram": true,
+      "puzzles": [
+        "Directions"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "NEWCAREER",
+      "is_spangram": true,
+      "puzzles": [
+        "Job hunting"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "OUTDOORS",
+      "is_spangram": true,
+      "puzzles": [
+        "Nature"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "OUTDOORSY",
+      "is_spangram": true,
+      "puzzles": [
+        "Camping"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "PALETTE",
+      "is_spangram": true,
+      "puzzles": [
+        "Colors"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "PARTYTIME",
+      "is_spangram": true,
+      "puzzles": [
+        "Celebration"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "PRODUCE",
+      "is_spangram": true,
+      "puzzles": [
+        "Fruits"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "PROFESSION",
+      "is_spangram": true,
+      "puzzles": [
+        "Jobs"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "RELATIVES",
+      "is_spangram": true,
+      "puzzles": [
+        "Family"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "SEASIDE",
+      "is_spangram": true,
+      "puzzles": [
+        "Beach vacation"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "SIGHTSEE",
+      "is_spangram": true,
+      "puzzles": [
+        "Exploring a city"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "SNOWFALL",
+      "is_spangram": true,
+      "puzzles": [
+        "Winter"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "SPEAKING",
+      "is_spangram": true,
+      "puzzles": [
+        "Communication"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "STARTDAY",
+      "is_spangram": true,
+      "puzzles": [
+        "Morning routine"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "STORMY",
+      "is_spangram": true,
+      "puzzles": [
+        "Bad weather"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "VEHICLES",
+      "is_spangram": true,
+      "puzzles": [
+        "Transport"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "WARDROBE",
+      "is_spangram": true,
+      "puzzles": [
+        "Clothing"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "WELLNESS",
+      "is_spangram": true,
+      "puzzles": [
+        "Health"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "WORKSPACE",
+      "is_spangram": true,
+      "puzzles": [
+        "At the office"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "ALARM",
+      "is_spangram": false,
+      "puzzles": [
+        "Morning routine"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "APP",
+      "is_spangram": false,
+      "puzzles": [
+        "Technology"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "ARTIST",
+      "is_spangram": false,
+      "puzzles": [
+        "Jobs"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "ASTEROID",
+      "is_spangram": false,
+      "puzzles": [
+        "Space"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "AUNT",
+      "is_spangram": false,
+      "puzzles": [
+        "Family"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "BACKPACK",
+      "is_spangram": false,
+      "puzzles": [
+        "Camping"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "BAKING",
+      "is_spangram": false,
+      "puzzles": [
+        "In the kitchen"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "BAND",
+      "is_spangram": false,
+      "puzzles": [
+        "Music"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "BEACH",
+      "is_spangram": false,
+      "puzzles": [
+        "Summer"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "BEHIND",
+      "is_spangram": false,
+      "puzzles": [
+        "Directions"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "BLOOM",
+      "is_spangram": false,
+      "puzzles": [
+        "The garden"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "BOLT",
+      "is_spangram": false,
+      "puzzles": [
+        "Building"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "BREEZE",
+      "is_spangram": false,
+      "puzzles": [
+        "Weather",
+        "Nature",
+        "Summer"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "BRUNCH",
+      "is_spangram": false,
+      "puzzles": [
+        "Weekend plans"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "BRUSH",
+      "is_spangram": false,
+      "puzzles": [
+        "Morning routine",
+        "Art"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "BUGS",
+      "is_spangram": false,
+      "puzzles": [
+        "Camping"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "CAMP",
+      "is_spangram": false,
+      "puzzles": [
+        "Camping"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "CANVAS",
+      "is_spangram": false,
+      "puzzles": [
+        "Art"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "CARDIO",
+      "is_spangram": false,
+      "puzzles": [
+        "Fitness"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "CARE",
+      "is_spangram": false,
+      "puzzles": [
+        "Health"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "CASHIER",
+      "is_spangram": false,
+      "puzzles": [
+        "Shopping"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "CATTLE",
+      "is_spangram": false,
+      "puzzles": [
+        "Farming"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "CHILLY",
+      "is_spangram": false,
+      "puzzles": [
+        "Winter"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "CHOP",
+      "is_spangram": false,
+      "puzzles": [
+        "In the kitchen"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "CHORUS",
+      "is_spangram": false,
+      "puzzles": [
+        "Music"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "CLEAN",
+      "is_spangram": false,
+      "puzzles": [
+        "House chores"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "CLUE",
+      "is_spangram": false,
+      "puzzles": [
+        "Detective work"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "COACH",
+      "is_spangram": false,
+      "puzzles": [
+        "Sports"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "CODE",
+      "is_spangram": false,
+      "puzzles": [
+        "Technology"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "COLD",
+      "is_spangram": false,
+      "puzzles": [
+        "Weather",
+        "Winter"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "COMB",
+      "is_spangram": false,
+      "puzzles": [
+        "Morning routine"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "COMET",
+      "is_spangram": false,
+      "puzzles": [
+        "Space"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "COMPASS",
+      "is_spangram": false,
+      "puzzles": [
+        "Directions"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "CONCERT",
+      "is_spangram": false,
+      "puzzles": [
+        "Music"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "CONCRETE",
+      "is_spangram": false,
+      "puzzles": [
+        "Building"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "CONFETTI",
+      "is_spangram": false,
+      "puzzles": [
+        "Celebration"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "CONFUSED",
+      "is_spangram": false,
+      "puzzles": [
+        "Feelings"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "COSMOS",
+      "is_spangram": false,
+      "puzzles": [
+        "Space"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "COVER",
+      "is_spangram": false,
+      "puzzles": [
+        "Job hunting"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "CRIMSON",
+      "is_spangram": false,
+      "puzzles": [
+        "Colors"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "CURE",
+      "is_spangram": false,
+      "puzzles": [
+        "Health"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "DAY",
+      "is_spangram": false,
+      "puzzles": [
+        "Time"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "DEEP",
+      "is_spangram": false,
+      "puzzles": [
+        "Ocean life"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "DELIGHT",
+      "is_spangram": false,
+      "puzzles": [
+        "Emotions of joy"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "DEPART",
+      "is_spangram": false,
+      "puzzles": [
+        "At the airport"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "DISH",
+      "is_spangram": false,
+      "puzzles": [
+        "Restaurant"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "DOLPHIN",
+      "is_spangram": false,
+      "puzzles": [
+        "Animals",
+        "Ocean life"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "DRAWING",
+      "is_spangram": false,
+      "puzzles": [
+        "Art"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "DRIZZLE",
+      "is_spangram": false,
+      "puzzles": [
+        "Weather"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "DUSTING",
+      "is_spangram": false,
+      "puzzles": [
+        "House chores"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "ENGINEER",
+      "is_spangram": false,
+      "puzzles": [
+        "Jobs"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "EXERCISE",
+      "is_spangram": false,
+      "puzzles": [
+        "Health"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "FEAR",
+      "is_spangram": false,
+      "puzzles": [
+        "Emotions of fear"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "FICTION",
+      "is_spangram": false,
+      "puzzles": [
+        "Reading"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "FIELD",
+      "is_spangram": false,
+      "puzzles": [
+        "Farming"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "FIG",
+      "is_spangram": false,
+      "puzzles": [
+        "Fruits"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "FILM",
+      "is_spangram": false,
+      "puzzles": [
+        "Cinema"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "FIND",
+      "is_spangram": false,
+      "puzzles": [
+        "Detective work"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "FINGER",
+      "is_spangram": false,
+      "puzzles": [
+        "The body"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "FIT",
+      "is_spangram": false,
+      "puzzles": [
+        "Fitness"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "FLAMINGO",
+      "is_spangram": false,
+      "puzzles": [
+        "Birds"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "FOX",
+      "is_spangram": false,
+      "puzzles": [
+        "Animals"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "FREEZE",
+      "is_spangram": false,
+      "puzzles": [
+        "Winter"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "FRIENDS",
+      "is_spangram": false,
+      "puzzles": [
+        "Weekend plans"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "FUN",
+      "is_spangram": false,
+      "puzzles": [
+        "Celebration"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "GALE",
+      "is_spangram": false,
+      "puzzles": [
+        "Bad weather"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "GALLERY",
+      "is_spangram": false,
+      "puzzles": [
+        "Art"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "GLAD",
+      "is_spangram": false,
+      "puzzles": [
+        "Emotions of joy"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "GOLDEN",
+      "is_spangram": false,
+      "puzzles": [
+        "Colors"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "GOLF",
+      "is_spangram": false,
+      "puzzles": [
+        "Sports"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "GRAIN",
+      "is_spangram": false,
+      "puzzles": [
+        "Farming"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "GRANDMA",
+      "is_spangram": false,
+      "puzzles": [
+        "Family"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "GRIN",
+      "is_spangram": false,
+      "puzzles": [
+        "Emotions of joy"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "GUESTS",
+      "is_spangram": false,
+      "puzzles": [
+        "Celebration"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "HAT",
+      "is_spangram": false,
+      "puzzles": [
+        "Clothing"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "HEALTHY",
+      "is_spangram": false,
+      "puzzles": [
+        "Health"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "HIRE",
+      "is_spangram": false,
+      "puzzles": [
+        "Job hunting"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "HOCKEY",
+      "is_spangram": false,
+      "puzzles": [
+        "Sports"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "HOMEWORK",
+      "is_spangram": false,
+      "puzzles": [
+        "School life"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "HOODIE",
+      "is_spangram": false,
+      "puzzles": [
+        "Clothing"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "HOUR",
+      "is_spangram": false,
+      "puzzles": [
+        "Time"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "JEALOUS",
+      "is_spangram": false,
+      "puzzles": [
+        "Feelings"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "JELLYFISH",
+      "is_spangram": false,
+      "puzzles": [
+        "Ocean life"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "JOB",
+      "is_spangram": false,
+      "puzzles": [
+        "Jobs"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "JOYFUL",
+      "is_spangram": false,
+      "puzzles": [
+        "Emotions of joy"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "KIDNEY",
+      "is_spangram": false,
+      "puzzles": [
+        "The body"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "LANDMARK",
+      "is_spangram": false,
+      "puzzles": [
+        "Exploring a city"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "LISTEN",
+      "is_spangram": false,
+      "puzzles": [
+        "Communication"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "MAD",
+      "is_spangram": false,
+      "puzzles": [
+        "Emotions of anger"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "MALL",
+      "is_spangram": false,
+      "puzzles": [
+        "Shopping"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "MAP",
+      "is_spangram": false,
+      "puzzles": [
+        "Exploring a city",
+        "Camping"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "MARS",
+      "is_spangram": false,
+      "puzzles": [
+        "Space"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "MATTRESS",
+      "is_spangram": false,
+      "puzzles": [
+        "Sleep"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "MEADOW",
+      "is_spangram": false,
+      "puzzles": [
+        "Nature"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "MEASURE",
+      "is_spangram": false,
+      "puzzles": [
+        "In the kitchen"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "MEDICINE",
+      "is_spangram": false,
+      "puzzles": [
+        "Health"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "MITTEN",
+      "is_spangram": false,
+      "puzzles": [
+        "Winter"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "MONTH",
+      "is_spangram": false,
+      "puzzles": [
+        "Time"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "MONUMENT",
+      "is_spangram": false,
+      "puzzles": [
+        "Exploring a city"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "MOP",
+      "is_spangram": false,
+      "puzzles": [
+        "House chores"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "MOTORBIKE",
+      "is_spangram": false,
+      "puzzles": [
+        "Transport"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "MUSCLE",
+      "is_spangram": false,
+      "puzzles": [
+        "The body",
+        "Fitness"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "MUSIC",
+      "is_spangram": false,
+      "puzzles": [
+        "Celebration"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "OCTOPUS",
+      "is_spangram": false,
+      "puzzles": [
+        "Ocean life"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "ORBIT",
+      "is_spangram": false,
+      "puzzles": [
+        "Space"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "ORGANIZE",
+      "is_spangram": false,
+      "puzzles": [
+        "House chores"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "OUTING",
+      "is_spangram": false,
+      "puzzles": [
+        "Weekend plans"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "PAGE",
+      "is_spangram": false,
+      "puzzles": [
+        "Reading"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "PAN",
+      "is_spangram": false,
+      "puzzles": [
+        "In the kitchen"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "PEAR",
+      "is_spangram": false,
+      "puzzles": [
+        "Fruits"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "PENGUIN",
+      "is_spangram": false,
+      "puzzles": [
+        "Birds"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "PETAL",
+      "is_spangram": false,
+      "puzzles": [
+        "The garden"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "PHOTO",
+      "is_spangram": false,
+      "puzzles": [
+        "Exploring a city"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "PICNIC",
+      "is_spangram": false,
+      "puzzles": [
+        "Weekend plans",
+        "Summer"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "PINEAPPLE",
+      "is_spangram": false,
+      "puzzles": [
+        "Fruits"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "PLUM",
+      "is_spangram": false,
+      "puzzles": [
+        "Fruits"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "PROFIT",
+      "is_spangram": false,
+      "puzzles": [
+        "Money matters"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "PUSHUP",
+      "is_spangram": false,
+      "puzzles": [
+        "Fitness"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "QUIET",
+      "is_spangram": false,
+      "puzzles": [
+        "Sleep"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "REEL",
+      "is_spangram": false,
+      "puzzles": [
+        "Cinema"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "RELAX",
+      "is_spangram": false,
+      "puzzles": [
+        "Weekend plans"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "RESERVE",
+      "is_spangram": false,
+      "puzzles": [
+        "Restaurant"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "REST",
+      "is_spangram": false,
+      "puzzles": [
+        "Weekend plans",
+        "Health"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "RIB",
+      "is_spangram": false,
+      "puzzles": [
+        "The body"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "RIGHT",
+      "is_spangram": false,
+      "puzzles": [
+        "Directions"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "ROBIN",
+      "is_spangram": false,
+      "puzzles": [
+        "Birds"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "ROLE",
+      "is_spangram": false,
+      "puzzles": [
+        "Job hunting"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "ROUTE",
+      "is_spangram": false,
+      "puzzles": [
+        "Directions"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "RUGBY",
+      "is_spangram": false,
+      "puzzles": [
+        "Sports"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "RUNNING",
+      "is_spangram": false,
+      "puzzles": [
+        "Sports",
+        "Fitness"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "SAUCEPAN",
+      "is_spangram": false,
+      "puzzles": [
+        "In the kitchen"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "SCAFFOLD",
+      "is_spangram": false,
+      "puzzles": [
+        "Building"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "SCOOTER",
+      "is_spangram": false,
+      "puzzles": [
+        "Transport"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "SCRUB",
+      "is_spangram": false,
+      "puzzles": [
+        "House chores"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "SEARCH",
+      "is_spangram": false,
+      "puzzles": [
+        "Detective work"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "SEAT",
+      "is_spangram": false,
+      "puzzles": [
+        "At the airport",
+        "Cinema"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "SECOND",
+      "is_spangram": false,
+      "puzzles": [
+        "Time"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "SERVE",
+      "is_spangram": false,
+      "puzzles": [
+        "Restaurant"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "SHADE",
+      "is_spangram": false,
+      "puzzles": [
+        "Summer"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "SHAKY",
+      "is_spangram": false,
+      "puzzles": [
+        "Emotions of fear"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "SHIVER",
+      "is_spangram": false,
+      "puzzles": [
+        "Emotions of fear"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "SHORTS",
+      "is_spangram": false,
+      "puzzles": [
+        "Clothing"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "SHOULDER",
+      "is_spangram": false,
+      "puzzles": [
+        "The body"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "SHOUT",
+      "is_spangram": false,
+      "puzzles": [
+        "Communication"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "SHOVEL",
+      "is_spangram": false,
+      "puzzles": [
+        "The garden"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "SHOWER",
+      "is_spangram": false,
+      "puzzles": [
+        "Morning routine"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "SILVER",
+      "is_spangram": false,
+      "puzzles": [
+        "Colors"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "SKILLET",
+      "is_spangram": false,
+      "puzzles": [
+        "In the kitchen"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "SLEEPING",
+      "is_spangram": false,
+      "puzzles": [
+        "Camping"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "SNAP",
+      "is_spangram": false,
+      "puzzles": [
+        "Emotions of anger"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "SNOOZE",
+      "is_spangram": false,
+      "puzzles": [
+        "Morning routine"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "SNORE",
+      "is_spangram": false,
+      "puzzles": [
+        "Sleep"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "SNORKEL",
+      "is_spangram": false,
+      "puzzles": [
+        "Beach vacation"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "SON",
+      "is_spangram": false,
+      "puzzles": [
+        "Family"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "SQUAT",
+      "is_spangram": false,
+      "puzzles": [
+        "Fitness"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "STARS",
+      "is_spangram": false,
+      "puzzles": [
+        "Camping"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "STARTER",
+      "is_spangram": false,
+      "puzzles": [
+        "Restaurant"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "STOMACH",
+      "is_spangram": false,
+      "puzzles": [
+        "The body"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "STRAIGHT",
+      "is_spangram": false,
+      "puzzles": [
+        "Directions"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "STRAWBERRY",
+      "is_spangram": false,
+      "puzzles": [
+        "Fruits"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "STRETCH",
+      "is_spangram": false,
+      "puzzles": [
+        "Fitness"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "STROLL",
+      "is_spangram": false,
+      "puzzles": [
+        "Weekend plans"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "STUDIO",
+      "is_spangram": false,
+      "puzzles": [
+        "Art"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "STUDY",
+      "is_spangram": false,
+      "puzzles": [
+        "School life"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "SUNBURN",
+      "is_spangram": false,
+      "puzzles": [
+        "Summer"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "SUNSCREEN",
+      "is_spangram": false,
+      "puzzles": [
+        "Beach vacation"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "SUNSET",
+      "is_spangram": false,
+      "puzzles": [
+        "Beach vacation"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "SURF",
+      "is_spangram": false,
+      "puzzles": [
+        "Beach vacation"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "SUSPECT",
+      "is_spangram": false,
+      "puzzles": [
+        "Detective work"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "SWAN",
+      "is_spangram": false,
+      "puzzles": [
+        "Birds"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "SWEATER",
+      "is_spangram": false,
+      "puzzles": [
+        "Clothing"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "TALK",
+      "is_spangram": false,
+      "puzzles": [
+        "Communication"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "TAN",
+      "is_spangram": false,
+      "puzzles": [
+        "Beach vacation"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "TEAL",
+      "is_spangram": false,
+      "puzzles": [
+        "Colors"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "TEAM",
+      "is_spangram": false,
+      "puzzles": [
+        "Sports"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "TEMPO",
+      "is_spangram": false,
+      "puzzles": [
+        "Music"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "TEST",
+      "is_spangram": false,
+      "puzzles": [
+        "School life"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "TIMBER",
+      "is_spangram": false,
+      "puzzles": [
+        "Building"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "TONE",
+      "is_spangram": false,
+      "puzzles": [
+        "Communication"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "TOOTHPASTE",
+      "is_spangram": false,
+      "puzzles": [
+        "Morning routine"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "TOUR",
+      "is_spangram": false,
+      "puzzles": [
+        "Exploring a city"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "TRACTOR",
+      "is_spangram": false,
+      "puzzles": [
+        "Farming"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "TRAIL",
+      "is_spangram": false,
+      "puzzles": [
+        "Detective work"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "TRAILER",
+      "is_spangram": false,
+      "puzzles": [
+        "Cinema"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "TRASH",
+      "is_spangram": false,
+      "puzzles": [
+        "House chores"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "TREMBLE",
+      "is_spangram": false,
+      "puzzles": [
+        "Emotions of fear"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "TRIP",
+      "is_spangram": false,
+      "puzzles": [
+        "At the airport"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "TURN",
+      "is_spangram": false,
+      "puzzles": [
+        "Directions"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "UMBRELLA",
+      "is_spangram": false,
+      "puzzles": [
+        "Beach vacation"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "UPBEAT",
+      "is_spangram": false,
+      "puzzles": [
+        "Emotions of joy"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "UPSET",
+      "is_spangram": false,
+      "puzzles": [
+        "Emotions of anger"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "VACUUM",
+      "is_spangram": false,
+      "puzzles": [
+        "House chores"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "VAN",
+      "is_spangram": false,
+      "puzzles": [
+        "Transport"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "VIOLET",
+      "is_spangram": false,
+      "puzzles": [
+        "Colors"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "WAKE",
+      "is_spangram": false,
+      "puzzles": [
+        "Morning routine"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "WET",
+      "is_spangram": false,
+      "puzzles": [
+        "Bad weather"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "WIFI",
+      "is_spangram": false,
+      "puzzles": [
+        "Technology"
+      ],
+      "en": "",
+      "es": ""
+    },
+    {
+      "word": "YELL",
+      "is_spangram": false,
+      "puzzles": [
+        "Emotions of anger"
+      ],
+      "en": "",
+      "es": ""
+    }
+  ]
+}

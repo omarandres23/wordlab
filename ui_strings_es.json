@@ -192,6 +192,68 @@
    "word_progress": "PALABRA ${(ebIndex % 3) + 1} / ${ebRules().words_per_level_in_game}"
   }
  },
+ "emojimatch": {
+  "intro": "Tres emojis, cuatro palabras. Elige la que describen. 8 rondas, sin tiempo y sin vidas — tómate lo que necesites. Si fallas, te muestra la respuesta correcta antes de avanzar. 1 punto por acierto.",
+  "intro_title": "EMOJI MATCH",
+  "buttons": {
+   "play_again": "JUGAR DE NUEVO",
+   "back_to_menu": "VOLVER AL MENÚ"
+  },
+  "messages": {
+   "progress": "RONDA ${emIndex + 1} / ${emRounds.length}",
+   "game_complete_title": "¡Juego completo!",
+   "score_label": "Tu puntaje: ",
+   "tap_for_meaning": "Toca una palabra para ver su significado",
+   "meaning_unavailable": "(sin definición disponible)"
+  },
+  "labels": {
+   "meta": "${LEVEL_LABELS[level]} · ${emRules().rounds_per_game} rondas"
+  }
+ },
+ "hearit": {
+  "intro": "Escucha una palabra en inglés y responde lo que oíste. Básico: eliges entre 4 opciones y escuchas las veces que quieras. Intermedio: la escribes, 3 escuchas. Avanzado: la escribes, 1 escucha y 10 segundos. 8 rondas, 1 punto cada una.",
+  "intro_title": "HEAR IT",
+  "static_labels": {
+   "input_placeholder": "Escribe lo que oíste..."
+  },
+  "buttons": {
+   "check": "VERIFICAR",
+   "listen_again": "🔊 Escuchar de nuevo",
+   "play_again": "JUGAR DE NUEVO",
+   "back_to_menu": "VOLVER AL MENÚ"
+  },
+  "messages": {
+   "progress": "RONDA ${hiIndex + 1} / ${hiRounds.length}",
+   "replays_unlimited": "Escucha las veces que quieras",
+   "replays_left": "Te quedan ${hiReplaysLeft} escucha(s)",
+   "letter_count": "${round.letters} letras",
+   "correct": "✓ ¡Correcto!",
+   "wrong": "✗ Era \"${round.answer}\"",
+   "timeout": "⏰ Se acabó el tiempo — era \"${round.answer}\"",
+   "game_complete_title": "¡Juego completo!",
+   "score_label": "Tu puntaje: ",
+   "tap_for_meaning": "Toca una palabra para ver su significado",
+   "meaning_unavailable": "(sin definición disponible)",
+   "contrast_note": "Oíste \"${round.minimal_pair}\" en vez de \"${round.answer}\". ${why}.",
+   "no_voice": "Este dispositivo no tiene ninguna voz en inglés instalada, así que no se pueden pronunciar las palabras. Prueba con otro navegador o instala una voz en inglés en la configuración del sistema."
+  },
+  "labels": {
+   "meta": "${LEVEL_LABELS[level]} · ${HEARIT_DATA.rules.rounds_per_game} rondas"
+  },
+  "phonetic_contrasts": {
+   "b_v": "El español tiene un solo sonido para B y V",
+   "short_long_i": "El español no tiene la I corta de ship",
+   "ae_e": "El español no tiene la vocal de cat",
+   "sh_ch": "SH y CH se confunden constantemente",
+   "s_z": "El español no tiene Z sonora",
+   "th": "La TH inglesa no existe en español",
+   "silent_h": "La H es muda en español",
+   "uh_ah": "La vocal de cup no existe en español",
+   "short_long_u": "U corta vs U larga: full/fool",
+   "y_j": "Y consonante vs J inglesa",
+   "w_v": "El español no tiene W consonante"
+  }
+ },
  "waffle": {
   "intro": "Intercambia letras para resolver 6 (u 8) palabras conectadas. Verde = lugar correcto, amarillo = está en esa palabra pero en el lugar equivocado, gris = no está en sus palabras. Haz click en una celda, luego en otra, para intercambiar sus letras antes de quedarte sin intercambios.",
   "intro_title": "WAFFLE",

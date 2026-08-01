@@ -8,9 +8,85 @@
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => document.querySelectorAll(sel);
 
+// ---------- sound control: speaker icon + volume popover (header and every
+// game screen with sound) ----------
+// every instance shares SFX's single localStorage-backed muted/volume state,
+// so touching any one of them updates every icon and slider on the page.
+//
+// Structure per instance:
+//   <div class="sfx-control">
+//     <button data-sfx-toggle>            -- click opens/closes the popover
+//       <span class="mute-icon">          -- reflects mute state (visible even closed)
+//     <div class="sfx-panel" data-sfx-panel>   -- the popover itself
+//       <button data-mute-btn>            -- actually toggles mute, lives INSIDE the panel
+//         <span class="mute-icon">
+//       <input data-sfx-volume>           -- the volume slider
+
+// updates EVERY speaker icon on the page (both the outer trigger and the
+// mute toggle inside each panel) — there are two icons per instance
+function muteRenderIcons() {
+  const muted = SFX.isMuted();
+  $$(".mute-icon").forEach((icon) => {
+    icon.textContent = muted ? "🔇" : "🔊";
+  });
+  $$("[data-mute-btn]").forEach((btn) => {
+    btn.setAttribute("aria-label", muted ? "Unmute sound effects" : "Mute sound effects");
+  });
+}
+$$("[data-mute-btn]").forEach((btn) =>
+  btn.addEventListener("click", () => {
+    SFX.toggleMuted();
+    muteRenderIcons();
+  })
+);
+muteRenderIcons(); // reflect the persisted preference on load
+
+function volumeRenderSliders() {
+  const pct = Math.round(SFX.getVolume() * 100);
+  $$("[data-sfx-volume]").forEach((slider) => {
+    slider.value = pct;
+  });
+}
+$$("[data-sfx-volume]").forEach((slider) =>
+  slider.addEventListener("input", () => {
+    SFX.setVolume(Number(slider.value) / 100);
+    volumeRenderSliders(); // keep every slider on the page in sync with this one
+  })
+);
+volumeRenderSliders(); // reflect the persisted volume (default 0.5) on load
+
+// ---- popover open/close ----
+function sfxCloseAllPanels(except) {
+  $$("[data-sfx-panel]").forEach((panel) => {
+    if (panel !== except) {
+      panel.classList.add("hidden");
+      panel.closest(".sfx-control")?.querySelector("[data-sfx-toggle]")?.setAttribute("aria-expanded", "false");
+    }
+  });
+}
+$$("[data-sfx-toggle]").forEach((btn) => {
+  const panel = btn.parentElement.querySelector("[data-sfx-panel]");
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation(); // don't let this same click immediately hit the outside-click closer below
+    const willOpen = panel.classList.contains("hidden");
+    sfxCloseAllPanels(willOpen ? panel : null);
+    panel.classList.toggle("hidden", !willOpen);
+    btn.setAttribute("aria-expanded", String(willOpen));
+  });
+});
+// tap outside any open panel closes it
+document.addEventListener("click", (e) => {
+  if (!e.target.closest(".sfx-control")) sfxCloseAllPanels(null);
+});
+
 function showScreen(id) {
   $$(".screen").forEach((s) => s.classList.remove("active"));
   $(id).classList.add("active");
+  // the sound control lives in the header (outside the screen system, so it
+  // stays visually anchored beside the logo) but must only be VISIBLE on the
+  // home screen — every game screen had its own copy removed entirely.
+  const sfx = $("#home-sfx-control");
+  if (sfx) sfx.classList.toggle("hidden", id !== "#screen-home");
 }
 
 function randomItem(arr) {
@@ -67,6 +143,14 @@ const GAME_INFO = {
   strands: {
     title: "STRANDS",
     desc: "Find 8 hidden words connected by a theme, including the spangram (it touches two opposite sides). Drag across adjacent letters to trace a word. Extra real words you find along the way earn hints: every 3 gives you 1.",
+  },
+  hearit: {
+    title: "HEAR IT",
+    desc: "Listen to an English word and answer what you heard. Basic: pick from 4 options, listen as often as you want. Intermediate: type it, 3 listens. Advanced: type it, 1 listen and 10 seconds. 8 rounds, 1 point each.",
+  },
+  emojimatch: {
+    title: "EMOJI MATCH",
+    desc: "Three emojis, four words. Pick the one they describe. 8 rounds, no timer and no lives — take your time. A wrong pick shows you the right answer before moving on. 1 point per correct answer.",
   },
   emojibomb: {
     title: "EMOJI BOMB",
@@ -200,8 +284,8 @@ function openIntro(game) {
     generalOpt.style.display = "";
   }
 
-  // Spot the Error, Word Links, Connections and Is It a Real Word have no
-  // categories — difficulty only.
+  // Spot the Error, Word Links, Connections, Is It a Real Word, Emoji Match and
+  // Hear It have no categories — difficulty only.
   // Bomb Word has NO selectors; Emoji Bomb and Strands only have their own mode row.
   // Fill in the Blanks, Impostor and Wordle no longer show category either — those
   // games now mix every category together and only ask for difficulty.
@@ -209,7 +293,8 @@ function openIntro(game) {
   const showCategory =
     !noSelectors &&
     game !== "spot" && game !== "wordlinks" && game !== "connections" && game !== "waffle" &&
-    game !== "blanks" && game !== "impostor" && game !== "wordle" && game !== "realword";
+    game !== "blanks" && game !== "impostor" && game !== "wordle" && game !== "realword" &&
+    game !== "emojimatch" && game !== "hearit";
   $("#category-label").style.display = showCategory ? "" : "none";
   $("#category-row").style.display = showCategory ? "" : "none";
 
@@ -372,6 +457,8 @@ $("#intro-start").addEventListener("click", () => {
   if (pendingGame === "impostor") startImpostor(category, level);
   if (pendingGame === "connections") startConnections(level);
   if (pendingGame === "realword") startRealword(level);
+  if (pendingGame === "emojimatch") startEmojiMatch(level);
+  if (pendingGame === "hearit") startHearIt(level);
   if (pendingGame === "bombword") startBombword();
   if (pendingGame === "waffle")
     startWaffle(document.querySelector('input[name="wmode"]:checked').value, level);
@@ -391,6 +478,7 @@ $$("[data-back]").forEach((btn) =>
     fbStopTimer(); // same for Fill in the Blanks
     fbStopMeaningTimer(); // and its post-answer meaning panel
     stStopReveal(); // and Strands' give-up reveal sequence
+    SFX.stopAll(); // leaving mid-game must not leave the tick loop (or anything else) running
     showScreen("#screen-home");
   })
 );
@@ -398,6 +486,7 @@ $$("[data-back]").forEach((btn) =>
 $$("[data-replay]").forEach((btn) =>
   btn.addEventListener("click", () => {
     wordleActive = false;
+    SFX.stopAll();
     showScreen("#screen-home");
     openIntro(btn.dataset.replay); // reopen the selector for the same game
   })
@@ -474,6 +563,7 @@ function useHint() {
   }
   if (!candidates.length) return;
 
+  SFX.play("hint");
   hintedPositions.add(randomItem(candidates));
   renderHintReveals();
   if (hintedPositions.size + greenPositions.size >= answer.length) {
@@ -630,6 +720,7 @@ function handleKey(k) {
     submitGuess();
     return;
   } else if (currentGuess.length < answer.length) {
+    SFX.play("letter_move"); // fires the same for on-screen clicks and physical keys — both funnel through handleKey
     currentGuess += k;
   }
   paintCurrentRow();
@@ -747,6 +838,7 @@ const BLANKS_SECONDS = { basico: 20, intermedio: 15, avanzado: 10 };
 let blanksSeconds = 20;
 
 function fbStopTimer() {
+  SFX.stop("tick_soft"); // single choke point: covers correct/timeout/exit/next sentence
   if (blanksTimerId) {
     clearInterval(blanksTimerId);
     blanksTimerId = null;
@@ -868,6 +960,7 @@ function loadSentence() {
   // per-sentence countdown (20s/15s/10s by level) — it NEVER resets, not even
   // when the extra letters get revealed after the first miss
   fbStopTimer();
+  SFX.loop("tick_soft"); // starts the instant the countdown starts, per sentence
   blanksDeadline = Date.now() + blanksSeconds * 1000;
   fbTick();
   blanksTimerId = setInterval(fbTick, 100);
@@ -887,7 +980,8 @@ function fbTick() {
   if (msLeft <= 0 && !blanksOver) {
     // time's up: reveal the answer, no points, move on
     blanksOver = true;
-    fbStopTimer();
+    fbStopTimer(); // stops tick_soft BEFORE wrong, so they never overlap
+    SFX.play("wrong");
     const item = blanksRound[blanksIndex];
     $("#blanks-feedback").textContent = interp(t("blanks", "messages.time_up"), { "item.word": item.word });
     revealAndNext(item);
@@ -908,13 +1002,18 @@ $("#blanks-form").addEventListener("submit", (e) => {
 
   if (guess === word) {
     blanksOver = true;
-    fbStopTimer();
+    fbStopTimer(); // stops tick_soft
+    SFX.play("correct");
     blanksScore += 1;
     $("#blanks-feedback").textContent = t("blanks", "messages.correct");
     revealAndNext(item);
     return;
   }
 
+  // any incorrect submission plays wrong — both the first miss (which reveals
+  // extra letters) and every miss after it — WITHOUT touching tick_soft, which
+  // keeps counting down through both
+  SFX.play("wrong");
   if (!blanksExtraUsed) {
     // ONE-TIME reveal after the first miss: +1 letter (words of ≤6 letters) or
     // +2 (7+), but never the whole word. The timer keeps running untouched.
@@ -1059,10 +1158,12 @@ function loadSpotRound() {
 
 function handleSentenceClick(btn, sentence) {
   if (sentence === spotErrorSentence) {
+    SFX.play("correct");
     btn.classList.add("found");
     $("#spot-feedback").textContent = t("spot", "messages.phase1_correct");
     setTimeout(startSpotPhase2, 700);
   } else {
+    SFX.play("wrong");
     btn.classList.add("wrong"); // fades out via CSS and becomes unclickable
     spotRoundScore -= 0.25;
     $("#spot-feedback").textContent = t("spot", "messages.phase1_wrong");
@@ -1089,10 +1190,12 @@ function startSpotPhase2() {
     btn.textContent = token;
     btn.addEventListener("click", () => {
       if (errorTokens.includes(normalize(token))) {
+        SFX.play("correct");
         btn.classList.add("found");
         wrap.querySelectorAll("button").forEach((b) => (b.disabled = true));
         finishSpotRound();
       } else {
+        SFX.play("wrong"); // fires on every wrong word click, not just the first
         btn.classList.add("wrong");
         if (!spotWordFailed) {
           spotWordFailed = true;
@@ -1294,11 +1397,14 @@ $("#wl-form").addEventListener("submit", (e) => {
   const attemptNumber = wlRules().attempts_per_round - wlAttemptsLeft + 1;
 
   if (wlIsCorrect(guess, item.word)) {
+    SFX.play("correct");
     const points = WORDLINKS_DATA.scoring[`attempt${attemptNumber}`] || 0;
     wlEndRound(points, true);
     return;
   }
 
+  // wrong: fires on every failed attempt, not just the one that ends the round
+  SFX.play("wrong");
   // wrong: spend 1 attempt, minimal feedback only
   wlAttemptsLeft--;
   $("#wl-input").value = "";
@@ -1318,6 +1424,7 @@ $("#wl-hint-btn").addEventListener("click", () => {
     }
     return;
   }
+  SFX.play("hint");
   wlHintUsed = true;
   wlAttemptsLeft--;
   wlUpdateAttempts();
@@ -1569,17 +1676,22 @@ function impClickWord(btn, word) {
 
   if (word === set.impostor) {
     // instant fail
+    SFX.play("wrong");
     btn.classList.add("impostor-reveal", "shake");
     impFinishRound(false);
   } else {
     btn.classList.add("removed"); // fades out via CSS, unclickable
     impRemaining--;
     if (impRules().auto_win_when_one_remains && impRemaining === 1) {
-      // only the impostor is left — auto win, no extra click needed
+      // only the impostor is left — auto win, no extra click needed. Do NOT
+      // play impostor_ok here: this click also wins the round, and
+      // impFinishRound(true) plays correct.mp3 — only one sound on this click.
       $$("#imp-words .imp-word").forEach((b) => {
         if (b.textContent === set.impostor) b.classList.add("impostor-reveal");
       });
       impFinishRound(true);
+    } else {
+      SFX.play("impostor_ok");
     }
   }
 }
@@ -1587,6 +1699,7 @@ function impClickWord(btn, word) {
 function impFinishRound(won) {
   const set = impSets[impIndex];
   impRoundOver = true;
+  if (won) SFX.play("correct");
   $("#imp-hint-btn").disabled = true;
 
   // reveal everything: shared words green-ish, impostor red
@@ -1612,6 +1725,7 @@ function impFinishRound(won) {
 // -------- HINT: shows the shared criterion, once per round, marks round as hinted --------
 $("#imp-hint-btn").addEventListener("click", () => {
   if (impRoundOver || impHintUsed) return;
+  SFX.play("hint");
   impHintUsed = true; // clicks stay unlimited; only the score drops to 2
   $("#imp-hint-btn").disabled = true;
   $("#imp-hint-text").textContent = interp(t("impostor", "messages.hint_text"), { "impHintText(impSets[impIndex])": impHintText(impSets[impIndex]) });
@@ -1752,6 +1866,7 @@ function connToggleWord(btn, word) {
     btn.classList.remove("selected");
   } else {
     if (connSelection.length >= CONN_MAX_SELECT) return; // never more than 4 selected
+    SFX.play("letter_move"); // only on adding a word — deselecting stays silent
     connSelection.push(word);
     btn.classList.add("selected");
   }
@@ -1845,6 +1960,7 @@ $("#conn-submit").addEventListener("click", () => {
 
   if (best === 4) {
     // exact group solved
+    SFX.play("success");
     const catIndex = Number(Object.keys(counts)[0]);
     connSolved.push(catIndex);
     $("#conn-solved").appendChild(connGroupCard(catIndex));
@@ -1857,9 +1973,13 @@ $("#conn-submit").addEventListener("click", () => {
       connFinish(false);
     }
   } else if (best === 3) {
-    // exactly 3 of one group: keep the selection so the player can adjust
+    // exactly 3 of one group: keep the selection so the player can adjust.
+    // Still a failed attempt from the player's point of view — pressing Submit
+    // and hearing nothing would read as a broken button, so fail.mp3 fires here too.
+    SFX.play("fail");
     $("#conn-message").textContent = t("connections", "messages.three_of_four");
   } else {
+    SFX.play("fail");
     $("#conn-message").textContent = t("connections", "messages.not_quite");
     connClearSelection();
   }
@@ -2031,6 +2151,7 @@ function rwAnswer(answeredReal) {
 
   const item = rwWords[rwIndex];
   const correct = answeredReal !== null && answeredReal === item.real;
+  SFX.play(correct ? "correct" : "wrong"); // timeout (answeredReal === null) counts as wrong here too
   rwResults.push({ word: item.word, real: item.real, correct });
 
   const fb = $("#rw-feedback");
@@ -2144,6 +2265,7 @@ const bwLevelKey = () => BW_LEVEL_KEYS[bwLevelIndex()];
 const bwTimeSeconds = () => BOMBWORD_DATA.levels[bwLevelKey()].time_seconds;
 
 function bwStopTimer() {
+  SFX.stop("tick"); // single choke point: covers correct/timeout/loss/win/exit/new transition
   if (bwTimerId) {
     clearInterval(bwTimerId);
     bwTimerId = null;
@@ -2173,6 +2295,7 @@ function bwShowTransition(levelNumber, done) {
   const splash = $("#bw-transition");
   $("#bw-transition-text").textContent = interp(t("bombword", "messages.level_splash"), { levelNumber });
   splash.classList.remove("hidden", "fade");
+  SFX.play("level");
 
   const holdMs = (BOMBWORD_DATA.rules.level_transition_screen_seconds || 1.5) * 1000;
   const fadeMs = 400; // matches the CSS opacity transition
@@ -2242,6 +2365,7 @@ function bwLoadPrefix() {
 
   // real-time countdown with the current level's time (8s / 8s / 6s / 6s)
   bwStopTimer();
+  SFX.loop("tick"); // starts the instant the countdown starts, per prefix
   bwDeadline = Date.now() + bwTimeSeconds() * 1000;
   bwTick();
   bwTimerId = setInterval(bwTick, 100);
@@ -2280,6 +2404,7 @@ $("#bw-form").addEventListener("submit", (e) => {
   if (!valid) {
     // invalid word: lose 1 life, keep the SAME prefix, and the timer
     // KEEPS RUNNING with whatever time was left (it never restarts)
+    SFX.play("wrong"); // fires on every wrong word, even the one that costs the last life — tick is untouched
     bwLives--;
     bwRenderLives();
     if (bwLives <= 0) {
@@ -2307,7 +2432,8 @@ $("#bw-form").addEventListener("submit", (e) => {
   }
 
   // valid: quick green flash, then next prefix / next level / victory
-  bwStopTimer();
+  bwStopTimer(); // stops tick
+  SFX.play("correct");
   $("#bw-input").disabled = true;
   const fb = $("#bw-feedback");
   fb.textContent = interp(t("bombword", "messages.correct_flash"), { guess });
@@ -2340,7 +2466,8 @@ function bwWin() {
 
 function bwGameOver(reason) {
   bwActive = false;
-  bwStopTimer();
+  bwStopTimer(); // stops tick BEFORE explosion, so they never overlap
+  SFX.play("explosion");
   bwSaveLastPrefixes();
   $("#bw-end-title").textContent = interp(t("bombword", "messages.end_title_lost"), { "bwLevelIndex() + 1": bwLevelIndex() + 1 });
   $("#bw-end-detail").textContent = interp(t("bombword", "messages.end_detail_lost"), { reason, "bwPrefixes[bwIndex]": bwPrefixes[bwIndex] });
@@ -2565,16 +2692,27 @@ function wfClickCell(i) {
     wfSelected = null; // same cell again: deselect, no swap spent
   } else {
     // swap the two letters
-    [wfCurrent[wfSelected], wfCurrent[i]] = [wfCurrent[i], wfCurrent[wfSelected]];
+    const a = wfSelected, b = i;
+    [wfCurrent[a], wfCurrent[b]] = [wfCurrent[b], wfCurrent[a]];
     wfSelected = null;
     if (wfSwapsLeft !== null) wfSwapsLeft--;
 
     const solved = wfCurrent.every((letter, idx) => letter === wfCells[idx].solution);
     if (solved) {
+      // the winning swap plays ONLY success.mp3 (from wfFinish) — no
+      // letter_correct/letter_move here, or it would overlap on top of it
       wfRefresh();
       wfFinish(true);
       return;
     }
+
+    // priority rule: if this swap lands EITHER letter in its correct spot,
+    // letter_correct plays alone — it replaces letter_move, never both, and
+    // fires once even if both letters land correctly on the same swap
+    const aOk = wfCurrent[a] === wfCells[a].solution;
+    const bOk = wfCurrent[b] === wfCells[b].solution;
+    SFX.play(aOk || bOk ? "letter_correct" : "letter_move");
+
     if (wfSwapsLeft !== null && wfSwapsLeft <= 0) {
       wfRefresh();
       wfFinish(false);
@@ -2587,6 +2725,7 @@ function wfClickCell(i) {
 function wfFinish(won) {
   wfOver = true;
   wfSelected = null;
+  SFX.play(won ? "success" : "fail"); // generic, neutral end-of-game cue — Waffle has no bomb to justify explosion.mp3
 
   $("#wf-end-title").textContent = won ? t("waffle", "messages.end_title_won") : t("waffle", "messages.end_title_lost");
   const solvedCount = wfCurrent.filter((l, i) => l === wfCells[i].solution).length;
@@ -2677,6 +2816,7 @@ const ebLevelNum = () => Math.floor(ebIndex / ebRules().words_per_level_in_game)
 const ebTimeSeconds = () => ebModeCfg().time_per_level_seconds[String(ebLevelNum())];
 
 function ebStopTimer() {
+  SFX.stop("tick"); // single choke point: covers correct/timeout/loss/win/exit/new transition
   if (ebTimerId) {
     clearInterval(ebTimerId);
     ebTimerId = null;
@@ -2711,6 +2851,7 @@ function ebShowTransition(levelNumber, done) {
   const splash = $("#eb-transition");
   $("#eb-transition-text").textContent = interp(t("emojibomb", "messages.level_splash"), { levelNumber });
   splash.classList.remove("hidden", "fade");
+  SFX.play("level");
   const holdMs = (ebRules().level_transition_screen_seconds || 1.5) * 1000;
   ebTransitionId = setTimeout(() => {
     splash.classList.add("fade");
@@ -2790,6 +2931,7 @@ function ebLoadPrompt() {
   $("#eb-input").focus(); // type immediately under time pressure
 
   ebStopTimer();
+  SFX.loop("tick"); // starts the instant the countdown starts, per prompt
   ebDeadline = Date.now() + ebTimeSeconds() * 1000;
   ebTick();
   ebTimerId = setInterval(ebTick, 100);
@@ -2820,6 +2962,10 @@ $("#eb-form").addEventListener("submit", (e) => {
   const guess = $("#eb-input").value.trim().toUpperCase();
 
   if (guess !== item.word) {
+    // fires for every wrong word in both modes, including the hardcore one
+    // that ends the game — it's a distinct cue for "that word was wrong",
+    // separate from the explosion that follows right after for the loss itself
+    SFX.play("wrong");
     if (ebMode === "hardcore") {
       // hardcore: the single try failed — game over on the spot
       ebGameOver(guess ? interp(t("emojibomb", "messages.gameover_wrong"), { "guess.toLowerCase()": guess.toLowerCase() }) : t("emojibomb", "messages.gameover_empty"));
@@ -2853,7 +2999,8 @@ $("#eb-form").addEventListener("submit", (e) => {
   }
 
   // correct: quick green flash, then next prompt / next level / victory
-  ebStopTimer();
+  ebStopTimer(); // stops tick
+  SFX.play("correct");
   $("#eb-input").disabled = true;
   const fb = $("#eb-feedback");
   fb.textContent = interp(t("emojibomb", "messages.correct_flash"), { "item.word": item.word });
@@ -2893,7 +3040,8 @@ function ebWin() {
 
 function ebGameOver(reason) {
   ebActive = false;
-  ebStopTimer();
+  ebStopTimer(); // stops tick BEFORE explosion, so they never overlap
+  SFX.play("explosion");
   ebSaveLastWords();
   const item = ebWords[ebIndex];
   $("#eb-end-title").textContent = interp(t("emojibomb", "messages.end_title"), { "ebLevelNum()": ebLevelNum() });
@@ -3195,6 +3343,9 @@ function stSubmit(traced) {
       stHintedWord = null;
       stHintedCells = new Set(); // the hinted word is solved — clear its lit letters
     }
+    // spangram gets its own dedicated cue; every other theme word plays one of
+    // two interchangeable cues at random, purely for variety
+    SFX.play(match.is_spangram ? "victory" : (Math.random() < 0.5 ? "hint" : "strand_word"));
     if (match.is_spangram) {
       const flash = $("#st-flash");
       flash.textContent = t("strands", "messages.spangram_flash");
@@ -3215,6 +3366,9 @@ function stSubmit(traced) {
       if (stNonTheme.has(word)) {
         $("#st-message").textContent = interp(t("strands", "messages.already_found"), { word });
       } else {
+        // third state, distinct from theme words (random hint/strand_word)
+        // and the spangram (victory): a newly-credited extra word
+        SFX.play("correct");
         stNonTheme.add(word);
         $("#st-message").textContent = interp(t("strands", "messages.nice_find"), { word });
         path.forEach(([r, c]) => {
@@ -3404,3 +3558,646 @@ function stFinish(won, foundBefore, outOfLives) {
 // PLAY AGAIN: new puzzle, same mode
 $("#st-again-btn").addEventListener("click", () => startStrands(stMode));
 
+
+/* =====================================================
+   GAME 12 — EMOJI MATCH
+   3 emojis, 4 word options, pick the one they describe.
+   8 rounds. No timer, no lives — the player thinks freely.
+   A wrong pick marks it red AND reveals the correct one in
+   green, then advances. +1 per correct answer, max 8.
+   Data: EMOJIMATCH_DATA (emojimatch_data.js).
+   ===================================================== */
+const EM_STORAGE_KEY = "emojimatch_last_words";
+const EM_FEEDBACK_MS = 1100; // pause on the revealed answer before advancing
+
+let emRounds = []; // the 8 rounds of this game, options already re-shuffled
+let emIndex = 0;
+let emScore = 0;
+let emAnswered = false; // double-click guard for the current round
+let emTimeoutId = null;
+
+// difficulty: the radio values are Spanish, the bank keys are English, so we
+// reuse WL_LEVEL_KEYS like Word Links / Waffle / Real Word already do.
+let emLevelRaw = null; // "basico" | "intermedio" | "avanzado"
+let emLevel = null; // "basic" | "intermediate" | "advanced"
+
+const emRules = () => EMOJIMATCH_DATA.rules;
+
+function emStopTimer() {
+  if (emTimeoutId) {
+    clearTimeout(emTimeoutId);
+    emTimeoutId = null;
+  }
+}
+
+// same idea as rwPick, but the pool holds round OBJECTS, so "already seen" is
+// matched on the round's answer word. Falls back to the whole pool if the
+// level is too small to fill a game without repeats.
+function emPick(pool, count, exclude) {
+  let candidates = pool.filter((r) => !exclude.includes(r.answer));
+  if (candidates.length < count) candidates = pool;
+  return shuffle(candidates).slice(0, count);
+}
+
+function startEmojiMatch(level) {
+  emStopTimer();
+  emLevelRaw = level || "basico";
+  emLevel = WL_LEVEL_KEYS[emLevelRaw] || emLevelRaw;
+
+  let lastWords = [];
+  try {
+    lastWords = JSON.parse(localStorage.getItem(EM_STORAGE_KEY)) || [];
+  } catch (err) { /* corrupted storage — ignore */ }
+
+  const pool = EMOJIMATCH_DATA.rounds[emLevel] || EMOJIMATCH_DATA.rounds.basic;
+  // re-shuffle each round's options: the JSON ships them shuffled, but a fixed
+  // order would let a repeat player memorise the correct SLOT instead of the word
+  emRounds = emPick(pool, emRules().rounds_per_game, lastWords).map((r) => ({
+    ...r,
+    options: shuffle([...r.options]),
+  }));
+
+  emIndex = 0;
+  emScore = 0;
+
+  $("#em-meta").textContent = interp(t("emojimatch", "labels.meta"), {
+    "LEVEL_LABELS[level]": ts("level_labels." + emLevelRaw),
+    "emRules().rounds_per_game": emRules().rounds_per_game,
+  });
+  $("#em-end").classList.add("hidden");
+  $("#em-play").classList.remove("hidden");
+  applyText([
+    ["#screen-emojimatch .game-topline [data-back]", ts("buttons.back")],
+    ["#em-again-btn", t("emojimatch", "buttons.play_again")],
+    ["#em-end [data-back]", t("emojimatch", "buttons.back_to_menu")],
+  ]);
+  const scoreLabel = $("#em-end .end-word");
+  if (scoreLabel) scoreLabel.firstChild.textContent = t("emojimatch", "messages.score_label");
+
+  showScreen("#screen-emojimatch");
+  emLoadRound();
+}
+
+function emLoadRound() {
+  const round = emRounds[emIndex];
+  emAnswered = false;
+
+  $("#em-progress").textContent = interp(t("emojimatch", "messages.progress"), {
+    "emIndex + 1": emIndex + 1,
+    "emRounds.length": emRounds.length,
+  });
+
+  // the 3 emojis
+  const emojiBox = $("#em-emojis");
+  emojiBox.innerHTML = "";
+  round.emojis.forEach((e) => {
+    const span = document.createElement("span");
+    span.className = "em-emoji";
+    span.textContent = e;
+    emojiBox.appendChild(span);
+  });
+
+  // the 4 options
+  const box = $("#em-options");
+  box.innerHTML = "";
+  round.options.forEach((word) => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "em-option";
+    btn.textContent = word;
+    btn.dataset.word = word;
+    btn.addEventListener("click", () => emAnswer(word));
+    box.appendChild(btn);
+  });
+}
+
+function emAnswer(picked) {
+  if (emAnswered) return; // ignore double clicks while the answer is revealed
+  emAnswered = true;
+
+  const round = emRounds[emIndex];
+  const correct = picked === round.answer;
+  SFX.play(correct ? "correct" : "wrong");
+  round.gotIt = correct; // remembered for the end screen's ✓ / ✗ chips
+  if (correct) emScore += EMOJIMATCH_DATA.scoring.points_per_correct;
+
+  // lock every option, then paint: the picked one red if wrong, and ALWAYS the
+  // correct one green — so a wrong guess still teaches the right answer
+  $$("#em-options .em-option").forEach((btn) => {
+    btn.disabled = true;
+    if (btn.dataset.word === round.answer) btn.classList.add("correct");
+    else if (btn.dataset.word === picked) btn.classList.add("wrong");
+  });
+
+  emTimeoutId = setTimeout(() => {
+    emIndex++;
+    if (emIndex >= emRounds.length) emFinish();
+    else emLoadRound();
+  }, EM_FEEDBACK_MS);
+}
+
+function emFinish() {
+  emStopTimer();
+  $("#em-play").classList.add("hidden");
+
+  $("#em-end-title").textContent = t("emojimatch", "messages.game_complete_title");
+  $("#em-score").textContent = `${emScore} / ${EMOJIMATCH_DATA.scoring.max_per_game}`;
+
+  // remember this game's answers so the next one doesn't repeat them
+  try {
+    localStorage.setItem(EM_STORAGE_KEY, JSON.stringify(emRounds.map((r) => r.answer)));
+  } catch (err) { /* storage full or blocked — not worth failing the game over */ }
+
+  // the 8 words, tappable to reveal their meaning in the chosen language.
+  // Same shared-panel pattern as Strands (chips wrap in a row, so one shared
+  // panel below keeps the layout compact instead of a per-chip accordion).
+  const list = $("#em-wordlist");
+  const meaningPanel = $("#em-word-meaning");
+  list.innerHTML = "";
+  meaningPanel.classList.remove("visible");
+  meaningPanel.innerHTML = "";
+
+  const showWordMeaning = (word, chip) => {
+    list.querySelectorAll(".st-word-btn.active").forEach((b) => b.classList.remove("active"));
+    chip.classList.add("active");
+    meaningPanel.innerHTML = "";
+    const wEl = document.createElement("span");
+    wEl.className = "st-meaning-word";
+    wEl.textContent = word;
+    const dEl = document.createElement("p");
+    dEl.className = "st-meaning-def";
+    dEl.textContent = lookupDefinition(word) || t("emojimatch", "messages.meaning_unavailable");
+    meaningPanel.appendChild(wEl);
+    meaningPanel.appendChild(dEl);
+    meaningPanel.classList.add("visible");
+  };
+
+  emRounds.forEach((r) => {
+    const li = document.createElement("li");
+    // every word is tappable regardless — a word you got WRONG is the one whose
+    // meaning you most need, so "missed" only tints it, it never disables it
+    li.className = r.gotIt ? "found" : "missed";
+    const chip = document.createElement("button");
+    chip.type = "button";
+    chip.className = "st-word-chip st-word-btn";
+    chip.textContent = `${r.gotIt ? "✓ " : "✗ "}${r.answer}`;
+    chip.title = t("emojimatch", "messages.tap_for_meaning");
+    chip.addEventListener("click", () => showWordMeaning(r.answer, chip));
+    li.appendChild(chip);
+    list.appendChild(li);
+  });
+
+  const hint = $("#em-wordlist-hint");
+  hint.textContent = t("emojimatch", "messages.tap_for_meaning");
+  hint.classList.remove("hidden");
+
+  $("#em-end").classList.remove("hidden");
+}
+
+// PLAY AGAIN: new rounds, same difficulty
+$("#em-again-btn").addEventListener("click", () => startEmojiMatch(emLevelRaw));
+
+// Card art that fails to load (e.g. an image not uploaded yet) would render the
+// browser's broken-image icon + alt text inside the preview box. Hiding the img
+// leaves the card's own purple gradient, which looks intentional.
+// Uses its own class, not the shared .hidden: .hidden and .card-art-img have
+// equal specificity and .card-art-img's display:block comes later, so .hidden
+// would lose and the broken image would stay visible.
+$$(".card-art-img").forEach((img) => {
+  img.addEventListener("error", () => img.classList.add("card-art-img-failed"));
+  // an image that already failed before this listener attached (cached 404)
+  if (img.complete && img.naturalWidth === 0) img.classList.add("card-art-img-failed");
+});
+
+/* =====================================================
+   GAME 13 — HEAR IT
+   The browser pronounces an English word; the player answers.
+   Three DIFFERENT mechanics, one per level (rules.by_level):
+     basic         4 options, unlimited replays, no timer.
+                   One option is always a MINIMAL PAIR of the answer,
+                   so a wrong pick teaches a real sound contrast.
+     intermediate  type the word, 3 replays, letter count shown.
+     advanced      type the word, 1 replay, 10s, letter count shown.
+   Data: HEARIT_DATA (hearit_data.js).
+   ===================================================== */
+const HI_STORAGE_KEY = "hearit_last_words";
+const HI_FEEDBACK_MS = 1400; // pause on the revealed answer before advancing
+
+/* ---------- AUDIO: the only place that touches speechSynthesis ----------
+   Everything else in the game calls playWord(). To move to MP3 files later,
+   replace the body of playWord() with `new Audio(...)` and nothing else in
+   this file needs to change. */
+let hearitVoice = null;
+let hiVoicesReady = false; // getVoices() has returned a non-empty list at least once
+
+function hiPickVoice() {
+  const all = (window.speechSynthesis && speechSynthesis.getVoices()) || [];
+  if (!all.length) return false; // Chrome returns [] until voiceschanged fires
+  // prefer the exact lang from the data file, but ANY English voice works —
+  // plenty of Android devices ship only en-GB or en-IN, and refusing those
+  // would kill the game for no reason
+  const want = (HEARIT_DATA.audio.lang || "en-US").toLowerCase();
+  hearitVoice =
+    all.find((v) => v.lang.toLowerCase() === want) ||
+    all.find((v) => v.lang.toLowerCase().replace("_", "-").startsWith("en")) ||
+    null;
+  hiVoicesReady = true;
+  return true;
+}
+
+function hiInitVoices() {
+  if (!window.speechSynthesis) return;
+  if (!hiPickVoice()) {
+    speechSynthesis.addEventListener("voiceschanged", hiPickVoice, { once: true });
+  }
+}
+hiInitVoices();
+
+// Resolves once the voice list is known, or after a short grace period. Only
+// AFTER this is "no English voice" a trustworthy answer — checking earlier
+// would show the error screen on a device that simply had not loaded yet.
+function hiWhenVoicesReady(cb) {
+  if (hiVoicesReady || hiPickVoice()) return cb();
+  let done = false;
+  const finish = () => {
+    if (done) return;
+    done = true;
+    hiPickVoice();
+    cb();
+  };
+  if (window.speechSynthesis) {
+    speechSynthesis.addEventListener("voiceschanged", finish, { once: true });
+  }
+  setTimeout(finish, 2000); // do not hang forever on a browser that never fires it
+}
+
+const hiHasVoice = () => !!(window.speechSynthesis && hearitVoice);
+
+// >>> THE TWO AUDIO ENTRY POINTS — playWord + stopWord <<<
+// Nothing else in the game touches speechSynthesis for playback. Swapping in
+// MP3 files means rewriting only these two bodies.
+
+// stop whatever is currently sounding (round change, answer, leaving the game)
+function stopWord() {
+  if (window.speechSynthesis) speechSynthesis.cancel();
+}
+
+function playWord(word) {
+  if (!window.speechSynthesis) return;
+  stopWord(); // never let two words overlap
+  const u = new SpeechSynthesisUtterance(String(word).toLowerCase());
+  u.lang = HEARIT_DATA.audio.lang;
+  u.rate = HEARIT_DATA.audio.rate;
+  // the voice is an optimisation, not a requirement — u.lang alone already asks
+  // for English. A stale voice object (the list can be rebuilt underneath us)
+  // throws on assignment, and losing the audio entirely over that would be far
+  // worse than falling back to the browser's default English voice.
+  try {
+    if (hearitVoice) u.voice = hearitVoice;
+  } catch (err) {
+    hearitVoice = null;
+  }
+  speechSynthesis.speak(u);
+}
+
+/* ---------- game state ---------- */
+let hiRounds = [];
+let hiIndex = 0;
+let hiScore = 0;
+let hiAnswered = false;
+let hiReplaysLeft = 0;
+let hiTimerId = null;
+let hiFeedbackId = null;
+let hiDeadline = 0;
+let hiTimerStarted = false; // advanced: the clock starts on the FIRST play, not on load
+let hiLevelRaw = null;
+let hiLevel = null;
+
+const hiCfg = () => HEARIT_DATA.rules.by_level[hiLevel] || HEARIT_DATA.rules.by_level.basic;
+const hiIsTyping = () => hiCfg().mode === "type_the_word";
+
+function hiStopTimers() {
+  if (hiTimerId) { clearInterval(hiTimerId); hiTimerId = null; }
+  if (hiFeedbackId) { clearTimeout(hiFeedbackId); hiFeedbackId = null; }
+}
+
+// same idea as rwPick/emPick — the pool holds round objects, so "already seen"
+// is matched on the answer word
+function hiPick(pool, count, exclude) {
+  let candidates = pool.filter((r) => !exclude.includes(r.answer));
+  if (candidates.length < count) candidates = pool;
+  return shuffle(candidates).slice(0, count);
+}
+
+function startHearIt(level) {
+  hiStopTimers();
+  stopWord();
+  hiLevelRaw = level || "basico";
+  hiLevel = WL_LEVEL_KEYS[hiLevelRaw] || hiLevelRaw;
+
+  let lastWords = [];
+  try {
+    lastWords = JSON.parse(localStorage.getItem(HI_STORAGE_KEY)) || [];
+  } catch (err) { /* corrupted storage — ignore */ }
+
+  const pool = HEARIT_DATA.rounds[hiLevel] || HEARIT_DATA.rounds.basic;
+  hiRounds = hiPick(pool, HEARIT_DATA.rules.rounds_per_game, lastWords).map((r) => ({
+    ...r,
+    // basic ships the options pre-shuffled, but re-shuffle so a repeat player
+    // cannot learn the correct SLOT instead of the sound
+    options: r.options ? shuffle([...r.options]) : null,
+  }));
+
+  hiIndex = 0;
+  hiScore = 0;
+
+  $("#hi-meta").textContent = interp(t("hearit", "labels.meta"), {
+    "LEVEL_LABELS[level]": ts("level_labels." + hiLevelRaw),
+    "HEARIT_DATA.rules.rounds_per_game": HEARIT_DATA.rules.rounds_per_game,
+  });
+  $("#hi-end").classList.add("hidden");
+  applyText([
+    ["#screen-hearit .game-topline [data-back]", ts("buttons.back")],
+    ["#hi-submit", t("hearit", "buttons.check")],
+    ["#hi-again-btn", t("hearit", "buttons.play_again")],
+    ["#hi-end [data-back]", t("hearit", "buttons.back_to_menu")],
+    ["#hi-novoice-back", t("hearit", "buttons.back_to_menu")],
+  ]);
+  $("#hi-input").placeholder = t("hearit", "static_labels.input_placeholder");
+  const scoreLabel = $("#hi-end .end-word");
+  if (scoreLabel) scoreLabel.firstChild.textContent = t("hearit", "messages.score_label");
+
+  showScreen("#screen-hearit");
+
+  // decide playable / not playable only once the voice list is actually known
+  hiWhenVoicesReady(() => {
+    if (!hiHasVoice()) {
+      // no English voice on this device: say so clearly and offer the way out
+      // instead of leaving the player stuck on a board that cannot make sound
+      $("#hi-play").classList.add("hidden");
+      $("#hi-novoice-text").textContent = t("hearit", "messages.no_voice");
+      $("#hi-novoice").classList.remove("hidden");
+      return;
+    }
+    $("#hi-novoice").classList.add("hidden");
+    $("#hi-play").classList.remove("hidden");
+    hiLoadRound();
+  });
+}
+
+function hiLoadRound() {
+  hiStopTimers();
+  const round = hiRounds[hiIndex];
+  const cfg = hiCfg();
+  hiAnswered = false;
+  hiTimerStarted = false;
+  hiReplaysLeft = cfg.replays === "unlimited" ? Infinity : cfg.replays;
+
+  $("#hi-progress").textContent = interp(t("hearit", "messages.progress"), {
+    "hiIndex + 1": hiIndex + 1,
+    "hiRounds.length": hiRounds.length,
+  });
+  $("#hi-feedback").textContent = "";
+  $("#hi-feedback").className = "hi-feedback";
+
+  // play button back to its ready state
+  const playBtn = $("#hi-play-btn");
+  playBtn.disabled = false;
+  playBtn.classList.remove("spent");
+  hiRenderReplays();
+
+  // letter count (typing levels only)
+  const lettersEl = $("#hi-letters");
+  if (cfg.show_letter_count) {
+    lettersEl.textContent = interp(t("hearit", "messages.letter_count"), {
+      "round.letters": round.letters,
+    });
+    lettersEl.classList.remove("hidden");
+  } else {
+    lettersEl.classList.add("hidden");
+  }
+
+  // timer bar: only advanced has one, and it stays idle until the first play
+  const timer = $("#hi-timer");
+  if (cfg.timer_seconds) {
+    timer.classList.remove("hidden");
+    $("#hi-timer-fill").style.width = "100%";
+  } else {
+    timer.classList.add("hidden");
+  }
+
+  if (hiIsTyping()) {
+    $("#hi-options").classList.add("hidden");
+    $("#hi-options").innerHTML = "";
+    $("#hi-input-wrap").classList.remove("hidden");
+    const input = $("#hi-input");
+    input.value = "";
+    input.disabled = false;
+    $("#hi-submit").disabled = false;
+  } else {
+    $("#hi-input-wrap").classList.add("hidden");
+    const box = $("#hi-options");
+    box.classList.remove("hidden");
+    box.innerHTML = "";
+    round.options.forEach((word) => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "hi-option";
+      btn.textContent = word;
+      btn.dataset.word = word;
+      btn.addEventListener("click", () => hiAnswer(word));
+      box.appendChild(btn);
+    });
+  }
+}
+
+function hiRenderReplays() {
+  const el = $("#hi-replays");
+  if (hiReplaysLeft === Infinity) {
+    el.textContent = t("hearit", "messages.replays_unlimited");
+    return;
+  }
+  el.textContent = interp(t("hearit", "messages.replays_left"), { hiReplaysLeft });
+}
+
+// the play button is the ONLY thing that starts audio — never automatic. That
+// is what mobile needs (speechSynthesis requires a real user gesture) and it
+// also means the advanced countdown cannot burn seconds before the player has
+// heard anything.
+$("#hi-play-btn").addEventListener("click", () => {
+  if (hiAnswered || hiReplaysLeft <= 0) return;
+  playWord(hiRounds[hiIndex].answer);
+
+  if (hiReplaysLeft !== Infinity) {
+    hiReplaysLeft--;
+    hiRenderReplays();
+    if (hiReplaysLeft <= 0) {
+      const btn = $("#hi-play-btn");
+      btn.disabled = true;
+      btn.classList.add("spent"); // visibly out of listens, not just inert
+    }
+  }
+
+  const secs = hiCfg().timer_seconds;
+  if (secs && !hiTimerStarted) {
+    hiTimerStarted = true;
+    hiDeadline = Date.now() + secs * 1000;
+    hiTimerId = setInterval(hiTick, 100);
+  }
+});
+
+function hiTick() {
+  const total = hiCfg().timer_seconds * 1000;
+  const left = Math.max(0, hiDeadline - Date.now());
+  $("#hi-timer-fill").style.width = `${(left / total) * 100}%`;
+  if (left <= 0) {
+    hiStopTimers();
+    hiAnswer(null, true); // ran out of time
+  }
+}
+
+$("#hi-submit").addEventListener("click", () => hiAnswer($("#hi-input").value));
+$("#hi-input").addEventListener("keydown", (e) => {
+  if (e.key === "Enter") hiAnswer($("#hi-input").value);
+});
+
+function hiAnswer(given, timedOut) {
+  if (hiAnswered) return;
+  hiAnswered = true;
+  hiStopTimers();
+  stopWord();
+
+  const round = hiRounds[hiIndex];
+  // answer_checking: case-insensitive + trimmed (homophones are excluded from
+  // the typing levels, so each audio has exactly one correct spelling)
+  const norm = (s) => String(s == null ? "" : s).trim().toLowerCase();
+  const correct = !timedOut && norm(given) === norm(round.answer);
+  round.gotIt = correct;
+  round.given = timedOut ? null : given;
+  if (correct) hiScore += HEARIT_DATA.rules.scoring.points_per_correct;
+
+  const fb = $("#hi-feedback");
+  fb.className = "hi-feedback " + (correct ? "ok" : "bad");
+  fb.textContent = correct
+    ? t("hearit", "messages.correct")
+    : interp(
+        timedOut ? t("hearit", "messages.timeout") : t("hearit", "messages.wrong"),
+        { "round.answer": round.answer }
+      );
+
+  $("#hi-play-btn").disabled = true;
+  if (hiIsTyping()) {
+    $("#hi-input").disabled = true;
+    $("#hi-submit").disabled = true;
+  } else {
+    // lock the options and reveal: the correct one always turns green
+    $$("#hi-options .hi-option").forEach((btn) => {
+      btn.disabled = true;
+      if (btn.dataset.word === round.answer) btn.classList.add("correct");
+      else if (btn.dataset.word === given) btn.classList.add("wrong");
+    });
+  }
+
+  hiFeedbackId = setTimeout(() => {
+    hiIndex++;
+    if (hiIndex >= hiRounds.length) hiFinish();
+    else hiLoadRound();
+  }, HI_FEEDBACK_MS);
+}
+
+function hiFinish() {
+  hiStopTimers();
+  stopWord();
+  $("#hi-play").classList.add("hidden");
+
+  $("#hi-end-title").textContent = t("hearit", "messages.game_complete_title");
+  $("#hi-score").textContent = `${hiScore} / ${HEARIT_DATA.rules.scoring.max_per_game}`;
+
+  try {
+    localStorage.setItem(HI_STORAGE_KEY, JSON.stringify(hiRounds.map((r) => r.answer)));
+  } catch (err) { /* storage blocked — not worth failing the game over */ }
+
+  const list = $("#hi-wordlist");
+  const meaningPanel = $("#hi-word-meaning");
+  list.innerHTML = "";
+  meaningPanel.classList.remove("visible");
+  meaningPanel.innerHTML = "";
+
+  const showWordMeaning = (round, chip) => {
+    list.querySelectorAll(".st-word-btn.active").forEach((b) => b.classList.remove("active"));
+    chip.classList.add("active");
+    meaningPanel.innerHTML = "";
+
+    const wEl = document.createElement("span");
+    wEl.className = "st-meaning-word";
+    wEl.textContent = round.answer;
+    const dEl = document.createElement("p");
+    dEl.className = "st-meaning-def";
+    dEl.textContent = lookupDefinition(round.answer) || t("hearit", "messages.meaning_unavailable");
+    meaningPanel.appendChild(wEl);
+    meaningPanel.appendChild(dEl);
+
+    // THE teaching moment: the player got a minimal pair wrong, so tell them
+    // exactly which sound contrast tricked them and why it is hard in Spanish
+    if (!round.gotIt && round.minimal_pair && round.contrast) {
+      // the explanation comes from ui_strings so it follows the chosen language.
+      // The copy in the data file is Spanish-only, so using it directly would
+      // print a Spanish sentence inside an otherwise English screen — it stays
+      // as a last-resort fallback if a new contrast id ever lands in the data
+      // before it has been translated.
+      const why =
+        t("hearit", "phonetic_contrasts." + round.contrast) ||
+        HEARIT_DATA.phonetic_contrasts[round.contrast];
+      if (why) {
+        const cEl = document.createElement("p");
+        cEl.className = "hi-contrast";
+        cEl.textContent = interp(t("hearit", "messages.contrast_note"), {
+          "round.answer": round.answer,
+          "round.minimal_pair": round.minimal_pair,
+          why,
+        });
+        meaningPanel.appendChild(cEl);
+      }
+    }
+
+    // let them hear it again while reading the meaning
+    const replay = document.createElement("button");
+    replay.type = "button";
+    replay.className = "hi-replay-btn";
+    replay.textContent = t("hearit", "buttons.listen_again");
+    replay.addEventListener("click", () => playWord(round.answer));
+    meaningPanel.appendChild(replay);
+
+    meaningPanel.classList.add("visible");
+  };
+
+  hiRounds.forEach((r) => {
+    const li = document.createElement("li");
+    li.className = r.gotIt ? "found" : "missed";
+    const chip = document.createElement("button");
+    chip.type = "button";
+    chip.className = "st-word-chip st-word-btn";
+    chip.textContent = `${r.gotIt ? "✓ " : "✗ "}${r.answer}`;
+    chip.title = t("hearit", "messages.tap_for_meaning");
+    chip.addEventListener("click", () => showWordMeaning(r, chip));
+    li.appendChild(chip);
+    list.appendChild(li);
+  });
+
+  const hint = $("#hi-wordlist-hint");
+  hint.textContent = t("hearit", "messages.tap_for_meaning");
+  hint.classList.remove("hidden");
+
+  $("#hi-end").classList.remove("hidden");
+}
+
+// PLAY AGAIN: new rounds, same difficulty
+$("#hi-again-btn").addEventListener("click", () => startHearIt(hiLevelRaw));
+
+// leaving the game must not keep the browser talking
+$$("#screen-hearit [data-back]").forEach((btn) =>
+  btn.addEventListener("click", () => {
+    hiStopTimers();
+    stopWord();
+  })
+);

@@ -192,6 +192,68 @@
    "word_progress": "WORD ${(ebIndex % 3) + 1} / ${ebRules().words_per_level_in_game}"
   }
  },
+ "emojimatch": {
+  "intro": "Three emojis, four words. Pick the one they describe. 8 rounds, no timer and no lives — take your time. A wrong pick shows you the right answer before moving on. 1 point per correct answer.",
+  "intro_title": "EMOJI MATCH",
+  "buttons": {
+   "play_again": "PLAY AGAIN",
+   "back_to_menu": "BACK TO MENU"
+  },
+  "messages": {
+   "progress": "ROUND ${emIndex + 1} / ${emRounds.length}",
+   "game_complete_title": "Game complete!",
+   "score_label": "Your score: ",
+   "tap_for_meaning": "Tap a word to see its meaning",
+   "meaning_unavailable": "(no definition available)"
+  },
+  "labels": {
+   "meta": "${LEVEL_LABELS[level]} · ${emRules().rounds_per_game} rounds"
+  }
+ },
+ "hearit": {
+  "intro": "Listen to an English word and answer what you heard. Basic: pick from 4 options, listen as often as you want. Intermediate: type it, 3 listens. Advanced: type it, 1 listen and 10 seconds. 8 rounds, 1 point each.",
+  "intro_title": "HEAR IT",
+  "static_labels": {
+   "input_placeholder": "Type what you heard..."
+  },
+  "buttons": {
+   "check": "CHECK",
+   "listen_again": "🔊 Listen again",
+   "play_again": "PLAY AGAIN",
+   "back_to_menu": "BACK TO MENU"
+  },
+  "messages": {
+   "progress": "ROUND ${hiIndex + 1} / ${hiRounds.length}",
+   "replays_unlimited": "Listen as many times as you want",
+   "replays_left": "${hiReplaysLeft} listen(s) left",
+   "letter_count": "${round.letters} letters",
+   "correct": "✓ Correct!",
+   "wrong": "✗ It was \"${round.answer}\"",
+   "timeout": "⏰ Time's up — it was \"${round.answer}\"",
+   "game_complete_title": "Game complete!",
+   "score_label": "Your score: ",
+   "tap_for_meaning": "Tap a word to see its meaning",
+   "meaning_unavailable": "(no definition available)",
+   "contrast_note": "You heard \"${round.minimal_pair}\" instead of \"${round.answer}\". ${why}.",
+   "no_voice": "This device has no English voice installed, so the words can't be pronounced. Try another browser or install an English voice in your system settings."
+  },
+  "labels": {
+   "meta": "${LEVEL_LABELS[level]} · ${HEARIT_DATA.rules.rounds_per_game} rounds"
+  },
+  "phonetic_contrasts": {
+   "b_v": "Spanish has a single sound for B and V",
+   "short_long_i": "Spanish has no short I like in ship",
+   "ae_e": "Spanish has no vowel like the one in cat",
+   "sh_ch": "SH and CH are constantly mixed up",
+   "s_z": "Spanish has no voiced Z",
+   "th": "The English TH does not exist in Spanish",
+   "silent_h": "H is silent in Spanish",
+   "uh_ah": "The vowel in cup does not exist in Spanish",
+   "short_long_u": "Short U vs long U: full/fool",
+   "y_j": "Consonant Y vs English J",
+   "w_v": "Spanish has no consonant W"
+  }
+ },
  "waffle": {
   "intro": "Swap letters to solve 6 (or 8) connected words. Green = right spot, yellow = in this word but wrong spot, gray = not in its words. Click one cell, then another, to swap their letters before your swaps run out.",
   "intro_title": "WAFFLE",

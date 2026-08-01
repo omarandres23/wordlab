@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>English 11 — Daily English Games</title>
-<link rel="stylesheet" href="styles.css?v=sp13a">
+<link rel="stylesheet" href="styles.css?v=sp19a">
 </head>
 <body>
 
@@ -12,7 +12,20 @@
 <header class="topbar">
   <div class="topbar-side"></div>
   <h1 class="logo"><img src="img/wordlab-logo.png" alt="Word Lab" class="logo-img"></h1>
-  <div class="topbar-side"></div>
+  <div class="topbar-side">
+    <div class="sfx-control" id="home-sfx-control">
+      <button class="mute-btn" type="button" aria-label="Sound settings" aria-expanded="false" data-sfx-toggle>
+        <span class="mute-icon" aria-hidden="true">🔊</span>
+      </button>
+      <div class="sfx-panel hidden" data-sfx-panel>
+        <button class="sfx-mute-toggle" type="button" aria-label="Mute sound effects" data-mute-btn>
+          <span class="mute-icon" aria-hidden="true">🔊</span>
+          <span class="sfx-mute-label">Mute</span>
+        </button>
+        <input type="range" class="sfx-volume" min="0" max="100" step="5" data-sfx-volume aria-label="Sound volume">
+      </div>
+    </div>
+  </div>
 </header>
 
 <!-- ================= HOME ================= -->
@@ -173,6 +186,30 @@
       <div class="card-footer">
         <span class="card-play">PLAY</span>
         <span class="card-name">Connections</span>
+      </div>
+    </button>
+
+    <button class="game-card" data-game="hearit">
+      <span class="badge">NEW</span>
+      <div class="card-art card-art-asset card-art-hearit">
+        <img class="card-art-img" src="assets/games/HEARIT.png"
+             loading="lazy" alt="Hear It — listen to an English word and write or pick what you heard">
+      </div>
+      <div class="card-footer">
+        <span class="card-play">PLAY</span>
+        <span class="card-name">Hear It</span>
+      </div>
+    </button>
+
+    <button class="game-card" data-game="emojimatch">
+      <span class="badge">NEW</span>
+      <div class="card-art card-art-asset card-art-emojimatch">
+        <img class="card-art-img" src="assets/games/EMOJIMATCH.png"
+             loading="lazy" alt="Emoji Match — pick the word that three emojis describe">
+      </div>
+      <div class="card-footer">
+        <span class="card-play">PLAY</span>
+        <span class="card-name">Emoji Match</span>
       </div>
     </button>
 
@@ -787,6 +824,96 @@
   </div>
 </main>
 
+<!-- ================= HEAR IT ================= -->
+<main id="screen-hearit" class="screen">
+  <div class="game-topline">
+    <button class="back-btn" data-back>&larr; Back</button>
+    <span class="game-meta" id="hi-meta"></span>
+  </div>
+
+  <!-- shown instead of the board when the device has no English voice at all -->
+  <div id="hi-novoice" class="hi-novoice hidden">
+    <p class="hi-novoice-icon" aria-hidden="true">🔇</p>
+    <p id="hi-novoice-text" class="hi-novoice-text"></p>
+    <div class="end-actions">
+      <button class="back-btn" data-back id="hi-novoice-back"></button>
+    </div>
+  </div>
+
+  <div id="hi-play" class="hi-wrap">
+    <p class="blanks-progress" id="hi-progress"></p>
+
+    <!-- ADVANCED only: 10s countdown, started by the first play, never on load -->
+    <div id="hi-timer" class="rw-timer hidden">
+      <div id="hi-timer-fill" class="rw-timer-fill"></div>
+    </div>
+
+    <!-- the play button IS the audio trigger: nothing autoplays, which is also
+         what mobile requires (speechSynthesis needs a real user gesture) -->
+    <button id="hi-play-btn" class="hi-play-btn" type="button" aria-label="Play the word">
+      <span class="hi-play-icon" aria-hidden="true">▶</span>
+    </button>
+    <p id="hi-replays" class="hi-replays"></p>
+
+    <!-- letter count (intermediate + advanced) -->
+    <p id="hi-letters" class="hi-letters hidden"></p>
+
+    <!-- BASIC: 4 options -->
+    <div id="hi-options" class="hi-options hidden"></div>
+
+    <!-- INTERMEDIATE / ADVANCED: type the word -->
+    <div id="hi-input-wrap" class="hi-input-wrap hidden">
+      <input type="text" id="hi-input" autocomplete="off" autocapitalize="off" spellcheck="false" autocorrect="off">
+      <button id="hi-submit" class="primary-btn" type="button"></button>
+    </div>
+
+    <div id="hi-feedback" class="hi-feedback"></div>
+  </div>
+
+  <div id="hi-end" class="end-panel hidden">
+    <p class="end-title" id="hi-end-title"></p>
+    <p class="end-word">Your score: <strong id="hi-score"></strong></p>
+    <ul id="hi-wordlist" class="st-wordlist"></ul>
+    <p id="hi-wordlist-hint" class="st-wordlist-hint hidden"></p>
+    <div id="hi-word-meaning" class="st-word-meaning" aria-live="polite"></div>
+    <div class="end-actions">
+      <button id="hi-again-btn" class="primary-btn">PLAY AGAIN</button>
+      <button class="back-btn" data-back>BACK TO MENU</button>
+    </div>
+  </div>
+</main>
+
+<!-- ================= EMOJI MATCH ================= -->
+<main id="screen-emojimatch" class="screen">
+  <div class="game-topline">
+    <button class="back-btn" data-back>&larr; Back</button>
+    <span class="game-meta" id="em-meta"></span>
+  </div>
+
+  <div id="em-play" class="em-wrap">
+    <p class="blanks-progress" id="em-progress"></p>
+
+    <!-- the 3 emojis for this round -->
+    <div id="em-emojis" class="em-emojis"></div>
+
+    <!-- the 4 word options (filled by JS) -->
+    <div id="em-options" class="em-options"></div>
+  </div>
+
+  <div id="em-end" class="end-panel hidden">
+    <p class="end-title" id="em-end-title"></p>
+    <p class="end-word">Your score: <strong id="em-score"></strong></p>
+    <!-- the 8 words of the game, tappable to reveal their meaning -->
+    <ul id="em-wordlist" class="st-wordlist"></ul>
+    <p id="em-wordlist-hint" class="st-wordlist-hint hidden"></p>
+    <div id="em-word-meaning" class="st-word-meaning" aria-live="polite"></div>
+    <div class="end-actions">
+      <button id="em-again-btn" class="primary-btn">PLAY AGAIN</button>
+      <button class="back-btn" data-back>BACK TO MENU</button>
+    </div>
+  </div>
+</main>
+
 <script src="data.js"></script>
 <script src="spot_data.js"></script>
 <script src="contexto_data.js"></script>
@@ -794,21 +921,24 @@
 <script src="wordlinks_data.js"></script>
 <script src="impostor_data.js"></script>
 <script src="connections_data.js"></script>
-<script src="realword_data.js?v=sp13a"></script>
+<script src="realword_data.js?v=sp19a"></script>
 <script src="bombword_data.js"></script>
 <script src="waffle_data.js"></script>
 <script src="emojibomb_data.js"></script>
+<script src="emojimatch_data.js?v=sp19a"></script>
+<script src="hearit_data.js?v=sp19a"></script>
 <script src="strands_data.js"></script>
-<script src="definitions.js?v=sp13a"></script>
-<script src="connections_categories_es.js?v=sp13a"></script>
-<script src="impostor_explanations_es.js?v=sp13a"></script>
-<script src="ui_strings_en.js?v=sp13a"></script>
-<script src="ui_strings_es.js?v=sp13a"></script>
+<script src="definitions.js?v=sp19a"></script>
+<script src="connections_categories_es.js?v=sp19a"></script>
+<script src="impostor_explanations_es.js?v=sp19a"></script>
+<script src="ui_strings_en.js?v=sp19a"></script>
+<script src="ui_strings_es.js?v=sp19a"></script>
 <script src="starparty_questions.js"></script>
 <script src="starparty_wildcards.js"></script>
 <script src="starparty_realword_pools.js"></script>
-<script src="app.js?v=sp13a"></script>
-<script src="starparty_minigames.js?v=sp13a"></script>
-<script src="starparty.js?v=sp13a"></script>
+<script src="sfx.js?v=sp19a"></script>
+<script src="app.js?v=sp19a"></script>
+<script src="starparty_minigames.js?v=sp19a"></script>
+<script src="starparty.js?v=sp19a"></script>
 </body>
 </html>

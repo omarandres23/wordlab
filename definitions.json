@@ -1,8 +1,8 @@
 {
  "file": "definitions.json",
- "purpose": "Shared bilingual word meanings for Is It A Real Word, Waffle, Connections, and Fill in the Blanks. Student-dictionary style, 1 short phrase each, per language. Keys are UPPERCASE words. Also used by Strands (end-of-game word meanings). Also covers the 3 difficulty levels of IS IT A REAL WORD (v2).",
+ "purpose": "Shared bilingual word meanings for Is It A Real Word, Waffle, Connections, and Fill in the Blanks. Student-dictionary style, 1 short phrase each, per language. Keys are UPPERCASE words. Also used by Strands (end-of-game word meanings). Also covers the 3 difficulty levels of IS IT A REAL WORD (v2). Also covers Emoji Match. Also covers Hear It (minimal-pair words).",
  "style": "short simple phrase, for English learners; en = English definition, es = Spanish translation of that definition",
- "count": 1741,
+ "count": 1987,
  "definitions": {
   "ABELIAN": {
    "en": "in math, describing a group where the order of operations does not change the result",
@@ -104,6 +104,10 @@
    "en": "an opinion about what someone should do",
    "es": "una opinión sobre lo que alguien debería hacer"
   },
+  "ADVISE": {
+   "en": "to tell someone what you think they should do",
+   "es": "decirle a alguien lo que crees que deberia hacer"
+  },
   "ADVOCATE": {
    "en": "a person who publicly supports a cause",
    "es": "una persona que apoya publicamente una causa"
@@ -131,6 +135,10 @@
   "AHEAD": {
    "en": "in front, or in a leading position",
    "es": "adelante, o en una posición de liderazgo"
+  },
+  "AIR": {
+   "en": "the gas we breathe",
+   "es": "el gas que respiramos"
   },
   "AIRPLANE": {
    "en": "a flying vehicle with wings and engines",
@@ -228,6 +236,10 @@
    "en": "very old, from a long time ago",
    "es": "muy antiguo, de hace mucho tiempo"
   },
+  "AND": {
+   "en": "a word used to join two things",
+   "es": "una palabra que une dos cosas"
+  },
   "ANGER": {
    "en": "a strong feeling of being upset or annoyed",
    "es": "un sentimiento fuerte de molestia o enojo"
@@ -303,6 +315,10 @@
   "APPRECIATION": {
    "en": "being thankful, or a rise in value",
    "es": "sentir agradecimiento, o un aumento en el valor"
+  },
+  "AQUARIUM": {
+   "en": "a place where fish are kept and shown",
+   "es": "un lugar donde se mantienen y exhiben peces"
   },
   "ARBITRARY": {
    "en": "decided without a clear or fair reason",
@@ -400,6 +416,10 @@
    "en": "protection given to someone who fled their country",
    "es": "protección que se da a alguien que huyó de su país"
   },
+  "ATE": {
+   "en": "past form of eat",
+   "es": "forma pasada de comer"
+  },
   "ATHLETICS": {
    "en": "sports that involve running, jumping, and physical skill",
    "es": "deportes que implican correr, saltar y habilidad fisica"
@@ -488,6 +508,14 @@
    "en": "to wait for something",
    "es": "esperar algo"
   },
+  "AXE": {
+   "en": "a tool with a blade for cutting wood",
+   "es": "una herramienta con hoja para cortar madera"
+  },
+  "BABY": {
+   "en": "a very young child",
+   "es": "un nino muy pequeno"
+  },
   "BACKPACK": {
    "en": "a bag you carry on your back",
    "es": "una bolsa que se lleva sobre la espalda"
@@ -495,6 +523,10 @@
   "BACKPACKER": {
    "en": "a person who travels cheaply carrying a backpack",
    "es": "una persona que viaja de forma económica cargando una mochila"
+  },
+  "BAD": {
+   "en": "not good",
+   "es": "que no es bueno"
   },
   "BAG": {
    "en": "a container used for carrying things",
@@ -507,6 +539,10 @@
   "BAGGAGE": {
    "en": "the bags you travel with; luggage",
    "es": "las maletas con las que viajas; equipaje"
+  },
+  "BAIL": {
+   "en": "money paid so someone can leave jail while waiting for trial",
+   "es": "dinero que se paga para que alguien salga de la carcel mientras espera juicio"
   },
   "BAKERY": {
    "en": "a shop that makes and sells bread and cakes",
@@ -532,6 +568,10 @@
    "en": "a way of voting in secret",
    "es": "una forma de votar en secreto"
   },
+  "BAN": {
+   "en": "to officially forbid something",
+   "es": "prohibir algo oficialmente"
+  },
   "BANANA": {
    "en": "a long curved fruit with yellow skin",
    "es": "una fruta larga y curva con piel amarilla"
@@ -551,6 +591,10 @@
   "BARTENDER": {
    "en": "a person who serves drinks at a bar",
    "es": "una persona que sirve bebidas en un bar"
+  },
+  "BASE": {
+   "en": "the bottom part that supports something",
+   "es": "la parte de abajo que sostiene algo"
   },
   "BASKET": {
    "en": "a container made of woven material",
@@ -576,9 +620,17 @@
    "en": "the sandy shore next to the sea",
    "es": "la orilla de arena junto al mar"
   },
+  "BEAN": {
+   "en": "a small seed eaten as food",
+   "es": "una semilla pequena que se come"
+  },
   "BEAR": {
    "en": "a large strong wild animal with thick fur",
    "es": "un animal salvaje grande y fuerte con pelaje espeso"
+  },
+  "BEAT": {
+   "en": "to hit repeatedly, or to win against someone",
+   "es": "golpear repetidamente, o ganarle a alguien"
   },
   "BED": {
    "en": "a piece of furniture you sleep on",
@@ -595,6 +647,10 @@
   "BEE": {
    "en": "a flying insect that makes honey",
    "es": "un insecto volador que produce miel"
+  },
+  "BEG": {
+   "en": "to ask for something very strongly",
+   "es": "pedir algo con mucha insistencia"
   },
   "BEGIN": {
    "en": "to start something",
@@ -616,9 +672,21 @@
    "en": "a standard used to compare things",
    "es": "un estandar que se usa para comparar cosas"
   },
+  "BEND": {
+   "en": "to make something curved",
+   "es": "hacer que algo se curve"
+  },
   "BENEFICIARY": {
    "en": "a person who receives money or benefits",
    "es": "una persona que recibe dinero o beneficios"
+  },
+  "BERRY": {
+   "en": "a small round soft fruit",
+   "es": "una fruta pequena, redonda y blanda"
+  },
+  "BEST": {
+   "en": "better than all the others",
+   "es": "mejor que todos los demas"
   },
   "BEVERAGE": {
    "en": "a drink",
@@ -648,6 +716,10 @@
    "en": "a paper showing money you must pay",
    "es": "un papel que muestra el dinero que debes pagar"
   },
+  "BIN": {
+   "en": "a container for putting things in",
+   "es": "un recipiente para meter cosas"
+  },
   "BIODIVERSITY": {
    "en": "the variety of living things in an area",
    "es": "la variedad de seres vivos en un área"
@@ -659,6 +731,22 @@
   "BIRD": {
    "en": "an animal with feathers and wings",
    "es": "un animal con plumas y alas"
+  },
+  "BIRTHDAY": {
+   "en": "the day each year when you were born",
+   "es": "el dia de cada ano en que naciste"
+  },
+  "BIT": {
+   "en": "a small piece or amount",
+   "es": "un trozo o una cantidad pequena"
+  },
+  "BLACK": {
+   "en": "the darkest color, like the night",
+   "es": "el color mas oscuro, como la noche"
+  },
+  "BLACKBOARD": {
+   "en": "a dark board a teacher writes on",
+   "es": "una pizarra oscura donde escribe el profesor"
   },
   "BLANKET": {
    "en": "a warm cover used on a bed",
@@ -699,6 +787,10 @@
   "BOAT": {
    "en": "a small vehicle that travels on water",
    "es": "un pequeño vehículo que viaja sobre el agua"
+  },
+  "BOG": {
+   "en": "soft wet ground you can sink into",
+   "es": "terreno blando y mojado donde te puedes hundir"
   },
   "BOLD": {
    "en": "brave and confident",
@@ -751,6 +843,10 @@
   "BOUTIQUE": {
    "en": "a small shop selling fashionable clothes",
    "es": "una tienda pequeña que vende ropa de moda"
+  },
+  "BOWL": {
+   "en": "a round deep dish for food",
+   "es": "un plato hondo y redondo para comida"
   },
   "BRACKET": {
    "en": "a mark used in pairs, or a support piece",
@@ -836,6 +932,10 @@
    "en": "a meal where you serve yourself from many dishes",
    "es": "una comida donde te sirves tú mismo de varios platos"
   },
+  "BUG": {
+   "en": "a small insect",
+   "es": "un insecto pequeno"
+  },
   "BUGS": {
    "en": "small insects",
    "es": "insectos pequenos"
@@ -864,9 +964,17 @@
    "en": "a person who cuts and sells meat",
    "es": "una persona que corta y vende carne"
   },
+  "BUTTERFLY": {
+   "en": "an insect with large colorful wings",
+   "es": "un insecto con alas grandes y de colores"
+  },
   "BUY": {
    "en": "to get something by paying money",
    "es": "obtener algo pagando dinero"
+  },
+  "BUZZ": {
+   "en": "the sound a bee makes",
+   "es": "el sonido que hace una abeja"
   },
   "BYLINE": {
    "en": "the line naming the writer of an article",
@@ -911,6 +1019,10 @@
   "CAMPAIGN": {
    "en": "a planned series of actions to reach a goal",
    "es": "una serie planeada de acciones para lograr una meta"
+  },
+  "CAMPFIRE": {
+   "en": "a fire made outside when camping",
+   "es": "una fogata hecha al aire libre al acampar"
   },
   "CAMPING": {
    "en": "staying outdoors in a tent for fun",
@@ -976,6 +1088,10 @@
    "en": "kind and thinking about others' needs",
    "es": "amable y que piensa en las necesidades de los demás"
   },
+  "CARNIVAL": {
+   "en": "a street festival with costumes and music",
+   "es": "una fiesta callejera con disfraces y musica"
+  },
   "CARROT": {
    "en": "a long orange vegetable",
    "es": "una verdura larga y anaranjada"
@@ -996,9 +1112,21 @@
    "en": "a person who takes payment in a store",
    "es": "una persona que cobra el pago en una tienda"
   },
+  "CASTLE": {
+   "en": "a large old building with strong walls",
+   "es": "un edificio grande y antiguo con muros fuertes"
+  },
   "CAT": {
    "en": "a small furry animal kept as a pet",
    "es": "un pequeño animal peludo que se tiene como mascota"
+  },
+  "CATCH": {
+   "en": "to take hold of something moving",
+   "es": "agarrar algo que se mueve"
+  },
+  "CATHEDRAL": {
+   "en": "a very large and important church",
+   "es": "una iglesia muy grande e importante"
   },
   "CATTLE": {
    "en": "cows raised on a farm",
@@ -1064,6 +1192,14 @@
    "en": "an organization that helps people in need",
    "es": "una organización que ayuda a personas necesitadas"
   },
+  "CHEAP": {
+   "en": "costing little money",
+   "es": "que cuesta poco dinero"
+  },
+  "CHEAT": {
+   "en": "to break the rules to win",
+   "es": "romper las reglas para ganar"
+  },
   "CHECK": {
    "en": "to look at something to make sure it is right",
    "es": "revisar algo para asegurarse de que esté bien"
@@ -1100,9 +1236,21 @@
    "en": "cold in an uncomfortable way",
    "es": "frio de manera incomoda"
   },
+  "CHIN": {
+   "en": "the part of your face below your mouth",
+   "es": "la parte de la cara debajo de la boca"
+  },
+  "CHIP": {
+   "en": "a thin slice of fried potato",
+   "es": "una rodaja fina de papa frita"
+  },
   "CHOCOLATE": {
    "en": "a sweet brown food made from cocoa",
    "es": "un alimento dulce y café hecho de cacao"
+  },
+  "CHOOSE": {
+   "en": "to pick one thing from several",
+   "es": "elegir una cosa entre varias"
   },
   "CHOP": {
    "en": "to cut into pieces with a knife",
@@ -1135,6 +1283,10 @@
   "CIRCUMSPECT": {
    "en": "careful and thinking about risks before acting",
    "es": "cuidadoso y que piensa en los riesgos antes de actuar"
+  },
+  "CIRCUS": {
+   "en": "a show with clowns and acrobats",
+   "es": "un espectaculo con payasos y acrobatas"
   },
   "CITATION": {
    "en": "a reference to a source, or an official notice",
@@ -1171,6 +1323,10 @@
   "CLIP": {
    "en": "a small object that holds things together",
    "es": "un objeto pequeño que sostiene cosas juntas"
+  },
+  "CLOCK": {
+   "en": "an object that shows the time",
+   "es": "un objeto que muestra la hora"
   },
   "CLOSE": {
    "en": "near, or to shut something",
@@ -1452,6 +1608,10 @@
    "en": "able to make you believe something",
    "es": "capaz de hacerte creer algo"
   },
+  "COOK": {
+   "en": "to prepare food with heat",
+   "es": "preparar comida con calor"
+  },
   "COOKIE": {
    "en": "a small sweet baked snack",
    "es": "una galleta dulce y horneada"
@@ -1459,6 +1619,10 @@
   "COOKING": {
    "en": "preparing food with heat",
    "es": "preparar comida usando calor"
+  },
+  "COP": {
+   "en": "an informal word for a police officer",
+   "es": "palabra informal para un policia"
   },
   "COPAY": {
    "en": "the fixed part of a medical bill you pay yourself",
@@ -1487,6 +1651,10 @@
   "COSTUME": {
    "en": "special clothes worn to look like someone else",
    "es": "ropa especial que se usa para parecerse a otra persona"
+  },
+  "COT": {
+   "en": "a small simple bed",
+   "es": "una cama pequena y sencilla"
   },
   "COTTAGE": {
    "en": "a small house in the countryside",
@@ -1596,6 +1764,14 @@
    "en": "heavy, slow or difficult to handle",
    "es": "pesado, lento o dificil de manejar"
   },
+  "CUP": {
+   "en": "a small container you drink from",
+   "es": "un recipiente pequeno para beber"
+  },
+  "CURB": {
+   "en": "the edge of the sidewalk next to the street",
+   "es": "el borde de la acera junto a la calle"
+  },
   "CURE": {
    "en": "to make a sick person healthy again",
    "es": "hacer que una persona enferma vuelva a estar sana"
@@ -1616,6 +1792,10 @@
    "en": "to reduce or limit something",
    "es": "reducir o limitar algo"
   },
+  "CURVE": {
+   "en": "a line that bends smoothly",
+   "es": "una linea que se dobla suavemente"
+  },
   "CUSTOM": {
    "en": "a usual way of doing something in a group",
    "es": "una forma habitual de hacer algo en un grupo"
@@ -1628,9 +1808,17 @@
    "en": "the place where bags are checked at a border",
    "es": "el lugar donde se revisan las maletas en una frontera"
   },
+  "CUT": {
+   "en": "to divide something with a sharp tool",
+   "es": "dividir algo con algo filoso"
+  },
   "CYCLING": {
    "en": "the sport or activity of riding a bicycle",
    "es": "el deporte o actividad de andar en bicicleta"
+  },
+  "DAD": {
+   "en": "an informal word for father",
+   "es": "palabra informal para padre"
   },
   "DANCE": {
    "en": "to move your body in time with music",
@@ -1644,9 +1832,17 @@
    "en": "a chance that something bad will happen",
    "es": "una posibilidad de que ocurra algo malo"
   },
+  "DARE": {
+   "en": "to be brave enough to do something",
+   "es": "atreverse a hacer algo"
+  },
   "DAY": {
    "en": "the time of light between sunrise and sunset",
    "es": "el tiempo de luz entre el amanecer y el atardecer"
+  },
+  "DEAD": {
+   "en": "no longer alive",
+   "es": "que ya no esta vivo"
   },
   "DEADLINE": {
    "en": "the latest time by which something must be done",
@@ -1744,6 +1940,10 @@
    "en": "a group of people sharing a feature like age",
    "es": "un grupo de personas que comparte una característica como la edad"
   },
+  "DEN": {
+   "en": "the home of a wild animal",
+   "es": "la guarida de un animal salvaje"
+  },
   "DEPART": {
    "en": "to leave a place",
    "es": "irse de un lugar"
@@ -1832,6 +2032,10 @@
    "en": "the main meal of the day, usually in the evening",
    "es": "la comida principal del día, usualmente en la noche"
   },
+  "DIP": {
+   "en": "to put something quickly into a liquid",
+   "es": "meter algo rapido en un liquido"
+  },
   "DIPLOMA": {
    "en": "a certificate showing you finished a course",
    "es": "un certificado que muestra que terminaste un curso"
@@ -1908,6 +2112,10 @@
    "en": "a share of a company's profit paid to owners",
    "es": "una parte de la ganancia de una empresa que se paga a los dueños"
   },
+  "DOCK": {
+   "en": "a place where boats stop",
+   "es": "un lugar donde se detienen los barcos"
+  },
   "DOCTOR": {
    "en": "a person trained to treat sick people",
    "es": "una persona capacitada para tratar a los enfermos"
@@ -1932,6 +2140,10 @@
    "en": "a movable barrier used to enter a room",
    "es": "una barrera móvil que se usa para entrar a una habitación"
   },
+  "DRAGON": {
+   "en": "an imaginary animal that breathes fire",
+   "es": "un animal imaginario que echa fuego"
+  },
   "DRAMA": {
    "en": "a serious play or an exciting situation",
    "es": "una obra seria, o una situación emocionante"
@@ -1947,6 +2159,10 @@
   "DREAM": {
    "en": "images in your mind while asleep, or a strong hope",
    "es": "imágenes en tu mente mientras duermes, o una fuerte esperanza"
+  },
+  "DRESS": {
+   "en": "a piece of clothing worn mostly by women",
+   "es": "una prenda que usan mayormente las mujeres"
   },
   "DRESSED": {
    "en": "wearing clothes",
@@ -2004,6 +2220,10 @@
    "en": "wiping away fine dirt from surfaces",
    "es": "quitar el polvo fino de las superficies"
   },
+  "EACH": {
+   "en": "every one of a group, one by one",
+   "es": "cada uno de un grupo, uno por uno"
+  },
   "EAGLE": {
    "en": "a large strong bird that hunts",
    "es": "un ave grande y fuerte que caza"
@@ -2028,6 +2248,10 @@
    "en": "relaxed and calm about most things",
    "es": "relajado y tranquilo sobre la mayoría de las cosas"
   },
+  "EAT": {
+   "en": "to put food in your mouth and swallow it",
+   "es": "meter comida en la boca y tragarla"
+  },
   "ECHIDNA": {
    "en": "a small spiny animal that lays eggs",
    "es": "un pequeño animal con púas que pone huevos"
@@ -2035,6 +2259,10 @@
   "ECOSYSTEM": {
    "en": "living things and their environment working together",
    "es": "los seres vivos y su ambiente trabajando juntos"
+  },
+  "EDGE": {
+   "en": "the outer line where something ends",
+   "es": "la linea exterior donde algo termina"
   },
   "EDITOR": {
    "en": "a person who prepares text for publishing",
@@ -2167,6 +2395,10 @@
   "ENCRYPTION": {
    "en": "turning data into code to keep it secret",
    "es": "convertir datos en código para mantenerlos en secreto"
+  },
+  "END": {
+   "en": "the final part of something",
+   "es": "la parte final de algo"
   },
   "ENDEAVOR": {
    "en": "a serious attempt to achieve something",
@@ -2304,6 +2536,10 @@
    "en": "facts that show something is true",
    "es": "hechos que muestran que algo es verdad"
   },
+  "EX": {
+   "en": "a person you used to be in a relationship with",
+   "es": "una persona con la que tuviste una relacion"
+  },
   "EXAMINATION": {
    "en": "a careful check or a formal test",
    "es": "una revisión cuidadosa o una prueba formal"
@@ -2396,6 +2632,10 @@
    "en": "the body part used for seeing",
    "es": "la parte del cuerpo que se usa para ver"
   },
+  "EYES": {
+   "en": "the parts of your body you see with",
+   "es": "las partes del cuerpo con las que ves"
+  },
   "EYESORE": {
    "en": "something very ugly to look at",
    "es": "algo muy feo de ver"
@@ -2468,6 +2708,14 @@
    "en": "comments about how well something was done",
    "es": "comentarios sobre qué tan bien se hizo algo"
   },
+  "FEEL": {
+   "en": "to experience an emotion or a touch",
+   "es": "experimentar una emocion o un contacto"
+  },
+  "FEET": {
+   "en": "more than one foot",
+   "es": "mas de un pie"
+  },
   "FENCE": {
    "en": "a barrier around an area",
    "es": "una barrera alrededor de un área"
@@ -2496,6 +2744,10 @@
    "en": "a soft sweet fruit with many tiny seeds",
    "es": "una fruta dulce y blanda con muchas semillas pequenas"
   },
+  "FILL": {
+   "en": "to make something full",
+   "es": "hacer que algo quede lleno"
+  },
   "FILM": {
    "en": "a story told with moving pictures",
    "es": "una historia contada con imagenes en movimiento"
@@ -2512,9 +2764,17 @@
    "en": "one of the five parts at the end of your hand",
    "es": "una de las cinco partes al final de la mano"
   },
+  "FIRE": {
+   "en": "the hot bright flame that burns things",
+   "es": "la llama caliente y brillante que quema"
+  },
   "FIREWALL": {
    "en": "software that protects a network from attacks",
    "es": "un software que protege una red de ataques"
+  },
+  "FIREWORKS": {
+   "en": "explosives that make colored lights in the sky",
+   "es": "explosivos que hacen luces de colores en el cielo"
   },
   "FISCAL": {
    "en": "relating to government money and taxes",
@@ -2539,6 +2799,14 @@
   "FLAMINGO": {
    "en": "a tall pink bird that stands on one leg",
    "es": "un ave alta y rosada que se para en una pata"
+  },
+  "FLASH": {
+   "en": "a sudden bright light",
+   "es": "una luz brillante y repentina"
+  },
+  "FLESH": {
+   "en": "the soft part of the body under the skin",
+   "es": "la parte blanda del cuerpo bajo la piel"
   },
   "FLIGHT": {
    "en": "a journey by plane",
@@ -2571,6 +2839,14 @@
   "FOLDER": {
    "en": "a holder for papers or computer files",
    "es": "un portador de papeles o archivos de computadora"
+  },
+  "FOOD": {
+   "en": "what people and animals eat",
+   "es": "lo que comen las personas y los animales"
+  },
+  "FOOL": {
+   "en": "a person who acts in a silly way",
+   "es": "una persona que actua tontamente"
   },
   "FOOT": {
    "en": "the body part at the end of the leg",
@@ -2688,6 +2964,10 @@
    "en": "material burned to produce energy",
    "es": "material que se quema para producir energía"
   },
+  "FULL": {
+   "en": "with no space left inside",
+   "es": "sin espacio libre adentro"
+  },
   "FUN": {
    "en": "enjoyment and a good time",
    "es": "disfrute y un buen rato"
@@ -2800,6 +3080,10 @@
    "en": "a sport where you hit a ball into holes",
    "es": "un deporte en el que golpeas una bola hacia hoyos"
   },
+  "GONDOLA": {
+   "en": "a long narrow boat used in Venice",
+   "es": "un bote largo y angosto usado en Venecia"
+  },
   "GOODBYE": {
    "en": "a word said when leaving",
    "es": "una palabra que se dice al despedirse"
@@ -2824,6 +3108,10 @@
    "en": "to finish a course of study",
    "es": "terminar un curso de estudios"
   },
+  "GRADUATION": {
+   "en": "the ceremony when you finish your studies",
+   "es": "la ceremonia cuando terminas tus estudios"
+  },
   "GRAIN": {
    "en": "the seeds of crops like wheat or rice",
    "es": "las semillas de cultivos como el trigo o el arroz"
@@ -2832,7 +3120,15 @@
    "en": "the rules for using a language correctly",
    "es": "las reglas para usar un idioma correctamente"
   },
+  "GRANDFATHER": {
+   "en": "the father of your mother or father",
+   "es": "el padre de tu madre o de tu padre"
+  },
   "GRANDMA": {
+   "en": "the mother of your mother or father",
+   "es": "la madre de tu madre o de tu padre"
+  },
+  "GRANDMOTHER": {
    "en": "the mother of your mother or father",
    "es": "la madre de tu madre o de tu padre"
   },
@@ -2888,6 +3184,10 @@
    "en": "a firm promise that something will happen",
    "es": "una promesa firme de que algo va a suceder"
   },
+  "GUESS": {
+   "en": "to give an answer without being sure",
+   "es": "dar una respuesta sin estar seguro"
+  },
   "GUESTS": {
    "en": "people invited to visit or to an event",
    "es": "personas invitadas a visitar o a un evento"
@@ -2904,9 +3204,17 @@
    "en": "a place with equipment for exercise",
    "es": "un lugar con equipo para hacer ejercicio"
   },
+  "HAD": {
+   "en": "past form of have",
+   "es": "forma pasada de tener"
+  },
   "HAIL": {
    "en": "small balls of ice that fall from the sky",
    "es": "pequeñas bolas de hielo que caen del cielo"
+  },
+  "HAIR": {
+   "en": "what grows on top of your head",
+   "es": "lo que crece en la cabeza"
   },
   "HAMMER": {
    "en": "a tool used to hit nails",
@@ -2936,6 +3244,10 @@
    "en": "strong and able to survive hard conditions",
    "es": "fuerte y capaz de sobrevivir condiciones difíciles"
   },
+  "HARM": {
+   "en": "damage or injury",
+   "es": "dano o perjuicio"
+  },
   "HARMONY": {
    "en": "a pleasing agreement of sounds or people",
    "es": "un acuerdo agradable de sonidos o de personas"
@@ -2952,9 +3264,17 @@
    "en": "something you wear on your head",
    "es": "algo que se usa en la cabeza"
   },
+  "HATE": {
+   "en": "to dislike something very strongly",
+   "es": "sentir un rechazo muy fuerte por algo"
+  },
   "HAUGHTY": {
    "en": "acting proud and looking down on others",
    "es": "que actúa con orgullo y mira a otros por debajo"
+  },
+  "HEAD": {
+   "en": "the top part of your body, above your neck",
+   "es": "la parte de arriba del cuerpo, sobre el cuello"
   },
   "HEADACHE": {
    "en": "a pain in the head",
@@ -2984,9 +3304,25 @@
    "en": "in good physical condition",
    "es": "en buena condicion fisica"
   },
+  "HEAR": {
+   "en": "to receive sound with your ears",
+   "es": "recibir sonido con los oidos"
+  },
+  "HEART": {
+   "en": "the organ that pumps blood in your body",
+   "es": "el organo que bombea la sangre en el cuerpo"
+  },
+  "HEAT": {
+   "en": "the quality of being hot",
+   "es": "la cualidad de estar caliente"
+  },
   "HEDGE": {
    "en": "a row of bushes forming a border",
    "es": "una fila de arbustos que forma un borde"
+  },
+  "HEEL": {
+   "en": "the back part of your foot",
+   "es": "la parte de atras del pie"
   },
   "HELICOPTER": {
    "en": "an aircraft that flies with spinning blades",
@@ -3016,6 +3352,10 @@
    "en": "a system where people are ranked by level",
    "es": "un sistema donde las personas están clasificadas por nivel"
   },
+  "HIGH": {
+   "en": "far above the ground",
+   "es": "muy por encima del suelo"
+  },
   "HIGHWAY": {
    "en": "a large main road",
    "es": "una carretera principal grande"
@@ -3023,6 +3363,10 @@
   "HIKING": {
    "en": "the activity of walking in nature",
    "es": "la actividad de caminar en la naturaleza"
+  },
+  "HILL": {
+   "en": "a small mountain",
+   "es": "una montana pequena"
   },
   "HINDRANCE": {
    "en": "something that makes progress difficult",
@@ -3036,9 +3380,17 @@
    "en": "the study of past events",
    "es": "el estudio de eventos del pasado"
   },
+  "HIT": {
+   "en": "to strike something",
+   "es": "golpear algo"
+  },
   "HOCKEY": {
    "en": "a team sport played with sticks and a puck or ball",
    "es": "un deporte de equipo que se juega con palos y un disco o pelota"
+  },
+  "HOLD": {
+   "en": "to keep something in your hand",
+   "es": "sostener algo con la mano"
   },
   "HOLIDAY": {
    "en": "a day off work, or a vacation",
@@ -3047,6 +3399,10 @@
   "HOMEWORK": {
    "en": "school tasks done at home",
    "es": "tareas escolares que se hacen en casa"
+  },
+  "HONE": {
+   "en": "to make a skill sharper with practice",
+   "es": "afinar una habilidad con practica"
   },
   "HONEST": {
    "en": "truthful and sincere",
@@ -3080,9 +3436,17 @@
    "en": "a person who welcomes guests",
    "es": "una persona que recibe a los invitados"
   },
+  "HOT": {
+   "en": "having a high temperature",
+   "es": "que tiene temperatura alta"
+  },
   "HOUR": {
    "en": "a period of sixty minutes",
    "es": "un periodo de sesenta minutos"
+  },
+  "HOUSE": {
+   "en": "a building where people live",
+   "es": "un edificio donde vive la gente"
   },
   "HOUSEWORK": {
    "en": "the cleaning and tasks done around a home",
@@ -3103,6 +3467,10 @@
   "HUSHED": {
    "en": "very quiet",
    "es": "muy silencioso"
+  },
+  "HUT": {
+   "en": "a small simple house",
+   "es": "una casa pequena y sencilla"
   },
   "HYPERBOLE": {
    "en": "an exaggeration not meant to be taken literally",
@@ -3135,6 +3503,14 @@
   "IDLE": {
    "en": "not working or active",
    "es": "sin trabajar ni estar activo"
+  },
+  "IGLOO": {
+   "en": "a small round house made of snow",
+   "es": "una casa pequena y redonda hecha de nieve"
+  },
+  "ILL": {
+   "en": "not healthy, sick",
+   "es": "que no esta sano, enfermo"
   },
   "IMAGINE": {
    "en": "to form a picture in your mind",
@@ -3340,6 +3716,10 @@
    "en": "slanted letters used for emphasis",
    "es": "letras inclinadas usadas para dar énfasis"
   },
+  "ITCH": {
+   "en": "an uncomfortable feeling that makes you scratch",
+   "es": "una sensacion incomoda que te hace rascarte"
+  },
   "ITINERARY": {
    "en": "a detailed plan for a trip",
    "es": "un plan detallado para un viaje"
@@ -3348,9 +3728,17 @@
    "en": "a short coat",
    "es": "un abrigo corto"
   },
+  "JACKPOT": {
+   "en": "the biggest prize you can win",
+   "es": "el premio mas grande que puedes ganar"
+  },
   "JACKSON": {
    "en": "a personal or place name",
    "es": "un nombre propio o de lugar"
+  },
+  "JAM": {
+   "en": "sweet food made from fruit and sugar",
+   "es": "alimento dulce hecho de fruta y azucar"
   },
   "JAMAICA": {
    "en": "an island country in the Caribbean",
@@ -3372,6 +3760,14 @@
    "en": "wanting what someone else has",
    "es": "querer lo que otra persona tiene"
   },
+  "JEER": {
+   "en": "to shout rudely at someone",
+   "es": "gritarle a alguien con burla"
+  },
+  "JELL": {
+   "en": "to become firm like jelly",
+   "es": "cuajar, ponerse firme como gelatina"
+  },
   "JELLYFISH": {
    "en": "a soft sea creature that can sting",
    "es": "una criatura marina blanda que puede picar"
@@ -3384,6 +3780,10 @@
    "en": "a female first name",
    "es": "un nombre de mujer"
   },
+  "JET": {
+   "en": "a fast airplane",
+   "es": "un avion rapido"
+  },
   "JITTERY": {
    "en": "nervous and shaky",
    "es": "nervioso y tembloroso"
@@ -3391,6 +3791,10 @@
   "JOB": {
    "en": "the work a person does for pay",
    "es": "el trabajo que una persona hace por un pago"
+  },
+  "JOKE": {
+   "en": "something said to make people laugh",
+   "es": "algo que se dice para hacer reir"
   },
   "JOURNALIST": {
    "en": "a person who writes the news",
@@ -3412,6 +3816,10 @@
    "en": "the seventh month of the year",
    "es": "el séptimo mes del año"
   },
+  "JUNGLE": {
+   "en": "a thick hot forest with many plants",
+   "es": "un bosque denso y caluroso con muchas plantas"
+  },
   "JURISDICTION": {
    "en": "the area where a court or authority has power",
    "es": "el área donde un tribunal o autoridad tiene poder"
@@ -3423,6 +3831,10 @@
   "KETTLE": {
    "en": "a container for boiling water",
    "es": "un recipiente para hervir agua"
+  },
+  "KEY": {
+   "en": "a small metal object that opens a lock",
+   "es": "un objeto pequeno de metal que abre una cerradura"
   },
   "KEYBOARD": {
    "en": "a set of keys for typing or playing music",
@@ -3451,6 +3863,10 @@
   "KNIFE": {
    "en": "a tool with a blade for cutting",
    "es": "una herramienta con una hoja para cortar"
+  },
+  "KOOK": {
+   "en": "a strange or crazy person",
+   "es": "una persona rara o loca"
   },
   "KORAN": {
    "en": "the holy book of Islam",
@@ -3484,6 +3900,10 @@
    "en": "a long spear, or a personal name",
    "es": "una lanza larga, o un nombre propio"
   },
+  "LAND": {
+   "en": "the solid part of the earth",
+   "es": "la parte solida de la tierra"
+  },
   "LANDLORD": {
    "en": "a person who rents out property",
    "es": "una persona que alquila una propiedad"
@@ -3516,6 +3936,10 @@
    "en": "big in size",
    "es": "grande en tamaño"
   },
+  "LAUNDRY": {
+   "en": "clothes that need washing, or the place to wash them",
+   "es": "ropa que hay que lavar, o el lugar donde se lava"
+  },
   "LAVISH": {
    "en": "very generous or expensive",
    "es": "muy generoso o caro"
@@ -3540,6 +3964,10 @@
    "en": "a contract to rent property for a set time",
    "es": "un contrato para alquilar una propiedad por un tiempo determinado"
   },
+  "LEAST": {
+   "en": "the smallest amount",
+   "es": "la cantidad mas pequena"
+  },
   "LEATHER": {
    "en": "material made from animal skin",
    "es": "material hecho de piel de animal"
@@ -3563,6 +3991,10 @@
   "LEMON": {
    "en": "a sour yellow fruit",
    "es": "una fruta amarilla y agria"
+  },
+  "LEND": {
+   "en": "to give something for a short time",
+   "es": "dar algo por un tiempo corto"
   },
   "LETHARGIC": {
    "en": "having no energy; very slow and tired",
@@ -3600,6 +4032,10 @@
    "en": "to make something brighter or less heavy",
    "es": "hacer que algo sea más brillante o menos pesado"
   },
+  "LIGHTHOUSE": {
+   "en": "a tower with a light that guides ships",
+   "es": "una torre con una luz que guia a los barcos"
+  },
   "LIGHTNING": {
    "en": "a bright flash of electricity in the sky",
    "es": "un destello brillante de electricidad en el cielo"
@@ -3616,6 +4052,10 @@
    "en": "how easily an asset can be turned into cash",
    "es": "qué tan fácil se puede convertir un activo en efectivo"
   },
+  "LIST": {
+   "en": "words or items written one under another",
+   "es": "palabras o cosas escritas una debajo de otra"
+  },
   "LISTEN": {
    "en": "to pay attention to sound",
    "es": "prestar atencion a un sonido"
@@ -3627,6 +4067,10 @@
   "LITIGATION": {
    "en": "the process of taking a case to court",
    "es": "el proceso de llevar un caso a un tribunal"
+  },
+  "LIVE": {
+   "en": "to be alive, or to have your home somewhere",
+   "es": "estar vivo, o tener tu hogar en un lugar"
   },
   "LIVESTOCK": {
    "en": "farm animals kept for use or profit",
@@ -3640,6 +4084,10 @@
    "en": "the entrance area of a building",
    "es": "el área de entrada de un edificio"
   },
+  "LOCK": {
+   "en": "a device that keeps a door closed",
+   "es": "un mecanismo que mantiene cerrada una puerta"
+  },
   "LOGIC": {
    "en": "clear and reasonable thinking",
    "es": "un pensamiento claro y razonable"
@@ -3648,9 +4096,21 @@
    "en": "the planning of moving goods and resources",
    "es": "la planeación del transporte de bienes y recursos"
   },
+  "LOOK": {
+   "en": "to turn your eyes toward something",
+   "es": "dirigir los ojos hacia algo"
+  },
   "LOOKING": {
    "en": "using your eyes to see something",
    "es": "usar los ojos para ver algo"
+  },
+  "LOOSE": {
+   "en": "not tight, not firmly fixed",
+   "es": "que no esta apretado ni bien sujeto"
+  },
+  "LOSE": {
+   "en": "to no longer have something",
+   "es": "dejar de tener algo"
   },
   "LOUNGE": {
    "en": "a comfortable room for relaxing",
@@ -3660,6 +4120,10 @@
    "en": "faithful support for someone or something",
    "es": "un apoyo fiel hacia alguien o algo"
   },
+  "LUCK": {
+   "en": "good things that happen by chance",
+   "es": "cosas buenas que pasan por azar"
+  },
   "LUCRATIVE": {
    "en": "producing a large amount of money",
    "es": "que produce mucho dinero"
@@ -3667,6 +4131,10 @@
   "LUGGAGE": {
    "en": "the bags you take when traveling",
    "es": "las maletas que llevas al viajar"
+  },
+  "LUKE": {
+   "en": "a male first name",
+   "es": "un nombre propio masculino"
   },
   "LUNCH": {
    "en": "the meal eaten in the middle of the day",
@@ -3700,6 +4168,10 @@
    "en": "a large building full of shops",
    "es": "un edificio grande lleno de tiendas"
   },
+  "MAN": {
+   "en": "an adult male person",
+   "es": "una persona adulta de sexo masculino"
+  },
   "MANAGER": {
    "en": "a person who is in charge of a team or business",
    "es": "una persona a cargo de un equipo o negocio"
@@ -3719,6 +4191,14 @@
   "MAP": {
    "en": "a drawing that shows an area and its roads",
    "es": "un dibujo que muestra una zona y sus caminos"
+  },
+  "MARATHON": {
+   "en": "a very long running race",
+   "es": "una carrera a pie muy larga"
+  },
+  "MARBLE": {
+   "en": "a hard stone used in buildings and statues",
+   "es": "una piedra dura usada en edificios y estatuas"
   },
   "MARCH": {
    "en": "the third month, or to walk in step",
@@ -3748,6 +4228,18 @@
    "en": "the red planet, fourth from the sun",
    "es": "el planeta rojo, el cuarto desde el sol"
   },
+  "MARVEL": {
+   "en": "something wonderful, or to be amazed by it",
+   "es": "algo maravilloso, o asombrarse por ello"
+  },
+  "MASS": {
+   "en": "a large amount of something",
+   "es": "una gran cantidad de algo"
+  },
+  "MAT": {
+   "en": "a small flat piece of material for the floor",
+   "es": "una pieza plana y pequena para el piso"
+  },
   "MATERIAL": {
    "en": "the substance something is made from",
    "es": "la sustancia con la que está hecho algo"
@@ -3772,9 +4264,17 @@
    "en": "a field covered with grass and flowers",
    "es": "un campo cubierto de hierba y flores"
   },
+  "MEAL": {
+   "en": "the food you eat at one time",
+   "es": "la comida que se come en una sola vez"
+  },
   "MEASURE": {
    "en": "to find the size or amount of something",
    "es": "averiguar el tamano o la cantidad de algo"
+  },
+  "MEAT": {
+   "en": "food that comes from the body of an animal",
+   "es": "alimento que viene del cuerpo de un animal"
   },
   "MEDIA": {
    "en": "the ways news reaches people, like TV and internet",
@@ -3795,6 +4295,10 @@
   "MEESE": {
    "en": "a personal name",
    "es": "un nombre propio"
+  },
+  "MEET": {
+   "en": "to come together with someone",
+   "es": "reunirse con alguien"
   },
   "MEETING": {
    "en": "a gathering of people to discuss something",
@@ -3820,6 +4324,10 @@
    "en": "the ability to remember, or a thing remembered",
    "es": "la capacidad de recordar, o algo que se recuerda"
   },
+  "MEN": {
+   "en": "more than one man",
+   "es": "mas de un hombre"
+  },
   "MENU": {
    "en": "a list of food and drinks to order",
    "es": "una lista de comidas y bebidas para pedir"
@@ -3828,9 +4336,17 @@
    "en": "the joining of two companies into one",
    "es": "la unión de dos empresas en una sola"
   },
+  "MESS": {
+   "en": "a dirty or disordered state",
+   "es": "un estado sucio o desordenado"
+  },
   "MESSAGE": {
    "en": "a piece of information sent to someone",
    "es": "un dato de información enviado a alguien"
+  },
+  "MET": {
+   "en": "past form of meet",
+   "es": "forma pasada de encontrarse"
   },
   "METAL": {
    "en": "a hard, shiny material like iron or gold",
@@ -3876,6 +4392,10 @@
    "en": "a white drink from cows and other animals",
    "es": "una bebida blanca que dan las vacas y otros animales"
   },
+  "MILL": {
+   "en": "a building where grain is made into flour",
+   "es": "un edificio donde el grano se convierte en harina"
+  },
   "MINERAL": {
    "en": "a natural solid substance found in the ground",
    "es": "una sustancia sólida natural que se encuentra en la tierra"
@@ -3891,6 +4411,10 @@
   "MISTAKE": {
    "en": "something done wrong by accident",
    "es": "algo hecho mal por accidente"
+  },
+  "MIT": {
+   "en": "a thick glove used in baseball",
+   "es": "un guante grueso usado en beisbol"
   },
   "MITIGATE": {
    "en": "to make something less severe",
@@ -4004,6 +4528,10 @@
    "en": "a very high area of land",
    "es": "un área de tierra muy alta"
   },
+  "MOUSE": {
+   "en": "a very small animal with a long tail",
+   "es": "un animal muy pequeno con cola larga"
+  },
   "MOUTH": {
    "en": "the body part used for eating and speaking",
    "es": "la parte del cuerpo usada para comer y hablar"
@@ -4011,6 +4539,10 @@
   "MOVIENIGHT": {
    "en": "an evening spent watching films",
    "es": "una noche dedicada a ver peliculas"
+  },
+  "MUCH": {
+   "en": "a large amount",
+   "es": "una gran cantidad"
   },
   "MUFFIN": {
    "en": "a small round baked cake",
@@ -4027,6 +4559,10 @@
   "MUSEUM": {
    "en": "a place that shows historic or artistic objects",
    "es": "un lugar que muestra objetos históricos o artísticos"
+  },
+  "MUSH": {
+   "en": "soft wet food with no shape",
+   "es": "comida blanda y aguada sin forma"
   },
   "MUSIC": {
    "en": "sounds arranged in a pleasant way",
@@ -4100,6 +4636,10 @@
    "en": "worried and easily frightened",
    "es": "preocupado y que se asusta fácilmente"
   },
+  "NEST": {
+   "en": "the home a bird builds for its eggs",
+   "es": "el hogar que un ave construye para sus huevos"
+  },
   "NETWORK": {
    "en": "a group of connected people or computers",
    "es": "un grupo de personas o computadoras conectadas"
@@ -4132,6 +4672,10 @@
    "en": "the dark time between evening and morning",
    "es": "el tiempo oscuro entre la noche y la mañana"
   },
+  "NIGHTMARE": {
+   "en": "a very frightening dream",
+   "es": "un sueno muy aterrador"
+  },
   "NINJA": {
    "en": "a trained Japanese fighter and spy",
    "es": "un luchador y espía japonés entrenado"
@@ -4148,6 +4692,10 @@
    "en": "the body part used for smelling and breathing",
    "es": "la parte del cuerpo usada para oler y respirar"
   },
+  "NOT": {
+   "en": "a word used to say something is false",
+   "es": "palabra que se usa para negar"
+  },
   "NOTEBOOK": {
    "en": "a book of blank pages for writing",
    "es": "un cuaderno de páginas en blanco para escribir"
@@ -4160,6 +4708,10 @@
    "en": "a person who cares for sick people",
    "es": "una persona que cuida a los enfermos"
   },
+  "NUT": {
+   "en": "a hard dry fruit with a shell",
+   "es": "un fruto seco y duro con cascara"
+  },
   "OATMEAL": {
    "en": "a hot breakfast food made from oats",
    "es": "un alimento caliente de desayuno hecho de avena"
@@ -4167,6 +4719,10 @@
   "OBJECTIVITY": {
    "en": "judging things fairly without personal bias",
    "es": "juzgar las cosas de forma justa sin opiniones personales"
+  },
+  "OBSERVATORY": {
+   "en": "a building used to look at the stars",
+   "es": "un edificio usado para observar las estrellas"
   },
   "OBSOLETE": {
    "en": "no longer used because it is too old",
@@ -4199,6 +4755,10 @@
   "OFFICER": {
    "en": "a person with authority in an organization",
    "es": "una persona con autoridad en una organización"
+  },
+  "OLD": {
+   "en": "having lived or existed a long time",
+   "es": "que ha vivido o existido mucho tiempo"
   },
   "OLDER": {
    "en": "greater in age",
@@ -4324,6 +4884,10 @@
    "en": "a night bird with large eyes",
    "es": "un ave nocturna con ojos grandes"
   },
+  "OWN": {
+   "en": "to have something as your property",
+   "es": "tener algo como propiedad"
+  },
   "OXYGEN": {
    "en": "the gas in the air that living things breathe",
    "es": "el gas en el aire que respiran los seres vivos"
@@ -4372,6 +4936,14 @@
    "en": "thin material for writing or printing",
    "es": "material delgado para escribir o imprimir"
   },
+  "PARACHUTE": {
+   "en": "cloth that opens to slow your fall from the sky",
+   "es": "tela que se abre para frenar tu caida desde el cielo"
+  },
+  "PARADE": {
+   "en": "a public march with music through the streets",
+   "es": "un desfile publico con musica por las calles"
+  },
   "PARAGRAPH": {
    "en": "a group of sentences about one idea",
    "es": "un grupo de oraciones sobre una idea"
@@ -4404,6 +4976,10 @@
    "en": "a moment for celebration and fun",
    "es": "un momento para celebrar y divertirse"
   },
+  "PASS": {
+   "en": "to move by, or to succeed in a test",
+   "es": "pasar de largo, o aprobar un examen"
+  },
   "PASSENGER": {
    "en": "a person traveling in a vehicle, not driving",
    "es": "una persona que viaja en un vehículo sin manejarlo"
@@ -4424,6 +5000,10 @@
    "en": "a legal right to be the only maker of an invention",
    "es": "un derecho legal a ser el único fabricante de un invento"
   },
+  "PATH": {
+   "en": "a narrow way for walking",
+   "es": "un camino angosto para caminar"
+  },
   "PATIENCE": {
    "en": "the ability to wait calmly",
    "es": "la capacidad de esperar con calma"
@@ -4440,6 +5020,10 @@
    "en": "money given for goods or services",
    "es": "dinero dado por bienes o servicios"
   },
+  "PEACE": {
+   "en": "a time with no war or fighting",
+   "es": "un tiempo sin guerra ni peleas"
+  },
   "PEACEFUL": {
    "en": "calm and without conflict",
    "es": "tranquilo y sin conflicto"
@@ -4448,13 +5032,25 @@
    "en": "a soft round fruit with fuzzy skin",
    "es": "una fruta suave y redonda con piel afelpada"
   },
+  "PEAK": {
+   "en": "the highest point",
+   "es": "el punto mas alto"
+  },
   "PEAR": {
    "en": "a sweet fruit that is round at the bottom",
    "es": "una fruta dulce y redondeada en la parte de abajo"
   },
+  "PEAS": {
+   "en": "small round green vegetables",
+   "es": "vegetales pequenos, redondos y verdes"
+  },
   "PEDAGOGY": {
    "en": "the method and practice of teaching",
    "es": "el método y la práctica de enseñar"
+  },
+  "PEEL": {
+   "en": "to remove the skin from a fruit",
+   "es": "quitarle la cascara a una fruta"
   },
   "PEN": {
    "en": "a tool for writing with ink",
@@ -4548,6 +5144,10 @@
    "en": "a large musical instrument with keys",
    "es": "un gran instrumento musical con teclas"
   },
+  "PICK": {
+   "en": "to choose or to take something up",
+   "es": "elegir o recoger algo"
+  },
   "PICNIC": {
    "en": "a meal eaten outdoors",
    "es": "una comida que se hace al aire libre"
@@ -4563,6 +5163,10 @@
   "PIG": {
    "en": "a farm animal kept for meat",
    "es": "un animal de granja criado para carne"
+  },
+  "PILL": {
+   "en": "a small round piece of medicine",
+   "es": "una pastilla pequena de medicina"
   },
   "PILLOW": {
    "en": "a soft cushion for resting your head",
@@ -4583,6 +5187,14 @@
   "PITCH": {
    "en": "to throw, to sell an idea, or the highness of a sound",
    "es": "lanzar, vender una idea, o lo agudo de un sonido"
+  },
+  "PIZZA": {
+   "en": "a flat round bread with cheese on top",
+   "es": "un pan plano y redondo con queso encima"
+  },
+  "PLACE": {
+   "en": "a particular position or area",
+   "es": "una posicion o zona determinada"
   },
   "PLAN": {
    "en": "a detailed idea for how to do something",
@@ -4616,6 +5228,10 @@
    "en": "seeming reasonable or probably true",
    "es": "que parece razonable o probablemente cierto"
   },
+  "PLAYS": {
+   "en": "does something for fun, or theater works",
+   "es": "juega, o obras de teatro"
+  },
   "PLEASED": {
    "en": "happy and satisfied",
    "es": "feliz y satisfecho"
@@ -4647,6 +5263,10 @@
   "POISED": {
    "en": "calm, confident and ready",
    "es": "tranquilo, seguro y listo"
+  },
+  "POLICE": {
+   "en": "people whose job is to keep the law",
+   "es": "personas cuyo trabajo es hacer cumplir la ley"
   },
   "POLICY": {
    "en": "a plan or rule followed by a group",
@@ -4776,6 +5396,10 @@
    "en": "a machine that puts text onto paper",
    "es": "una máquina que pone texto en papel"
   },
+  "PRIZE": {
+   "en": "something you win",
+   "es": "algo que se gana"
+  },
   "PROBLEM": {
    "en": "a difficult situation that needs a solution",
    "es": "una situación difícil que necesita solución"
@@ -4872,6 +5496,10 @@
    "en": "a company that produces books or media",
    "es": "una empresa que produce libros o medios"
   },
+  "PULL": {
+   "en": "to move something toward you",
+   "es": "mover algo hacia ti"
+  },
   "PURCHASE": {
    "en": "to buy something",
    "es": "comprar algo"
@@ -4888,6 +5516,10 @@
    "en": "an exercise where you raise your body with your arms",
    "es": "un ejercicio en el que levantas el cuerpo con los brazos"
   },
+  "PUZZLE": {
+   "en": "a game where you fit pieces together",
+   "es": "un juego donde encajas piezas"
+  },
   "QUALITY": {
    "en": "how good or bad something is",
    "es": "qué tan buena o mala es una cosa"
@@ -4900,9 +5532,17 @@
    "en": "keeping people apart to stop disease spreading",
    "es": "mantener a las personas separadas para evitar que se propague una enfermedad"
   },
+  "QUEEN": {
+   "en": "a woman who rules a country",
+   "es": "una mujer que gobierna un pais"
+  },
   "QUESTION": {
    "en": "a sentence that asks for information",
    "es": "una oración que pide información"
+  },
+  "QUICKSAND": {
+   "en": "wet sand that pulls you down",
+   "es": "arena mojada que te hunde"
   },
   "QUIET": {
    "en": "making little or no sound",
@@ -4911,6 +5551,10 @@
   "RABBIT": {
    "en": "a small animal with long ears that hops",
    "es": "un pequeño animal con orejas largas que salta"
+  },
+  "RACE": {
+   "en": "a competition of speed",
+   "es": "una competencia de velocidad"
   },
   "RACKET": {
    "en": "a bat with strings used in some sports",
@@ -4924,6 +5568,10 @@
    "en": "a male first name",
    "es": "un nombre de varón"
   },
+  "RAIN": {
+   "en": "water that falls from the clouds",
+   "es": "agua que cae de las nubes"
+  },
   "RAINBOW": {
    "en": "an arc of colors in the sky after rain",
    "es": "un arco de colores en el cielo después de la lluvia"
@@ -4931,6 +5579,10 @@
   "RAINY": {
    "en": "having a lot of rain",
    "es": "que tiene mucha lluvia"
+  },
+  "RAISE": {
+   "en": "to lift something up",
+   "es": "levantar algo"
   },
   "RANGE": {
    "en": "the limits between which something varies",
@@ -4947,6 +5599,10 @@
   "RATIONAL": {
    "en": "based on clear, sensible reasoning",
    "es": "basado en un razonamiento claro y sensato"
+  },
+  "REACH": {
+   "en": "to arrive at, or to stretch out to touch",
+   "es": "llegar a, o estirarse para tocar"
   },
   "REALISTIC": {
    "en": "sensible and close to what is real",
@@ -5168,6 +5824,14 @@
    "en": "one of the curved bones around your chest",
    "es": "uno de los huesos curvos que rodean el pecho"
   },
+  "RICE": {
+   "en": "small white grains cooked and eaten",
+   "es": "granos blancos pequenos que se cocinan y se comen"
+  },
+  "RICH": {
+   "en": "having a lot of money",
+   "es": "que tiene mucho dinero"
+  },
   "RIGHT": {
    "en": "the opposite side of left",
    "es": "el lado opuesto al izquierdo"
@@ -5175,6 +5839,10 @@
   "RIGOROUS": {
    "en": "very careful, strict and thorough",
    "es": "muy cuidadoso, estricto y minucioso"
+  },
+  "RISE": {
+   "en": "to move upward",
+   "es": "subir, moverse hacia arriba"
   },
   "RITUAL": {
    "en": "a set of actions done in a fixed order",
@@ -5195,6 +5863,10 @@
   "ROAST": {
    "en": "to cook food with dry heat in an oven",
    "es": "cocinar comida con calor seco en un horno"
+  },
+  "ROB": {
+   "en": "to take something illegally from someone",
+   "es": "quitarle algo a alguien ilegalmente"
   },
   "ROBIN": {
    "en": "a small bird with a red chest",
@@ -5235,6 +5907,10 @@
   "ROUTER": {
    "en": "a device that sends data between networks",
    "es": "un dispositivo que envía datos entre redes"
+  },
+  "RUB": {
+   "en": "to move your hand over a surface with pressure",
+   "es": "pasar la mano por una superficie haciendo presion"
   },
   "RUGBY": {
    "en": "a team sport played with an oval ball",
@@ -5280,9 +5956,17 @@
    "en": "the state of being safe from harm",
    "es": "el estado de estar a salvo de daño"
   },
+  "SAID": {
+   "en": "past form of say",
+   "es": "forma pasada de decir"
+  },
   "SAILOR": {
    "en": "a person who works on a ship",
    "es": "una persona que trabaja en un barco"
+  },
+  "SALAD": {
+   "en": "a cold dish of raw vegetables",
+   "es": "un plato frio de vegetales crudos"
   },
   "SALARY": {
    "en": "regular pay for a job",
@@ -5307,6 +5991,10 @@
   "SANDMAN": {
    "en": "a mythical figure who brings sleep",
    "es": "una figura mítica que trae el sueño"
+  },
+  "SAT": {
+   "en": "past form of sit",
+   "es": "forma pasada de sentarse"
   },
   "SATELLITE": {
    "en": "an object that orbits a planet",
@@ -5347,6 +6035,10 @@
   "SCARF": {
    "en": "a piece of cloth worn around the neck",
    "es": "una tela que se usa alrededor del cuello"
+  },
+  "SCENE": {
+   "en": "a part of a movie or play",
+   "es": "una parte de una pelicula u obra"
   },
   "SCENERY": {
    "en": "the natural features of a landscape",
@@ -5440,6 +6132,10 @@
    "en": "a member of a senate who makes laws",
    "es": "un miembro de un senado que hace leyes"
   },
+  "SEND": {
+   "en": "to make something go to another place",
+   "es": "hacer que algo vaya a otro lugar"
+  },
   "SENSIBLE": {
    "en": "showing good judgment; reasonable",
    "es": "que muestra buen juicio; razonable"
@@ -5455,6 +6151,10 @@
   "SERVE": {
    "en": "to give food or help to someone",
    "es": "dar comida o ayuda a alguien"
+  },
+  "SET": {
+   "en": "a group of things that go together",
+   "es": "un grupo de cosas que van juntas"
   },
   "SETTING": {
    "en": "the place and time where something happens",
@@ -5508,6 +6208,10 @@
    "en": "a farm animal kept for wool and meat",
    "es": "un animal de granja criado por su lana y carne"
   },
+  "SHEET": {
+   "en": "a thin flat piece of paper or cloth",
+   "es": "una pieza fina y plana de papel o tela"
+  },
   "SHELF": {
    "en": "a flat board for holding things",
    "es": "una tabla plana para sostener cosas"
@@ -5515,6 +6219,14 @@
   "SHELL": {
    "en": "the hard outer covering of an egg or animal",
    "es": "la cubierta dura exterior de un huevo o animal"
+  },
+  "SHERRY": {
+   "en": "a strong wine from Spain",
+   "es": "un vino fuerte de Espana"
+  },
+  "SHIN": {
+   "en": "the front part of your leg below the knee",
+   "es": "la parte delantera de la pierna bajo la rodilla"
   },
   "SHIP": {
    "en": "a large boat for traveling on the sea",
@@ -5536,9 +6248,17 @@
    "en": "very surprised and upset",
    "es": "muy sorprendido y molesto"
   },
+  "SHOE": {
+   "en": "something you wear on your foot",
+   "es": "algo que te pones en el pie"
+  },
   "SHOES": {
    "en": "coverings worn on the feet",
    "es": "cubiertas que se usan en los pies"
+  },
+  "SHOP": {
+   "en": "a place where things are sold",
+   "es": "un lugar donde se venden cosas"
   },
   "SHORT": {
    "en": "small in height or length",
@@ -5547,6 +6267,10 @@
   "SHORTS": {
    "en": "trousers that end above the knee",
    "es": "pantalones que terminan por encima de la rodilla"
+  },
+  "SHOT": {
+   "en": "the act of firing a gun or kicking a ball",
+   "es": "el disparo de un arma o el tiro de un balon"
   },
   "SHOULDER": {
    "en": "the joint where your arm meets your body",
@@ -5567,6 +6291,14 @@
   "SHRED": {
    "en": "to cut or tear into small pieces",
    "es": "cortar o rasgar en pedazos pequeños"
+  },
+  "SHUT": {
+   "en": "to close something",
+   "es": "cerrar algo"
+  },
+  "SICK": {
+   "en": "not healthy",
+   "es": "que no esta sano"
   },
   "SIGHTSEE": {
    "en": "to visit and look at interesting places",
@@ -5596,6 +6328,10 @@
    "en": "to cook gently just below boiling",
    "es": "cocinar suavemente justo antes de hervir"
   },
+  "SIN": {
+   "en": "an act that breaks a religious rule",
+   "es": "un acto que rompe una regla religiosa"
+  },
   "SINCERE": {
    "en": "honest and truly meant",
    "es": "honesto y realmente sentido"
@@ -5603,6 +6339,10 @@
   "SINGER": {
    "en": "a person who sings",
    "es": "una persona que canta"
+  },
+  "SINK": {
+   "en": "to go down under water",
+   "es": "hundirse bajo el agua"
   },
   "SINUOUS": {
    "en": "having many curves and bends",
@@ -5616,6 +6356,10 @@
    "en": "relating to the famous chapel in the Vatican",
    "es": "relacionado con la famosa capilla del Vaticano"
   },
+  "SIT": {
+   "en": "to rest with your body on a chair",
+   "es": "descansar con el cuerpo sobre una silla"
+  },
   "SKILLET": {
    "en": "a flat pan used for frying",
    "es": "una sarten plana que se usa para freir"
@@ -5624,6 +6368,14 @@
    "en": "abilities gained through training or practice",
    "es": "habilidades adquiridas con entrenamiento o práctica"
   },
+  "SKYSCRAPER": {
+   "en": "a very tall building in a city",
+   "es": "un edificio muy alto en una ciudad"
+  },
+  "SLEEP": {
+   "en": "to rest with your eyes closed at night",
+   "es": "descansar con los ojos cerrados de noche"
+  },
   "SLEEPING": {
    "en": "resting with your eyes closed at night",
    "es": "descansar con los ojos cerrados por la noche"
@@ -5631,6 +6383,10 @@
   "SLEEPY": {
    "en": "feeling the need to sleep",
    "es": "que siente la necesidad de dormir"
+  },
+  "SLIP": {
+   "en": "to slide and lose your balance",
+   "es": "resbalar y perder el equilibrio"
   },
   "SLIPPERS": {
    "en": "soft shoes worn indoors",
@@ -5659,6 +6415,10 @@
   "SNACK": {
    "en": "a small amount of food between meals",
    "es": "una pequeña cantidad de comida entre comidas"
+  },
+  "SNAKE": {
+   "en": "a long animal with no legs",
+   "es": "un animal largo y sin patas"
   },
   "SNAP": {
    "en": "to break suddenly with a sharp sound",
@@ -5736,6 +6496,10 @@
    "en": "a male child of a parent",
    "es": "el hijo varon de un padre o madre"
   },
+  "SONG": {
+   "en": "music with words that you sing",
+   "es": "musica con palabras que se canta"
+  },
   "SOPRANO": {
    "en": "the highest singing voice",
    "es": "la voz más aguda para cantar"
@@ -5743,6 +6507,10 @@
   "SORRY": {
    "en": "feeling regret or sympathy",
    "es": "que siente arrepentimiento o compasión"
+  },
+  "SOUP": {
+   "en": "a hot liquid food eaten with a spoon",
+   "es": "una comida liquida y caliente que se come con cuchara"
   },
   "SOVEREIGNTY": {
    "en": "a country's power to govern itself",
@@ -5884,6 +6652,10 @@
    "en": "the gas that water turns into when it boils",
    "es": "el gas en que se convierte el agua cuando hierve"
   },
+  "STEEL": {
+   "en": "a strong metal made from iron",
+   "es": "un metal fuerte hecho de hierro"
+  },
   "STEEPLE": {
    "en": "a tall pointed tower on a church",
    "es": "una torre alta y puntiaguda de una iglesia"
@@ -5907,6 +6679,10 @@
   "STIPULATE": {
    "en": "to state a requirement inside an agreement",
    "es": "establecer un requisito dentro de un acuerdo"
+  },
+  "STOCK": {
+   "en": "goods available in a shop, or a share of a company",
+   "es": "mercancia disponible en una tienda, o una accion de una empresa"
   },
   "STOMACH": {
    "en": "the organ where food is digested",
@@ -5976,6 +6752,10 @@
    "en": "the way parts are arranged, or a building",
    "es": "la forma en que se organizan las partes, o un edificio"
   },
+  "STUCK": {
+   "en": "unable to move",
+   "es": "que no se puede mover"
+  },
   "STUDENT": {
    "en": "a person who is studying",
    "es": "una persona que está estudiando"
@@ -6044,6 +6824,10 @@
    "en": "the act of taking one's own life",
    "es": "el acto de quitarse la propia vida"
   },
+  "SUITCASE": {
+   "en": "a bag with a handle for carrying clothes when you travel",
+   "es": "un bolso con asa para llevar ropa cuando viajas"
+  },
   "SUITE": {
    "en": "a set of connected rooms",
    "es": "un conjunto de habitaciones conectadas"
@@ -6063,6 +6847,10 @@
   "SUNDAY": {
    "en": "the day of the week before Monday",
    "es": "el día de la semana antes del lunes"
+  },
+  "SUNG": {
+   "en": "past participle of sing",
+   "es": "participio pasado de cantar"
   },
   "SUNNY": {
    "en": "bright with sunshine",
@@ -6176,9 +6964,17 @@
    "en": "real and able to be touched or measured",
    "es": "real y que se puede tocar o medir"
   },
+  "TANK": {
+   "en": "a large container for liquid",
+   "es": "un recipiente grande para liquido"
+  },
   "TARIFF": {
    "en": "a tax on goods coming into a country",
    "es": "un impuesto sobre bienes que entran a un país"
+  },
+  "TAUGHT": {
+   "en": "past form of teach",
+   "es": "forma pasada de ensenar"
   },
   "TAXI": {
    "en": "a car you pay to ride in",
@@ -6203,6 +6999,10 @@
   "TEDIOUS": {
    "en": "boring and taking a long time",
    "es": "aburrido y que toma mucho tiempo"
+  },
+  "TEEN": {
+   "en": "a person between 13 and 19 years old",
+   "es": "una persona de entre 13 y 19 anos"
   },
   "TELEPHONE": {
    "en": "a device for speaking with people far away",
@@ -6231,6 +7031,10 @@
   "TEMPO": {
    "en": "the speed of a piece of music",
    "es": "la velocidad de una pieza musical"
+  },
+  "TEN": {
+   "en": "the number 10",
+   "es": "el numero 10"
   },
   "TENACIOUS": {
    "en": "holding on firmly and not giving up",
@@ -6284,6 +7088,10 @@
    "en": "the way a surface feels",
    "es": "la forma en que se siente una superficie"
   },
+  "THANK": {
+   "en": "to say you are grateful",
+   "es": "decir que estas agradecido"
+  },
   "THANKS": {
    "en": "words that show gratitude",
    "es": "palabras que muestran gratitud"
@@ -6296,6 +7104,10 @@
    "en": "the main subject or idea",
    "es": "el tema o idea principal"
   },
+  "THEN": {
+   "en": "at that time, or after that",
+   "es": "en ese momento, o despues de eso"
+  },
   "THEORY": {
    "en": "an idea meant to explain how something works",
    "es": "una idea que busca explicar cómo funciona algo"
@@ -6304,9 +7116,29 @@
    "en": "a person trained to treat illness or problems",
    "es": "una persona capacitada para tratar enfermedades o problemas"
   },
+  "THERE": {
+   "en": "in that place",
+   "es": "en ese lugar"
+  },
   "THEREOF": {
    "en": "of the thing just mentioned",
    "es": "de la cosa que se acaba de mencionar"
+  },
+  "THEY": {
+   "en": "the word used for more than one person",
+   "es": "la palabra que se usa para mas de una persona"
+  },
+  "THICK": {
+   "en": "wide from one side to the other",
+   "es": "ancho de un lado al otro"
+  },
+  "THIN": {
+   "en": "not thick, or not fat",
+   "es": "que no es grueso, o que no es gordo"
+  },
+  "THINK": {
+   "en": "to use your mind to form ideas",
+   "es": "usar la mente para formar ideas"
   },
   "THOUGHT": {
    "en": "an idea formed in the mind",
@@ -6340,6 +7172,10 @@
    "en": "wood used for building",
    "es": "madera que se usa para construir"
   },
+  "TIN": {
+   "en": "a soft silver metal, or a metal container",
+   "es": "un metal plateado y blando, o una lata"
+  },
   "TIRED": {
    "en": "in need of rest or sleep",
    "es": "que necesita descanso o sueño"
@@ -6367,6 +7203,10 @@
   "TONIGHT": {
    "en": "the evening or night of today",
    "es": "la tarde o noche de hoy"
+  },
+  "TOOTH": {
+   "en": "a hard white part in your mouth for eating",
+   "es": "una parte blanca y dura de la boca para comer"
   },
   "TOOTHBRUSH": {
    "en": "a small brush for cleaning teeth",
@@ -6692,6 +7532,14 @@
    "en": "something that can change",
    "es": "algo que puede cambiar"
   },
+  "VASE": {
+   "en": "a container for holding flowers",
+   "es": "un recipiente para poner flores"
+  },
+  "VAT": {
+   "en": "a very large container for liquid",
+   "es": "un recipiente muy grande para liquido"
+  },
   "VEHICLE": {
    "en": "a machine used to carry people or goods",
    "es": "una máquina usada para transportar personas o mercancías"
@@ -6699,6 +7547,10 @@
   "VEHICLES": {
    "en": "machines used to carry people or goods",
    "es": "maquinas que se usan para transportar personas o cosas"
+  },
+  "VEIL": {
+   "en": "a thin cloth that covers the face",
+   "es": "una tela fina que cubre la cara"
   },
   "VENTILATION": {
    "en": "the flow of fresh air into a space",
@@ -6712,9 +7564,25 @@
    "en": "a decision reached in a court case",
    "es": "una decisión tomada en un caso judicial"
   },
+  "VERSE": {
+   "en": "a part of a song or poem",
+   "es": "una parte de una cancion o un poema"
+  },
   "VERSION": {
    "en": "one form of something that differs from others",
    "es": "una forma de algo que se diferencia de otras"
+  },
+  "VERY": {
+   "en": "used to make a word stronger",
+   "es": "se usa para reforzar una palabra"
+  },
+  "VEST": {
+   "en": "a piece of clothing with no sleeves",
+   "es": "una prenda sin mangas"
+  },
+  "VET": {
+   "en": "a doctor for animals",
+   "es": "un medico de animales"
   },
   "VIABLE": {
    "en": "able to work successfully",
@@ -6728,6 +7596,10 @@
    "en": "watchful and alert to danger",
    "es": "atento y alerta ante el peligro"
   },
+  "VILE": {
+   "en": "extremely unpleasant or evil",
+   "es": "extremadamente desagradable o malvado"
+  },
   "VILLA": {
    "en": "a large comfortable house, often for holidays",
    "es": "una casa grande y cómoda, a menudo para vacaciones"
@@ -6735,6 +7607,14 @@
   "VILLAGE": {
    "en": "a small group of houses in the countryside",
    "es": "un pequeño grupo de casas en el campo"
+  },
+  "VINE": {
+   "en": "a climbing plant that grapes grow on",
+   "es": "una planta trepadora donde crecen las uvas"
+  },
+  "VINEYARD": {
+   "en": "a field where grapes are grown for wine",
+   "es": "un campo donde se cultivan uvas para vino"
   },
   "VIOLATION": {
    "en": "the breaking of a rule or law",
@@ -6780,9 +7660,21 @@
    "en": "a mountain that can erupt with lava",
    "es": "una montaña que puede hacer erupción con lava"
   },
+  "VOLE": {
+   "en": "a small animal like a mouse",
+   "es": "un animal pequeno parecido a un raton"
+  },
+  "VOLT": {
+   "en": "a unit that measures electricity",
+   "es": "una unidad que mide la electricidad"
+  },
   "VOLUNTEER": {
    "en": "a person who works without pay to help",
    "es": "una persona que trabaja sin pago para ayudar"
+  },
+  "VOTE": {
+   "en": "to choose in an election",
+   "es": "elegir en una eleccion"
   },
   "VOYAGE": {
    "en": "a long journey by sea or in space",
@@ -6791,6 +7683,10 @@
   "VULNERABILITY": {
    "en": "the state of being easily harmed",
    "es": "el estado de poder ser dañado fácilmente"
+  },
+  "WAIL": {
+   "en": "to cry loudly with a long sound",
+   "es": "llorar fuerte con un sonido largo"
   },
   "WAITER": {
    "en": "a person who serves food in a restaurant",
@@ -6828,13 +7724,29 @@
    "en": "careful and cautious about possible danger",
    "es": "cuidadoso y cauteloso ante un posible peligro"
   },
+  "WASH": {
+   "en": "to clean with water",
+   "es": "limpiar con agua"
+  },
   "WASHER": {
    "en": "a machine that washes clothes",
    "es": "una máquina que lava la ropa"
   },
+  "WATCH": {
+   "en": "to look at something for a while",
+   "es": "mirar algo durante un rato"
+  },
   "WATER": {
    "en": "the clear liquid that living things need",
    "es": "el líquido transparente que necesitan los seres vivos"
+  },
+  "WATERFALL": {
+   "en": "water falling from a high place in a river",
+   "es": "agua que cae desde un lugar alto en un rio"
+  },
+  "WATERMELON": {
+   "en": "a big green fruit that is red inside",
+   "es": "una fruta grande y verde, roja por dentro"
   },
   "WAVE": {
    "en": "a moving ridge on water, or a hand movement",
@@ -6864,6 +7776,10 @@
    "en": "a set of connected pages on the internet",
    "es": "un conjunto de páginas conectadas en internet"
   },
+  "WEDDING": {
+   "en": "the ceremony when two people marry",
+   "es": "la ceremonia cuando dos personas se casan"
+  },
   "WEEKEND": {
    "en": "Saturday and Sunday",
    "es": "sábado y domingo"
@@ -6871,6 +7787,10 @@
   "WELLNESS": {
    "en": "the state of being healthy in body and mind",
    "es": "el estado de estar sano de cuerpo y mente"
+  },
+  "WEST": {
+   "en": "the direction where the sun goes down",
+   "es": "la direccion por donde se oculta el sol"
   },
   "WET": {
    "en": "covered or soaked with liquid",
@@ -6884,6 +7804,14 @@
    "en": "a round part that turns to move a vehicle",
    "es": "una pieza redonda que gira para mover un vehículo"
   },
+  "WHILE": {
+   "en": "during the time that",
+   "es": "durante el tiempo en que"
+  },
+  "WHITE": {
+   "en": "the color of snow and milk",
+   "es": "el color de la nieve y de la leche"
+  },
   "WIFI": {
    "en": "a wireless way to connect to the internet",
    "es": "una forma inalambrica de conectarse a internet"
@@ -6892,6 +7820,14 @@
    "en": "a large fire that spreads quickly in nature",
    "es": "un gran incendio que se propaga rápido en la naturaleza"
   },
+  "WILL": {
+   "en": "used to talk about the future",
+   "es": "se usa para hablar del futuro"
+  },
+  "WIND": {
+   "en": "air that moves outside",
+   "es": "aire que se mueve afuera"
+  },
   "WINDOW": {
    "en": "an opening in a wall with glass",
    "es": "una abertura en una pared con vidrio"
@@ -6899,6 +7835,10 @@
   "WINDY": {
    "en": "having a lot of wind",
    "es": "que tiene mucho viento"
+  },
+  "WINE": {
+   "en": "an alcoholic drink made from grapes",
+   "es": "una bebida alcoholica hecha de uvas"
   },
   "WINTER": {
    "en": "the coldest season of the year",
@@ -6911,6 +7851,14 @@
   "WISDOM": {
    "en": "good judgment gained through experience",
    "es": "el buen juicio obtenido a través de la experiencia"
+  },
+  "WISH": {
+   "en": "to want something to happen",
+   "es": "querer que algo pase"
+  },
+  "WITCH": {
+   "en": "a woman with magic powers in stories",
+   "es": "una mujer con poderes magicos en los cuentos"
   },
   "WITHDRAWAL": {
    "en": "taking money out, or stopping something",
@@ -6936,6 +7884,10 @@
    "en": "the area where you do your job",
    "es": "el area donde realizas tu trabajo"
   },
+  "WORSE": {
+   "en": "more bad than something else",
+   "es": "mas malo que otra cosa"
+  },
   "WRENCH": {
    "en": "a tool for turning nuts and bolts",
    "es": "una herramienta para girar tuercas y tornillos"
@@ -6943,6 +7895,22 @@
   "WRITER": {
    "en": "a person who writes books or articles",
    "es": "una persona que escribe libros o artículos"
+  },
+  "XYLOPHONE": {
+   "en": "a musical instrument played by hitting bars",
+   "es": "un instrumento musical que se toca golpeando barras"
+  },
+  "YACHT": {
+   "en": "a large expensive boat used for pleasure",
+   "es": "un barco grande y costoso usado por placer"
+  },
+  "YAM": {
+   "en": "a vegetable that grows underground",
+   "es": "un tuberculo que crece bajo tierra"
+  },
+  "YEAR": {
+   "en": "a period of twelve months",
+   "es": "un periodo de doce meses"
   },
   "YEARN": {
    "en": "to want something very strongly",
@@ -6956,13 +7924,29 @@
    "en": "the bright color of the sun or a lemon",
    "es": "el color brillante del sol o de un limón"
   },
+  "YET": {
+   "en": "until now, up to this time",
+   "es": "hasta ahora, hasta este momento"
+  },
   "YIELD": {
    "en": "to produce, or to give way to something",
    "es": "producir, o ceder ante algo"
   },
+  "YOGA": {
+   "en": "exercise with slow movements and breathing",
+   "es": "ejercicio con movimientos lentos y respiracion"
+  },
+  "YOKE": {
+   "en": "a wooden bar joining two animals to pull a load",
+   "es": "una barra de madera que une dos animales para tirar de una carga"
+  },
   "ZEBRA": {
    "en": "an African animal like a horse with stripes",
    "es": "un animal africano parecido a un caballo con rayas"
+  },
+  "ZOMBIE": {
+   "en": "a dead body that walks in stories and movies",
+   "es": "un cuerpo muerto que camina, en historias y peliculas"
   },
   "ZONING": {
    "en": "rules on how land in an area may be used",
