@@ -794,6 +794,7 @@ function submitGuess() {
 
 function endWordle(won, forfeited = false) {
   wordleActive = false;
+  SFX.play("success"); // end-of-game cue, win or lose — nothing else sounds on submit
   $("#wordle-hint-btn").disabled = true;
   $("#wordle-forfeit-btn").disabled = true;
   $("#wordle-result").textContent = won
@@ -1084,6 +1085,8 @@ function nextSentence() {
   $("#blanks-meaning-panel").classList.add("hidden");
   blanksIndex++;
   if (blanksIndex >= blanksRound.length) {
+    SFX.stop("tick_soft"); // kill the round loop BEFORE the closing cue, never after
+    SFX.play("success");
     $("#blanks-play").classList.add("hidden");
     $("#blanks-end").classList.remove("hidden");
     $("#blanks-score").textContent = `${blanksScore} / ${blanksRound.length}`;
@@ -1232,6 +1235,7 @@ function finishSpotRound() {
 $("#spot-next").addEventListener("click", () => {
   spotIndex++;
   if (spotIndex >= spotRounds.length) {
+    SFX.play("success"); // end-of-game cue; this is a plain button click, nothing else sounds
     $("#spot-play").classList.add("hidden");
     $("#spot-end").classList.remove("hidden");
     $("#spot-score").textContent = interp(t("spot", "messages.score_value"), { spotTotal, "spotRounds.length * 2": spotRounds.length * 2 });
@@ -1448,6 +1452,7 @@ $("#wl-next-btn").addEventListener("click", () => {
 });
 
 function wlShowResults() {
+  SFX.play("success"); // end-of-game cue; reached by the SEE RESULTS click, nothing else sounds
   const total = wlScores.reduce((a, b) => a + b, 0);
   $("#wl-score").textContent = `${total} / ${WORDLINKS_DATA.scoring.max_per_game}`;
 
@@ -1742,6 +1747,7 @@ $("#imp-next-btn").addEventListener("click", () => {
 });
 
 function impShowResults() {
+  SFX.play("success"); // end-of-game cue; reached by the SEE RESULTS click, nothing else sounds
   const total = impScores.reduce((a, b) => a + b, 0);
   $("#imp-score").textContent = `${total} / ${IMPOSTOR_DATA.scoring.max_per_game}`;
 
@@ -2173,6 +2179,9 @@ $("#rw-yes").addEventListener("click", () => rwAnswer(true));
 $("#rw-no").addEventListener("click", () => rwAnswer(false));
 
 function rwShowResults() {
+  rwStopTimer();
+  SFX.stop("tick"); // kill the per-word loop BEFORE the closing cue, never after
+  SFX.play("success");
   const score = rwResults.filter((r) => r.correct).length * REALWORD_DATA.scoring.points_per_correct;
   $("#rw-score").textContent = `${score} / ${REALWORD_DATA.scoring.max_per_game}`;
 
@@ -2456,7 +2465,8 @@ function bwSaveLastPrefixes() {
 
 function bwWin() {
   bwActive = false;
-  bwStopTimer();
+  bwStopTimer(); // stops tick BEFORE the closing cue, same order as bwGameOver
+  SFX.play("success"); // victory only — defeat goes through bwGameOver and keeps explosion alone
   bwSaveLastPrefixes();
   $("#bw-end-title").textContent = t("bombword", "messages.end_title_won");
   $("#bw-end-detail").textContent = t("bombword", "messages.end_detail_won");
@@ -3025,7 +3035,8 @@ function ebSaveLastWords() {
 
 function ebWin() {
   ebActive = false;
-  ebStopTimer();
+  ebStopTimer(); // stops tick BEFORE the closing cue, same order as ebGameOver
+  SFX.play("success"); // victory only — defeat goes through ebGameOver and keeps explosion alone
   ebSaveLastWords();
   $("#eb-end-title").textContent =
     ebMode === "hardcore" ? "🏆 You beat EMOJI BOMB on HARDCORE!" : "🎉 You completed all 4 levels!";
@@ -3088,6 +3099,10 @@ let stDragMoved = false;
 let stOver = false;
 let stRevealTimer = null;
 let stLives = null; // null in normal mode, an integer counting down in hardcore
+// set when the SPANGRAM is the word that completes the puzzle. victory.mp3 is a
+// ~2-3s fanfare and stFinish lands only 900ms later, so the end-of-game success
+// cue is suppressed in exactly that case — one sound per moment, never two.
+let stEndedWithSpangram = false;
 
 // how many leading letters a hint reveals: 3 for ≤6, 4 for 7, then ceil(len/2)
 // for 8+ (8→4, 9→5). Capped at len-1 so a hint never spells out the whole word.
@@ -3146,6 +3161,7 @@ function startStrands(mode) {
   stPath = [];
   stDragging = false;
   stOver = false;
+  stEndedWithSpangram = false;
   stLives = stModeCfg().lives; // null in normal, 3 in hardcore
   stStopReveal();
 
@@ -3355,7 +3371,10 @@ function stSubmit(traced) {
       $("#st-message").textContent = interp(t("strands", "messages.word_found"), { "match.word": match.word });
     }
     stRefresh();
-    if (stFound.size === stPuzzle.words.length) setTimeout(() => stFinish(true), 900);
+    if (stFound.size === stPuzzle.words.length) {
+      stEndedWithSpangram = match.is_spangram; // victory.mp3 is still playing if so
+      setTimeout(() => stFinish(true), 900);
+    }
     return;
   }
 
@@ -3386,6 +3405,7 @@ function stSubmit(traced) {
 
   // c) invalid: not a real word at all — brief red shake.
   // Hardcore only: this costs a life (a real off-theme word above never does).
+  SFX.play("wrong");
   path.forEach(([r, c]) => {
     const el = stCellEl(r, c);
     el.classList.add("bad");
@@ -3433,6 +3453,7 @@ $("#st-hint-btn").addEventListener("click", () => {
     setTimeout(() => {
       const key = stKey(r, c);
       stHintedCells.add(key); // stays lit permanently from here on
+      SFX.play("letter_correct");
       const el = stCellEl(r, c);
       if (!el) return;
       el.classList.add("hinted", "hint-pop"); // grows
@@ -3479,6 +3500,9 @@ function stLoseAllLives() {
 
 function stFinish(won, foundBefore, outOfLives) {
   stOver = true;
+  // suppressed only when the spangram closed the puzzle — victory.mp3 is still
+  // ringing from 900ms ago and the two would stack
+  if (!stEndedWithSpangram) SFX.play("success");
   $("#st-end-title").textContent = won
     ? t("strands", "messages.end_title_won")
     : outOfLives
@@ -3698,6 +3722,7 @@ function emAnswer(picked) {
 
 function emFinish() {
   emStopTimer();
+  SFX.play("success"); // end-of-game cue; the last answer's correct/wrong fired EM_FEEDBACK_MS ago
   $("#em-play").classList.add("hidden");
 
   $("#em-end-title").textContent = t("emojimatch", "messages.game_complete_title");
@@ -3916,12 +3941,13 @@ function startHearIt(level) {
     "HEARIT_DATA.rules.rounds_per_game": HEARIT_DATA.rules.rounds_per_game,
   });
   $("#hi-end").classList.add("hidden");
+  $("#hi-play").classList.remove("hidden");
+  $("#hi-novoice-note").classList.add("hidden"); // never shown before voice detection resolves
   applyText([
     ["#screen-hearit .game-topline [data-back]", ts("buttons.back")],
     ["#hi-submit", t("hearit", "buttons.check")],
     ["#hi-again-btn", t("hearit", "buttons.play_again")],
     ["#hi-end [data-back]", t("hearit", "buttons.back_to_menu")],
-    ["#hi-novoice-back", t("hearit", "buttons.back_to_menu")],
   ]);
   $("#hi-input").placeholder = t("hearit", "static_labels.input_placeholder");
   const scoreLabel = $("#hi-end .end-word");
@@ -3929,18 +3955,14 @@ function startHearIt(level) {
 
   showScreen("#screen-hearit");
 
-  // decide playable / not playable only once the voice list is actually known
+  // the game is always playable — playWord() falls back to the browser's
+  // default voice for the language even with no exact voice match. This note
+  // is purely informational, shown only once voice detection is conclusive.
   hiWhenVoicesReady(() => {
     if (!hiHasVoice()) {
-      // no English voice on this device: say so clearly and offer the way out
-      // instead of leaving the player stuck on a board that cannot make sound
-      $("#hi-play").classList.add("hidden");
-      $("#hi-novoice-text").textContent = t("hearit", "messages.no_voice");
-      $("#hi-novoice").classList.remove("hidden");
-      return;
+      $("#hi-novoice-note").textContent = t("hearit", "messages.no_voice");
+      $("#hi-novoice-note").classList.remove("hidden");
     }
-    $("#hi-novoice").classList.add("hidden");
-    $("#hi-play").classList.remove("hidden");
     hiLoadRound();
   });
 }
@@ -4072,6 +4094,9 @@ function hiAnswer(given, timedOut) {
   // the typing levels, so each audio has exactly one correct spelling)
   const norm = (s) => String(s == null ? "" : s).trim().toLowerCase();
   const correct = !timedOut && norm(given) === norm(round.answer);
+  // one cue covers all three outcomes: right, wrong, and advanced's timeout
+  // (timedOut forces correct=false, so it lands on wrong.mp3 like any miss)
+  SFX.play(correct ? "correct" : "wrong");
   round.gotIt = correct;
   round.given = timedOut ? null : given;
   if (correct) hiScore += HEARIT_DATA.rules.scoring.points_per_correct;
@@ -4108,6 +4133,7 @@ function hiAnswer(given, timedOut) {
 function hiFinish() {
   hiStopTimers();
   stopWord();
+  SFX.play("success"); // end-of-game cue; the last answer's correct/wrong fired HI_FEEDBACK_MS ago
   $("#hi-play").classList.add("hidden");
 
   $("#hi-end-title").textContent = t("hearit", "messages.game_complete_title");

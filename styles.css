@@ -173,7 +173,7 @@ body {
 .card-art-starparty { --art-shift-y: 7%; --art-scale: 0.85; }
 .card-art-emojibomb { --art-shift-y: 7%; --art-scale: 0.82; }
 .card-art-strands { --art-scale: 0.82; }
-.card-art-waffle { --art-scale: 0.82; }
+.card-art-waffle { --art-scale: 1.35; }
 /* Word Game is the one WIDE illustration (content is ~2.26:1 — two rows of
    tiles — vs ~1:1 for every other card). object-fit:contain fits it by WIDTH
    inside the near-square preview, so at scale 1 it would read as a thin strip
@@ -480,6 +480,36 @@ body {
 /* result modal over the wordle board: darker backdrop for focus */
 .result-overlay { background: rgba(0, 0, 0, 0.65); }
 .result-overlay .end-panel { margin: 0; width: 100%; max-width: 420px; box-shadow: 0 0 40px rgba(155, 48, 255, 0.35); }
+
+/* ---- end-of-game reveal: staggered pop-in, shared by EVERY game ----
+   Generalised from the CONNECTIONS solved-group cards, which used chipIn
+   with no delay (all four landed at once). Here every direct child of an
+   .end-panel — title, score, word list, buttons — animates in sequence.
+   Pure CSS on purpose: the panels go display:none -> visible on each game
+   over, which restarts the animation by itself, so no game needs a single
+   line of JS to opt in. Six steps covers the deepest panel (Strands /
+   Emoji Match / Hear It); anything beyond simply lands with the 6th.  */
+@keyframes endPop {
+  from { opacity: 0; transform: translateY(10px) scale(0.85); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.end-panel > * { animation: endPop 0.35s ease both; }
+.end-panel > *:nth-child(1) { animation-delay: 0ms; }
+.end-panel > *:nth-child(2) { animation-delay: 60ms; }
+.end-panel > *:nth-child(3) { animation-delay: 120ms; }
+.end-panel > *:nth-child(4) { animation-delay: 180ms; }
+.end-panel > *:nth-child(5) { animation-delay: 240ms; }
+.end-panel > *:nth-child(n + 6) { animation-delay: 300ms; }
+
+/* STAR PARTY is deliberately excluded: #sp-end reuses .end-panel with the
+   same markup, so without this it would inherit the cascade too. */
+#sp-end .end-panel > * { animation: none; }
+
+/* accessibility: honour a reduced-motion preference by showing the panel
+   fully formed instead of animating it in */
+@media (prefers-reduced-motion: reduce) {
+  .end-panel > * { animation: none; }
+}
 
 /* ================= WORDLE HINTS ================= */
 .hint-box {
@@ -1909,6 +1939,15 @@ input.letter-cell:focus { border-color: var(--accent-bright); box-shadow: 0 0 8p
      width as on desktop, matching the other cards' mobile proportions. */
   .card-art-wordgame { --art-scale: 1.05; }
 
+  /* FILL IN THE BLANKS only: this preview is CSS-drawn (.fib-logo), not an
+     image, so the --art-scale knob does not reach it. Its wordmark is a fixed
+     165px wide (1.5rem + 4px letter-spacing), which overflows the 158px mobile
+     card and gets clipped by .card-art's overflow:hidden — ~3px off each end
+     of FILL IN / BLANKS. Scaling the whole lockup keeps the proportions and
+     leaves a margin comparable to the other cards. Desktop is untouched: from
+     481px up the card is 228px wide and the logo already fits. */
+  .fib-logo { transform: scale(0.85); }
+
   .tile { width: 44px; height: 44px; font-size: 1.4rem; }
   .key { height: 48px; font-size: 0.85rem; }
 
@@ -3054,6 +3093,7 @@ input.letter-cell:focus { border-color: var(--accent-bright); box-shadow: 0 0 8p
   margin: 0 auto;
   width: 100%;
 }
+.hi-wrap.hidden { display: none; }
 
 /* big round play button — the audio trigger and the visual centre of the screen */
 .hi-play-btn {
@@ -3115,6 +3155,7 @@ input.letter-cell:focus { border-color: var(--accent-bright); box-shadow: 0 0 8p
   gap: 10px;
   width: 100%;
 }
+.hi-options.hidden { display: none; }
 .hi-option {
   min-height: 52px;
   padding: 12px 14px;
@@ -3148,6 +3189,7 @@ input.letter-cell:focus { border-color: var(--accent-bright); box-shadow: 0 0 8p
   gap: 10px;
   width: 100%;
 }
+.hi-input-wrap.hidden { display: none; }
 #hi-input {
   width: 100%;
   min-height: 52px;
@@ -3178,18 +3220,15 @@ input.letter-cell:focus { border-color: var(--accent-bright); box-shadow: 0 0 8p
 .hi-feedback.ok { color: #9ae6a0; }
 .hi-feedback.bad { color: #f0a0a0; }
 
-/* device has no English voice at all: explain and offer the way out */
-.hi-novoice {
-  max-width: 460px;
-  margin: 30px auto;
-  padding: 24px 20px;
-  border-radius: 16px;
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(155, 48, 255, 0.35);
+/* device has no English voice at all: a discreet one-line note, no box/icon/button —
+   the game stays fully playable, this is purely informational */
+.hi-novoice-note {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--text-dim);
   text-align: center;
 }
-.hi-novoice-icon { font-size: 2.6rem; margin: 0 0 10px; }
-.hi-novoice-text { margin: 0 0 18px; font-size: 0.95rem; line-height: 1.5; color: var(--text); }
+.hi-novoice-note.hidden { display: none; }
 
 /* end screen: the phonetic-contrast explanation under a missed minimal pair */
 .hi-contrast {

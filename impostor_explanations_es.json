@@ -1,242 +1,1178 @@
 [
-{"round_id":"business_basic_0","es":"BUY, SELL, PAY y HIRE son verbos; PRICE es un sustantivo."},
-{"round_id":"business_basic_1","es":"Estas son verbos; TEAM es un sustantivo."},
-{"round_id":"business_basic_2","es":"Todos son artículos de oficina; BEACH no tiene nada que ver con una oficina."},
-{"round_id":"business_basic_3","es":"Estas se relacionan con el dinero; MEETING no."},
-{"round_id":"business_basic_4","es":"JOB, WORK, POSITION y ROLE significan empleo; HOLIDAY significa tiempo libre."},
-{"round_id":"business_basic_5","es":"Estas son personas en un lugar de trabajo; INVOICE es un documento."},
-{"round_id":"business_basic_6","es":"Estas son sustantivos; CHEAP es un adjetivo."},
-{"round_id":"business_basic_7","es":"Estas significan obtener algo pagando; RETURN significa devolver algo."},
-{"round_id":"business_basic_8","es":"Estos son documentos de negocios; CUSTOMER es una persona."},
-{"round_id":"business_basic_9","es":"Estas son adjetivos; SELL es un verbo."},
-{"round_id":"business_basic_10","es":"Estos son lugares para comprar cosas; SALARY es dinero que ganas."},
-{"round_id":"business_basic_11","es":"Estas significan recibir dinero; SPEND significa gastar dinero."},
-{"round_id":"business_basic_12","es":"Estas son sustantivos; PUNCTUAL es un adjetivo."},
-{"round_id":"business_basic_13","es":"Estas son formas en que la gente se comunica en el trabajo; WAREHOUSE es un edificio."},
-{"round_id":"business_basic_14","es":"Todas significan alguien que compra; SUPPLIER es alguien que vende o provee."},
-{"round_id":"business_basic_15","es":"Estas son verbos; BUDGET es un sustantivo."},
-{"round_id":"business_basic_16","es":"Estas significan dinero que entra; EXPENSE es dinero que sale."},
-{"round_id":"business_basic_17","es":"Estas describen a alguien a cargo; INTERN es un trabajador de nivel inicial."},
-{"round_id":"business_basic_18","es":"Estas son sustantivos; PRODUCTIVE es un adjetivo."},
-{"round_id":"business_basic_19","es":"Estas son formas de pagar; DISCOUNT es una reducción de precio, no un método de pago."},
-{"round_id":"business_intermediate_0","es":"Estas son verbos; STRATEGY es un sustantivo."},
-{"round_id":"business_intermediate_1","es":"Estas se relacionan con las finanzas de la empresa; DEADLINE se relaciona con el tiempo."},
-{"round_id":"business_intermediate_2","es":"Estas significan un entendimiento formal entre partes; DISPUTE significa un desacuerdo."},
-{"round_id":"business_intermediate_3","es":"Estas son sustantivos; EFFICIENT es un adjetivo."},
-{"round_id":"business_intermediate_4","es":"Estas describen roles de liderazgo; INVOICE es un documento."},
-{"round_id":"business_intermediate_5","es":"Estas significan crecer; DECLINE significa disminuir."},
-{"round_id":"business_intermediate_6","es":"Estas son sustantivos; PROFITABLE es un adjetivo."},
-{"round_id":"business_intermediate_7","es":"Estas se relacionan con reuniones de negocios; WAREHOUSE es un edificio de almacenamiento."},
-{"round_id":"business_intermediate_8","es":"Estas significan alguien que te compra; VENDOR es alguien que te vende."},
-{"round_id":"business_intermediate_9","es":"Estas son verbos; BUDGET es un sustantivo."},
-{"round_id":"business_intermediate_10","es":"Estos son documentos; COLLEAGUE es una persona."},
-{"round_id":"business_intermediate_11","es":"Estas significan bajar; SURGE significa aumentar repentinamente."},
-{"round_id":"business_intermediate_12","es":"Estas son sustantivos; PROFITABLE es un adjetivo."},
-{"round_id":"business_intermediate_13","es":"Estas se relacionan con administrar dinero; DEADLINE se relaciona con el tiempo."},
-{"round_id":"business_intermediate_14","es":"Estas significan comenzar algo; DISSOLVE significa terminarlo."},
-{"round_id":"business_intermediate_15","es":"Estas son sustantivos; PUNCTUAL es un adjetivo."},
-{"round_id":"business_intermediate_16","es":"Estas son personas que trabajan para una empresa; SHAREHOLDER posee parte de ella pero no necesariamente trabaja ahí."},
-{"round_id":"business_intermediate_17","es":"Estas describen hacer algo bien; STAGNANT significa no moverse ni crecer."},
-{"round_id":"business_intermediate_18","es":"Estas son verbos; REVENUE es un sustantivo."},
-{"round_id":"business_intermediate_19","es":"Estas son partes de la estructura de una empresa; DEADLINE es un punto en el tiempo."},
-{"round_id":"business_advanced_0","es":"Estas son verbos; LIABILITY es un sustantivo."},
-{"round_id":"business_advanced_1","es":"Estas se relacionan con el riesgo legal o regulatorio; SYNERGY se refiere a la efectividad combinada, no al riesgo."},
-{"round_id":"business_advanced_2","es":"Estas significan unir; DIVEST significa vender o separar."},
-{"round_id":"business_advanced_3","es":"Estas son sustantivos; SCALABLE es un adjetivo."},
-{"round_id":"business_advanced_4","es":"Estas son herramientas para medir o predecir el rendimiento; SUBSIDIARY es una empresa que pertenece a otra."},
-{"round_id":"business_advanced_5","es":"Estas significan hacer más grande; CONTRACT aquí significa hacerse más pequeño."},
-{"round_id":"business_advanced_6","es":"Estas son sustantivos; VOLATILE es un adjetivo."},
-{"round_id":"business_advanced_7","es":"Estas describen inestabilidad; ROBUST significa fuerte y estable, lo opuesto."},
-{"round_id":"business_advanced_8","es":"Estas significan dinero ganado de una inversión; OVERHEAD significa gastos operativos continuos del negocio."},
-{"round_id":"business_advanced_9","es":"Estas son verbos; SUBSIDIARY es un sustantivo."},
-{"round_id":"business_advanced_10","es":"Estas significan protegerse contra el riesgo; DISCLOSE significa revelar información."},
-{"round_id":"business_advanced_11","es":"Estas significan perder valor; APPRECIATE significa ganar valor."},
-{"round_id":"business_advanced_12","es":"Estas son sustantivos; SCALABLE es un adjetivo."},
-{"round_id":"business_advanced_13","es":"Estas describen propiedad o estructura corporativa; FORECAST es una predicción."},
-{"round_id":"business_advanced_14","es":"Estas describen la toma de decisiones cuidadosa; RECKLESS significa imprudente."},
-{"round_id":"business_advanced_15","es":"Estas son sustantivos; SCALABLE es un adjetivo."},
-{"round_id":"business_advanced_16","es":"Estas se relacionan con resolver disputas; EQUITY se relaciona con el valor de propiedad."},
-{"round_id":"business_advanced_17","es":"Estas significan cosas de valor que posee una empresa; LIABILITY es una deuda que debe."},
-{"round_id":"business_advanced_18","es":"Estas son verbos; EQUITY es un sustantivo."},
-{"round_id":"business_advanced_19","es":"Estas describen una posición fuerte en el mercado; OBSOLETE significa anticuado y ya no útil."},
-{"round_id":"travel_basic_0","es":"Estas son verbos de viaje; TICKET es un sustantivo."},
-{"round_id":"travel_basic_1","es":"Estas son cosas que necesitas en un aeropuerto; BEACH es un destino, no un artículo de aeropuerto."},
-{"round_id":"travel_basic_2","es":"Estas significan un período de viaje; ARRIVAL significa llegar al destino."},
-{"round_id":"travel_basic_3","es":"Estas son sustantivos; DEPART es un verbo."},
-{"round_id":"travel_basic_4","es":"Estas son formas de viajar; HOTEL es un lugar para hospedarse."},
-{"round_id":"travel_basic_5","es":"Estas significan cosas que llevas al viajar; SOUVENIR es algo que compras para recordar un viaje."},
-{"round_id":"travel_basic_6","es":"Estas son verbos; PASSPORT es un sustantivo."},
-{"round_id":"travel_basic_7","es":"Estas se relacionan con dónde te hospedas; TICKET es para transporte."},
-{"round_id":"travel_basic_8","es":"Estas describen a alguien que te guía; MAP es un objeto, no una persona."},
-{"round_id":"travel_basic_9","es":"Estas son sustantivos (lugares); TRAVEL es un verbo."},
-{"round_id":"travel_basic_10","es":"Estos son documentos que necesitas para viajar; SUNSCREEN es algo que usas, no un documento."},
-{"round_id":"travel_basic_11","es":"Estas significan llegar a algún lugar; DEPART significa irse."},
-{"round_id":"travel_basic_12","es":"Estas son sustantivos (objetos); EXPLORE es un verbo."},
-{"round_id":"travel_basic_13","es":"Estos son artículos para un viaje a la playa; PASSPORT es un documento de viaje."},
-{"round_id":"travel_basic_14","es":"Estas significan ir a ver lugares nuevos; AVOID significa evitar algo."},
-{"round_id":"travel_basic_15","es":"Estas son sustantivos; DRIVE es un verbo."},
-{"round_id":"travel_basic_16","es":"Estos son lugares que visitan los turistas; LUGGAGE es algo que cargas."},
-{"round_id":"travel_basic_17","es":"Estas significan un lugar al que vas; ROUTE significa el camino que tomas para llegar ahí."},
-{"round_id":"travel_basic_18","es":"Estas son sustantivos; PACK es un verbo."},
-{"round_id":"travel_basic_19","es":"Estas describen condiciones climáticas; EXPENSIVE describe un precio."},
-{"round_id":"travel_intermediate_0","es":"Estas son verbos; ITINERARY es un sustantivo."},
-{"round_id":"travel_intermediate_1","es":"Estos son procedimientos o áreas del aeropuerto; SOUVENIR es un recuerdo que compras."},
-{"round_id":"travel_intermediate_2","es":"Estas significan una lista planeada de actividades u horarios; EXCURSION significa un viaje corto."},
-{"round_id":"travel_intermediate_3","es":"Estas son sustantivos; DEPART es un verbo."},
-{"round_id":"travel_intermediate_4","es":"Estas se relacionan con el dinero durante un viaje; ITINERARY es un plan de viaje."},
-{"round_id":"travel_intermediate_5","es":"Estas significan una parada entre vuelos; DESTINATION es el lugar final al que vas."},
-{"round_id":"travel_intermediate_6","es":"Estas son sustantivos; DEPART es un verbo."},
-{"round_id":"travel_intermediate_7","es":"Estos son lugares para hospedarse; EMBASSY es una oficina gubernamental."},
-{"round_id":"travel_intermediate_8","es":"Estas significan un artículo para recordar un viaje; LUGGAGE es donde cargas tus cosas."},
-{"round_id":"travel_intermediate_9","es":"Estas son sustantivos; DEPART es un verbo."},
-{"round_id":"travel_intermediate_10","es":"Estos son permisos oficiales para viajar; ITINERARY es tu horario de viaje."},
-{"round_id":"travel_intermediate_11","es":"Estas significan alguien que visita un lugar; RESIDENT significa alguien que vive ahí."},
-{"round_id":"travel_intermediate_12","es":"Estas son sustantivos; BOARD es un verbo."},
-{"round_id":"travel_intermediate_13","es":"Estas se relacionan con lugares que visitan los turistas; CUSTOMS es un proceso de aeropuerto."},
-{"round_id":"travel_intermediate_14","es":"Estas significan posponer algo; EXPEDITE significa hacer que algo suceda más rápido."},
-{"round_id":"travel_intermediate_15","es":"Estas son sustantivos; EMBARK es un verbo."},
-{"round_id":"travel_intermediate_16","es":"Estas describen el cansancio por viajar; CURRENCY es dinero."},
-{"round_id":"travel_intermediate_17","es":"Estas significan una oficina diplomática en el extranjero; CHECKPOINT es un punto de control de seguridad."},
-{"round_id":"travel_intermediate_18","es":"Estas son sustantivos; EMBARK es un verbo."},
-{"round_id":"travel_intermediate_19","es":"Estas se relacionan con cruzar hacia un país; ITINERARY es tu plan de viaje."},
-{"round_id":"travel_advanced_0","es":"Estas son verbos; EXPEDITION es un sustantivo."},
-{"round_id":"travel_advanced_1","es":"Estas describen tipos de viajes largos o significativos; CURRENCY es dinero."},
-{"round_id":"travel_advanced_2","es":"Estas describen moverse de un lugar a otro; SEDENTARY significa quedarse en un solo lugar."},
-{"round_id":"travel_advanced_3","es":"Estas son adjetivos; HOSPITALITY es un sustantivo."},
-{"round_id":"travel_advanced_4","es":"Estas se relacionan con el control legal del movimiento a través de fronteras; WANDERLUST es un fuerte deseo de viajar."},
-{"round_id":"travel_advanced_5","es":"Estas significan un fuerte deseo; RELUCTANCE significa falta de disposición."},
-{"round_id":"travel_advanced_6","es":"Estas son sustantivos (accidentes geográficos); NOMADIC es un adjetivo."},
-{"round_id":"travel_advanced_7","es":"Estos son accidentes geográficos; ITINERANT describe a una persona que viaja."},
-{"round_id":"travel_advanced_8","es":"Estas significan un período de quedarse en algún lugar; DEPARTURE significa irse."},
-{"round_id":"travel_advanced_9","es":"Estas son verbos; BIOSPHERE es un sustantivo."},
-{"round_id":"travel_advanced_10","es":"Estas se relacionan con el viaje responsable con el medio ambiente; ITINERARY es simplemente un horario de viaje."},
-{"round_id":"travel_advanced_11","es":"Estas describen a alguien familiarizado con muchas culturas; PROVINCIAL significa cerrado o poco sofisticado."},
-{"round_id":"travel_advanced_12","es":"Estas son sustantivos; ITINERANT es un adjetivo."},
-{"round_id":"travel_advanced_13","es":"Estas se relacionan con la autoridad legal sobre personas que cruzan fronteras; SOJOURN es simplemente una estadía temporal."},
-{"round_id":"travel_advanced_14","es":"Estas describen viajes planeados; SPONTANEOUS significa no planeado."},
-{"round_id":"travel_advanced_15","es":"Estas son adjetivos; REPATRIATE es un verbo."},
-{"round_id":"travel_advanced_16","es":"Estos son accidentes geográficos relacionados con islas; EXPEDITION es un tipo de viaje."},
-{"round_id":"travel_advanced_17","es":"Estas describen una experiencia de viaje profunda y real; SUPERFICIAL significa superficial o poco profundo."},
-{"round_id":"travel_advanced_18","es":"Estas son sustantivos; SUSTAINABLE es un adjetivo."},
-{"round_id":"travel_advanced_19","es":"Estas describen viajes largos y significativos; LAYOVER es una parada corta entre vuelos."},
-{"round_id":"daily_basic_0","es":"Estas son verbos; KITCHEN es un sustantivo."},
-{"round_id":"daily_basic_1","es":"Estas son cosas que haces en la mañana; DINNER es una comida de la noche."},
-{"round_id":"daily_basic_2","es":"Estas significan limpiar algo; MESSY significa sucio o desordenado."},
-{"round_id":"daily_basic_3","es":"Estas son sustantivos (habitaciones); COOK es un verbo."},
-{"round_id":"daily_basic_4","es":"Estos son artículos de cocina; PILLOW pertenece a una habitación."},
-{"round_id":"daily_basic_5","es":"Estas significan comunicarse hablando; LISTEN significa escuchar y prestar atención."},
-{"round_id":"daily_basic_6","es":"Estas son verbos; STREET es un sustantivo."},
-{"round_id":"daily_basic_7","es":"Estas se relacionan con dormir; STOVE es un electrodoméstico de cocina."},
-{"round_id":"daily_basic_8","es":"Estas significan sentirse tranquilo; WORRY significa sentirse ansioso."},
-{"round_id":"daily_basic_9","es":"Estas son sustantivos (herramientas); CLEAN es un verbo."},
-{"round_id":"daily_basic_10","es":"Estas son cosas que compras en una tienda de abarrotes; TOWEL es un artículo de baño."},
-{"round_id":"daily_basic_11","es":"Estas significan quitar la suciedad; FOLD significa doblar la ropa ordenadamente, no limpiarla."},
-{"round_id":"daily_basic_12","es":"Estas son sustantivos; SIT es un verbo."},
-{"round_id":"daily_basic_13","es":"Estos son artículos de baño; BLANKET pertenece a una habitación."},
-{"round_id":"daily_basic_14","es":"Estas significan tomarlo con calma; HURRY significa moverse rápido."},
-{"round_id":"daily_basic_15","es":"Estas son sustantivos (electrodomésticos); COOK es un verbo."},
-{"round_id":"daily_basic_16","es":"Estas son actividades comunes de fin de semana; COMMUTE es viajar al trabajo, usualmente entre semana."},
-{"round_id":"daily_basic_17","es":"Estas significan obtener algo con dinero; SELL significa dar algo a cambio de dinero."},
-{"round_id":"daily_basic_18","es":"Estas son sustantivos (personas); VISIT es un verbo."},
-{"round_id":"daily_basic_19","es":"Estas son tareas de limpieza; COOK es preparar comida, no limpiar."},
-{"round_id":"daily_intermediate_0","es":"Estas son verbos; ROUTINE es un sustantivo."},
-{"round_id":"daily_intermediate_1","es":"Estos son pagos regulares; ERRAND es una pequeña tarea que haces."},
-{"round_id":"daily_intermediate_2","es":"Estas significan algo que debes hacer; HOBBY es algo que haces por diversión."},
-{"round_id":"daily_intermediate_3","es":"Estas son sustantivos; ORGANIZE es un verbo."},
-{"round_id":"daily_intermediate_4","es":"Estas se relacionan con arreglar o mejorar una casa; GROCERY se relaciona con comprar comida."},
-{"round_id":"daily_intermediate_5","es":"Estas significan algo que se hace regularmente; EXCEPTION significa algo que no sigue la regla."},
-{"round_id":"daily_intermediate_6","es":"Estas son sustantivos (personas); COMMUTE es un verbo."},
-{"round_id":"daily_intermediate_7","es":"Estas son parte de una rutina matutina; APPOINTMENT es una cita programada."},
-{"round_id":"daily_intermediate_8","es":"Estas significan hacer que algo funcione de nuevo; BREAK significa dañar algo."},
-{"round_id":"daily_intermediate_9","es":"Estas son sustantivos; MAINTAIN es un verbo."},
-{"round_id":"daily_intermediate_10","es":"Estas te ayudan a mantenerte organizado en el tiempo; THERMOSTAT controla la temperatura."},
-{"round_id":"daily_intermediate_11","es":"Estas significan posponer algo; COMPLETE significa terminarlo."},
-{"round_id":"daily_intermediate_12","es":"Estas son sustantivos; ORGANIZE es un verbo."},
-{"round_id":"daily_intermediate_13","es":"Estas se relacionan con alquilar una casa; ERRAND es una pequeña tarea que haces."},
-{"round_id":"daily_intermediate_14","es":"Estas significan cuidar algo; NEGLECT significa no cuidarlo."},
-{"round_id":"daily_intermediate_15","es":"Estas son sustantivos; RENOVATE es un verbo."},
-{"round_id":"daily_intermediate_16","es":"Estas se relacionan con servicios de tecnología del hogar; PLUMBING es un sistema físico del hogar para el agua."},
-{"round_id":"daily_intermediate_17","es":"Estas describen tener mucho que hacer; IDLE significa no tener nada que hacer."},
-{"round_id":"daily_intermediate_18","es":"Estas son sustantivos; MAINTAIN es un verbo."},
-{"round_id":"daily_intermediate_19","es":"Estas son obligaciones financieras de un hogar; CHORE es una tarea, no un pago."},
-{"round_id":"daily_advanced_0","es":"Estas son verbos; MUNDANE es un adjetivo."},
-{"round_id":"daily_advanced_1","es":"Estas describen algo aburrido y repetitivo; SPONTANEOUS significa no planeado y emocionante."},
-{"round_id":"daily_advanced_2","es":"Estas describen ser muy organizado y cuidadoso; CARELESS significa no prestar atención al detalle."},
-{"round_id":"daily_advanced_3","es":"Estas son sustantivos; SEDENTARY es un adjetivo."},
-{"round_id":"daily_advanced_4","es":"Estas describen una falta de energía; VIGOROUS significa lleno de energía."},
-{"round_id":"daily_advanced_5","es":"Estas describen no necesitar ayuda de otros; DEPENDENT significa depender de otros."},
-{"round_id":"daily_advanced_6","es":"Estas son verbos; INDISPENSABLE es un adjetivo."},
-{"round_id":"daily_advanced_7","es":"Estas significan muy importante; TRIVIAL significa sin importancia."},
-{"round_id":"daily_advanced_8","es":"Estas significan recuperar energía; EXHAUST significa agotar toda tu energía."},
-{"round_id":"daily_advanced_9","es":"Estas son sustantivos; RITUALISTIC es un adjetivo."},
-{"round_id":"daily_advanced_10","es":"Estas describen un comportamiento consistente y predecible; ERRATIC significa impredecible."},
-{"round_id":"daily_advanced_11","es":"Estas significan hacer las cosas más simples; COMPLICATE significa hacerlas más difíciles."},
-{"round_id":"daily_advanced_12","es":"Estas son sustantivos; SPONTANEOUS es un adjetivo."},
-{"round_id":"daily_advanced_13","es":"Estas describen actuar sin planear; DELIBERATE significa hecho a propósito, con reflexión."},
-{"round_id":"daily_advanced_14","es":"Estas significan posponer una acción; EXPEDITE significa acelerarla."},
-{"round_id":"daily_advanced_15","es":"Estas son verbos; DISCIPLINED es un adjetivo."},
-{"round_id":"daily_advanced_16","es":"Estas describen un enfoque organizado; HAPHAZARD significa desorganizado y aleatorio."},
-{"round_id":"daily_advanced_17","es":"Estas significan que sucede todo el tiempo; OCCASIONAL significa que sucede rara vez."},
-{"round_id":"daily_advanced_18","es":"Estas son sustantivos; INDISPENSABLE es un adjetivo."},
-{"round_id":"daily_advanced_19","es":"Estas describen estar estancado sin progreso; MOMENTUM significa la fuerza que te impulsa hacia adelante."},
-{"round_id":"general_basic_0","es":"Estas son adjetivos (sentimientos); SMILE es un verbo o sustantivo, no una palabra de sentimiento."},
-{"round_id":"general_basic_1","es":"Estas describen el clima; HAPPY describe una emoción."},
-{"round_id":"general_basic_2","es":"Estas significan grande en tamaño; TINY significa muy pequeño."},
-{"round_id":"general_basic_3","es":"Estas son adjetivos; RUN es un verbo."},
-{"round_id":"general_basic_4","es":"Estos son colores; SOFT describe una textura."},
-{"round_id":"general_basic_5","es":"Estas significan cualidad positiva; TERRIBLE significa muy malo."},
-{"round_id":"general_basic_6","es":"Estas son adjetivos; CHANGE es un verbo."},
-{"round_id":"general_basic_7","es":"Estos son animales; HAPPY es un sentimiento."},
-{"round_id":"general_basic_8","es":"Estas significan pequeño en tamaño; ENORMOUS significa muy grande."},
-{"round_id":"general_basic_9","es":"Estas son adjetivos (temperatura); FREEZE es un verbo."},
-{"round_id":"general_basic_10","es":"Estas son relaciones familiares; FRIEND no es un miembro de la familia."},
-{"round_id":"general_basic_11","es":"Estas significan no difícil de hacer; DIFFICULT significa difícil."},
-{"round_id":"general_basic_12","es":"Estas son adjetivos/adverbios; DISTANCE es un sustantivo."},
-{"round_id":"general_basic_13","es":"Estos son números ordinales; MANY es una palabra de cantidad, no un ordinal."},
-{"round_id":"general_basic_14","es":"Estas significan moverse rápido; SLUGGISH significa moverse lento."},
-{"round_id":"general_basic_15","es":"Estas son sustantivos; READ es un verbo."},
-{"round_id":"general_basic_16","es":"Estas son partes de un día; YESTERDAY se refiere a un día en el pasado."},
-{"round_id":"general_basic_17","es":"Estas significan atractivo; UGLY significa poco atractivo."},
-{"round_id":"general_basic_18","es":"Estas son adjetivos; SHINE es un verbo."},
-{"round_id":"general_basic_19","es":"Estas son estaciones del año; WEEKEND se refiere a días de la semana."},
-{"round_id":"general_intermediate_0","es":"Estas son adjetivos; CONFIDENCE es un sustantivo."},
-{"round_id":"general_intermediate_1","es":"Estas describen buenos rasgos de carácter; ARROGANT describe un rasgo negativo."},
-{"round_id":"general_intermediate_2","es":"Estas significan seguro de ti mismo; TIMID significa tímido o temeroso."},
-{"round_id":"general_intermediate_3","es":"Estas son sustantivos; STUBBORN es un adjetivo."},
-{"round_id":"general_intermediate_4","es":"Estas describen rasgos difíciles; GENEROUS describe un rasgo positivo."},
-{"round_id":"general_intermediate_5","es":"Estas significan capaz de cambiar fácilmente; RIGID significa incapaz de cambiar."},
-{"round_id":"general_intermediate_6","es":"Estas son adjetivos; REASON es un sustantivo."},
-{"round_id":"general_intermediate_7","es":"Estas describen pensar con lógica; EMOTIONAL describe pensar con sentimientos."},
-{"round_id":"general_intermediate_8","es":"Estas significan sin miedo; COWARDLY significa que se asusta fácilmente."},
-{"round_id":"general_intermediate_9","es":"Estas son adjetivos; HESITATE es un verbo."},
-{"round_id":"general_intermediate_10","es":"Estas describen sentirse preocupado; RELAXED describe sentirse tranquilo."},
-{"round_id":"general_intermediate_11","es":"Estas significan demasiado orgulloso de ti mismo; MODEST significa humilde."},
-{"round_id":"general_intermediate_12","es":"Estas son sustantivos; RELUCTANT es un adjetivo."},
-{"round_id":"general_intermediate_13","es":"Estas describen estar abierto a nuevas ideas; STUBBORN significa negarse a cambiar de opinión."},
-{"round_id":"general_intermediate_14","es":"Estas significan no querer hacer algo; EAGER significa muy dispuesto."},
-{"round_id":"general_intermediate_15","es":"Estas son adjetivos; HOPE es un sustantivo o verbo."},
-{"round_id":"general_intermediate_16","es":"Estas describen mantenerse tranquilo; FRANTIC significa en pánico y estresado."},
-{"round_id":"general_intermediate_17","es":"Estas significan lleno de ideas nuevas; UNORIGINAL significa copiar a otros, sin ideas nuevas."},
-{"round_id":"general_intermediate_18","es":"Estas son sustantivos; CONFIDENT es un adjetivo."},
-{"round_id":"general_intermediate_19","es":"Estas describen ser cuidadoso; RECKLESS significa imprudente y riesgoso."},
-{"round_id":"general_advanced_0","es":"Estas son adjetivos; RESILIENCE es un sustantivo."},
-{"round_id":"general_advanced_1","es":"Estas describen a alguien que no se rinde; FICKLE significa cambiar de opinión con frecuencia."},
-{"round_id":"general_advanced_2","es":"Estas significan enfocado en lo práctico; IDEALISTIC significa enfocado en ideas perfectas en vez de la realidad."},
-{"round_id":"general_advanced_3","es":"Estas son sustantivos; AUDACIOUS es un adjetivo."},
-{"round_id":"general_advanced_4","es":"Estas describen entender bien a los demás; OBLIVIOUS significa no darse cuenta."},
-{"round_id":"general_advanced_5","es":"Estas significan audaz sin miedo; TIMID significa tímido y temeroso."},
-{"round_id":"general_advanced_6","es":"Estas son sustantivos; UNWAVERING es un adjetivo."},
-{"round_id":"general_advanced_7","es":"Estas describen hablar clara y honestamente; EVASIVE significa evitar dar una respuesta directa."},
-{"round_id":"general_advanced_8","es":"Estas significan firmemente comprometido; WAVERING significa incierto o cambiante."},
-{"round_id":"general_advanced_9","es":"Estas son sustantivos; INDOMITABLE es un adjetivo."},
-{"round_id":"general_advanced_10","es":"Estas describen decisiones cuidadosas y sabias; IMPULSIVE significa actuar sin pensar."},
-{"round_id":"general_advanced_11","es":"Estas significan cuidar de otros antes que de ti mismo; SELFISH significa preocuparte solo por ti mismo."},
-{"round_id":"general_advanced_12","es":"Estas son sustantivos; RESILIENT es un adjetivo."},
-{"round_id":"general_advanced_13","es":"Estas describen poder adaptarse; RIGID significa incapaz de cambiar."},
-{"round_id":"general_advanced_14","es":"Estas significan imposible de vencer; FRAGILE significa fácil de romper o vencer."},
-{"round_id":"general_advanced_15","es":"Estas son adjetivos; EMPATHY es un sustantivo."},
-{"round_id":"general_advanced_16","es":"Estas describen un estilo de vida simple y sencillo; LAVISH significa extravagante y lujoso."},
-{"round_id":"general_advanced_17","es":"Estas significan capaz de hablar con claridad; INCOHERENT significa poco claro y difícil de seguir."},
-{"round_id":"general_advanced_18","es":"Estas son adjetivos; TENACITY es un sustantivo."},
-{"round_id":"general_advanced_19","es":"Estas describen notar pequeños detalles; OBLIVIOUS significa no notar nada."}
+  {
+    "round_id": "business_basic_0",
+    "es": "Todos son artículos de oficina; BEACH no tiene nada que ver con una oficina."
+  },
+  {
+    "round_id": "business_basic_1",
+    "es": "Estas se relacionan con el dinero; MEETING no."
+  },
+  {
+    "round_id": "business_basic_2",
+    "es": "JOB, WORK, POSITION y ROLE significan empleo; HOLIDAY significa tiempo libre."
+  },
+  {
+    "round_id": "business_basic_3",
+    "es": "Estas son personas en un lugar de trabajo; INVOICE es un documento."
+  },
+  {
+    "round_id": "business_basic_4",
+    "es": "Estas significan obtener algo pagando; RETURN significa devolver algo."
+  },
+  {
+    "round_id": "business_basic_5",
+    "es": "Estos son documentos de negocios; CUSTOMER es una persona."
+  },
+  {
+    "round_id": "business_basic_6",
+    "es": "Estos son lugares para comprar cosas; SALARY es dinero que ganas."
+  },
+  {
+    "round_id": "business_basic_7",
+    "es": "Estas significan recibir dinero; SPEND significa gastar dinero."
+  },
+  {
+    "round_id": "business_basic_8",
+    "es": "Estas son formas en que la gente se comunica en el trabajo; WAREHOUSE es un edificio."
+  },
+  {
+    "round_id": "business_basic_9",
+    "es": "Todas significan alguien que compra; SUPPLIER es alguien que vende o provee."
+  },
+  {
+    "round_id": "business_basic_10",
+    "es": "Estas significan dinero que entra; EXPENSE es dinero que sale."
+  },
+  {
+    "round_id": "business_basic_11",
+    "es": "Estas describen a alguien a cargo; INTERN es un trabajador de nivel inicial."
+  },
+  {
+    "round_id": "business_basic_12",
+    "es": "Estas son formas de pagar; DISCOUNT es una reducción de precio, no un método de pago."
+  },
+  {
+    "round_id": "business_basic_13",
+    "es": "BOSS, MANAGER, DIRECTOR y LEADER son personas al mando; un CLIENT es alguien que te compra."
+  },
+  {
+    "round_id": "business_basic_14",
+    "es": "Las primeras cuatro significan dinero que tienes; DEBT es dinero que debes."
+  },
+  {
+    "round_id": "business_basic_15",
+    "es": "Todos son cosas de un lugar de trabajo; un GARDEN no lo es."
+  },
+  {
+    "round_id": "business_basic_16",
+    "es": "Las primeras cuatro son dinero que recibes por trabajar; un EXPENSE es dinero que gastas."
+  },
+  {
+    "round_id": "business_basic_17",
+    "es": "Las primeras cuatro son la persona que compra; el SELLER es el lado opuesto."
+  },
+  {
+    "round_id": "business_basic_18",
+    "es": "Todos son eventos de trabajo; VACATION es tiempo fuera del trabajo."
+  },
+  {
+    "round_id": "business_basic_19",
+    "es": "Las primeras cuatro son dinero que gana el negocio; LOSS es dinero que no gana."
+  },
+  {
+    "round_id": "business_basic_20",
+    "es": "Todos son formas de comunicarse en el trabajo; CHAIR es un mueble."
+  },
+  {
+    "round_id": "business_basic_21",
+    "es": "Las primeras cuatro significan una organizacion; un EMPLOYEE es una persona que trabaja en ella."
+  },
+  {
+    "round_id": "business_basic_22",
+    "es": "Las primeras cuatro son algo que ambas partes aceptan; un ARGUMENT es un desacuerdo."
+  },
+  {
+    "round_id": "business_basic_23",
+    "es": "Todos se relacionan con manejar dinero; una KITCHEN no."
+  },
+  {
+    "round_id": "business_basic_24",
+    "es": "Las primeras cuatro significan de precio bajo; EXPENSIVE significa lo contrario."
+  },
+  {
+    "round_id": "business_intermediate_0",
+    "es": "Estas se relacionan con las finanzas de la empresa; DEADLINE se relaciona con el tiempo."
+  },
+  {
+    "round_id": "business_intermediate_1",
+    "es": "Estas significan un entendimiento formal entre partes; DISPUTE significa un desacuerdo."
+  },
+  {
+    "round_id": "business_intermediate_2",
+    "es": "Estas describen roles de liderazgo; INVOICE es un documento."
+  },
+  {
+    "round_id": "business_intermediate_3",
+    "es": "Estas significan crecer; DECLINE significa disminuir."
+  },
+  {
+    "round_id": "business_intermediate_4",
+    "es": "Estas se relacionan con reuniones de negocios; WAREHOUSE es un edificio de almacenamiento."
+  },
+  {
+    "round_id": "business_intermediate_5",
+    "es": "Estas significan alguien que te compra; VENDOR es alguien que te vende."
+  },
+  {
+    "round_id": "business_intermediate_6",
+    "es": "Estos son documentos; COLLEAGUE es una persona."
+  },
+  {
+    "round_id": "business_intermediate_7",
+    "es": "Estas significan bajar; SURGE significa aumentar repentinamente."
+  },
+  {
+    "round_id": "business_intermediate_8",
+    "es": "Estas se relacionan con administrar dinero; DEADLINE se relaciona con el tiempo."
+  },
+  {
+    "round_id": "business_intermediate_9",
+    "es": "Estas significan comenzar algo; DISSOLVE significa terminarlo."
+  },
+  {
+    "round_id": "business_intermediate_10",
+    "es": "Estas son personas que trabajan para una empresa; SHAREHOLDER posee parte de ella pero no necesariamente trabaja ahí."
+  },
+  {
+    "round_id": "business_intermediate_11",
+    "es": "Estas describen hacer algo bien; STAGNANT significa no moverse ni crecer."
+  },
+  {
+    "round_id": "business_intermediate_12",
+    "es": "Estas son partes de la estructura de una empresa; DEADLINE es un punto en el tiempo."
+  },
+  {
+    "round_id": "business_intermediate_13",
+    "es": "Todos son documentos sobre dinero debido o pagado; un CATALOG muestra productos."
+  },
+  {
+    "round_id": "business_intermediate_14",
+    "es": "Todos son sobre organizar el tiempo; un BONUS es dinero extra."
+  },
+  {
+    "round_id": "business_intermediate_15",
+    "es": "Las primeras cuatro son una empresa que te vende bienes; un COMPETITOR te disputa los clientes."
+  },
+  {
+    "round_id": "business_intermediate_16",
+    "es": "Todos son cosas buenas que puedes recibir en el trabajo; DISMISSAL es perder el empleo."
+  },
+  {
+    "round_id": "business_intermediate_17",
+    "es": "Las primeras cuatro son predicciones sobre dinero futuro; un REFUND es dinero devuelto."
+  },
+  {
+    "round_id": "business_intermediate_18",
+    "es": "Todos son lugares donde opera un negocio; un PASSPORT es un documento de viaje."
+  },
+  {
+    "round_id": "business_intermediate_19",
+    "es": "Todos son formas de aprender en el trabajo; RESIGNATION es renunciar."
+  },
+  {
+    "round_id": "business_intermediate_20",
+    "es": "Las primeras cuatro tienen participacion financiera en la empresa; un INTERN es un aprendiz."
+  },
+  {
+    "round_id": "business_intermediate_21",
+    "es": "Las primeras cuatro significan un precio menor; un SURCHARGE es un cargo extra."
+  },
+  {
+    "round_id": "business_intermediate_22",
+    "es": "Las primeras cuatro son como piensas hacer algo; un OUTCOME es el resultado."
+  },
+  {
+    "round_id": "business_intermediate_23",
+    "es": "Todos son formas de tratar con personas en los negocios; FILING es ordenar documentos solo."
+  },
+  {
+    "round_id": "business_intermediate_24",
+    "es": "Las primeras cuatro son dinero que entra; OVERHEAD es el costo de operar el negocio."
+  },
+  {
+    "round_id": "business_advanced_0",
+    "es": "Estas se relacionan con el riesgo legal o regulatorio; SYNERGY se refiere a la efectividad combinada, no al riesgo."
+  },
+  {
+    "round_id": "business_advanced_1",
+    "es": "Estas significan unir; DIVEST significa vender o separar."
+  },
+  {
+    "round_id": "business_advanced_2",
+    "es": "Estas son herramientas para medir o predecir el rendimiento; SUBSIDIARY es una empresa que pertenece a otra."
+  },
+  {
+    "round_id": "business_advanced_3",
+    "es": "Estas significan hacer más grande; CONTRACT aquí significa hacerse más pequeño."
+  },
+  {
+    "round_id": "business_advanced_4",
+    "es": "Estas describen inestabilidad; ROBUST significa fuerte y estable, lo opuesto."
+  },
+  {
+    "round_id": "business_advanced_5",
+    "es": "Estas significan dinero ganado de una inversión; OVERHEAD significa gastos operativos continuos del negocio."
+  },
+  {
+    "round_id": "business_advanced_6",
+    "es": "Estas significan protegerse contra el riesgo; DISCLOSE significa revelar información."
+  },
+  {
+    "round_id": "business_advanced_7",
+    "es": "Estas significan perder valor; APPRECIATE significa ganar valor."
+  },
+  {
+    "round_id": "business_advanced_8",
+    "es": "Estas describen propiedad o estructura corporativa; FORECAST es una predicción."
+  },
+  {
+    "round_id": "business_advanced_9",
+    "es": "Estas describen la toma de decisiones cuidadosa; RECKLESS significa imprudente."
+  },
+  {
+    "round_id": "business_advanced_10",
+    "es": "Estas se relacionan con resolver disputas; EQUITY se relaciona con el valor de propiedad."
+  },
+  {
+    "round_id": "business_advanced_11",
+    "es": "Estas significan cosas de valor que posee una empresa; LIABILITY es una deuda que debe."
+  },
+  {
+    "round_id": "business_advanced_12",
+    "es": "Estas describen una posición fuerte en el mercado; OBSOLETE significa anticuado y ya no útil."
+  },
+  {
+    "round_id": "business_advanced_13",
+    "es": "Las primeras cuatro significan algo que debes; un ASSET es algo que posees."
+  },
+  {
+    "round_id": "business_advanced_14",
+    "es": "Todos describen una empresa absorbiendo otra; un LAYOFF es recortar personal."
+  },
+  {
+    "round_id": "business_advanced_15",
+    "es": "Todos son reglas que la empresa debe cumplir; un INCENTIVE es una recompensa que motiva."
+  },
+  {
+    "round_id": "business_advanced_16",
+    "es": "Las primeras cuatro significan revisar algo con cuidado; un LAUNCH es lanzar un producto."
+  },
+  {
+    "round_id": "business_advanced_17",
+    "es": "Las primeras cuatro significan que produce buen dinero; WASTEFUL significa desperdiciarlo."
+  },
+  {
+    "round_id": "business_advanced_18",
+    "es": "Las primeras cuatro son cosas prometidas para garantizar un prestamo; un DIVIDEND es un pago a los accionistas."
+  },
+  {
+    "round_id": "business_advanced_19",
+    "es": "Las primeras cuatro significan dar trabajo a otro; MONOPOLIZE significa quedarse con todo."
+  },
+  {
+    "round_id": "business_advanced_20",
+    "es": "Las primeras cuatro significan no poder pagar; SOLVENT significa poder pagar."
+  },
+  {
+    "round_id": "business_advanced_21",
+    "es": "Todos tienen un interes financiero en la empresa; un APPRENTICE esta aprendiendo un oficio."
+  },
+  {
+    "round_id": "business_advanced_22",
+    "es": "Las primeras cuatro resuelven un conflicto por acuerdo; LITIGATION es ir a juicio."
+  },
+  {
+    "round_id": "business_advanced_23",
+    "es": "Las primeras cuatro significan posible de hacer; UNREALISTIC significa que no puede funcionar."
+  },
+  {
+    "round_id": "business_advanced_24",
+    "es": "Las primeras cuatro son adquirir suministros; RETAILING es vender al publico."
+  },
+  {
+    "round_id": "travel_basic_0",
+    "es": "Estas son cosas que necesitas en un aeropuerto; BEACH es un destino, no un artículo de aeropuerto."
+  },
+  {
+    "round_id": "travel_basic_1",
+    "es": "Estas significan un período de viaje; ARRIVAL significa llegar al destino."
+  },
+  {
+    "round_id": "travel_basic_2",
+    "es": "Estas son formas de viajar; HOTEL es un lugar para hospedarse."
+  },
+  {
+    "round_id": "travel_basic_3",
+    "es": "Estas significan cosas que llevas al viajar; SOUVENIR es algo que compras para recordar un viaje."
+  },
+  {
+    "round_id": "travel_basic_4",
+    "es": "Estas se relacionan con dónde te hospedas; TICKET es para transporte."
+  },
+  {
+    "round_id": "travel_basic_5",
+    "es": "Estas describen a alguien que te guía; MAP es un objeto, no una persona."
+  },
+  {
+    "round_id": "travel_basic_6",
+    "es": "Estos son documentos que necesitas para viajar; SUNSCREEN es algo que usas, no un documento."
+  },
+  {
+    "round_id": "travel_basic_7",
+    "es": "Estas significan llegar a algún lugar; DEPART significa irse."
+  },
+  {
+    "round_id": "travel_basic_8",
+    "es": "Estos son artículos para un viaje a la playa; PASSPORT es un documento de viaje."
+  },
+  {
+    "round_id": "travel_basic_9",
+    "es": "Estas significan ir a ver lugares nuevos; AVOID significa evitar algo."
+  },
+  {
+    "round_id": "travel_basic_10",
+    "es": "Estos son lugares que visitan los turistas; LUGGAGE es algo que cargas."
+  },
+  {
+    "round_id": "travel_basic_11",
+    "es": "Estas significan un lugar al que vas; ROUTE significa el camino que tomas para llegar ahí."
+  },
+  {
+    "round_id": "travel_basic_12",
+    "es": "Estas describen condiciones climáticas; EXPENSIVE describe un precio."
+  },
+  {
+    "round_id": "travel_basic_13",
+    "es": "Las primeras cuatro son algo donde llevas tus cosas; un TICKET es un documento."
+  },
+  {
+    "round_id": "travel_basic_14",
+    "es": "Todos son lugares naturales; un AIRPORT lo construyen las personas."
+  },
+  {
+    "round_id": "travel_basic_15",
+    "es": "Todos ayudan a orientarte; una PILLOW ayuda a dormir."
+  },
+  {
+    "round_id": "travel_basic_16",
+    "es": "Las primeras cuatro significan viajar a algun lado; ARRIVAL es llegar al final."
+  },
+  {
+    "round_id": "travel_basic_17",
+    "es": "Todos son documentos que necesitas para viajar; una CAMERA es opcional."
+  },
+  {
+    "round_id": "travel_basic_18",
+    "es": "Las primeras cuatro son lugares para dormir viajando; un MUSEUM es un lugar para visitar."
+  },
+  {
+    "round_id": "travel_basic_19",
+    "es": "Todos son lugares llenos de agua; un DESERT casi no tiene."
+  },
+  {
+    "round_id": "travel_basic_20",
+    "es": "Las primeras cuatro son personas que vienen de fuera; un RESIDENT vive ahi."
+  },
+  {
+    "round_id": "travel_basic_21",
+    "es": "Las primeras cuatro describen viajes que cuestan poco; LUXURY cuesta mucho."
+  },
+  {
+    "round_id": "travel_basic_22",
+    "es": "Las primeras cuatro significan moverse a pie; DRIVE es usar un carro."
+  },
+  {
+    "round_id": "travel_intermediate_0",
+    "es": "Estos son procedimientos o áreas del aeropuerto; SOUVENIR es un recuerdo que compras."
+  },
+  {
+    "round_id": "travel_intermediate_1",
+    "es": "Estas significan una lista planeada de actividades u horarios; EXCURSION significa un viaje corto."
+  },
+  {
+    "round_id": "travel_intermediate_2",
+    "es": "Estas se relacionan con el dinero durante un viaje; ITINERARY es un plan de viaje."
+  },
+  {
+    "round_id": "travel_intermediate_3",
+    "es": "Estas significan una parada entre vuelos; DESTINATION es el lugar final al que vas."
+  },
+  {
+    "round_id": "travel_intermediate_4",
+    "es": "Estos son lugares para hospedarse; EMBASSY es una oficina gubernamental."
+  },
+  {
+    "round_id": "travel_intermediate_5",
+    "es": "Estas significan un artículo para recordar un viaje; LUGGAGE es donde cargas tus cosas."
+  },
+  {
+    "round_id": "travel_intermediate_6",
+    "es": "Estos son permisos oficiales para viajar; ITINERARY es tu horario de viaje."
+  },
+  {
+    "round_id": "travel_intermediate_7",
+    "es": "Estas significan alguien que visita un lugar; RESIDENT significa alguien que vive ahí."
+  },
+  {
+    "round_id": "travel_intermediate_8",
+    "es": "Estas se relacionan con lugares que visitan los turistas; CUSTOMS es un proceso de aeropuerto."
+  },
+  {
+    "round_id": "travel_intermediate_9",
+    "es": "Estas significan posponer algo; EXPEDITE significa hacer que algo suceda más rápido."
+  },
+  {
+    "round_id": "travel_intermediate_10",
+    "es": "Estas describen el cansancio por viajar; CURRENCY es dinero."
+  },
+  {
+    "round_id": "travel_intermediate_11",
+    "es": "Estas significan una oficina diplomática en el extranjero; CHECKPOINT es un punto de control de seguridad."
+  },
+  {
+    "round_id": "travel_intermediate_12",
+    "es": "Estas se relacionan con cruzar hacia un país; ITINERARY es tu plan de viaje."
+  },
+  {
+    "round_id": "travel_intermediate_13",
+    "es": "Todos ocurren antes o durante la salida; LANDING ocurre al final del vuelo."
+  },
+  {
+    "round_id": "travel_intermediate_14",
+    "es": "Las primeras cuatro son sobre organizar un viaje; un SOUVENIR es algo que traes a casa."
+  },
+  {
+    "round_id": "travel_intermediate_15",
+    "es": "Todos son controles que debes pasar; un LOUNGE es un lugar para descansar."
+  },
+  {
+    "round_id": "travel_intermediate_16",
+    "es": "Todos son problemas que arruinan un viaje; un UPGRADE es una buena noticia."
+  },
+  {
+    "round_id": "travel_intermediate_17",
+    "es": "Todos son sobre manejar dinero en el extranjero; un BACKPACK carga tus cosas."
+  },
+  {
+    "round_id": "travel_intermediate_18",
+    "es": "Las primeras cuatro significan un lugar donde quedarse; TRANSPORT es como te mueves."
+  },
+  {
+    "round_id": "travel_intermediate_19",
+    "es": "Las primeras cuatro significan lleno de gente; DESERTED significa vacio."
+  },
+  {
+    "round_id": "travel_intermediate_20",
+    "es": "Las primeras cuatro significan ir y volver; ONE-WAY significa que no regresas."
+  },
+  {
+    "round_id": "travel_intermediate_21",
+    "es": "Las primeras cuatro son informacion impresa para viajeros; una SUITCASE guarda ropa."
+  },
+  {
+    "round_id": "travel_intermediate_22",
+    "es": "Las primeras cuatro te protegen si algo sale mal; un DEPOSIT es dinero pagado por adelantado."
+  },
+  {
+    "round_id": "travel_intermediate_23",
+    "es": "Las primeras cuatro significan sentirse agotado; EXCITEMENT es sentirse con energia."
+  },
+  {
+    "round_id": "travel_intermediate_24",
+    "es": "Todos son lugares donde llegan barcos; una RUNWAY es para aviones."
+  },
+  {
+    "round_id": "travel_advanced_0",
+    "es": "Estas describen tipos de viajes largos o significativos; CURRENCY es dinero."
+  },
+  {
+    "round_id": "travel_advanced_1",
+    "es": "Estas describen moverse de un lugar a otro; SEDENTARY significa quedarse en un solo lugar."
+  },
+  {
+    "round_id": "travel_advanced_2",
+    "es": "Estas se relacionan con el control legal del movimiento a través de fronteras; WANDERLUST es un fuerte deseo de viajar."
+  },
+  {
+    "round_id": "travel_advanced_3",
+    "es": "Estas significan un fuerte deseo; RELUCTANCE significa falta de disposición."
+  },
+  {
+    "round_id": "travel_advanced_4",
+    "es": "Estos son accidentes geográficos; ITINERANT describe a una persona que viaja."
+  },
+  {
+    "round_id": "travel_advanced_5",
+    "es": "Estas significan un período de quedarse en algún lugar; DEPARTURE significa irse."
+  },
+  {
+    "round_id": "travel_advanced_6",
+    "es": "Estas se relacionan con el viaje responsable con el medio ambiente; ITINERARY es simplemente un horario de viaje."
+  },
+  {
+    "round_id": "travel_advanced_7",
+    "es": "Estas describen a alguien familiarizado con muchas culturas; PROVINCIAL significa cerrado o poco sofisticado."
+  },
+  {
+    "round_id": "travel_advanced_8",
+    "es": "Estas se relacionan con la autoridad legal sobre personas que cruzan fronteras; SOJOURN es simplemente una estadía temporal."
+  },
+  {
+    "round_id": "travel_advanced_9",
+    "es": "Estas describen viajes planeados; SPONTANEOUS significa no planeado."
+  },
+  {
+    "round_id": "travel_advanced_10",
+    "es": "Estos son accidentes geográficos relacionados con islas; EXPEDITION es un tipo de viaje."
+  },
+  {
+    "round_id": "travel_advanced_11",
+    "es": "Estas describen una experiencia de viaje profunda y real; SUPERFICIAL significa superficial o poco profundo."
+  },
+  {
+    "round_id": "travel_advanced_12",
+    "es": "Estas describen viajes largos y significativos; LAYOVER es una parada corta entre vuelos."
+  },
+  {
+    "round_id": "travel_advanced_13",
+    "es": "Las primeras cuatro son planes de lo que haras; un DESTINATION es donde terminas."
+  },
+  {
+    "round_id": "travel_advanced_14",
+    "es": "Las primeras cuatro significan lejos de todo; CENTRAL significa justo en el centro."
+  },
+  {
+    "round_id": "travel_advanced_15",
+    "es": "Las primeras cuatro son permisos oficiales para entrar; un BROCHURE es publicidad."
+  },
+  {
+    "round_id": "travel_advanced_16",
+    "es": "Las primeras cuatro describen vistas hermosas; MUNDANE significa ordinario y aburrido."
+  },
+  {
+    "round_id": "travel_advanced_17",
+    "es": "Las primeras cuatro son mudarse a vivir a otro lugar; COMMUTE es viajar a diario al trabajo."
+  },
+  {
+    "round_id": "travel_advanced_18",
+    "es": "Todos son formas de ganar el derecho a quedarse; DEPORTATION es ser obligado a salir."
+  },
+  {
+    "round_id": "travel_advanced_19",
+    "es": "Las primeras cuatro son acostumbrarse a un lugar nuevo; WITHDRAW es apartarse de el."
+  },
+  {
+    "round_id": "travel_advanced_20",
+    "es": "Las primeras cuatro son viajes cortos de placer; un DEADLINE es un limite de tiempo laboral."
+  },
+  {
+    "round_id": "travel_advanced_21",
+    "es": "Todos son partes de un aeropuerto; una CABIN esta dentro del avion."
+  },
+  {
+    "round_id": "travel_advanced_22",
+    "es": "Las primeras cuatro describen lugares que tratan bien al visitante; HOSTILE es lo contrario."
+  },
+  {
+    "round_id": "travel_advanced_23",
+    "es": "Las primeras cuatro significan interrumpir el viaje; NONSTOP significa sin ninguna parada."
+  },
+  {
+    "round_id": "daily_basic_0",
+    "es": "Estas son cosas que haces en la mañana; DINNER es una comida de la noche."
+  },
+  {
+    "round_id": "daily_basic_1",
+    "es": "Estas significan limpiar algo; MESSY significa sucio o desordenado."
+  },
+  {
+    "round_id": "daily_basic_2",
+    "es": "Estos son artículos de cocina; PILLOW pertenece a una habitación."
+  },
+  {
+    "round_id": "daily_basic_3",
+    "es": "Estas significan comunicarse hablando; LISTEN significa escuchar y prestar atención."
+  },
+  {
+    "round_id": "daily_basic_4",
+    "es": "Estas se relacionan con dormir; STOVE es un electrodoméstico de cocina."
+  },
+  {
+    "round_id": "daily_basic_5",
+    "es": "Estas significan sentirse tranquilo; WORRY significa sentirse ansioso."
+  },
+  {
+    "round_id": "daily_basic_6",
+    "es": "Estas son cosas que compras en una tienda de abarrotes; TOWEL es un artículo de baño."
+  },
+  {
+    "round_id": "daily_basic_7",
+    "es": "Estas significan quitar la suciedad; FOLD significa doblar la ropa ordenadamente, no limpiarla."
+  },
+  {
+    "round_id": "daily_basic_8",
+    "es": "Estos son artículos de baño; BLANKET pertenece a una habitación."
+  },
+  {
+    "round_id": "daily_basic_9",
+    "es": "Estas significan tomarlo con calma; HURRY significa moverse rápido."
+  },
+  {
+    "round_id": "daily_basic_10",
+    "es": "Estas son actividades comunes de fin de semana; COMMUTE es viajar al trabajo, usualmente entre semana."
+  },
+  {
+    "round_id": "daily_basic_11",
+    "es": "Estas significan obtener algo con dinero; SELL significa dar algo a cambio de dinero."
+  },
+  {
+    "round_id": "daily_basic_12",
+    "es": "Estas son tareas de limpieza; COOK es preparar comida, no limpiar."
+  },
+  {
+    "round_id": "daily_basic_13",
+    "es": "Todos son comidas que comes; la KITCHEN es el cuarto donde cocinas."
+  },
+  {
+    "round_id": "daily_basic_14",
+    "es": "Todos son ropa que usas; un MIRROR es un objeto en el que te miras."
+  },
+  {
+    "round_id": "daily_basic_15",
+    "es": "Las primeras cuatro significan sentirse bien; ANGRY es sentirse mal."
+  },
+  {
+    "round_id": "daily_basic_16",
+    "es": "Todos son partes de un dia; MONDAY es un dia de la semana."
+  },
+  {
+    "round_id": "daily_basic_17",
+    "es": "Las primeras cuatro significan descansar; RUN es moverse rapido."
+  },
+  {
+    "round_id": "daily_basic_18",
+    "es": "Todos son miembros de la familia; un NEIGHBOR vive cerca pero no es familia."
+  },
+  {
+    "round_id": "daily_basic_19",
+    "es": "Las primeras cuatro significan de gran tamano; TINY significa muy pequeno."
+  },
+  {
+    "round_id": "daily_basic_20",
+    "es": "Todos se usan para limpiarse; una SPOON se usa para comer."
+  },
+  {
+    "round_id": "daily_basic_21",
+    "es": "Las primeras cuatro significan moverse con velocidad; SLOW es lo contrario."
+  },
+  {
+    "round_id": "daily_basic_22",
+    "es": "Todos son frutas; una CARROT es un vegetal."
+  },
+  {
+    "round_id": "daily_basic_23",
+    "es": "Las primeras cuatro significan empezar algo; FINISH es terminarlo."
+  },
+  {
+    "round_id": "daily_basic_24",
+    "es": "Todos son muebles que puedes usar; una WINDOW es parte de la pared."
+  },
+  {
+    "round_id": "daily_intermediate_0",
+    "es": "Estos son pagos regulares; ERRAND es una pequeña tarea que haces."
+  },
+  {
+    "round_id": "daily_intermediate_1",
+    "es": "Estas significan algo que debes hacer; HOBBY es algo que haces por diversión."
+  },
+  {
+    "round_id": "daily_intermediate_2",
+    "es": "Estas se relacionan con arreglar o mejorar una casa; GROCERY se relaciona con comprar comida."
+  },
+  {
+    "round_id": "daily_intermediate_3",
+    "es": "Estas significan algo que se hace regularmente; EXCEPTION significa algo que no sigue la regla."
+  },
+  {
+    "round_id": "daily_intermediate_4",
+    "es": "Estas son parte de una rutina matutina; APPOINTMENT es una cita programada."
+  },
+  {
+    "round_id": "daily_intermediate_5",
+    "es": "Estas significan hacer que algo funcione de nuevo; BREAK significa dañar algo."
+  },
+  {
+    "round_id": "daily_intermediate_6",
+    "es": "Estas te ayudan a mantenerte organizado en el tiempo; THERMOSTAT controla la temperatura."
+  },
+  {
+    "round_id": "daily_intermediate_7",
+    "es": "Estas significan posponer algo; COMPLETE significa terminarlo."
+  },
+  {
+    "round_id": "daily_intermediate_8",
+    "es": "Estas se relacionan con alquilar una casa; ERRAND es una pequeña tarea que haces."
+  },
+  {
+    "round_id": "daily_intermediate_9",
+    "es": "Estas significan cuidar algo; NEGLECT significa no cuidarlo."
+  },
+  {
+    "round_id": "daily_intermediate_10",
+    "es": "Estas se relacionan con servicios de tecnología del hogar; PLUMBING es un sistema físico del hogar para el agua."
+  },
+  {
+    "round_id": "daily_intermediate_11",
+    "es": "Estas describen tener mucho que hacer; IDLE significa no tener nada que hacer."
+  },
+  {
+    "round_id": "daily_intermediate_12",
+    "es": "Estas son obligaciones financieras de un hogar; CHORE es una tarea, no un pago."
+  },
+  {
+    "round_id": "daily_intermediate_13",
+    "es": "Las primeras cuatro significan no tener energia; ENERGETIC significa estar lleno de ella."
+  },
+  {
+    "round_id": "daily_intermediate_14",
+    "es": "Todos son tareas dentro de la casa; GARDENING se hace afuera."
+  },
+  {
+    "round_id": "daily_intermediate_15",
+    "es": "Todos se usan para cocinar; una BLANKET te abriga en la cama."
+  },
+  {
+    "round_id": "daily_intermediate_16",
+    "es": "Las primeras cuatro son algo que haces con regularidad; una SURPRISE es inesperada."
+  },
+  {
+    "round_id": "daily_intermediate_17",
+    "es": "Las primeras cuatro son una parte de la ciudad; un BUILDING es una sola estructura."
+  },
+  {
+    "round_id": "daily_intermediate_18",
+    "es": "Las primeras cuatro significan pelear con palabras; AGREE es lo contrario."
+  },
+  {
+    "round_id": "daily_intermediate_19",
+    "es": "Las primeras cuatro significan reservar un momento; una CANCELLATION lo deshace."
+  },
+  {
+    "round_id": "daily_intermediate_20",
+    "es": "Las primeras cuatro describen buenos modales; RUDE describe malos modales."
+  },
+  {
+    "round_id": "daily_intermediate_21",
+    "es": "Todos son lugares para comprar comida; una PHARMACY vende medicinas."
+  },
+  {
+    "round_id": "daily_intermediate_22",
+    "es": "Las primeras cuatro implican devolver algo; DONATE es darlo para siempre."
+  },
+  {
+    "round_id": "daily_intermediate_23",
+    "es": "Todos son partes de una casa; una FENCE rodea la propiedad por fuera."
+  },
+  {
+    "round_id": "daily_advanced_0",
+    "es": "Estas describen algo aburrido y repetitivo; SPONTANEOUS significa no planeado y emocionante."
+  },
+  {
+    "round_id": "daily_advanced_1",
+    "es": "Estas describen ser muy organizado y cuidadoso; CARELESS significa no prestar atención al detalle."
+  },
+  {
+    "round_id": "daily_advanced_2",
+    "es": "Estas describen una falta de energía; VIGOROUS significa lleno de energía."
+  },
+  {
+    "round_id": "daily_advanced_3",
+    "es": "Estas describen no necesitar ayuda de otros; DEPENDENT significa depender de otros."
+  },
+  {
+    "round_id": "daily_advanced_4",
+    "es": "Estas significan muy importante; TRIVIAL significa sin importancia."
+  },
+  {
+    "round_id": "daily_advanced_5",
+    "es": "Estas significan recuperar energía; EXHAUST significa agotar toda tu energía."
+  },
+  {
+    "round_id": "daily_advanced_6",
+    "es": "Estas describen un comportamiento consistente y predecible; ERRATIC significa impredecible."
+  },
+  {
+    "round_id": "daily_advanced_7",
+    "es": "Estas significan hacer las cosas más simples; COMPLICATE significa hacerlas más difíciles."
+  },
+  {
+    "round_id": "daily_advanced_8",
+    "es": "Estas describen actuar sin planear; DELIBERATE significa hecho a propósito, con reflexión."
+  },
+  {
+    "round_id": "daily_advanced_9",
+    "es": "Estas significan posponer una acción; EXPEDITE significa acelerarla."
+  },
+  {
+    "round_id": "daily_advanced_10",
+    "es": "Estas describen un enfoque organizado; HAPHAZARD significa desorganizado y aleatorio."
+  },
+  {
+    "round_id": "daily_advanced_11",
+    "es": "Estas significan que sucede todo el tiempo; OCCASIONAL significa que sucede rara vez."
+  },
+  {
+    "round_id": "daily_advanced_12",
+    "es": "Estas describen estar estancado sin progreso; MOMENTUM significa la fuerza que te impulsa hacia adelante."
+  },
+  {
+    "round_id": "daily_advanced_13",
+    "es": "Las primeras cuatro significan muy cuidadoso; CARELESS es lo contrario."
+  },
+  {
+    "round_id": "daily_advanced_14",
+    "es": "Las primeras cuatro significan capaz de resistir; FRAGILE se rompe facilmente."
+  },
+  {
+    "round_id": "daily_advanced_15",
+    "es": "Las primeras cuatro son cosas que debes hacer; LEISURE es tiempo libre."
+  },
+  {
+    "round_id": "daily_advanced_16",
+    "es": "Las primeras cuatro significan cuidadoso con el dinero; EXTRAVAGANT es gastar de mas."
+  },
+  {
+    "round_id": "daily_advanced_17",
+    "es": "Las primeras cuatro significan desorganizacion; ORDER es todo en su lugar."
+  },
+  {
+    "round_id": "daily_advanced_18",
+    "es": "Las primeras cuatro describen lo cotidiano y soso; EXTRAORDINARY es notable."
+  },
+  {
+    "round_id": "daily_advanced_19",
+    "es": "Las primeras cuatro significan atender a los demas; INDIFFERENT es no importarle."
+  },
+  {
+    "round_id": "daily_advanced_20",
+    "es": "Las primeras cuatro significan dejar las cosas para despues; EXPEDITE es acelerarlas."
+  },
+  {
+    "round_id": "daily_advanced_21",
+    "es": "Las primeras cuatro significan moverse poco; ACTIVE es lo contrario."
+  },
+  {
+    "round_id": "daily_advanced_22",
+    "es": "Las primeras cuatro significan no poder dormir; SLUMBER es sueno profundo."
+  },
+  {
+    "round_id": "daily_advanced_23",
+    "es": "Las primeras cuatro significan cuidar a un nino; NEGLECT es no hacerlo."
+  },
+  {
+    "round_id": "daily_advanced_24",
+    "es": "Las primeras cuatro son sobre el arte de cocinar; APPETITE es el deseo de comer."
+  },
+  {
+    "round_id": "general_basic_0",
+    "es": "Estas describen el clima; HAPPY describe una emoción."
+  },
+  {
+    "round_id": "general_basic_1",
+    "es": "Estas significan grande en tamaño; TINY significa muy pequeño."
+  },
+  {
+    "round_id": "general_basic_2",
+    "es": "Estos son colores; SOFT describe una textura."
+  },
+  {
+    "round_id": "general_basic_3",
+    "es": "Estas significan cualidad positiva; TERRIBLE significa muy malo."
+  },
+  {
+    "round_id": "general_basic_4",
+    "es": "Estos son animales; HAPPY es un sentimiento."
+  },
+  {
+    "round_id": "general_basic_5",
+    "es": "Estas significan pequeño en tamaño; ENORMOUS significa muy grande."
+  },
+  {
+    "round_id": "general_basic_6",
+    "es": "Estas son relaciones familiares; FRIEND no es un miembro de la familia."
+  },
+  {
+    "round_id": "general_basic_7",
+    "es": "Estas significan no difícil de hacer; DIFFICULT significa difícil."
+  },
+  {
+    "round_id": "general_basic_8",
+    "es": "Estos son números ordinales; MANY es una palabra de cantidad, no un ordinal."
+  },
+  {
+    "round_id": "general_basic_9",
+    "es": "Estas significan moverse rápido; SLUGGISH significa moverse lento."
+  },
+  {
+    "round_id": "general_basic_10",
+    "es": "Estas son partes de un día; YESTERDAY se refiere a un día en el pasado."
+  },
+  {
+    "round_id": "general_basic_11",
+    "es": "Estas significan atractivo; UGLY significa poco atractivo."
+  },
+  {
+    "round_id": "general_basic_12",
+    "es": "Estas son estaciones del año; WEEKEND se refiere a días de la semana."
+  },
+  {
+    "round_id": "general_basic_13",
+    "es": "Todos son animales; un TREE es una planta."
+  },
+  {
+    "round_id": "general_basic_14",
+    "es": "Todos son colores; ROUND es una forma."
+  },
+  {
+    "round_id": "general_basic_15",
+    "es": "Todos son objetos del espacio; una CLOUD esta en nuestro cielo."
+  },
+  {
+    "round_id": "general_basic_16",
+    "es": "Las primeras cuatro significan no grande; GIANT significa muy grande."
+  },
+  {
+    "round_id": "general_basic_17",
+    "es": "Todos trabajan en salud; un TEACHER trabaja en educacion."
+  },
+  {
+    "round_id": "general_basic_18",
+    "es": "Todos son tipos de clima; una MOUNTAIN es un accidente geografico."
+  },
+  {
+    "round_id": "general_basic_19",
+    "es": "Todos dicen cuantos; FIRST dice la posicion en un orden."
+  },
+  {
+    "round_id": "general_basic_20",
+    "es": "Todos son instrumentos musicales; un PAINTING es arte visual."
+  },
+  {
+    "round_id": "general_basic_21",
+    "es": "Las primeras cuatro significan que no es dificil; DIFFICULT es lo contrario."
+  },
+  {
+    "round_id": "general_basic_22",
+    "es": "Todos son partes de la cara; una HAND esta al final del brazo."
+  },
+  {
+    "round_id": "general_basic_23",
+    "es": "Todos son cosas que lees; un RADIO es algo que escuchas."
+  },
+  {
+    "round_id": "general_basic_24",
+    "es": "Las primeras cuatro significan tener muchos anos; YOUNG significa pocos."
+  },
+  {
+    "round_id": "general_intermediate_0",
+    "es": "Estas describen buenos rasgos de carácter; ARROGANT describe un rasgo negativo."
+  },
+  {
+    "round_id": "general_intermediate_1",
+    "es": "Estas significan seguro de ti mismo; TIMID significa tímido o temeroso."
+  },
+  {
+    "round_id": "general_intermediate_2",
+    "es": "Estas describen rasgos difíciles; GENEROUS describe un rasgo positivo."
+  },
+  {
+    "round_id": "general_intermediate_3",
+    "es": "Estas significan capaz de cambiar fácilmente; RIGID significa incapaz de cambiar."
+  },
+  {
+    "round_id": "general_intermediate_4",
+    "es": "Estas describen pensar con lógica; EMOTIONAL describe pensar con sentimientos."
+  },
+  {
+    "round_id": "general_intermediate_5",
+    "es": "Estas significan sin miedo; COWARDLY significa que se asusta fácilmente."
+  },
+  {
+    "round_id": "general_intermediate_6",
+    "es": "Estas describen sentirse preocupado; RELAXED describe sentirse tranquilo."
+  },
+  {
+    "round_id": "general_intermediate_7",
+    "es": "Estas significan demasiado orgulloso de ti mismo; MODEST significa humilde."
+  },
+  {
+    "round_id": "general_intermediate_8",
+    "es": "Estas describen estar abierto a nuevas ideas; STUBBORN significa negarse a cambiar de opinión."
+  },
+  {
+    "round_id": "general_intermediate_9",
+    "es": "Estas significan no querer hacer algo; EAGER significa muy dispuesto."
+  },
+  {
+    "round_id": "general_intermediate_10",
+    "es": "Estas describen mantenerse tranquilo; FRANTIC significa en pánico y estresado."
+  },
+  {
+    "round_id": "general_intermediate_11",
+    "es": "Estas significan lleno de ideas nuevas; UNORIGINAL significa copiar a otros, sin ideas nuevas."
+  },
+  {
+    "round_id": "general_intermediate_12",
+    "es": "Estas describen ser cuidadoso; RECKLESS significa imprudente y riesgoso."
+  },
+  {
+    "round_id": "general_intermediate_13",
+    "es": "Las primeras cuatro son agua en movimiento; un POND es agua quieta."
+  },
+  {
+    "round_id": "general_intermediate_14",
+    "es": "Las primeras cuatro significan hacer algo nuevo; COPY es repetir lo que ya existe."
+  },
+  {
+    "round_id": "general_intermediate_15",
+    "es": "Las primeras cuatro significan decir la verdad; DECEITFUL es mentir."
+  },
+  {
+    "round_id": "general_intermediate_16",
+    "es": "Todos son desastres naturales; una HARVEST es algo bueno para los agricultores."
+  },
+  {
+    "round_id": "general_intermediate_17",
+    "es": "Las primeras cuatro significan hacerse mas grande; SHRINK es hacerse mas pequeno."
+  },
+  {
+    "round_id": "general_intermediate_18",
+    "es": "Todos estan dentro del cuerpo; la SKIN esta por fuera."
+  },
+  {
+    "round_id": "general_intermediate_19",
+    "es": "Las primeras cuatro significan sin sonido; DEAFENING significa extremadamente fuerte."
+  },
+  {
+    "round_id": "general_intermediate_20",
+    "es": "Las primeras cuatro son algo que demuestra la verdad; un GUESS es incierto."
+  },
+  {
+    "round_id": "general_intermediate_21",
+    "es": "Todos son grupos de musicos; un SOLOIST actua solo."
+  },
+  {
+    "round_id": "general_intermediate_22",
+    "es": "Las primeras cuatro significan que dura para siempre; TEMPORARY es por poco tiempo."
+  },
+  {
+    "round_id": "general_intermediate_23",
+    "es": "Todos son formaciones naturales; un BRIDGE lo construyen las personas."
+  },
+  {
+    "round_id": "general_advanced_0",
+    "es": "Estas describen a alguien que no se rinde; FICKLE significa cambiar de opinión con frecuencia."
+  },
+  {
+    "round_id": "general_advanced_1",
+    "es": "Estas significan enfocado en lo práctico; IDEALISTIC significa enfocado en ideas perfectas en vez de la realidad."
+  },
+  {
+    "round_id": "general_advanced_2",
+    "es": "Estas describen entender bien a los demás; OBLIVIOUS significa no darse cuenta."
+  },
+  {
+    "round_id": "general_advanced_3",
+    "es": "Estas significan audaz sin miedo; TIMID significa tímido y temeroso."
+  },
+  {
+    "round_id": "general_advanced_4",
+    "es": "Estas describen hablar clara y honestamente; EVASIVE significa evitar dar una respuesta directa."
+  },
+  {
+    "round_id": "general_advanced_5",
+    "es": "Estas significan firmemente comprometido; WAVERING significa incierto o cambiante."
+  },
+  {
+    "round_id": "general_advanced_6",
+    "es": "Estas describen decisiones cuidadosas y sabias; IMPULSIVE significa actuar sin pensar."
+  },
+  {
+    "round_id": "general_advanced_7",
+    "es": "Estas significan cuidar de otros antes que de ti mismo; SELFISH significa preocuparte solo por ti mismo."
+  },
+  {
+    "round_id": "general_advanced_8",
+    "es": "Estas describen poder adaptarse; RIGID significa incapaz de cambiar."
+  },
+  {
+    "round_id": "general_advanced_9",
+    "es": "Estas significan imposible de vencer; FRAGILE significa fácil de romper o vencer."
+  },
+  {
+    "round_id": "general_advanced_10",
+    "es": "Estas describen un estilo de vida simple y sencillo; LAVISH significa extravagante y lujoso."
+  },
+  {
+    "round_id": "general_advanced_11",
+    "es": "Estas significan capaz de hablar con claridad; INCOHERENT significa poco claro y difícil de seguir."
+  },
+  {
+    "round_id": "general_advanced_12",
+    "es": "Estas describen notar pequeños detalles; OBLIVIOUS significa no notar nada."
+  },
+  {
+    "round_id": "general_advanced_13",
+    "es": "Las primeras cuatro significan dificil de entender; EXPLICIT significa perfectamente claro."
+  },
+  {
+    "round_id": "general_advanced_14",
+    "es": "Las primeras cuatro significan que hay mucho; SCARCE significa que hay muy poco."
+  },
+  {
+    "round_id": "general_advanced_15",
+    "es": "Las primeras cuatro significan que pasara sin remedio; OPTIONAL significa que puedes elegir."
+  },
+  {
+    "round_id": "general_advanced_16",
+    "es": "Las primeras cuatro significan disminuir; SURGE es subir de golpe."
+  },
+  {
+    "round_id": "general_advanced_17",
+    "es": "Las primeras cuatro son alguien que defiende una idea; un OPPONENT la combate."
+  },
+  {
+    "round_id": "general_advanced_18",
+    "es": "Las primeras cuatro significan que podria ser cierto; ABSURD significa que no tiene sentido."
+  },
+  {
+    "round_id": "general_advanced_19",
+    "es": "Las primeras cuatro significan no ocultar nada; SECRETIVE es ocultarlo todo."
+  },
+  {
+    "round_id": "general_advanced_20",
+    "es": "Las primeras cuatro hacen que algo empiece; un OBSTACLE lo detiene."
+  },
+  {
+    "round_id": "general_advanced_21",
+    "es": "Todos son enfermedades extendidas; un REMEDY es la cura."
+  },
+  {
+    "round_id": "general_advanced_22",
+    "es": "Las primeras cuatro significan extremadamente cuidadoso; SLOPPY significa mal hecho."
+  },
+  {
+    "round_id": "general_advanced_23",
+    "es": "Las primeras cuatro significan nunca visto antes; ROUTINE significa que pasa siempre."
+  }
 ]

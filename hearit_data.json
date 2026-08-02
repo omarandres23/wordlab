@@ -65,31 +65,27 @@
       {
         "answer": "ADVICE",
         "options": [
-          "MOUSE",
+          "VALLEY",
           "ADVICE",
-          "ADVISE",
-          "REALISTIC"
-        ],
-        "minimal_pair": "ADVISE",
-        "contrast": "s_z"
+          "AIRPORT",
+          "PATH"
+        ]
       },
       {
         "answer": "ADVISE",
         "options": [
-          "EQUATION",
-          "SUNSHINE",
+          "EAGLE",
+          "SEASON",
           "ADVISE",
-          "ADVICE"
-        ],
-        "minimal_pair": "ADVICE",
-        "contrast": "s_z"
+          "ARRIVE"
+        ]
       },
       {
         "answer": "AIR",
         "options": [
           "HAIR",
-          "TRIP",
-          "REGION",
+          "SEAT",
+          "MOON",
           "AIR"
         ],
         "minimal_pair": "HAIR",
@@ -100,8 +96,8 @@
         "options": [
           "AND",
           "END",
-          "LAND",
-          "BEGIN"
+          "TENANT",
+          "BANK"
         ],
         "minimal_pair": "END",
         "contrast": "ae_e"
@@ -111,8 +107,8 @@
         "options": [
           "HARM",
           "ARM",
-          "BAND",
-          "MENU"
+          "BAG",
+          "HOUR"
         ],
         "minimal_pair": "HARM",
         "contrast": "silent_h"
@@ -121,8 +117,8 @@
         "answer": "ART",
         "options": [
           "HEART",
-          "AUTO",
-          "DOOR",
+          "ATE",
+          "COSTLY",
           "ART"
         ],
         "minimal_pair": "HEART",
@@ -132,9 +128,9 @@
         "answer": "ATE",
         "options": [
           "ATE",
-          "TALK",
+          "ROBUST",
           "HATE",
-          "DRESS"
+          "CROWN"
         ],
         "minimal_pair": "HATE",
         "contrast": "silent_h"
@@ -142,8 +138,8 @@
       {
         "answer": "AXE",
         "options": [
-          "FABRIC",
-          "DOCK",
+          "DIP",
+          "STUDY",
           "EX",
           "AXE"
         ],
@@ -153,9 +149,9 @@
       {
         "answer": "BAD",
         "options": [
-          "FINGER",
+          "DRIVEN",
           "BAD",
-          "VOTE",
+          "WITCH",
           "BED"
         ],
         "minimal_pair": "BED",
@@ -164,10 +160,10 @@
       {
         "answer": "BAG",
         "options": [
-          "TENNIS",
+          "RUGBY",
           "BEG",
           "BAG",
-          "SHADE"
+          "PEACE"
         ],
         "minimal_pair": "BEG",
         "contrast": "ae_e"
@@ -176,29 +172,25 @@
         "answer": "BAIL",
         "options": [
           "BAIL",
-          "POLICE",
-          "VEIL",
-          "TOUR"
-        ],
-        "minimal_pair": "VEIL",
-        "contrast": "b_v"
+          "MORNING",
+          "BEACH",
+          "SHORTS"
+        ]
       },
       {
         "answer": "BAN",
         "options": [
-          "VAN",
-          "PHONE",
+          "BILL",
+          "LUCK",
           "BAN",
-          "SHELF"
-        ],
-        "minimal_pair": "VAN",
-        "contrast": "b_v"
+          "PHOTO"
+        ]
       },
       {
         "answer": "BAND",
         "options": [
           "BEND",
-          "PILL",
+          "VEHICLE",
           "BAND",
           "ADAPT"
         ],
@@ -208,54 +200,46 @@
       {
         "answer": "BASE",
         "options": [
+          "CURB",
           "BASE",
-          "GYM",
-          "DILEMMA",
-          "VASE"
-        ],
-        "minimal_pair": "VASE",
-        "contrast": "b_v"
+          "PANTS",
+          "BOOK"
+        ]
       },
       {
         "answer": "BAT",
         "options": [
-          "VAT",
-          "TANK",
+          "BIRD",
+          "JENNY",
           "BAT",
-          "MUSEUM"
-        ],
-        "minimal_pair": "VAT",
-        "contrast": "b_v"
+          "ICE"
+        ]
       },
       {
         "answer": "BEAN",
         "options": [
-          "CART",
+          "CAKE",
           "BEAN",
-          "BIN",
-          "GOODBYE"
-        ],
-        "minimal_pair": "BIN",
-        "contrast": "short_long_i"
+          "BEACH",
+          "FLASH"
+        ]
       },
       {
         "answer": "BEAT",
         "options": [
-          "BIT",
-          "VET",
+          "BEAR",
           "BEAT",
-          "METAL"
-        ],
-        "minimal_pair": "BIT",
-        "contrast": "short_long_i"
+          "WISH",
+          "BROWN"
+        ]
       },
       {
         "answer": "BED",
         "options": [
           "BAD",
           "BED",
-          "SHORTS",
-          "SNOW"
+          "JENNY",
+          "PILL"
         ],
         "minimal_pair": "BAD",
         "contrast": "ae_e"
@@ -263,8 +247,8 @@
       {
         "answer": "BEG",
         "options": [
-          "TEXT",
-          "DRIVER",
+          "RUMOR",
+          "CURB",
           "BAG",
           "BEG"
         ],
@@ -274,8 +258,8 @@
       {
         "answer": "BEND",
         "options": [
-          "PLANE",
-          "CALL",
+          "MODERN",
+          "BREAD",
           "BAND",
           "BEND"
         ],
@@ -285,63 +269,53 @@
       {
         "answer": "BERRY",
         "options": [
-          "SILENT",
+          "RAIN",
           "BERRY",
-          "JUNGLE",
-          "VERY"
-        ],
-        "minimal_pair": "VERY",
-        "contrast": "b_v"
+          "HELLO",
+          "BAKERY"
+        ]
       },
       {
         "answer": "BEST",
         "options": [
-          "FEAR",
-          "VEST",
+          "EGG",
+          "BIG",
           "BEST",
-          "FISCAL"
-        ],
-        "minimal_pair": "VEST",
-        "contrast": "b_v"
+          "EMBRACE"
+        ]
       },
       {
         "answer": "BIN",
         "options": [
-          "BEAN",
-          "CHEAT",
+          "BASE",
+          "STAND",
           "BIN",
-          "STARS"
-        ],
-        "minimal_pair": "BEAN",
-        "contrast": "short_long_i"
+          "RANGE"
+        ]
       },
       {
         "answer": "BIT",
         "options": [
           "BIT",
-          "DOCTOR",
-          "BEAT",
-          "OUTLET"
-        ],
-        "minimal_pair": "BEAT",
-        "contrast": "short_long_i"
+          "COTTON",
+          "BLUE",
+          "LEGEND"
+        ]
       },
       {
         "answer": "BOAT",
         "options": [
-          "PATIENT",
+          "MEAL",
           "BOAT",
-          "EXPENSE",
-          "VOTE"
-        ],
-        "minimal_pair": "VOTE",
-        "contrast": "b_v"
+          "DRIVER",
+          "BERRY"
+        ]
       },
       {
         "answer": "BOG",
         "options": [
-          "COMEDY",
-          "HEEL",
+          "CHEAT",
+          "TALL",
           "BUG",
           "BOG"
         ],
@@ -351,32 +325,28 @@
       {
         "answer": "BOLT",
         "options": [
-          "VOLT",
-          "UPGRADE",
           "BOLT",
-          "NORTH"
-        ],
-        "minimal_pair": "VOLT",
-        "contrast": "b_v"
+          "BRAND",
+          "SNAP",
+          "LAWSUIT"
+        ]
       },
       {
         "answer": "BOWL",
         "options": [
-          "VOLE",
-          "COW",
-          "TEMPO",
-          "BOWL"
-        ],
-        "minimal_pair": "VOLE",
-        "contrast": "b_v"
+          "DRIVEN",
+          "DOLPHIN",
+          "BOWL",
+          "BUGS"
+        ]
       },
       {
         "answer": "BUG",
         "options": [
-          "WINE",
           "BOG",
-          "DAY",
-          "BUG"
+          "DIP",
+          "BUG",
+          "AUDIT"
         ],
         "minimal_pair": "BOG",
         "contrast": "uh_ah"
@@ -385,151 +355,125 @@
         "answer": "BUS",
         "options": [
           "BUS",
-          "SUITE",
-          "BUZZ",
-          "LETTER"
-        ],
-        "minimal_pair": "BUZZ",
-        "contrast": "s_z"
+          "STILL",
+          "GOAL",
+          "BANK"
+        ]
       },
       {
         "answer": "BUZZ",
         "options": [
-          "FUTURE",
+          "HIT",
+          "VACUUM",
           "BUZZ",
-          "HAIR",
-          "BUS"
-        ],
-        "minimal_pair": "BUS",
-        "contrast": "s_z"
+          "BIN"
+        ]
       },
       {
         "answer": "CASH",
         "options": [
-          "CAFE",
-          "SHIN",
-          "CATCH",
+          "GREEN",
+          "CLUE",
+          "BIOLOGY",
           "CASH"
-        ],
-        "minimal_pair": "CATCH",
-        "contrast": "sh_ch"
+        ]
       },
       {
         "answer": "CATCH",
         "options": [
-          "MARVEL",
+          "PLOT",
           "CATCH",
-          "SCARF",
-          "CASH"
-        ],
-        "minimal_pair": "CASH",
-        "contrast": "sh_ch"
+          "BRAND",
+          "CHOOSE"
+        ]
       },
       {
         "answer": "CHAIR",
         "options": [
-          "WEST",
-          "SHARE",
-          "OPINION",
+          "YACHT",
+          "CHORUS",
+          "MARATHON",
           "CHAIR"
-        ],
-        "minimal_pair": "SHARE",
-        "contrast": "sh_ch"
+        ]
       },
       {
         "answer": "CHEAP",
         "options": [
-          "CHIP",
+          "CANVAS",
           "CHEAP",
-          "NURSE",
-          "MONUMENT"
-        ],
-        "minimal_pair": "CHIP",
-        "contrast": "short_long_i"
+          "MADNESS",
+          "LEGEND"
+        ]
       },
       {
         "answer": "CHEAT",
         "options": [
           "CHEAT",
-          "SHEET",
-          "TAUGHT",
-          "VILLA"
-        ],
-        "minimal_pair": "SHEET",
-        "contrast": "sh_ch"
+          "CANDLE",
+          "WEDDING",
+          "STILL"
+        ]
       },
       {
         "answer": "CHERRY",
         "options": [
-          "LAND",
-          "TEMPO",
+          "TRUNK",
+          "SHIP",
           "CHERRY",
-          "SHERRY"
-        ],
-        "minimal_pair": "SHERRY",
-        "contrast": "sh_ch"
+          "CLIMATE"
+        ]
       },
       {
         "answer": "CHIN",
         "options": [
           "CHIN",
-          "SHIN",
-          "CARROT",
-          "SKILLS"
-        ],
-        "minimal_pair": "SHIN",
-        "contrast": "sh_ch"
+          "CAT",
+          "BUY",
+          "PURPOSE"
+        ]
       },
       {
         "answer": "CHIP",
         "options": [
-          "SHIP",
+          "CANDY",
           "CHIP",
-          "CHURCH",
-          "CHEF"
-        ],
-        "minimal_pair": "SHIP",
-        "contrast": "sh_ch"
+          "CASTLE",
+          "CARGO"
+        ]
       },
       {
         "answer": "CHOOSE",
         "options": [
-          "SHOUT",
+          "RATIONAL",
           "CHOOSE",
-          "SHOES",
-          "SWIMMING"
-        ],
-        "minimal_pair": "SHOES",
-        "contrast": "sh_ch"
+          "COOKING",
+          "SENSITIVE"
+        ]
       },
       {
         "answer": "CHOP",
         "options": [
-          "SHOP",
-          "BAGGAGE",
+          "CHAIR",
+          "AVERAGE",
           "CHOP",
-          "BRAZIL"
-        ],
-        "minimal_pair": "SHOP",
-        "contrast": "sh_ch"
+          "BLOOM"
+        ]
       },
       {
         "answer": "COOK",
         "options": [
-          "TIGER",
-          "KOOK",
+          "SHELF",
+          "CHECK",
           "COOK",
-          "VIBRANT"
-        ],
-        "minimal_pair": "KOOK",
-        "contrast": "short_long_u"
+          "SORRY"
+        ]
       },
       {
         "answer": "COP",
         "options": [
-          "SHIP",
+          "PICK",
           "COP",
-          "MEMO",
+          "HOT",
           "CUP"
         ],
         "minimal_pair": "CUP",
@@ -538,10 +482,10 @@
       {
         "answer": "COT",
         "options": [
-          "SHAPE",
+          "PEAS",
           "COT",
           "CUT",
-          "EGG"
+          "DARE"
         ],
         "minimal_pair": "CUT",
         "contrast": "uh_ah"
@@ -549,10 +493,10 @@
       {
         "answer": "CUP",
         "options": [
-          "AND",
+          "SNAP",
           "COP",
           "CUP",
-          "YELLOW"
+          "SLEEPY"
         ],
         "minimal_pair": "COP",
         "contrast": "uh_ah"
@@ -560,31 +504,27 @@
       {
         "answer": "CURB",
         "options": [
-          "CURVE",
+          "COLD",
           "CURB",
-          "SUNSET",
-          "RABBIT"
-        ],
-        "minimal_pair": "CURVE",
-        "contrast": "b_v"
+          "SAMPLE",
+          "OLD"
+        ]
       },
       {
         "answer": "CURVE",
         "options": [
-          "GIFT",
+          "FISCAL",
           "CURVE",
-          "CURB",
-          "ONE"
-        ],
-        "minimal_pair": "CURB",
-        "contrast": "b_v"
+          "CANYON",
+          "MAP"
+        ]
       },
       {
         "answer": "CUT",
         "options": [
-          "ELDER",
+          "DEBATE",
           "COT",
-          "TALL",
+          "ROBUST",
           "CUT"
         ],
         "minimal_pair": "COT",
@@ -593,9 +533,9 @@
       {
         "answer": "DAD",
         "options": [
-          "SCENE",
+          "VEIL",
           "DEAD",
-          "SAW",
+          "OWN",
           "DAD"
         ],
         "minimal_pair": "DEAD",
@@ -604,31 +544,27 @@
       {
         "answer": "DARE",
         "options": [
-          "SCIENCE",
+          "PILLOW",
           "DARE",
-          "STARTUP",
-          "THERE"
-        ],
-        "minimal_pair": "THERE",
-        "contrast": "th"
+          "RICH",
+          "DEN"
+        ]
       },
       {
         "answer": "DAY",
         "options": [
-          "THEY",
-          "SPA",
+          "DAD",
+          "PROUD",
           "DAY",
-          "MATH"
-        ],
-        "minimal_pair": "THEY",
-        "contrast": "th"
+          "HOCKEY"
+        ]
       },
       {
         "answer": "DEAD",
         "options": [
           "DEAD",
-          "PAYMENT",
-          "STUDIO",
+          "MEDIA",
+          "ROUTE",
           "DAD"
         ],
         "minimal_pair": "DAD",
@@ -637,538 +573,442 @@
       {
         "answer": "DEEP",
         "options": [
-          "DIP",
+          "DRAMA",
           "DEEP",
-          "CURVE",
-          "WEDDING"
-        ],
-        "minimal_pair": "DIP",
-        "contrast": "short_long_i"
+          "TEA",
+          "STEAM"
+        ]
       },
       {
         "answer": "DEN",
         "options": [
-          "THEN",
-          "WISDOM",
-          "ICE",
-          "DEN"
-        ],
-        "minimal_pair": "THEN",
-        "contrast": "th"
+          "DOOR",
+          "SINK",
+          "DEN",
+          "LOSE"
+        ]
       },
       {
         "answer": "DIP",
         "options": [
-          "DEEP",
-          "ADVISE",
+          "DEAD",
+          "JUNGLE",
           "DIP",
-          "NIECE"
-        ],
-        "minimal_pair": "DEEP",
-        "contrast": "short_long_i"
+          "BAG"
+        ]
       },
       {
         "answer": "DOCK",
         "options": [
-          "DUCK",
-          "TEST",
           "DOCK",
-          "WISDOM"
-        ],
-        "minimal_pair": "DUCK",
-        "contrast": "uh_ah"
+          "DRESS",
+          "BEG",
+          "SERVE"
+        ]
       },
       {
         "answer": "DUCK",
         "options": [
-          "DUCK",
-          "COVER",
-          "RASH",
-          "DOCK"
-        ],
-        "minimal_pair": "DOCK",
-        "contrast": "uh_ah"
+          "ALABAMA",
+          "ELEGANT",
+          "DEN",
+          "DUCK"
+        ]
       },
       {
         "answer": "EACH",
         "options": [
+          "EYE",
+          "ADDRESS",
           "EACH",
-          "FURIOUS",
-          "STAND",
-          "ITCH"
-        ],
-        "minimal_pair": "ITCH",
-        "contrast": "short_long_i"
+          "REVIEW"
+        ]
       },
       {
         "answer": "EAR",
         "options": [
-          "LOAN",
-          "EAR",
-          "HEAR",
-          "FAMILY"
-        ],
-        "minimal_pair": "HEAR",
-        "contrast": "silent_h"
+          "MUCH",
+          "REASON",
+          "END",
+          "EAR"
+        ]
       },
       {
         "answer": "EAT",
         "options": [
-          "HEAT",
-          "TOOTH",
+          "MEAL",
+          "ROCK",
           "EAT",
-          "TREE"
-        ],
-        "minimal_pair": "HEAT",
-        "contrast": "silent_h"
+          "EGG"
+        ]
       },
       {
         "answer": "EDGE",
         "options": [
-          "WEATHER",
-          "HELLO",
+          "EACH",
           "EDGE",
-          "HEDGE"
-        ],
-        "minimal_pair": "HEDGE",
-        "contrast": "silent_h"
+          "CARBON",
+          "CHAIR"
+        ]
       },
       {
         "answer": "END",
         "options": [
-          "HAD",
-          "AND",
           "END",
-          "SEASON"
-        ],
-        "minimal_pair": "AND",
-        "contrast": "ae_e"
+          "BIG",
+          "EAR",
+          "PLANE"
+        ]
       },
       {
         "answer": "EX",
         "options": [
-          "AXE",
           "EX",
-          "SAW",
-          "THREE"
-        ],
-        "minimal_pair": "AXE",
-        "contrast": "ae_e"
+          "FEAR",
+          "EAT",
+          "MAN"
+        ]
       },
       {
         "answer": "EYE",
         "options": [
-          "BREACH",
-          "EYE",
-          "EDGE",
-          "HIGH"
-        ],
-        "minimal_pair": "HIGH",
-        "contrast": "silent_h"
+          "END",
+          "ALARM",
+          "SLOGAN",
+          "EYE"
+        ]
       },
       {
         "answer": "EYES",
         "options": [
-          "ICE",
-          "PAINTER",
           "EYES",
-          "SOCKS"
-        ],
-        "minimal_pair": "ICE",
-        "contrast": "s_z"
+          "WEATHER",
+          "COLLEGE",
+          "EDGE"
+        ]
       },
       {
         "answer": "FEEL",
         "options": [
-          "FILL",
-          "PEEL",
-          "FEEL",
-          "PARTNER"
-        ],
-        "minimal_pair": "FILL",
-        "contrast": "short_long_i"
+          "EYES",
+          "FIT",
+          "BREAK",
+          "FEEL"
+        ]
       },
       {
         "answer": "FEET",
         "options": [
-          "SOAP",
-          "FEET",
-          "FIT",
-          "MARCH"
-        ],
-        "minimal_pair": "FIT",
-        "contrast": "short_long_i"
+          "FILM",
+          "SHADE",
+          "EXAMPLE",
+          "FEET"
+        ]
       },
       {
         "answer": "FILL",
         "options": [
-          "WISH",
-          "VALLEY",
-          "FEEL",
-          "FILL"
-        ],
-        "minimal_pair": "FEEL",
-        "contrast": "short_long_i"
+          "SHORT",
+          "FILL",
+          "LEAF",
+          "FIT"
+        ]
       },
       {
         "answer": "FIT",
         "options": [
-          "FEET",
+          "FUEL",
+          "BORED",
           "FIT",
-          "BED",
-          "SMALL"
-        ],
-        "minimal_pair": "FEET",
-        "contrast": "short_long_i"
+          "MOMENT"
+        ]
       },
       {
         "answer": "FLASH",
         "options": [
-          "RAINY",
-          "FLESH",
+          "BATTERY",
+          "NOTEBOOK",
           "FLASH",
-          "TRIP"
-        ],
-        "minimal_pair": "FLESH",
-        "contrast": "ae_e"
+          "FREEZE"
+        ]
       },
       {
         "answer": "FLESH",
         "options": [
-          "BRAZIL",
+          "SHUT",
+          "FREED",
           "FLESH",
-          "MATERIAL",
-          "FLASH"
-        ],
-        "minimal_pair": "FLASH",
-        "contrast": "ae_e"
+          "DULL"
+        ]
       },
       {
         "answer": "FOOD",
         "options": [
-          "FOOD",
-          "FOOT",
-          "SYMPTOM",
-          "KEY"
-        ],
-        "minimal_pair": "FOOT",
-        "contrast": "short_long_u"
+          "HIKING",
+          "BOWL",
+          "FORK",
+          "FOOD"
+        ]
       },
       {
         "answer": "FOOL",
         "options": [
-          "FULL",
-          "FOOL",
-          "GOLF",
-          "SIGNAL"
-        ],
-        "minimal_pair": "FULL",
-        "contrast": "short_long_u"
+          "TENANT",
+          "REPLICA",
+          "FIELD",
+          "FOOL"
+        ]
       },
       {
         "answer": "FOOT",
         "options": [
-          "FOOD",
-          "FREEZE",
+          "FOG",
           "FOOT",
-          "HAND"
-        ],
-        "minimal_pair": "FOOD",
-        "contrast": "short_long_u"
+          "LUNCH",
+          "AVERAGE"
+        ]
       },
       {
         "answer": "FULL",
         "options": [
-          "BAN",
-          "FOOL",
-          "SOMEONE",
-          "FULL"
-        ],
-        "minimal_pair": "FOOL",
-        "contrast": "short_long_u"
+          "VILE",
+          "SILENT",
+          "FULL",
+          "FEVER"
+        ]
       },
       {
         "answer": "GAS",
         "options": [
-          "GUESS",
+          "GYM",
+          "VALLEY",
           "GAS",
-          "SUMMER",
-          "NIGHT"
-        ],
-        "minimal_pair": "GUESS",
-        "contrast": "ae_e"
+          "OFFICE"
+        ]
       },
       {
         "answer": "GREEN",
         "options": [
-          "GRIN",
-          "PRIZE",
-          "SLEEPY",
-          "GREEN"
-        ],
-        "minimal_pair": "GRIN",
-        "contrast": "short_long_i"
+          "GREEN",
+          "GOSSIP",
+          "ENGINE",
+          "WIFI"
+        ]
       },
       {
         "answer": "GRIN",
         "options": [
+          "GRASS",
           "GRIN",
-          "GREEN",
-          "WEST",
-          "LADDER"
-        ],
-        "minimal_pair": "GREEN",
-        "contrast": "short_long_i"
+          "DIP",
+          "BAD"
+        ]
       },
       {
         "answer": "GUESS",
         "options": [
           "GUESS",
-          "GAS",
-          "EROSION",
-          "INTERNET"
-        ],
-        "minimal_pair": "GAS",
-        "contrast": "ae_e"
+          "COCKPIT",
+          "FOOT",
+          "GUITAR"
+        ]
       },
       {
         "answer": "HAD",
         "options": [
-          "SIN",
+          "GUIDE",
+          "CEREAL",
           "HAD",
-          "FATHER",
-          "HEAD"
-        ],
-        "minimal_pair": "HEAD",
-        "contrast": "ae_e"
+          "HOUR"
+        ]
       },
       {
         "answer": "HAIR",
         "options": [
+          "VAN",
           "HAIR",
-          "STUDENT",
-          "AIR",
-          "LIBRARY"
-        ],
-        "minimal_pair": "AIR",
-        "contrast": "silent_h"
+          "TENNIS",
+          "HOLD"
+        ]
       },
       {
         "answer": "HAND",
         "options": [
-          "JAZZ",
-          "COP",
-          "AND",
-          "HAND"
-        ],
-        "minimal_pair": "AND",
-        "contrast": "silent_h"
+          "FRANCE",
+          "HEAD",
+          "HAND",
+          "SPONSOR"
+        ]
       },
       {
         "answer": "HARM",
         "options": [
-          "EXPORT",
+          "HIGH",
+          "LUNCH",
           "HARM",
-          "LEAVE",
-          "ARM"
-        ],
-        "minimal_pair": "ARM",
-        "contrast": "silent_h"
+          "BELIEF"
+        ]
       },
       {
         "answer": "HATE",
         "options": [
+          "HOUSE",
           "HATE",
-          "ATE",
-          "ADVICE",
-          "BEDROOM"
-        ],
-        "minimal_pair": "ATE",
-        "contrast": "silent_h"
+          "STOPPED",
+          "PITCH"
+        ]
       },
       {
         "answer": "HEAD",
         "options": [
-          "HAD",
+          "HIRE",
+          "HOUR",
           "HEAD",
-          "MEAL",
-          "LOYALTY"
-        ],
-        "minimal_pair": "HAD",
-        "contrast": "ae_e"
+          "EXCITED"
+        ]
       },
       {
         "answer": "HEAR",
         "options": [
+          "ADVICE",
+          "HAIL",
           "HEAR",
-          "STARS",
-          "EAR",
-          "EMPATHY"
-        ],
-        "minimal_pair": "EAR",
-        "contrast": "silent_h"
+          "NEAREST"
+        ]
       },
       {
         "answer": "HEART",
         "options": [
-          "ART",
-          "HEART",
-          "RUMOR",
-          "LIST"
-        ],
-        "minimal_pair": "ART",
-        "contrast": "silent_h"
+          "TONIGHT",
+          "HARM",
+          "SINK",
+          "HEART"
+        ]
       },
       {
         "answer": "HEAT",
         "options": [
           "HEAT",
-          "EAT",
-          "STILL",
-          "DEFAULT"
-        ],
-        "minimal_pair": "EAT",
-        "contrast": "silent_h"
+          "VIBRANT",
+          "HUT",
+          "DISH"
+        ]
       },
       {
         "answer": "HEDGE",
         "options": [
-          "TEEN",
-          "EDGE",
-          "HEDGE",
-          "GALLERY"
-        ],
-        "minimal_pair": "EDGE",
-        "contrast": "silent_h"
+          "TREE",
+          "SAFETY",
+          "HEART",
+          "HEDGE"
+        ]
       },
       {
         "answer": "HEEL",
         "options": [
-          "FEAR",
-          "HILL",
-          "HEEL",
-          "ELITE"
-        ],
-        "minimal_pair": "HILL",
-        "contrast": "short_long_i"
+          "LEAF",
+          "HEART",
+          "TAN",
+          "HEEL"
+        ]
       },
       {
         "answer": "HIGH",
         "options": [
+          "OPERATE",
           "HIGH",
-          "THANK",
-          "JENNY",
-          "EYE"
-        ],
-        "minimal_pair": "EYE",
-        "contrast": "silent_h"
+          "CATCH",
+          "HUT"
+        ]
       },
       {
         "answer": "HILL",
         "options": [
-          "HEEL",
-          "SCIENCE",
+          "HAPPY",
           "HILL",
-          "BEAR"
-        ],
-        "minimal_pair": "HEEL",
-        "contrast": "short_long_i"
+          "COOKING",
+          "LUNCH"
+        ]
       },
       {
         "answer": "HIT",
         "options": [
           "HIT",
-          "HEAT",
-          "BONUS",
-          "JENNY"
-        ],
-        "minimal_pair": "HEAT",
-        "contrast": "short_long_i"
+          "HOUR",
+          "EAR",
+          "CHORUS"
+        ]
       },
       {
         "answer": "HOLD",
         "options": [
-          "OLD",
-          "STUCK",
-          "DULL",
-          "HOLD"
-        ],
-        "minimal_pair": "OLD",
-        "contrast": "silent_h"
+          "HARM",
+          "PILOT",
+          "HOLD",
+          "BAN"
+        ]
       },
       {
         "answer": "HONE",
         "options": [
-          "RISE",
-          "HONE",
-          "OWN",
-          "MEN"
-        ],
-        "minimal_pair": "OWN",
-        "contrast": "silent_h"
+          "METAL",
+          "DRUM",
+          "HOUSE",
+          "HONE"
+        ]
       },
       {
         "answer": "HOT",
         "options": [
-          "HOT",
-          "DECADE",
-          "HUT",
-          "MUSCLE"
-        ],
-        "minimal_pair": "HUT",
-        "contrast": "uh_ah"
+          "HAIL",
+          "VOYAGE",
+          "CHAIR",
+          "HOT"
+        ]
       },
       {
         "answer": "HUT",
         "options": [
-          "RIVAL",
-          "YEAR",
+          "PLAYS",
           "HUT",
-          "HOT"
-        ],
-        "minimal_pair": "HOT",
-        "contrast": "uh_ah"
+          "HIT",
+          "PIE"
+        ]
       },
       {
         "answer": "ICE",
         "options": [
-          "TRUNK",
-          "VERY",
-          "EYES",
-          "ICE"
-        ],
-        "minimal_pair": "EYES",
-        "contrast": "s_z"
+          "ICE",
+          "CLOUD",
+          "ILL",
+          "JET"
+        ]
       },
       {
         "answer": "ILL",
         "options": [
+          "NIECE",
+          "ZOMBIE",
           "ILL",
-          "ANT",
-          "HILL",
-          "DUCK"
-        ],
-        "minimal_pair": "HILL",
-        "contrast": "silent_h"
+          "ICE"
+        ]
       },
       {
         "answer": "ITCH",
         "options": [
-          "EACH",
-          "LAPTOP",
+          "IDEAL",
+          "CHIP",
           "ITCH",
-          "BRAND"
-        ],
-        "minimal_pair": "EACH",
-        "contrast": "short_long_i"
+          "POPCORN"
+        ]
       },
       {
         "answer": "JAM",
         "options": [
-          "YACHT",
-          "ANGRY",
+          "HONEY",
           "JAM",
-          "YAM"
+          "YAM",
+          "FUEL"
         ],
         "minimal_pair": "YAM",
         "contrast": "y_j"
@@ -1176,10 +1016,10 @@
       {
         "answer": "JEER",
         "options": [
-          "YEAR",
-          "FUTURE",
+          "FREIGHT",
+          "SYMBOL",
           "JEER",
-          "DOG"
+          "YEAR"
         ],
         "minimal_pair": "YEAR",
         "contrast": "y_j"
@@ -1188,8 +1028,8 @@
         "answer": "JELL",
         "options": [
           "YELL",
-          "JOURNEY",
-          "ARTICLE",
+          "END",
+          "HIT",
           "JELL"
         ],
         "minimal_pair": "YELL",
@@ -1199,9 +1039,9 @@
         "answer": "JET",
         "options": [
           "YET",
-          "JET",
-          "GUESTS",
-          "FLIGHT"
+          "CEREAL",
+          "WALLET",
+          "JET"
         ],
         "minimal_pair": "YET",
         "contrast": "y_j"
@@ -1209,10 +1049,10 @@
       {
         "answer": "JOKE",
         "options": [
-          "RICE",
+          "JUNGLE",
           "JOKE",
-          "YOKE",
-          "PROUD"
+          "CHERRY",
+          "YOKE"
         ],
         "minimal_pair": "YOKE",
         "contrast": "y_j"
@@ -1220,21 +1060,19 @@
       {
         "answer": "KOOK",
         "options": [
-          "COOK",
-          "BOTTLE",
-          "KOOK",
-          "TICKET"
-        ],
-        "minimal_pair": "COOK",
-        "contrast": "short_long_u"
+          "SQUARE",
+          "GUESS",
+          "KEY",
+          "KOOK"
+        ]
       },
       {
         "answer": "LAND",
         "options": [
+          "SLEEP",
           "LEND",
-          "LAND",
-          "HAD",
-          "NINJA"
+          "RABBIT",
+          "LAND"
         ],
         "minimal_pair": "LEND",
         "contrast": "ae_e"
@@ -1242,32 +1080,28 @@
       {
         "answer": "LEAST",
         "options": [
+          "LADDER",
+          "PREMIUM",
           "LEAST",
-          "LIST",
-          "PILOT",
-          "REASON"
-        ],
-        "minimal_pair": "LIST",
-        "contrast": "short_long_i"
+          "VET"
+        ]
       },
       {
         "answer": "LEAVE",
         "options": [
-          "MONOPOLY",
-          "BOTTLE",
-          "LIVE",
-          "LEAVE"
-        ],
-        "minimal_pair": "LIVE",
-        "contrast": "short_long_i"
+          "LAND",
+          "LEAVE",
+          "SHIN",
+          "HONESTY"
+        ]
       },
       {
         "answer": "LEND",
         "options": [
           "LEND",
-          "RUGBY",
-          "EXCITED",
-          "LAND"
+          "LAND",
+          "PLEASED",
+          "RHYTHM"
         ],
         "minimal_pair": "LAND",
         "contrast": "ae_e"
@@ -1275,21 +1109,19 @@
       {
         "answer": "LIST",
         "options": [
-          "LEAST",
-          "DIGNITY",
-          "LIST",
-          "PAGE"
-        ],
-        "minimal_pair": "LEAST",
-        "contrast": "short_long_i"
+          "MOUTH",
+          "BORDER",
+          "LEVY",
+          "LIST"
+        ]
       },
       {
         "answer": "LOCK",
         "options": [
-          "TAUGHT",
-          "LUCK",
-          "VENUE",
-          "LOCK"
+          "LOCK",
+          "PEACE",
+          "DRESS",
+          "LUCK"
         ],
         "minimal_pair": "LUCK",
         "contrast": "uh_ah"
@@ -1297,43 +1129,37 @@
       {
         "answer": "LOOK",
         "options": [
-          "IMAGINE",
-          "SOUP",
-          "LUKE",
-          "LOOK"
-        ],
-        "minimal_pair": "LUKE",
-        "contrast": "short_long_u"
+          "LEND",
+          "CRYSTAL",
+          "LOOK",
+          "MAP"
+        ]
       },
       {
         "answer": "LOOSE",
         "options": [
-          "SPEEDY",
-          "FORECAST",
-          "LOSE",
+          "STRATEGY",
+          "LEAST",
+          "RECKLESS",
           "LOOSE"
-        ],
-        "minimal_pair": "LOSE",
-        "contrast": "s_z"
+        ]
       },
       {
         "answer": "LOSE",
         "options": [
-          "BEACH",
-          "LAWYER",
-          "LOSE",
-          "LOOSE"
-        ],
-        "minimal_pair": "LOOSE",
-        "contrast": "s_z"
+          "GOLF",
+          "RED",
+          "LEAF",
+          "LOSE"
+        ]
       },
       {
         "answer": "LUCK",
         "options": [
-          "LUCK",
-          "BASE",
-          "MALL",
-          "LOCK"
+          "STARTER",
+          "FREIGHT",
+          "LOCK",
+          "LUCK"
         ],
         "minimal_pair": "LOCK",
         "contrast": "uh_ah"
@@ -1341,21 +1167,19 @@
       {
         "answer": "LUKE",
         "options": [
+          "BALLOT",
+          "HELMET",
           "LUKE",
-          "PENGUIN",
-          "HIGHWAY",
-          "LOOK"
-        ],
-        "minimal_pair": "LOOK",
-        "contrast": "short_long_u"
+          "LARGE"
+        ]
       },
       {
         "answer": "MAN",
         "options": [
-          "MEN",
           "MAN",
-          "MEMORY",
-          "DECADE"
+          "WILL",
+          "SUBWAY",
+          "MEN"
         ],
         "minimal_pair": "MEN",
         "contrast": "ae_e"
@@ -1363,32 +1187,28 @@
       {
         "answer": "MARBLE",
         "options": [
+          "MASS",
+          "MERGER",
           "MARBLE",
-          "BOOK",
-          "CANDLE",
-          "MARVEL"
-        ],
-        "minimal_pair": "MARVEL",
-        "contrast": "b_v"
+          "SHORT"
+        ]
       },
       {
         "answer": "MARVEL",
         "options": [
+          "DRIVER",
+          "MYSTERY",
           "MARVEL",
-          "PHOTO",
-          "UNITE",
-          "MARBLE"
-        ],
-        "minimal_pair": "MARBLE",
-        "contrast": "b_v"
+          "MILK"
+        ]
       },
       {
         "answer": "MASS",
         "options": [
-          "OVEN",
-          "MASS",
-          "PAPER",
-          "MESS"
+          "MESS",
+          "EDITOR",
+          "MODEST",
+          "MASS"
         ],
         "minimal_pair": "MESS",
         "contrast": "ae_e"
@@ -1396,10 +1216,10 @@
       {
         "answer": "MAT",
         "options": [
-          "AUTO",
+          "HORSE",
           "MET",
           "MAT",
-          "FOOT"
+          "RUGBY"
         ],
         "minimal_pair": "MET",
         "contrast": "ae_e"
@@ -1407,43 +1227,37 @@
       {
         "answer": "MATH",
         "options": [
+          "LUNCH",
           "MATH",
-          "MASS",
-          "FUTURE",
-          "VITAL"
-        ],
-        "minimal_pair": "MASS",
-        "contrast": "th"
+          "MARKER",
+          "MAD"
+        ]
       },
       {
         "answer": "MEAL",
         "options": [
-          "MILL",
-          "VEST",
-          "SURF",
-          "MEAL"
-        ],
-        "minimal_pair": "MILL",
-        "contrast": "short_long_i"
+          "DEEP",
+          "MEAL",
+          "AUTUMN",
+          "MUCH"
+        ]
       },
       {
         "answer": "MEET",
         "options": [
-          "FUNDING",
-          "BIT",
-          "MIT",
-          "MEET"
-        ],
-        "minimal_pair": "MIT",
-        "contrast": "short_long_i"
+          "MEET",
+          "HARVEST",
+          "WEST",
+          "MESS"
+        ]
       },
       {
         "answer": "MEN",
         "options": [
-          "BAIL",
-          "MAN",
-          "MEMO",
-          "MEN"
+          "MEN",
+          "GUESS",
+          "STUDIO",
+          "MAN"
         ],
         "minimal_pair": "MAN",
         "contrast": "ae_e"
@@ -1451,10 +1265,10 @@
       {
         "answer": "MESS",
         "options": [
+          "DREAD",
           "MASS",
-          "MESS",
-          "POETRY",
-          "TRAVEL"
+          "ADVISE",
+          "MESS"
         ],
         "minimal_pair": "MASS",
         "contrast": "ae_e"
@@ -1462,10 +1276,10 @@
       {
         "answer": "MET",
         "options": [
-          "MET",
-          "MYTH",
+          "WATER",
           "MAT",
-          "AHEAD"
+          "PASS",
+          "MET"
         ],
         "minimal_pair": "MAT",
         "contrast": "ae_e"
@@ -1474,75 +1288,63 @@
         "answer": "MILL",
         "options": [
           "MILL",
-          "SHOES",
-          "ORDER",
-          "MEAL"
-        ],
-        "minimal_pair": "MEAL",
-        "contrast": "short_long_i"
+          "MAP",
+          "WAVE",
+          "FLIGHT"
+        ]
       },
       {
         "answer": "MIT",
         "options": [
-          "FLOOD",
-          "AND",
+          "MEAT",
           "MIT",
-          "MEET"
-        ],
-        "minimal_pair": "MEET",
-        "contrast": "short_long_i"
+          "MESS",
+          "WET"
+        ]
       },
       {
         "answer": "MOUSE",
         "options": [
-          "ADDRESS",
-          "MOUTH",
-          "PILOT",
-          "MOUSE"
-        ],
-        "minimal_pair": "MOUTH",
-        "contrast": "th"
+          "MOUSE",
+          "NETWORK",
+          "MEMORY",
+          "AGREE"
+        ]
       },
       {
         "answer": "MOUTH",
         "options": [
-          "MOUSE",
-          "VEHICLES",
-          "AUTO",
-          "MOUTH"
-        ],
-        "minimal_pair": "MOUSE",
-        "contrast": "th"
+          "IMAGINE",
+          "MYTH",
+          "MOUTH",
+          "MANAGER"
+        ]
       },
       {
         "answer": "MUCH",
         "options": [
-          "MUSH",
+          "PROMISE",
+          "GUESTS",
           "MUCH",
-          "EIGHT",
-          "MANDATE"
-        ],
-        "minimal_pair": "MUSH",
-        "contrast": "sh_ch"
+          "MILK"
+        ]
       },
       {
         "answer": "MUSH",
         "options": [
+          "MOUSE",
+          "ADVICE",
           "MUSH",
-          "GOLF",
-          "MUCH",
-          "CRUCIAL"
-        ],
-        "minimal_pair": "MUCH",
-        "contrast": "sh_ch"
+          "EYES"
+        ]
       },
       {
         "answer": "NOT",
         "options": [
-          "NOT",
-          "FRANCE",
           "NUT",
-          "PEEL"
+          "TEMPO",
+          "EGYPT",
+          "NOT"
         ],
         "minimal_pair": "NUT",
         "contrast": "uh_ah"
@@ -1550,10 +1352,10 @@
       {
         "answer": "NUT",
         "options": [
-          "LEAF",
-          "NOT",
+          "HOLD",
+          "SAT",
           "NUT",
-          "GROWTH"
+          "NOT"
         ],
         "minimal_pair": "NOT",
         "contrast": "uh_ah"
@@ -1561,10 +1363,10 @@
       {
         "answer": "OLD",
         "options": [
-          "FAMILY",
-          "HOLD",
-          "THIN",
-          "OLD"
+          "WASH",
+          "SHOES",
+          "OLD",
+          "HOLD"
         ],
         "minimal_pair": "HOLD",
         "contrast": "silent_h"
@@ -1572,10 +1374,10 @@
       {
         "answer": "OWN",
         "options": [
-          "MEAL",
-          "ILL",
+          "FLOWER",
+          "HONE",
           "OWN",
-          "HONE"
+          "MEN"
         ],
         "minimal_pair": "HONE",
         "contrast": "silent_h"
@@ -1583,9 +1385,9 @@
       {
         "answer": "PAN",
         "options": [
-          "SHOE",
+          "GUIDE",
           "PEN",
-          "PATENT",
+          "VERY",
           "PAN"
         ],
         "minimal_pair": "PEN",
@@ -1594,76 +1396,64 @@
       {
         "answer": "PASS",
         "options": [
-          "DRILL",
-          "ANALYZE",
-          "PATH",
-          "PASS"
-        ],
-        "minimal_pair": "PATH",
-        "contrast": "th"
+          "PILL",
+          "HUT",
+          "PASS",
+          "NURSE"
+        ]
       },
       {
         "answer": "PATH",
         "options": [
-          "WINDOW",
-          "PASS",
-          "CAR",
-          "PATH"
-        ],
-        "minimal_pair": "PASS",
-        "contrast": "th"
+          "PATH",
+          "FOSSIL",
+          "TEA",
+          "PLAYS"
+        ]
       },
       {
         "answer": "PEACE",
         "options": [
-          "PEACE",
-          "WILL",
-          "PEAS",
-          "SCARF"
-        ],
-        "minimal_pair": "PEAS",
-        "contrast": "s_z"
+          "SMALL",
+          "PANEL",
+          "PEAK",
+          "PEACE"
+        ]
       },
       {
         "answer": "PEAK",
         "options": [
-          "PICK",
-          "LISTEN",
-          "PEAK",
-          "PRICE"
-        ],
-        "minimal_pair": "PICK",
-        "contrast": "short_long_i"
+          "DEBATE",
+          "AMUSING",
+          "PEACE",
+          "PEAK"
+        ]
       },
       {
         "answer": "PEAS",
         "options": [
-          "PEAS",
-          "RELAX",
-          "PEACE",
-          "TRAGEDY"
-        ],
-        "minimal_pair": "PEACE",
-        "contrast": "s_z"
+          "STORM",
+          "PACT",
+          "BUG",
+          "PEAS"
+        ]
       },
       {
         "answer": "PEEL",
         "options": [
-          "PILL",
-          "SQUARE",
-          "STOCK",
-          "PEEL"
-        ],
-        "minimal_pair": "PILL",
-        "contrast": "short_long_i"
+          "PEEL",
+          "PITCH",
+          "SERVE",
+          "STORM"
+        ]
       },
       {
         "answer": "PEN",
         "options": [
-          "SAW",
+          "SAFETY",
           "PEN",
-          "PAN",
-          "MONTH"
+          "GYM",
+          "PAN"
         ],
         "minimal_pair": "PAN",
         "contrast": "ae_e"
@@ -1672,724 +1462,594 @@
         "answer": "PICK",
         "options": [
           "PICK",
-          "HOST",
-          "PEAK",
-          "PENCIL"
-        ],
-        "minimal_pair": "PEAK",
-        "contrast": "short_long_i"
+          "PATH",
+          "SHUT",
+          "EXIST"
+        ]
       },
       {
         "answer": "PILL",
         "options": [
-          "OPTICAL",
+          "PINK",
           "PILL",
-          "MAD",
-          "PEEL"
-        ],
-        "minimal_pair": "PEEL",
-        "contrast": "short_long_i"
+          "CUT",
+          "SCREEN"
+        ]
       },
       {
         "answer": "PLACE",
         "options": [
           "PLACE",
-          "FOG",
-          "PLAYS",
-          "COCKPIT"
-        ],
-        "minimal_pair": "PLAYS",
-        "contrast": "s_z"
+          "FINGER",
+          "PAPER",
+          "HAND"
+        ]
       },
       {
         "answer": "PLAYS",
         "options": [
-          "PLACE",
-          "VACATION",
+          "STUDIO",
           "PLAYS",
-          "JULY"
-        ],
-        "minimal_pair": "PLACE",
-        "contrast": "s_z"
+          "PHONE",
+          "HARBOR"
+        ]
       },
       {
         "answer": "POOL",
         "options": [
-          "ISOLATE",
           "POOL",
-          "CAR",
-          "PULL"
-        ],
-        "minimal_pair": "PULL",
-        "contrast": "short_long_u"
+          "PRIZE",
+          "OXYGEN",
+          "PAGE"
+        ]
       },
       {
         "answer": "PRICE",
         "options": [
-          "SOLUTION",
+          "IDENTITY",
           "PRICE",
-          "PRIZE",
-          "SILK"
-        ],
-        "minimal_pair": "PRIZE",
-        "contrast": "s_z"
+          "GOLF",
+          "PUZZLE"
+        ]
       },
       {
         "answer": "PRIZE",
         "options": [
-          "PRIZE",
-          "ANT",
-          "PRICE",
-          "FREEDOM"
-        ],
-        "minimal_pair": "PRICE",
-        "contrast": "s_z"
+          "PLAYS",
+          "EAT",
+          "SWIFT",
+          "PRIZE"
+        ]
       },
       {
         "answer": "PULL",
         "options": [
-          "OFFICE",
+          "SOFA",
+          "PHONE",
           "PULL",
-          "POOL",
-          "TENNIS"
-        ],
-        "minimal_pair": "POOL",
-        "contrast": "short_long_u"
+          "TRACTOR"
+        ]
       },
       {
         "answer": "RACE",
         "options": [
-          "RACE",
-          "MUSIC",
-          "RAISE",
-          "SOMEONE"
-        ],
-        "minimal_pair": "RAISE",
-        "contrast": "s_z"
+          "RAINY",
+          "CUT",
+          "MOSQUE",
+          "RACE"
+        ]
       },
       {
         "answer": "RAISE",
         "options": [
-          "EQUITY",
-          "LEVERAGE",
           "RAISE",
-          "RACE"
-        ],
-        "minimal_pair": "RACE",
-        "contrast": "s_z"
+          "TORNADO",
+          "STORM",
+          "RABBIT"
+        ]
       },
       {
         "answer": "REACH",
         "options": [
-          "HONEST",
+          "PLATE",
           "REACH",
-          "FANTASY",
-          "RICH"
-        ],
-        "minimal_pair": "RICH",
-        "contrast": "short_long_i"
+          "HOUSE",
+          "ROAST"
+        ]
       },
       {
         "answer": "RICE",
         "options": [
-          "BROTHER",
-          "LOCK",
+          "MONTH",
+          "RACE",
           "RICE",
-          "RISE"
-        ],
-        "minimal_pair": "RISE",
-        "contrast": "s_z"
+          "ROCKET"
+        ]
       },
       {
         "answer": "RICH",
         "options": [
-          "REACH",
-          "PROUD",
-          "DEN",
-          "RICH"
-        ],
-        "minimal_pair": "REACH",
-        "contrast": "short_long_i"
+          "ROOT",
+          "RICH",
+          "UNION",
+          "SENATOR"
+        ]
       },
       {
         "answer": "RISE",
         "options": [
           "RISE",
-          "STYLE",
-          "AXE",
-          "RICE"
-        ],
-        "minimal_pair": "RICE",
-        "contrast": "s_z"
+          "LEAF",
+          "RADIO",
+          "RASH"
+        ]
       },
       {
         "answer": "ROB",
         "options": [
-          "FEEL",
+          "FOX",
+          "BEND",
           "ROB",
-          "CLUE",
-          "RUB"
-        ],
-        "minimal_pair": "RUB",
-        "contrast": "uh_ah"
+          "RISE"
+        ]
       },
       {
         "answer": "RUB",
         "options": [
-          "CLEVER",
-          "ROB",
-          "MODERN",
-          "RUB"
-        ],
-        "minimal_pair": "ROB",
-        "contrast": "uh_ah"
+          "STEEL",
+          "ICE",
+          "RUB",
+          "RAIN"
+        ]
       },
       {
         "answer": "SAD",
         "options": [
-          "TABLE",
-          "SAD",
-          "SAID",
-          "PLOT"
-        ],
-        "minimal_pair": "SAID",
-        "contrast": "ae_e"
+          "SNOW",
+          "SHAPE",
+          "RAINY",
+          "SAD"
+        ]
       },
       {
         "answer": "SAID",
         "options": [
-          "WINE",
-          "SAD",
           "SAID",
-          "BUGS"
-        ],
-        "minimal_pair": "SAD",
-        "contrast": "ae_e"
+          "FORMULA",
+          "STEEL",
+          "FENCE"
+        ]
       },
       {
         "answer": "SAND",
         "options": [
-          "RITUAL",
-          "COMPLEX",
-          "SEND",
-          "SAND"
-        ],
-        "minimal_pair": "SEND",
-        "contrast": "ae_e"
+          "BERRY",
+          "FASHION",
+          "SAND",
+          "STARS"
+        ]
       },
       {
         "answer": "SAT",
         "options": [
-          "COOK",
+          "CURB",
           "SAT",
-          "SET",
-          "RUMOR"
-        ],
-        "minimal_pair": "SET",
-        "contrast": "ae_e"
+          "STAR",
+          "MATH"
+        ]
       },
       {
         "answer": "SCENE",
         "options": [
-          "BRACKET",
-          "SIN",
+          "STRIKING",
+          "FISHING",
           "SCENE",
-          "JACKSON"
-        ],
-        "minimal_pair": "SIN",
-        "contrast": "short_long_i"
+          "STILL"
+        ]
       },
       {
         "answer": "SEAT",
         "options": [
           "SEAT",
-          "VIBRANT",
-          "PANDA",
-          "SIT"
-        ],
-        "minimal_pair": "SIT",
-        "contrast": "short_long_i"
+          "SNAP",
+          "BEGIN",
+          "CUSTOM"
+        ]
       },
       {
         "answer": "SEND",
         "options": [
+          "TOMATO",
+          "SUGAR",
           "SEND",
-          "HIGHWAY",
-          "SAND",
-          "SHADOW"
-        ],
-        "minimal_pair": "SAND",
-        "contrast": "ae_e"
+          "SHAME"
+        ]
       },
       {
         "answer": "SET",
         "options": [
-          "SAT",
-          "ROLE",
-          "HEAR",
-          "SET"
-        ],
-        "minimal_pair": "SAT",
-        "contrast": "ae_e"
+          "WEST",
+          "SAW",
+          "SET",
+          "VIOLET"
+        ]
       },
       {
         "answer": "SHARE",
         "options": [
+          "CEREAL",
+          "SOCCER",
           "SHARE",
-          "CHAIR",
-          "CANDY",
-          "DANCER"
-        ],
-        "minimal_pair": "CHAIR",
-        "contrast": "sh_ch"
+          "SPLIT"
+        ]
       },
       {
         "answer": "SHEEP",
         "options": [
-          "SMALL",
-          "CHEAP",
+          "PROPOSAL",
           "SHEEP",
-          "PASSWORD"
-        ],
-        "minimal_pair": "CHEAP",
-        "contrast": "sh_ch"
+          "SILVER",
+          "SAMPLE"
+        ]
       },
       {
         "answer": "SHEET",
         "options": [
-          "DRESS",
-          "CHEAT",
-          "FICTION",
-          "SHEET"
-        ],
-        "minimal_pair": "CHEAT",
-        "contrast": "sh_ch"
+          "BLACK",
+          "SINGER",
+          "SHEET",
+          "HAT"
+        ]
       },
       {
         "answer": "SHERRY",
         "options": [
-          "TEXT",
+          "HARMONY",
+          "SHARP",
           "SHERRY",
-          "CHERRY",
-          "TREASURE"
-        ],
-        "minimal_pair": "CHERRY",
-        "contrast": "sh_ch"
+          "SUGAR"
+        ]
       },
       {
         "answer": "SHIN",
         "options": [
-          "COMET",
-          "CHIN",
           "SHIN",
-          "TEXT"
-        ],
-        "minimal_pair": "CHIN",
-        "contrast": "sh_ch"
+          "FUN",
+          "SOFA",
+          "POETRY"
+        ]
       },
       {
         "answer": "SHIP",
         "options": [
-          "PATENT",
-          "LUGGAGE",
-          "SHIP",
-          "CHIP"
-        ],
-        "minimal_pair": "CHIP",
-        "contrast": "sh_ch"
+          "SUCCESS",
+          "AXE",
+          "SINK",
+          "SHIP"
+        ]
       },
       {
         "answer": "SHOES",
         "options": [
-          "CHOOSE",
           "SHOES",
-          "BOOTS",
-          "PENALTY"
-        ],
-        "minimal_pair": "CHOOSE",
-        "contrast": "sh_ch"
+          "COOKIE",
+          "STEEL",
+          "SPEAKING"
+        ]
       },
       {
         "answer": "SHOP",
         "options": [
-          "PHOTO",
-          "CHOP",
-          "THEREOF",
-          "SHOP"
-        ],
-        "minimal_pair": "CHOP",
-        "contrast": "sh_ch"
+          "SNACK",
+          "HUT",
+          "SHOP",
+          "SCARED"
+        ]
       },
       {
         "answer": "SHOT",
         "options": [
           "SHOT",
-          "MISTAKE",
-          "SHUT",
-          "MARBLE"
-        ],
-        "minimal_pair": "SHUT",
-        "contrast": "uh_ah"
+          "SHEET",
+          "GRANDMA",
+          "CATCH"
+        ]
       },
       {
         "answer": "SHUT",
         "options": [
-          "SHOT",
-          "ILL",
+          "STUCK",
+          "WEEKEND",
           "SHUT",
-          "STEAM"
-        ],
-        "minimal_pair": "SHOT",
-        "contrast": "uh_ah"
+          "SERVE"
+        ]
       },
       {
         "answer": "SICK",
         "options": [
+          "SERVE",
           "SICK",
-          "BEDROOM",
-          "THICK",
-          "MAN"
-        ],
-        "minimal_pair": "THICK",
-        "contrast": "th"
+          "URINE",
+          "SEED"
+        ]
       },
       {
         "answer": "SIN",
         "options": [
-          "HOUSE",
-          "TRASH",
-          "SCENE",
+          "SHUT",
+          "GALE",
+          "EAR",
           "SIN"
-        ],
-        "minimal_pair": "SCENE",
-        "contrast": "short_long_i"
+        ]
       },
       {
         "answer": "SINK",
         "options": [
-          "BOARD",
+          "SEED",
           "SINK",
-          "HARDY",
-          "THINK"
-        ],
-        "minimal_pair": "THINK",
-        "contrast": "th"
+          "PICNIC",
+          "SCARF"
+        ]
       },
       {
         "answer": "SIT",
         "options": [
-          "HOCKEY",
+          "SONG",
+          "BUDGET",
           "SIT",
-          "SOIL",
-          "SEAT"
-        ],
-        "minimal_pair": "SEAT",
-        "contrast": "short_long_i"
+          "GIVING"
+        ]
       },
       {
         "answer": "SLEEP",
         "options": [
-          "SLIP",
+          "RAPID",
+          "SNAP",
           "SLEEP",
-          "CHECK",
-          "LAWYER"
-        ],
-        "minimal_pair": "SLIP",
-        "contrast": "short_long_i"
+          "PEN"
+        ]
       },
       {
         "answer": "SLIP",
         "options": [
-          "STYLE",
-          "SLIP",
-          "SLEEP",
-          "HEEL"
-        ],
-        "minimal_pair": "SLEEP",
-        "contrast": "short_long_i"
+          "STEEL",
+          "AVERAGE",
+          "MARCH",
+          "SLIP"
+        ]
       },
       {
         "answer": "SONG",
         "options": [
-          "SUNG",
-          "MIRROR",
           "SONG",
-          "SEED"
-        ],
-        "minimal_pair": "SUNG",
-        "contrast": "uh_ah"
+          "SAT",
+          "SAMPLE",
+          "TREAT"
+        ]
       },
       {
         "answer": "STEEL",
         "options": [
-          "SALARY",
-          "THOUGHT",
+          "STRIKE",
           "STEEL",
-          "STILL"
-        ],
-        "minimal_pair": "STILL",
-        "contrast": "short_long_i"
+          "VIBRANT",
+          "CAPITAL"
+        ]
       },
       {
         "answer": "STILL",
         "options": [
-          "LAWYER",
-          "CAR",
+          "LOUNGE",
           "STILL",
-          "STEEL"
-        ],
-        "minimal_pair": "STEEL",
-        "contrast": "short_long_i"
+          "MARRIAGE",
+          "SHEET"
+        ]
       },
       {
         "answer": "STOCK",
         "options": [
-          "DREAM",
-          "STOCK",
-          "OWN",
-          "STUCK"
-        ],
-        "minimal_pair": "STUCK",
-        "contrast": "uh_ah"
+          "WHEEL",
+          "ELDER",
+          "SCRUB",
+          "STOCK"
+        ]
       },
       {
         "answer": "STUCK",
         "options": [
-          "STOCK",
-          "TOOTH",
-          "STUCK",
-          "QUIET"
-        ],
-        "minimal_pair": "STOCK",
-        "contrast": "uh_ah"
+          "SUNNY",
+          "SIGNAL",
+          "GAS",
+          "STUCK"
+        ]
       },
       {
         "answer": "SUNG",
         "options": [
           "SUNG",
-          "SONG",
-          "SHIRT",
-          "PIANO"
-        ],
-        "minimal_pair": "SONG",
-        "contrast": "uh_ah"
+          "YELLOW",
+          "SPLIT",
+          "CHOOSE"
+        ]
       },
       {
         "answer": "TAN",
         "options": [
-          "TEN",
-          "PHONE",
-          "TAN",
-          "OFFER"
-        ],
-        "minimal_pair": "TEN",
-        "contrast": "ae_e"
+          "FLIGHT",
+          "YEAR",
+          "TREE",
+          "TAN"
+        ]
       },
       {
         "answer": "TANK",
         "options": [
-          "TANK",
-          "OUTLET",
-          "BEDROOM",
-          "THANK"
-        ],
-        "minimal_pair": "THANK",
-        "contrast": "th"
+          "PILOT",
+          "THEY",
+          "HELLO",
+          "TANK"
+        ]
       },
       {
         "answer": "TAUGHT",
         "options": [
-          "RICH",
+          "TURNOUT",
           "TAUGHT",
-          "THOUGHT",
-          "FREIGHT"
-        ],
-        "minimal_pair": "THOUGHT",
-        "contrast": "th"
+          "VITAL",
+          "VALLEY"
+        ]
       },
       {
         "answer": "TEEN",
         "options": [
-          "BRAZIL",
-          "TIN",
+          "TABLE",
+          "TOUR",
           "TEEN",
-          "BIGGEST"
-        ],
-        "minimal_pair": "TIN",
-        "contrast": "short_long_i"
+          "ANTENNA"
+        ]
       },
       {
         "answer": "TEN",
         "options": [
+          "BAN",
           "TEN",
-          "STAR",
-          "SAD",
-          "TAN"
-        ],
-        "minimal_pair": "TAN",
-        "contrast": "ae_e"
+          "FOREST",
+          "TEAM"
+        ]
       },
       {
         "answer": "THANK",
         "options": [
-          "EGG",
-          "HORIZON",
-          "TANK",
-          "THANK"
-        ],
-        "minimal_pair": "TANK",
-        "contrast": "th"
+          "THANK",
+          "FINGER",
+          "TONE",
+          "FINANCES"
+        ]
       },
       {
         "answer": "THEN",
         "options": [
           "THEN",
-          "VIABLE",
-          "DEN",
-          "SEND"
-        ],
-        "minimal_pair": "DEN",
-        "contrast": "th"
+          "DINNER",
+          "TAN",
+          "EAT"
+        ]
       },
       {
         "answer": "THERE",
         "options": [
-          "APP",
-          "DARE",
           "THERE",
-          "MEMO"
-        ],
-        "minimal_pair": "DARE",
-        "contrast": "th"
+          "LEVY",
+          "TREE",
+          "JOURNEY"
+        ]
       },
       {
         "answer": "THEY",
         "options": [
-          "THEY",
-          "CAT",
-          "DAY",
-          "HEALTH"
-        ],
-        "minimal_pair": "DAY",
-        "contrast": "th"
+          "FOUR",
+          "PLAYS",
+          "THANK",
+          "THEY"
+        ]
       },
       {
         "answer": "THICK",
         "options": [
+          "HORSE",
+          "TOUGH",
           "THICK",
-          "STATUTE",
-          "SICK",
-          "FENCE"
-        ],
-        "minimal_pair": "SICK",
-        "contrast": "th"
+          "TEXTURE"
+        ]
       },
       {
         "answer": "THIN",
         "options": [
-          "THIN",
-          "HEALTHY",
-          "STUCK",
-          "TIN"
-        ],
-        "minimal_pair": "TIN",
-        "contrast": "th"
+          "TIGER",
+          "AMUSING",
+          "ENGINE",
+          "THIN"
+        ]
       },
       {
         "answer": "THINK",
         "options": [
-          "REPLICA",
-          "FARMER",
-          "SINK",
-          "THINK"
-        ],
-        "minimal_pair": "SINK",
-        "contrast": "th"
+          "DREAD",
+          "THINK",
+          "TITLE",
+          "SOIL"
+        ]
       },
       {
         "answer": "THOUGHT",
         "options": [
+          "POLLUTION",
+          "POND",
           "THOUGHT",
-          "TUNNEL",
-          "TAUGHT",
-          "KITCHEN"
-        ],
-        "minimal_pair": "TAUGHT",
-        "contrast": "th"
+          "TURNOUT"
+        ]
       },
       {
         "answer": "THREE",
         "options": [
-          "TREE",
           "THREE",
-          "RESERVE",
-          "GALAXY"
-        ],
-        "minimal_pair": "TREE",
-        "contrast": "th"
+          "SILK",
+          "THEY",
+          "COP"
+        ]
       },
       {
         "answer": "TIN",
         "options": [
-          "TIN",
-          "TEEN",
-          "PAGE",
-          "MEADOW"
-        ],
-        "minimal_pair": "TEEN",
-        "contrast": "short_long_i"
+          "CHANGE",
+          "GOAL",
+          "TOUR",
+          "TIN"
+        ]
       },
       {
         "answer": "TREE",
         "options": [
-          "TREE",
-          "GOLF",
-          "THREE",
-          "ABSENCE"
-        ],
-        "minimal_pair": "THREE",
-        "contrast": "th"
+          "FREEZE",
+          "THEN",
+          "THIN",
+          "TREE"
+        ]
       },
       {
         "answer": "VAN",
         "options": [
-          "BAN",
-          "TEEN",
-          "EAR",
-          "VAN"
-        ],
-        "minimal_pair": "BAN",
-        "contrast": "b_v"
+          "SNAP",
+          "VAN",
+          "VOTE",
+          "TREE"
+        ]
       },
       {
         "answer": "VASE",
         "options": [
-          "BASE",
-          "VISITOR",
+          "VITAL",
+          "STATUE",
           "VASE",
-          "CHAPTER"
-        ],
-        "minimal_pair": "BASE",
-        "contrast": "b_v"
+          "QUIET"
+        ]
       },
       {
         "answer": "VAT",
         "options": [
-          "ARRIVE",
-          "BAT",
-          "ROCK",
-          "VAT"
-        ],
-        "minimal_pair": "BAT",
-        "contrast": "b_v"
+          "VEST",
+          "VAT",
+          "TOWEL",
+          "SHOUT"
+        ]
       },
       {
         "answer": "VEIL",
         "options": [
-          "VEIL",
+          "CAT",
           "WAIL",
-          "BELIEF",
-          "ENDORSE"
+          "VEIL",
+          "FIND"
         ],
         "minimal_pair": "WAIL",
         "contrast": "w_v"
@@ -2397,10 +2057,10 @@
       {
         "answer": "VERSE",
         "options": [
-          "ACHIEVE",
+          "TICKET",
+          "VERSE",
           "WORSE",
-          "DRAWING",
-          "VERSE"
+          "SHIP"
         ],
         "minimal_pair": "WORSE",
         "contrast": "w_v"
@@ -2408,21 +2068,19 @@
       {
         "answer": "VERY",
         "options": [
-          "ICE",
-          "RECEIPT",
-          "BERRY",
-          "VERY"
-        ],
-        "minimal_pair": "BERRY",
-        "contrast": "b_v"
+          "ORANGE",
+          "VERY",
+          "ROLE",
+          "VERSE"
+        ]
       },
       {
         "answer": "VEST",
         "options": [
-          "TEMPLE",
           "WEST",
-          "SNACK",
-          "VEST"
+          "VEST",
+          "NERVOUS",
+          "RITUAL"
         ],
         "minimal_pair": "WEST",
         "contrast": "w_v"
@@ -2430,8 +2088,8 @@
       {
         "answer": "VET",
         "options": [
-          "RANGE",
-          "LETTER",
+          "VOTE",
+          "STEAM",
           "WET",
           "VET"
         ],
@@ -2441,10 +2099,10 @@
       {
         "answer": "VILE",
         "options": [
-          "VILE",
           "WHILE",
-          "ELEGANT",
-          "QUEEN"
+          "CURVE",
+          "FEET",
+          "VILE"
         ],
         "minimal_pair": "WHILE",
         "contrast": "w_v"
@@ -2453,9 +2111,9 @@
         "answer": "VINE",
         "options": [
           "WINE",
+          "SPIDER",
           "VINE",
-          "PLEASED",
-          "SHORT"
+          "CANYON"
         ],
         "minimal_pair": "WINE",
         "contrast": "w_v"
@@ -2463,43 +2121,37 @@
       {
         "answer": "VOLE",
         "options": [
-          "VOLE",
-          "REEL",
-          "BOWL",
-          "LOBBY"
-        ],
-        "minimal_pair": "BOWL",
-        "contrast": "b_v"
+          "APP",
+          "VEIL",
+          "STRIKE",
+          "VOLE"
+        ]
       },
       {
         "answer": "VOLT",
         "options": [
           "VOLT",
-          "SPRING",
-          "ANALYZE",
-          "BOLT"
-        ],
-        "minimal_pair": "BOLT",
-        "contrast": "b_v"
+          "VET",
+          "BAT",
+          "DOG"
+        ]
       },
       {
         "answer": "VOTE",
         "options": [
-          "REGION",
-          "BOAT",
-          "VOTE",
-          "FAITH"
-        ],
-        "minimal_pair": "BOAT",
-        "contrast": "b_v"
+          "GOLF",
+          "VINE",
+          "DRESSED",
+          "VOTE"
+        ]
       },
       {
         "answer": "WAIL",
         "options": [
+          "GLOVES",
+          "OPTICAL",
           "VEIL",
-          "FARMER",
-          "WAIL",
-          "DAY"
+          "WAIL"
         ],
         "minimal_pair": "VEIL",
         "contrast": "w_v"
@@ -2507,32 +2159,28 @@
       {
         "answer": "WASH",
         "options": [
-          "WASH",
-          "WATCH",
-          "HARDY",
-          "ELEMENT"
-        ],
-        "minimal_pair": "WATCH",
-        "contrast": "sh_ch"
+          "SEAT",
+          "WISH",
+          "QUALITY",
+          "WASH"
+        ]
       },
       {
         "answer": "WATCH",
         "options": [
-          "STORM",
-          "LEAF",
+          "TEN",
           "WATCH",
-          "WASH"
-        ],
-        "minimal_pair": "WASH",
-        "contrast": "sh_ch"
+          "WISDOM",
+          "SAMPLE"
+        ]
       },
       {
         "answer": "WEST",
         "options": [
-          "WATER",
-          "CHOP",
-          "VEST",
-          "WEST"
+          "WEST",
+          "HOLIDAY",
+          "BOLD",
+          "VEST"
         ],
         "minimal_pair": "VEST",
         "contrast": "w_v"
@@ -2540,10 +2188,10 @@
       {
         "answer": "WET",
         "options": [
-          "FOUR",
-          "VET",
+          "GRASS",
           "WET",
-          "BRIDGE"
+          "VET",
+          "BORDER"
         ],
         "minimal_pair": "VET",
         "contrast": "w_v"
@@ -2551,21 +2199,19 @@
       {
         "answer": "WHEEL",
         "options": [
-          "TOUGH",
-          "WILL",
           "WHEEL",
-          "FINGER"
-        ],
-        "minimal_pair": "WILL",
-        "contrast": "short_long_i"
+          "BANANA",
+          "MALL",
+          "WITCH"
+        ]
       },
       {
         "answer": "WHILE",
         "options": [
-          "WHILE",
+          "CHICKEN",
           "VILE",
-          "SPIDER",
-          "ELEPHANT"
+          "PACKAGE",
+          "WHILE"
         ],
         "minimal_pair": "VILE",
         "contrast": "w_v"
@@ -2573,21 +2219,19 @@
       {
         "answer": "WILL",
         "options": [
+          "EACH",
           "WILL",
-          "PATIENT",
-          "PACKAGE",
-          "WHEEL"
-        ],
-        "minimal_pair": "WHEEL",
-        "contrast": "short_long_i"
+          "WISH",
+          "APOLOGY"
+        ]
       },
       {
         "answer": "WINE",
         "options": [
-          "MARCH",
-          "FOSSIL",
-          "VINE",
-          "WINE"
+          "SCHOOL",
+          "WINE",
+          "CONTACT",
+          "VINE"
         ],
         "minimal_pair": "VINE",
         "contrast": "w_v"
@@ -2595,32 +2239,28 @@
       {
         "answer": "WISH",
         "options": [
-          "WITCH",
           "WISH",
-          "EAR",
-          "BOWL"
-        ],
-        "minimal_pair": "WITCH",
-        "contrast": "sh_ch"
+          "EAGLE",
+          "FOX",
+          "WEST"
+        ]
       },
       {
         "answer": "WITCH",
         "options": [
-          "WISH",
-          "GOAL",
-          "FRIDAY",
-          "WITCH"
-        ],
-        "minimal_pair": "WISH",
-        "contrast": "sh_ch"
+          "WINDOW",
+          "WITCH",
+          "CORRIDOR",
+          "HOST"
+        ]
       },
       {
         "answer": "WORSE",
         "options": [
-          "PHYSICS",
+          "BAN",
+          "OPTICAL",
           "VERSE",
-          "WORSE",
-          "BICYCLE"
+          "WORSE"
         ],
         "minimal_pair": "VERSE",
         "contrast": "w_v"
@@ -2628,10 +2268,10 @@
       {
         "answer": "YAM",
         "options": [
-          "FOX",
           "JAM",
+          "LETTER",
           "YAM",
-          "LEASE"
+          "YIELD"
         ],
         "minimal_pair": "JAM",
         "contrast": "y_j"
@@ -2639,10 +2279,10 @@
       {
         "answer": "YEAR",
         "options": [
-          "EMBASSY",
+          "IMAGINE",
+          "YEAR",
           "JEER",
-          "WEBSITE",
-          "YEAR"
+          "VET"
         ],
         "minimal_pair": "JEER",
         "contrast": "y_j"
@@ -2650,10 +2290,10 @@
       {
         "answer": "YELL",
         "options": [
+          "BUG",
           "JELL",
-          "ENGINE",
           "YELL",
-          "WOOL"
+          "MET"
         ],
         "minimal_pair": "JELL",
         "contrast": "y_j"
@@ -2661,10 +2301,10 @@
       {
         "answer": "YET",
         "options": [
-          "DESIGN",
-          "YET",
+          "MOSQUE",
           "JET",
-          "DANGER"
+          "YET",
+          "SHOE"
         ],
         "minimal_pair": "JET",
         "contrast": "y_j"
@@ -2672,10 +2312,10 @@
       {
         "answer": "YOKE",
         "options": [
+          "YOKE",
           "JOKE",
-          "MIT",
-          "SHUT",
-          "YOKE"
+          "GAS",
+          "SCARED"
         ],
         "minimal_pair": "JOKE",
         "contrast": "y_j"

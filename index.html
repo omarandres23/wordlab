@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>English 11 — Daily English Games</title>
-<link rel="stylesheet" href="styles.css?v=sp19a">
+<link rel="stylesheet" href="styles.css?v=sp19d">
 </head>
 <body>
 
@@ -831,15 +831,6 @@
     <span class="game-meta" id="hi-meta"></span>
   </div>
 
-  <!-- shown instead of the board when the device has no English voice at all -->
-  <div id="hi-novoice" class="hi-novoice hidden">
-    <p class="hi-novoice-icon" aria-hidden="true">🔇</p>
-    <p id="hi-novoice-text" class="hi-novoice-text"></p>
-    <div class="end-actions">
-      <button class="back-btn" data-back id="hi-novoice-back"></button>
-    </div>
-  </div>
-
   <div id="hi-play" class="hi-wrap">
     <p class="blanks-progress" id="hi-progress"></p>
 
@@ -853,6 +844,11 @@
     <button id="hi-play-btn" class="hi-play-btn" type="button" aria-label="Play the word">
       <span class="hi-play-icon" aria-hidden="true">▶</span>
     </button>
+
+    <!-- shown only once voice detection confirms no English voice at all —
+         informational only, the game stays fully playable regardless -->
+    <p id="hi-novoice-note" class="hi-novoice-note hidden"></p>
+
     <p id="hi-replays" class="hi-replays"></p>
 
     <!-- letter count (intermediate + advanced) -->
@@ -870,15 +866,17 @@
     <div id="hi-feedback" class="hi-feedback"></div>
   </div>
 
-  <div id="hi-end" class="end-panel hidden">
-    <p class="end-title" id="hi-end-title"></p>
-    <p class="end-word">Your score: <strong id="hi-score"></strong></p>
-    <ul id="hi-wordlist" class="st-wordlist"></ul>
-    <p id="hi-wordlist-hint" class="st-wordlist-hint hidden"></p>
-    <div id="hi-word-meaning" class="st-word-meaning" aria-live="polite"></div>
-    <div class="end-actions">
-      <button id="hi-again-btn" class="primary-btn">PLAY AGAIN</button>
-      <button class="back-btn" data-back>BACK TO MENU</button>
+  <div id="hi-end" class="overlay result-overlay hidden">
+    <div class="end-panel">
+      <p class="end-title" id="hi-end-title"></p>
+      <p class="end-word">Your score: <strong id="hi-score"></strong></p>
+      <ul id="hi-wordlist" class="st-wordlist"></ul>
+      <p id="hi-wordlist-hint" class="st-wordlist-hint hidden"></p>
+      <div id="hi-word-meaning" class="st-word-meaning" aria-live="polite"></div>
+      <div class="end-actions">
+        <button id="hi-again-btn" class="primary-btn">PLAY AGAIN</button>
+        <button class="back-btn" data-back>BACK TO MENU</button>
+      </div>
     </div>
   </div>
 </main>
@@ -900,44 +898,46 @@
     <div id="em-options" class="em-options"></div>
   </div>
 
-  <div id="em-end" class="end-panel hidden">
-    <p class="end-title" id="em-end-title"></p>
-    <p class="end-word">Your score: <strong id="em-score"></strong></p>
-    <!-- the 8 words of the game, tappable to reveal their meaning -->
-    <ul id="em-wordlist" class="st-wordlist"></ul>
-    <p id="em-wordlist-hint" class="st-wordlist-hint hidden"></p>
-    <div id="em-word-meaning" class="st-word-meaning" aria-live="polite"></div>
-    <div class="end-actions">
-      <button id="em-again-btn" class="primary-btn">PLAY AGAIN</button>
-      <button class="back-btn" data-back>BACK TO MENU</button>
+  <div id="em-end" class="overlay result-overlay hidden">
+    <div class="end-panel">
+      <p class="end-title" id="em-end-title"></p>
+      <p class="end-word">Your score: <strong id="em-score"></strong></p>
+      <!-- the 8 words of the game, tappable to reveal their meaning -->
+      <ul id="em-wordlist" class="st-wordlist"></ul>
+      <p id="em-wordlist-hint" class="st-wordlist-hint hidden"></p>
+      <div id="em-word-meaning" class="st-word-meaning" aria-live="polite"></div>
+      <div class="end-actions">
+        <button id="em-again-btn" class="primary-btn">PLAY AGAIN</button>
+        <button class="back-btn" data-back>BACK TO MENU</button>
+      </div>
     </div>
   </div>
 </main>
 
-<script src="data.js"></script>
-<script src="spot_data.js"></script>
-<script src="contexto_data.js"></script>
-<script src="contexto_autocomplete.js"></script>
-<script src="wordlinks_data.js"></script>
-<script src="impostor_data.js"></script>
-<script src="connections_data.js"></script>
+<script src="data.js?v=sp19a"></script>
+<script src="spot_data.js?v=sp19a"></script>
+<script src="contexto_data.js?v=sp19a"></script>
+<script src="contexto_autocomplete.js?v=sp19a"></script>
+<script src="wordlinks_data.js?v=sp19a"></script>
+<script src="impostor_data.js?v=sp19c"></script>
+<script src="connections_data.js?v=sp19a"></script>
 <script src="realword_data.js?v=sp19a"></script>
-<script src="bombword_data.js"></script>
-<script src="waffle_data.js"></script>
-<script src="emojibomb_data.js"></script>
+<script src="bombword_data.js?v=sp19a"></script>
+<script src="waffle_data.js?v=sp19a"></script>
+<script src="emojibomb_data.js?v=sp19a"></script>
 <script src="emojimatch_data.js?v=sp19a"></script>
-<script src="hearit_data.js?v=sp19a"></script>
-<script src="strands_data.js"></script>
+<script src="hearit_data.js?v=sp19d"></script>
+<script src="strands_data.js?v=sp19a"></script>
 <script src="definitions.js?v=sp19a"></script>
 <script src="connections_categories_es.js?v=sp19a"></script>
-<script src="impostor_explanations_es.js?v=sp19a"></script>
-<script src="ui_strings_en.js?v=sp19a"></script>
-<script src="ui_strings_es.js?v=sp19a"></script>
-<script src="starparty_questions.js"></script>
-<script src="starparty_wildcards.js"></script>
-<script src="starparty_realword_pools.js"></script>
+<script src="impostor_explanations_es.js?v=sp19c"></script>
+<script src="ui_strings_en.js?v=sp19b"></script>
+<script src="ui_strings_es.js?v=sp19b"></script>
+<script src="starparty_questions.js?v=sp19a"></script>
+<script src="starparty_wildcards.js?v=sp19a"></script>
+<script src="starparty_realword_pools.js?v=sp19a"></script>
 <script src="sfx.js?v=sp19a"></script>
-<script src="app.js?v=sp19a"></script>
+<script src="app.js?v=sp19d"></script>
 <script src="starparty_minigames.js?v=sp19a"></script>
 <script src="starparty.js?v=sp19a"></script>
 </body>

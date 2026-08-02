@@ -235,7 +235,7 @@
    "tap_for_meaning": "Toca una palabra para ver su significado",
    "meaning_unavailable": "(sin definición disponible)",
    "contrast_note": "Oíste \"${round.minimal_pair}\" en vez de \"${round.answer}\". ${why}.",
-   "no_voice": "Este dispositivo no tiene ninguna voz en inglés instalada, así que no se pueden pronunciar las palabras. Prueba con otro navegador o instala una voz en inglés en la configuración del sistema."
+   "no_voice": "Tu navegador no tiene voces en inglés disponibles."
   },
   "labels": {
    "meta": "${LEVEL_LABELS[level]} · ${HEARIT_DATA.rules.rounds_per_game} rondas"

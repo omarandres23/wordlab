@@ -235,7 +235,7 @@
    "tap_for_meaning": "Tap a word to see its meaning",
    "meaning_unavailable": "(no definition available)",
    "contrast_note": "You heard \"${round.minimal_pair}\" instead of \"${round.answer}\". ${why}.",
-   "no_voice": "This device has no English voice installed, so the words can't be pronounced. Try another browser or install an English voice in your system settings."
+   "no_voice": "Your browser has no English voices available."
   },
   "labels": {
    "meta": "${LEVEL_LABELS[level]} · ${HEARIT_DATA.rules.rounds_per_game} rounds"
