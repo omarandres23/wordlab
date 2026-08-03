@@ -26,6 +26,25 @@ SPA sin build step: `index.html` + `app.js` + `styles.css`, cada juego es un
 - **`ui_strings_en.json/.js`**, **`ui_strings_es.json/.js`** — todos los
   textos de UI. Misma relación json→js.
 
+## `tools/` — generadores de los bancos de datos
+
+Los bancos de Impostor, Hear It, Real Word y Emoji Match (sus `.json` en
+la raíz) fueron producidos por scripts Python en `tools/`, no escritos a
+mano. `tools/README.md` documenta qué genera cada script y las reglas de
+diseño que cada uno protege (homófonos y contrastes fonéticos duros
+prohibidos en Hear It, distractores sin emoji compartido en Emoji Match,
+validación contra diccionario real en Real Word, sincronía posicional de
+`round_id` entre los tres archivos de Impostor).
+
+**Si hay que cambiar uno de estos bancos, se modifica el script
+correspondiente y se vuelve a correr — nunca se edita el `.json` a
+mano.** Editarlo a mano pierde las validaciones (el script falla el
+build si algo queda mal) y puede romper el enlace posicional entre
+`impostor_data.json`, `impostor_explanations_es.json` e
+`impostor_labels.json`. `tools/` no se sube al sitio — Netlify nunca lo
+toca, no está referenciado desde `index.html` — vive en el repo solo
+para no perder el porqué de cada banco.
+
 ## Juegos: función principal y prefijo
 
 | Juego | `start...()` | Prefijo de variables/funciones |
