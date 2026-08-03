@@ -1,0 +1,1477 @@
+{
+  "file": "impostor_labels.json",
+  "purpose": "Titulo corto de la categoria de cada set de Impostor, para la pantalla final. Clave = round_id, igual que impostor_explanations_es.json.",
+  "count": 294,
+  "labels": {
+    "business_basic_0": {
+      "en": "Office items",
+      "es": "Artículos de oficina",
+      "impostor": "BEACH"
+    },
+    "business_basic_1": {
+      "en": "Money",
+      "es": "Dinero",
+      "impostor": "MEETING"
+    },
+    "business_basic_2": {
+      "en": "Employment",
+      "es": "Empleo",
+      "impostor": "HOLIDAY"
+    },
+    "business_basic_3": {
+      "en": "People in a workplace",
+      "es": "Personas en un lugar de trabajo",
+      "impostor": "INVOICE"
+    },
+    "business_basic_4": {
+      "en": "To get something by paying",
+      "es": "Obtener algo pagando",
+      "impostor": "RETURN"
+    },
+    "business_basic_5": {
+      "en": "Business documents",
+      "es": "Documentos de negocios",
+      "impostor": "CUSTOMER"
+    },
+    "business_basic_6": {
+      "en": "Places to buy things",
+      "es": "Lugares para comprar cosas",
+      "impostor": "SALARY"
+    },
+    "business_basic_7": {
+      "en": "To receive money",
+      "es": "Recibir dinero",
+      "impostor": "SPEND"
+    },
+    "business_basic_8": {
+      "en": "Ways to communicate at work",
+      "es": "Formas de comunicarse en el trabajo",
+      "impostor": "WAREHOUSE"
+    },
+    "business_basic_9": {
+      "en": "Someone who buys",
+      "es": "Alguien que compra",
+      "impostor": "SUPPLIER"
+    },
+    "business_basic_10": {
+      "en": "Money coming in",
+      "es": "Dinero que entra",
+      "impostor": "EXPENSE"
+    },
+    "business_basic_11": {
+      "en": "Someone in charge",
+      "es": "A cargo",
+      "impostor": "INTERN"
+    },
+    "business_basic_12": {
+      "en": "Ways to pay",
+      "es": "Formas de pagar",
+      "impostor": "DISCOUNT"
+    },
+    "business_basic_13": {
+      "en": "People in charge",
+      "es": "Personas al mando",
+      "impostor": "CLIENT"
+    },
+    "business_basic_14": {
+      "en": "Money you have",
+      "es": "Dinero que tienes",
+      "impostor": "DEBT"
+    },
+    "business_basic_15": {
+      "en": "Things you find in a workplace",
+      "es": "Cosas de un lugar de trabajo",
+      "impostor": "GARDEN"
+    },
+    "business_basic_16": {
+      "en": "Money you receive for working",
+      "es": "Dinero que recibes por trabajar",
+      "impostor": "EXPENSE"
+    },
+    "business_basic_17": {
+      "en": "Person who buys",
+      "es": "Persona que compra",
+      "impostor": "SELLER"
+    },
+    "business_basic_18": {
+      "en": "Work events",
+      "es": "Eventos de trabajo",
+      "impostor": "VACATION"
+    },
+    "business_basic_19": {
+      "en": "Money the business makes",
+      "es": "Dinero que gana el negocio",
+      "impostor": "LOSS"
+    },
+    "business_basic_20": {
+      "en": "Ways to communicate at work",
+      "es": "Formas de comunicarse en el trabajo",
+      "impostor": "CHAIR"
+    },
+    "business_basic_21": {
+      "en": "Organization",
+      "es": "Organizacion",
+      "impostor": "EMPLOYEE"
+    },
+    "business_basic_22": {
+      "en": "Something both sides accept",
+      "es": "Algo que ambas partes aceptan",
+      "impostor": "ARGUMENT"
+    },
+    "business_basic_23": {
+      "en": "Related to handling money",
+      "es": "Manejar dinero",
+      "impostor": "KITCHEN"
+    },
+    "business_basic_24": {
+      "en": "Low in price",
+      "es": "De precio bajo",
+      "impostor": "EXPENSIVE"
+    },
+    "business_intermediate_0": {
+      "en": "Company finances",
+      "es": "Finanzas de la empresa",
+      "impostor": "DEADLINE"
+    },
+    "business_intermediate_1": {
+      "en": "Formal understanding between parties",
+      "es": "Entendimiento formal entre partes",
+      "impostor": "DISPUTE"
+    },
+    "business_intermediate_2": {
+      "en": "Leadership roles",
+      "es": "Roles de liderazgo",
+      "impostor": "INVOICE"
+    },
+    "business_intermediate_3": {
+      "en": "To get bigger",
+      "es": "Crecer",
+      "impostor": "DECLINE"
+    },
+    "business_intermediate_4": {
+      "en": "Business meetings",
+      "es": "Reuniones de negocios",
+      "impostor": "WAREHOUSE"
+    },
+    "business_intermediate_5": {
+      "en": "Someone who buys from you",
+      "es": "Alguien que te compra",
+      "impostor": "VENDOR"
+    },
+    "business_intermediate_6": {
+      "en": "Documents",
+      "es": "Documentos",
+      "impostor": "COLLEAGUE"
+    },
+    "business_intermediate_7": {
+      "en": "To go down",
+      "es": "Bajar",
+      "impostor": "SURGE"
+    },
+    "business_intermediate_8": {
+      "en": "Managing money",
+      "es": "Administrar dinero",
+      "impostor": "DEADLINE"
+    },
+    "business_intermediate_9": {
+      "en": "To begin something",
+      "es": "Comenzar algo",
+      "impostor": "DISSOLVE"
+    },
+    "business_intermediate_10": {
+      "en": "People who work for a company",
+      "es": "Personas que trabajan para una empresa",
+      "impostor": "SHAREHOLDER"
+    },
+    "business_intermediate_11": {
+      "en": "Doing something well",
+      "es": "Hacer algo bien",
+      "impostor": "STAGNANT"
+    },
+    "business_intermediate_12": {
+      "en": "Parts of a company's structure",
+      "es": "Partes de la estructura de una empresa",
+      "impostor": "DEADLINE"
+    },
+    "business_intermediate_13": {
+      "en": "Documents about money owed or paid",
+      "es": "Documentos sobre dinero debido o pagado",
+      "impostor": "CATALOG"
+    },
+    "business_intermediate_14": {
+      "en": "About organizing time",
+      "es": "Sobre organizar el tiempo",
+      "impostor": "BONUS"
+    },
+    "business_intermediate_15": {
+      "en": "Company that sells you goods",
+      "es": "Empresa que te vende bienes",
+      "impostor": "COMPETITOR"
+    },
+    "business_intermediate_16": {
+      "en": "Good things you can get at work",
+      "es": "Cosas buenas que puedes recibir en el trabajo",
+      "impostor": "DISMISSAL"
+    },
+    "business_intermediate_17": {
+      "en": "Predictions about future money",
+      "es": "Predicciones sobre dinero futuro",
+      "impostor": "REFUND"
+    },
+    "business_intermediate_18": {
+      "en": "Places where a business operates",
+      "es": "Lugares donde opera un negocio",
+      "impostor": "PASSPORT"
+    },
+    "business_intermediate_19": {
+      "en": "Ways to learn at work",
+      "es": "Formas de aprender en el trabajo",
+      "impostor": "RESIGNATION"
+    },
+    "business_intermediate_20": {
+      "en": "Financial stake in the company",
+      "es": "Participacion financiera en la empresa",
+      "impostor": "INTERN"
+    },
+    "business_intermediate_21": {
+      "en": "Lower price",
+      "es": "Precio menor",
+      "impostor": "SURCHARGE"
+    },
+    "business_intermediate_22": {
+      "en": "How you intend to do something",
+      "es": "Como piensas hacer algo",
+      "impostor": "OUTCOME"
+    },
+    "business_intermediate_23": {
+      "en": "Ways of dealing with people in business",
+      "es": "Formas de tratar con personas en los negocios",
+      "impostor": "FILING"
+    },
+    "business_intermediate_24": {
+      "en": "Money coming in",
+      "es": "Dinero que entra",
+      "impostor": "OVERHEAD"
+    },
+    "business_advanced_0": {
+      "en": "Legal or regulatory risk",
+      "es": "Riesgo legal o regulatorio",
+      "impostor": "SYNERGY"
+    },
+    "business_advanced_1": {
+      "en": "To bring together",
+      "es": "Unir",
+      "impostor": "DIVEST"
+    },
+    "business_advanced_2": {
+      "en": "Tools to measure or predict performance",
+      "es": "Herramientas para medir o predecir el rendimiento",
+      "impostor": "SUBSIDIARY"
+    },
+    "business_advanced_3": {
+      "en": "To make bigger",
+      "es": "Hacer más grande",
+      "impostor": "CONTRACT"
+    },
+    "business_advanced_4": {
+      "en": "Instability",
+      "es": "Inestabilidad",
+      "impostor": "ROBUST"
+    },
+    "business_advanced_5": {
+      "en": "Money gained from an investment",
+      "es": "Dinero ganado de una inversión",
+      "impostor": "OVERHEAD"
+    },
+    "business_advanced_6": {
+      "en": "To protect against risk",
+      "es": "Protegerse contra el riesgo",
+      "impostor": "DISCLOSE"
+    },
+    "business_advanced_7": {
+      "en": "To lose value",
+      "es": "Perder valor",
+      "impostor": "APPRECIATE"
+    },
+    "business_advanced_8": {
+      "en": "Ownership or corporate structure",
+      "es": "Propiedad o estructura corporativa",
+      "impostor": "FORECAST"
+    },
+    "business_advanced_9": {
+      "en": "Careful decision-making",
+      "es": "Toma de decisiones cuidadosa",
+      "impostor": "RECKLESS"
+    },
+    "business_advanced_10": {
+      "en": "Resolving disputes",
+      "es": "Resolver disputas",
+      "impostor": "EQUITY"
+    },
+    "business_advanced_11": {
+      "en": "Things of value a company owns",
+      "es": "Cosas de valor que posee una empresa",
+      "impostor": "LIABILITY"
+    },
+    "business_advanced_12": {
+      "en": "Strong market position",
+      "es": "Posición fuerte en el mercado",
+      "impostor": "OBSOLETE"
+    },
+    "business_advanced_13": {
+      "en": "Something you owe",
+      "es": "Algo que debes",
+      "impostor": "ASSET"
+    },
+    "business_advanced_14": {
+      "en": "One company absorbing another",
+      "es": "Empresa absorbiendo otra",
+      "impostor": "LAYOFF"
+    },
+    "business_advanced_15": {
+      "en": "Rules a company must follow",
+      "es": "Reglas que la empresa debe cumplir",
+      "impostor": "INCENTIVE"
+    },
+    "business_advanced_16": {
+      "en": "Checking something carefully",
+      "es": "Revisar algo con cuidado",
+      "impostor": "LAUNCH"
+    },
+    "business_advanced_17": {
+      "en": "Producing good money",
+      "es": "Que produce buen dinero",
+      "impostor": "WASTEFUL"
+    },
+    "business_advanced_18": {
+      "en": "Things promised to secure a loan",
+      "es": "Cosas prometidas para garantizar un prestamo",
+      "impostor": "DIVIDEND"
+    },
+    "business_advanced_19": {
+      "en": "Giving work to someone else",
+      "es": "Dar trabajo a otro",
+      "impostor": "MONOPOLIZE"
+    },
+    "business_advanced_20": {
+      "en": "Unable to pay",
+      "es": "No poder pagar",
+      "impostor": "SOLVENT"
+    },
+    "business_advanced_21": {
+      "en": "Financial interest in the company",
+      "es": "Interés financiero en la empresa",
+      "impostor": "APPRENTICE"
+    },
+    "business_advanced_22": {
+      "en": "Ways to solve a conflict by agreement",
+      "es": "Resuelven un conflicto por acuerdo",
+      "impostor": "LITIGATION"
+    },
+    "business_advanced_23": {
+      "en": "Possible to do",
+      "es": "Posible de hacer",
+      "impostor": "UNREALISTIC"
+    },
+    "business_advanced_24": {
+      "en": "Acquiring supplies",
+      "es": "Adquirir suministros",
+      "impostor": "RETAILING"
+    },
+    "travel_basic_0": {
+      "en": "Things you need at an airport",
+      "es": "Cosas que necesitas en un aeropuerto",
+      "impostor": "BEACH"
+    },
+    "travel_basic_1": {
+      "en": "Period of travel",
+      "es": "Período de viaje",
+      "impostor": "ARRIVAL"
+    },
+    "travel_basic_2": {
+      "en": "Ways to travel",
+      "es": "Formas de viajar",
+      "impostor": "HOTEL"
+    },
+    "travel_basic_3": {
+      "en": "Things you carry when traveling",
+      "es": "Cosas que llevas al viajar",
+      "impostor": "SOUVENIR"
+    },
+    "travel_basic_4": {
+      "en": "Where you stay",
+      "es": "Dónde te hospedas",
+      "impostor": "TICKET"
+    },
+    "travel_basic_5": {
+      "en": "Someone who leads you",
+      "es": "Que te guía",
+      "impostor": "MAP"
+    },
+    "travel_basic_6": {
+      "en": "Documents you need to travel",
+      "es": "Documentos que necesitas para viajar",
+      "impostor": "SUNSCREEN"
+    },
+    "travel_basic_7": {
+      "en": "To arrive somewhere",
+      "es": "Llegar a algún lugar",
+      "impostor": "DEPART"
+    },
+    "travel_basic_8": {
+      "en": "Items for a beach trip",
+      "es": "Artículos para un viaje a la playa",
+      "impostor": "PASSPORT"
+    },
+    "travel_basic_9": {
+      "en": "To go and see new places",
+      "es": "Ir a ver lugares nuevos",
+      "impostor": "AVOID"
+    },
+    "travel_basic_10": {
+      "en": "Places tourists visit",
+      "es": "Lugares que visitan los turistas",
+      "impostor": "LUGGAGE"
+    },
+    "travel_basic_11": {
+      "en": "Place you're going to",
+      "es": "Lugar al que vas",
+      "impostor": "ROUTE"
+    },
+    "travel_basic_12": {
+      "en": "Weather conditions",
+      "es": "Condiciones climáticas",
+      "impostor": "EXPENSIVE"
+    },
+    "travel_basic_13": {
+      "en": "Something you carry your things in",
+      "es": "Algo donde llevas tus cosas",
+      "impostor": "TICKET"
+    },
+    "travel_basic_14": {
+      "en": "Natural places",
+      "es": "Lugares naturales",
+      "impostor": "AIRPORT"
+    },
+    "travel_basic_15": {
+      "en": "Help you find your way",
+      "es": "Ayudan a orientarte",
+      "impostor": "PILLOW"
+    },
+    "travel_basic_16": {
+      "en": "Travelling somewhere",
+      "es": "Viajar a algun lado",
+      "impostor": "ARRIVAL"
+    },
+    "travel_basic_17": {
+      "en": "Documents you need to travel",
+      "es": "Documentos que necesitas para viajar",
+      "impostor": "CAMERA"
+    },
+    "travel_basic_18": {
+      "en": "Places to sleep when travelling",
+      "es": "Lugares para dormir viajando",
+      "impostor": "MUSEUM"
+    },
+    "travel_basic_19": {
+      "en": "Places full of water",
+      "es": "Lugares llenos de agua",
+      "impostor": "DESERT"
+    },
+    "travel_basic_20": {
+      "en": "People who come from elsewhere",
+      "es": "Personas que vienen de fuera",
+      "impostor": "RESIDENT"
+    },
+    "travel_basic_21": {
+      "en": "Travel that costs little",
+      "es": "Viajes que cuestan poco",
+      "impostor": "LUXURY"
+    },
+    "travel_basic_22": {
+      "en": "Moving on foot",
+      "es": "Moverse a pie",
+      "impostor": "DRIVE"
+    },
+    "travel_intermediate_0": {
+      "en": "Airport procedures or areas",
+      "es": "Procedimientos o áreas del aeropuerto",
+      "impostor": "SOUVENIR"
+    },
+    "travel_intermediate_1": {
+      "en": "Planned list of activities or times",
+      "es": "Lista planeada de actividades u horarios",
+      "impostor": "EXCURSION"
+    },
+    "travel_intermediate_2": {
+      "en": "Money while traveling",
+      "es": "Dinero durante un viaje",
+      "impostor": "ITINERARY"
+    },
+    "travel_intermediate_3": {
+      "en": "Stop between flights",
+      "es": "Parada entre vuelos",
+      "impostor": "DESTINATION"
+    },
+    "travel_intermediate_4": {
+      "en": "Places to stay",
+      "es": "Lugares para hospedarse",
+      "impostor": "EMBASSY"
+    },
+    "travel_intermediate_5": {
+      "en": "Item to remember a trip",
+      "es": "Artículo para recordar un viaje",
+      "impostor": "LUGGAGE"
+    },
+    "travel_intermediate_6": {
+      "en": "Official permissions to travel",
+      "es": "Permisos oficiales para viajar",
+      "impostor": "ITINERARY"
+    },
+    "travel_intermediate_7": {
+      "en": "Someone visiting a place",
+      "es": "Alguien que visita un lugar",
+      "impostor": "RESIDENT"
+    },
+    "travel_intermediate_8": {
+      "en": "Places tourists visit",
+      "es": "Lugares que visitan los turistas",
+      "impostor": "CUSTOMS"
+    },
+    "travel_intermediate_9": {
+      "en": "To move something later",
+      "es": "Posponer algo",
+      "impostor": "EXPEDITE"
+    },
+    "travel_intermediate_10": {
+      "en": "Tiredness from travel",
+      "es": "Cansancio por viajar",
+      "impostor": "CURRENCY"
+    },
+    "travel_intermediate_11": {
+      "en": "Diplomatic office abroad",
+      "es": "Oficina diplomática en el extranjero",
+      "impostor": "CHECKPOINT"
+    },
+    "travel_intermediate_12": {
+      "en": "Crossing into a country",
+      "es": "Cruzar hacia un país",
+      "impostor": "ITINERARY"
+    },
+    "travel_intermediate_13": {
+      "en": "Happen before or during leaving",
+      "es": "Ocurren antes o durante la salida",
+      "impostor": "LANDING"
+    },
+    "travel_intermediate_14": {
+      "en": "About organizing a trip",
+      "es": "Sobre organizar un viaje",
+      "impostor": "SOUVENIR"
+    },
+    "travel_intermediate_15": {
+      "en": "Checkpoints you must pass",
+      "es": "Controles que debes pasar",
+      "impostor": "LOUNGE"
+    },
+    "travel_intermediate_16": {
+      "en": "Problems that ruin a trip",
+      "es": "Problemas que arruinan un viaje",
+      "impostor": "UPGRADE"
+    },
+    "travel_intermediate_17": {
+      "en": "About handling money abroad",
+      "es": "Sobre manejar dinero en el extranjero",
+      "impostor": "BACKPACK"
+    },
+    "travel_intermediate_18": {
+      "en": "Place to stay",
+      "es": "Lugar donde quedarse",
+      "impostor": "TRANSPORT"
+    },
+    "travel_intermediate_19": {
+      "en": "Full of people",
+      "es": "Lleno de gente",
+      "impostor": "DESERTED"
+    },
+    "travel_intermediate_20": {
+      "en": "Going and coming back",
+      "es": "Ir y volver",
+      "impostor": "ONE-WAY"
+    },
+    "travel_intermediate_21": {
+      "en": "Printed information for travellers",
+      "es": "Informacion impresa para viajeros",
+      "impostor": "SUITCASE"
+    },
+    "travel_intermediate_22": {
+      "en": "Protection if something goes wrong",
+      "es": "Protección si algo sale mal",
+      "impostor": "DEPOSIT"
+    },
+    "travel_intermediate_23": {
+      "en": "Feeling worn out",
+      "es": "Sentirse agotado",
+      "impostor": "EXCITEMENT"
+    },
+    "travel_intermediate_24": {
+      "en": "Places where boats arrive",
+      "es": "Lugares donde llegan barcos",
+      "impostor": "RUNWAY"
+    },
+    "travel_advanced_0": {
+      "en": "Types of long or meaningful journeys",
+      "es": "Tipos de viajes largos o significativos",
+      "impostor": "CURRENCY"
+    },
+    "travel_advanced_1": {
+      "en": "Moving from place to place",
+      "es": "Moverse de un lugar a otro",
+      "impostor": "SEDENTARY"
+    },
+    "travel_advanced_2": {
+      "en": "Legal control of movement across borders",
+      "es": "Control legal del movimiento a través de fronteras",
+      "impostor": "WANDERLUST"
+    },
+    "travel_advanced_3": {
+      "en": "Strong desire",
+      "es": "Fuerte deseo",
+      "impostor": "RELUCTANCE"
+    },
+    "travel_advanced_4": {
+      "en": "Geographical landforms",
+      "es": "Accidentes geográficos",
+      "impostor": "ITINERANT"
+    },
+    "travel_advanced_5": {
+      "en": "Period of staying somewhere",
+      "es": "Período de quedarse en algún lugar",
+      "impostor": "DEPARTURE"
+    },
+    "travel_advanced_6": {
+      "en": "Environmentally responsible travel",
+      "es": "Viaje responsable con el medio ambiente",
+      "impostor": "ITINERARY"
+    },
+    "travel_advanced_7": {
+      "en": "Someone familiar with many cultures",
+      "es": "Familiarizado con muchas culturas",
+      "impostor": "PROVINCIAL"
+    },
+    "travel_advanced_8": {
+      "en": "Legal authority over people crossing borders",
+      "es": "Autoridad legal sobre personas que cruzan fronteras",
+      "impostor": "SOJOURN"
+    },
+    "travel_advanced_9": {
+      "en": "Planned travel",
+      "es": "Viajes planeados",
+      "impostor": "SPONTANEOUS"
+    },
+    "travel_advanced_10": {
+      "en": "Landforms related to islands",
+      "es": "Accidentes geográficos relacionados con islas",
+      "impostor": "EXPEDITION"
+    },
+    "travel_advanced_11": {
+      "en": "Deep, real travel experience",
+      "es": "Experiencia de viaje profunda y real",
+      "impostor": "SUPERFICIAL"
+    },
+    "travel_advanced_12": {
+      "en": "Long, significant journeys",
+      "es": "Viajes largos y significativos",
+      "impostor": "LAYOVER"
+    },
+    "travel_advanced_13": {
+      "en": "Plans of what you will do",
+      "es": "Planes de lo que haras",
+      "impostor": "DESTINATION"
+    },
+    "travel_advanced_14": {
+      "en": "Far from everything",
+      "es": "Lejos de todo",
+      "impostor": "CENTRAL"
+    },
+    "travel_advanced_15": {
+      "en": "Official permissions to enter",
+      "es": "Permisos oficiales para entrar",
+      "impostor": "BROCHURE"
+    },
+    "travel_advanced_16": {
+      "en": "Beautiful views",
+      "es": "Vistas hermosas",
+      "impostor": "MUNDANE"
+    },
+    "travel_advanced_17": {
+      "en": "Moving to live somewhere else",
+      "es": "Mudarse a vivir a otro lugar",
+      "impostor": "COMMUTE"
+    },
+    "travel_advanced_18": {
+      "en": "Ways of gaining the right to stay",
+      "es": "Formas de ganar el derecho a quedarse",
+      "impostor": "DEPORTATION"
+    },
+    "travel_advanced_19": {
+      "en": "Getting used to a new place",
+      "es": "Acostumbrarse a un lugar nuevo",
+      "impostor": "WITHDRAW"
+    },
+    "travel_advanced_20": {
+      "en": "Short pleasure trips",
+      "es": "Viajes cortos de placer",
+      "impostor": "DEADLINE"
+    },
+    "travel_advanced_21": {
+      "en": "Parts of an airport",
+      "es": "Partes de un aeropuerto",
+      "impostor": "CABIN"
+    },
+    "travel_advanced_22": {
+      "en": "Places that treat visitors well",
+      "es": "Lugares que tratan bien al visitante",
+      "impostor": "HOSTILE"
+    },
+    "travel_advanced_23": {
+      "en": "Breaking the journey",
+      "es": "Interrumpir el viaje",
+      "impostor": "NONSTOP"
+    },
+    "daily_basic_0": {
+      "en": "Things you do in the morning",
+      "es": "Cosas que haces en la mañana",
+      "impostor": "DINNER"
+    },
+    "daily_basic_1": {
+      "en": "To make something clean",
+      "es": "Limpiar algo",
+      "impostor": "MESSY"
+    },
+    "daily_basic_2": {
+      "en": "Kitchen items",
+      "es": "Artículos de cocina",
+      "impostor": "PILLOW"
+    },
+    "daily_basic_3": {
+      "en": "To communicate by speaking",
+      "es": "Comunicarse hablando",
+      "impostor": "LISTEN"
+    },
+    "daily_basic_4": {
+      "en": "Sleeping",
+      "es": "Dormir",
+      "impostor": "STOVE"
+    },
+    "daily_basic_5": {
+      "en": "To feel calm",
+      "es": "Sentirse tranquilo",
+      "impostor": "WORRY"
+    },
+    "daily_basic_6": {
+      "en": "Things you buy at a grocery store",
+      "es": "Cosas que compras en una tienda de abarrotes",
+      "impostor": "TOWEL"
+    },
+    "daily_basic_7": {
+      "en": "To remove dirt",
+      "es": "Quitar la suciedad",
+      "impostor": "FOLD"
+    },
+    "daily_basic_8": {
+      "en": "Bathroom items",
+      "es": "Artículos de baño",
+      "impostor": "BLANKET"
+    },
+    "daily_basic_9": {
+      "en": "To take it easy",
+      "es": "Tomarlo con calma",
+      "impostor": "HURRY"
+    },
+    "daily_basic_10": {
+      "en": "Common weekend activities",
+      "es": "Actividades comunes de fin de semana",
+      "impostor": "COMMUTE"
+    },
+    "daily_basic_11": {
+      "en": "To obtain something with money",
+      "es": "Obtener algo con dinero",
+      "impostor": "SELL"
+    },
+    "daily_basic_12": {
+      "en": "Cleaning chores",
+      "es": "Tareas de limpieza",
+      "impostor": "COOK"
+    },
+    "daily_basic_13": {
+      "en": "Meals you eat",
+      "es": "Comidas que comes",
+      "impostor": "KITCHEN"
+    },
+    "daily_basic_14": {
+      "en": "Clothes you wear",
+      "es": "Ropa que usas",
+      "impostor": "MIRROR"
+    },
+    "daily_basic_15": {
+      "en": "Feeling good",
+      "es": "Sentirse bien",
+      "impostor": "ANGRY"
+    },
+    "daily_basic_16": {
+      "en": "Parts of a day",
+      "es": "Partes de un dia",
+      "impostor": "MONDAY"
+    },
+    "daily_basic_17": {
+      "en": "Resting",
+      "es": "Descansar",
+      "impostor": "RUN"
+    },
+    "daily_basic_18": {
+      "en": "Family members",
+      "es": "Miembros de la familia",
+      "impostor": "NEIGHBOR"
+    },
+    "daily_basic_19": {
+      "en": "Of great size",
+      "es": "De gran tamano",
+      "impostor": "TINY"
+    },
+    "daily_basic_20": {
+      "en": "Used to get clean",
+      "es": "Se usan para limpiarse",
+      "impostor": "SPOON"
+    },
+    "daily_basic_21": {
+      "en": "Moving with speed",
+      "es": "Moverse con velocidad",
+      "impostor": "SLOW"
+    },
+    "daily_basic_22": {
+      "en": "Fruits",
+      "es": "Frutas",
+      "impostor": "CARROT"
+    },
+    "daily_basic_23": {
+      "en": "To start something",
+      "es": "Empezar algo",
+      "impostor": "FINISH"
+    },
+    "daily_basic_24": {
+      "en": "Furniture you can use",
+      "es": "Muebles que puedes usar",
+      "impostor": "WINDOW"
+    },
+    "daily_intermediate_0": {
+      "en": "Regular payments",
+      "es": "Pagos regulares",
+      "impostor": "ERRAND"
+    },
+    "daily_intermediate_1": {
+      "en": "Something you must do",
+      "es": "Algo que debes hacer",
+      "impostor": "HOBBY"
+    },
+    "daily_intermediate_2": {
+      "en": "Fixing or improving a home",
+      "es": "Arreglar o mejorar una casa",
+      "impostor": "GROCERY"
+    },
+    "daily_intermediate_3": {
+      "en": "Something done regularly",
+      "es": "Algo que se hace regularmente",
+      "impostor": "EXCEPTION"
+    },
+    "daily_intermediate_4": {
+      "en": "Part of a morning routine",
+      "es": "Parte de una rutina matutina",
+      "impostor": "APPOINTMENT"
+    },
+    "daily_intermediate_5": {
+      "en": "To make something work again",
+      "es": "Hacer que algo funcione de nuevo",
+      "impostor": "BREAK"
+    },
+    "daily_intermediate_6": {
+      "en": "Organizing your time",
+      "es": "Organizar el tiempo",
+      "impostor": "THERMOSTAT"
+    },
+    "daily_intermediate_7": {
+      "en": "To delay doing something",
+      "es": "Posponer algo",
+      "impostor": "COMPLETE"
+    },
+    "daily_intermediate_8": {
+      "en": "Renting a home",
+      "es": "Alquilar una casa",
+      "impostor": "ERRAND"
+    },
+    "daily_intermediate_9": {
+      "en": "To take care of something",
+      "es": "Cuidar algo",
+      "impostor": "NEGLECT"
+    },
+    "daily_intermediate_10": {
+      "en": "Home technology services",
+      "es": "Servicios de tecnología del hogar",
+      "impostor": "PLUMBING"
+    },
+    "daily_intermediate_11": {
+      "en": "Having a lot to do",
+      "es": "Tener mucho que hacer",
+      "impostor": "IDLE"
+    },
+    "daily_intermediate_12": {
+      "en": "Financial obligations of a household",
+      "es": "Obligaciones financieras de un hogar",
+      "impostor": "CHORE"
+    },
+    "daily_intermediate_13": {
+      "en": "Having no energy",
+      "es": "No tener energia",
+      "impostor": "ENERGETIC"
+    },
+    "daily_intermediate_14": {
+      "en": "Chores you do inside the house",
+      "es": "Tareas dentro de la casa",
+      "impostor": "GARDENING"
+    },
+    "daily_intermediate_15": {
+      "en": "Used to cook",
+      "es": "Se usan para cocinar",
+      "impostor": "BLANKET"
+    },
+    "daily_intermediate_16": {
+      "en": "Something you do regularly",
+      "es": "Algo que haces con regularidad",
+      "impostor": "SURPRISE"
+    },
+    "daily_intermediate_17": {
+      "en": "Part of a city",
+      "es": "Parte de la ciudad",
+      "impostor": "BUILDING"
+    },
+    "daily_intermediate_18": {
+      "en": "Fighting with words",
+      "es": "Pelear con palabras",
+      "impostor": "AGREE"
+    },
+    "daily_intermediate_19": {
+      "en": "Arranging a time",
+      "es": "Reservar un momento",
+      "impostor": "CANCELLATION"
+    },
+    "daily_intermediate_20": {
+      "en": "Good manners",
+      "es": "Buenos modales",
+      "impostor": "RUDE"
+    },
+    "daily_intermediate_21": {
+      "en": "Places to buy food",
+      "es": "Lugares para comprar comida",
+      "impostor": "PHARMACY"
+    },
+    "daily_intermediate_22": {
+      "en": "Giving something back",
+      "es": "Devolver algo",
+      "impostor": "DONATE"
+    },
+    "daily_intermediate_23": {
+      "en": "Parts of a house",
+      "es": "Partes de una casa",
+      "impostor": "FENCE"
+    },
+    "daily_advanced_0": {
+      "en": "Something boring and repetitive",
+      "es": "Algo aburrido y repetitivo",
+      "impostor": "SPONTANEOUS"
+    },
+    "daily_advanced_1": {
+      "en": "Being very organized and careful",
+      "es": "Ser muy organizado y cuidadoso",
+      "impostor": "CARELESS"
+    },
+    "daily_advanced_2": {
+      "en": "Lack of energy",
+      "es": "Falta de energía",
+      "impostor": "VIGOROUS"
+    },
+    "daily_advanced_3": {
+      "en": "Not needing help from others",
+      "es": "No necesitar ayuda de otros",
+      "impostor": "DEPENDENT"
+    },
+    "daily_advanced_4": {
+      "en": "Very important",
+      "es": "Muy importante",
+      "impostor": "TRIVIAL"
+    },
+    "daily_advanced_5": {
+      "en": "To restore energy",
+      "es": "Recuperar energía",
+      "impostor": "EXHAUST"
+    },
+    "daily_advanced_6": {
+      "en": "Consistent, predictable behavior",
+      "es": "Comportamiento consistente y predecible",
+      "impostor": "ERRATIC"
+    },
+    "daily_advanced_7": {
+      "en": "To make things simpler",
+      "es": "Hacer las cosas más simples",
+      "impostor": "COMPLICATE"
+    },
+    "daily_advanced_8": {
+      "en": "Acting without planning",
+      "es": "Actuar sin planear",
+      "impostor": "DELIBERATE"
+    },
+    "daily_advanced_9": {
+      "en": "To delay an action",
+      "es": "Posponer una acción",
+      "impostor": "EXPEDITE"
+    },
+    "daily_advanced_10": {
+      "en": "Organized approach",
+      "es": "Enfoque organizado",
+      "impostor": "HAPHAZARD"
+    },
+    "daily_advanced_11": {
+      "en": "Happening all the time",
+      "es": "Que sucede todo el tiempo",
+      "impostor": "OCCASIONAL"
+    },
+    "daily_advanced_12": {
+      "en": "Being stuck without progress",
+      "es": "Estar estancado sin progreso",
+      "impostor": "MOMENTUM"
+    },
+    "daily_advanced_13": {
+      "en": "Very careful",
+      "es": "Muy cuidadoso",
+      "impostor": "CARELESS"
+    },
+    "daily_advanced_14": {
+      "en": "Able to withstand difficulty",
+      "es": "Capaz de resistir",
+      "impostor": "FRAGILE"
+    },
+    "daily_advanced_15": {
+      "en": "Things you have to do",
+      "es": "Cosas que debes hacer",
+      "impostor": "LEISURE"
+    },
+    "daily_advanced_16": {
+      "en": "Careful with money",
+      "es": "Cuidadoso con el dinero",
+      "impostor": "EXTRAVAGANT"
+    },
+    "daily_advanced_17": {
+      "en": "Disorganization",
+      "es": "Desorganizacion",
+      "impostor": "ORDER"
+    },
+    "daily_advanced_18": {
+      "en": "Everyday dullness",
+      "es": "Lo cotidiano y soso",
+      "impostor": "EXTRAORDINARY"
+    },
+    "daily_advanced_19": {
+      "en": "Paying attention to others",
+      "es": "Atender a los demas",
+      "impostor": "INDIFFERENT"
+    },
+    "daily_advanced_20": {
+      "en": "Putting things off",
+      "es": "Dejar las cosas para despues",
+      "impostor": "EXPEDITE"
+    },
+    "daily_advanced_21": {
+      "en": "Not moving much",
+      "es": "Moverse poco",
+      "impostor": "ACTIVE"
+    },
+    "daily_advanced_22": {
+      "en": "Being unable to sleep",
+      "es": "No poder dormir",
+      "impostor": "SLUMBER"
+    },
+    "daily_advanced_23": {
+      "en": "Taking care of a child",
+      "es": "Cuidar a un nino",
+      "impostor": "NEGLECT"
+    },
+    "daily_advanced_24": {
+      "en": "About the art of cooking",
+      "es": "Sobre el arte de cocinar",
+      "impostor": "APPETITE"
+    },
+    "general_basic_0": {
+      "en": "Weather",
+      "es": "Clima",
+      "impostor": "HAPPY"
+    },
+    "general_basic_1": {
+      "en": "Big in size",
+      "es": "Grande en tamaño",
+      "impostor": "TINY"
+    },
+    "general_basic_2": {
+      "en": "Colors",
+      "es": "Colores",
+      "impostor": "SOFT"
+    },
+    "general_basic_3": {
+      "en": "Positive quality",
+      "es": "Cualidad positiva",
+      "impostor": "TERRIBLE"
+    },
+    "general_basic_4": {
+      "en": "Animals",
+      "es": "Animales",
+      "impostor": "HAPPY"
+    },
+    "general_basic_5": {
+      "en": "Small in size",
+      "es": "Pequeño en tamaño",
+      "impostor": "ENORMOUS"
+    },
+    "general_basic_6": {
+      "en": "Family relations",
+      "es": "Relaciones familiares",
+      "impostor": "FRIEND"
+    },
+    "general_basic_7": {
+      "en": "Not hard to do",
+      "es": "No difícil de hacer",
+      "impostor": "DIFFICULT"
+    },
+    "general_basic_8": {
+      "en": "Ordinal numbers",
+      "es": "Números ordinales",
+      "impostor": "MANY"
+    },
+    "general_basic_9": {
+      "en": "Moving quickly",
+      "es": "Moverse rápido",
+      "impostor": "SLUGGISH"
+    },
+    "general_basic_10": {
+      "en": "Parts of a day",
+      "es": "Partes de un día",
+      "impostor": "YESTERDAY"
+    },
+    "general_basic_11": {
+      "en": "Attractive",
+      "es": "Atractivo",
+      "impostor": "UGLY"
+    },
+    "general_basic_12": {
+      "en": "Seasons",
+      "es": "Estaciones del año",
+      "impostor": "WEEKEND"
+    },
+    "general_basic_13": {
+      "en": "Animals",
+      "es": "Animales",
+      "impostor": "TREE"
+    },
+    "general_basic_14": {
+      "en": "Colors",
+      "es": "Colores",
+      "impostor": "ROUND"
+    },
+    "general_basic_15": {
+      "en": "Objects in space",
+      "es": "Objetos del espacio",
+      "impostor": "CLOUD"
+    },
+    "general_basic_16": {
+      "en": "Not big",
+      "es": "No grande",
+      "impostor": "GIANT"
+    },
+    "general_basic_17": {
+      "en": "Work in health care",
+      "es": "Trabajan en salud",
+      "impostor": "TEACHER"
+    },
+    "general_basic_18": {
+      "en": "Types of weather",
+      "es": "Tipos de clima",
+      "impostor": "MOUNTAIN"
+    },
+    "general_basic_19": {
+      "en": "Say how many",
+      "es": "Dicen cuantos",
+      "impostor": "FIRST"
+    },
+    "general_basic_20": {
+      "en": "Musical instruments",
+      "es": "Instrumentos musicales",
+      "impostor": "PAINTING"
+    },
+    "general_basic_21": {
+      "en": "Not hard",
+      "es": "Que no es dificil",
+      "impostor": "DIFFICULT"
+    },
+    "general_basic_22": {
+      "en": "Parts of the face",
+      "es": "Partes de la cara",
+      "impostor": "HAND"
+    },
+    "general_basic_23": {
+      "en": "Things you read",
+      "es": "Cosas que lees",
+      "impostor": "RADIO"
+    },
+    "general_basic_24": {
+      "en": "Having many years",
+      "es": "Tener muchos anos",
+      "impostor": "YOUNG"
+    },
+    "general_intermediate_0": {
+      "en": "Good character traits",
+      "es": "Buenos rasgos de carácter",
+      "impostor": "ARROGANT"
+    },
+    "general_intermediate_1": {
+      "en": "Sure of yourself",
+      "es": "Seguro de ti mismo",
+      "impostor": "TIMID"
+    },
+    "general_intermediate_2": {
+      "en": "Difficult traits",
+      "es": "Rasgos difíciles",
+      "impostor": "GENEROUS"
+    },
+    "general_intermediate_3": {
+      "en": "Able to change easily",
+      "es": "Capaz de cambiar fácilmente",
+      "impostor": "RIGID"
+    },
+    "general_intermediate_4": {
+      "en": "Thinking with logic",
+      "es": "Pensar con lógica",
+      "impostor": "EMOTIONAL"
+    },
+    "general_intermediate_5": {
+      "en": "Not afraid",
+      "es": "Sin miedo",
+      "impostor": "COWARDLY"
+    },
+    "general_intermediate_6": {
+      "en": "Feeling worried",
+      "es": "Sentirse preocupado",
+      "impostor": "RELAXED"
+    },
+    "general_intermediate_7": {
+      "en": "Too proud of yourself",
+      "es": "Demasiado orgulloso de ti mismo",
+      "impostor": "MODEST"
+    },
+    "general_intermediate_8": {
+      "en": "Being open to new ideas",
+      "es": "Estar abierto a nuevas ideas",
+      "impostor": "STUBBORN"
+    },
+    "general_intermediate_9": {
+      "en": "Not wanting to do something",
+      "es": "No querer hacer algo",
+      "impostor": "EAGER"
+    },
+    "general_intermediate_10": {
+      "en": "Staying calm",
+      "es": "Mantenerse tranquilo",
+      "impostor": "FRANTIC"
+    },
+    "general_intermediate_11": {
+      "en": "Full of new ideas",
+      "es": "Lleno de ideas nuevas",
+      "impostor": "UNORIGINAL"
+    },
+    "general_intermediate_12": {
+      "en": "Being careful",
+      "es": "Ser cuidadoso",
+      "impostor": "RECKLESS"
+    },
+    "general_intermediate_13": {
+      "en": "Moving water",
+      "es": "Agua en movimiento",
+      "impostor": "POND"
+    },
+    "general_intermediate_14": {
+      "en": "Making something new",
+      "es": "Hacer algo nuevo",
+      "impostor": "COPY"
+    },
+    "general_intermediate_15": {
+      "en": "Telling the truth",
+      "es": "Decir la verdad",
+      "impostor": "DECEITFUL"
+    },
+    "general_intermediate_16": {
+      "en": "Natural disasters",
+      "es": "Desastres naturales",
+      "impostor": "HARVEST"
+    },
+    "general_intermediate_17": {
+      "en": "Getting bigger",
+      "es": "Hacerse mas grande",
+      "impostor": "SHRINK"
+    },
+    "general_intermediate_18": {
+      "en": "Inside the body",
+      "es": "Estan dentro del cuerpo",
+      "impostor": "SKIN"
+    },
+    "general_intermediate_19": {
+      "en": "Without sound",
+      "es": "Sin sonido",
+      "impostor": "DEAFENING"
+    },
+    "general_intermediate_20": {
+      "en": "Something that shows the truth",
+      "es": "Algo que demuestra la verdad",
+      "impostor": "GUESS"
+    },
+    "general_intermediate_21": {
+      "en": "Groups of musicians",
+      "es": "Grupos de musicos",
+      "impostor": "SOLOIST"
+    },
+    "general_intermediate_22": {
+      "en": "Going on forever",
+      "es": "Que dura para siempre",
+      "impostor": "TEMPORARY"
+    },
+    "general_intermediate_23": {
+      "en": "Natural landforms",
+      "es": "Formaciones naturales",
+      "impostor": "BRIDGE"
+    },
+    "general_advanced_0": {
+      "en": "Someone who doesn't give up",
+      "es": "Que no se rinde",
+      "impostor": "FICKLE"
+    },
+    "general_advanced_1": {
+      "en": "Focused on what is practical",
+      "es": "Enfocado en lo práctico",
+      "impostor": "IDEALISTIC"
+    },
+    "general_advanced_2": {
+      "en": "Understanding others well",
+      "es": "Entender bien a los demás",
+      "impostor": "OBLIVIOUS"
+    },
+    "general_advanced_3": {
+      "en": "Fearlessly bold",
+      "es": "Audaz sin miedo",
+      "impostor": "TIMID"
+    },
+    "general_advanced_4": {
+      "en": "Speaking clearly and honestly",
+      "es": "Hablar clara y honestamente",
+      "impostor": "EVASIVE"
+    },
+    "general_advanced_5": {
+      "en": "Firmly committed",
+      "es": "Firmemente comprometido",
+      "impostor": "WAVERING"
+    },
+    "general_advanced_6": {
+      "en": "Careful, wise decisions",
+      "es": "Decisiones cuidadosas y sabias",
+      "impostor": "IMPULSIVE"
+    },
+    "general_advanced_7": {
+      "en": "Caring for others before yourself",
+      "es": "Cuidar de otros antes que de ti mismo",
+      "impostor": "SELFISH"
+    },
+    "general_advanced_8": {
+      "en": "Being able to adapt",
+      "es": "Poder adaptarse",
+      "impostor": "RIGID"
+    },
+    "general_advanced_9": {
+      "en": "Impossible to defeat",
+      "es": "Imposible de vencer",
+      "impostor": "FRAGILE"
+    },
+    "general_advanced_10": {
+      "en": "Simple, plain lifestyle",
+      "es": "Estilo de vida simple y sencillo",
+      "impostor": "LAVISH"
+    },
+    "general_advanced_11": {
+      "en": "Able to speak clearly",
+      "es": "Capaz de hablar con claridad",
+      "impostor": "INCOHERENT"
+    },
+    "general_advanced_12": {
+      "en": "Noticing small details",
+      "es": "Notar pequeños detalles",
+      "impostor": "OBLIVIOUS"
+    },
+    "general_advanced_13": {
+      "en": "Hard to understand",
+      "es": "Dificil de entender",
+      "impostor": "EXPLICIT"
+    },
+    "general_advanced_14": {
+      "en": "There is a lot",
+      "es": "Que hay mucho",
+      "impostor": "SCARCE"
+    },
+    "general_advanced_15": {
+      "en": "It will happen no matter what",
+      "es": "Que pasara sin remedio",
+      "impostor": "OPTIONAL"
+    },
+    "general_advanced_16": {
+      "en": "Becoming less",
+      "es": "Disminuir",
+      "impostor": "SURGE"
+    },
+    "general_advanced_17": {
+      "en": "Someone who defends an idea",
+      "es": "Alguien que defiende una idea",
+      "impostor": "OPPONENT"
+    },
+    "general_advanced_18": {
+      "en": "It could be true",
+      "es": "Que podria ser cierto",
+      "impostor": "ABSURD"
+    },
+    "general_advanced_19": {
+      "en": "Hiding nothing",
+      "es": "No ocultar nada",
+      "impostor": "SECRETIVE"
+    },
+    "general_advanced_20": {
+      "en": "Cause something to start",
+      "es": "Hacen que algo empiece",
+      "impostor": "OBSTACLE"
+    },
+    "general_advanced_21": {
+      "en": "Widespread diseases",
+      "es": "Enfermedades extendidas",
+      "impostor": "REMEDY"
+    },
+    "general_advanced_22": {
+      "en": "Extremely careful",
+      "es": "Extremadamente cuidadoso",
+      "impostor": "SLOPPY"
+    },
+    "general_advanced_23": {
+      "en": "Never seen before",
+      "es": "Nunca visto antes",
+      "impostor": "ROUTINE"
+    }
+  }
+}

@@ -32,6 +32,9 @@ function muteRenderIcons() {
   $$("[data-mute-btn]").forEach((btn) => {
     btn.setAttribute("aria-label", muted ? "Unmute sound effects" : "Mute sound effects");
   });
+  // purely visual: the header trigger is an image now, so it can't swap glyph
+  // like the emoji does. CSS dims/desaturates it off this class instead.
+  $$(".sfx-control").forEach((c) => c.classList.toggle("is-muted", muted));
 }
 $$("[data-mute-btn]").forEach((btn) =>
   btn.addEventListener("click", () => {
@@ -1601,6 +1604,18 @@ function impExplanation(s) {
 // hint text = the part of the explanation BEFORE the first semicolon
 const impHintText = (s) => impExplanation(s).split(";")[0].trim();
 
+// short category title for the end screen, from impostor_labels.js (same
+// positional round_id as the Spanish explanations). Falls back to the hint
+// text — the first clause of the explanation — so a set with no label still
+// shows something meaningful rather than an empty bar.
+function impLabelText(s) {
+  const rid = impRoundId(s);
+  const entry = rid && typeof IMPOSTOR_LABELS === "object" && IMPOSTOR_LABELS ? IMPOSTOR_LABELS[rid] : null;
+  if (!entry) return impHintText(s);
+  const pick = selectedLanguage === "es" ? entry.es || entry.en : entry.en || entry.es;
+  return pick || impHintText(s);
+}
+
 function impReadLast() {
   try {
     return JSON.parse(localStorage.getItem(IMP_STORAGE_KEY)) || {};
@@ -1751,19 +1766,81 @@ function impShowResults() {
   const total = impScores.reduce((a, b) => a + b, 0);
   $("#imp-score").textContent = `${total} / ${IMPOSTOR_DATA.scoring.max_per_game}`;
 
+  // one expandable bar per round: chevron | category title + impostor | points.
+  // Opening it lists the round's 5 words with their meanings in the chosen
+  // language — the same lookupDefinition() every other game uses.
   const list = $("#imp-breakdown");
   list.innerHTML = "";
   impSets.forEach((s, i) => {
     const li = document.createElement("li");
-    if (impScores[i] > 0) li.classList.add("was-found");
-    const name = document.createElement("span");
-    name.textContent = interp(t("impostor", "messages.breakdown_row"), { "i + 1": i + 1, "impHintText(s)": impHintText(s), "s.impostor": s.impostor });
+    li.className = "imp-round" + (impScores[i] > 0 ? "" : " imp-lost");
+
+    const head = document.createElement("button");
+    head.type = "button";
+    head.className = "imp-round-head";
+    head.setAttribute("aria-expanded", "false");
+
+    const chev = document.createElement("span");
+    chev.className = "imp-round-chev";
+    chev.setAttribute("aria-hidden", "true");
+    chev.textContent = "▾";
+
+    const main = document.createElement("span");
+    main.className = "imp-round-main";
+    const title = document.createElement("span");
+    title.className = "imp-round-title";
+    title.textContent = impLabelText(s);
+    const imp = document.createElement("span");
+    imp.className = "imp-round-impostor";
+    imp.textContent = interp(t("impostor", "messages.breakdown_impostor"), { "s.impostor": s.impostor });
+    main.appendChild(title);
+    main.appendChild(imp);
+
     const pts = document.createElement("span");
-    pts.textContent = `${impScores[i]} pts`;
-    li.appendChild(name);
-    li.appendChild(pts);
+    pts.className = "imp-round-pts";
+    pts.textContent = interp(t("impostor", "messages.breakdown_points"), { "impScores[i]": impScores[i] });
+
+    head.appendChild(chev);
+    head.appendChild(main);
+    head.appendChild(pts);
+
+    // drawer: all 5 words, impostor flagged. Words with no entry in
+    // definitions.json still get a row — the fallback line says so instead of
+    // silently dropping the word.
+    const drawer = document.createElement("div");
+    drawer.className = "imp-round-words";
+    s.words.forEach((w) => {
+      const row = document.createElement("div");
+      row.className = "imp-word-row" + (w === s.impostor ? " is-impostor" : "");
+      const wEl = document.createElement("span");
+      wEl.className = "imp-word";
+      wEl.textContent = w;
+      if (w === s.impostor) {
+        const tag = document.createElement("span");
+        tag.className = "imp-word-tag";
+        tag.textContent = "impostor";
+        wEl.appendChild(tag);
+      }
+      const def = lookupDefinition(w);
+      const dEl = document.createElement("span");
+      dEl.className = "imp-word-def" + (def ? "" : " is-missing");
+      dEl.textContent = def || t("impostor", "messages.meaning_unavailable");
+      row.appendChild(wEl);
+      row.appendChild(dEl);
+      drawer.appendChild(row);
+    });
+
+    head.addEventListener("click", () => {
+      const open = li.classList.toggle("open");
+      head.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+
+    li.appendChild(head);
+    li.appendChild(drawer);
     list.appendChild(li);
   });
+
+  $("#imp-breakdown-hint").textContent = t("impostor", "messages.tap_for_meaning");
 
   // remember this game's sets for the anti-repeat rule (category mixed)
   const last = impReadLast();

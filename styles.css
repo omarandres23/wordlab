@@ -408,6 +408,22 @@ body {
 .mute-btn:focus-visible { outline: 2px solid var(--accent-bright, #d846ef); outline-offset: 2px; }
 .mute-icon { font-size: 1.1rem; line-height: 1; }
 
+/* the header trigger shows the VOLUME artwork instead of the 🔊 glyph. Sized
+   to fit INSIDE the existing 44px button — the button's own box is untouched,
+   so the 44px minimum tap target on mobile is preserved. The emoji is still
+   used inside the popover, where it doubles as the mute-state indicator. */
+.mute-btn-img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  display: block;
+  pointer-events: none; /* clicks belong to the button, never the image */
+  transition: opacity 0.15s, filter 0.15s;
+}
+/* muted state: the trigger emoji used to flip to 🔇, which an image can't do.
+   The class is set by muteRenderIcons() alongside the existing icon swap. */
+.sfx-control.is-muted .mute-btn-img { opacity: 0.4; filter: grayscale(1); }
+
 /* header's control sits inside the fixed-width side slot that balances the
    logo — align it to the same edge the topbar-side already reserves */
 .topbar-side .sfx-control { margin-left: auto; }
@@ -1019,6 +1035,133 @@ input.letter-cell:focus { border-color: var(--accent-bright); box-shadow: 0 0 8p
   padding: 9px 12px;
 }
 .rw-meaning-fake { font-style: italic; opacity: 0.85; }
+
+/* ===== IMPOSTOR end screen: one expandable bar per round =====
+   Replaces the old flat "R1: <long explanation> — impostor: X   3 pts" line.
+   Each bar is chevron | category title + impostor | points chip, and opens to
+   show the round's 5 words with their meanings. Category titles come from
+   impostor_labels.json, which is keyed by the same positional round_id as the
+   Spanish explanations. */
+.imp-rounds { list-style: none; margin: 0 auto 14px; padding: 0; max-width: 380px; text-align: left; }
+.imp-round {
+  border-radius: 10px;
+  margin-bottom: 8px;
+  overflow: hidden;
+  /* per-result palette, consumed by the bar and its points chip below */
+  --imp-bar: rgba(168, 85, 247, 0.22);
+  --imp-bar-hover: rgba(168, 85, 247, 0.34);
+  --imp-chip: rgba(126, 34, 206, 0.85);
+  --imp-accent: var(--accent-bright, #d846ef);
+}
+/* lost rounds drop to neutral gray so the purple reads as "you got it" */
+.imp-round.imp-lost {
+  --imp-bar: rgba(148, 163, 184, 0.16);
+  --imp-bar-hover: rgba(148, 163, 184, 0.26);
+  --imp-chip: rgba(71, 85, 105, 0.9);
+  --imp-accent: rgba(203, 213, 225, 0.75);
+}
+
+.imp-round-head {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: var(--imp-bar);
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.imp-round-head:hover { background: var(--imp-bar-hover); }
+.imp-round-head:focus-visible { outline: 2px solid var(--accent-bright, #d846ef); outline-offset: -2px; }
+
+/* chevron sits at the far left and rotates on open */
+.imp-round-chev {
+  display: flex;
+  align-items: center;
+  padding: 0 4px 0 10px;
+  font-size: 0.8rem;
+  color: var(--imp-accent);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+.imp-round.open .imp-round-chev { transform: rotate(180deg); }
+
+/* title + impostor line, takes the remaining width */
+.imp-round-main { flex: 1; min-width: 0; padding: 9px 10px; }
+.imp-round-title {
+  display: block;
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+.imp-round-impostor {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  overflow-wrap: anywhere;
+}
+
+/* points as a separate darker block flush against the right edge */
+.imp-round-pts {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 0 12px;
+  background: var(--imp-chip);
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
+/* the drawer: same max-height/opacity transition the other games use */
+.imp-round-words {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0 12px;
+  background: rgba(0, 0, 0, 0.26);
+  transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+}
+.imp-round.open .imp-round-words { max-height: 460px; opacity: 1; padding: 8px 12px; }
+
+.imp-word-row { padding: 5px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.07); }
+.imp-word-row:last-child { border-bottom: none; }
+.imp-word {
+  display: block;
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  color: #fff;
+}
+.imp-word-def { display: block; font-size: 0.78rem; line-height: 1.35; color: var(--text-dim); }
+.imp-word-def.is-missing { font-style: italic; opacity: 0.75; }
+/* the impostor of the round, called out inside the drawer */
+.imp-word-row.is-impostor { border-left: 3px solid #ff8a8a; padding-left: 8px; margin-left: -8px; }
+.imp-word-row.is-impostor .imp-word { color: #ff9a9a; }
+.imp-word-tag {
+  margin-left: 6px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #ff9a9a;
+  opacity: 0.9;
+}
+
+@media (max-width: 480px) {
+  .imp-round-title { font-size: 0.88rem; }
+  .imp-round-pts { padding: 0 9px; font-size: 0.78rem; }
+}
 
 /* Is It A Real Word? — purple/pink theme for the collapsed row and the
    expanded meaning panel (was flat gray/black). Correctness is now shown via

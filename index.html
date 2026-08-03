@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>English 11 — Daily English Games</title>
-<link rel="stylesheet" href="styles.css?v=sp19d">
+<link rel="stylesheet" href="styles.css?v=sp19e">
 </head>
 <body>
 
@@ -15,7 +15,7 @@
   <div class="topbar-side">
     <div class="sfx-control" id="home-sfx-control">
       <button class="mute-btn" type="button" aria-label="Sound settings" aria-expanded="false" data-sfx-toggle>
-        <span class="mute-icon" aria-hidden="true">🔊</span>
+        <img class="mute-btn-img" src="assets/games/VOLUME.webp" alt="" aria-hidden="true">
       </button>
       <div class="sfx-panel hidden" data-sfx-panel>
         <button class="sfx-mute-toggle" type="button" aria-label="Mute sound effects" data-mute-btn>
@@ -727,7 +727,8 @@
   <div id="imp-end" class="end-panel hidden">
     <p class="end-title">Game complete!</p>
     <p class="end-word">Your score: <strong id="imp-score"></strong></p>
-    <ul id="imp-breakdown" class="contexto-reveal"></ul>
+    <ul id="imp-breakdown" class="imp-rounds"></ul>
+    <p id="imp-breakdown-hint" class="st-wordlist-hint"></p>
     <div class="end-actions">
       <button id="imp-again-btn" class="primary-btn">PLAY AGAIN</button>
       <button class="back-btn" data-replay="impostor">CHANGE SETTINGS</button>
@@ -931,13 +932,14 @@
 <script src="definitions.js?v=sp19a"></script>
 <script src="connections_categories_es.js?v=sp19a"></script>
 <script src="impostor_explanations_es.js?v=sp19c"></script>
-<script src="ui_strings_en.js?v=sp19b"></script>
-<script src="ui_strings_es.js?v=sp19b"></script>
+<script src="impostor_labels.js?v=sp19e"></script>
+<script src="ui_strings_en.js?v=sp19e"></script>
+<script src="ui_strings_es.js?v=sp19e"></script>
 <script src="starparty_questions.js?v=sp19a"></script>
 <script src="starparty_wildcards.js?v=sp19a"></script>
 <script src="starparty_realword_pools.js?v=sp19a"></script>
 <script src="sfx.js?v=sp19a"></script>
-<script src="app.js?v=sp19d"></script>
+<script src="app.js?v=sp19e"></script>
 <script src="starparty_minigames.js?v=sp19a"></script>
 <script src="starparty.js?v=sp19a"></script>
 </body>

@@ -382,7 +382,11 @@
    "hint_text": "💡 Pista: ${impHintText(impSets[impIndex])}.",
    "game_complete_title": "¡Juego completo!",
    "score_label": "Tu puntaje: ",
-   "breakdown_row": "R${i + 1}: ${impHintText(s)} — impostor: ${s.impostor}"
+   "breakdown_row": "R${i + 1}: ${impHintText(s)} — impostor: ${s.impostor}",
+   "breakdown_impostor": "Impostor: ${s.impostor}",
+   "breakdown_points": "${impScores[i]} pts",
+   "meaning_unavailable": "(sin significado disponible)",
+   "tap_for_meaning": "Toca una ronda para ver los significados"
   },
   "labels": {
    "meta": "${LEVEL_LABELS[level]}"
