@@ -1,0 +1,10 @@
+# Normalize all text to LF in the repository. Without this, Git has no way to
+# tell a real edit from a line-ending flip, and whole untouched files (e.g. the
+# 41k-line contexto_data.js) can show up as rewritten in a diff.
+# Working copies still get native line endings on checkout.
+* text=auto eol=lf
+
+# Binary files present in this repo — never touch their bytes.
+*.png binary
+*.webp binary
+*.mp3 binary
