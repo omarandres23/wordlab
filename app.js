@@ -90,6 +90,14 @@ function showScreen(id) {
   // home screen — every game screen had its own copy removed entirely.
   const sfx = $("#home-sfx-control");
   if (sfx) sfx.classList.toggle("hidden", id !== "#screen-home");
+  // The badge counter is anchored in the header the same way, so it follows the
+  // same rule. Landing on home is also the moment to repaint the medals and the
+  // red dot: a game just ended, so a badge may have become claimable.
+  if (id === "#screen-home" && typeof refreshBadgeUI === "function") refreshBadgeUI();
+  else {
+    const counter = $("#home-badge-counter");
+    if (counter) counter.classList.add("hidden");
+  }
 }
 
 function randomItem(arr) {
@@ -509,6 +517,10 @@ let wordInfo = null; // { pos, definition, synonym, example } from the dictionar
 let hint2Shown = false;
 let greenPositions = new Set(); // positions the player already guessed in green
 let hintedPositions = new Set(); // positions revealed with the HINT button
+// the difficulty this round was started on. Wordle used to just consume its
+// `level` argument and forget it; the achievement layer needs to know which
+// difficulty a win belongs to. Same xxLevelRaw convention the other games use.
+let wordleLevelRaw = null;
 
 // Word length preference: 5 is the sweet spot, shorter is fine, 6-7 are rare.
 const LENGTH_WEIGHTS = { 3: 3, 4: 4, 5: 6, 6: 2, 7: 1 };
@@ -617,6 +629,7 @@ const KB_ROWS = [
 ];
 
 function startWordle(category, level) {
+  wordleLevelRaw = level;
   // category selector removed — mix every category (business/travel/daily/general)
   // together and pick randomly from the combined pool for this difficulty.
   const pool = Object.values(GAME_DATA.vocab)
@@ -797,6 +810,8 @@ function submitGuess() {
 
 function endWordle(won, forfeited = false) {
   wordleActive = false;
+  // a hint disqualifies the run; the store applies that rule, this only reports
+  Progress.record({ game: "wordle", level: wordleLevelRaw, won, usedHint: hintedPositions.size > 0 });
   SFX.play("success"); // end-of-game cue, win or lose — nothing else sounds on submit
   $("#wordle-hint-btn").disabled = true;
   $("#wordle-forfeit-btn").disabled = true;
@@ -835,6 +850,7 @@ let blanksCells = []; // the editable letter inputs of the current sentence
 let blanksReveal = 0; // letters currently revealed for this sentence
 let blanksExtraUsed = false; // the one-time extra reveal after the first miss
 let blanksOver = false; // current sentence resolved (won or timed out)
+let blanksLevelRaw = null; // difficulty this round runs on, for the achievement layer
 let blanksTimerId = null;
 let blanksDeadline = 0;
 // per-sentence timer, by level (same table as the STAR PARTY minigame)
@@ -870,6 +886,7 @@ function fbStopMeaningTimer() {
 const BLANKS_PER_ROUND = 4;
 
 function startBlanks(category, level) {
+  blanksLevelRaw = level;
   // category selector removed — mix travel + business + daily sentences together
   // and shuffle across all of them for this difficulty, then take the first
   // BLANKS_PER_ROUND of the shuffled pool.
@@ -1083,19 +1100,23 @@ $("#blanks-next-btn").addEventListener("click", () => {
   nextSentence();
 });
 
+// end of the round, split out of nextSentence() so there is one named place
+// that owns "the game is over" for this game, like every other game has.
+function blanksFinish() {
+  Progress.record({ game: "blanks", level: blanksLevelRaw, score: blanksScore, maxScore: blanksRound.length });
+  SFX.stop("tick_soft"); // kill the round loop BEFORE the closing cue, never after
+  SFX.play("success");
+  $("#blanks-play").classList.add("hidden");
+  $("#blanks-end").classList.remove("hidden");
+  $("#blanks-score").textContent = `${blanksScore} / ${blanksRound.length}`;
+}
+
 function nextSentence() {
   fbStopMeaningTimer();
   $("#blanks-meaning-panel").classList.add("hidden");
   blanksIndex++;
-  if (blanksIndex >= blanksRound.length) {
-    SFX.stop("tick_soft"); // kill the round loop BEFORE the closing cue, never after
-    SFX.play("success");
-    $("#blanks-play").classList.add("hidden");
-    $("#blanks-end").classList.remove("hidden");
-    $("#blanks-score").textContent = `${blanksScore} / ${blanksRound.length}`;
-  } else {
-    loadSentence();
-  }
+  if (blanksIndex >= blanksRound.length) blanksFinish();
+  else loadSentence();
 }
 
 /* =====================================================
@@ -1110,10 +1131,12 @@ let spotRounds = [];
 let spotIndex = 0;
 let spotTotal = 0;
 let spotRoundScore = 2;
+let spotLevelRaw = null; // difficulty this game runs on, for the achievement layer
 let spotWordFailed = false;
 let spotErrorSentence = "";
 
 function startSpot(level) {
+  spotLevelRaw = level;
   spotRounds = shuffle(SPOT_DATA[level]).slice(0, SPOT_ROUNDS_PER_GAME);
   spotIndex = 0;
   spotTotal = 0;
@@ -1235,16 +1258,20 @@ function finishSpotRound() {
   $("#spot-explain").classList.remove("hidden");
 }
 
+// end of the game, split out of the NEXT handler so there is one named place
+// that owns "the game is over" for this game, like every other game has.
+function spotFinish() {
+  Progress.record({ game: "spot", level: spotLevelRaw, score: spotTotal, maxScore: spotRounds.length * 2 });
+  SFX.play("success"); // end-of-game cue; this is a plain button click, nothing else sounds
+  $("#spot-play").classList.add("hidden");
+  $("#spot-end").classList.remove("hidden");
+  $("#spot-score").textContent = interp(t("spot", "messages.score_value"), { spotTotal, "spotRounds.length * 2": spotRounds.length * 2 });
+}
+
 $("#spot-next").addEventListener("click", () => {
   spotIndex++;
-  if (spotIndex >= spotRounds.length) {
-    SFX.play("success"); // end-of-game cue; this is a plain button click, nothing else sounds
-    $("#spot-play").classList.add("hidden");
-    $("#spot-end").classList.remove("hidden");
-    $("#spot-score").textContent = interp(t("spot", "messages.score_value"), { spotTotal, "spotRounds.length * 2": spotRounds.length * 2 });
-  } else {
-    loadSpotRound();
-  }
+  if (spotIndex >= spotRounds.length) spotFinish();
+  else loadSpotRound();
 });
 
 /* =====================================================
@@ -1457,6 +1484,9 @@ $("#wl-next-btn").addEventListener("click", () => {
 function wlShowResults() {
   SFX.play("success"); // end-of-game cue; reached by the SEE RESULTS click, nothing else sounds
   const total = wlScores.reduce((a, b) => a + b, 0);
+  // wlLevel is already the English bank key; the store passes it straight through.
+  // 9/9 can only happen without hints, since a hint costs an attempt.
+  Progress.record({ game: "wordlinks", level: wlLevel, score: total, maxScore: WORDLINKS_DATA.scoring.max_per_game });
   $("#wl-score").textContent = `${total} / ${WORDLINKS_DATA.scoring.max_per_game}`;
 
   const list = $("#wl-breakdown");
@@ -1764,6 +1794,8 @@ $("#imp-next-btn").addEventListener("click", () => {
 function impShowResults() {
   SFX.play("success"); // end-of-game cue; reached by the SEE RESULTS click, nothing else sounds
   const total = impScores.reduce((a, b) => a + b, 0);
+  // 9/9 can only happen without hints, since a hint drops that round to 2 points
+  Progress.record({ game: "impostor", level: impLevelRaw, score: total, maxScore: IMPOSTOR_DATA.scoring.max_per_game });
   $("#imp-score").textContent = `${total} / ${IMPOSTOR_DATA.scoring.max_per_game}`;
 
   // one expandable bar per round: chevron | category title + impostor | points.
@@ -1874,6 +1906,11 @@ let connSolved = []; // category indexes already solved, in solve order
 let connSelection = []; // currently selected words
 let connLastSubmit = null; // guard against double-submit of the same 4
 let connOver = false;
+// failed Submits this puzzle — BOTH failure branches count (the "3 of 4" near
+// miss and the outright miss), since from the player's side pressing Submit
+// and not solving a group is the same mistake either way. Purely informational
+// today; the achievement layer reads it later.
+let connMistakes = 0;
 
 function startConnections(level) {
   connLevelRaw = level;
@@ -1898,6 +1935,7 @@ function startConnections(level) {
   connSelection = [];
   connLastSubmit = null;
   connOver = false;
+  connMistakes = 0;
 
   $("#conn-meta").textContent = ts("level_labels." + level);
   $("#conn-end").classList.add("hidden");
@@ -2059,9 +2097,11 @@ $("#conn-submit").addEventListener("click", () => {
     // exactly 3 of one group: keep the selection so the player can adjust.
     // Still a failed attempt from the player's point of view — pressing Submit
     // and hearing nothing would read as a broken button, so fail.mp3 fires here too.
+    connMistakes++;
     SFX.play("fail");
     $("#conn-message").textContent = t("connections", "messages.three_of_four");
   } else {
+    connMistakes++;
     SFX.play("fail");
     $("#conn-message").textContent = t("connections", "messages.not_quite");
     connClearSelection();
@@ -2081,6 +2121,14 @@ $("#conn-giveup").addEventListener("click", () => {
 
 function connFinish(gaveUp) {
   connOver = true;
+  // the only game whose condition needs more than the score: all four groups
+  // AND at most three failed Submits, so connMistakes rides along
+  Progress.record({
+    game: "connections",
+    level: connLevelRaw,
+    won: !gaveUp && connSolved.length === connPuzzle.categories.length,
+    mistakes: connMistakes,
+  });
   const score = gaveUp ? 0 : connSolved.length * CONNECTIONS_DATA.scoring.points_per_group;
 
   $("#conn-end-title").textContent = gaveUp ? t("connections", "messages.gave_up_title") : t("connections", "messages.puzzle_complete_title");
@@ -2260,6 +2308,7 @@ function rwShowResults() {
   SFX.stop("tick"); // kill the per-word loop BEFORE the closing cue, never after
   SFX.play("success");
   const score = rwResults.filter((r) => r.correct).length * REALWORD_DATA.scoring.points_per_correct;
+  Progress.record({ game: "realword", level: rwLevelRaw, score, maxScore: REALWORD_DATA.scoring.max_per_game });
   $("#rw-score").textContent = `${score} / ${REALWORD_DATA.scoring.max_per_game}`;
 
   // per-word review: what it was, whether the player got it, and click-to-expand
@@ -2542,6 +2591,8 @@ function bwSaveLastPrefixes() {
 
 function bwWin() {
   bwActive = false;
+  // no selectors at all: a single key, and only the victory path records
+  Progress.record({ game: "bombword", won: true });
   bwStopTimer(); // stops tick BEFORE the closing cue, same order as bwGameOver
   SFX.play("success"); // victory only — defeat goes through bwGameOver and keeps explosion alone
   bwSaveLastPrefixes();
@@ -2812,6 +2863,9 @@ function wfClickCell(i) {
 function wfFinish(won) {
   wfOver = true;
   wfSelected = null;
+  // the only game with two axes: every tier needs the same difficulty cleared
+  // in BOTH modes, so mode is part of the play key
+  Progress.record({ game: "waffle", level: wfLevelRaw, mode: wfMode, won });
   SFX.play(won ? "success" : "fail"); // generic, neutral end-of-game cue — Waffle has no bomb to justify explosion.mp3
 
   $("#wf-end-title").textContent = won ? t("waffle", "messages.end_title_won") : t("waffle", "messages.end_title_lost");
@@ -3112,6 +3166,8 @@ function ebSaveLastWords() {
 
 function ebWin() {
   ebActive = false;
+  // mode only, no difficulty. Its bank keys are "basico"/"hardcore", not English.
+  Progress.record({ game: "emojibomb", mode: ebMode, won: true });
   ebStopTimer(); // stops tick BEFORE the closing cue, same order as ebGameOver
   SFX.play("success"); // victory only — defeat goes through ebGameOver and keeps explosion alone
   ebSaveLastWords();
@@ -3577,6 +3633,9 @@ function stLoseAllLives() {
 
 function stFinish(won, foundBefore, outOfLives) {
   stOver = true;
+  // hints are a core mechanic here, paid for with extra words, so a hinted win
+  // still counts — Strands is the one exemption from the no-hint rule
+  Progress.record({ game: "strands", mode: stMode, won });
   // suppressed only when the spangram closed the puzzle — victory.mp3 is still
   // ringing from 900ms ago and the two would stack
   if (!stEndedWithSpangram) SFX.play("success");
@@ -3799,6 +3858,7 @@ function emAnswer(picked) {
 
 function emFinish() {
   emStopTimer();
+  Progress.record({ game: "emojimatch", level: emLevelRaw, score: emScore, maxScore: EMOJIMATCH_DATA.scoring.max_per_game });
   SFX.play("success"); // end-of-game cue; the last answer's correct/wrong fired EM_FEEDBACK_MS ago
   $("#em-play").classList.add("hidden");
 
@@ -4210,6 +4270,9 @@ function hiAnswer(given, timedOut) {
 function hiFinish() {
   hiStopTimers();
   stopWord();
+  // basic must be perfect; the typing levels pass with one miss. The store owns
+  // that split, so it needs the raw level to tell them apart.
+  Progress.record({ game: "hearit", level: hiLevelRaw, score: hiScore, maxScore: HEARIT_DATA.rules.scoring.max_per_game });
   SFX.play("success"); // end-of-game cue; the last answer's correct/wrong fired HI_FEEDBACK_MS ago
   $("#hi-play").classList.add("hidden");
 
@@ -4304,3 +4367,203 @@ $$("#screen-hearit [data-back]").forEach((btn) =>
     stopWord();
   })
 );
+
+/* =====================================================
+   ACHIEVEMENTS — the UI over Progress.
+
+   All state lives in progress.js; nothing here writes localStorage directly.
+   The screen is rebuilt from the bank on every open, so it can never drift
+   out of sync with what the player has actually earned.
+   ===================================================== */
+const ACH_TIER_IMG = {
+  bronze: "assets/badges/Broncebadge.png",
+  silver: "assets/badges/Platebadge.png",
+  gold: "assets/badges/Goldbadge.png",
+  platinum: "assets/badges/Platiniumbadge.png",
+};
+
+function achBank() {
+  const b = typeof ACHIEVEMENTS !== "undefined" ? ACHIEVEMENTS : null;
+  if (!b) return [];
+  return Array.isArray(b) ? b : (Array.isArray(b.badges) ? b.badges : []);
+}
+
+// same trick as .card-art-img-failed: a badge PNG that 404s must not leave a
+// broken-image glyph behind, on the card or in the grid
+function achGuardImg(img, failedClass) {
+  img.addEventListener("error", () => img.classList.add(failedClass));
+  if (img.complete && img.naturalWidth === 0) img.classList.add(failedClass);
+}
+
+/* ---- the medal on each home card ---- */
+function refreshCardMedals() {
+  const on = Progress.badgesEnabled();
+  $$(".game-card").forEach((card) => {
+    const old = card.querySelector(".card-medal");
+    if (old) old.remove();
+    if (!on) return;
+    const tier = Progress.highestClaimed(card.dataset.game);
+    if (!tier || !ACH_TIER_IMG[tier]) return; // nothing claimed: card stays clean
+    const img = document.createElement("img");
+    img.className = "card-medal card-medal-" + tier;
+    img.src = ACH_TIER_IMG[tier];
+    img.loading = "lazy";
+    img.alt = t("achievements", "badges." + card.dataset.game + ":" + tier + ".name") || tier;
+    achGuardImg(img, "card-medal-failed");
+    card.appendChild(img); // direct child: .card-art has overflow:hidden
+  });
+}
+
+const achAnyClaimable = () => achBank().some((b) => Progress.isClaimable(b.id));
+
+/* ---- header counter + red dot ---- */
+function refreshBadgeChrome() {
+  const on = Progress.badgesEnabled();
+  const counter = $("#home-badge-counter");
+  const total = achBank().length;
+  const claimed = Progress.countClaimed();
+  if (counter) {
+    counter.classList.toggle("hidden", !on);
+    const txt = $("#home-badge-counter-text");
+    if (txt) txt.textContent = interp(t("achievements", "progress"), { claimed, total });
+    counter.setAttribute("aria-label", interp(t("achievements", "progress_aria"), { claimed, total }));
+  }
+  const dot = $("#achievements-dot");
+  if (dot) dot.classList.toggle("hidden", !achAnyClaimable());
+  const btn = $("#achievements-btn");
+  if (btn) btn.setAttribute("aria-label", t("achievements", "open"));
+}
+
+// one entry point, called on load and every time the player lands on home
+function refreshBadgeUI() {
+  refreshCardMedals();
+  refreshBadgeChrome();
+}
+
+/* ---- the achievements screen ---- */
+function renderAchievements() {
+  const total = achBank().length;
+  const claimed = Progress.countClaimed();
+  applyText([
+    ["#screen-achievements [data-back]", ts("buttons.back")],
+    ["#ach-title", t("achievements", "title")],
+    ["#ach-subtitle", t("achievements", "subtitle")],
+    ["#ach-progress", interp(t("achievements", "progress"), { claimed, total })],
+    ["#ach-toggle-label", t("achievements", "show_badges")],
+  ]);
+  const toggle = $("#ach-toggle-badges");
+  if (toggle) toggle.checked = Progress.badgesEnabled();
+
+  // group by game, keeping the bank's own order
+  const order = [];
+  const byGame = {};
+  achBank().forEach((b) => {
+    if (!byGame[b.game]) { byGame[b.game] = []; order.push(b.game); }
+    byGame[b.game].push(b);
+  });
+
+  const host = $("#ach-groups");
+  host.innerHTML = "";
+  order.forEach((game) => {
+    const group = document.createElement("div");
+    group.className = "ach-group";
+
+    const done = byGame[game].filter((b) => Progress.isClaimed(b.id)).length;
+    const title = document.createElement("h3");
+    title.className = "ach-group-title";
+    title.innerHTML = "";
+    title.append(t("achievements", "games." + game) || game);
+    const count = document.createElement("span");
+    count.className = "ach-group-count";
+    count.textContent = done + "/" + byGame[game].length;
+    title.appendChild(count);
+    group.appendChild(title);
+
+    const row = document.createElement("div");
+    row.className = "ach-row";
+    byGame[game].forEach((b) => row.appendChild(achBadgeTile(b)));
+    group.appendChild(row);
+    host.appendChild(group);
+  });
+}
+
+function achBadgeTile(b) {
+  const isClaimed = Progress.isClaimed(b.id);
+  const isReady = Progress.isClaimable(b.id);
+  // condition met, not claimed, but isClaimable() said no — the only way that
+  // happens is the chain: the previous tier exists and is not claimed yet.
+  // Without this the player can't tell "never played it" from "already beat
+  // it, go claim the last one first", which is the whole point of the order rule.
+  const isPending = !isClaimed && !isReady && Progress.isEarned(b.id);
+
+  const tile = document.createElement("div");
+  tile.className = "ach-badge " + (isClaimed ? "is-claimed" : isReady ? "is-ready" : isPending ? "is-pending" : "is-locked");
+
+  const img = document.createElement("img");
+  img.className = "ach-badge-img";
+  img.src = ACH_TIER_IMG[b.tier] || "";
+  img.loading = "lazy";
+  img.alt = t("achievements", "badges." + b.id + ".name") || b.id;
+  achGuardImg(img, "ach-badge-img-failed");
+  tile.appendChild(img);
+
+  const name = document.createElement("p");
+  name.className = "ach-badge-name";
+  name.textContent = t("achievements", "badges." + b.id + ".name") || b.id;
+  tile.appendChild(name);
+
+  const goal = document.createElement("p");
+  goal.className = "ach-badge-goal";
+  goal.textContent = t("achievements", "badges." + b.id + ".goal") || "";
+  tile.appendChild(goal);
+
+  // "0 / 1" on a single-play bronze is noise, not information — only shown
+  // once there is a real count to track, and only while it is still open
+  if (!isClaimed) {
+    const prog = Progress.progressFor(b.id);
+    if (prog.target > 1) {
+      const progress = document.createElement("p");
+      progress.className = "ach-badge-progress";
+      progress.textContent = interp(t("achievements", "badge_progress"), { current: prog.current, target: prog.target });
+      tile.appendChild(progress);
+    }
+  }
+
+  if (isReady) {
+    const btn = document.createElement("button");
+    btn.className = "ach-claim-btn";
+    btn.type = "button";
+    btn.textContent = t("achievements", "claim");
+    btn.addEventListener("click", () => {
+      if (!Progress.claim(b.id)) return;
+      SFX.play("victory");
+      renderAchievements(); // a claim can unlock the next tier of the same chain
+      refreshBadgeUI();
+    });
+    tile.appendChild(btn);
+  } else {
+    const state = document.createElement("p");
+    state.className = "ach-badge-state";
+    if (isPending) {
+      const reqBadge = achBank().find((x) => x.id === b.requires);
+      const tierName = reqBadge ? t("achievements", "tier_labels." + reqBadge.tier) : "";
+      state.textContent = interp(t("achievements", "pending_locked"), { tier: tierName });
+    } else {
+      state.textContent = t("achievements", isClaimed ? "claimed" : "locked");
+    }
+    tile.appendChild(state);
+  }
+  return tile;
+}
+
+$("#achievements-btn").addEventListener("click", () => {
+  renderAchievements();
+  showScreen("#screen-achievements");
+});
+
+$("#ach-toggle-badges").addEventListener("change", (e) => {
+  Progress.setBadgesEnabled(e.target.checked);
+  refreshBadgeUI(); // medals and counter appear/disappear immediately
+});
+
+refreshBadgeUI();

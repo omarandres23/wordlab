@@ -1,0 +1,51 @@
+================================================================
+MATRIZ
+================================================================
+  wordle       4  (bronze, silver, gold, platinum)
+  blanks       4  (bronze, silver, gold, platinum)
+  spot         4  (bronze, silver, gold, platinum)
+  wordlinks    4  (bronze, silver, gold, platinum)
+  impostor     4  (bronze, silver, gold, platinum)
+  connections  4  (bronze, silver, gold, platinum)
+  realword     4  (bronze, silver, gold, platinum)
+  emojimatch   4  (bronze, silver, gold, platinum)
+  hearit       4  (bronze, silver, gold, platinum)
+  waffle       4  (bronze, silver, gold, platinum)
+  emojibomb    3  (silver, gold, platinum)
+  strands      3  (silver, gold, platinum)
+  bombword     2  (gold, platinum)
+total: 48
+
+================================================================
+VALIDACION
+================================================================
+GAME_INFO tiene 13 juegos: blanks, bombword, connections, emojibomb, emojimatch, hearit, impostor, realword, spot, strands, waffle, wordle, wordlinks
+
+EJES REALES (leidos de cada banco):
+  wordle       dificultades=['advanced', 'basic', 'intermediate']  modos=-
+  blanks       dificultades=['advanced', 'basic', 'intermediate']  modos=-
+  spot         dificultades=['advanced', 'basic', 'intermediate']  modos=-
+  wordlinks    dificultades=['advanced', 'basic', 'intermediate']  modos=-
+  impostor     dificultades=['advanced', 'basic', 'intermediate']  modos=-
+  connections  dificultades=['advanced', 'basic', 'intermediate']  modos=-
+  realword     dificultades=['advanced', 'basic', 'intermediate']  modos=-
+  emojimatch   dificultades=['advanced', 'basic', 'intermediate']  modos=-
+  hearit       dificultades=['advanced', 'basic', 'intermediate']  modos=-
+  waffle       dificultades=['advanced', 'basic', 'intermediate']  modos=['deluxe', 'normal']
+  emojibomb    dificultades=-  modos=['basico', 'hardcore']
+  strands      dificultades=-  modos=['hardcore', 'normal']
+  bombword     dificultades=-  modos=-
+
+--- ERRORES ---
+  ninguno
+--- ADVERTENCIAS ---
+  ninguna
+
+================================================================
+ARCHIVOS GENERADOS
+================================================================
+../achievements.json / .js     (48 logros)  <- raiz, se despliega
+achievements_strings.json      (48 x 2 idiomas)
+achievements_report.txt
+
+RESULTADO: OK — banco valido

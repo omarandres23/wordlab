@@ -1,0 +1,395 @@
+{
+  "file": "achievements_strings.json",
+  "purpose": "Fusionar cada idioma dentro de ui_strings_<lang>.json -> achievements.badges",
+  "count": 48,
+  "strings": {
+    "en": {
+      "wordle:bronze": {
+        "name": "Word Game — Bronze",
+        "goal": "Solve Basic without using a hint"
+      },
+      "wordle:silver": {
+        "name": "Word Game — Silver",
+        "goal": "Solve Intermediate without using a hint"
+      },
+      "wordle:gold": {
+        "name": "Word Game — Gold",
+        "goal": "Solve Advanced without using a hint"
+      },
+      "wordle:platinum": {
+        "name": "Word Game — Platinum",
+        "goal": "Solve Advanced without using a hint — 5 times"
+      },
+      "blanks:bronze": {
+        "name": "Fill in the Blanks — Bronze",
+        "goal": "Get every sentence right on Basic"
+      },
+      "blanks:silver": {
+        "name": "Fill in the Blanks — Silver",
+        "goal": "Get every sentence right on Intermediate"
+      },
+      "blanks:gold": {
+        "name": "Fill in the Blanks — Gold",
+        "goal": "Get every sentence right on Advanced"
+      },
+      "blanks:platinum": {
+        "name": "Fill in the Blanks — Platinum",
+        "goal": "Get every sentence right on Advanced — 5 times"
+      },
+      "spot:bronze": {
+        "name": "Spot the Error — Bronze",
+        "goal": "Get a perfect score on Basic"
+      },
+      "spot:silver": {
+        "name": "Spot the Error — Silver",
+        "goal": "Get a perfect score on Intermediate"
+      },
+      "spot:gold": {
+        "name": "Spot the Error — Gold",
+        "goal": "Get a perfect score on Advanced"
+      },
+      "spot:platinum": {
+        "name": "Spot the Error — Platinum",
+        "goal": "Get a perfect score on Advanced — 5 times"
+      },
+      "wordlinks:bronze": {
+        "name": "Word Links — Bronze",
+        "goal": "Score 9/9 on Basic"
+      },
+      "wordlinks:silver": {
+        "name": "Word Links — Silver",
+        "goal": "Score 9/9 on Intermediate"
+      },
+      "wordlinks:gold": {
+        "name": "Word Links — Gold",
+        "goal": "Score 9/9 on Advanced"
+      },
+      "wordlinks:platinum": {
+        "name": "Word Links — Platinum",
+        "goal": "Score 9/9 on Advanced — 5 times"
+      },
+      "impostor:bronze": {
+        "name": "Impostor — Bronze",
+        "goal": "Score 9/9 on Basic"
+      },
+      "impostor:silver": {
+        "name": "Impostor — Silver",
+        "goal": "Score 9/9 on Intermediate"
+      },
+      "impostor:gold": {
+        "name": "Impostor — Gold",
+        "goal": "Score 9/9 on Advanced"
+      },
+      "impostor:platinum": {
+        "name": "Impostor — Platinum",
+        "goal": "Score 9/9 on Advanced — 5 times"
+      },
+      "connections:bronze": {
+        "name": "Connections — Bronze",
+        "goal": "Solve Basic with 3 mistakes or fewer"
+      },
+      "connections:silver": {
+        "name": "Connections — Silver",
+        "goal": "Solve Intermediate with 3 mistakes or fewer"
+      },
+      "connections:gold": {
+        "name": "Connections — Gold",
+        "goal": "Solve Advanced with 3 mistakes or fewer"
+      },
+      "connections:platinum": {
+        "name": "Connections — Platinum",
+        "goal": "Solve Advanced with 3 mistakes or fewer — 5 times"
+      },
+      "realword:bronze": {
+        "name": "Is It a Real Word? — Bronze",
+        "goal": "Score 8/8 on Basic"
+      },
+      "realword:silver": {
+        "name": "Is It a Real Word? — Silver",
+        "goal": "Score 8/8 on Intermediate"
+      },
+      "realword:gold": {
+        "name": "Is It a Real Word? — Gold",
+        "goal": "Score 8/8 on Advanced"
+      },
+      "realword:platinum": {
+        "name": "Is It a Real Word? — Platinum",
+        "goal": "Score 8/8 on Advanced — 5 times"
+      },
+      "emojimatch:bronze": {
+        "name": "Emoji Match — Bronze",
+        "goal": "Score 8/8 on Basic"
+      },
+      "emojimatch:silver": {
+        "name": "Emoji Match — Silver",
+        "goal": "Score 8/8 on Intermediate"
+      },
+      "emojimatch:gold": {
+        "name": "Emoji Match — Gold",
+        "goal": "Score 8/8 on Advanced"
+      },
+      "emojimatch:platinum": {
+        "name": "Emoji Match — Platinum",
+        "goal": "Score 8/8 on Advanced — 5 times"
+      },
+      "hearit:bronze": {
+        "name": "Hear It — Bronze",
+        "goal": "Score 8/8 on Basic"
+      },
+      "hearit:silver": {
+        "name": "Hear It — Silver",
+        "goal": "Score at least 7/8 on Intermediate"
+      },
+      "hearit:gold": {
+        "name": "Hear It — Gold",
+        "goal": "Score at least 7/8 on Advanced"
+      },
+      "hearit:platinum": {
+        "name": "Hear It — Platinum",
+        "goal": "Score at least 7/8 on Advanced — 5 times"
+      },
+      "waffle:bronze": {
+        "name": "Waffle — Bronze",
+        "goal": "Win Basic in both modes"
+      },
+      "waffle:silver": {
+        "name": "Waffle — Silver",
+        "goal": "Win Intermediate in both modes"
+      },
+      "waffle:gold": {
+        "name": "Waffle — Gold",
+        "goal": "Win Advanced in both modes"
+      },
+      "waffle:platinum": {
+        "name": "Waffle — Platinum",
+        "goal": "Win Advanced 5 times in each mode"
+      },
+      "emojibomb:silver": {
+        "name": "Emoji Bomb — Silver",
+        "goal": "Beat Basic mode"
+      },
+      "emojibomb:gold": {
+        "name": "Emoji Bomb — Gold",
+        "goal": "Beat Hardcore mode"
+      },
+      "emojibomb:platinum": {
+        "name": "Emoji Bomb — Platinum",
+        "goal": "Beat Hardcore mode — 5 times"
+      },
+      "strands:silver": {
+        "name": "Strands — Silver",
+        "goal": "Solve a puzzle in Normal mode"
+      },
+      "strands:gold": {
+        "name": "Strands — Gold",
+        "goal": "Solve a puzzle in Hardcore mode"
+      },
+      "strands:platinum": {
+        "name": "Strands — Platinum",
+        "goal": "Solve a puzzle in Hardcore mode — 5 times"
+      },
+      "bombword:gold": {
+        "name": "Bomb Word — Gold",
+        "goal": "Complete all 4 levels"
+      },
+      "bombword:platinum": {
+        "name": "Bomb Word — Platinum",
+        "goal": "Complete all 4 levels — 5 times"
+      }
+    },
+    "es": {
+      "wordle:bronze": {
+        "name": "Word Game — Bronce",
+        "goal": "Resuelve Básico sin usar pista"
+      },
+      "wordle:silver": {
+        "name": "Word Game — Plata",
+        "goal": "Resuelve Intermedio sin usar pista"
+      },
+      "wordle:gold": {
+        "name": "Word Game — Oro",
+        "goal": "Resuelve Avanzado sin usar pista"
+      },
+      "wordle:platinum": {
+        "name": "Word Game — Platino",
+        "goal": "Resuelve Avanzado sin usar pista — 5 veces"
+      },
+      "blanks:bronze": {
+        "name": "Fill in the Blanks — Bronce",
+        "goal": "Acierta todas las oraciones en Básico"
+      },
+      "blanks:silver": {
+        "name": "Fill in the Blanks — Plata",
+        "goal": "Acierta todas las oraciones en Intermedio"
+      },
+      "blanks:gold": {
+        "name": "Fill in the Blanks — Oro",
+        "goal": "Acierta todas las oraciones en Avanzado"
+      },
+      "blanks:platinum": {
+        "name": "Fill in the Blanks — Platino",
+        "goal": "Acierta todas las oraciones en Avanzado — 5 veces"
+      },
+      "spot:bronze": {
+        "name": "Spot the Error — Bronce",
+        "goal": "Consigue el puntaje perfecto en Básico"
+      },
+      "spot:silver": {
+        "name": "Spot the Error — Plata",
+        "goal": "Consigue el puntaje perfecto en Intermedio"
+      },
+      "spot:gold": {
+        "name": "Spot the Error — Oro",
+        "goal": "Consigue el puntaje perfecto en Avanzado"
+      },
+      "spot:platinum": {
+        "name": "Spot the Error — Platino",
+        "goal": "Consigue el puntaje perfecto en Avanzado — 5 veces"
+      },
+      "wordlinks:bronze": {
+        "name": "Word Links — Bronce",
+        "goal": "Consigue 9/9 en Básico"
+      },
+      "wordlinks:silver": {
+        "name": "Word Links — Plata",
+        "goal": "Consigue 9/9 en Intermedio"
+      },
+      "wordlinks:gold": {
+        "name": "Word Links — Oro",
+        "goal": "Consigue 9/9 en Avanzado"
+      },
+      "wordlinks:platinum": {
+        "name": "Word Links — Platino",
+        "goal": "Consigue 9/9 en Avanzado — 5 veces"
+      },
+      "impostor:bronze": {
+        "name": "Impostor — Bronce",
+        "goal": "Consigue 9/9 en Básico"
+      },
+      "impostor:silver": {
+        "name": "Impostor — Plata",
+        "goal": "Consigue 9/9 en Intermedio"
+      },
+      "impostor:gold": {
+        "name": "Impostor — Oro",
+        "goal": "Consigue 9/9 en Avanzado"
+      },
+      "impostor:platinum": {
+        "name": "Impostor — Platino",
+        "goal": "Consigue 9/9 en Avanzado — 5 veces"
+      },
+      "connections:bronze": {
+        "name": "Connections — Bronce",
+        "goal": "Resuelve Básico con 3 errores o menos"
+      },
+      "connections:silver": {
+        "name": "Connections — Plata",
+        "goal": "Resuelve Intermedio con 3 errores o menos"
+      },
+      "connections:gold": {
+        "name": "Connections — Oro",
+        "goal": "Resuelve Avanzado con 3 errores o menos"
+      },
+      "connections:platinum": {
+        "name": "Connections — Platino",
+        "goal": "Resuelve Avanzado con 3 errores o menos — 5 veces"
+      },
+      "realword:bronze": {
+        "name": "Is It a Real Word? — Bronce",
+        "goal": "Consigue 8/8 en Básico"
+      },
+      "realword:silver": {
+        "name": "Is It a Real Word? — Plata",
+        "goal": "Consigue 8/8 en Intermedio"
+      },
+      "realword:gold": {
+        "name": "Is It a Real Word? — Oro",
+        "goal": "Consigue 8/8 en Avanzado"
+      },
+      "realword:platinum": {
+        "name": "Is It a Real Word? — Platino",
+        "goal": "Consigue 8/8 en Avanzado — 5 veces"
+      },
+      "emojimatch:bronze": {
+        "name": "Emoji Match — Bronce",
+        "goal": "Consigue 8/8 en Básico"
+      },
+      "emojimatch:silver": {
+        "name": "Emoji Match — Plata",
+        "goal": "Consigue 8/8 en Intermedio"
+      },
+      "emojimatch:gold": {
+        "name": "Emoji Match — Oro",
+        "goal": "Consigue 8/8 en Avanzado"
+      },
+      "emojimatch:platinum": {
+        "name": "Emoji Match — Platino",
+        "goal": "Consigue 8/8 en Avanzado — 5 veces"
+      },
+      "hearit:bronze": {
+        "name": "Hear It — Bronce",
+        "goal": "Consigue 8/8 en Básico"
+      },
+      "hearit:silver": {
+        "name": "Hear It — Plata",
+        "goal": "Consigue al menos 7/8 en Intermedio"
+      },
+      "hearit:gold": {
+        "name": "Hear It — Oro",
+        "goal": "Consigue al menos 7/8 en Avanzado"
+      },
+      "hearit:platinum": {
+        "name": "Hear It — Platino",
+        "goal": "Consigue al menos 7/8 en Avanzado — 5 veces"
+      },
+      "waffle:bronze": {
+        "name": "Waffle — Bronce",
+        "goal": "Gana en Básico en los dos modos"
+      },
+      "waffle:silver": {
+        "name": "Waffle — Plata",
+        "goal": "Gana en Intermedio en los dos modos"
+      },
+      "waffle:gold": {
+        "name": "Waffle — Oro",
+        "goal": "Gana en Avanzado en los dos modos"
+      },
+      "waffle:platinum": {
+        "name": "Waffle — Platino",
+        "goal": "Gana 5 veces en Avanzado en cada modo"
+      },
+      "emojibomb:silver": {
+        "name": "Emoji Bomb — Plata",
+        "goal": "Supera el modo Básico"
+      },
+      "emojibomb:gold": {
+        "name": "Emoji Bomb — Oro",
+        "goal": "Supera el modo Hardcore"
+      },
+      "emojibomb:platinum": {
+        "name": "Emoji Bomb — Platino",
+        "goal": "Supera el modo Hardcore — 5 veces"
+      },
+      "strands:silver": {
+        "name": "Strands — Plata",
+        "goal": "Resuelve un puzzle en modo Normal"
+      },
+      "strands:gold": {
+        "name": "Strands — Oro",
+        "goal": "Resuelve un puzzle en modo Hardcore"
+      },
+      "strands:platinum": {
+        "name": "Strands — Platino",
+        "goal": "Resuelve un puzzle en modo Hardcore — 5 veces"
+      },
+      "bombword:gold": {
+        "name": "Bomb Word — Oro",
+        "goal": "Completa los 4 niveles"
+      },
+      "bombword:platinum": {
+        "name": "Bomb Word — Platino",
+        "goal": "Completa los 4 niveles — 5 veces"
+      }
+    }
+  }
+}

@@ -4,15 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>English 11 — Daily English Games</title>
-<link rel="stylesheet" href="styles.css?v=sp19e">
+<link rel="stylesheet" href="styles.css?v=sp19q">
 </head>
 <body>
 
 <!-- ================= HEADER ================= -->
 <header class="topbar">
+  <!-- empty on purpose: this side balances the logo's centering (both
+       .topbar-side are flex:1 1 0) even with nothing in it. The Instagram
+       link used to live here; it moved next to the achievements trophy in
+       .tagline-row, which only exists on the home screen — see that comment
+       for why the link is now home-only rather than site-wide. -->
   <div class="topbar-side"></div>
   <h1 class="logo"><img src="img/wordlab-logo.png" alt="Word Lab" class="logo-img"></h1>
   <div class="topbar-side">
+    <!-- badges claimed out of 48. Lives in the header like the sound control,
+         and is hidden the same way on every screen that is not home. -->
+    <div class="badge-counter hidden" id="home-badge-counter" aria-live="polite">
+      <img class="badge-counter-icon" src="assets/badges/Achievemetslogo.png" alt="" aria-hidden="true" loading="lazy">
+      <span class="badge-counter-text" id="home-badge-counter-text"></span>
+    </div>
     <div class="sfx-control" id="home-sfx-control">
       <button class="mute-btn" type="button" aria-label="Sound settings" aria-expanded="false" data-sfx-toggle>
         <img class="mute-btn-img" src="assets/games/VOLUME.webp" alt="" aria-hidden="true">
@@ -30,7 +41,28 @@
 
 <!-- ================= HOME ================= -->
 <main id="screen-home" class="screen active">
-  <p class="tagline">Choose what you want to play today</p>
+  <!-- One button on each side of the phrase, so the tagline sits optically
+       centred. Source order IS visual order (no CSS `order`), which keeps the
+       Tab sequence matching what the eye sees: Instagram → tagline → trophy. -->
+  <div class="tagline-row">
+    <!-- pure navigation, not a page action — home-only on purpose -->
+    <a class="tagline-btn social-link" id="instagram-link"
+       href="https://www.instagram.com/omarbenvenuto_/"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Instagram">
+      <svg class="social-link-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="3" width="18" height="18" rx="5"/>
+        <circle cx="12" cy="12" r="4.2"/>
+        <circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/>
+      </svg>
+    </a>
+    <p class="tagline">Choose what you want to play today</p>
+    <button class="tagline-btn achievements-btn" id="achievements-btn" type="button" aria-label="Achievements">
+      <img class="achievements-btn-img" src="assets/badges/Achievemetslogo.png" alt="" aria-hidden="true" loading="lazy">
+      <!-- red dot: at least one badge is earned and waiting to be claimed -->
+      <span class="achievements-dot hidden" id="achievements-dot" aria-hidden="true"></span>
+    </button>
+  </div>
 
   <div class="card-grid">
     <button class="game-card" data-game="bombword">
@@ -45,6 +77,22 @@
       </div>
     </button>
 
+    <!-- ============================================================
+         STAR PARTY — TEMPORARILY DISABLED (not deleted).
+
+         Commenting out this card is the ONLY thing that hides the game:
+         the card's click handler (app.js) is Star Party's single entry
+         point, so with no card in the DOM #screen-starparty can never be
+         reached. Its <main>, its CSS and ALL its <script> tags stay exactly
+         as they were, on purpose.
+
+         DO NOT "clean up" the starparty_*.js script tags: Fill in the Blanks
+         calls spFibInitialReveal() from starparty_minigames.js. Removing them
+         breaks a game that is still live. See CLAUDE.md.
+
+         TO RE-ENABLE: uncomment this block. Nothing else to undo.
+         ============================================================ -->
+    <!--
     <button class="game-card" data-game="starparty">
       <span class="badge">NEW</span>
       <div class="card-art card-art-asset card-art-starparty">
@@ -56,6 +104,8 @@
         <span class="card-name">Star Party</span>
       </div>
     </button>
+    -->
+
 
     <button class="game-card" data-game="emojibomb">
       <span class="badge">NEW</span>
@@ -915,32 +965,55 @@
   </div>
 </main>
 
-<script src="data.js?v=sp19a"></script>
-<script src="spot_data.js?v=sp19a"></script>
-<script src="contexto_data.js?v=sp19a"></script>
-<script src="contexto_autocomplete.js?v=sp19a"></script>
-<script src="wordlinks_data.js?v=sp19a"></script>
-<script src="impostor_data.js?v=sp19c"></script>
-<script src="connections_data.js?v=sp19a"></script>
-<script src="realword_data.js?v=sp19a"></script>
-<script src="bombword_data.js?v=sp19a"></script>
-<script src="waffle_data.js?v=sp19a"></script>
-<script src="emojibomb_data.js?v=sp19a"></script>
-<script src="emojimatch_data.js?v=sp19a"></script>
-<script src="hearit_data.js?v=sp19d"></script>
-<script src="strands_data.js?v=sp19a"></script>
-<script src="definitions.js?v=sp19a"></script>
-<script src="connections_categories_es.js?v=sp19a"></script>
-<script src="impostor_explanations_es.js?v=sp19c"></script>
-<script src="impostor_labels.js?v=sp19e"></script>
-<script src="ui_strings_en.js?v=sp19e"></script>
-<script src="ui_strings_es.js?v=sp19e"></script>
-<script src="starparty_questions.js?v=sp19a"></script>
-<script src="starparty_wildcards.js?v=sp19a"></script>
-<script src="starparty_realword_pools.js?v=sp19a"></script>
-<script src="sfx.js?v=sp19a"></script>
-<script src="app.js?v=sp19e"></script>
-<script src="starparty_minigames.js?v=sp19a"></script>
-<script src="starparty.js?v=sp19a"></script>
+<!-- ================= ACHIEVEMENTS ================= -->
+<main id="screen-achievements" class="screen">
+  <div class="game-topline">
+    <button class="back-btn" data-back>← Back</button>
+  </div>
+
+  <div class="ach-head">
+    <h2 class="ach-title" id="ach-title">ACHIEVEMENTS</h2>
+    <p class="ach-subtitle" id="ach-subtitle">Beat each game to earn its badges</p>
+    <p class="ach-progress" id="ach-progress"></p>
+    <label class="ach-switch">
+      <input type="checkbox" id="ach-toggle-badges" checked>
+      <span class="ach-switch-track" aria-hidden="true"><span class="ach-switch-knob"></span></span>
+      <span class="ach-switch-label" id="ach-toggle-label">Show badges on cards</span>
+    </label>
+  </div>
+
+  <!-- the 13 groups of 4 are built by renderAchievements() from the bank -->
+  <div class="ach-groups" id="ach-groups"></div>
+</main>
+
+<script src="data.js?v=sp19q"></script>
+<script src="spot_data.js?v=sp19q"></script>
+<script src="contexto_data.js?v=sp19q"></script>
+<script src="contexto_autocomplete.js?v=sp19q"></script>
+<script src="wordlinks_data.js?v=sp19q"></script>
+<script src="impostor_data.js?v=sp19q"></script>
+<script src="connections_data.js?v=sp19q"></script>
+<script src="realword_data.js?v=sp19q"></script>
+<script src="bombword_data.js?v=sp19q"></script>
+<script src="waffle_data.js?v=sp19q"></script>
+<script src="emojibomb_data.js?v=sp19q"></script>
+<script src="emojimatch_data.js?v=sp19q"></script>
+<script src="hearit_data.js?v=sp19q"></script>
+<script src="strands_data.js?v=sp19q"></script>
+<script src="definitions.js?v=sp19q"></script>
+<script src="connections_categories_es.js?v=sp19q"></script>
+<script src="impostor_explanations_es.js?v=sp19q"></script>
+<script src="impostor_labels.js?v=sp19q"></script>
+<script src="achievements.js?v=sp19q"></script>
+<script src="ui_strings_en.js?v=sp19q"></script>
+<script src="ui_strings_es.js?v=sp19q"></script>
+<script src="starparty_questions.js?v=sp19q"></script>
+<script src="starparty_wildcards.js?v=sp19q"></script>
+<script src="starparty_realword_pools.js?v=sp19q"></script>
+<script src="sfx.js?v=sp19q"></script>
+<script src="progress.js?v=sp19q"></script>
+<script src="app.js?v=sp19q"></script>
+<script src="starparty_minigames.js?v=sp19q"></script>
+<script src="starparty.js?v=sp19q"></script>
 </body>
 </html>

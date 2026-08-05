@@ -67,6 +67,39 @@ Todos comparten helpers globales: `$`/`$$` (querySelector), `shuffle()`,
 `randomItem()`, `interp()` (interpolación de strings `${...}`), `t()`/`ts()`
 (lookup en ui_strings), `lookupDefinition(word)` (respeta `selectedLanguage`).
 
+## ⚠️ Star Party — DESACTIVADO TEMPORALMENTE (no borrado)
+
+La tarjeta de Star Party está **comentada** en `index.html` (dentro de
+`.card-grid`). Eso es lo único que lo desactiva, y alcanza: su **única** puerta
+de entrada es el handler de `.game-card` en `app.js` (~L446), que llama a
+`spOpenSetup()`. Sin tarjeta en el DOM, `showScreen("#screen-starparty")` no se
+ejecuta nunca. (`#sp-again-btn` también llama a `spOpenSetup()`, pero vive
+*dentro* del panel final de Star Party, así que es inalcanzable sin haber
+entrado antes.)
+
+**Para reactivarlo: descomentar ese bloque. Nada más.**
+
+### 🚨 NO borrar los `<script>` de `starparty_*.js`
+
+Siguen cargando **a propósito**, aunque el juego no se vea:
+
+```
+app.js  revealCount()          → spFibInitialReveal()   [starparty_minigames.js]
+starparty_minigames.js         → STARPARTY_REALWORD_POOLS [starparty_realword_pools.js]
+```
+
+**Fill in the Blanks usa `spFibInitialReveal()`** para calcular cuántas letras
+revela al empezar cada palabra. Si alguien "limpia" esos scripts por verlos
+huérfanos, rompe un juego que sí está activo. Tampoco es objetivo ahorrar peso
+de descarga.
+
+Se conservan igualmente intactos: `<main id="screen-starparty">`, todo el CSS
+`.sp-*` / `.card-art-starparty`, la regla de exclusión de `endPop`
+(`#sp-end .end-panel > *`), y los `.js`/`.json` del juego.
+
+Star Party sigue fuera del sistema de logros (los 48 badges nunca lo
+incluyeron), del sistema de sonido y de la animación `endPop`.
+
 ## Sistema de niveles
 
 El modal de inicio (`openIntro(game)`, ~línea 273) es **compartido por todos
@@ -249,6 +282,19 @@ mantiene en 228px y casi nada se recorta.
 - **Nombres de archivo sensibles a mayúsculas** — el deploy es tipo
   Netlify, case-sensitive. Verificar `ls` real antes de escribir un `src`,
   nunca asumir. Evitar espacios en nombres de archivo.
+
+  **`ls` desde Git Bash NO sirve para verificar esto.** Windows y Git Bash
+  resuelven rutas sin distinguir mayúsculas, así que `ls assets/badges` responde
+  igual aunque el directorio se llame `Badges` — y un `fetch()` contra el
+  servidor local también devuelve `200`. Ya pasó: los 5 PNG de badges vivían en
+  `assets/Badges/` mientras el código pedía `assets/badges/`; en local todo se
+  veía bien y en Netlify habrían dado 404 los cinco. Para comprobarlo de verdad
+  hay que pedir el nombre **real** al FS:
+
+  ```bash
+  powershell.exe -NoProfile -Command "Get-ChildItem -Recurse -File | ForEach-Object { \$_.FullName.Replace((Get-Location).Path + '\', '').Replace('\','/') }"
+  ```
+  y comparar esa lista con las rutas del código (`grep -rhoE '(assets|img)/[A-Za-z0-9_./-]+\.(png|webp|mp3)'`).
 - **Rutas relativas siempre** (`assets/games/...`, `assets/audios/...`),
   nunca absolutas.
 - **Breakpoints móviles: `768px` y `480px`.** Los ajustes de teléfono van

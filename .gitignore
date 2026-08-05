@@ -19,6 +19,13 @@ npm-debug.log*
 
 # Claude Code local settings (if ever created inside this folder)
 .claude/settings.local.json
+# local dev-server launch config for the in-editor preview — tooling, not site
+.claude/launch.json
+
+# Working briefs written for Claude Code sessions. They stay on disk as a local
+# record but are deliberately NOT published: nothing in the site references
+# them, so ignoring them changes nothing about how the page behaves.
+PROMPT_*.md
 
 # Dependency folders (in case tooling is added later)
 node_modules/

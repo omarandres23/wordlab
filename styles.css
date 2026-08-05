@@ -46,7 +46,18 @@ body {
   background: rgba(0, 0, 0, 0.45);
   border-bottom: 1px solid rgba(155, 48, 255, 0.35);
 }
-.topbar-side { width: 80px; }
+/* The side was a fixed 80px box holding only the sound control. The badge
+   counter now shares it, so it has to be a ROW — as a plain block the two
+   stacked and the header grew to 106px. flex:1 on both sides keeps the logo
+   centred without either side needing a hard-coded width. */
+.topbar-side {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.topbar-side:last-child { justify-content: flex-end; }
 .logo { display: flex; align-items: center; }
 .logo-img {
   width: clamp(220px, 32vw, 340px);
@@ -66,20 +77,27 @@ body {
 }
 
 /* ================= HOME CARDS ================= */
-/* fixed 3-per-row grid on desktop; narrows to 2 then 1 column on smaller
-   screens (media queries below) instead of flex-wrap's variable column count */
+/* Fixed 3-per-row on desktop, narrowing to 2 then 1 on smaller screens.
+   Flex + a max-width cap rather than a grid: grid tracks are fixed columns, so
+   a final row that doesn't fill them stays left-aligned in its tracks. Flex
+   centres EVERY row, including a short last one. The per-breakpoint max-width
+   is what pins the column count, so this keeps the fixed layout the grid gave
+   us instead of flex-wrap's usual variable count.
+   Cap = (cards x 230) + gaps + the 32px of horizontal padding (border-box). */
 .card-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 230px);
-  gap: 28px;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 28px;
   padding: 0 16px 60px;
+  max-width: 778px; /* 3x230 + 2x28 + 32 */
+  margin-inline: auto;
 }
 @media (max-width: 860px) {
-  .card-grid { grid-template-columns: repeat(2, 230px); }
+  .card-grid { max-width: 520px; } /* 2x230 + 28 + 32 */
 }
 @media (max-width: 540px) {
-  .card-grid { grid-template-columns: 230px; }
+  .card-grid { max-width: 262px; } /* 230 + 32 */
 }
 
 .game-card {
@@ -392,29 +410,31 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   min-width: 44px;
   min-height: 44px;
   flex-shrink: 0;
-  border-radius: 50%;
-  border: 1px solid rgba(155, 48, 255, 0.5);
-  background: rgba(0, 0, 0, 0.25);
+  border-radius: 50%; /* not visible on its own anymore, but keeps the
+    hover glow and focus ring round instead of a square outline */
+  border: none;
+  background: transparent;
   color: var(--text);
   cursor: pointer;
-  transition: background 0.15s, border-color 0.15s;
+  transition: opacity 0.15s, box-shadow 0.15s;
 }
-.mute-btn:hover, .mute-btn:focus-visible { background: rgba(155, 48, 255, 0.25); border-color: var(--accent-bright, #d846ef); }
+.mute-btn:hover, .mute-btn:focus-visible { opacity: 0.82; box-shadow: 0 0 0 6px rgba(155, 48, 255, 0.18); }
 .mute-btn:focus-visible { outline: 2px solid var(--accent-bright, #d846ef); outline-offset: 2px; }
 .mute-icon { font-size: 1.1rem; line-height: 1; }
 
-/* the header trigger shows the VOLUME artwork instead of the 🔊 glyph. Sized
-   to fit INSIDE the existing 44px button — the button's own box is untouched,
-   so the 44px minimum tap target on mobile is preserved. The emoji is still
-   used inside the popover, where it doubles as the mute-state indicator. */
+/* The artwork IS the button now: assets/games/VOLUME.webp already draws its
+   own filled circular disc (measured centered in its 256x256 canvas, radius
+   ~95px), so the CSS no longer draws a second circle around it — that was
+   the "two circles that don't match" bug. Filling the full 44px tap target
+   lets the art's own disc be the only circle on screen. */
 .mute-btn-img {
-  width: 22px;
-  height: 22px;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   display: block;
   pointer-events: none; /* clicks belong to the button, never the image */
@@ -424,9 +444,10 @@ body {
    The class is set by muteRenderIcons() alongside the existing icon swap. */
 .sfx-control.is-muted .mute-btn-img { opacity: 0.4; filter: grayscale(1); }
 
-/* header's control sits inside the fixed-width side slot that balances the
-   logo — align it to the same edge the topbar-side already reserves */
-.topbar-side .sfx-control { margin-left: auto; }
+/* The side slot now right-aligns its own children (justify-content:flex-end),
+   so the old margin-left:auto is not just redundant — with the badge counter
+   beside it, it would shove the counter to the far left of the slot. */
+.topbar-side .sfx-control { margin-left: 0; }
 
 /* the popover: sits BELOW the trigger button, right-edge aligned to it so it
    can never run off the right side of a narrow phone screen. Fixed width,
@@ -2066,9 +2087,9 @@ input.letter-cell:focus { border-color: var(--accent-bright); box-shadow: 0 0 8p
 
 /* ================= MOBILE ================= */
 @media (max-width: 480px) {
-  /* card grid: single column, track width must match .game-card's own width
-     below or the card floats off-center inside a wider empty track */
-  .card-grid { grid-template-columns: 160px; }
+  /* card grid: single column. The cap must match .game-card's own width below
+     or the card floats off-centre inside a wider container. */
+  .card-grid { max-width: 192px; } /* 160 + 32 */
   .game-card { width: 160px; }
   /* height:auto + min-height (not a fixed height) so taller previews
      (Impostor's icon + wordmark + 2 rows of pills) push the box taller
@@ -3416,4 +3437,290 @@ input.letter-cell:focus { border-color: var(--accent-bright); box-shadow: 0 0 8p
   .hi-option { min-height: 50px; }
   #hi-input { min-height: 50px; }
   .hi-replay-btn { min-height: 44px; padding: 10px 16px; }
+}
+
+/* =====================================================
+   ACHIEVEMENTS — card medals, header counter, and the badge screen.
+
+   The medal sits on .game-card itself, NOT inside .card-art: that box has
+   overflow:hidden and would clip it. Top-RIGHT corner, mirroring the green
+   "NEW" pill that lives at top-left, so the two never collide.
+
+   top:0 lines the medal's top edge up with the card's own top edge, hanging
+   down like a bookmark rather than floating outside it. The right inset
+   (12px desktop) clears .game-card's 14px border-radius so the medal's
+   corner sits inside the curve instead of poking through it — verified by
+   measuring against the card's actual rounded corner, not eyeballed. */
+.card-medal {
+  position: absolute;
+  top: 0;
+  right: 13px; /* .game-card has a 1px border, so the offset box the medal is
+    positioned against is 1px smaller than the visible card — 13px here
+    measures as 14px from the true outer edge, matching border-radius */
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  z-index: 3;
+  pointer-events: none;
+}
+/* same escape hatch as .card-art-img-failed: a missing PNG must not leave a
+   broken-image glyph pinned to the corner of the card */
+.card-medal-failed { display: none; }
+
+/* ---- header counter (hidden off-home, exactly like #home-sfx-control) ---- */
+.badge-counter {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px 4px 6px;
+  border: 1px solid rgba(155, 48, 255, 0.55);
+  border-radius: 999px;
+  background: rgba(33, 7, 46, 0.85);
+}
+.badge-counter-icon { width: 20px; height: 20px; object-fit: contain; }
+.badge-counter-text {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* ---- trophy + Instagram, beside the tagline ----
+   Both home-only (unlike the header's badge counter/sound control, which are
+   site-wide and toggled by showScreen()) — .tagline-row only exists inside
+   #screen-home, so neither button needs any visibility logic of its own. */
+.tagline-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 40px 16px 28px;
+}
+.tagline-row .tagline { margin: 0; }
+
+/* shared chrome for the two buttons beside the tagline — size, border,
+   background, hover lift + glow, focus ring. Each button keeps only what is
+   actually its own (achievements needs position:relative for the red dot;
+   the Instagram link just sets its icon's resting color). */
+.tagline-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 46px;
+  height: 46px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 6px;
+  border: 1px solid rgba(155, 48, 255, 0.55);
+  border-radius: 12px;
+  background: rgba(33, 7, 46, 0.85);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, color 0.15s ease;
+}
+.tagline-btn:hover, .tagline-btn:focus-visible { transform: translateY(-2px); box-shadow: 0 0 16px rgba(155, 48, 255, 0.5); }
+.tagline-btn:focus-visible { outline: 2px solid var(--accent-bright, #d846ef); outline-offset: 2px; }
+
+.achievements-btn-img { width: 100%; height: 100%; object-fit: contain; display: block; }
+
+.social-link { color: var(--text-dim); }
+.social-link:hover, .social-link:focus-visible { color: var(--accent-bright); }
+.social-link-icon { width: 24px; height: 24px; display: block; }
+
+.achievements-dot {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ff3b57;
+  border: 2px solid var(--bg-1);
+  animation: achDot 1.4s ease-in-out infinite;
+}
+@keyframes achDot { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.25); } }
+
+/* ---- the screen ---- */
+.ach-head { text-align: center; margin: 6px auto 26px; padding: 0 16px; }
+.ach-title { font-size: 1.8rem; letter-spacing: 2px; margin: 0 0 6px; }
+.ach-subtitle { color: var(--text-dim); margin: 0 0 10px; }
+.ach-progress {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--accent-bright);
+  font-variant-numeric: tabular-nums;
+  margin: 0 0 14px;
+}
+
+/* switch: hides medals + counter, never stops recording */
+.ach-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  user-select: none;
+}
+.ach-switch input { position: absolute; opacity: 0; width: 0; height: 0; }
+.ach-switch-track {
+  width: 44px;
+  height: 24px;
+  border-radius: 999px;
+  background: #3a2a49;
+  border: 1px solid rgba(155, 48, 255, 0.5);
+  padding: 2px;
+  display: block;
+  transition: background 0.18s ease;
+}
+.ach-switch-knob {
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--text-dim);
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+.ach-switch input:checked + .ach-switch-track { background: var(--accent); }
+.ach-switch input:checked + .ach-switch-track .ach-switch-knob { transform: translateX(20px); background: #fff; }
+.ach-switch input:focus-visible + .ach-switch-track { outline: 2px solid var(--accent-bright); outline-offset: 2px; }
+
+/* ---- groups ---- */
+.ach-groups {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 16px 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+.ach-group {
+  background: var(--panel);
+  border: 1px solid rgba(155, 48, 255, 0.4);
+  border-radius: 16px;
+  padding: 16px 16px 18px;
+}
+.ach-group-title {
+  margin: 0 0 14px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.ach-group-count {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+}
+.ach-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+/* ---- one badge ---- */
+.ach-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+  padding: 12px 8px 10px;
+  border: 1px solid rgba(155, 48, 255, 0.28);
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.22);
+}
+.ach-badge-img { width: 62px; height: 62px; object-fit: contain; }
+.ach-badge-img-failed { visibility: hidden; }
+.ach-badge-name { font-size: 0.85rem; font-weight: 800; line-height: 1.2; }
+.ach-badge-goal { font-size: 0.75rem; color: var(--text-dim); line-height: 1.3; }
+.ach-badge-progress {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--accent-bright);
+  font-variant-numeric: tabular-nums;
+  margin: 0;
+}
+.ach-badge-state { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.5px; }
+
+.ach-badge.is-locked .ach-badge-img,
+.ach-badge.is-pending .ach-badge-img { filter: grayscale(1) brightness(0.5); opacity: 0.45; }
+.ach-badge.is-locked .ach-badge-name { color: var(--text-dim); }
+.ach-badge.is-locked .ach-badge-state { color: #7d6a8d; }
+
+/* earned but a prior tier of the chain is still unclaimed: a notch above
+   locked (dim art stays dim — nothing to reclaim yet), a notch below ready
+   (no glow, no pulse, no CLAIM button — that's reserved for actually
+   actionable badges). A faint version of the ready-state gold ties the two
+   together visually: "close" without shouting "claim me now". */
+.ach-badge.is-pending {
+  border-color: rgba(255, 207, 60, 0.35);
+  background: rgba(255, 207, 60, 0.06);
+}
+.ach-badge.is-pending .ach-badge-state { color: #d9ab3c; }
+
+.ach-badge.is-claimed { border-color: rgba(155, 48, 255, 0.6); }
+.ach-badge.is-claimed .ach-badge-state { color: #23d160; }
+
+.ach-badge.is-ready {
+  border-color: #ffcf3c;
+  box-shadow: 0 0 14px rgba(255, 207, 60, 0.35);
+  animation: achReady 1.8s ease-in-out infinite;
+}
+@keyframes achReady {
+  0%, 100% { box-shadow: 0 0 10px rgba(255, 207, 60, 0.28); }
+  50% { box-shadow: 0 0 20px rgba(255, 207, 60, 0.55); }
+}
+.ach-claim-btn {
+  margin-top: 2px;
+  padding: 7px 14px;
+  min-height: 36px;
+  border: none;
+  border-radius: 9px;
+  background: #ffcf3c;
+  color: #3a2600;
+  font-weight: 800;
+  font-size: 0.78rem;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+.ach-claim-btn:hover { background: #ffdd74; }
+
+@media (prefers-reduced-motion: reduce) {
+  .achievements-dot, .ach-badge.is-ready { animation: none; }
+}
+
+/* ---- mobile ---- */
+@media (max-width: 768px) {
+  .card-medal { width: 26px; height: 26px; top: 0; right: 13px; }
+  .ach-row { grid-template-columns: repeat(2, 1fr); }
+  .ach-badge-img { width: 56px; height: 56px; }
+  .ach-title { font-size: 1.5rem; }
+  .badge-counter { padding: 3px 8px 3px 5px; }
+  .badge-counter-icon { width: 17px; height: 17px; }
+  .badge-counter-text { font-size: 0.78rem; }
+}
+@media (max-width: 480px) {
+  /* At this width the header has zero slack beside the 220px logo: counter and
+     logo overlap by ~64px. The number is one tap away on the achievements
+     screen, and the trophy button (with its red dot) stays on the tagline row.
+     Later in the file than .hidden, so this wins without !important. */
+  .badge-counter { display: none; }
+  .card-medal { width: 23px; height: 23px; top: 0; right: 13px; }
+  .tagline-row { gap: 10px; margin: 26px 12px 20px; }
+  /* .tagline-btn keeps its 44px min-width/min-height floor here (the tap
+     target rule wins over any smaller width/height) — there's no overlap at
+     this width, so there is nothing to shrink. */
+  .social-link-icon { width: 21px; height: 21px; }
+  .ach-groups { padding: 0 10px 40px; gap: 18px; }
+  .ach-group { padding: 12px 10px 14px; }
+  .ach-badge { padding: 10px 6px 8px; }
+  .ach-badge-img { width: 48px; height: 48px; }
+  .ach-badge-name { font-size: 0.78rem; }
+  .ach-badge-goal { font-size: 0.7rem; }
 }
