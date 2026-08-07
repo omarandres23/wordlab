@@ -29,7 +29,9 @@
       "strands_mode_options": {
         "normal": "NORMAL",
         "hardcore": "HARDCORE"
-      }
+      },
+      "loading": "Loading…",
+      "load_error": "Couldn't load this game's data. Check your connection and press START again."
     },
     "level_labels": {
       "basico": "Basic",

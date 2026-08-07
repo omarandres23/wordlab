@@ -67,6 +67,54 @@ Todos comparten helpers globales: `$`/`$$` (querySelector), `shuffle()`,
 `randomItem()`, `interp()` (interpolación de strings `${...}`), `t()`/`ts()`
 (lookup en ui_strings), `lookupDefinition(word)` (respeta `selectedLanguage`).
 
+## ⚠️ Carga bajo demanda de los bancos (`DataLoader`)
+
+La portada **solo carga 7 scripts** (~260 KB). Los bancos de datos (~2,1 MB)
+los inyecta `DataLoader`, al principio de `app.js`, cuando el jugador pincha
+una tarjeta. Antes se descargaban los 29 de golpe: 2.403 KB.
+
+Cada banco sigue siendo un `.js` que declara una global (`WORDLINKS_DATA`…);
+lo único que cambia es **cuándo** se inserta su `<script>`. Los trece bloques
+de juego no se tocaron.
+
+**Al añadir un juego o un banco nuevo hay que registrarlo en el mapa `NEEDS`
+de `DataLoader`.** Si no, la global llega indefinida al pulsar START.
+
+- La caché es **por archivo**, no por juego: `definitions.js` lo comparten
+  **ocho** juegos (Real Word, Waffle, Connections, Fill in the Blanks,
+  Strands, Emoji Match, Hear It **e Impostor**) y solo se descarga una vez.
+- `ASSET_V` en `app.js` **tiene que coincidir** con el `?v=` de `index.html`.
+  El bump por regex actualiza los dos; si se desincronizan, los bancos se
+  piden con una versión vieja y se sirven cacheados.
+
+### 🚨 Nada de nivel superior puede tocar un banco
+
+`app.js` se ejecuta **antes** que cualquier banco. Si una línea de nivel
+superior lee una global de datos, lanza `ReferenceError` y **aborta el resto
+del archivo** — el juego no falla al abrirse, falla todo lo que venga después
+en `app.js` (así se descubrió: los logros dejaron de inicializarse).
+
+Patrones seguros e inseguros:
+
+```js
+const wlRules = () => WORDLINKS_DATA.rules;        // OK: se lee al llamarla
+const BW_DICTIONARY = new Set(BOMBWORD_DATA.dict); // ROMPE: se lee al cargar
+```
+
+Ya hubo que arreglar tres casos, dos de ellos `new Set(...)` inmediatos
+(`BW_DICTIONARY`, `ST_DICTIONARY`, ahora perezosos) y uno **transitivo**:
+`hiInitVoices()` se llama al final de `app.js` y por dentro leía
+`HEARIT_DATA.audio.lang`.
+
+**Buscar estos casos con `grep` de columna 0 no basta** — no ve las llamadas
+transitivas. La forma fiable de comprobarlo es en el navegador:
+
+```js
+window.addEventListener('error', e => console.log(e.message, e.lineno));
+```
+puesto en un `<script>` inline **antes** de `app.js`, y recargar. Si `app.js`
+se cortó, las `const` del final quedan en TDZ (`typeof` da error).
+
 ## ⚠️ Star Party — DESACTIVADO TEMPORALMENTE (no borrado)
 
 La tarjeta de Star Party está **comentada** en `index.html` (dentro de
@@ -79,22 +127,28 @@ entrado antes.)
 
 **Para reactivarlo: descomentar ese bloque. Nada más.**
 
-### 🚨 NO borrar los `<script>` de `starparty_*.js`
+### 🚨 `starparty_minigames.js` NO es huérfano
 
-Siguen cargando **a propósito**, aunque el juego no se vea:
+**Fill in the Blanks usa `spFibInitialReveal()`**, que vive ahí, para calcular
+cuántas letras revela al empezar cada palabra. Por eso `DataLoader` lo carga
+**junto con Fill in the Blanks**, no con Star Party:
 
+```js
+blanks: ["data.js", "starparty_minigames.js", "definitions.js"],
 ```
-app.js  revealCount()          → spFibInitialReveal()   [starparty_minigames.js]
-starparty_minigames.js         → STARPARTY_REALWORD_POOLS [starparty_realword_pools.js]
-```
 
-**Fill in the Blanks usa `spFibInitialReveal()`** para calcular cuántas letras
-revela al empezar cada palabra. Si alguien "limpia" esos scripts por verlos
-huérfanos, rompe un juego que sí está activo. Tampoco es objetivo ahorrar peso
-de descarga.
+Se puede cargar solo, sin ningún banco de Star Party: sus referencias a
+`BOMBWORD_DATA`, `EMOJIBOMB_DATA`, `GAME_DATA` y `WORDLINKS_DATA` están todas
+dentro de `spMgBuildPools()`, que solo llaman los cinco minijuegos. Si alguien
+lo quita del mapa `NEEDS` por parecer de Star Party, rompe un juego activo.
 
-Se conservan igualmente intactos: `<main id="screen-starparty">`, todo el CSS
-`.sp-*` / `.card-art-starparty`, la regla de exclusión de `endPop`
+`starparty.js`, `starparty_questions.js` y `starparty_wildcards.js` sí están
+fuera de la carga (el juego está pausado). Reactivarlo pide devolverlos al
+`<script>` de `index.html` **y** registrar sus bancos en `NEEDS` — está
+detallado en el comentario de la tarjeta comentada.
+
+Se conservan intactos: `<main id="screen-starparty">`, todo el CSS `.sp-*` /
+`.card-art-starparty`, la regla de exclusión de `endPop`
 (`#sp-end .end-panel > *`), y los `.js`/`.json` del juego.
 
 Star Party sigue fuera del sistema de logros (los 48 badges nunca lo

@@ -372,6 +372,10 @@ body {
 }
 .primary-btn:hover { background: var(--accent-bright); }
 .primary-btn.small { padding: 10px 22px; font-size: 0.95rem; }
+/* START while its game's data bank is still downloading (DataLoader in
+   app.js). Disabled so the game can never start on an undefined global. */
+.primary-btn:disabled { cursor: not-allowed; }
+#intro-start.is-loading { background: #5b3a78; color: var(--text-dim); }
 
 /* ================= GAME SHARED ================= */
 .game-topline {

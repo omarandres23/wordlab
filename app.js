@@ -8,6 +8,99 @@
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => document.querySelectorAll(sel);
 
+/* =====================================================
+   DATA LOADER — the game banks load on demand, not up front.
+
+   The home screen used to download and execute 2.4 MB of JavaScript before
+   the player clicked anything, nearly all of it data banks for games they
+   might never open. Each bank is a plain script declaring one global
+   (WORDLINKS_DATA, STRANDS_DATA…), so injecting that same <script> when the
+   game is actually picked makes the global appear exactly as before — the
+   thirteen game blocks below did not change by a single line.
+
+   Deliberately NOT fetch()+eval or ES modules: the whole project is built on
+   window globals with no build step, and swapping that pattern would be a
+   refactor, not a loading optimisation.
+
+   Timing: loading starts when the card is CLICKED, in parallel with the intro
+   modal opening. Reading the modal and picking a difficulty takes seconds, so
+   the download lands inside that gap and the player never waits. START then
+   awaits the promise before running the game.
+   ===================================================== */
+
+// Cache-busting for injected scripts. MUST match the ?v= suffix on the
+// <script> tags in index.html — the regex bump updates both, and this is the
+// single place the JS side reads it from.
+const ASSET_V = "sp19u";
+
+const DataLoader = (() => {
+  // one entry per game: the files that must exist before start...() runs.
+  // waffle_data.js is NOT here on purpose — see the eager note in index.html.
+  const DEFS = "definitions.js"; // shared meanings bank, 204 KB, loaded once
+  const NEEDS = {
+    wordle: ["data.js"],
+    // spFibInitialReveal() lives in starparty_minigames.js — Fill in the Blanks
+    // has depended on it since before Star Party was paused. That file only
+    // touches the Star Party banks inside spMgBuildPools(), which this game
+    // never calls, so it loads standalone.
+    blanks: ["data.js", "starparty_minigames.js", DEFS],
+    spot: ["spot_data.js"],
+    wordlinks: ["wordlinks_data.js"],
+    impostor: ["impostor_data.js", "impostor_explanations_es.js", "impostor_labels.js", DEFS],
+    connections: ["connections_data.js", "connections_categories_es.js", DEFS],
+    realword: ["realword_data.js", DEFS],
+    bombword: ["bombword_data.js"],
+    waffle: [DEFS], // waffle_data.js is already loaded eagerly
+    emojibomb: ["emojibomb_data.js"],
+    strands: ["strands_data.js", DEFS],
+    emojimatch: ["emojimatch_data.js", DEFS],
+    hearit: ["hearit_data.js", DEFS],
+  };
+
+  // Cache is keyed by FILE, not by game: definitions.js is shared by eight
+  // games and must only ever be fetched once, and double-clicking a card must
+  // not start two downloads. A file's promise is memoised the moment it starts.
+  const inFlight = new Map();
+  // Separate from inFlight on purpose: inFlight means "asked for", done means
+  // "the global actually exists now". isReady() must answer the second one, or
+  // START would fire mid-download and hit an undefined global.
+  const done = new Set();
+
+  function loadFile(file) {
+    if (inFlight.has(file)) return inFlight.get(file);
+    const p = new Promise((resolve, reject) => {
+      const s = document.createElement("script");
+      s.src = file + "?v=" + ASSET_V;
+      s.async = false; // preserve execution order within a batch
+      s.onload = () => { done.add(file); resolve(file); };
+      s.onerror = () => {
+        inFlight.delete(file); // a failed load must stay retryable
+        s.remove();
+        reject(new Error("No se pudo cargar " + file));
+      };
+      document.body.appendChild(s);
+    });
+    inFlight.set(file, p);
+    return p;
+  }
+
+  // Returns a promise for every file this game needs. Safe to call repeatedly.
+  function load(game) {
+    const files = NEEDS[game] || [];
+    return Promise.all(files.map(loadFile)).then(() => game);
+  }
+
+  // Synchronous: lets START decide whether to show a loading state at all,
+  // instead of flashing one for the common already-cached case.
+  const isReady = (game) => (NEEDS[game] || []).every((f) => done.has(f));
+  const filesFor = (game) => (NEEDS[game] || []).slice();
+
+  return { load, isReady, filesFor, ASSET_V };
+})();
+
+// The promise for the game whose modal is currently open. START awaits it.
+let pendingLoad = null;
+
 // ---------- sound control: speaker icon + volume popover (header and every
 // game screen with sound) ----------
 // every instance shares SFX's single localStorage-backed muted/volume state,
@@ -447,9 +540,56 @@ $$(".game-card").forEach((card) => {
       if (typeof spOpenSetup === "function") spOpenSetup();
       return;
     }
+    // Same tick: the modal opens while the bank downloads, so reading it
+    // covers the transfer and the player normally never sees a wait.
+    // openIntro() FIRST — it re-renders the modal text, including the START
+    // label, so starting the load after it is what keeps the busy state.
     openIntro(card.dataset.game);
+    startLoading(card.dataset.game);
   });
 });
+
+// Begins (or re-uses) the load for a game and wires the START button's state
+// to it. Called from both the card click and PLAY AGAIN.
+function startLoading(game) {
+  const btn = $("#intro-start");
+  introLoadFailed = false;
+  if (DataLoader.isReady(game)) {
+    pendingLoad = Promise.resolve(game);
+    setStartBusy(false);
+    return pendingLoad;
+  }
+  setStartBusy(true);
+  pendingLoad = DataLoader.load(game).then(
+    (g) => {
+      if (pendingGame === game) setStartBusy(false);
+      return g;
+    },
+    (err) => {
+      if (pendingGame === game) {
+        introLoadFailed = true;
+        setStartBusy(false);
+        $("#intro-extra").textContent = ts("intro_modal.load_error");
+      }
+      throw err;
+    }
+  );
+  // the catch above already surfaces it; this keeps it off the unhandled list
+  pendingLoad.catch(() => {});
+  return pendingLoad;
+}
+
+let introLoadFailed = false;
+
+// START disabled + "Loading…" while the bank is still in flight. Never let the
+// player through with an undefined global.
+function setStartBusy(busy) {
+  const btn = $("#intro-start");
+  if (!btn) return;
+  btn.disabled = busy;
+  btn.classList.toggle("is-loading", busy);
+  btn.textContent = busy ? ts("intro_modal.loading") : ts("intro_modal.start_button");
+}
 
 $("#intro-close").addEventListener("click", () => {
   $("#intro-overlay").classList.add("hidden");
@@ -459,6 +599,33 @@ $("#intro-close").addEventListener("click", () => {
 $("#intro-start").addEventListener("click", () => {
   const level = document.querySelector('input[name="difficulty"]:checked').value;
   const category = document.querySelector('input[name="category"]:checked').value;
+  const game = pendingGame;
+
+  // The bank may still be downloading (slow network, or an unusually fast
+  // click). Wait for it rather than starting a game whose global is undefined;
+  // the modal stays open and the button shows its loading state meanwhile.
+  if (!DataLoader.isReady(game)) {
+    setStartBusy(true);
+    // After a failure the stored promise is already rejected, and .then() on it
+    // would re-report the error without ever retrying — which would make the
+    // "press START again" message a lie. Start a fresh load instead.
+    const attempt = introLoadFailed || !pendingLoad ? startLoading(game) : pendingLoad;
+    attempt.then(
+      () => { if (pendingGame === game) runGame(game, category, level); },
+      () => {
+        introLoadFailed = true;
+        setStartBusy(false);
+        $("#intro-extra").textContent = ts("intro_modal.load_error");
+      }
+    );
+    return;
+  }
+  runGame(game, category, level);
+});
+
+// The dispatch itself, unchanged — only lifted out so the START handler can
+// call it either immediately or once the download lands.
+function runGame(pendingGame, category, level) {
   $("#intro-overlay").classList.add("hidden");
 
   if (pendingGame === "wordle") startWordle(category, level);
@@ -477,7 +644,7 @@ $("#intro-start").addEventListener("click", () => {
     startEmojiBomb(document.querySelector('input[name="ebmode"]:checked').value);
   if (pendingGame === "strands")
     startStrands(document.querySelector('input[name="stmode"]:checked').value);
-});
+}
 
 // back buttons + play again
 $$("[data-back]").forEach((btn) =>
@@ -500,6 +667,9 @@ $$("[data-replay]").forEach((btn) =>
     SFX.stopAll();
     showScreen("#screen-home");
     openIntro(btn.dataset.replay); // reopen the selector for the same game
+    // already cached by definition (the game just finished), so this resolves
+    // immediately and START never flashes its loading state
+    startLoading(btn.dataset.replay);
   })
 );
 
@@ -2383,8 +2553,14 @@ const BW_STORAGE_KEY = "bombword_last_prefixes";
 const BW_LEVEL_KEYS = ["level1", "level2", "level3", "level4"];
 const BW_FLASH_MS = 450; // quick green flash between prefixes — keep the pace up
 
-// 28k-word dictionary as a Set for O(1) validation lookups
-const BW_DICTIONARY = new Set(BOMBWORD_DATA.dictionary);
+// 28k-word dictionary as a Set for O(1) validation lookups.
+// Built on FIRST USE, not at load: bombword_data.js now arrives on demand, so
+// touching BOMBWORD_DATA while app.js is still executing would throw and abort
+// the rest of the file. The .has() call site is unchanged.
+let bwDictSet = null;
+const BW_DICTIONARY = {
+  has: (w) => (bwDictSet || (bwDictSet = new Set(BOMBWORD_DATA.dictionary))).has(w),
+};
 
 let bwPrefixes = []; // 12 prefixes for this game, in play order (3 per level)
 let bwIndex = 0; // 0-11
@@ -3215,7 +3391,12 @@ $("#eb-again-btn").addEventListener("click", () => startEmojiBomb(ebMode));
    ===================================================== */
 const ST_STORAGE_KEY = "strands_last_puzzles";
 const ST_LAST_PUZZLES_MAX = 5;
-const ST_DICTIONARY = new Set(STRANDS_DATA.dictionary);
+// Same lazy pattern as BW_DICTIONARY: strands_data.js loads on demand, so the
+// Set is built the first time a word is checked, not while app.js runs.
+let stDictSet = null;
+const ST_DICTIONARY = {
+  has: (w) => (stDictSet || (stDictSet = new Set(STRANDS_DATA.dictionary))).has(w),
+};
 
 let stMode = "normal";
 let stPuzzle = null;
@@ -3958,7 +4139,13 @@ function hiPickVoice() {
   // prefer the exact lang from the data file, but ANY English voice works —
   // plenty of Android devices ship only en-GB or en-IN, and refusing those
   // would kill the game for no reason
-  const want = (HEARIT_DATA.audio.lang || "en-US").toLowerCase();
+  // hiInitVoices() runs at load to warm up Chrome's async getVoices(), but
+  // hearit_data.js only arrives when the game is picked — so read the bank
+  // defensively. The fallback is the same "en-US" the bank specifies, and
+  // hiEnsureVoice() re-runs this once the game (and the bank) are live.
+  const want = (
+    (typeof HEARIT_DATA !== "undefined" && HEARIT_DATA.audio && HEARIT_DATA.audio.lang) || "en-US"
+  ).toLowerCase();
   hearitVoice =
     all.find((v) => v.lang.toLowerCase() === want) ||
     all.find((v) => v.lang.toLowerCase().replace("_", "-").startsWith("en")) ||

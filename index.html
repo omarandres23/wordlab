@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>English 11 — Daily English Games</title>
-<link rel="stylesheet" href="styles.css?v=sp19q">
+<link rel="stylesheet" href="styles.css?v=sp19u">
 </head>
 <body>
 
@@ -80,17 +80,22 @@
     <!-- ============================================================
          STAR PARTY — TEMPORARILY DISABLED (not deleted).
 
-         Commenting out this card is the ONLY thing that hides the game:
-         the card's click handler (app.js) is Star Party's single entry
+         This card's click handler (app.js) is Star Party's single entry
          point, so with no card in the DOM #screen-starparty can never be
-         reached. Its <main>, its CSS and ALL its <script> tags stay exactly
-         as they were, on purpose.
+         reached. Its <main> and all its CSS stay exactly as they were.
 
-         DO NOT "clean up" the starparty_*.js script tags: Fill in the Blanks
-         calls spFibInitialReveal() from starparty_minigames.js. Removing them
-         breaks a game that is still live. See CLAUDE.md.
+         TO RE-ENABLE, two steps (this changed when data banks went
+         load-on-demand — it is no longer just uncommenting):
+           1. Uncomment this block.
+           2. Put starparty.js, starparty_questions.js and
+              starparty_wildcards.js back in the <script> list at the bottom,
+              and add its data banks to DataLoader's NEEDS map in app.js
+              (spMgBuildPools needs BOMBWORD_DATA, EMOJIBOMB_DATA, GAME_DATA,
+              WORDLINKS_DATA and STARPARTY_REALWORD_POOLS).
 
-         TO RE-ENABLE: uncomment this block. Nothing else to undo.
+         starparty_minigames.js is NOT dead weight: Fill in the Blanks calls
+         its spFibInitialReveal(), so DataLoader loads it with that game.
+         See CLAUDE.md.
          ============================================================ -->
     <!--
     <button class="game-card" data-game="starparty">
@@ -986,34 +991,32 @@
   <div class="ach-groups" id="ach-groups"></div>
 </main>
 
-<script src="data.js?v=sp19q"></script>
-<script src="spot_data.js?v=sp19q"></script>
-<script src="contexto_data.js?v=sp19q"></script>
-<script src="contexto_autocomplete.js?v=sp19q"></script>
-<script src="wordlinks_data.js?v=sp19q"></script>
-<script src="impostor_data.js?v=sp19q"></script>
-<script src="connections_data.js?v=sp19q"></script>
-<script src="realword_data.js?v=sp19q"></script>
-<script src="bombword_data.js?v=sp19q"></script>
-<script src="waffle_data.js?v=sp19q"></script>
-<script src="emojibomb_data.js?v=sp19q"></script>
-<script src="emojimatch_data.js?v=sp19q"></script>
-<script src="hearit_data.js?v=sp19q"></script>
-<script src="strands_data.js?v=sp19q"></script>
-<script src="definitions.js?v=sp19q"></script>
-<script src="connections_categories_es.js?v=sp19q"></script>
-<script src="impostor_explanations_es.js?v=sp19q"></script>
-<script src="impostor_labels.js?v=sp19q"></script>
-<script src="achievements.js?v=sp19q"></script>
-<script src="ui_strings_en.js?v=sp19q"></script>
-<script src="ui_strings_es.js?v=sp19q"></script>
-<script src="starparty_questions.js?v=sp19q"></script>
-<script src="starparty_wildcards.js?v=sp19q"></script>
-<script src="starparty_realword_pools.js?v=sp19q"></script>
-<script src="sfx.js?v=sp19q"></script>
-<script src="progress.js?v=sp19q"></script>
-<script src="app.js?v=sp19q"></script>
-<script src="starparty_minigames.js?v=sp19q"></script>
-<script src="starparty.js?v=sp19q"></script>
+<!-- ============================================================
+     Only what the HOME SCREEN itself needs. The thirteen game data banks
+     (~2.1 MB) are injected on demand by DataLoader in app.js when a card is
+     clicked — see the comment there. Adding a <script> for a bank back here
+     silently undoes that saving.
+
+     waffle_data.js is the one bank loaded eagerly, and it has to be: the
+     intro modal reads WAFFLE_DATA.swaps to print the swap count the moment
+     the modal OPENS (wfUpdateIntroExtra), before START is ever pressed.
+     It is 4 KB.
+
+     STAR PARTY is paused, so starparty.js / _questions / _wildcards are not
+     loaded at all. TO RE-ENABLE the game you must put those three back here
+     as well as uncommenting its home card. (starparty_minigames.js is not
+     listed either — it now travels with Fill in the Blanks, which needs its
+     spFibInitialReveal(); DataLoader handles that.)
+
+     Keep the ?v= suffix in sync with ASSET_V in app.js — the version bump
+     regex updates both.
+     ============================================================ -->
+<script src="ui_strings_en.js?v=sp19u"></script>
+<script src="ui_strings_es.js?v=sp19u"></script>
+<script src="achievements.js?v=sp19u"></script>
+<script src="waffle_data.js?v=sp19u"></script>
+<script src="sfx.js?v=sp19u"></script>
+<script src="progress.js?v=sp19u"></script>
+<script src="app.js?v=sp19u"></script>
 </body>
 </html>
