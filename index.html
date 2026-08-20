@@ -1,10 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- lang="es": la interfaz, los enunciados de ayuda y los significados estan en
+     español. Antes decia "en", que hacia que los lectores de pantalla leyeran
+     todo con fonetica inglesa y que el navegador ofreciera traducir la pagina. -->
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>English 11 — Daily English Games</title>
-<link rel="stylesheet" href="styles.css?v=sp19u">
+<title>Word Lab — Juegos para aprender inglés</title>
+<meta name="description" content="13 juegos gratis para practicar inglés: vocabulario, gramática y comprensión auditiva. Wordle, Connections, Strands y más, pensados para hispanohablantes.">
+<!-- pinta la barra del navegador en Android. Es --bg-1 de styles.css, o sea lo
+     que hay arriba de la pagina: la barra continua el fondo en vez de competir
+     con el (usar el acento --accent daria una franja morada brillante). -->
+<meta name="theme-color" content="#16041f">
+
+<!-- Iconos. Generados por tools/build_og_image.py desde img/wordlab-logo.png;
+     no se editan a mano. Sin ?v= a proposito: en este proyecto las imagenes no
+     llevan cache-busting (ni el logo ni las portadas de las tarjetas). -->
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<!-- Open Graph / Twitter Card / canonical.
+
+     ⚠️ Estas URLs son ABSOLUTAS a proposito, y son la UNICA excepcion a la regla
+     de rutas relativas del proyecto (ver CLAUDE.md). WhatsApp, Instagram,
+     Facebook y Telegram scrapean el HTML desde sus propios servidores: una ruta
+     relativa la resolverian contra su dominio, no contra el nuestro, y el
+     preview saldria en blanco.
+
+     ⚠️ Y ojo con las mayusculas de assets/og-image.png: Netlify es
+     case-sensitive. Una sola letra cambiada da preview vacio SIN ningun error
+     visible, porque en local (Windows, que no distingue) se ve perfecto. -->
+<link rel="canonical" href="https://wordlabgames.netlify.app">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="Word Lab">
+<meta property="og:title" content="Word Lab — Juegos para aprender inglés">
+<meta property="og:description" content="13 juegos gratis para practicar inglés: vocabulario, gramática y comprensión auditiva. Wordle, Connections, Strands y más, pensados para hispanohablantes.">
+<meta property="og:url" content="https://wordlabgames.netlify.app">
+<meta property="og:image" content="https://wordlabgames.netlify.app/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Word Lab — Juegos para aprender inglés">
+<meta name="twitter:description" content="13 juegos gratis para practicar inglés: vocabulario, gramática y comprensión auditiva. Wordle, Connections, Strands y más, pensados para hispanohablantes.">
+<meta name="twitter:image" content="https://wordlabgames.netlify.app/assets/og-image.png">
+<link rel="stylesheet" href="styles.css?v=sp21">
 </head>
 <body>
 
@@ -1011,12 +1050,12 @@
      Keep the ?v= suffix in sync with ASSET_V in app.js — the version bump
      regex updates both.
      ============================================================ -->
-<script src="ui_strings_en.js?v=sp19u"></script>
-<script src="ui_strings_es.js?v=sp19u"></script>
-<script src="achievements.js?v=sp19u"></script>
-<script src="waffle_data.js?v=sp19u"></script>
-<script src="sfx.js?v=sp19u"></script>
-<script src="progress.js?v=sp19u"></script>
-<script src="app.js?v=sp19u"></script>
+<script src="ui_strings_en.js?v=sp21"></script>
+<script src="ui_strings_es.js?v=sp21"></script>
+<script src="achievements.js?v=sp21"></script>
+<script src="waffle_data.js?v=sp21"></script>
+<script src="sfx.js?v=sp21"></script>
+<script src="progress.js?v=sp21"></script>
+<script src="app.js?v=sp21"></script>
 </body>
 </html>

@@ -31,7 +31,7 @@ const $$ = (sel) => document.querySelectorAll(sel);
 // Cache-busting for injected scripts. MUST match the ?v= suffix on the
 // <script> tags in index.html — the regex bump updates both, and this is the
 // single place the JS side reads it from.
-const ASSET_V = "sp19u";
+const ASSET_V = "sp21";
 
 const DataLoader = (() => {
   // one entry per game: the files that must exist before start...() runs.
