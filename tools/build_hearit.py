@@ -38,6 +38,15 @@ OPTIONS = 4
 # ------------------------------------------------------------------
 # 0. Homofonos -> conjunto plano de palabras prohibidas al escribir
 # ------------------------------------------------------------------
+# >>> OJO: HETERONYMS, SOFT_CONTRASTS y HARD_CONTRASTS ya no son solo de
+# >>> Hear It. El TEST DE NIVEL los reutiliza via tools/phonetic_rules.py,
+# >>> que los tiene COPIADOS (no se pueden importar de aqui sin ejecutar este
+# >>> script entero y su dependencia english_words).
+# >>>
+# >>> Si cambias cualquiera de los tres, build_placement.py FALLA y te dice
+# >>> que literal cambio y en que entradas. No es un estorbo: es el candado
+# >>> que impide que la copia se desincronice en silencio. Copia el valor
+# >>> nuevo a phonetic_rules.py y vuelve a correr. Detalle en tools/README.md.
 HETERONYMS = set(['LIVE', 'READ', 'LEAD', 'TEAR', 'WIND', 'BOW', 'CLOSE', 'USE', 'RECORD', 'PRESENT', 'OBJECT', 'DESERT', 'MINUTE', 'WOUND', 'SOW', 'ROW', 'CONTENT', 'CONTRACT', 'REFUSE', 'SUBJECT', 'PROJECT', 'PRODUCE', 'PERMIT', 'CONDUCT', 'CONSOLE', 'INVALID', 'BASS', 'DOVE', 'MOBILE', 'POLISH', 'RESUME', 'SEPARATE', 'MODERATE', 'ESTIMATE', 'DELIBERATE', 'ADVOCATE', 'GRADUATE', 'DUPLICATE', 'ALTERNATE', 'APPROPRIATE', 'ELABORATE'])
 
 HOMO = set()

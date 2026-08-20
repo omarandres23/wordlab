@@ -1,0 +1,119 @@
+======================================================================
+SIMULACION — 2000 jugadores sinteticos
+======================================================================
+  motor  : placement_engine.py (identico a placement.js, ver paridad)
+  modelo : Rasch 1PL, S=6.0, suelo de azar c=0.25
+  prior  : N(25.0, 40.0)
+  cortes : basico <22.0  intermedio <=35.0  avanzado >
+  perfiles: 3 thetas por jugador; 1 de cada 3 con listening hundido 8-18 pts
+
+----------------------------------------------------------------------
+ESCENARIO: sin ruido (optimista, circular)
+----------------------------------------------------------------------
+  MAE global            :  3.30 puntos      (objetivo < 4)
+  Sesgo global          : +0.71 puntos
+  tramo      n     MAE    sesgo
+  A1       371    3.58    +1.79
+  A2       415    3.80    +1.13
+  B1       382    3.25    +0.62
+  B2       401    3.36    +0.53
+  C1       364    2.69    -0.25
+  C2        67    1.85    -0.91
+  Banda CEFR equivocada :  32.8%  (656/2000)
+  Acierto de ETIQUETA por destreza (basico/intermedio/avanzado):
+     vocab       80.5%   (1610/2000)
+     grammar     79.7%   (1594/2000)
+     listening   78.0%   (1561/2000)
+  Etiqueta de LISTENING en perfiles desparejos:  78.3%  (522/667)
+  ...y detectado POR DEBAJO de vocab en:         81.1%
+
+----------------------------------------------------------------------
+ESCENARIO: N(0,3) — calibracion experta buena
+----------------------------------------------------------------------
+  MAE global            :  3.48 puntos      (objetivo < 4)
+  Sesgo global          : +1.11 puntos
+  tramo      n     MAE    sesgo
+  A1       371    3.83    +1.99
+  A2       415    4.22    +1.86
+  B1       382    3.38    +1.56
+  B2       401    3.24    +0.80
+  C1       364    2.88    -0.30
+  C2        67    2.12    -1.36
+  Banda CEFR equivocada :  33.7%  (674/2000)
+  Acierto de ETIQUETA por destreza (basico/intermedio/avanzado):
+     vocab       78.7%   (1574/2000)
+     grammar     78.9%   (1578/2000)
+     listening   77.7%   (1554/2000)
+  Etiqueta de LISTENING en perfiles desparejos:  77.7%  (518/667)
+  ...y detectado POR DEBAJO de vocab en:         79.6%
+
+----------------------------------------------------------------------
+ESCENARIO: N(0,6) — PESIMISTA REALISTA
+----------------------------------------------------------------------
+  MAE global            :  3.77 puntos      (objetivo < 4)
+  Sesgo global          : +1.70 puntos
+  tramo      n     MAE    sesgo
+  A1       371    4.27    +2.46
+  A2       415    4.75    +2.80
+  B1       382    3.76    +2.46
+  B2       401    3.41    +1.37
+  C1       364    2.82    -0.17
+  C2        67    2.28    -1.65
+  Banda CEFR equivocada :  36.5%  (730/2000)
+  Acierto de ETIQUETA por destreza (basico/intermedio/avanzado):
+     vocab       75.5%   (1510/2000)
+     grammar     77.9%   (1558/2000)
+     listening   76.2%   (1525/2000)
+  Etiqueta de LISTENING en perfiles desparejos:  76.5%  (510/667)
+  ...y detectado POR DEBAJO de vocab en:         78.4%
+
+----------------------------------------------------------------------
+SIN VOCES DE INGLES — 12 vocab + 12 grammar, ruido N(0,3)
+----------------------------------------------------------------------
+  MAE global            :  3.97 puntos      (objetivo < 4)
+  Sesgo global          : +2.15 puntos
+  tramo      n     MAE    sesgo
+  A1       371    3.96    +2.42
+  A2       415    4.74    +3.21
+  B1       382    4.32    +2.69
+  B2       401    3.99    +1.95
+  C1       364    3.13    +0.87
+  C2        67    1.83    -0.97
+  Banda CEFR equivocada :  38.9%  (777/2000)
+  Acierto de ETIQUETA por destreza (basico/intermedio/avanzado):
+     vocab       81.5%   (1629/2000)
+     grammar     82.6%   (1652/2000)
+
+----------------------------------------------------------------------
+SESGO DEL PRIOR EN LOS EXTREMOS
+----------------------------------------------------------------------
+  El prior N(25,40) impide que 24/24 devuelva infinito. La
+  pregunta es cuanto encoge los extremos. Medido con seleccion ADAPTATIVA real:
+    acierta las 24   -> overall  50.0   display  50   cefr C2      SE 0.7
+    falla las 24     -> overall   0.0   display   0   cefr A1.0    SE 0.6
+  Techo y suelo EFECTIVOS del test, medidos, no supuestos.
+  Nota: con items fijos en b=25 el mismo prior devuelve 45.7 y 2.9. Que
+  aqui llegue a los extremos es merito de la seleccion adaptativa, que
+  arrastra los items hasta b=50 y b=1 y acumula evidencia suficiente
+  para dominar al prior. Sin adaptacion el techo si se quedaria corto.
+
+----------------------------------------------------------------------
+DISTRIBUCION ESPERADA DE ETIQUETAS
+----------------------------------------------------------------------
+  Sobre la poblacion simulada (theta uniforme 0-50). Si el 85% cayera en
+  una sola cubeta las etiquetas no informarian aunque los cortes sean
+  correctos. OJO: esta poblacion es uniforme por construccion, no es una
+  muestra real de estudiantes hispanohablantes — ver limitaciones.
+  global    : basico  43.0%  intermedio  28.0%  avanzado  29.1%
+  vocab     : basico  39.2%  intermedio  29.2%  avanzado  31.5%
+  grammar   : basico  42.7%  intermedio  26.1%  avanzado  31.2%
+  listening : basico  50.7%  intermedio  25.4%  avanzado  23.9%
+
+======================================================================
+RESUMEN
+======================================================================
+  escenario                                   MAE   sesgo  banda mal
+  sin ruido (optimista, circular)            3.30   +0.71      32.8%
+  N(0,3) — calibracion experta buena         3.48   +1.11      33.7%
+  N(0,6) — PESIMISTA REALISTA                3.77   +1.70      36.5%
+  sin voces (12+12), N(0,3)                  3.97   +2.15      38.9%

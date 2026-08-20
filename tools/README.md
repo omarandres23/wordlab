@@ -63,6 +63,21 @@ probando y que, si se rompen, generan bugs **invisibles al jugar**.
 - En basic, `minimal_pair` y `contrast` son campos **opcionales**: solo
   el 24% de las rondas los lleva. El código no debe asumir que existen.
 
+- ⚠️ **Estas reglas ya no son solo de Hear It.** El TEST DE NIVEL las
+  reutiliza para sus ítems de listening, vía `phonetic_rules.py`.
+  `MINIMAL_PAIRS` y `HOMOPHONES` se importan de `hearit_pairs.py` (fuente
+  única, sin copia), pero `HETERONYMS`, `SOFT_CONTRASTS` y `HARD_CONTRASTS`
+  son literales dentro de `build_hearit.py` y están **copiados** en
+  `phonetic_rules.py`, porque importarlos exigiría ejecutar el script entero
+  y su dependencia `english_words`.
+
+  **Si cambias uno de esos tres literales, `build_placement.py` falla.**
+  No es un efecto secundario molesto: es el candado. Compara las copias con
+  el original parseando `build_hearit.py` con `ast` (sin importarlo ni
+  ejecutarlo) y te dice qué literal cambió y en qué entradas. Copia el valor
+  nuevo a `phonetic_rules.py` y vuelve a correr. Así la copia no puede
+  divergir en silencio y producir ítems de listening malos.
+
 ### EMOJI MATCH
 
 - Ningún distractor puede compartir **2 o más emojis** con la respuesta.

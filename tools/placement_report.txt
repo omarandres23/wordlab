@@ -1,0 +1,939 @@
+==================================================================
+SINCRONIA CON build_hearit.py
+==================================================================
+  OK — HETERONYMS, SOFT_CONTRASTS y HARD_CONTRASTS coinciden
+  contrastes duros permitidos solo desde difficulty >= 25.0
+
+==================================================================
+VALIDACION
+==================================================================
+  definiciones reutilizadas de definitions.json : 24
+  palabras nuevas que necesitan definicion      : 0
+
+COBERTURA DE LA ESCALA (huecos maximos de 5 puntos)
+  vocab      n= 72  rango 1.0-50.0  huecos>5: 0
+  grammar    n= 72  rango 1.0-50.0  huecos>5: 0
+  listening  n= 72  rango 1.0-50.0  huecos>5: 0
+
+FORMATO vs DIFICULTAD (desvio maximo entre formatos de una destreza: 6 pts)
+  vocab      spread=  2.4   collocation=23.5  definition=26.0  synonym=25.7
+  grammar    spread=  2.2   grammar_best=26.8  grammar_error=24.6  grammar_gap=25.7
+  listening  spread=  1.0   listen_question=25.5  listen_sentence=24.7  listen_word=25.7
+
+REPARTO DE correct_index
+  vocab      n= 72   0: 18 (25.0%)  1: 18 (25.0%)  2: 18 (25.0%)  3: 18 (25.0%)
+  grammar    n= 72   0: 18 (25.0%)  1: 18 (25.0%)  2: 18 (25.0%)  3: 18 (25.0%)
+  listening  n= 72   0: 18 (25.0%)  1: 18 (25.0%)  2: 18 (25.0%)  3: 18 (25.0%)
+
+==================================================================
+RESUMEN DEL BANCO
+==================================================================
+items totales: 216
+
+formato              n   media    min    max   dificultades
+definition          24    26.0    2.0   49.0   2, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49
+collocation         24    23.5    1.0   48.0   1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 45, 48
+synonym             24    25.7    2.0   50.0   2, 4, 6, 8, 10, 12, 14, 16, 18, 21, 23, 25, 26, 29, 31, 33, 35, 37, 39, 41, 43, 46, 48, 50
+grammar_gap         24    25.7    2.0   50.0   2, 4, 6, 8, 10, 12, 14, 16, 18, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 48, 50
+grammar_error       24    24.6    1.0   49.0   1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 49
+grammar_best        24    26.8    2.0   50.0   2, 4, 6, 9, 11, 13, 15, 17, 19, 21, 24, 26, 28, 30, 32, 35, 37, 39, 41, 43, 45, 47, 49, 50
+listen_word         24    25.7    2.0   50.0   2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 27, 29, 31, 33, 35, 37, 39, 41, 44, 46, 48, 50
+listen_sentence     24    24.7    1.0   50.0   1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 28, 30, 32, 34, 36, 38, 40, 43, 45, 48, 50
+listen_question     24    25.5    2.0   49.0   2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49
+
+POR BANDA CEFR
+destreza       A1    A2    B1    B2    C1    C2
+vocab          10    15    15    15    13     4
+grammar        10    15    13    15    14     5
+listening      10    15    14    15    13     5
+
+==================================================================
+LOS ITEMS Y SU JUSTIFICACION DE DIFICULTAD
+==================================================================
+
+--- DEFINITION (vocab) ---
+  [ 2.0 A1.0 ] voc_def_01
+      enunciado: a small furry animal kept as a pet
+      opciones: ['CAT', 'TABLE', 'SHOE', 'RIVER']   correcta[0]='CAT'
+      por que: CAT zipf 4.78. Definicion con vocabulario solo A1. Distractores de campos sin relacion: no hay encaje parcial. Piso absoluto.
+  [ 5.0 A1.5 ] voc_def_04
+      enunciado: land surrounded by water
+      opciones: ['CLOCK', 'ISLAND', 'CHAIR', 'BREAD']   correcta[1]='ISLAND'
+      por que: ISLAND zipf 5.01, mas frecuente que CAT pero la definicion exige dos conceptos ligados (land + surrounded by), no uno. Distractores A1 inconexos, asi que sigue siendo reconocimiento puro.
+  [ 7.0 A1.5 ] voc_def_05
+      enunciado: the coldest season of the year
+      opciones: ['MORNING', 'MONDAY', 'WINTER', 'SUMMER']   correcta[2]='WINTER'
+      por que: WINTER zipf 4.89. Sube respecto del anterior porque SUMMER es el antonimo dentro del mismo campo: ya no basta reconocer 'season', hay que leer 'coldest'. Primer item que castiga leer a medias.
+  [ 9.0 A2.0 ] voc_def_06
+      enunciado: an area for growing plants
+      opciones: ['GARAGE', 'KITCHEN', 'BALCONY', 'GARDEN']   correcta[3]='GARDEN'
+      por que: GARDEN zipf 4.77. Los tres distractores son espacios de una casa, o sea mismo campo semantico: hay que saber cual se asocia a plantas. A2.0.
+  [11.0 A2.0 ] voc_def_07
+      enunciado: a structure built to cross over water or a road
+      opciones: ['BRIDGE', 'FENCE', 'TOWER', 'TUNNEL']   correcta[0]='BRIDGE'
+      por que: BRIDGE zipf 4.77. TUNNEL es el distractor duro: tambien cruza un obstaculo, pero por debajo. Exige procesar 'over'. A2.0.
+  [13.0 A2.5 ] voc_def_08
+      enunciado: a glass surface that reflects images
+      opciones: ['PICTURE', 'MIRROR', 'WINDOW', 'SCREEN']   correcta[1]='MIRROR'
+      por que: MIRROR zipf 4.47. Los tres distractores son superficies planas que muestran algo; solo MIRROR refleja. La palabra clave es 'reflects', vocabulario A2-B1, lo que sube el item por encima del enunciado.
+  [15.0 A2.5 ] voc_def_09
+      enunciado: a flat board for holding things
+      opciones: ['BASKET', 'CUPBOARD', 'SHELF', 'DRAWER']   correcta[2]='SHELF'
+      por que: SHELF zipf 4.02, ya fuera del nucleo de altisima frecuencia. Los tres distractores son muebles de guardar: la unica pista es 'flat board', que exige vocabulario concreto de A2.5.
+  [17.0 A2.5 ] voc_def_10
+      enunciado: the top inside surface of a room
+      opciones: ['ROOF', 'FLOOR', 'WALL', 'CEILING']   correcta[3]='CEILING'
+      por que: CEILING zipf 4.18. ROOF es el distractor central y es exactamente la confusion del hispanohablante, que usa 'techo' para las dos. Hay que procesar 'inside'. A2.5.
+  [19.0 B1.0 ] voc_def_11
+      enunciado: a set of steps for climbing up
+      opciones: ['LADDER', 'RAMP', 'ROPE', 'HOOK']   correcta[0]='LADDER'
+      por que: LADDER zipf 4.03. Los distractores sirven todos para subir o sujetar, asi que la pista util es 'set of steps'. Vocabulario concreto poco frecuente en el aula: B1.0.
+  [21.0 B1.0 ] voc_def_12
+      enunciado: the gathering of ripe crops
+      opciones: ['ORCHARD', 'HARVEST', 'PLANTING', 'SEASON']   correcta[1]='HARVEST'
+      por que: HARVEST zipf 4.03, pero la definicion usa 'ripe' y 'crops', ambas B1. PLANTING es la accion opuesta del mismo ciclo agricola. El item mide tanto la respuesta como el enunciado, y por eso sube a B1.0.
+  [23.0 B1.5 ] voc_def_13
+      enunciado: money borrowed that must be paid back
+      opciones: ['REFUND', 'WAGE', 'LOAN', 'BONUS']   correcta[2]='LOAN'
+      por que: LOAN zipf 4.68, alta, pero los tres distractores son movimientos de dinero del mismo registro financiero. Discrimina por direccion del dinero (se recibe y se devuelve), no por tema. B1.5.
+  [25.0 B1.5 ] voc_def_02
+      enunciado: the latest time by which something must be done
+      opciones: ['BUDGET', 'AGENDA', 'SCHEDULE', 'DEADLINE']   correcta[3]='DEADLINE'
+      por que: zipf 4.12. Lo que lo sube de A2 a B1.5 son los distractores: los tres del mismo campo (organizacion del trabajo), asi que reconocer el tema no alcanza.
+  [27.0 B1.5 ] voc_def_14
+      enunciado: a loan used to buy a house
+      opciones: ['MORTGAGE', 'DEPOSIT', 'INSURANCE', 'RENT']   correcta[0]='MORTGAGE'
+      por que: MORTGAGE zipf 4.39. Los cuatro son terminos de vivienda y dinero; hay que saber cual es un prestamo. Registro especializado que no aparece en el ingles general hasta B1.5-B2.
+  [29.0 B2.0 ] voc_def_15
+      enunciado: a person who rents a home or space
+      opciones: ['NEIGHBOUR', 'TENANT', 'LANDLORD', 'GUEST']   correcta[1]='TENANT'
+      por que: TENANT zipf 3.78. LANDLORD es el distractor decisivo: es el otro lado de la MISMA relacion, asi que el item mide direccionalidad, que es donde falla quien conoce el tema de oidas. B2.0.
+  [31.0 B2.0 ] voc_def_16
+      enunciado: a long period with little or no rain
+      opciones: ['FLOOD', 'STORM', 'DROUGHT', 'FROST']   correcta[2]='DROUGHT'
+      por que: DROUGHT zipf 3.90 y ademas ortografia opaca (no se pronuncia como se escribe). Los distractores son los otros fenomenos extremos, uno de ellos el opuesto exacto. B2.0.
+  [33.0 B2.5 ] voc_def_17
+      enunciado: a formal agreement between countries
+      opciones: ['CEASEFIRE', 'CONTRACT', 'PETITION', 'TREATY']   correcta[3]='TREATY'
+      por que: TREATY zipf 4.31, frecuencia alta pero concentrada en registro periodistico-politico. CONTRACT es un acuerdo formal tambien: la unica pista es 'between countries'. B2.0-B2.5.
+  [35.0 B2.5 ] voc_def_18
+      enunciado: an amount left over after needs are met
+      opciones: ['SURPLUS', 'RESERVE', 'DEFICIT', 'MARGIN']   correcta[0]='SURPLUS'
+      por que: SURPLUS zipf 3.87. DEFICIT es el antonimo tecnico y RESERVE casi un sinonimo: el item discrimina dentro de un campo economico estrecho, no entre campos. B2.5.
+  [37.0 B2.5 ] voc_def_19
+      enunciado: very careful and critical examination
+      opciones: ['OVERSIGHT', 'SCRUTINY', 'GLANCE', 'APPRAISAL']   correcta[1]='SCRUTINY'
+      por que: SCRUTINY zipf 3.74. APPRAISAL y OVERSIGHT son evaluaciones tambien; la pista es 'critical'. Sustantivo abstracto de registro formal, tipico del salto B2.5-C1.
+  [39.0 C1.0 ] voc_def_20
+      enunciado: having more than one possible meaning
+      opciones: ['IRRELEVANT', 'OBSCURE', 'AMBIGUOUS', 'INACCURATE']   correcta[2]='AMBIGUOUS'
+      por que: AMBIGUOUS zipf 3.57. OBSCURE es el distractor fuerte: tambien es 'dificil de entender', pero por falta de claridad, no por multiplicidad. Ese matiz es exactamente C1.0.
+  [41.0 C1.0 ] voc_def_21
+      enunciado: very sure and refusing to change your mind
+      opciones: ['INDIFFERENT', 'RELUCTANT', 'CAUTIOUS', 'ADAMANT']   correcta[3]='ADAMANT'
+      por que: ADAMANT zipf 3.28. Los cuatro son adjetivos de actitud; RELUCTANT tiene tambien un componente de resistencia pero pasiva, no firme. Discrimina intensidad y direccion de una actitud: C1.0.
+  [43.0 C1.5 ] voc_def_22
+      enunciado: having mixed feelings and unsure what to choose
+      opciones: ['AMBIVALENT', 'INDIFFERENT', 'RESENTFUL', 'APATHETIC']   correcta[0]='AMBIVALENT'
+      por que: AMBIVALENT zipf 3.01. INDIFFERENT y APATHETIC son el error clasico: se confunde 'sentimientos encontrados' con 'sin sentimientos'. Es la misma confusion en dos distractores a proposito, para que no se acierte por descarte. C1.5.
+  [45.0 C1.5 ] voc_def_23
+      enunciado: changing suddenly for no clear reason
+      opciones: ['DELIBERATE', 'CAPRICIOUS', 'METICULOUS', 'TENACIOUS']   correcta[1]='CAPRICIOUS'
+      por que: CAPRICIOUS zipf 2.79. Tiene cognado en espanol (caprichoso) que ayuda, y por eso NO esta mas arriba pese a su baja frecuencia: la escala mide dificultad para un hispanohablante, no frecuencia bruta. C1.5.
+  [47.0 C1.5 ] voc_def_24
+      enunciado: careful and thinking about risks before acting
+      opciones: ['IMPETUOUS', 'OSTENTATIOUS', 'CIRCUMSPECT', 'DISINGENUOUS']   correcta[2]='CIRCUMSPECT'
+      por que: CIRCUMSPECT zipf 2.46, la mas baja del banco de vocabulario. Los tres distractores son igual de raros (2.4-3.0), asi que no se puede acertar eligiendo 'la que suena mas culta'. C1.5-C2.
+  [49.0 C2   ] voc_def_03
+      enunciado: clear and convincing in argument
+      opciones: ['PRUDENT', 'TENTATIVE', 'CANDID', 'COGENT']   correcta[3]='COGENT'
+      por que: COGENT zipf 2.71, bajo el umbral ~3.5 del vocabulario academico C1. Distractores con frecuencia casi identica entre si (3.41-3.45): un C1 los conoce los tres y aun asi puede no conocer COGENT.
+
+--- COLLOCATION (vocab) ---
+  [ 1.0 A1.0 ] voc_col_04
+      enunciado: I ___ breakfast at seven every morning.
+      opciones: ['have', 'do', 'make', 'take']   correcta[0]='have'
+      por que: have breakfast. Nucleo A1.0 absoluto. Los tres distractores son la interferencia del espanol (tomar/hacer el desayuno), asi que el item mide colocacion desde el primer punto de la escala.
+  [ 3.0 A1.5 ] voc_col_05
+      enunciado: She ___ a mistake in the report.
+      opciones: ['took', 'made', 'had', 'did']   correcta[1]='made'
+      por que: make a mistake. El par make/do es EL problema del hispanohablante (un solo verbo 'hacer' cubre los dos). A1.5 porque el sustantivo es frecuente y el contexto es transparente.
+  [ 5.0 A1.5 ] voc_col_01
+      enunciado: She ___ a shower every morning.
+      opciones: ['makes', 'does', 'takes', 'puts']   correcta[2]='takes'
+      por que: take a shower. MAKES/DOES no son relleno: son la interferencia exacta del espanol. A1.5 y no A1.0 porque elegir entre 4 verbos frecuentes cuesta mas que reconocer una palabra.
+  [ 7.0 A1.5 ] voc_col_06
+      enunciado: They ___ a party for her birthday.
+      opciones: ['took', 'made', 'did', 'had']   correcta[3]='had'
+      por que: have a party. Mismo eje que los anteriores pero con un sustantivo donde el espanol dice 'hacer una fiesta', asi que MADE es un calco muy atractivo. A1.5-A2.0.
+  [ 9.0 A2.0 ] voc_col_07
+      enunciado: He ___ his homework before dinner.
+      opciones: ['does', 'makes', 'has', 'takes']   correcta[0]='does'
+      por que: do homework. Es el reverso de los items anteriores: aqui el correcto es DO y el calco es MAKE. Que el eje make/do cambie de direccion impide que se acierte por regla fija. A2.0.
+  [11.0 A2.0 ] voc_col_08
+      enunciado: Can you ___ me a favour?
+      opciones: ['give', 'do', 'put', 'make']   correcta[1]='do'
+      por que: do a favour. GIVE es el distractor nuevo y es plausible (se 'da' algo a alguien). Formula social fija que se aprende entera: A2.0.
+  [13.0 A2.5 ] voc_col_09
+      enunciado: We need to ___ a decision today.
+      opciones: ['do', 'take', 'make', 'have']   correcta[2]='make'
+      por que: make a decision. TAKE es el calco directo de 'tomar una decision' y es el error mas persistente de todos los de esta familia: sobrevive hasta B2. A2.5 porque el contexto sigue siendo transparente.
+  [15.0 A2.5 ] voc_col_10
+      enunciado: She ___ a lot of attention to detail.
+      opciones: ['makes', 'puts', 'gives', 'pays']   correcta[3]='pays'
+      por que: pay attention. En espanol se 'presta' atencion, asi que GIVES es el calco. Sale del eje make/do y entra en verbos especificos por sustantivo, que es un salto real: A2.5.
+  [17.0 A2.5 ] voc_col_11
+      enunciado: The children ___ a lot of noise.
+      opciones: ['make', 'have', 'put', 'do']   correcta[0]='make'
+      por que: make noise. Vuelve al eje make/do pero con un sustantivo abstracto no contable, que es donde la regla intuitiva ('make = crear') deja de ayudar. A2.5.
+  [19.0 B1.0 ] voc_col_12
+      enunciado: He ___ an interest in photography after the trip.
+      opciones: ['made', 'took', 'gave', 'did']   correcta[1]='took'
+      por que: take an interest. Colocacion sin equivalente literal en espanol ('interesarse por'), asi que no hay calco que ayude ni que estorbe: se sabe o no. B1.0.
+  [20.0 B1.0 ] voc_col_02
+      enunciado: The company ___ a profit of three million last year.
+      opciones: ['gave', 'did', 'made', 'took']   correcta[2]='made'
+      por que: make a profit. Sujeto abstracto y registro de negocios. TOOK y GAVE son colocaciones validas con otros sustantivos (take a loss, give a discount), asi que descartarlos exige saber cual va con profit.
+  [22.0 B1.0 ] voc_col_13
+      enunciado: The new law ___ into effect next month.
+      opciones: ['gets', 'goes', 'makes', 'comes']   correcta[3]='comes'
+      por que: come into effect. Verbo de movimiento en sentido abstracto, donde el espanol usa 'entrar en vigor' y por eso GOES parece razonable. Registro juridico-periodistico: B1.0.
+  [24.0 B1.5 ] voc_col_14
+      enunciado: She ___ a risk by investing everything in one company.
+      opciones: ['took', 'made', 'did', 'had']   correcta[0]='took'
+      por que: take a risk. Coincide con el espanol ('correr/tomar un riesgo'), asi que la dificultad no viene del calco sino de que MAKE se ha vuelto el reflejo por defecto a esta altura del banco. B1.5.
+  [26.0 B1.5 ] voc_col_15
+      enunciado: They ___ an agreement after two days of talks.
+      opciones: ['gave', 'reached', 'took', 'did']   correcta[1]='reached'
+      por que: reach an agreement. Primer item donde el verbo correcto NO es uno de los cuatro basicos: hay que conocer el verbo especifico, no elegir entre make/do/take/have. Ese cambio de mecanica lo situa en B1.5.
+  [28.0 B2.0 ] voc_col_16
+      enunciado: The article ___ attention to a growing problem.
+      opciones: ['takes', 'puts', 'draws', 'makes']   correcta[2]='draws'
+      por que: draw attention to. Contrasta a proposito con voc_col_10 (pay attention): el mismo sustantivo lleva verbos distintos segun el sentido. Quien memorizo 'pay attention' como bloque falla aqui. B2.0.
+  [30.0 B2.0 ] voc_col_17
+      enunciado: She ___ responsibility for the mistake in public.
+      opciones: ['held', 'gave', 'made', 'took']   correcta[3]='took'
+      por que: take responsibility. HELD es el distractor fino: 'hold responsible' existe pero con otra estructura y otro sujeto. Discrimina entre dos colocaciones reales del mismo sustantivo. B2.0.
+  [32.0 B2.0 ] voc_col_18
+      enunciado: The company ___ ground to its competitors last year.
+      opciones: ['lost', 'dropped', 'gave', 'fell']   correcta[0]='lost'
+      por que: lose ground. Metafora espacial opaca: 'perder terreno' existe en espanol, pero DROPPED y FELL son igual de espaciales y plausibles. B2.5.
+  [34.0 B2.5 ] voc_col_19
+      enunciado: His remarks ___ a heated debate among the members.
+      opciones: ['lit', 'sparked', 'flashed', 'burned']   correcta[1]='sparked'
+      por que: spark a debate. Los cuatro distractores son del mismo campo (fuego), asi que la metafora se entiende y aun asi hay que saber cual verbo se lexicalizo. Registro periodistico: B2.5.
+  [36.0 B2.5 ] voc_col_20
+      enunciado: The new evidence ___ weight to her argument.
+      opciones: ['owes', 'pays', 'lends', 'borrows']   correcta[2]='lends'
+      por que: lend weight to. Se evitaron ADD y GIVE como distractores porque 'add weight' TAMBIEN es correcto y el item tendria dos respuestas. Los cuatro son verbos de prestamo, campo unico. C1.0.
+  [38.0 C1.0 ] voc_col_21
+      enunciado: The inspector ___ a blind eye to several irregularities.
+      opciones: ['closed', 'gave', 'shut', 'turned']   correcta[3]='turned'
+      por que: turn a blind eye. Modismo totalmente opaco: en espanol es 'hacer la vista gorda', asi que CLOSED y SHUT son deducciones logicas y equivocadas. No hay forma de razonarlo. C1.0.
+  [40.0 C1.0 ] voc_col_22
+      enunciado: The proposal ___ short of what the committee expected.
+      opciones: ['fell', 'came', 'got', 'went']   correcta[0]='fell'
+      por que: fall short of. Los cuatro son verbos de movimiento intransitivos y cualquiera suena posible con 'short'. Sin cognado en espanol y sin pista interna: C1.0-C1.5.
+  [42.0 C1.0 ] voc_col_23
+      enunciado: He ___ issue with the committee's findings.
+      opciones: ['gave', 'took', 'made', 'had']   correcta[1]='took'
+      por que: take issue with. Vuelve a los cuatro verbos basicos pero en una colocacion de registro formal y baja frecuencia, donde la familiaridad con make/do/take/have ya no ayuda a decidir. C1.5.
+  [45.0 C1.5 ] voc_col_03
+      enunciado: The new evidence ___ serious doubt on his version of events.
+      opciones: ['puts', 'throws', 'casts', 'lays']   correcta[2]='casts'
+      por que: cast doubt on es fija y opaca. Cuatro verbos de movimiento vecinos, ninguna pista logica. Perfil tipico de C1.5: no se deduce.
+  [48.0 C2   ] voc_col_24
+      enunciado: His explanation simply does not ___ water.
+      opciones: ['keep', 'take', 'carry', 'hold']   correcta[3]='hold'
+      por que: hold water (= resistir el analisis). Modismo opaco de registro culto sin ningun paralelo en espanol; los tres distractores son verbos de contencion igual de razonables literalmente. C2.
+
+--- SYNONYM (vocab) ---
+  [ 2.0 A1.0 ] voc_syn_04
+      enunciado: The box was very [small].
+      opciones: ['little', 'round', 'empty', 'heavy']   correcta[0]='little'
+      por que: small/little, equivalencia total para tamano y ambas zipf >5.5. Distractores A1 de otras dimensiones fisicas (peso, contenido, forma). Piso de la escala de sinonimia.
+  [ 4.0 A1.5 ] voc_syn_01
+      enunciado: The house is very [big].
+      opciones: ['new', 'large', 'small', 'old']   correcta[1]='large'
+      por que: big/large, equivalencia TOTAL para tamano fisico: no depende del contexto ni del registro. Dos distractores son antonimos, asi que se resuelve por significado y no por descarte.
+  [ 6.0 A1.5 ] voc_syn_05
+      enunciado: She was very [happy] with the result.
+      opciones: ['angry', 'hungry', 'pleased', 'tired']   correcta[2]='pleased'
+      por que: happy/pleased. Primera equivalencia que NO es total: 'pleased' pide un objeto de satisfaccion, que el contexto ('with the result') da. Los distractores son estados A1 sin relacion. A1.5.
+  [ 8.0 A2.0 ] voc_syn_06
+      enunciado: The first test was quite [easy].
+      opciones: ['short', 'boring', 'useful', 'simple']   correcta[3]='simple'
+      por que: easy/simple. SHORT es el distractor util: un examen facil suele ser corto, asi que hay que separar la propiedad de su correlato habitual. A2.0.
+  [10.0 A2.0 ] voc_syn_07
+      enunciado: He [began] the meeting at nine o'clock.
+      opciones: ['started', 'joined', 'missed', 'ended']   correcta[0]='started'
+      por que: begin/start, equivalencia total, pero verbal en vez de adjetival y con un antonimo directo entre los distractores. A2.0.
+  [12.0 A2.0 ] voc_syn_08
+      enunciado: When they arrived, the room was completely [empty].
+      opciones: ['quiet', 'bare', 'dark', 'dirty']   correcta[1]='bare'
+      por que: empty/bare. La equivalencia ya depende del sustantivo: 'bare room' funciona, 'bare bottle' no. Primer item donde el contexto es imprescindible. A2.5.
+  [14.0 A2.5 ] voc_syn_09
+      enunciado: They [fixed] the broken window yesterday.
+      opciones: ['removed', 'replaced', 'repaired', 'cleaned']   correcta[2]='repaired'
+      por que: fix/repair. REPLACED es el distractor decisivo: tambien resuelve una ventana rota, pero cambiandola, no arreglandola. Mide precision, no tema. A2.5.
+  [16.0 A2.5 ] voc_syn_10
+      enunciado: The instructions were very [clear].
+      opciones: ['formal', 'recent', 'short', 'plain']   correcta[3]='plain'
+      por que: clear/plain en el sentido de 'facil de entender'. PLAIN tiene otros sentidos (liso, sencillo) que aqui no aplican, asi que el contexto manda. A2.5-B1.
+  [18.0 B1.0 ] voc_syn_11
+      enunciado: She politely [refused] the offer.
+      opciones: ['declined', 'delayed', 'ignored', 'accepted']   correcta[0]='declined'
+      por que: refuse/decline. La equivalencia es casi total pero DECLINE es mas formal y pide justamente el 'politely' del enunciado. Los distractores son las tres reacciones alternativas reales. B1.0.
+  [21.0 B1.0 ] voc_syn_12
+      enunciado: The results of the study were [surprising].
+      opciones: ['predictable', 'unexpected', 'disappointing', 'encouraging']   correcta[1]='unexpected'
+      por que: surprising/unexpected. PREDICTABLE es el antonimo y los otros dos son valoraciones que suelen acompanar a una sorpresa: hay que separar 'inesperado' de 'bueno o malo'. B1.0.
+  [23.0 B1.5 ] voc_syn_13
+      enunciado: He gave a [brief] explanation of the problem.
+      opciones: ['detailed', 'honest', 'concise', 'loud']   correcta[2]='concise'
+      por que: brief/concise. CONCISE anade un matiz de eficacia que BRIEF no tiene, pero en este contexto son intercambiables. Registro formal: B1.5.
+  [25.0 B1.5 ] voc_syn_14
+      enunciado: The lawyer's evidence was [convincing].
+      opciones: ['conflicting', 'recent', 'missing', 'persuasive']   correcta[3]='persuasive'
+      por que: convincing/persuasive, equivalencia alta en registro formal. CONFLICTING es el distractor que exige leer bien: comparte campo (pruebas) y sonido inicial. B1.5.
+  [26.0 B1.5 ] voc_syn_02
+      enunciado: They decided to [postpone] the meeting until Friday.
+      opciones: ['delay', 'attend', 'shorten', 'cancel']   correcta[0]='delay'
+      por que: CANCEL hace todo el trabajo: mismo campo (algo no ocurre cuando debia) y es el error de quien entiende la situacion pero no la palabra.
+  [29.0 B2.0 ] voc_syn_15
+      enunciado: The manager was [reluctant] to approve the extra budget.
+      opciones: ['eager', 'unwilling', 'ready', 'unable']   correcta[1]='unwilling'
+      por que: reluctant/unwilling. UNABLE es la confusion real y de peso: no querer no es no poder, y el espanol 'no estar dispuesto' difumina la frontera. B2.0.
+  [31.0 B2.0 ] voc_syn_16
+      enunciado: Her response to the question was rather [vague].
+      opciones: ['immediate', 'hostile', 'imprecise', 'sincere']   correcta[2]='imprecise'
+      por que: vague/imprecise. Los tres distractores son propiedades que una respuesta puede tener a la vez que la vaguedad, asi que el contexto no descarta ninguno: hay que conocer la palabra. B2.0.
+  [33.0 B2.5 ] voc_syn_17
+      enunciado: The hospital faced a [severe] shortage of staff.
+      opciones: ['gradual', 'temporary', 'minor', 'acute']   correcta[3]='acute'
+      por que: severe/acute. ACUTE solo equivale a SEVERE con ciertos sustantivos (shortage, pain, crisis); con otros significa 'agudo'. Dependencia fuerte del contexto: B2.5.
+  [35.0 B2.5 ] voc_syn_18
+      enunciado: The changes to the system were [gradual].
+      opciones: ['incremental', 'sudden', 'permanent', 'drastic']   correcta[0]='incremental'
+      por que: gradual/incremental. INCREMENTAL es de registro tecnico y anade la idea de pasos discretos. SUDDEN y DRASTIC son los antonimos naturales. B2.5.
+  [37.0 B2.5 ] voc_syn_19
+      enunciado: She was [meticulous] about every detail of the contract.
+      opciones: ['hurried', 'thorough', 'indifferent', 'careless']   correcta[1]='thorough'
+      por que: meticulous/thorough. Los tres distractores son el polo opuesto en tres grados distintos, asi que no se acierta por 'elegir la positiva': hay que reconocer la intensidad. C1.0.
+  [39.0 C1.0 ] voc_syn_20
+      enunciado: The policy proved [detrimental] to small businesses.
+      opciones: ['irrelevant', 'beneficial', 'harmful', 'essential']   correcta[2]='harmful'
+      por que: detrimental/harmful. DETRIMENTAL es transparente para un hispanohablante (detrimento), y por eso esta en C1.0 y no mas arriba pese a su baja frecuencia: la escala mide dificultad real, no rareza.
+  [41.0 C1.0 ] voc_syn_21
+      enunciado: Their early support was [pivotal] to the project's success.
+      opciones: ['symbolic', 'optional', 'temporary', 'crucial']   correcta[3]='crucial'
+      por que: pivotal/crucial. SYMBOLIC es el distractor fino: un apoyo puede ser simbolico e importante a la vez, pero no es lo que dice PIVOTAL. C1.0-C1.5.
+  [43.0 C1.5 ] voc_syn_22
+      enunciado: The minister remained [adamant] despite the criticism.
+      opciones: ['unyielding', 'evasive', 'apologetic', 'indifferent']   correcta[0]='unyielding'
+      por que: adamant/unyielding. EVASIVE es la trampa: tambien describe a quien no cede ante la critica, pero esquivando en vez de plantandose. Matiz de actitud, no de significado nuclear. C1.5.
+  [46.0 C1.5 ] voc_syn_03
+      enunciado: His [candid] account of the failure surprised the board.
+      opciones: ['reluctant', 'frank', 'vague', 'hostile']   correcta[1]='frank'
+      por que: Los tres distractores describirian igual de bien un relato ante un consejo: el contexto no descarta ninguno. Hay que saber que candid es 'sin filtro'.
+  [48.0 C2   ] voc_syn_23
+      enunciado: The evidence for his claim was [tenuous].
+      opciones: ['abundant', 'robust', 'flimsy', 'recent']   correcta[2]='flimsy'
+      por que: tenuous/flimsy, ambas <zipf 3.6 y sin cognado util. Sustituye a un item de equivocal->ambiguous que el validador rechazo con razon: AMBIGUOUS ya es la respuesta de voc_def_20, y preguntar la misma palabra en dos formatos es medir lo mismo dos veces. ROBUST es el antonimo exacto en este contexto. C2.
+  [50.0 C2   ] voc_syn_24
+      enunciado: His [perfunctory] apology satisfied no one.
+      opciones: ['lengthy', 'heartfelt', 'public', 'cursory']   correcta[3]='cursory'
+      por que: perfunctory/cursory, dos palabras de zipf <3 que son sinonimas entre si y no tienen cognado util en espanol. Techo de la escala: exige conocer las DOS, no solo reconocer una.
+
+--- GRAMMAR_GAP (grammar) ---
+  [ 2.0 A1.0 ] gra_gap_01
+      enunciado: My sister ___ a teacher.
+      opciones: ['is', 'am', 'be', 'are']   correcta[0]='is'
+      por que: Copula en presente, tercera persona singular: el primer punto gramatical de A1.0. Los cuatro distractores son formas del MISMO verbo, asi que mide conjugacion sin contaminarse de vocabulario.
+  [ 4.0 A1.5 ] gra_gap_04
+      enunciado: ___ you like coffee?
+      opciones: ['Are', 'Do', 'Is', 'Does']   correcta[1]='Do'
+      por que: Auxiliar de interrogativa en presente simple. El espanol no usa auxiliar ('¿te gusta el cafe?'), asi que la eleccion es puramente estructural. ARE es el error de quien memorizo 'Are you...?'. A1.5.
+  [ 6.0 A1.5 ] gra_gap_05
+      enunciado: There ___ two books on the table.
+      opciones: ['have', 'is', 'are', 'be']   correcta[2]='are'
+      por que: there is/are con sujeto plural. HAVE es el calco de 'hay' via 'haber'. spot_data.js/basico registra las dos direcciones del error ('There is many people', 'There are a book'). A1.5.
+  [ 8.0 A2.0 ] gra_gap_06
+      enunciado: She ___ to school every day.
+      opciones: ['gone', 'go', 'going', 'goes']   correcta[3]='goes'
+      por que: -s de tercera persona. Aparece cuatro veces en spot_data.js/basico, que es la medida de lo persistente que es. A2.0 en formato de hueco: mas facil que cazarlo dentro de cuatro frases.
+  [10.0 A2.0 ] gra_gap_07
+      enunciado: He can ___ three languages.
+      opciones: ['speak', 'speaking', 'to speak', 'speaks']   correcta[0]='speak'
+      por que: Modal + infinitivo sin 'to'. El error 'can speaks' es la sobregeneralizacion de la -s recien aprendida, y esta en spot_data.js/basico. A2.0: exige saber que el modal ya marca la persona.
+  [12.0 A2.0 ] gra_gap_08
+      enunciado: There isn't ___ milk in the fridge.
+      opciones: ['none', 'any', 'no', 'some']   correcta[1]='any'
+      por que: any en negativa. NO produce la doble negacion ('I don't have no money', spot_data.js/basico), que en espanol es obligatoria y en ingles agramatical. A2.0.
+  [14.0 A2.5 ] gra_gap_09
+      enunciado: This book is much ___ than the other one.
+      opciones: ['more good', 'gooder', 'better', 'more better']   correcta[2]='better'
+      por que: Comparativo irregular. 'more better' esta en spot_data.js en basico Y en avanzado: es un error que sobrevive al nivel alto, por eso el item vale mas de lo que parece. A2.5.
+  [16.0 A2.5 ] gra_gap_10
+      enunciado: I ___ in this company since 2019.
+      opciones: ['work', 'am working', 'worked', 'have worked']   correcta[3]='have worked'
+      por que: Present perfect con 'since'. El espanol usa presente ('trabajo desde 2019'), asi que WORK y AM WORKING son el calco directo; spot_data.js /intermedio lo registra como 'I'm working here for three years'. A2.5.
+  [18.0 B1.0 ] gra_gap_11
+      enunciado: How ___ money do you need for the trip?
+      opciones: ['much', 'many', 'lot', 'plenty']   correcta[0]='much'
+      por que: Incontables. 'Dinero' no da ninguna pista de contabilidad en espanol, asi que MANY es el error por defecto. Emparenta con el 'less/fewer' de spot_data.js/intermedio. B1.0.
+  [21.0 B1.0 ] gra_gap_02
+      enunciado: If I ___ more time, I would travel more.
+      opciones: ['will have', 'had', 'would have', 'have']   correcta[1]='had'
+      por que: Segundo condicional. WOULD HAVE es el calco literal del espanol ('si yo tendria') y es el primer item del nivel intermedio de spot_data.js. El CEFR situa el segundo condicional en el paso A2-B1.
+  [23.0 B1.5 ] gra_gap_12
+      enunciado: The report ___ by the whole team last week.
+      opciones: ['is written', 'was wrote', 'was written', 'wrote']   correcta[2]='was written'
+      por que: Pasiva en pasado con participio irregular. Dos errores en uno: la estructura pasiva y la forma del participio. WAS WROTE es el mismo fallo que 'was made by our team' de spot_data.js/intermedio. B1.5.
+  [25.0 B1.5 ] gra_gap_13
+      enunciado: She asked me where I ___ before moving to Madrid.
+      opciones: ['do live', 'am living', 'live', 'lived']   correcta[3]='lived'
+      por que: Backshift del estilo indirecto. El espanol tambien retrocede el tiempo, asi que el error no es de interferencia sino de no aplicar la regla bajo carga: hay una subordinada interrogativa de por medio. B1.5.
+  [27.0 B1.5 ] gra_gap_14
+      enunciado: I'm not used to ___ up so early.
+      opciones: ['getting', 'gets', 'get', 'got']   correcta[0]='getting'
+      por que: 'be used to' + gerundio, donde 'to' es preposicion y no marca de infinitivo. Es la misma trampa que 'look forward to' pero menos conocida, y el espanol ('estar acostumbrado a levantarme') empuja al infinitivo. B1.5.
+  [29.0 B2.0 ] gra_gap_15
+      enunciado: By the time we arrived, the meeting ___.
+      opciones: ['was already start', 'had already started', 'already started', 'has already started']   correcta[1]='had already started'
+      por que: Pasado perfecto para anterioridad. 'By the time' obliga; el espanol admite el indefinido y por eso ALREADY STARTED suena bien. spot_data.js/intermedio tiene la version con el participio roto. B2.0.
+  [31.0 B2.0 ] gra_gap_16
+      enunciado: He suggested that she ___ a doctor as soon as possible.
+      opciones: ['to see', 'seeing', 'see', 'sees']   correcta[2]='see'
+      por que: Subjuntivo mandativo tras 'suggest': forma base sin -s. TO SEE es el calco de 'sugirio que fuera / le sugirio ver', y spot_data.js /intermedio registra 'She suggested me to see a doctor'. B2.0.
+  [33.0 B2.5 ] gra_gap_17
+      enunciado: The whole house ___ painted next month.
+      opciones: ['is painting', 'will paint', 'will', 'will be']   correcta[3]='will be'
+      por que: Pasiva en futuro. Exige combinar dos estructuras que por separado ya se dominan en B1, y la ausencia de agente hace que la voz activa parezca aceptable. B2.0.
+  [35.0 B2.5 ] gra_gap_18
+      enunciado: I wish I ___ harder before the exam.
+      opciones: ['had studied', 'would have studied', 'have studied', 'studied']   correcta[0]='had studied'
+      por que: 'wish' + pasado perfecto para lamentar el pasado. WOULD HAVE STUDIED es el calco de 'ojala hubiera estudiado' y esta literalmente en spot_data.js/intermedio ('I wish I would have studied harder'). B2.5.
+  [37.0 B2.5 ] gra_gap_19
+      enunciado: She had her car ___ while she was on holiday.
+      opciones: ['to repair', 'repaired', 'repairing', 'repair']   correcta[1]='repaired'
+      por que: Causativa 'have something done'. No existe en espanol, que usa una activa ('lo hizo reparar'), asi que no hay estructura de la que transferir: se sabe o se adivina. B2.5.
+  [39.0 C1.0 ] gra_gap_20
+      enunciado: ___ in a hurry, he forgot his keys on the kitchen table.
+      opciones: ['He being', 'To be', 'Being', 'Been']   correcta[2]='Being'
+      por que: Clausula de participio con sujeto implicito. Registro escrito formal; el espanol usa gerundio ('estando con prisa') y por eso la forma parece familiar, pero BEEN es la confusion sistematica de participio y gerundio. C1.0.
+  [41.0 C1.0 ] gra_gap_21
+      enunciado: Not until the meeting had ended ___ the truth about the merger.
+      opciones: ['we learned', 'learned we', 'we did learn', 'did we learn']   correcta[3]='did we learn'
+      por que: Inversion obligatoria tras adverbial negativo inicial. WE LEARNED es el orden natural y el que produce todo el mundo; LEARNED WE es la sobrecorreccion de quien sabe que 'algo hay que invertir'. C1.0.
+  [43.0 C1.5 ] gra_gap_22
+      enunciado: It was John ___ told me about the change of plans.
+      opciones: ['who', 'whom', 'which', 'that he']   correcta[0]='who'
+      por que: Oracion escindida (cleft) con sujeto. WHOM es la sobrecorreccion culta — el mismo error que 'Whom shall I say is calling?' de spot_data.js/avanzado — y THAT HE duplica el sujeto, que es el calco de 'que el me dijo'. C1.5.
+  [45.0 C1.5 ] gra_gap_23
+      enunciado: She strongly objected to ___ treated like a beginner.
+      opciones: ['was', 'being', 'been', 'be']   correcta[1]='being'
+      por que: Preposicion + gerundio en voz pasiva. Acumula dos cosas que ya son dificiles por separado, y las cuatro opciones son formas del mismo verbo, asi que no hay pista lexica. C1.5.
+  [48.0 C2   ] gra_gap_03
+      enunciado: ___ he realised the full extent of the damage did he call for help.
+      opciones: ['Then only', 'When only', 'Only when', 'Only then']   correcta[2]='Only when'
+      por que: No pregunta si conoce la inversion (ya esta dada en 'did he call'), sino cual de los cuatro ordenes la licencia. Sintaxis marcada, ausente del ingles de uso diario: C2.
+  [50.0 C2   ] gra_gap_24
+      enunciado: Were it not ___ her timely intervention, the deal would have collapsed.
+      opciones: ['with', 'of', 'to', 'for']   correcta[3]='for'
+      por que: Formula fija subjuntiva 'were it not for'. La preposicion es arbitraria y no se deduce de nada; el espanol usa 'de no ser POR', lo que hace de FOR la unica opcion transferible y aun asi la mayoria duda. Techo de la escala de gramatica.
+
+--- GRAMMAR_ERROR (grammar) ---
+  [ 1.0 A1.0 ] gra_err_04
+      enunciado: One of these sentences has a mistake. Which one?
+      opciones: ['I has a dog.', 'We are friends.', 'She is happy.', 'They have a car.']   correcta[0]='I has a dog.'
+      por que: have/has en primera persona. Piso absoluto: las tres correctas son frases de tres palabras. Lo unico que se mide es si reconoce la concordancia mas basica del ingles.
+  [ 3.0 A1.5 ] gra_err_05
+      enunciado: One of these sentences has a mistake. Which one?
+      opciones: ["We don't eat meat.", "My brother don't like fish.", 'She likes vegetables.', "I don't like fish."]   correcta[1]="My brother don't like fish."
+      por que: doesn't con tercera persona. Aparece dos veces en spot_data.js /basico. La primera correcta usa 'don't' bien, asi que hay que atender al sujeto y no al auxiliar. A1.5.
+  [ 5.0 A1.5 ] gra_err_01
+      enunciado: One of these sentences has a mistake. Which one?
+      opciones: ['They are happy.', 'We eat at eight.', 'He live in Madrid.', 'I have a car.']   correcta[2]='He live in Madrid.'
+      por que: -s de tercera persona: el error mas frecuente del principiante hispanohablante, porque el espanol ya marca persona en la terminacion. Mismo error que abre spot_data.js/basico.
+  [ 7.0 A1.5 ] gra_err_06
+      enunciado: One of these sentences has a mistake. Which one?
+      opciones: ['Two men arrived late.', 'Those women are teachers.', 'The children are happy.', 'The childs are playing outside.']   correcta[3]='The childs are playing outside.'
+      por que: Plural irregular. Esta en spot_data.js/basico. Las tres correctas traen los otros dos plurales irregulares frecuentes (men, women), asi que el item mide el paradigma entero, no una palabra. A1.5.
+  [ 9.0 A2.0 ] gra_err_07
+      enunciado: One of these sentences has a mistake. Which one?
+      opciones: ['I am go to the store now.', 'She is reading a book.', 'I am going home.', 'They are working today.']   correcta[0]='I am go to the store now.'
+      por que: Presente continuo sin -ing. Esta en spot_data.js/basico. Las tres correctas son continuos bien formados, asi que no se acierta por 'el que suena raro' sino por la forma. A2.0.
+  [11.0 A2.0 ] gra_err_08
+      enunciado: One of these sentences has a mistake. Which one?
+      opciones: ["They didn't finish the report.", "He didn't went to work yesterday.", "She didn't call me back.", 'We went to the beach.']   correcta[1]="He didn't went to work yesterday."
+      por que: did + infinitivo sin flexionar. Esta en spot_data.js/basico. La tercera correcta usa 'went' bien en afirmativa, asi que el item exige ver que el auxiliar ya marca el pasado. A2.0.
+  [13.0 A2.5 ] gra_err_09
+      enunciado: One of these sentences has a mistake. Which one?
+      opciones: ['She and I are old friends.', 'He gave the keys to me.', 'My sister and me went shopping.', 'They invited us to dinner.']   correcta[2]='My sister and me went shopping.'
+      por que: Pronombre sujeto en coordinacion. Esta en spot_data.js/basico. La segunda correcta usa 'me' bien como objeto, asi que castiga la sobrecorreccion tanto como el error. A2.5.
+  [15.0 A2.5 ] gra_err_10
+      enunciado: One of these sentences has a mistake. Which one?
+      opciones: ['There were three options.', 'There are many cars outside.', 'There is a problem.', 'There is many people at the party.']   correcta[3]='There is many people at the party.'
+      por que: Concordancia de there is/are con 'people', que en espanol es singular ('la gente'). Esta en spot_data.js/basico. Las tres correctas cubren singular, plural y pasado. A2.5.
+  [17.0 A2.5 ] gra_err_11
+      enunciado: One of these sentences has a mistake. Which one?
+      opciones: ['I have 25 years old.', 'She is thirty.', 'He turned forty last week.', 'I am 25 years old.']   correcta[0]='I have 25 years old.'
+      por que: 'Tener anos' -> 'have years'. NO esta en spot_data.js y es una de las interferencias mas universales del hispanohablante. La primera correcta es la version buena de la misma frase, asi que el contraste es directo. A2.5.
+  [19.0 B1.0 ] gra_err_12
+      enunciado: One of these sentences has a mistake. Which one?
+      opciones: ['The lecture was boring.', 'I am boring when I have nothing to do.', 'He seemed bored this morning.', 'I get bored very easily.']   correcta[1]='I am boring when I have nothing to do.'
+      por que: -ing / -ed en adjetivos participiales. El espanol usa el mismo adjetivo para las dos direcciones ('aburrido'), asi que la confusion es estructural. Las correctas incluyen un -ing bien usado, para que no se resuelva descartando la forma. B1.0.
+  [22.0 B1.0 ] gra_err_02
+      enunciado: One of these sentences has a mistake. Which one?
+      opciones: ['They finished the report yesterday.', 'She has been working here since 2019.', 'I have lived here since three years.', 'We are planning a trip for the summer.']   correcta[2]='I have lived here since three years.'
+      por que: since/for con duracion: calco de 'desde hace tres anos'. B1.0 y no menos porque las tres correctas traen present perfect continuo, pasado simple y presente continuo: hay que validar cuatro estructuras distintas.
+  [24.0 B1.5 ] gra_err_13
+      enunciado: One of these sentences has a mistake. Which one?
+      opciones: ['The information was very helpful.', 'He gave me some useful advice.', 'She has a lot of knowledge about it.', 'He gave me some advices about the job.']   correcta[3]='He gave me some advices about the job.'
+      por que: Incontables pluralizados. En espanol 'consejos' e 'informaciones' son contables. Las tres correctas usan los tres incontables tipicos bien, asi que el item mide la clase de sustantivo, no una palabra. B1.5.
+  [26.0 B1.5 ] gra_err_14
+      enunciado: One of these sentences has a mistake. Which one?
+      opciones: ['We discussed about the budget yesterday.', 'We talked about the budget.', 'She complained about the price.', 'They discussed the proposal.']   correcta[0]='We discussed about the budget yesterday.'
+      por que: 'discuss' es transitivo directo. El calco viene de 'discutir SOBRE'. Esta en spot_data.js/intermedio. Las correctas incluyen dos verbos que SI rigen 'about', asi que no vale la regla 'about siempre sobra'. B1.5.
+  [28.0 B2.0 ] gra_err_15
+      enunciado: One of these sentences has a mistake. Which one?
+      opciones: ['Although it rained, we went out.', 'Despite of the rain, we went out.', 'Despite the cold, they kept playing.', 'In spite of the rain, we went out.']   correcta[1]='Despite of the rain, we went out.'
+      por que: 'despite' sin 'of'. El error nace de cruzarlo con 'in spite of', y la primera correcta es justamente esa forma: el item obliga a distinguirlas en vez de elegir la que suene. Esta en spot_data.js /intermedio. B2.0.
+  [30.0 B2.0 ] gra_err_16
+      enunciado: One of these sentences has a mistake. Which one?
+      opciones: ['He helped me finish the report.', 'She had me wait outside.', 'My parents made me to apologise.', 'They let me stay out late.']   correcta[2]='My parents made me to apologise.'
+      por que: make + infinitivo sin 'to'. Esta en spot_data.js/intermedio. Las tres correctas son los otros verbos causativos (let, have, help), asi que el item mide el paradigma completo y castiga aplicar la regla al verbo equivocado. B2.0.
+  [32.0 B2.0 ] gra_err_17
+      enunciado: One of these sentences has a mistake. Which one?
+      opciones: ['All of the reports have been filed.', 'None of the equipment was damaged.', 'Each department has its own budget.', 'Every one of the employees have received the memo.']   correcta[3]='Every one of the employees have received the memo.'
+      por que: Concordancia con cuantificador singular + sintagma plural. El verbo se atrae al plural mas cercano. Emparenta con 'Each of the students have' de spot_data.js/intermedio. La cuarta correcta SI lleva plural, asi que hay que razonar el cuantificador, no el sustantivo. B2.0.
+  [34.0 B2.5 ] gra_err_18
+      enunciado: One of these sentences has a mistake. Which one?
+      opciones: ["I'm interested in to learn more about the role.", 'They objected to being filmed.', 'She succeeded in finishing the report on time.', 'He apologised for arriving late.']   correcta[0]="I'm interested in to learn more about the role."
+      por que: Preposicion + gerundio. Las tres correctas usan tres preposiciones distintas con gerundio, una de ellas en pasiva, asi que el item mide la regla y no un verbo memorizado. B2.5. (La distractora original era 'She insisted on paying for dinner', que es la RESPUESTA de gra_bst_18: ver un item habria regalado el otro. Lo aviso el validador.)
+  [36.0 B2.5 ] gra_err_19
+      enunciado: One of these sentences has a mistake. Which one?
+      opciones: ['As soon as she arrives, we will begin.', 'When I will get home, I will call you.', 'If it rains, we will stay inside.', 'Once the report is ready, send it to me.']   correcta[1]='When I will get home, I will call you.'
+      por que: Sin futuro en la subordinada temporal. El espanol si lo admite ('cuando llegare' es raro, pero 'si vendra' aparece), y spot_data.js /intermedio registra la version con 'if'. Aqui son tres conectores distintos: mide la regla, no el conector. B2.5.
+  [38.0 C1.0 ] gra_err_20
+      enunciado: One of these sentences has a mistake. Which one?
+      opciones: ['The staff have been informed.', 'The data were inconclusive.', 'The evidence were compelling and thorough.', 'The news was worse than expected.']   correcta[2]='The evidence were compelling and thorough.'
+      por que: 'evidence' es incontable. Lo dificil son las correctas: 'data' en plural, 'news' en singular pese a la -s y 'staff' como colectivo plural. Un B2 corrige dos de las tres por error. Esta el mismo caso en spot_data.js/avanzado. C1.0.
+  [40.0 C1.0 ] gra_err_21
+      enunciado: One of these sentences has a mistake. Which one?
+      opciones: ['Should you need any help, please call me.', 'Had we known earlier, we would have acted differently.', 'Were it not for her, the project would have failed.', 'Had the terms been clearer, the dispute could of been avoided.']   correcta[3]='Had the terms been clearer, the dispute could of been avoided.'
+      por que: 'could of' por 'could have': error de transcripcion fonetica de nativos, no de hispanohablantes, y por eso cuesta verlo. Esta en spot_data.js/avanzado. Las tres correctas son inversiones condicionales, que distraen la atencion hacia la estructura. C1.0.
+  [42.0 C1.0 ] gra_err_22
+      enunciado: One of these sentences has a mistake. Which one?
+      opciones: ['Never I have seen such a mess.', 'Little did they know what awaited them.', 'Seldom have we faced such a challenge.', 'Rarely does he complain about anything.']   correcta[0]='Never I have seen such a mess.'
+      por que: Falta la inversion tras adverbial negativo. Las tres correctas SI invierten, con tres auxiliares distintos, asi que el item se resuelve por patron sintactico. La frase erronea es la que suena natural, que es lo que lo hace C1.5.
+  [44.0 C1.5 ] gra_err_03
+      enunciado: One of these sentences has a mistake. Which one?
+      opciones: ['Scarcely had we arrived when the storm broke.', 'He denied to have taken the money.', 'The data suggest that the hypothesis is incorrect.', 'Not only did she apologise, but she also offered to pay.']   correcta[1]='He denied to have taken the money.'
+      por que: deny rige gerundio; calco de 'nego haber tomado'. Lo que lo lleva a C1.5 son las CORRECTAS: 'data' plural, inversion con scarcely e inversion con not only. A un B2 le suenan sospechosas, asi que el item castiga corregir de mas.
+  [46.0 C1.5 ] gra_err_23
+      enunciado: One of these sentences has a mistake. Which one?
+      opciones: ['Whom did you invite to the ceremony?', 'To whom should I address the letter?', 'Whom shall I say is calling?', 'The candidate whom we interviewed was excellent.']   correcta[2]='Whom shall I say is calling?'
+      por que: 'whom' hipercorrecto en funcion de SUJETO de la subordinada. Esta en spot_data.js/avanzado. Las tres correctas son 'whom' bien usado como objeto directo, de relativo y tras preposicion: el item exige analizar la funcion, no reconocer la palabra. C1.5.
+  [49.0 C2   ] gra_err_24
+      enunciado: One of these sentences has a mistake. Which one?
+      opciones: ['The board insisted that he resign immediately.', 'It is essential that every member be present.', 'They demanded that the meeting be postponed.', 'The committee recommended that the policy is reviewed annually.']   correcta[3]='The committee recommended that the policy is reviewed annually.'
+      por que: Subjuntivo mandativo: tras 'recommend that' va la forma base ('be reviewed'), no el indicativo. Las tres correctas son subjuntivos que a casi todo el mundo le parecen erratas de concordancia, asi que el item castiga corregir de mas en su forma mas pura. C2.
+
+--- GRAMMAR_BEST (grammar) ---
+  [ 2.0 A1.0 ] gra_bst_04
+      enunciado: Which version is correct?
+      opciones: ['She is my sister.', 'She my sister.', 'Her is my sister.', 'She are my sister.']   correcta[0]='She is my sister.'
+      por que: Copula obligatoria y pronombre sujeto. El espanol permite omitir el sujeto y aqui hay una variante sin verbo: dos rasgos A1.0 en una frase de cuatro palabras. Piso del formato.
+  [ 4.0 A1.5 ] gra_bst_05
+      enunciado: Which version is correct?
+      opciones: ["I don't have no money.", "I don't have any money.", "I haven't no money.", 'I no have money.']   correcta[1]="I don't have any money."
+      por que: Doble negacion. En espanol es obligatoria ('no tengo ningun dinero'), asi que la version incorrecta es la traduccion literal. Esta en spot_data.js/basico. A1.5.
+  [ 6.0 A1.5 ] gra_bst_01
+      enunciado: Which version is correct?
+      opciones: ['I am agreed with you.', 'I am agree with you.', 'I agree with you.', 'I have agree with you.']   correcta[2]='I agree with you.'
+      por que: 'Estoy de acuerdo' -> 'I am agree'. El calco mas extendido del hispanohablante, y sobrevive hasta niveles altos. Piso fiable: quien lo falla esta claramente por debajo de A2.
+  [ 9.0 A2.0 ] gra_bst_06
+      enunciado: Which version is correct?
+      opciones: ['He is more tall than his brother.', 'He is more taller than his brother.', 'He is the taller than his brother.', 'He is taller than his brother.']   correcta[3]='He is taller than his brother.'
+      por que: Comparativo de adjetivo corto. Los tres distractores son las tres formas de equivocarse (doble marca, marca analitica, articulo sobrante) y las tres se documentan en spot_data.js. A2.0.
+  [11.0 A2.0 ] gra_bst_07
+      enunciado: Which version is correct?
+      opciones: ['There were a lot of people at the concert.', 'There had a lot of people at the concert.', 'There was a lot of people at the concert.', 'It had a lot of people at the concert.']   correcta[0]='There were a lot of people at the concert.'
+      por que: 'Habia' -> 'it had' / 'there had'. Dos de los tres distractores son el calco de HABER como verbo pleno, que es un error muy resistente porque el alumno ya sabe que 'there is' existe y aun asi recae. A2.0.
+  [13.0 A2.5 ] gra_bst_08
+      enunciado: Which version is correct?
+      opciones: ['I have been living here since five years.', 'I have been living here for five years.', 'I am living here since five years.', 'I live here since five years.']   correcta[1]='I have been living here for five years.'
+      por que: for/since + present perfect continuo. El tercer distractor solo falla en la preposicion, asi que no basta acertar el tiempo verbal. spot_data.js/intermedio tiene las dos mitades del error por separado. A2.5.
+  [15.0 A2.5 ] gra_bst_09
+      enunciado: Which version is correct?
+      opciones: ['How this is called in English?', 'What this is called in English?', 'What is this called in English?', 'How is this called in English?']   correcta[2]='What is this called in English?'
+      por que: '¿Como se llama?' -> 'How is it called?'. Dos ejes a la vez: el interrogativo correcto y la inversion en la interrogativa directa. Los cuatro combinan las dos variables. A2.5.
+  [17.0 A2.5 ] gra_bst_10
+      enunciado: Which version is correct?
+      opciones: ['Is raining heavily.', 'There is raining heavily.', 'It raining heavily.', 'It is raining heavily.']   correcta[3]='It is raining heavily.'
+      por que: Sujeto expletivo obligatorio. El espanol no lo tiene ('llueve'), asi que omitirlo es el calco directo. Que el ingles exija un sujeto sin referente es exactamente lo que no se transfiere. A2.5.
+  [19.0 B1.0 ] gra_bst_11
+      enunciado: Which version is correct?
+      opciones: ['She explained the situation to me.', 'She me explained the situation.', 'She explained me the situation.', 'She explained me it.']   correcta[0]='She explained the situation to me.'
+      por que: 'explain' no admite objeto indirecto sin preposicion. El espanol si ('me explico la situacion'), y ademas permite el cliticode antes del verbo, que es el tercer distractor. Esta en spot_data.js/intermedio. B1.0.
+  [21.0 B1.0 ] gra_bst_12
+      enunciado: Which version is correct?
+      opciones: ["I'm looking forward the weekend.", "I'm looking forward to the weekend.", "I'm looking forward for the weekend.", 'I look forward the weekend.']   correcta[1]="I'm looking forward to the weekend."
+      por que: 'look forward TO'. Aqui el complemento es un sustantivo, no un gerundio: prepara el terreno para gra_bst_02 sin resolverlo, porque quien memorizo la formula entera de correo no sabe necesariamente que 'to' es preposicion. B1.0.
+  [24.0 B1.5 ] gra_bst_13
+      enunciado: Which version is correct?
+      opciones: ['He asked me do I want to come.', 'He asked me that if I wanted to come.', 'He asked me if I wanted to come.', 'He asked me if I want to come.']   correcta[2]='He asked me if I wanted to come.'
+      por que: Interrogativa indirecta: backshift, sin auxiliar y sin 'that'. Los tres distractores fallan cada uno en una de las tres cosas, asi que el item las mide por separado. B1.5.
+  [26.0 B1.5 ] gra_bst_14
+      enunciado: Which version is correct?
+      opciones: ['The book was write by a Spanish author.', 'The book was wrote by a Spanish author.', 'The book has wrote by a Spanish author.', 'The book was written by a Spanish author.']   correcta[3]='The book was written by a Spanish author.'
+      por que: Participio irregular en pasiva. Las cuatro versiones comparten la estructura pasiva, asi que lo unico que se mide es la forma del verbo: item deliberadamente estrecho para anclar ese punto. B1.5.
+  [28.0 B2.0 ] gra_bst_15
+      enunciado: Which version is correct?
+      opciones: ["I'd rather you didn't tell anyone about this.", "I'd rather you don't tell anyone about this.", "I'd rather you not telling anyone about this.", "I'd rather that you don't tell anyone about this."]   correcta[0]="I'd rather you didn't tell anyone about this."
+      por que: 'would rather' + sujeto distinto pide pasado con valor de presente. Es contraintuitivo en cualquier lengua materna y el espanol usa subjuntivo presente ('preferiria que no lo cuentes'). B2.0.
+  [30.0 B2.0 ] gra_bst_02
+      enunciado: Which version is correct?
+      opciones: ['I look forward for hearing from you.', 'I look forward to hearing from you.', 'I look forward to hear from you.', 'I am looking forward to hear from you.']   correcta[1]='I look forward to hearing from you.'
+      por que: 'to' como PREPOSICION seguida de gerundio. B2.0 porque 'look forward to hear' es una lectura razonable para quien no conoce la excepcion y sobrevive en gente que maneja bien el resto del idioma.
+  [32.0 B2.0 ] gra_bst_16
+      enunciado: Which version is correct?
+      opciones: ['By the time we got there, the film has already started.', 'By the time we got there, the film was already start.', 'By the time we got there, the film had already started.', 'By the time we got there, the film already started.']   correcta[2]='By the time we got there, the film had already started.'
+      por que: Pasado perfecto obligatorio con 'by the time'. Contrasta a proposito con gra_gap_15, que mide el mismo punto en formato de hueco: aqui hay que rechazar tres alternativas completas, incluida una con present perfect que solo falla en el tiempo del auxiliar. B2.0.
+  [35.0 B2.5 ] gra_bst_17
+      enunciado: Which version is correct?
+      opciones: ["It's high time we leave.", "It's high time to we leave.", "It's high time we have left.", "It's high time we left."]   correcta[3]="It's high time we left."
+      por que: 'It's high time' + pasado subjuntivo. Formula fija y opaca: el pasado no refiere al pasado. Sin equivalente estructural en espanol ('ya es hora de que nos vayamos', subjuntivo presente). B2.5.
+  [37.0 B2.5 ] gra_bst_18
+      enunciado: Which version is correct?
+      opciones: ['She insisted on paying for dinner.', 'She insisted that pay for dinner.', 'She insisted in paying for dinner.', 'She insisted to pay for dinner.']   correcta[0]='She insisted on paying for dinner.'
+      por que: 'insist ON' + gerundio. IN es el calco de 'insistir EN', que es la preposicion espanola y por eso el distractor mas elegido; el item separa la eleccion de preposicion de la eleccion de forma verbal. B2.5.
+  [39.0 C1.0 ] gra_bst_19
+      enunciado: Which version is correct?
+      opciones: ['The report needs to revise before it is submitted.', 'The report needs to be revised before it is submitted.', 'The report needs being revised before it is submitted.', 'The report needs revised before it is submitted.']   correcta[1]='The report needs to be revised before it is submitted.'
+      por que: 'need' + infinitivo pasivo. El segundo distractor es el error real: activa con sentido pasivo, calco de 'necesita revisarse'. C1.0.
+  [41.0 C1.0 ] gra_bst_20
+      enunciado: Which version is correct?
+      opciones: ['The more practise you, the easier becomes it.', 'The more you practise, the more easy it becomes.', 'The more you practise, the easier it becomes.', 'More you practise, easier it becomes.']   correcta[2]='The more you practise, the easier it becomes.'
+      por que: Correlativa comparativa. Estructura sin paralelo en espanol ('cuanto mas... mas'), con articulo obligatorio en las dos mitades y orden fijo. El segundo distractor es exactamente el calco. C1.0.
+  [43.0 C1.5 ] gra_bst_21
+      enunciado: Which version is correct?
+      opciones: ['No sooner he had sat down than the phone rang.', 'No sooner had he sat down as the phone rang.', 'No sooner had he sat down when the phone rang.', 'No sooner had he sat down than the phone rang.']   correcta[3]='No sooner had he sat down than the phone rang.'
+      por que: 'No sooner... THAN' con inversion. Dos variables independientes: la inversion y el conector correlativo. Los distractores fallan una sola cada uno, asi que acertar por la mitad no basta. C1.5.
+  [45.0 C1.5 ] gra_bst_22
+      enunciado: Which version is correct?
+      opciones: ['Much as I respect his judgement, I disagree on this point.', 'Much although I respect his judgement, I disagree on this point.', 'Much that I respect his judgement, I disagree on this point.', 'As much I respect his judgement, I disagree on this point.']   correcta[0]='Much as I respect his judgement, I disagree on this point.'
+      por que: Concesiva con 'much as' fronteada. Registro escrito culto, sin equivalente en espanol salvo perifrasis ('por mucho que'). El primer distractor invierte las dos palabras, que es lo que produce quien reconoce la estructura de oido pero no su orden. C1.5.
+  [47.0 C1.5 ] gra_bst_23
+      enunciado: Which version is correct?
+      opciones: ['Such absorbed was she in the book that she missed her stop.', 'So absorbed was she in the book that she missed her stop.', 'So absorbed was her in the book that she missed her stop.', 'So absorbed she was in the book that she missed her stop.']   correcta[1]='So absorbed was she in the book that she missed her stop.'
+      por que: Fronteamiento de complemento con inversion, mas so/such con adjetivo. Tres variables: orden, caso del pronombre y eleccion de so/such. Es de las estructuras mas marcadas del ingles escrito. C1.5.
+  [49.0 C2   ] gra_bst_03
+      enunciado: Which version is correct?
+      opciones: ['If I had have known the risks, I would never have agreed.', 'If I would have known the risks, I would never have agreed.', 'Had I known the risks, I would never have agreed.', 'Had I have known the risks, I would never have agreed.']   correcta[2]='Had I known the risks, I would never have agreed.'
+      por que: Tercer condicional con inversion. Los tres distractores son errores reales de origen distinto: el calco espanol y dos sobregeneralizaciones del auxiliar que produce gente ya avanzada al intentar la inversion.
+  [50.0 C2   ] gra_bst_24
+      enunciado: Which version is correct?
+      opciones: ['Was the proposal to be rejected, we would need a new strategy.', 'If the proposal would be rejected, we would need a new strategy.', 'Were the proposal rejected to be, we would need a new strategy.', 'Were the proposal to be rejected, we would need a new strategy.']   correcta[3]='Were the proposal to be rejected, we would need a new strategy.'
+      por que: Condicional subjuntivo 'were + to' invertido, la forma mas formal de la hipotesis en ingles. WAS en lugar de WERE es el error que comete incluso quien conoce la inversion, porque el subjuntivo ingles solo sobrevive aqui. Techo de la escala junto a gra_gap_24.
+
+--- LISTEN_WORD (listening) ---
+  [ 2.0 A1.0 ] lis_wrd_04
+      habla: man
+      opciones: ['MAN', 'MOON', 'MEN', 'MAP']   correcta[0]='MAN'
+      por que: Contraste ae_e, SUAVE: el espanol no tiene la vocal de 'cat', pero MAN/MEN se separan lo bastante como para oirse sin entrenamiento. Las cuatro son A1 y de altisima frecuencia. Piso de la escala.
+  [ 4.0 A1.5 ] lis_wrd_05
+      habla: cup
+      opciones: ['CAKE', 'CUP', 'CAP', 'COP']   correcta[1]='CUP'
+      por que: Contraste uh_ah, SUAVE: la vocal de 'cup' no existe en espanol y se vuelve O, que es justo COP. CAP anade una tercera vocal del mismo punto, asi que el item cubre el triangulo /ʌ/-/ɒ/-/æ/ entero. A1.5.
+  [ 6.0 A1.5 ] lis_wrd_01
+      habla: heart
+      opciones: ['ART', 'DARK', 'HEART', 'HAND']   correcta[2]='HEART'
+      por que: Contraste silent_h, SUAVE: la H inglesa es perfectamente audible, el problema hispano es que la H propia es muda y por eso se ignora. HEART zipf 4.9 y las cuatro opciones son A1.
+  [ 8.0 A2.0 ] lis_wrd_06
+      habla: bed
+      opciones: ['BOX', 'BAG', 'BAD', 'BED']   correcta[3]='BED'
+      por que: ae_e otra vez pero en la direccion contraria a lis_wrd_04: aqui la respuesta es la vocal /e/ y el distractor la /æ/. Alternar la direccion impide que se acierte por regla fija. A2.0.
+  [10.0 A2.0 ] lis_wrd_07
+      habla: hot
+      opciones: ['HOT', 'HUT', 'HOP', 'HAT']   correcta[0]='HOT'
+      por que: uh_ah invertido respecto de lis_wrd_05. HAT mete la tercera vocal y HOP cambia la consonante final, asi que hay dos ejes de atencion. A2.0.
+  [12.0 A2.0 ] lis_wrd_08
+      habla: hold
+      opciones: ['OLD', 'HOLD', 'COLD', 'GOLD']   correcta[1]='HOLD'
+      por que: silent_h con un set que rima entero (OLD/COLD/GOLD/HOLD): las cuatro comparten nucleo y coda, asi que toda la informacion esta en la consonante inicial. Es la version dificil de un contraste suave. A2.0.
+  [14.0 A2.5 ] lis_wrd_09
+      habla: ten
+      opciones: ['TAN', 'TIN', 'TEN', 'TENT']   correcta[2]='TEN'
+      por que: ae_e con TIN de tercer distractor. TEN/TIN es /e/-/ɪ/, que el espanol SI distingue, asi que no entra en la prohibicion de contrastes duros y sirve para que no basten dos opciones. A2.5.
+  [16.0 A2.5 ] lis_wrd_10
+      habla: luck
+      opciones: ['LAKE', 'LOCK', 'LICK', 'LUCK']   correcta[3]='LUCK'
+      por que: uh_ah con cuatro vocales distintas sobre el mismo esqueleto L_CK. Cuanto mas se parecen las opciones entre si, mas fina tiene que ser la discriminacion aunque el contraste siga siendo suave. A2.5.
+  [18.0 B1.0 ] lis_wrd_11
+      habla: jet
+      opciones: ['JET', 'NET', 'JOB', 'YET']   correcta[0]='JET'
+      por que: Contraste y_j, SUAVE. El espanol tiene un sonido intermedio entre la Y y la J inglesas, asi que la confusion es de produccion mas que de percepcion; por eso es suave y va aqui y no arriba. B1.0.
+  [20.0 B1.0 ] lis_wrd_12
+      habla: send
+      opciones: ['SPEND', 'SEND', 'SAND', 'SUN']   correcta[1]='SEND'
+      por que: ae_e con SPEND de distractor, que solo anade una consonante: obliga a atender a la vocal Y al ataque a la vez. Ultimo item facil del tramo suave. B1.0.
+  [22.0 B1.0 ] lis_wrd_13
+      habla: vest
+      opciones: ['WEST', 'REST', 'VEST', 'NEST']   correcta[2]='VEST'
+      por que: Contraste w_v, SUAVE. Nota de diseno: BEST queda FUERA de las opciones a proposito, porque BEST/VEST es b_v, que es DURO y esta prohibido por debajo de 25. El validador lo habria rechazado. B1.0.
+  [24.0 B1.5 ] lis_wrd_14
+      habla: flash
+      opciones: ['FLESH', 'FLAT', 'CRASH', 'FLASH']   correcta[3]='FLASH'
+      por que: ae_e en palabras mas largas y menos frecuentes que las anteriores, justo por debajo del umbral. Cierra el tramo suave en su punto mas exigente. B1.5.
+  [27.0 B1.5 ] lis_wrd_02
+      habla: sheep
+      opciones: ['SHEEP', 'SHEET', 'SHIP', 'SHOP']   correcta[0]='SHEEP'
+      por que: ship/sheep, el contraste duro por excelencia: el espanol no tiene I corta. Se permite porque 27 supera el umbral de 25; por debajo frustraria en vez de medir.
+  [29.0 B2.0 ] lis_wrd_15
+      habla: rice
+      opciones: ['RIDE', 'RICE', 'RISE', 'RACE']   correcta[1]='RICE'
+      por que: Contraste s_z, DURO: el espanol no tiene Z sonora, asi que RICE y RISE colapsan en un solo sonido para el oido hispano. Primer item de sonoridad final del banco. B2.0.
+  [31.0 B2.0 ] lis_wrd_16
+      habla: chip
+      opciones: ['SHIP', 'TRIP', 'CHIP', 'CHEAP']   correcta[2]='CHIP'
+      por que: DOS contrastes duros en el mismo item: sh_ch frente a SHIP y short_long_i frente a CHEAP. Solo se sostiene por encima del umbral, y es lo que lo situa en B2.0 y no antes.
+  [33.0 B2.5 ] lis_wrd_17
+      habla: thin
+      opciones: ['THINK', 'SHIN', 'TIN', 'THIN']   correcta[3]='THIN'
+      por que: Contraste th, DURO: no existe en espanol y se sustituye por T o S. THINK anade una coda para que no baste oir el ataque. B2.0.
+  [35.0 B2.5 ] lis_wrd_18
+      habla: fool
+      opciones: ['FOOL', 'POOL', 'FULL', 'FUEL']   correcta[0]='FOOL'
+      por que: short_long_u, DURO. El espanol tiene una sola U, asi que full/fool es invisible sin entrenamiento. FUEL mete un diptongo cercano y POOL cambia el ataque. B2.5.
+  [37.0 B2.5 ] lis_wrd_19
+      habla: prize
+      opciones: ['PRIDE', 'PRIZE', 'PRESS', 'PRICE']   correcta[1]='PRIZE'
+      por que: s_z en palabra mas larga que lis_wrd_15, y con PRIDE de distractor, que cambia la consonante final por otra sonora. Discrimina sonoridad y punto de articulacion a la vez. B2.5.
+  [39.0 C1.0 ] lis_wrd_20
+      habla: wish
+      opciones: ['WASH', 'WITCH', 'WISH', 'FISH']   correcta[2]='WISH'
+      por que: sh_ch al final de palabra, que es donde mas cuesta: en posicion final la africada pierde parte de su explosion. WASH cambia la vocal y FISH el ataque. C1.0.
+  [41.0 C1.0 ] lis_wrd_21
+      habla: berry
+      opciones: ['FERRY', 'VERY', 'MERRY', 'BERRY']   correcta[3]='BERRY'
+      por que: Contraste b_v, EL contraste del hispanohablante: el espanol tiene un solo fonema para B y V. Nota de diseno: BURY queda fuera porque es HOMOFONO de BERRY y haria el item irresoluble. C1.0.
+  [44.0 C1.5 ] lis_wrd_03
+      habla: thought
+      opciones: ['THOUGHT', 'TAUGHT', 'THORN', 'TALK']   correcta[0]='THOUGHT'
+      por que: Contraste th, duro. Nota de diseno: se evita TAUT a proposito porque es HOMOFONO de TAUGHT — el validador lo habria rechazado igual, pero conviene que el banco no dependa de eso.
+  [46.0 C1.5 ] lis_wrd_22
+      habla: mouth
+      opciones: ['MOUNT', 'MOUTH', 'SOUTH', 'MOUSE']   correcta[1]='MOUTH'
+      por que: th final frente a S, que es la sustitucion mas comun. Las cuatro comparten el diptongo /aʊ/, asi que toda la carga esta en la coda. C1.5.
+  [48.0 C2   ] lis_wrd_23
+      habla: advise
+      opciones: ['DEVICE', 'ADVANCE', 'ADVISE', 'ADVICE']   correcta[2]='ADVISE'
+      por que: advise/advice: el par s_z que sobrevive hasta C2 porque ademas distingue verbo de sustantivo. Un avanzado que escribe bien la diferencia sigue sin oirla. C2.
+  [50.0 C2   ] lis_wrd_24
+      habla: lose
+      opciones: ['NOISE', 'LOOSE', 'LOSS', 'LOSE']   correcta[3]='LOSE'
+      por que: loose/lose, sonoridad final en un par de altisima frecuencia que casi nadie distingue al oido. Techo de la escala: la palabra es comun, lo dificil es exclusivamente el fonema.
+
+--- LISTEN_SENTENCE (listening) ---
+  [ 1.0 A1.0 ] lis_sen_04
+      habla: I am a student.
+      opciones: ['I am a student.', 'I have a student.', 'I was a student.', 'He is a student.']   correcta[0]='I am a student.'
+      por que: Las cuatro se separan por el verbo entero (am/was/have/is) o por el sujeto: silabas completas, ningun TTS las confunde. Piso de la escala, mide solo si oye la copula.
+  [ 3.0 A1.5 ] lis_sen_05
+      habla: She has two brothers.
+      opciones: ['She has two sisters.', 'She has two brothers.', 'She have two brothers.', 'They have two brothers.']   correcta[1]='She has two brothers.'
+      por que: has/have, diferencia de consonante final /z/ vs /v/ en silaba TONICA, que si es audible. Nota: se evito a proposito el par has/had, que se separa por /z/ vs /d/ en la misma posicion y entra en la familia de aux_contraction. A1.5.
+  [ 5.0 A1.5 ] lis_sen_06
+      habla: They are playing football.
+      opciones: ['They are play football.', 'We are playing football.', 'They are playing football.', 'They were playing football.']   correcta[2]='They are playing football.'
+      por que: are/were es una silaba entera de diferencia. El segundo distractor quita el -ing, que tambien es una silaba. A1.5.
+  [ 7.0 A1.5 ] lis_sen_01
+      habla: She is eating an apple.
+      opciones: ['She was eating an apple.', 'She has eaten an apple.', 'She eats an apple.', 'She is eating an apple.']   correcta[3]='She is eating an apple.'
+      por que: Se separan por el bloque verbal completo (is / was / eats / has eaten), diferencias de una silaba entera o mas. Mide el presente continuo A1 OIDO en vez de leido.
+  [ 9.0 A2.0 ] lis_sen_07
+      habla: He does not like coffee.
+      opciones: ['He does not like coffee.', 'He did not like coffee.', 'He do not like coffee.', 'She does not like coffee.']   correcta[0]='He does not like coffee.'
+      por que: does/do/did: tres auxiliares con vocales distintas y tonicas. El cuarto cambia el sujeto, asi que hay que atender al principio y al medio de la frase. A2.0.
+  [11.0 A2.0 ] lis_sen_08
+      habla: I went to the beach yesterday.
+      opciones: ['I was going to the beach yesterday.', 'I went to the beach yesterday.', 'I go to the beach yesterday.', 'I have gone to the beach yesterday.']   correcta[1]='I went to the beach yesterday.'
+      por que: Pasado simple frente a presente, perfecto y continuo. Los bloques verbales tienen 1, 2 y 3 silabas respectivamente: imposible confundirlos aunque la gramatica sea sutil. A2.0.
+  [13.0 A2.5 ] lis_sen_09
+      habla: There are many people here.
+      opciones: ['There are many person here.', 'There were many people here.', 'There are many people here.', 'There is many people here.']   correcta[2]='There are many people here.'
+      por que: is/are/were en el mismo hueco, mas singular/plural en el sustantivo. 'People' es singular en espanol ('la gente'), que es el origen del error. A2.5.
+  [15.0 A2.5 ] lis_sen_10
+      habla: She can speak three languages.
+      opciones: ['She can speaks three languages.', 'She cans speak three languages.', 'She could speak three languages.', 'She can speak three languages.']   correcta[3]='She can speak three languages.'
+      por que: Modal + infinitivo sin flexionar. Las -s sobrantes son silabas audibles al final de palabra, y can/could cambia la vocal entera. A2.5.
+  [17.0 A2.5 ] lis_sen_11
+      habla: I have lived here for ten years.
+      opciones: ['I have lived here for ten years.', 'I am living here for ten years.', 'I live here for ten years.', 'I have lived here since ten years.']   correcta[0]='I have lived here for ten years.'
+      por que: for/since con duracion, mas el tiempo verbal. FOR y SINCE no se parecen en nada al oido, asi que la dificultad es integramente gramatical, que es lo que este formato debe medir. A2.5.
+  [19.0 B1.0 ] lis_sen_12
+      habla: He did not go to work.
+      opciones: ['He has not go to work.', 'He did not go to work.', 'He did not went to work.', 'He does not go to work.']   correcta[1]='He did not go to work.'
+      por que: did + infinitivo. El primer distractor anade una silaba (went), el segundo y el tercero cambian el auxiliar entero. B1.0.
+  [21.0 B1.0 ] lis_sen_13
+      habla: The book was written by a student.
+      opciones: ['The book is written by a student.', 'The book was wrote by a student.', 'The book was written by a student.', 'The book has written by a student.']   correcta[2]='The book was written by a student.'
+      por que: Pasiva con participio irregular. written/wrote se separan por la vocal tonica y por la silaba final; was/is/has son auxiliares completos. B1.0.
+  [23.0 B1.5 ] lis_sen_14
+      habla: By the time we arrived, the film had started.
+      opciones: ['By the time we arrived, the film is starting.', 'By the time we arrived, the film was start.', 'By the time we arrived, the film started.', 'By the time we arrived, the film had started.']   correcta[3]='By the time we arrived, the film had started.'
+      por que: Pasado perfecto. Nota de diseno: el distractor obvio seria 'the film has started', pero has/had es /z/ vs /d/ en silaba atona — la trampa que la politica prohibe. Sustituido por 'is starting', igual de incorrecto y con dos silabas de diferencia. B1.5.
+  [25.0 B1.5 ] lis_sen_15
+      habla: She suggested that he see a doctor.
+      opciones: ['She suggested that he see a doctor.', 'She suggested that he sees a doctor.', 'She suggested that he saw a doctor.', 'She suggested him to see a doctor.']   correcta[0]='She suggested that he see a doctor.'
+      por que: Subjuntivo mandativo oido. see/sees/saw se separan por la coda y por la vocal; el segundo distractor reestructura la frase entera. B1.5.
+  [28.0 B2.0 ] lis_sen_16
+      habla: I wish I had studied harder.
+      opciones: ['I wish I studied harder.', 'I wish I had studied harder.', 'I wish I would have studied harder.', 'I wish I was studying harder.']   correcta[1]='I wish I had studied harder.'
+      por que: wish + pasado perfecto. Nota: se evito 'I wish I have studied', que seria had/have en silaba atona. Los tres distractores cambian el bloque verbal entero, de una a tres silabas. B2.0.
+  [30.0 B2.0 ] lis_sen_02
+      habla: He's been working here since March.
+      opciones: ["He's working here since March.", 'He works here since March.', "He's been working here since March.", 'He was working here since March.']   correcta[2]="He's been working here since March."
+      por que: Present perfect continuo. DIVERGE del ejemplo del prompt, que proponia 'He'd been working': He's/He'd es /z/ vs /d/ y hoy el validador lo rechaza solo como aux_contraction. Sustituido por 'He works here since March', igual de incorrecto y claramente audible.
+  [32.0 B2.0 ] lis_sen_17
+      habla: She had her car repaired last week.
+      opciones: ['She had her car repair last week.', 'She had her car to repair last week.', 'She had repaired her car last week.', 'She had her car repaired last week.']   correcta[3]='She had her car repaired last week.'
+      por que: Causativa 'have something done'. Los cuatro comparten 'had', asi que la diferencia esta toda en el orden y en la forma del segundo verbo: sin trampas foneticas, gramatica pura. B2.0.
+  [34.0 B2.5 ] lis_sen_18
+      habla: Not only did she apologise, but she also paid.
+      opciones: ['Not only did she apologise, but she also paid.', 'Not only was she apologise, but she also paid.', 'Not only she apologised, but she also paid.', 'Not only did she apologised, but she also paid.']   correcta[0]='Not only did she apologise, but she also paid.'
+      por que: Inversion tras 'not only'. Orden de palabras y forma verbal: dos ejes, ambos audibles como bloques. B2.5.
+  [36.0 B2.5 ] lis_sen_19
+      habla: I am not used to getting up early.
+      opciones: ['I am not used to get up early.', 'I am not used to getting up early.', 'I do not used to get up early.', 'I am not using to get up early.']   correcta[1]='I am not used to getting up early.'
+      por que: 'be used to' + gerundio. Nota: el distractor 'I am not use to' se descarto porque used/use es /st/ vs /s/ al final, demasiado fino para el TTS; sustituido por 'using', que anade una silaba. B2.5.
+  [38.0 C1.0 ] lis_sen_20
+      habla: The report needs to be revised.
+      opciones: ['The report needs being revised.', 'The report needs revised.', 'The report needs to be revised.', 'The report needs to revise.']   correcta[2]='The report needs to be revised.'
+      por que: Infinitivo pasivo tras 'need'. Los cuatro se separan por el numero de silabas del bloque final (1, 2, 3 y 3 con vocales distintas). C1.0.
+  [40.0 C1.0 ] lis_sen_21
+      habla: Little did they know what was coming.
+      opciones: ['Little they did know what was coming.', 'Little they knew what was coming.', 'Little did they knew what was coming.', 'Little did they know what was coming.']   correcta[3]='Little did they know what was coming.'
+      por que: Inversion tras adverbial negativo. Las cuatro usan las mismas palabras en ordenes distintos, que es la forma mas limpia de medir sintaxis por el oido: no hay ni una diferencia fonetica. C1.0.
+  [43.0 C1.5 ] lis_sen_22
+      habla: No sooner had he arrived than the meeting began.
+      opciones: ['No sooner had he arrived than the meeting began.', 'No sooner had he arrived as the meeting began.', 'No sooner had he arrived when the meeting began.', 'No sooner he had arrived than the meeting began.']   correcta[0]='No sooner had he arrived than the meeting began.'
+      por que: 'No sooner... than' con inversion. than/when/as son tres palabras completamente distintas al oido, y el primer distractor cambia el orden. Dos variables independientes. C1.5.
+  [45.0 C1.5 ] lis_sen_23
+      habla: It is essential that every member be present.
+      opciones: ['It is essential that every member is present.', 'It is essential that every member be present.', 'It is essential that every member to be present.', 'It is essential that every member being present.']   correcta[1]='It is essential that every member be present.'
+      por que: Subjuntivo mandativo con 'be'. be/is/being/to be tienen 1, 1, 2 y 2 silabas con vocales distintas: audibles pese a ser palabras gramaticales atonas. C1.5.
+  [48.0 C2   ] lis_sen_03
+      habla: Rarely have I seen such dedication.
+      opciones: ['Rarely I have seen such dedication.', 'Rarely have I saw such dedication.', 'Rarely have I seen such dedication.', 'Rarely has I seen such dedication.']   correcta[2]='Rarely have I seen such dedication.'
+      por que: Inversion tras adverbio restrictivo, OIDA. Las tres diferencias son orden de palabras, concordancia y forma verbal: las tres las articula sin problema cualquier TTS.
+  [50.0 C2   ] lis_sen_24
+      habla: Were it not for her advice, we would have failed.
+      opciones: ['Were it not of her advice, we would have failed.', 'If it were not for her advice, we would failed.', 'Was it not for her advice, we would have failed.', 'Were it not for her advice, we would have failed.']   correcta[3]='Were it not for her advice, we would have failed.'
+      por que: Formula subjuntiva 'were it not for'. Were/Was se separan por la vocal tonica entera, no por una coda; for/of por la consonante inicial. Techo de la escala de listening.
+
+--- LISTEN_QUESTION (listening) ---
+  [ 2.0 A1.0 ] lis_qst_01
+      habla: What is your name?
+      opciones: ['My name is Ana.', 'Yes, I do.', 'It is on the table.', 'I am fine, thank you.']   correcta[0]='My name is Ana.'
+      por que: Pregunta A1.0 de identificacion. Los tres distractores son respuestas CORRECTAS a otras preguntas A1 igual de frecuentes, asi que el item mide si entendio la pregunta y no si sabe construir una respuesta.
+  [ 4.0 A1.5 ] lis_qst_04
+      habla: How old are you?
+      opciones: ['It is very old.', 'I am eight years old.', 'I am fine, thanks.', 'My name is Tom.']   correcta[1]='I am eight years old.'
+      por que: Interrogativo 'how old'. El segundo distractor reutiliza la palabra OLD en otro sentido, que es la trampa util: castiga responder por palabra suelta reconocida. A1.5.
+  [ 6.0 A1.5 ] lis_qst_05
+      habla: Where do you live?
+      opciones: ["At eight o'clock.", 'By car.', 'In Madrid.', 'With my sister.']   correcta[2]='In Madrid.'
+      por que: Discriminacion de interrogativo: where / when / how / who. Las cuatro respuestas son sintagmas preposicionales cortos, asi que solo la preposicion y el contenido las separan. A1.5.
+  [ 8.0 A2.0 ] lis_qst_06
+      habla: What time does the class start?
+      opciones: ['Every Monday.', 'In the classroom.', 'For two hours.', "At nine o'clock."]   correcta[3]="At nine o'clock."
+      por que: 'What time' frente a lugar, frecuencia y duracion. Los cuatro son complementos temporales o locativos plausibles: hay que oir 'what time' y no solo 'class'. A2.0.
+  [10.0 A2.0 ] lis_qst_07
+      habla: How many brothers do you have?
+      opciones: ['Two.', 'By bus.', 'Very tall.', 'Last year.']   correcta[0]='Two.'
+      por que: 'How many' pide cantidad. La respuesta correcta es la mas corta del banco, lo que impide acertar por longitud o elaboracion. A2.0.
+  [12.0 A2.0 ] lis_qst_08
+      habla: What did you do last weekend?
+      opciones: ['I will go to the beach.', 'I visited my grandmother.', 'I am studying English.', 'Every Saturday.']   correcta[1]='I visited my grandmother.'
+      por que: Tiempo verbal oido dentro de la pregunta: 'did' obliga a una respuesta en pasado. Los tres distractores son futuro, presente continuo y frecuencia. A2.0.
+  [14.0 A2.5 ] lis_qst_09
+      habla: Would you like something to drink?
+      opciones: ['Because I am thirsty.', 'I drank it yesterday.', 'Yes, a glass of water, please.', 'It is on the table.']   correcta[2]='Yes, a glass of water, please.'
+      por que: Ofrecimiento, no pregunta de informacion. El primer distractor responde al verbo DRINK en pasado y el tercero al 'why' que nadie pregunto: dos formas distintas de contestar a una palabra suelta. A2.5.
+  [16.0 A2.5 ] lis_qst_10
+      habla: How often do you go to the gym?
+      opciones: ['With a friend.', 'Since January.', 'About twenty minutes away.', 'Three times a week.']   correcta[3]='Three times a week.'
+      por que: 'How often' frente a distancia, punto de inicio y compania. Las cuatro son respuestas naturales a preguntas con 'how', que es lo que obliga a oir la segunda palabra. A2.5.
+  [18.0 B1.0 ] lis_qst_11
+      habla: Have you ever been to London?
+      opciones: ['Yes, twice.', 'Yes, next summer.', 'No, I go tomorrow.', 'Yes, I am going now.']   correcta[0]='Yes, twice.'
+      por que: Present perfect de experiencia: la respuesta tiene que mirar al pasado. Los tres distractores son coherentes en forma pero apuntan al futuro o al presente. B1.0.
+  [20.0 B1.0 ] lis_qst_12
+      habla: How long does the film last?
+      opciones: ['Three times.', 'About two hours.', 'At half past eight.', 'Since Friday.']   correcta[1]='About two hours.'
+      por que: 'How long' de duracion frente a hora, frecuencia y punto de inicio. SINCE es el distractor fino: responde a 'how long' en la variante de estado, no de evento. B1.0.
+  [22.0 B1.0 ] lis_qst_02
+      habla: How long have you been living in this city?
+      opciones: ['Twice a week.', 'By bus, usually.', 'About three years.', 'Because of my job.']   correcta[2]='About three years.'
+      por que: Discriminacion entre interrogativos oida dentro de una pregunta en present perfect continuo. Las cuatro respuestas son igual de plausibles fuera de contexto: solo la pregunta las separa.
+  [24.0 B1.5 ] lis_qst_13
+      habla: Why didn't you come to the meeting?
+      opciones: ['Yes, I came.', 'In the main office.', "At three o'clock.", 'I was ill.']   correcta[3]='I was ill.'
+      por que: Pregunta negativa: el primer distractor contradice directamente la presuposicion de la pregunta, que es el error de quien oye 'come to the meeting' y no el 'didn't'. B1.5.
+  [26.0 B1.5 ] lis_qst_14
+      habla: Could you tell me where the station is?
+      opciones: ["Yes, it's just around the corner.", "No, I couldn't tell you yesterday.", 'Yes, I could.', 'It was built in 1920.']   correcta[0]="Yes, it's just around the corner."
+      por que: Peticion indirecta con forma de pregunta de capacidad. 'Yes, I could' es la respuesta literal a la forma y equivocada en el uso: es exactamente el salto pragmatico que separa B1 de B2. B1.5.
+  [29.0 B2.0 ] lis_qst_15
+      habla: You haven't finished the report yet, have you?
+      opciones: ["Yes, I didn't.", 'No, not yet.', "Yes, I haven't.", 'No, I have finished it.']   correcta[1]='No, not yet.'
+      por que: Question tag sobre una negativa: en ingles el yes/no sigue al hecho, no a la expectativa del que pregunta, al reves que en espanol. Los tres distractores son las tres combinaciones incoherentes. B2.0.
+  [31.0 B2.0 ] lis_qst_16
+      habla: What would you do if you won the lottery?
+      opciones: ['I will travel around the world.', 'I traveled around the world.', 'I would travel around the world.', 'I won it last year.']   correcta[2]='I would travel around the world.'
+      por que: Segundo condicional oido: la respuesta tiene que mantener el condicional. WILL es el error de quien oye 'if' y responde en primer condicional. B2.0.
+  [33.0 B2.5 ] lis_qst_17
+      habla: Do you mind if I open the window?
+      opciones: ['Yes, of course, open it.', 'Yes, I opened it.', "No, I don't want you to.", 'No, go ahead.']   correcta[3]='No, go ahead.'
+      por que: Convencion de 'Do you mind': conceder es responder NO. El primer distractor se contradice (Yes rechaza, 'open it' concede) y el cuarto usa el NO correcto con contenido opuesto: el item separa la forma del contenido. B2.0.
+  [35.0 B2.5 ] lis_qst_18
+      habla: How would you feel about moving abroad?
+      opciones: ["I'd be excited about it.", 'Yes, I would.', 'I will move abroad.', 'I moved abroad last year.']   correcta[0]="I'd be excited about it."
+      por que: 'How would you feel about' pide una valoracion hipotetica, no un dato ni un si/no. 'Yes, I would' responde a una pregunta cerrada que no se hizo. B2.5.
+  [37.0 B2.5 ] lis_qst_19
+      habla: By the time you get there, will the shops have closed?
+      opciones: ['No, they are closing now.', 'Yes, probably.', 'Yes, they closed.', 'Yes, I will close them.']   correcta[1]='Yes, probably.'
+      por que: Futuro perfecto dentro de una subordinada temporal: la pregunta encadena dos tiempos y hay que sostener los dos hasta el final. El tercer distractor cambia el sujeto de la accion. B2.5.
+  [39.0 C1.0 ] lis_qst_20
+      habla: I don't suppose you could lend me a hand, could you?
+      opciones: ["Yes, I don't suppose so.", "No, I couldn't lend it.", 'Sure, what do you need?', 'I lent it yesterday.']   correcta[2]='Sure, what do you need?'
+      por que: Peticion en forma negativa con tag: la estructura sugiere que se espera un no, pero es una peticion normal. 'Lend me a hand' es ademas idiomatico, asi que el segundo distractor responde a 'lend' literal. C1.0.
+  [41.0 C1.0 ] lis_qst_21
+      habla: Had you known about the changes, would you have accepted the offer?
+      opciones: ["No, I didn't know about them.", 'Yes, I have accepted it.', 'Yes, I knew about them.', 'No, I would have declined it.']   correcta[3]='No, I would have declined it.'
+      por que: Tercer condicional con inversion, oido. El primer distractor responde al hecho real en vez de a la hipotesis, que es el error natural de quien no reconoce 'Had you known' como condicional. C1.0.
+  [43.0 C1.5 ] lis_qst_22
+      habla: What do you make of the committee's decision?
+      opciones: ['I think it was a mistake.', 'They made a decision.', 'I will make one.', 'I made it yesterday.']   correcta[0]='I think it was a mistake.'
+      por que: 'make of' = opinar, modismo totalmente opaco. Los tres distractores responden a MAKE en su sentido literal, que es lo que hace un C1 que no conoce la expresion. C1.5.
+  [45.0 C1.5 ] lis_qst_03
+      habla: Would you mind if I brought the deadline forward by a week?
+      opciones: ['Yes, I brought it forward.', 'Not at all, that works for me.', 'Yes, that would be perfect for me.', "Of course, I'll bring it back."]   correcta[1]='Not at all, that works for me.'
+      por que: Convencion pragmatica de 'Would you mind': la respuesta que CONCEDE es negativa en la forma. Los tres distractores son confusiones distintas: leer el condicional como pasado real, contradecirse, y confundir forward con back.
+  [47.0 C1.5 ] lis_qst_23
+      habla: You wouldn't happen to know when the results are due, would you?
+      opciones: ['No, they happened yesterday.', "Yes, I wouldn't happen.", "I'm afraid I don't.", 'Yes, it happens often.']   correcta[2]="I'm afraid I don't."
+      por que: 'wouldn't happen to know' es una formula de cortesia fosilizada donde HAPPEN pierde su significado. Los tres distractores lo interpretan literalmente, cada uno en un tiempo distinto. C1.5.
+  [49.0 C2   ] lis_qst_24
+      habla: Far be it from me to criticise, but shouldn't we reconsider the timeline?
+      opciones: ['Yes, I criticised it.', 'Yes, it is far from me.', "No, it isn't from you.", 'You may have a point.']   correcta[3]='You may have a point.'
+      por que: 'Far be it from me' es subjuntivo fosilizado y ademas un atenuador: la pregunta real es la de despues de la coma. Hay que descartar la primera mitad entera como formula y responder a la segunda. Techo del formato.
+
+--- ERRORES ---
+  ninguno
+--- ADVERTENCIAS ---
+  ninguna

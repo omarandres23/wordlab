@@ -1,0 +1,11 @@
+{
+  "file": "placement_definitions_additions.json",
+  "purpose": "Definiciones nuevas del test de nivel. Traducir `es` y fusionar dentro de definitions.json -> definitions. NUNCA sobreescribir una clave existente.",
+  "count": 1,
+  "definitions": {
+    "ZETAWORD": {
+      "en": "something very rare",
+      "es": ""
+    }
+  }
+}

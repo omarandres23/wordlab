@@ -1,0 +1,54 @@
+==========================================================================
+EXPERIMENTOS SOBRE EL MOTOR — 2000 jugadores por corrida
+==========================================================================
+
+--------------------------------------------------------------------------
+0. CORRECCION: el caso SIN VOCES estaba comparado contra el blanco
+   equivocado (promedio de las 2 destrezas medidas, no de las 3).
+--------------------------------------------------------------------------
+   completo (3 destrezas), contra (v+g+l)/3 : MAE  3.48  sesgo +1.11
+   sin voces, contra (v+g)/2   [INFLADO]    : MAE  3.16  sesgo +0.90
+   sin voces, contra (v+g+l)/3 [CORRECTO]   : MAE  3.97  sesgo +2.15
+   degradacion real por no medir listening  : +0.50 puntos de MAE
+
+--------------------------------------------------------------------------
+1. DE DONDE SALE EL SESGO DE A1: azar o prior
+--------------------------------------------------------------------------
+   tramo    A: azar normal   B: jugador sin azar   C: sin azar en nada
+             (motor c=.25)         (motor c=.25)           (motor c=0)
+   A1                +2.46                 -2.64                 +0.68
+   A2                +2.80                 -3.28                 +1.53
+   B1                +2.46                 -2.32                 +1.95
+   B2                +1.37                 -3.04                 +0.60
+   C1                -0.17                 -3.74                 -0.36
+   C2                -1.65                 -3.96                 -1.18
+   A: MAE global  3.77   sesgo global +1.70
+   B: MAE global  3.53   sesgo global -3.04
+   C: MAE global  2.56   sesgo global +0.83
+
+--------------------------------------------------------------------------
+2. AFLOJAR EL PRIOR (escenario N(0,6))
+--------------------------------------------------------------------------
+   prior                     MAE   sesgo      A1      A2   24/24    0/24
+   N(25,15)  actual         3.77   +1.76   +3.57   +3.30    50       0
+   N(25,40)  debil          3.77   +1.70   +2.46   +2.80    50       0
+   practicamente ninguno    3.78   +1.59   +2.15   +2.43    50       0
+
+--------------------------------------------------------------------------
+3. ERROR DE BANDA CEFR: ±1 vs ±2 o mas
+--------------------------------------------------------------------------
+   escenario                      exacta       ±1   ±2 o mas
+   sin ruido                       67.2%    31.6%       1.1%
+   N(0,3)                          66.3%    32.2%       1.5%
+   N(0,6) pesimista                63.5%    34.3%       2.2%
+
+--------------------------------------------------------------------------
+4. REPARTO DE CUBETAS CON POBLACION REALISTA
+--------------------------------------------------------------------------
+   theta ~ N(17, 8) truncada a [0,50]  (A2.5 de media: secundaria
+   hispanohablante), frente a la uniforme 0-50 del reporte anterior.
+   poblacion              destreza       basico   intermedio   avanzado
+   uniforme 0-50          vocab           39.2%        29.2%      31.5%
+     (reparto VERDADERO)  vocab           45.0%        26.2%      28.8%
+   N(17,8) truncada       vocab           58.5%        34.6%       6.9%
+     (reparto VERDADERO)  vocab           72.0%        25.8%       2.2%
