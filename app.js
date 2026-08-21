@@ -31,7 +31,7 @@ const $$ = (sel) => document.querySelectorAll(sel);
 // Cache-busting for injected scripts. MUST match the ?v= suffix on the
 // <script> tags in index.html — the regex bump updates both, and this is the
 // single place the JS side reads it from.
-const ASSET_V = "sp21";
+const ASSET_V = "sp25";
 
 const DataLoader = (() => {
   // one entry per game: the files that must exist before start...() runs.
@@ -55,6 +55,10 @@ const DataLoader = (() => {
     strands: ["strands_data.js", DEFS],
     emojimatch: ["emojimatch_data.js", DEFS],
     hearit: ["hearit_data.js", DEFS],
+    // The level test is not a game and has no card, but it loads its bank the
+    // same way: placement.js (the engine) is eager, placement_data.js (216
+    // items, ~69 KB) only arrives when the player opens the test.
+    level: ["placement.js", "placement_data.js"],
   };
 
   // Cache is keyed by FILE, not by game: definitions.js is shared by eight
@@ -4754,3 +4758,342 @@ $("#ach-toggle-badges").addEventListener("change", (e) => {
 });
 
 refreshBadgeUI();
+
+/* =====================================================
+   LEVEL TEST — the UI. The engine is placement.js; the bank is
+   placement_data.js, loaded on demand through DataLoader (NEEDS.level).
+
+   Not a game: no card in the grid, no Progress.record(), no badges. The only
+   things it shares with the 13 games are the screen system and SFX.
+
+   🚨 Nothing here may read PLACEMENT_DATA *or* Placement at the top level — this
+   block runs at load time and neither exists yet. Both are pulled by
+   DataLoader.load("level"), so every use of them sits inside a handler that runs
+   after it resolves: Placement.create in lvStart, Placement.recommend on the
+   result screen. The home entry and the intro screen deliberately need neither —
+   they paint the saved level from Progress alone, which is what keeps the engine
+   off the home page.
+   ===================================================== */
+const LV_TOTAL = 24;
+const LV_MAX_PLAYS = 3; // per listening item: 1 automatic + 2 manual replays
+const LV_REPEAT_WARN_MS = 24 * 60 * 60 * 1000; // "less than a day ago"
+
+let lvSession = null;
+let lvPlaysLeft = 0;
+let lvListeningOk = true; // set by the voice check when the entry screen opens
+
+/* ---------- home entry ---------- */
+// Paints the strip above the grid from the saved level. Called at load and
+// again when the test finishes, so home is never stale.
+function lvRefreshEntry() {
+  const entry = $("#level-entry");
+  if (!entry) return;
+  const lvl = Progress.getLevel();
+  $("#level-entry-label").textContent = t("level", "entry_label");
+  $("#level-entry-cta").textContent = lvl
+    ? t("level", "entry_level_prefix")
+    : t("level", "entry_cta");
+  entry.classList.toggle("has-level", !!lvl);
+  if (lvl) {
+    $("#level-entry-num").textContent = lvl.display;
+    $("#level-entry-cefr").textContent = lvl.cefr || "";
+  }
+}
+
+/* ---------- entry screen ---------- */
+function lvOpen() {
+  showScreen("#screen-level");
+  lvRenderIntro();
+  // Start the bank download now, while the player reads the description. Same
+  // trick as the game cards: the transfer hides inside the reading time.
+  DataLoader.load("level").catch(() => {});
+  // Voice check reuses Hear It's resolver instead of a second implementation.
+  // hiWhenVoicesReady waits for Chrome's async getVoices() rather than trusting
+  // the first (empty) answer — which is the whole reason that helper exists.
+  hiWhenVoicesReady(() => {
+    const voices = (window.speechSynthesis && speechSynthesis.getVoices()) || [];
+    lvListeningOk = voices.some((v) => /^en(-|_|$)/i.test(v.lang));
+    $("#level-no-voices").textContent = t("level", "no_voices");
+    $("#level-no-voices").classList.toggle("hidden", lvListeningOk);
+  });
+}
+
+function lvRenderIntro() {
+  const lvl = Progress.getLevel();
+  $("#level-intro").classList.toggle("has-level", !!lvl);
+
+  $("#level-title").textContent = t("level", "title");
+  $("#level-desc").textContent = t("level", "desc");
+  $("#level-start-btn").textContent = t("level", lvl ? "restart" : "start");
+
+  const warn = $("#level-repeat-warning");
+  warn.classList.add("hidden");
+  if (!lvl) return;
+
+  $("#level-saved-num").textContent = lvl.display;
+  $("#level-saved-of").textContent = t("level", "result_of");
+  $("#level-saved-cefr").textContent = lvl.cefr || "";
+  const when = lvl.takenAt ? new Date(lvl.takenAt) : null;
+  // The locale is passed explicitly: toLocaleDateString() with no argument
+  // follows the BROWSER, so a Spanish UI on an English Chrome printed
+  // "Hecho el 8/20/2026" — month first, inside a Spanish sentence.
+  $("#level-saved-date").textContent = when
+    ? interp(t("level", "saved_taken"), {
+        date: when.toLocaleDateString(selectedLanguage === "es" ? "es-ES" : "en-US"),
+      })
+    : "";
+
+  const lab = (sk) => {
+    const s = lvl.skills && lvl.skills[sk];
+    return s && s.label
+      ? t("level", "level_labels." + s.label) || s.label
+      : t("level", "skill_not_measured");
+  };
+  $("#level-saved-summary").textContent = lvl.listeningMeasured
+    ? interp(t("level", "saved_summary"),
+             { vocab: lab("vocab"), grammar: lab("grammar"), listening: lab("listening") })
+    : interp(t("level", "saved_summary_no_listening"),
+             { vocab: lab("vocab"), grammar: lab("grammar") });
+
+  // The warning never blocks. A real lock would be decorative: the record lives
+  // in localStorage and an incognito window walks straight past it.
+  if (lvl.takenAt && Date.now() - lvl.takenAt < LV_REPEAT_WARN_MS) {
+    warn.textContent = t("level", "repeat_warning");
+    warn.classList.remove("hidden");
+  }
+}
+
+/* ---------- the test ---------- */
+function lvStart() {
+  const btn = $("#level-start-btn");
+  btn.disabled = true;
+  DataLoader.load("level").then(
+    () => {
+      btn.disabled = false;
+      const prev = Progress.getLevel();
+      // Previously seen ids are excluded, which is what stops a second run from
+      // repeating questions.
+      lvSession = Placement.create({
+        seenIds: prev ? prev.itemsSeen : [],
+        listening: lvListeningOk,
+      });
+      showScreen("#screen-level-test");
+      lvRenderQuestion();
+    },
+    () => {
+      btn.disabled = false;
+      const err = $("#level-no-voices");
+      err.textContent = ts("intro_modal.load_error");
+      err.classList.remove("hidden");
+    }
+  );
+}
+
+function lvRenderQuestion() {
+  const it = lvSession && lvSession.current();
+  if (!it) return lvFinish();
+
+  const n = lvSession.answered() + 1;
+  $("#level-progress-text").textContent = interp(t("level", "progress"), { n: n, total: LV_TOTAL });
+  $("#level-progress-fill").style.width = ((n - 1) / LV_TOTAL) * 100 + "%";
+
+  const listening = it.skill === "listening";
+  // In listening items the text lives in `speak`, never in `prompt`: showing it
+  // on screen would turn a listening item into a reading one.
+  $("#level-prompt").textContent = listening ? "" : it.prompt;
+  $("#level-prompt").classList.toggle("hidden", listening);
+
+  $("#level-audio-btn").classList.toggle("hidden", !listening);
+  $("#level-audio-count").classList.toggle("hidden", !listening);
+  if (listening) {
+    $("#level-audio-label").textContent = t("level", "play_audio");
+    lvPlaysLeft = LV_MAX_PLAYS;
+    lvSpeak(it.speak); // one automatic play; the other two are manual
+  }
+
+  const box = $("#level-options");
+  box.innerHTML = "";
+  it.options.forEach((opt, i) => {
+    const b = document.createElement("button");
+    b.className = "level-option";
+    b.type = "button";
+    b.textContent = opt;
+    b.addEventListener("click", () => lvAnswer(i));
+    box.appendChild(b);
+  });
+}
+
+function lvSpeak(text) {
+  if (!window.speechSynthesis || lvPlaysLeft <= 0) return;
+  lvPlaysLeft--;
+  lvUpdatePlays();
+  try {
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = "en-US";
+    u.rate = 0.9;
+    // reuse the voice Hear It already picked, so both games sound the same
+    if (typeof hearitVoice !== "undefined" && hearitVoice) u.voice = hearitVoice;
+    speechSynthesis.speak(u);
+  } catch (err) {
+    /* a device that refuses to speak must never stall the test */
+  }
+}
+
+function lvUpdatePlays() {
+  const el = $("#level-audio-count");
+  el.textContent = lvPlaysLeft > 0
+    ? interp(t("level", "plays_left"), { n: lvPlaysLeft })
+    : t("level", "plays_none");
+  $("#level-audio-btn").disabled = lvPlaysLeft <= 0;
+}
+
+// No right/wrong feedback and no going back, both deliberate: green and red in
+// an adaptive test discourage people exactly when it starts to bite, which by
+// design is always.
+function lvAnswer(index) {
+  if (!lvSession) return;
+  lvSession.answer(index);
+  if (lvSession.isDone()) lvFinish();
+  else lvRenderQuestion();
+}
+
+function lvFinish() {
+  if (!lvSession) return;
+  const result = lvSession.result();
+  Progress.setLevel(result);
+  lvSession = null;
+  try {
+    speechSynthesis.cancel();
+  } catch (err) {}
+  lvRenderResult(result);
+  showScreen("#screen-level-result");
+  SFX.play("success"); // same closing sound as the other 13 end panels
+  lvRefreshEntry();
+}
+
+/* ---------- result ---------- */
+function lvRenderResult(res) {
+  $("#level-result-score").textContent = res.display;
+  $("#level-result-of").textContent = t("level", "result_of");
+  $("#level-result-cefr").textContent = res.cefr || "";
+
+  $("#level-scale-fill").style.width = (res.overall / 50) * 100 + "%";
+
+  // CEFR anchors come from the bank, so retuning the scale never needs JS.
+  // Safe here: the bank is loaded by the time a result exists.
+  const marks = $("#level-scale-marks");
+  marks.innerHTML = "";
+  const anchors =
+    (typeof PLACEMENT_DATA !== "undefined" && PLACEMENT_DATA.scale && PLACEMENT_DATA.scale.anchors) ||
+    {};
+  Object.keys(anchors).forEach((v) => {
+    const num = Number(v);
+    if (num % 10) return; // every other anchor, or the strip turns into noise
+    const m = document.createElement("span");
+    m.className = "level-scale-mark";
+    m.style.left = (num / 50) * 100 + "%";
+    m.textContent = anchors[v];
+    marks.appendChild(m);
+  });
+
+  // Skills are shown as a LABEL, never a number. With 8 items each their error
+  // is roughly +-7 points; a decimal would advertise precision we do not have.
+  const skillBox = $("#level-skills");
+  skillBox.innerHTML = "";
+  ["vocab", "grammar", "listening"].forEach((sk) => {
+    if (sk === "listening" && !res.listeningMeasured) return;
+    const s = res.skills && res.skills[sk];
+    const row = document.createElement("div");
+    row.className = "level-skill";
+    const name = document.createElement("span");
+    name.className = "level-skill-name";
+    name.textContent = t("level", "skill_" + sk);
+    const val = document.createElement("span");
+    val.className = "level-skill-label";
+    if (s && s.label) val.dataset.label = s.label;
+    val.textContent = s && s.label
+      ? t("level", "level_labels." + s.label) || s.label
+      : t("level", "skill_not_measured");
+    row.appendChild(name);
+    row.appendChild(val);
+    skillBox.appendChild(row);
+  });
+
+  lvRenderRecs(res);
+
+  const note = $("#level-listening-note");
+  note.textContent = t("level", "listening_note");
+  note.classList.toggle("hidden", res.listeningMeasured);
+
+  $("#level-result-back").textContent = t("level", "back");
+}
+
+function lvRenderRecs(res) {
+  const box = $("#level-recs");
+  box.innerHTML = "";
+  // With listening unmeasured, recommend() already leaves Hear It out of BOTH
+  // lists — saying "avoid this" about something never measured is as much of a
+  // claim as recommending it.
+  const rec = Placement.recommend(res);
+
+  const section = (titleKey, entries, kind) => {
+    if (!entries.length) return;
+    const h = document.createElement("p");
+    h.className = "level-recs-title";
+    h.textContent = t("level", titleKey);
+    box.appendChild(h);
+    const ul = document.createElement("ul");
+    ul.className = "level-rec-list level-rec-" + kind;
+    entries.forEach((e) => {
+      const li = document.createElement("li");
+      const name = (typeof GAME_INFO === "object" && GAME_INFO[e.game] && GAME_INFO[e.game].title) || e.game;
+      if (kind === "play") {
+        const b = document.createElement("button");
+        b.className = "level-rec-btn";
+        b.type = "button";
+        b.textContent = e.level
+          ? name + " · " + (t("level", "level_labels." + e.level) || e.level)
+          : name;
+        b.addEventListener("click", () => lvGoToGame(e));
+        li.appendChild(b);
+      } else {
+        li.textContent = name;
+      }
+      ul.appendChild(li);
+    });
+    box.appendChild(ul);
+  };
+
+  section("recs_play", rec.play, "play");
+  section("recs_avoid", rec.avoid, "avoid");
+}
+
+// Preselects the recommended difficulty and hands over to the shared intro
+// modal instead of opening a parallel path. The radios use the Spanish values
+// (basico/intermedio/avanzado), which is exactly what the recommendation table
+// already stores, so there is nothing to convert.
+function lvGoToGame(entry) {
+  showScreen("#screen-home");
+  if (entry.level) {
+    const radio = document.querySelector('input[name="difficulty"][value="' + entry.level + '"]');
+    if (radio) radio.checked = true;
+  }
+  if (entry.mode) {
+    const m = document.querySelector('input[name="wmode"][value="' + entry.mode + '"]');
+    if (m) m.checked = true;
+  }
+  openIntro(entry.game);
+  startLoading(entry.game);
+}
+
+/* ---------- wiring ---------- */
+$("#level-entry").addEventListener("click", lvOpen);
+$("#level-start-btn").addEventListener("click", lvStart);
+$("#level-audio-btn").addEventListener("click", () => {
+  const it = lvSession && lvSession.current();
+  if (it && it.speak) lvSpeak(it.speak);
+});
+$("#level-result-back").addEventListener("click", () => showScreen("#screen-home"));
+
+lvRefreshEntry();

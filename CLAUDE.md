@@ -69,7 +69,7 @@ Todos comparten helpers globales: `$`/`$$` (querySelector), `shuffle()`,
 
 ## ⚠️ Carga bajo demanda de los bancos (`DataLoader`)
 
-La portada **solo carga 7 scripts** (~260 KB). Los bancos de datos (~2,1 MB)
+La portada **solo carga 7 scripts** (~275 KB). Los bancos de datos (~2,1 MB)
 los inyecta `DataLoader`, al principio de `app.js`, cuando el jugador pincha
 una tarjeta. Antes se descargaban los 29 de golpe: 2.403 KB.
 
@@ -79,6 +79,15 @@ de juego no se tocaron.
 
 **Al añadir un juego o un banco nuevo hay que registrarlo en el mapa `NEEDS`
 de `DataLoader`.** Si no, la global llega indefinida al pulsar START.
+
+**`NEEDS` no es solo para bancos.** La entrada `level` carga dos archivos:
+`placement.js` (el motor del test de nivel) y `placement_data.js` (su banco).
+El motor estuvo un tiempo cargado eager, con el argumento de que la portada
+tenía que poder mostrar el nivel guardado; se midió y el argumento no se
+sostenía — la portada y la pantalla de entrada pintan ese dato leyendo **solo
+`Progress`**, así que el motor (21 KB) se fue a `NEEDS` y la portada volvió a
+sus 7 scripts. Regla general: si un `.js` solo se usa después de un click,
+va en `NEEDS`, sea banco o no.
 
 - La caché es **por archivo**, no por juego: `definitions.js` lo comparten
   **ocho** juegos (Real Word, Waffle, Connections, Fill in the Blanks,
@@ -157,9 +166,18 @@ incluyeron), del sistema de sonido y de la animación `endPop`.
 ## Sistema de niveles
 
 El modal de inicio (`openIntro(game)`, ~línea 273) es **compartido por todos
-los juegos** — un solo modal, se ajusta según el juego. `showCategory` /
-`hideDifficulty` deciden qué filas mostrar (`#category-row`,
-`#difficulty-row`) por juego. Los radios de dificultad usan valores en
+los juegos** — un solo modal, se ajusta según el juego. `hideDifficulty`
+decide si se muestra `#difficulty-row`.
+
+**`showCategory` hoy vale `false` siempre** (~L401). Es una lista de
+exclusiones que fue creciendo hasta cubrir los 13 juegos: ninguno pide
+categoría ya — los que la pedían (Fill in the Blanks, Impostor, Wordle) ahora
+mezclan todas y solo preguntan dificultad. `#category-row` y `#category-label`
+no se muestran para nadie. La condición se conserva por si vuelve un juego con
+categorías, pero **no describe ningún comportamiento vivo**: no razonar sobre
+ella como si decidiera algo.
+
+Los radios de dificultad usan valores en
 español (`basico`/`intermedio`/`avanzado`); el banco de datos usa claves en
 inglés (`basic`/`intermediate`/`advanced`). La conversión es siempre vía:
 
@@ -171,6 +189,77 @@ Reutilizado por todos los juegos nuevos — no crear un mapeo propio.
 Patrón estándar para agregar niveles a un juego: guardar `xxLevelRaw` (valor
 del radio, para PLAY AGAIN) y `xxLevel` (clave del banco, vía
 `WL_LEVEL_KEYS[xxLevelRaw]`), leer `DATA.rounds[xxLevel]` / `DATA.words[xxLevel]`.
+
+## Test de nivel (`placement.js` + `placement_data.js`)
+
+Test adaptativo de 24 preguntas que estima el nivel de inglés del jugador en
+una escala 0–50 con etiqueta CEFR. **No es un juego**: no tiene tarjeta en la
+grilla, no entra en los 48 badges, nunca llama a `Progress.record()` y **no usa
+el modal `openIntro()`**. Su puerta de entrada es propia: la tira
+`#level-entry`, encima de `.card-grid` en la portada.
+
+Prefijo de todo su código en `app.js`: `lv` (`lvOpen`, `lvStart`,
+`lvRenderQuestion`, `lvFinish`, `lvRenderResult`…), en el bloque del final del
+archivo.
+
+### Las tres pantallas
+
+| Pantalla | id | Qué hace |
+|---|---|---|
+| Entrada | `#screen-level` | Descripción, nivel guardado (`#level-intro.has-level`), aviso de repetición, nota de sin-voces, botón `#level-start-btn` |
+| Test | `#screen-level-test` | `#level-progress-fill`, `.level-prompt-zone`, `#level-options` |
+| Resultado | `#screen-level-result` | Puntaje, `#level-scale` con anclas CEFR, `.level-skill` por destreza, `#level-recs` |
+
+### Motor vs banco, y cuándo se carga cada uno
+
+- **`placement.js`** — el motor: selección adaptativa de ítems, estimación
+  Rasch, `Placement.create()` y `Placement.recommend()`.
+- **`placement_data.js`** — el banco: 216 ítems, escala y cortes.
+
+**Los dos van por `DataLoader` (`NEEDS.level`)**, y ninguno existe al cargar la
+página. La portada y la pantalla de entrada funcionan sin ellos porque pintan
+el nivel guardado leyendo solo `Progress`. `DataLoader.load("level")` se
+dispara al abrir la pantalla de entrada (mientras el jugador lee) y otra vez,
+esperando su promesa, al pulsar EMPEZAR.
+
+### 🚨 El campo `level` de `Progress` y la trampa de `normalize()`
+
+El resultado vive en `Progress` (`getLevel()` / `setLevel()`), que es el único
+sitio autorizado a tocar `localStorage`.
+
+**`normalize()` reconstruye el registro campo por campo desde `blank()` y
+descarta todo lo que no esté declarado.** Un campo nuevo que se escriba sin
+añadirlo a `blank()` **y** a `normalize()` se guarda bien, sobrevive en
+memoria, y **desaparece en la siguiente recarga** — sin error, sin aviso. Así
+de silencioso.
+
+Añadir un campo nuevo son tres sitios, siempre los tres:
+
+1. `blank()` — el valor inicial.
+2. `normalize()` — copiarlo/sanearlo desde el `raw`.
+3. Un `normalizeX()` propio si es un objeto, como `normalizeLevel()`.
+
+Esto se va a repetir en cuanto lleguen la racha o el juego del día. La prueba
+que lo caza no es leer el código: es **recargar la página** y comprobar que el
+dato sigue ahí.
+
+`setLevel()` sella el `takenAt` por dentro (`Date.now()`) — el store es dueño
+del "cuándo", así que no se le pasa desde fuera. Para probar el camino de
+"hace más de un día" hay que editar el registro en `localStorage` y recargar.
+
+### Dos decisiones que no se revierten sin pensarlo
+
+- **Las destrezas se muestran como ETIQUETA, nunca como número.** Con 8 ítems
+  por destreza el error ronda los ±7 puntos: un número anunciaría una precisión
+  que el test no tiene. El puntaje global sí es número porque se apoya en las
+  24 respuestas.
+- **Los cortes `(22, 35)` están calibrados contra el sesgo del motor**, no
+  alineados con el CEFR puro. Salieron de simular 2000 jugadores y minimizar
+  las recomendaciones equivocadas, compensando el sesgo que el motor tiene en
+  los extremos. **Si el banco se recalibra con respuestas reales, hay que
+  revisarlos**: dejan de ser correctos en cuanto cambian las dificultades.
+  Viven en el banco (`recommendations.label_cuts`), con un `FALLBACK_CUTS` en
+  `placement.js` por si el banco no los trae.
 
 ## `definitions.json` / `.js`
 

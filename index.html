@@ -43,7 +43,7 @@
 <meta name="twitter:title" content="Word Lab — Juegos para aprender inglés">
 <meta name="twitter:description" content="13 juegos gratis para practicar inglés: vocabulario, gramática y comprensión auditiva. Wordle, Connections, Strands y más, pensados para hispanohablantes.">
 <meta name="twitter:image" content="https://wordlabgames.netlify.app/assets/og-image.png">
-<link rel="stylesheet" href="styles.css?v=sp21">
+<link rel="stylesheet" href="styles.css?v=sp25">
 </head>
 <body>
 
@@ -102,6 +102,23 @@
       <span class="achievements-dot hidden" id="achievements-dot" aria-hidden="true"></span>
     </button>
   </div>
+
+  <!-- Level test entry. Deliberately NOT a .game-card: the test is not
+       something you play daily, and putting it in the grid would read as the
+       fourteenth game. It sits above the grid as its own strip so it can carry
+       a real label and, once taken, the saved score inline — which a 46px icon
+       button beside the tagline could not do.
+       .has-level is toggled from JS; both states share this one block. -->
+  <button class="level-entry" id="level-entry" type="button">
+    <span class="level-entry-main">
+      <span class="level-entry-label" id="level-entry-label">Test de nivel</span>
+      <span class="level-entry-cta" id="level-entry-cta">Descubre tu nivel de inglés</span>
+    </span>
+    <span class="level-entry-score" id="level-entry-score" aria-hidden="true">
+      <span class="level-entry-num" id="level-entry-num"></span>
+      <span class="level-entry-cefr" id="level-entry-cefr"></span>
+    </span>
+  </button>
 
   <div class="card-grid">
     <button class="game-card" data-game="bombword">
@@ -1030,6 +1047,98 @@
   <div class="ach-groups" id="ach-groups"></div>
 </main>
 
+<!-- ================= LEVEL TEST — 1. ENTRY ================= -->
+<!-- Two states over ONE layout, swapped with .has-level on #level-intro:
+     no saved level -> what the test is + START
+     saved level    -> the previous score, when, a one-line summary + RETAKE
+     Never two blocks of HTML. -->
+<main id="screen-level" class="screen">
+  <div class="game-topline">
+    <button class="back-btn" data-back>&larr; Back</button>
+  </div>
+
+  <div class="level-intro" id="level-intro">
+    <h2 class="level-title" id="level-title">TEST DE NIVEL</h2>
+
+    <!-- shown only with .has-level -->
+    <div class="level-saved" id="level-saved">
+      <p class="level-saved-score"><span id="level-saved-num"></span><span class="level-saved-of" id="level-saved-of">de 50</span></p>
+      <p class="level-saved-cefr" id="level-saved-cefr"></p>
+      <p class="level-saved-date" id="level-saved-date"></p>
+      <p class="level-saved-summary" id="level-saved-summary"></p>
+    </div>
+
+    <p class="level-desc" id="level-desc"></p>
+
+    <!-- only when the previous attempt is less than a day old. Never blocks. -->
+    <p class="level-warning hidden" id="level-repeat-warning"></p>
+    <!-- only when speechSynthesis has no English voice -->
+    <p class="level-warning hidden" id="level-no-voices"></p>
+
+    <button class="primary-btn" id="level-start-btn">EMPEZAR</button>
+  </div>
+</main>
+
+<!-- ================= LEVEL TEST — 2. THE QUESTION ================= -->
+<!-- ONE screen reused 24 times. The nine formats share this layout; only the
+     prompt content and whether the audio button shows ever change. -->
+<main id="screen-level-test" class="screen">
+  <div class="game-topline">
+    <button class="back-btn" data-back>&larr; Back</button>
+    <span class="game-meta" id="level-progress-text"></span>
+  </div>
+
+  <div class="level-test-wrap">
+    <div class="level-progress" aria-hidden="true">
+      <div class="level-progress-fill" id="level-progress-fill"></div>
+    </div>
+
+    <!-- Fixed MIN height, free to grow: the four option buttons must not shift
+         between a one-line definition and a four-sentence grammar_error item.
+         Measured in the browser, not assumed — see the report. -->
+    <div class="level-prompt-zone">
+      <p class="level-prompt" id="level-prompt"></p>
+      <button class="level-audio-btn hidden" id="level-audio-btn" type="button">
+        <span aria-hidden="true">🔊</span> <span id="level-audio-label">Escuchar</span>
+      </button>
+      <p class="level-audio-count hidden" id="level-audio-count"></p>
+    </div>
+
+    <!-- four buttons, rebuilt each question. No right/wrong feedback and no
+         going back: both are deliberate. -->
+    <div class="level-options" id="level-options"></div>
+  </div>
+</main>
+
+<!-- ================= LEVEL TEST — 3. RESULT ================= -->
+<!-- Sober on purpose: Omar redesigns this later, so the value here is the id
+     structure, not the styling. Uses .end-panel to inherit endPop for free —
+     EXACTLY 6 children, which is the maximum CLAUDE.md documents. -->
+<main id="screen-level-result" class="screen">
+  <div class="end-panel" id="level-result-panel">
+    <p class="end-title level-result-head">
+      <span class="level-result-score" id="level-result-score"></span>
+      <span class="level-result-of" id="level-result-of">de 50</span>
+      <span class="level-result-cefr" id="level-result-cefr"></span>
+    </p>
+
+    <div class="level-scale" id="level-scale">
+      <div class="level-scale-fill" id="level-scale-fill"></div>
+      <div class="level-scale-marks" id="level-scale-marks"></div>
+    </div>
+
+    <div class="level-skills" id="level-skills"></div>
+
+    <div class="level-recs" id="level-recs"></div>
+
+    <p class="level-warning hidden" id="level-listening-note"></p>
+
+    <div class="end-actions">
+      <button class="primary-btn" id="level-result-back">VOLVER</button>
+    </div>
+  </div>
+</main>
+
 <!-- ============================================================
      Only what the HOME SCREEN itself needs. The thirteen game data banks
      (~2.1 MB) are injected on demand by DataLoader in app.js when a card is
@@ -1050,12 +1159,15 @@
      Keep the ?v= suffix in sync with ASSET_V in app.js — the version bump
      regex updates both.
      ============================================================ -->
-<script src="ui_strings_en.js?v=sp21"></script>
-<script src="ui_strings_es.js?v=sp21"></script>
-<script src="achievements.js?v=sp21"></script>
-<script src="waffle_data.js?v=sp21"></script>
-<script src="sfx.js?v=sp21"></script>
-<script src="progress.js?v=sp21"></script>
-<script src="app.js?v=sp21"></script>
+<script src="ui_strings_en.js?v=sp25"></script>
+<script src="ui_strings_es.js?v=sp25"></script>
+<script src="achievements.js?v=sp25"></script>
+<script src="waffle_data.js?v=sp25"></script>
+<script src="sfx.js?v=sp25"></script>
+<script src="progress.js?v=sp25"></script>
+<!-- placement.js (motor) y placement_data.js (banco) van los dos por DataLoader
+     (NEEDS.level): la portada y la pantalla de entrada pintan el nivel guardado
+     leyendo solo Progress, sin necesitar el motor. -->
+<script src="app.js?v=sp25"></script>
 </body>
 </html>

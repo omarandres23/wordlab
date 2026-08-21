@@ -27,5 +27,11 @@ npm-debug.log*
 # them, so ignoring them changes nothing about how the page behaves.
 PROMPT_*.md
 
+# Task reports Claude Code writes back for the session that authored the briefs.
+# The rule above only catches these by accident of naming — a report that does
+# not start with PROMPT_ (the folder's own README.md, for one) would otherwise
+# be published. Ignore the whole folder so the convention cannot leak.
+tools/prompts/reportes/
+
 # Dependency folders (in case tooling is added later)
 node_modules/

@@ -656,5 +656,39 @@
     },
     "badge_progress": "${current} / ${target}",
     "pending_locked": "You already earned this! Claim ${tier} first"
+  },
+  "level": {
+    "entry_label": "Level test",
+    "entry_cta": "Find out your English level",
+    "entry_level_prefix": "Your level",
+    "title": "LEVEL TEST",
+    "desc": "24 multiple-choice questions, about 7 minutes. The test adapts as you go: you cannot go back, and you will not see whether you were right until the end.",
+    "start": "START",
+    "restart": "RETAKE",
+    "saved_taken": "Taken on ${date}",
+    "saved_summary": "Vocabulary: ${vocab} · Grammar: ${grammar} · Listening: ${listening}",
+    "saved_summary_no_listening": "Vocabulary: ${vocab} · Grammar: ${grammar}",
+    "repeat_warning": "Your level does not change from one day to the next. Come back after playing for a while and the result will be more useful.",
+    "no_voices": "Your browser has no English voices, so the listening part will be skipped. The test still completes with vocabulary and grammar.",
+    "progress": "${n} / ${total}",
+    "play_audio": "Listen",
+    "plays_left": "${n} plays left",
+    "plays_none": "No plays left",
+    "result_title": "YOUR LEVEL",
+    "result_of": "of 50",
+    "skills_title": "By skill",
+    "skill_vocab": "Vocabulary",
+    "skill_grammar": "Grammar",
+    "skill_listening": "Listening",
+    "skill_not_measured": "not measured",
+    "recs_play": "Start here",
+    "recs_avoid": "Leave these for later",
+    "listening_note": "Listening could not be measured because your browser has no English voices. The score comes from vocabulary and grammar only.",
+    "back": "BACK",
+    "level_labels": {
+      "basico": "basic",
+      "intermedio": "intermediate",
+      "avanzado": "advanced"
+    }
   }
 }

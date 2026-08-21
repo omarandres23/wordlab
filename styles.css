@@ -3728,3 +3728,216 @@ input.letter-cell:focus { border-color: var(--accent-bright); box-shadow: 0 0 8p
   .ach-badge-name { font-size: 0.78rem; }
   .ach-badge-goal { font-size: 0.7rem; }
 }
+
+/* =====================================================
+   LEVEL TEST
+   Sober on purpose: the result screen gets redesigned later, so the value
+   here is the id/class structure, not the styling. Desktop rules only —
+   phone adjustments live in the 768/480 media queries further down.
+   ===================================================== */
+
+/* ---- home entry strip ---- */
+/* Not a .game-card: the test is not played daily, and inside the grid it
+   would read as a fourteenth game. Its own strip above the grid is also the
+   only shape with room for the saved score inline. */
+.level-entry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: min(720px, calc(100% - 32px));
+  margin: 0 auto 26px;
+  padding: 14px 20px;
+  border: 1px solid rgba(155, 48, 255, 0.55);
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(42, 10, 61, 0.9), rgba(33, 7, 46, 0.9));
+  color: var(--text);
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.level-entry:hover,
+.level-entry:focus-visible { transform: translateY(-2px); box-shadow: 0 0 18px rgba(155, 48, 255, 0.45); }
+.level-entry:focus-visible { outline: 2px solid var(--accent-bright, #d846ef); outline-offset: 2px; }
+
+.level-entry-main { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.level-entry-label {
+  font-size: 0.72rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent-bright);
+}
+.level-entry-cta { font-size: 1.02rem; font-weight: 700; }
+
+/* the score block only exists once the test has been taken */
+.level-entry-score { display: none; align-items: baseline; gap: 8px; flex: none; }
+.level-entry.has-level .level-entry-score { display: flex; }
+.level-entry-num { font-size: 1.9rem; font-weight: 900; line-height: 1; color: var(--accent-bright); }
+.level-entry-cefr { font-size: 0.9rem; font-weight: 700; color: var(--text-dim); }
+
+/* ---- 1. entry screen ---- */
+.level-intro {
+  max-width: 560px;
+  margin: 20px auto;
+  padding: 30px 24px;
+  background: var(--panel);
+  border: 2px solid var(--panel-border);
+  border-radius: 18px;
+  text-align: center;
+}
+.level-title { font-size: 1.5rem; font-weight: 900; letter-spacing: 3px; margin-bottom: 16px; }
+.level-desc { font-size: 0.95rem; line-height: 1.6; color: var(--text-dim); margin-bottom: 22px; }
+
+/* the saved block is the ONLY thing .has-level toggles — one layout, two states */
+.level-saved { display: none; margin-bottom: 20px; }
+.level-intro.has-level .level-saved { display: block; }
+.level-saved-score { font-size: 3rem; font-weight: 900; line-height: 1; color: var(--accent-bright); }
+.level-saved-of { font-size: 0.9rem; font-weight: 700; color: var(--text-dim); margin-left: 8px; }
+.level-saved-cefr { font-size: 1.05rem; font-weight: 800; margin-top: 4px; }
+.level-saved-date { font-size: 0.82rem; color: var(--text-dim); margin-top: 8px; }
+.level-saved-summary { font-size: 0.85rem; color: var(--text-dim); margin-top: 6px; }
+
+/* used for the repeat notice, the no-voices notice and the load error. Never
+   blocks anything — it only informs. */
+.level-warning {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #f0d47a;
+  background: rgba(245, 197, 24, 0.1);
+  border: 1px solid rgba(245, 197, 24, 0.45);
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 18px;
+}
+
+/* ---- 2. the question ---- */
+.level-test-wrap { max-width: 620px; margin: 20px auto; padding: 0 16px 40px; }
+
+.level-progress {
+  height: 8px; border-radius: 6px; overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(155, 48, 255, 0.4);
+  margin-bottom: 22px;
+}
+.level-progress-fill {
+  height: 100%; width: 0;
+  background: linear-gradient(90deg, var(--accent), var(--accent-bright));
+  transition: width 0.25s ease;
+}
+
+/* 🚨 THE LAYOUT RULE OF THIS SCREEN.
+   min-height, not height: the zone must absorb everything from a one-line
+   definition to a four-sentence grammar_error item WITHOUT the option buttons
+   moving. If they shift between questions, someone answers what they did not
+   mean to. The value is measured, not guessed — see the phase 2 report. */
+.level-prompt-zone {
+  min-height: 168px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+.level-prompt {
+  font-size: 1.12rem;
+  line-height: 1.55;
+  text-align: center;
+  white-space: pre-line; /* grammar_error ships its four sentences newline-separated */
+}
+.level-audio-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 22px; font-size: 1rem; font-weight: 800;
+  border-radius: 12px; cursor: pointer;
+  color: var(--text);
+  border: 1px solid rgba(155, 48, 255, 0.6);
+  background: rgba(155, 48, 255, 0.16);
+}
+.level-audio-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.level-audio-count { font-size: 0.78rem; color: var(--text-dim); }
+
+.level-options { display: grid; gap: 10px; }
+.level-option {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--text);
+  border: 1px solid rgba(155, 48, 255, 0.5);
+  border-radius: 12px;
+  background: rgba(33, 7, 46, 0.85);
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+/* hover only, never a correct/incorrect colour: the test deliberately gives no
+   right/wrong feedback */
+.level-option:hover,
+.level-option:focus-visible { transform: translateY(-1px); box-shadow: 0 0 14px rgba(155, 48, 255, 0.4); }
+
+/* ---- 3. result ---- */
+.level-result-head { display: flex; align-items: baseline; justify-content: center; gap: 10px; flex-wrap: wrap; }
+.level-result-score { font-size: 3.4rem; font-weight: 900; line-height: 1; color: var(--accent-bright); }
+.level-result-of { font-size: 0.9rem; color: var(--text-dim); }
+.level-result-cefr { font-size: 1.2rem; font-weight: 800; }
+
+.level-scale { position: relative; height: 10px; border-radius: 6px; background: rgba(255,255,255,0.1); border: 1px solid rgba(155,48,255,0.4); margin: 6px 0 30px; }
+.level-scale-fill { height: 100%; border-radius: 6px; background: linear-gradient(90deg, var(--accent), var(--accent-bright)); }
+.level-scale-marks { position: absolute; inset: 0; }
+.level-scale-mark {
+  position: absolute; top: 14px; transform: translateX(-50%);
+  font-size: 0.62rem; font-weight: 700; color: var(--text-dim); white-space: nowrap;
+}
+/* Las marcas van centradas sobre su punto de la escala, asi que la primera y la
+   ultima asomaban media palabra fuera de la barra (7,2px por la izquierda,
+   3,7px por la derecha a 360px). Se alinean por el borde en vez de por el
+   centro. Padding en .level-scale no servia: los left:% de las marcas se
+   resuelven contra su caja, asi que las habria despegado de su ancla. */
+.level-scale-mark:first-child { transform: none; }
+.level-scale-mark:last-child { transform: translateX(-100%); }
+
+.level-skills { display: flex; flex-direction: column; gap: 8px; }
+.level-skill { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 14px; border-radius: 10px; background: rgba(255,255,255,0.04); }
+.level-skill-name { font-size: 0.92rem; }
+/* LABEL, never a number: with 8 items per skill the error is about +-7 points,
+   and a decimal would advertise precision this test does not have. */
+.level-skill-label { font-size: 0.82rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+.level-skill-label[data-label="basico"] { color: #7ee2a0; }
+.level-skill-label[data-label="intermedio"] { color: #f0d47a; }
+.level-skill-label[data-label="avanzado"] { color: var(--accent-bright); }
+
+.level-recs-title { font-size: 0.72rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--text-dim); margin: 16px 0 8px; }
+.level-rec-list { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.level-rec-btn {
+  padding: 9px 14px; font-size: 0.86rem; font-weight: 700; cursor: pointer;
+  color: var(--text); border-radius: 10px;
+  border: 1px solid rgba(155, 48, 255, 0.55);
+  background: rgba(155, 48, 255, 0.14);
+}
+.level-rec-btn:hover, .level-rec-btn:focus-visible { box-shadow: 0 0 12px rgba(155,48,255,0.45); }
+.level-rec-avoid li { font-size: 0.86rem; color: var(--text-dim); padding: 9px 14px; border-radius: 10px; background: rgba(255,255,255,0.04); }
+
+@media (max-width: 768px) {
+  .level-entry { width: calc(100% - 24px); padding: 12px 16px; }
+  .level-entry-cta { font-size: 0.95rem; }
+  /* the zone shrinks with the type, but keeps absorbing the tallest item so
+     the option buttons still never move */
+  .level-prompt-zone { min-height: 156px; }
+  .level-prompt { font-size: 1.05rem; }
+}
+
+@media (max-width: 480px) {
+  .level-entry { padding: 11px 14px; gap: 10px; }
+  .level-entry-label { font-size: 0.66rem; letter-spacing: 1.5px; }
+  .level-entry-cta { font-size: 0.88rem; }
+  .level-entry-num { font-size: 1.6rem; }
+  .level-entry-cefr { font-size: 0.8rem; }
+  .level-intro { padding: 22px 16px; }
+  .level-title { font-size: 1.25rem; }
+  .level-desc { font-size: 0.88rem; }
+  .level-test-wrap { padding: 0 12px 32px; }
+  .level-prompt-zone { min-height: 150px; }
+  .level-prompt { font-size: 1rem; }
+  .level-option { padding: 12px 12px; font-size: 0.94rem; }
+  .level-result-score { font-size: 2.8rem; }
+  .level-scale-mark { font-size: 0.56rem; }
+}

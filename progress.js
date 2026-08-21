@@ -20,8 +20,19 @@ const Progress = (() => {
   const TIER_ORDER = ["bronze", "silver", "gold", "platinum"];
 
   /* ---------- shape ---------- */
+  // `level` is the placement test result (phase 2 of the level test), or null
+  // if the player has never taken it. It MUST be declared here: normalize()
+  // rebuilds the state field by field from this shape, so a field that is not
+  // in blank() and not copied in normalize() saves fine, works all session,
+  // and vanishes silently on the next reload.
   function blank() {
-    return { v: VERSION, plays: {}, claimed: [], settings: { badgesEnabled: true } };
+    return {
+      v: VERSION,
+      plays: {},
+      claimed: [],
+      settings: { badgesEnabled: true },
+      level: null,
+    };
   }
 
   // defensive: a hand-edited or half-written entry must never break a game,
@@ -41,7 +52,49 @@ const Progress = (() => {
     if (raw.settings && typeof raw.settings === "object") {
       base.settings.badgesEnabled = raw.settings.badgesEnabled !== false;
     }
+    base.level = normalizeLevel(raw.level);
     return base;
+  }
+
+  // Same defensive contract as the rest of normalize(): anything that does not
+  // fit is dropped rather than trusted, and a half-written entry can never
+  // throw. Returns null unless the record has at least a usable overall score,
+  // because a level with no number is not a level.
+  function normalizeLevel(raw) {
+    if (!raw || typeof raw !== "object") return null;
+    const num = (v) => (Number.isFinite(Number(v)) ? Number(v) : null);
+    const overall = num(raw.overall);
+    if (overall === null) return null;
+
+    const ids = (v) =>
+      Array.isArray(v) ? v.filter((x) => typeof x === "string").slice(0, 64) : [];
+
+    const skills = {};
+    if (raw.skills && typeof raw.skills === "object") {
+      ["vocab", "grammar", "listening"].forEach((sk) => {
+        const s = raw.skills[sk];
+        if (!s || typeof s !== "object") {
+          skills[sk] = null; // not measured — a real, meaningful value
+          return;
+        }
+        const score = num(s.score);
+        skills[sk] =
+          score === null ? null : { score, label: typeof s.label === "string" ? s.label : null };
+      });
+    }
+
+    return {
+      overall,
+      cefr: typeof raw.cefr === "string" ? raw.cefr : null,
+      display: num(raw.display) !== null ? Math.round(num(raw.display)) : Math.round(overall),
+      skills,
+      standardError: num(raw.standardError),
+      listeningMeasured: raw.listeningMeasured === true,
+      // stored as an epoch number so no Date parsing can throw on a corrupt value
+      takenAt: num(raw.takenAt),
+      itemsSeen: ids(raw.itemsSeen),
+      itemsFailed: ids(raw.itemsFailed),
+    };
   }
 
   // future versions land here. v1 is the first shape, so there is nothing to
@@ -264,6 +317,29 @@ const Progress = (() => {
     return badgesEnabled();
   }
 
+  /* ---------- the placement test result ----------
+     The level test is NOT part of the 48-badge system — it never calls
+     record(), and nothing here feeds conditionMet(). It lives in Progress only
+     because this is the one place allowed to touch localStorage. */
+
+  // Null until the player finishes the test once. Always normalized, so callers
+  // can read .overall/.skills without guarding against a hand-edited entry.
+  const getLevel = () => get().level;
+
+  // `result` is what Placement's session.result() returns. takenAt is stamped
+  // here rather than trusted from the caller: the store owns "when", and a
+  // clock read belongs next to the write.
+  function setLevel(result) {
+    if (!result || typeof result !== "object") return null;
+    const stamped = Object.assign({}, result, { takenAt: Date.now() });
+    const clean = normalizeLevel(stamped);
+    if (!clean) return null; // unusable result: leave the previous level alone
+    update((s) => {
+      s.level = clean;
+    });
+    return clean;
+  }
+
   const exportData = () => JSON.stringify(get());
 
   function importData(str) {
@@ -289,6 +365,8 @@ const Progress = (() => {
     countClaimed,
     badgesEnabled,
     setBadgesEnabled,
+    getLevel,
+    setLevel,
     export: exportData,
     import: importData,
     // exposed for the achievements screen and the build script's vocabulary

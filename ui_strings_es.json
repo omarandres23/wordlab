@@ -656,5 +656,39 @@
     },
     "badge_progress": "${current} / ${target}",
     "pending_locked": "¡Ya lo lograste! Reclama antes ${tier}"
+  },
+  "level": {
+    "entry_label": "Test de nivel",
+    "entry_cta": "Descubre tu nivel de inglés",
+    "entry_level_prefix": "Tu nivel",
+    "title": "TEST DE NIVEL",
+    "desc": "24 preguntas de opción múltiple, unos 7 minutos. El test se ajusta a tu nivel sobre la marcha: no se puede volver atrás y no verás si acertaste hasta el final.",
+    "start": "EMPEZAR",
+    "restart": "ACTUALIZAR",
+    "saved_taken": "Hecho el ${date}",
+    "saved_summary": "Vocabulario: ${vocab} · Gramática: ${grammar} · Comprensión auditiva: ${listening}",
+    "saved_summary_no_listening": "Vocabulario: ${vocab} · Gramática: ${grammar}",
+    "repeat_warning": "Tu nivel no cambia de un día para otro. Vuelve cuando hayas jugado un rato y el resultado será más útil.",
+    "no_voices": "Tu navegador no tiene voces en inglés, así que la parte de comprensión auditiva se omitirá. El test se completa igual con vocabulario y gramática.",
+    "progress": "${n} / ${total}",
+    "play_audio": "Escuchar",
+    "plays_left": "${n} reproducciones restantes",
+    "plays_none": "Sin reproducciones",
+    "result_title": "TU NIVEL",
+    "result_of": "de 50",
+    "skills_title": "Por destreza",
+    "skill_vocab": "Vocabulario",
+    "skill_grammar": "Gramática",
+    "skill_listening": "Comprensión auditiva",
+    "skill_not_measured": "sin medir",
+    "recs_play": "Empieza por aquí",
+    "recs_avoid": "Déjalos para más adelante",
+    "listening_note": "No se pudo medir la comprensión auditiva porque tu navegador no tiene voces en inglés. La puntuación sale solo de vocabulario y gramática.",
+    "back": "VOLVER",
+    "level_labels": {
+      "basico": "básico",
+      "intermedio": "intermedio",
+      "avanzado": "avanzado"
+    }
   }
 }
